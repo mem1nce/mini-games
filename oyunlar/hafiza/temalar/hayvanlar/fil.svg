@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <radialGradient id="ten" cx="0.4" cy="0.3" r="0.75">
+      <stop offset="0" stop-color="#E9EFFD"/>
+      <stop offset="0.55" stop-color="#B9C8F0"/>
+      <stop offset="1" stop-color="#8C9FD6"/>
+    </radialGradient>
+    <radialGradient id="kulak" cx="0.45" cy="0.4" r="0.7">
+      <stop offset="0" stop-color="#FFDDE8"/>
+      <stop offset="1" stop-color="#F29BBC"/>
+    </radialGradient>
+    <radialGradient id="goz" cx="0.4" cy="0.35" r="0.7">
+      <stop offset="0" stop-color="#6A5A96"/>
+      <stop offset="0.55" stop-color="#2A1F45"/>
+      <stop offset="1" stop-color="#150F26"/>
+    </radialGradient>
+    <radialGradient id="yanak" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FF7FA3" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#FF7FA3" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="golge" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#3A2A4A" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#3A2A4A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <ellipse cx="128" cy="244" rx="82" ry="11" fill="url(#golge)"/>
+  <!-- Gövde ve bacaklar -->
+  <ellipse cx="128" cy="206" rx="56" ry="34" fill="url(#ten)" stroke="#4B5A8C" stroke-width="7"/>
+  <rect x="86" y="204" width="36" height="40" rx="15" fill="url(#ten)" stroke="#4B5A8C" stroke-width="6"/>
+  <rect x="134" y="204" width="36" height="40" rx="15" fill="url(#ten)" stroke="#4B5A8C" stroke-width="6"/>
+  <g fill="#FFFFFF" opacity="0.9">
+    <ellipse cx="95" cy="237" rx="4" ry="3"/><ellipse cx="104" cy="238" rx="4" ry="3"/><ellipse cx="113" cy="237" rx="4" ry="3"/>
+    <ellipse cx="143" cy="237" rx="4" ry="3"/><ellipse cx="152" cy="238" rx="4" ry="3"/><ellipse cx="161" cy="237" rx="4" ry="3"/>
+  </g>
+  <!-- Kulaklar -->
+  <ellipse cx="54" cy="114" rx="46" ry="56" transform="rotate(-12 54 114)" fill="url(#ten)" stroke="#4B5A8C" stroke-width="7"/>
+  <ellipse cx="60" cy="116" rx="30" ry="40" transform="rotate(-12 60 116)" fill="url(#kulak)"/>
+  <ellipse cx="202" cy="114" rx="46" ry="56" transform="rotate(12 202 114)" fill="url(#ten)" stroke="#4B5A8C" stroke-width="7"/>
+  <ellipse cx="196" cy="116" rx="30" ry="40" transform="rotate(12 196 116)" fill="url(#kulak)"/>
+  <!-- Kafa -->
+  <ellipse cx="128" cy="110" rx="66" ry="60" fill="url(#ten)" stroke="#4B5A8C" stroke-width="7"/>
+  <ellipse cx="104" cy="72" rx="20" ry="9" transform="rotate(-20 104 72)" fill="#FFFFFF" opacity="0.5"/>
+  <path d="M118 52 Q121 38 128 50 Q133 36 140 52" fill="none" stroke="#4B5A8C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Gözler -->
+  <ellipse cx="97" cy="104" rx="15" ry="18" fill="url(#goz)"/>
+  <ellipse cx="159" cy="104" rx="15" ry="18" fill="url(#goz)"/>
+  <ellipse cx="92" cy="96" rx="6" ry="7" fill="#FFFFFF"/>
+  <ellipse cx="154" cy="96" rx="6" ry="7" fill="#FFFFFF"/>
+  <circle cx="102" cy="111" r="3" fill="#FFFFFF" opacity="0.85"/>
+  <circle cx="164" cy="111" r="3" fill="#FFFFFF" opacity="0.85"/>
+  <!-- Yanaklar -->
+  <ellipse cx="78" cy="132" rx="17" ry="11" fill="url(#yanak)"/>
+  <ellipse cx="178" cy="132" rx="17" ry="11" fill="url(#yanak)"/>
+  <!-- Hortum -->
+  <path d="M112 128 C110 160 114 184 136 192 C152 198 168 190 170 176 C171 166 160 162 153 169 C148 176 140 175 136 169 C131 160 142 146 144 128 Q128 134 112 128 Z" fill="url(#ten)" stroke="#4B5A8C" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M116 150 Q128 156 139 150 M119 166 Q128 172 136 168" fill="none" stroke="#4B5A8C" stroke-width="3" stroke-linecap="round" opacity="0.45"/>
+  <path d="M121 136 Q118 156 124 170" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+  <path d="M100 150 Q106 157 112 152" fill="none" stroke="#4B5A8C" stroke-width="4" stroke-linecap="round"/>
+</svg>
