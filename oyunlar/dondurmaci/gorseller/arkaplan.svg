@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1280" viewBox="0 0 720 1280">
+  <!-- Duvar -->
+  <rect width="720" height="1280" fill="#FFF1DC"/>
+  <rect x="0" y="0" width="40" height="1280" fill="#FFE6C7"/>
+  <rect x="80" y="0" width="40" height="1280" fill="#FFE6C7"/>
+  <rect x="160" y="0" width="40" height="1280" fill="#FFE6C7"/>
+  <rect x="240" y="0" width="40" height="1280" fill="#FFE6C7"/>
+  <rect x="320" y="0" width="40" height="1280" fill="#FFE6C7"/>
+  <rect x="400" y="0" width="40" height="1280" fill="#FFE6C7"/>
+  <rect x="480" y="0" width="40" height="1280" fill="#FFE6C7"/>
+  <rect x="560" y="0" width="40" height="1280" fill="#FFE6C7"/>
+  <rect x="640" y="0" width="40" height="1280" fill="#FFE6C7"/>
+  <!-- Vitrin -->
+  <rect x="30" y="236" width="660" height="24" rx="12" fill="#D9A777"/>
+  <rect x="30" y="250" width="660" height="260" rx="28" fill="#B98A5E"/>
+  <rect x="50" y="270" width="620" height="220" rx="18" fill="#D8F3FF"/>
+  <ellipse cx="100" cy="412" rx="40" ry="28" fill="#FF8FB8"/>
+  <rect x="58" y="410" width="84" height="60" rx="12" fill="#FFFFFF" stroke="#9CC9DE" stroke-width="4"/>
+  <ellipse cx="202" cy="412" rx="40" ry="28" fill="#A56B45"/>
+  <rect x="160" y="410" width="84" height="60" rx="12" fill="#FFFFFF" stroke="#9CC9DE" stroke-width="4"/>
+  <ellipse cx="304" cy="412" rx="40" ry="28" fill="#FFF1C9"/>
+  <rect x="262" y="410" width="84" height="60" rx="12" fill="#FFFFFF" stroke="#9CC9DE" stroke-width="4"/>
+  <ellipse cx="406" cy="412" rx="40" ry="28" fill="#FFE14D"/>
+  <rect x="364" y="410" width="84" height="60" rx="12" fill="#FFFFFF" stroke="#9CC9DE" stroke-width="4"/>
+  <ellipse cx="508" cy="412" rx="40" ry="28" fill="#6E8BFF"/>
+  <rect x="466" y="410" width="84" height="60" rx="12" fill="#FFFFFF" stroke="#9CC9DE" stroke-width="4"/>
+  <ellipse cx="610" cy="412" rx="40" ry="28" fill="#A5D96E"/>
+  <rect x="568" y="410" width="84" height="60" rx="12" fill="#FFFFFF" stroke="#9CC9DE" stroke-width="4"/>
+  <path d="M90 280 L140 280 L100 480 L50 480 Z" fill="#FFFFFF" opacity="0.35"/>
+  <path d="M450 280 L480 280 L440 480 L410 480 Z" fill="#FFFFFF" opacity="0.35"/>
+  <!-- Tente -->
+  <rect x="0" y="0" width="80" height="140" fill="#FF8FB8"/>
+  <circle cx="40" cy="140" r="40" fill="#FF8FB8"/>
+  <rect x="80" y="0" width="80" height="140" fill="#FFFFFF"/>
+  <circle cx="120" cy="140" r="40" fill="#FFFFFF"/>
+  <rect x="160" y="0" width="80" height="140" fill="#FF8FB8"/>
+  <circle cx="200" cy="140" r="40" fill="#FF8FB8"/>
+  <rect x="240" y="0" width="80" height="140" fill="#FFFFFF"/>
+  <circle cx="280" cy="140" r="40" fill="#FFFFFF"/>
+  <rect x="320" y="0" width="80" height="140" fill="#FF8FB8"/>
+  <circle cx="360" cy="140" r="40" fill="#FF8FB8"/>
+  <rect x="400" y="0" width="80" height="140" fill="#FFFFFF"/>
+  <circle cx="440" cy="140" r="40" fill="#FFFFFF"/>
+  <rect x="480" y="0" width="80" height="140" fill="#FF8FB8"/>
+  <circle cx="520" cy="140" r="40" fill="#FF8FB8"/>
+  <rect x="560" y="0" width="80" height="140" fill="#FFFFFF"/>
+  <circle cx="600" cy="140" r="40" fill="#FFFFFF"/>
+  <rect x="640" y="0" width="80" height="140" fill="#FF8FB8"/>
+  <circle cx="680" cy="140" r="40" fill="#FF8FB8"/>
+  <rect x="0" y="0" width="720" height="14" fill="#E0628F"/>
+</svg>

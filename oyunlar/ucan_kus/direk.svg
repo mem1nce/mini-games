@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="1400" viewBox="0 0 140 1400">
+  <!-- Direk beyaz/gri çizildi; oyunda modulate ile renklendiriliyor -->
+  <!-- Gövde -->
+  <rect x="18" y="40" width="104" height="1380" rx="20" fill="#F2F2F2"/>
+  <!-- Süs bantları -->
+  <rect x="18" y="220" width="104" height="26" fill="#DCDCDC"/>
+  <rect x="18" y="420" width="104" height="26" fill="#DCDCDC"/>
+  <rect x="18" y="620" width="104" height="26" fill="#DCDCDC"/>
+  <rect x="18" y="820" width="104" height="26" fill="#DCDCDC"/>
+  <rect x="18" y="1020" width="104" height="26" fill="#DCDCDC"/>
+  <rect x="18" y="1220" width="104" height="26" fill="#DCDCDC"/>
+  <!-- Parlaklık ve gölge şeritleri -->
+  <rect x="32" y="80" width="16" height="1340" rx="8" fill="#FFFFFF"/>
+  <rect x="98" y="80" width="16" height="1340" rx="8" fill="#D2D2D2"/>
+  <!-- Gövde çerçevesi -->
+  <rect x="18" y="40" width="104" height="1380" rx="20" fill="none" stroke="#8C8C8C" stroke-width="5"/>
+  <!-- Yuvarlak başlık -->
+  <rect x="4" y="4" width="132" height="72" rx="32" fill="#F7F7F7" stroke="#8C8C8C" stroke-width="6"/>
+  <rect x="22" y="16" width="56" height="12" rx="6" fill="#FFFFFF"/>
+  <circle cx="40" cy="50" r="8" fill="#D2D2D2"/>
+  <circle cx="70" cy="50" r="8" fill="#D2D2D2"/>
+  <circle cx="100" cy="50" r="8" fill="#D2D2D2"/>
+</svg>

@@ -1,0 +1,215 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://oyunlar/dondurmaci/dondurmaci.gd" id="1_oyun"]
+[ext_resource type="Texture2D" path="res://oyunlar/dondurmaci/gorseller/arkaplan.svg" id="2_arka"]
+[ext_resource type="Texture2D" path="res://oyunlar/dondurmaci/gorseller/tezgah_ust.svg" id="3_tezgah"]
+[ext_resource type="Texture2D" path="res://oyunlar/dondurmaci/gorseller/kulah.svg" id="4_kulah"]
+[ext_resource type="Texture2D" path="res://oyunlar/dondurmaci/gorseller/kase.svg" id="5_kase"]
+[ext_resource type="Texture2D" path="res://oyunlar/dondurmaci/gorseller/yildiz.svg" id="6_yildiz"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_baloncuk"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color(0, 0, 0, 0.12)
+shadow_size = 8
+shadow_offset = Vector2(0, 6)
+
+[node name="Dondurmaci" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_oyun")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1280.0
+grow_horizontal = 2
+mouse_filter = 2
+texture = ExtResource("2_arka")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="TopArea" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="Customer" type="Sprite2D" parent="TopArea"]
+position = Vector2(-150, 370)
+
+[node name="Bubble" type="Node2D" parent="TopArea"]
+position = Vector2(5, 300)
+
+[node name="Tail" type="Polygon2D" parent="TopArea/Bubble"]
+color = Color(1, 1, 1, 1)
+polygon = PackedVector2Array(0, 0, 50, -40, 50, 10)
+
+[node name="Panel" type="Panel" parent="TopArea/Bubble"]
+offset_left = 35.0
+offset_top = -170.0
+offset_right = 285.0
+offset_bottom = 130.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_baloncuk")
+
+[node name="OrderSpot" type="Node2D" parent="TopArea/Bubble"]
+position = Vector2(160, 115)
+
+[node name="CounterFront" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 560.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.53, 0.83, 0.9, 1)
+
+[node name="CounterTop" type="TextureRect" parent="."]
+texture_repeat = 2
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 530.0
+offset_bottom = 620.0
+grow_horizontal = 2
+mouse_filter = 2
+texture = ExtResource("3_tezgah")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="PrepArea" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = -400.0
+offset_bottom = -400.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="Prep" type="Node2D" parent="PrepArea"]
+
+[node name="ConeButton" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -330.0
+offset_top = -560.0
+offset_right = -180.0
+offset_bottom = -410.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="Icon" type="TextureRect" parent="ConeButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 12.0
+offset_right = -16.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_kulah")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BowlButton" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 180.0
+offset_top = -560.0
+offset_right = 330.0
+offset_bottom = -410.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="Icon" type="TextureRect" parent="BowlButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = 14.0
+offset_right = -14.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_kase")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FlavorGrid" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -305.0
+offset_top = -380.0
+offset_right = 305.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 3
+
+[node name="Effects" type="Node2D" parent="."]
+
+[node name="StarBox" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 70.0
+offset_right = 300.0
+offset_bottom = 170.0
+mouse_filter = 2
+theme_override_constants/separation = 14
+
+[node name="StarIcon" type="TextureRect" parent="StarBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("6_yildiz")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="StarLabel" type="Label" parent="StarBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.85, 0.45, 0.1, 1)
+theme_override_constants/outline_size = 24
+theme_override_font_sizes/font_size = 96
+text = "0"
+vertical_alignment = 1

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="120" viewBox="0 0 140 120">
+  <!-- Kuyruk -->
+  <path d="M30 62 L6 46 Q12 62 6 78 Z" fill="#8E5CF2" stroke="#3B3585" stroke-width="4" stroke-linejoin="round"/>
+  <!-- Başındaki tüy tutamı -->
+  <path d="M66 28 Q58 8 70 4 Q70 16 75 24 Q80 8 94 11 Q84 18 82 30 Z" fill="#B36BFF" stroke="#3B3585" stroke-width="4" stroke-linejoin="round"/>
+  <!-- Tombul gövde -->
+  <ellipse cx="68" cy="66" rx="46" ry="42" fill="#6C7BFF" stroke="#3B3585" stroke-width="4"/>
+  <!-- Karın -->
+  <ellipse cx="78" cy="84" rx="28" ry="19" fill="#C9D6FF"/>
+  <!-- Yanak -->
+  <circle cx="104" cy="75" r="7" fill="#FF9EC7"/>
+  <!-- Büyük göz -->
+  <ellipse cx="92" cy="52" rx="17" ry="19" fill="#FFFFFF" stroke="#3B3585" stroke-width="3"/>
+  <circle cx="96" cy="55" r="10" fill="#1F1B3F"/>
+  <circle cx="100" cy="50" r="4" fill="#FFFFFF"/>
+  <!-- Küçük pembe gaga -->
+  <path d="M112 62 L126 67 L112 72 Z" fill="#FF8FB8" stroke="#3B3585" stroke-width="3" stroke-linejoin="round"/>
+  <!-- Küçük kanat (her karede farklı açı) -->
+  <g transform="rotate(-35 64 70)">
+    <ellipse cx="48" cy="70" rx="20" ry="11" fill="#8E5CF2" stroke="#3B3585" stroke-width="4"/>
+  </g>
+</svg>
