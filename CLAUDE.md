@@ -10,9 +10,9 @@ Bu repoyu iki kişi kullanıyor (git kullanıcı adları): **mem1nce** ve **emir
 ### Dallarla çalışma
 
 - `main` dalı her zaman çalışan sürümdür. `main`'e doğrudan commit veya push yapma (GitHub'da `main` korumalı: PR olmadan push, force push ve dal silme engelli).
-- Her yeni iş için `main`'in güncel halinden yeni bir dal aç: `git checkout main`, `git pull`, sonra `git checkout -b <isim>/<kısa-açıklama>` (ör. `mehmet/meyve-topla-ses`). Commit'lenmemiş değişiklik varsa önce kullanıcıya sor.
+- Her yeni iş için `main`'in güncel halinden yeni bir dal aç: `git checkout main`, `git pull`, sonra `git checkout -b <isim>/<kısa-açıklama>` (ör. `mehmet/meyve-topla-ses`).
 - Bir iş = bir dal. Dallar kısa ömürlü olsun.
-- İş bitince: dalı push'la (`git push -u origin <dal>`), `gh pr create` ile Pull Request aç (açıklamaya neyi değiştirdiğini ve Godot'ta nasıl test edileceğini yaz), sonra onay beklemeden `gh pr merge --merge --delete-branch` ile birleştir. Ardından `main`'e dön, `git pull` yap ve yerel dalı sil (`git branch -d <dal>`; gh sildiyse gerek yok).
+- İş bitince izin istemeden: dalı push'la, `gh pr create` ile PR aç, `gh pr merge --merge --delete-branch` ile hemen main'e birleştir, sonra main'e dön ve pull yap. (PR açıklamasına neyi değiştirdiğini ve Godot'ta nasıl test edileceğini yaz; yerel dal kaldıysa `git branch -d <dal>` ile sil.)
 - PR'da çakışma (conflict) varsa birleştirme; dur ve kullanıcıya açıkla.
 - Uzun süren bir işte `main`'deki yenilikleri almak için `main`'i dalına merge et (`git fetch`, sonra `git merge origin/main`). Paylaşılan dallarda rebase yapma.
 - Başkasının açık dalında, sahibi istemedikçe commit yapma.
@@ -24,7 +24,7 @@ Bu repoyu iki kişi kullanıyor (git kullanıcı adları): **mem1nce** ve **emir
   - **mem1nce**: `ucan_kus`, `dondurmaci`, `yol_yap`, `hafiza`, `meyve_topla`
   - **emirsalihgmrk**: `golge_eslestirme`
 - Herkes sadece kendi oyun klasöründe çalışır. Başkasına ait oyunun dosyalarını açıkça istenmedikçe değiştirme.
-- Ortak dosyalar: `project.godot`, `res://ana_menu/`, `res://ortak/`, `CLAUDE.md`. Bunlarda değişiklik yapmadan önce ne değişeceğini söyle ve onay al; değişiklikleri küçük tut.
+- Ortak dosyalar: `project.godot`, `res://ana_menu/`, `res://ortak/`, `CLAUDE.md`. Bunlarda değişiklikleri küçük tut.
 - Yeni oyun eklerken yönünü (dikey/yatay) belirt ve ana menüye kartını ekle; bunu ayrı bir commit olarak yap.
 - Küçük ve sık commit at, açık Türkçe commit mesajları yaz.
 - Çakışma (conflict) çıkarsa kendi başına çözme ve başkasının değişikliğini asla silme. Dur ve kullanıcıya hangi dosyada ne olduğunu açıkla.
