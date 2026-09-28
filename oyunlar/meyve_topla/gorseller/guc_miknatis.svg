@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="kirmizi" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FF7A8A"/>
+      <stop offset="1" stop-color="#D81E3A"/>
+    </linearGradient>
+    <linearGradient id="gumus" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#B8C0D6"/>
+    </linearGradient>
+  </defs>
+  <path d="M62 50 V112 A38 38 0 0 0 138 112 V50" fill="none" stroke="#5E0A18" stroke-width="46" stroke-linecap="butt"/>
+  <path d="M62 52 V112 A38 38 0 0 0 138 112 V52" fill="none" stroke="url(#kirmizi)" stroke-width="34" stroke-linecap="butt"/>
+  <path d="M54 60 V110 A46 46 0 0 0 72 146" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+  <rect x="37" y="26" width="50" height="32" rx="7" fill="url(#gumus)" stroke="#5E0A18" stroke-width="5"/>
+  <rect x="113" y="26" width="50" height="32" rx="7" fill="url(#gumus)" stroke="#5E0A18" stroke-width="5"/>
+  <path d="M44 34 H64 M120 34 H140" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+  <!-- Kıvılcımlar -->
+  <path d="M40 16 L30 4 M100 18 V4 M160 16 L170 4" stroke="#FFD23F" stroke-width="6" stroke-linecap="round"/>
+</svg>

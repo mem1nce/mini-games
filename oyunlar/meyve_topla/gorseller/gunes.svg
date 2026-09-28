@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240">
+  <defs>
+    <radialGradient id="isik" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FFF6B0" stop-opacity="0.8"/>
+      <stop offset="0.5" stop-color="#FFE77A" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#FFE77A" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="disk" cx="0.4" cy="0.35" r="0.7">
+      <stop offset="0" stop-color="#FFFBD8"/>
+      <stop offset="0.55" stop-color="#FFDC4A"/>
+      <stop offset="1" stop-color="#F7AE22"/>
+    </radialGradient>
+  </defs>
+  <circle cx="120" cy="120" r="120" fill="url(#isik)"/>
+  <g fill="#FFD84A" stroke="#F0A020" stroke-width="3" stroke-linejoin="round">
+    <path d="M120 18 L130 44 L110 44 Z"/><path d="M120 222 L110 196 L130 196 Z"/>
+    <path d="M18 120 L44 110 L44 130 Z"/><path d="M222 120 L196 130 L196 110 Z"/>
+    <path d="M48 48 L72 60 L60 72 Z"/><path d="M192 192 L168 180 L180 168 Z"/>
+    <path d="M192 48 L180 72 L168 60 Z"/><path d="M48 192 L60 168 L72 180 Z"/>
+  </g>
+  <circle cx="120" cy="120" r="62" fill="url(#disk)" stroke="#E8940E" stroke-width="5"/>
+  <ellipse cx="98" cy="96" rx="20" ry="11" transform="rotate(-35 98 96)" fill="#FFFFFF" opacity="0.6"/>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <radialGradient id="ic" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.05"/>
+      <stop offset="0.7" stop-color="#C8F0FF" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.6"/>
+    </radialGradient>
+    <linearGradient id="gokkusagi" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FF8FC7"/>
+      <stop offset="0.5" stop-color="#FFE77A"/>
+      <stop offset="1" stop-color="#7AE0FF"/>
+    </linearGradient>
+  </defs>
+  <circle cx="128" cy="128" r="116" fill="url(#ic)" stroke="#FFFFFF" stroke-opacity="0.95" stroke-width="6"/>
+  <path d="M200 70 A100 100 0 0 1 222 150" fill="none" stroke="url(#gokkusagi)" stroke-width="10" stroke-linecap="round" opacity="0.7"/>
+  <path d="M52 92 Q66 54 108 40" fill="none" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round" opacity="0.9"/>
+  <circle cx="60" cy="118" r="6" fill="#FFFFFF" opacity="0.85"/>
+  <circle cx="190" cy="196" r="8" fill="#FFFFFF" opacity="0.5"/>
+</svg>

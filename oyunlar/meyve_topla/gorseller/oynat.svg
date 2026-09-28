@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <radialGradient id="dugme" cx="0.4" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#B8F59A"/>
+      <stop offset="0.55" stop-color="#5DC84A"/>
+      <stop offset="1" stop-color="#2E9A3A"/>
+    </radialGradient>
+  </defs>
+  <circle cx="100" cy="100" r="92" fill="url(#dugme)" stroke="#1E6A2A" stroke-width="7"/>
+  <path d="M78 58 Q76 50 84 54 L146 92 Q154 100 146 108 L84 146 Q76 150 78 142 Z" fill="#FFFFFF" stroke="#1E6A2A" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M40 76 Q54 36 100 26" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" opacity="0.5"/>
+</svg>

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <radialGradient id="govde" cx="0.35" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#D8C874"/>
+      <stop offset="0.5" stop-color="#A89440"/>
+      <stop offset="1" stop-color="#6E6224"/>
+    </radialGradient>
+    <radialGradient id="leke" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6A4A1A" stop-opacity="0.75"/>
+      <stop offset="0.7" stop-color="#6A4A1A" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#6A4A1A" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="yaprak" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#B8B45A"/>
+      <stop offset="1" stop-color="#6E6A2A"/>
+    </linearGradient>
+    <linearGradient id="solucan" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFC2D4"/>
+      <stop offset="1" stop-color="#F28AAA"/>
+    </linearGradient>
+  </defs>
+  <!-- Gövde -->
+  <path d="M128 78 C150 62 206 64 214 120 C222 178 182 228 150 226 C140 225 134 220 128 220 C122 220 116 225 106 226 C74 228 34 178 42 120 C50 64 106 62 128 78 Z" fill="url(#govde)" stroke="#4A3E12" stroke-width="7" stroke-linejoin="round"/>
+  <!-- Ezik lekeler -->
+  <ellipse cx="86" cy="170" rx="24" ry="18" fill="url(#leke)"/>
+  <ellipse cx="150" cy="196" rx="18" ry="13" fill="url(#leke)"/>
+  <ellipse cx="112" cy="124" rx="12" ry="9" fill="url(#leke)"/>
+  <g fill="#5A3E12" opacity="0.5">
+    <circle cx="80" cy="166" r="3"/><circle cx="92" cy="176" r="2.5"/><circle cx="146" cy="194" r="2.5"/>
+  </g>
+  <ellipse cx="80" cy="116" rx="10" ry="20" transform="rotate(18 80 116)" fill="#FFFFFF" opacity="0.35"/>
+  <!-- Eğri sap ve solmuş, sarkık yaprak -->
+  <path d="M128 88 C122 66 134 56 128 40" fill="none" stroke="#3E2A10" stroke-width="11" stroke-linecap="round"/>
+  <path d="M128 88 C122 66 134 56 128 40" fill="none" stroke="#7A5A30" stroke-width="5" stroke-linecap="round"/>
+  <path d="M130 58 C150 60 170 76 172 100 C156 96 138 80 130 58 Z" fill="url(#yaprak)" stroke="#4A4412" stroke-width="4.5" stroke-linejoin="round"/>
+  <path d="M134 62 Q152 76 166 96" fill="none" stroke="#5A5418" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Delikten bakan sevimli solucan -->
+  <ellipse cx="170" cy="150" rx="17" ry="12" fill="#3A2A10" stroke="#4A3E12" stroke-width="3"/>
+  <path d="M168 150 C182 132 204 130 214 110" fill="none" stroke="#B84A6A" stroke-width="24" stroke-linecap="round"/>
+  <path d="M168 150 C182 132 204 130 214 110" fill="none" stroke="url(#solucan)" stroke-width="17" stroke-linecap="round"/>
+  <path d="M180 136 L186 146 M194 128 L198 140 M206 120 L212 130" stroke="#D86A8A" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="216" cy="104" r="15" fill="url(#solucan)" stroke="#B84A6A" stroke-width="4"/>
+  <circle cx="211" cy="100" r="3.5" fill="#2A1F45"/>
+  <circle cx="222" cy="99" r="3.5" fill="#2A1F45"/>
+  <circle cx="212" cy="99" r="1.2" fill="#FFFFFF"/>
+  <circle cx="223" cy="98" r="1.2" fill="#FFFFFF"/>
+  <path d="M210 108 Q216 113 222 108" fill="none" stroke="#8A2E4A" stroke-width="2.5" stroke-linecap="round"/>
+  <ellipse cx="207" cy="107" rx="3.5" ry="2" fill="#FF6F98" opacity="0.7"/>
+  <ellipse cx="226" cy="106" rx="3.5" ry="2" fill="#FF6F98" opacity="0.7"/>
+</svg>

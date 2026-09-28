@@ -8,7 +8,7 @@ Küçük çocuklar (4-8 yaş) için basit eğitici mini oyunlar. Oyun fikirlerin
 - Ekran: dikey (portrait), temel çözünürlük 720x1280; masaüstünde test penceresi 450x800.
 - Ekran ölçekleme: `canvas_items` + `expand` — görünen alan 720x1280'den uzun/geniş olabilir. Boyutu `get_viewport_rect().size` ile al, anchor/container kullan, sabit piksel konumlarına güvenme.
 - Giriş sadece dokunma (`InputEventScreenTouch`). Masaüstünde test için "Emulate Touch From Mouse" açık. Önemli öğeleri kenarlardan ve üstteki çentik bölgesinden uzak tut (üstten ~90 px, yanlardan ~40 px).
-- Ana sahne (test için en son yapılan oyun): `res://oyunlar/hafiza/hafiza.tscn`
+- Ana sahne (test için en son yapılan oyun): `res://oyunlar/meyve_topla/meyve_topla.tscn`
 
 ## Oyunlar
 
@@ -17,9 +17,13 @@ Küçük çocuklar (4-8 yaş) için basit eğitici mini oyunlar. Oyun fikirlerin
 - `oyunlar/yol_yap/` — Yol Yap: parçaları (blok, rampa, köprü, yay) ızgaraya sürükleyip bilyeyi hediye kutusuna ulaştırma, 10 bölüm. Bölümler `bolumler.gd` (harita dizeleri + parçaların doğru yerleri), bilyenin yolu fiziksiz olarak `yol_mantigi.gd` içinde hesaplanır; `validate()` her bölümün çözülebildiğini kontrol eder (oyun açılırken de çalışır). Parçalar sadece doğru hücreye oturur. İlerleme `user://yol_yap.cfg`.
 - `oyunlar/hafiza/` — Hafıza Kartları: iki tema (hayvanlar, meyveler), 4 bölüm (2x2 → 4x4). Temalar ve bölümler `veriler.gd` içinde (yeni tema = `temalar/` altında yeni klasör + `THEMES`'e bir satır). Kart animasyonları `kart.gd`. İlerleme `user://hafiza.cfg`. Bu oyunun SVG'leri 2x ölçek + mipmap ile içe aktarılır (`.import` içinde `svg/scale=2.0`, `mipmaps/generate=true`) ve kök düğümde `texture_filter = LINEAR_WITH_MIPMAPS` var; yeni SVG eklenince aynı ayarları ver.
 
+- `oyunlar/meyve_topla/` — Meyve Topla: başında sepet taşıyan kirpiyle ağaçtan düşen meyveleri toplama, 12 bölüm + sonsuz mod, güçlendirmeler. Tasarım ve dosya yapısı `TASARIM.md` içinde. Bölüm verileri `bolumler.gd`, akış `meyve_topla.gd`; oyuncu, düşen nesne, bölüm yöneticisi, ağaç, arka plan, efektler ve arayüz ayrı script'lerde. Parçacıklar `CPUParticles2D`. Meyve SVG'leri hafıza oyunundan kopyalandı (zemin gölgesi çıkarılarak). İlerleme `user://meyve_topla.cfg`.
+
 ## Görsel kontrol
 
 SVG çizince Godot'ta bir SubViewport'a koyup PNG olarak kaydederek bak; kalitesiz görünenleri düzelt. Oyun ekranını da `--fixed-fps 60` ile çalışan bir SceneTree script'iyle ekran görüntüsü alarak kontrol et.
+
+Otomatik testte dokunma olaylarını `root.push_input(event, true)` ile gönder (ikinci parametre olmadan headless'ta koordinatlar pencere ölçeğiyle bozulur). Animasyonlu ekranları, animasyon bitince (ör. ölçek ~1 olunca) çek; ilk karede her şey ölçek 0'dadır. Testlerin yazdığı `user://` kayıtlarını sonunda sil.
 
 ## Kurallar
 

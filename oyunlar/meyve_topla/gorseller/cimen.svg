@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1440" height="320" viewBox="0 0 1440 320">
+  <defs>
+    <linearGradient id="cimen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#96E672"/>
+      <stop offset="0.4" stop-color="#62BC4C"/>
+      <stop offset="1" stop-color="#3E963A"/>
+    </linearGradient>
+    <g id="tutam">
+      <path d="M-10 0 Q-14 -18 -22 -30 Q-8 -20 -4 -6 Q-2 -26 2 -38 Q8 -22 6 0 Q12 -16 20 -28 Q16 -12 12 0 Z" fill="#78CC58" stroke="#3E8A34" stroke-width="2.5" stroke-linejoin="round"/>
+    </g>
+    <g id="cakil">
+      <ellipse cx="0" cy="0" rx="10" ry="6" fill="#C9C3B0" stroke="#8A8470" stroke-width="2"/>
+      <ellipse cx="-3" cy="-2" rx="4" ry="2" fill="#FFFFFF" opacity="0.6"/>
+    </g>
+  </defs>
+  <path d="M0 60 Q120 36 240 56 Q360 76 480 54 Q600 34 720 56 Q840 76 960 54 Q1080 34 1200 56 Q1320 74 1440 54 L1440 320 L0 320 Z" fill="url(#cimen)" stroke="#3E8A34" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M0 66 Q120 42 240 62 Q360 82 480 60 Q600 40 720 62 Q840 82 960 60 Q1080 40 1200 62 Q1320 80 1440 60" fill="none" stroke="#C8F7A6" stroke-width="5" stroke-linecap="round" opacity="0.6"/>
+  <g fill="#4FA83E" opacity="0.5">
+    <ellipse cx="160" cy="170" rx="60" ry="14"/><ellipse cx="560" cy="210" rx="80" ry="16"/><ellipse cx="980" cy="180" rx="70" ry="14"/><ellipse cx="1300" cy="220" rx="60" ry="14"/>
+  </g>
+  <use xlink:href="#tutam" transform="translate(40 58)"/><use xlink:href="#tutam" transform="translate(150 44) scale(0.8)"/>
+  <use xlink:href="#tutam" transform="translate(300 64)"/><use xlink:href="#tutam" transform="translate(420 60) scale(0.9)"/>
+  <use xlink:href="#tutam" transform="translate(540 44)"/><use xlink:href="#tutam" transform="translate(660 50) scale(0.8)"/>
+  <use xlink:href="#tutam" transform="translate(790 66)"/><use xlink:href="#tutam" transform="translate(900 62) scale(0.9)"/>
+  <use xlink:href="#tutam" transform="translate(1030 46)"/><use xlink:href="#tutam" transform="translate(1150 52) scale(0.8)"/>
+  <use xlink:href="#tutam" transform="translate(1280 68)"/><use xlink:href="#tutam" transform="translate(1400 58) scale(0.9)"/>
+  <use xlink:href="#cakil" transform="translate(260 240)"/><use xlink:href="#cakil" transform="translate(720 260) scale(0.8)"/>
+  <use xlink:href="#cakil" transform="translate(1110 250)"/><use xlink:href="#cakil" transform="translate(460 280) scale(0.7)"/>
+</svg>

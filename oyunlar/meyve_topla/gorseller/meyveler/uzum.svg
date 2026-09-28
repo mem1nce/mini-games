@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <radialGradient id="tane" cx="0.35" cy="0.3" r="0.75">
+      <stop offset="0" stop-color="#E2C8FF"/>
+      <stop offset="0.5" stop-color="#9B6BEA"/>
+      <stop offset="1" stop-color="#5E2EB2"/>
+    </radialGradient>
+    <radialGradient id="yaprak" cx="0.4" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#B8F08A"/>
+      <stop offset="1" stop-color="#3A9A3A"/>
+    </radialGradient>
+    <radialGradient id="golge" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#3A2A4A" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#3A2A4A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <!-- Sap, yaprak ve sülük -->
+  <path d="M130 74 C128 54 134 40 146 30" fill="none" stroke="#4A2E12" stroke-width="11" stroke-linecap="round"/>
+  <path d="M130 74 C128 54 134 40 146 30" fill="none" stroke="#9A6A3A" stroke-width="5" stroke-linecap="round"/>
+  <path d="M122 66 C104 60 98 44 110 38 C120 34 122 46 112 46" fill="none" stroke="#5DAA3E" stroke-width="4" stroke-linecap="round"/>
+  <path d="M138 58 C144 30 186 20 212 36 C204 42 208 52 200 58 C192 56 190 68 178 68 C172 62 162 70 150 66 C146 62 142 62 138 58 Z" fill="url(#yaprak)" stroke="#1F5E22" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M142 58 Q172 46 206 38 M168 50 L176 64 M184 44 L194 56" fill="none" stroke="#2E7A2A" stroke-width="3" stroke-linecap="round"/>
+  <!-- Taneler (üstten alta) -->
+  <g stroke="#3A1A70" stroke-width="5">
+    <circle cx="92" cy="96" r="23" fill="url(#tane)"/><circle cx="132" cy="90" r="23" fill="url(#tane)"/><circle cx="172" cy="98" r="23" fill="url(#tane)"/>
+    <circle cx="72" cy="132" r="23" fill="url(#tane)"/><circle cx="112" cy="128" r="23" fill="url(#tane)"/><circle cx="152" cy="130" r="23" fill="url(#tane)"/><circle cx="190" cy="136" r="23" fill="url(#tane)"/>
+    <circle cx="92" cy="166" r="23" fill="url(#tane)"/><circle cx="132" cy="164" r="23" fill="url(#tane)"/><circle cx="172" cy="170" r="23" fill="url(#tane)"/>
+    <circle cx="112" cy="200" r="23" fill="url(#tane)"/><circle cx="152" cy="202" r="23" fill="url(#tane)"/>
+    <circle cx="132" cy="228" r="21" fill="url(#tane)"/>
+  </g>
+  <!-- Parlamalar -->
+  <g fill="#FFFFFF" opacity="0.75">
+    <ellipse cx="84" cy="88" rx="6" ry="4" transform="rotate(-35 84 88)"/><ellipse cx="124" cy="82" rx="6" ry="4" transform="rotate(-35 124 82)"/><ellipse cx="164" cy="90" rx="6" ry="4" transform="rotate(-35 164 90)"/>
+    <ellipse cx="64" cy="124" rx="6" ry="4" transform="rotate(-35 64 124)"/><ellipse cx="104" cy="120" rx="6" ry="4" transform="rotate(-35 104 120)"/><ellipse cx="144" cy="122" rx="6" ry="4" transform="rotate(-35 144 122)"/><ellipse cx="182" cy="128" rx="6" ry="4" transform="rotate(-35 182 128)"/>
+    <ellipse cx="84" cy="158" rx="6" ry="4" transform="rotate(-35 84 158)"/><ellipse cx="124" cy="156" rx="6" ry="4" transform="rotate(-35 124 156)"/><ellipse cx="164" cy="162" rx="6" ry="4" transform="rotate(-35 164 162)"/>
+    <ellipse cx="104" cy="192" rx="6" ry="4" transform="rotate(-35 104 192)"/><ellipse cx="144" cy="194" rx="6" ry="4" transform="rotate(-35 144 194)"/>
+    <ellipse cx="124" cy="221" rx="5" ry="3.5" transform="rotate(-35 124 221)"/>
+  </g>
+</svg>

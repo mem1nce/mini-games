@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <radialGradient id="kiraz" cx="0.35" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#FF97A6"/>
+      <stop offset="0.5" stop-color="#E3203F"/>
+      <stop offset="1" stop-color="#990E29"/>
+    </radialGradient>
+    <linearGradient id="yaprak" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#A6EB7E"/>
+      <stop offset="1" stop-color="#3A9A3A"/>
+    </linearGradient>
+    <radialGradient id="golge" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#3A2A4A" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#3A2A4A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <!-- Saplar -->
+  <path d="M88 132 C94 96 116 66 142 46 M170 142 C168 104 156 72 142 46" fill="none" stroke="#2F5A1A" stroke-width="11" stroke-linecap="round"/>
+  <path d="M88 132 C94 96 116 66 142 46 M170 142 C168 104 156 72 142 46" fill="none" stroke="#7AB648" stroke-width="5" stroke-linecap="round"/>
+  <!-- Yaprak -->
+  <path d="M142 46 C156 20 198 16 214 32 C198 54 166 60 142 46 Z" fill="url(#yaprak)" stroke="#1F5E22" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M146 45 Q176 36 208 32" fill="none" stroke="#2E7A2A" stroke-width="3" stroke-linecap="round"/>
+  <path d="M158 36 Q172 30 190 28" fill="none" stroke="#DDF7C4" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+  <!-- Sol kiraz -->
+  <circle cx="88" cy="172" r="46" fill="url(#kiraz)" stroke="#5E0A1C" stroke-width="7"/>
+  <path d="M76 132 Q88 140 100 132" fill="none" stroke="#7A0E24" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+  <path d="M120 186 C114 206 98 216 82 216" fill="none" stroke="#7A0A20" stroke-width="8" stroke-linecap="round" opacity="0.3"/>
+  <ellipse cx="68" cy="156" rx="11" ry="19" transform="rotate(25 68 156)" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="82" cy="140" r="5" fill="#FFFFFF" opacity="0.85"/>
+  <!-- Sağ kiraz -->
+  <circle cx="168" cy="182" r="46" fill="url(#kiraz)" stroke="#5E0A1C" stroke-width="7"/>
+  <path d="M156 142 Q168 150 180 142" fill="none" stroke="#7A0E24" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+  <path d="M200 196 C194 216 178 226 162 226" fill="none" stroke="#7A0A20" stroke-width="8" stroke-linecap="round" opacity="0.3"/>
+  <ellipse cx="148" cy="166" rx="11" ry="19" transform="rotate(25 148 166)" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="162" cy="150" r="5" fill="#FFFFFF" opacity="0.85"/>
+</svg>

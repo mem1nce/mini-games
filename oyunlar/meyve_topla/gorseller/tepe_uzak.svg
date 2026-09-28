@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1440" height="420" viewBox="0 0 1440 420">
+  <defs>
+    <linearGradient id="arka" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#C6E8D4"/>
+      <stop offset="1" stop-color="#A2D4BA"/>
+    </linearGradient>
+    <linearGradient id="on" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9ED6A6"/>
+      <stop offset="1" stop-color="#78BC88"/>
+    </linearGradient>
+    <g id="agacik">
+      <rect x="-3" y="-4" width="6" height="18" rx="3" fill="#6A8A62"/>
+      <circle cx="0" cy="-14" r="15" fill="#6AB07A"/>
+      <circle cx="-5" cy="-19" r="6" fill="#8CCB98"/>
+    </g>
+  </defs>
+  <path d="M0 200 Q180 90 360 170 Q560 60 760 160 Q960 80 1160 150 Q1320 100 1440 140 L1440 420 L0 420 Z" fill="url(#arka)"/>
+  <path d="M0 200 Q180 90 360 170 Q560 60 760 160 Q960 80 1160 150 Q1320 100 1440 140" fill="none" stroke="#E2F4E8" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+  <use xlink:href="#agacik" transform="translate(300 236)"/>
+  <use xlink:href="#agacik" transform="translate(330 244) scale(0.8)"/>
+  <use xlink:href="#agacik" transform="translate(700 214)"/>
+  <use xlink:href="#agacik" transform="translate(1010 216) scale(0.9)"/>
+  <use xlink:href="#agacik" transform="translate(1210 224)"/>
+  <use xlink:href="#agacik" transform="translate(1240 230) scale(0.75)"/>
+  <path d="M0 270 Q200 180 420 250 Q640 170 860 240 Q1080 180 1260 230 Q1360 210 1440 220 L1440 420 L0 420 Z" fill="url(#on)"/>
+  <path d="M0 270 Q200 180 420 250 Q640 170 860 240 Q1080 180 1260 230 Q1360 210 1440 220" fill="none" stroke="#C4EACB" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+</svg>

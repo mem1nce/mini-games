@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="hasir" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F2C47E"/>
+      <stop offset="1" stop-color="#C4843C"/>
+    </linearGradient>
+    <linearGradient id="ok" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFE98A"/>
+      <stop offset="1" stop-color="#FFB02E"/>
+    </linearGradient>
+  </defs>
+  <!-- Sepet -->
+  <ellipse cx="100" cy="92" rx="52" ry="12" fill="#6A3E16"/>
+  <path d="M48 92 A52 12 0 0 0 152 92 L142 138 Q140 146 132 146 L68 146 Q60 146 58 138 Z" fill="url(#hasir)" stroke="#6B3E14" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M56 108 H144 M58 124 H142" stroke="#A0642A" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+  <path d="M48 92 A52 12 0 0 0 152 92" fill="none" stroke="#6B3E14" stroke-width="11" stroke-linecap="round"/>
+  <path d="M48 92 A52 12 0 0 0 152 92" fill="none" stroke="#E2B064" stroke-width="6" stroke-linecap="round"/>
+  <!-- Genişleme okları -->
+  <path d="M8 118 L34 98 L34 110 L44 110 L44 126 L34 126 L34 138 Z" fill="url(#ok)" stroke="#B8641A" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M192 118 L166 98 L166 110 L156 110 L156 126 L166 126 L166 138 Z" fill="url(#ok)" stroke="#B8641A" stroke-width="4" stroke-linejoin="round"/>
+</svg>

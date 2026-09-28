@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1440" height="360" viewBox="0 0 1440 360">
+  <defs>
+    <linearGradient id="tepe" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#AEE688"/>
+      <stop offset="1" stop-color="#6BBE4A"/>
+    </linearGradient>
+    <radialGradient id="cali" cx="0.4" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#8ED96C"/>
+      <stop offset="1" stop-color="#4E9E38"/>
+    </radialGradient>
+    <g id="cali">
+      <circle cx="-22" cy="0" r="22" fill="url(#cali)"/><circle cx="0" cy="-12" r="28" fill="url(#cali)"/><circle cx="24" cy="0" r="22" fill="url(#cali)"/>
+      <circle cx="-6" cy="-24" r="8" fill="#C8F29E" opacity="0.6"/>
+    </g>
+  </defs>
+  <path d="M0 150 Q240 60 520 130 Q800 50 1080 120 Q1280 80 1440 110 L1440 360 L0 360 Z" fill="url(#tepe)" stroke="#4E9A38" stroke-width="4"/>
+  <path d="M0 152 Q240 62 520 132 Q800 52 1080 122 Q1280 82 1440 112" fill="none" stroke="#D2F7AE" stroke-width="6" stroke-linecap="round" opacity="0.7"/>
+  <use xlink:href="#cali" transform="translate(200 128)"/>
+  <use xlink:href="#cali" transform="translate(640 104) scale(0.9)"/>
+  <use xlink:href="#cali" transform="translate(1150 116) scale(1.1)"/>
+  <use xlink:href="#cali" transform="translate(900 96) scale(0.7)"/>
+</svg>

@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="900" height="520" viewBox="0 0 900 520">
+  <defs>
+    <radialGradient id="yaprak" gradientUnits="userSpaceOnUse" cx="450" cy="40" r="540">
+      <stop offset="0" stop-color="#AEE880"/>
+      <stop offset="0.5" stop-color="#6CC04E"/>
+      <stop offset="1" stop-color="#3C963C"/>
+    </radialGradient>
+    <linearGradient id="altgolge" gradientUnits="userSpaceOnUse" x1="0" y1="260" x2="0" y2="500">
+      <stop offset="0" stop-color="#1E5A22" stop-opacity="0"/>
+      <stop offset="1" stop-color="#1E5A22" stop-opacity="0.45"/>
+    </linearGradient>
+    <clipPath id="tac">
+      <circle cx="450" cy="200" r="220"/>
+      <circle cx="80" cy="120" r="130"/><circle cx="250" cy="70" r="130"/><circle cx="450" cy="50" r="140"/><circle cx="650" cy="70" r="130"/><circle cx="820" cy="120" r="130"/>
+      <circle cx="30" cy="270" r="120"/><circle cx="190" cy="250" r="130"/><circle cx="370" cy="220" r="140"/><circle cx="540" cy="230" r="140"/><circle cx="720" cy="250" r="130"/><circle cx="880" cy="280" r="115"/>
+      <circle cx="90" cy="370" r="92"/><circle cx="230" cy="395" r="96"/><circle cx="370" cy="385" r="92"/><circle cx="510" cy="398" r="96"/><circle cx="650" cy="392" r="94"/><circle cx="795" cy="375" r="92"/>
+    </clipPath>
+    <radialGradient id="isik" cx="0.5" cy="0.45" r="0.5">
+      <stop offset="0" stop-color="#D8F7B4" stop-opacity="0.55"/>
+      <stop offset="0.6" stop-color="#C8F29E" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#C8F29E" stop-opacity="0"/>
+    </radialGradient>
+    <g id="cicek">
+      <circle cx="0" cy="-6" r="5" fill="#FFFFFF"/><circle cx="5.7" cy="-1.9" r="5" fill="#FFFFFF"/><circle cx="3.5" cy="4.9" r="5" fill="#FFFFFF"/>
+      <circle cx="-3.5" cy="4.9" r="5" fill="#FFFFFF"/><circle cx="-5.7" cy="-1.9" r="5" fill="#FFFFFF"/>
+      <circle cx="0" cy="0" r="3.5" fill="#FFD84A"/>
+    </g>
+  </defs>
+  <!-- Taç: önce kalın çizgili, sonra çizgisiz (sadece dış hat kalır) -->
+  <g fill="url(#yaprak)" stroke="#2A6424" stroke-width="14">
+    <circle cx="450" cy="200" r="220"/>
+    <circle cx="80" cy="120" r="130"/><circle cx="250" cy="70" r="130"/><circle cx="450" cy="50" r="140"/><circle cx="650" cy="70" r="130"/><circle cx="820" cy="120" r="130"/>
+    <circle cx="30" cy="270" r="120"/><circle cx="190" cy="250" r="130"/><circle cx="370" cy="220" r="140"/><circle cx="540" cy="230" r="140"/><circle cx="720" cy="250" r="130"/><circle cx="880" cy="280" r="115"/>
+    <circle cx="90" cy="370" r="92"/><circle cx="230" cy="395" r="96"/><circle cx="370" cy="385" r="92"/><circle cx="510" cy="398" r="96"/><circle cx="650" cy="392" r="94"/><circle cx="795" cy="375" r="92"/>
+  </g>
+  <g fill="url(#yaprak)">
+    <circle cx="450" cy="200" r="220"/>
+    <circle cx="80" cy="120" r="130"/><circle cx="250" cy="70" r="130"/><circle cx="450" cy="50" r="140"/><circle cx="650" cy="70" r="130"/><circle cx="820" cy="120" r="130"/>
+    <circle cx="30" cy="270" r="120"/><circle cx="190" cy="250" r="130"/><circle cx="370" cy="220" r="140"/><circle cx="540" cy="230" r="140"/><circle cx="720" cy="250" r="130"/><circle cx="880" cy="280" r="115"/>
+    <circle cx="90" cy="370" r="92"/><circle cx="230" cy="395" r="96"/><circle cx="370" cy="385" r="92"/><circle cx="510" cy="398" r="96"/><circle cx="650" cy="392" r="94"/><circle cx="795" cy="375" r="92"/>
+  </g>
+  <g clip-path="url(#tac)">
+    <!-- Yaprak kümelerinin iç hatları -->
+    <g fill="none" stroke="#3E8A34" stroke-width="5" stroke-linecap="round" opacity="0.55">
+      <path d="M40 300 Q80 280 120 300"/><path d="M180 330 Q230 305 280 330"/><path d="M320 320 Q370 295 420 320"/>
+      <path d="M460 330 Q510 305 560 330"/><path d="M600 325 Q650 300 700 325"/><path d="M745 310 Q795 285 845 310"/>
+      <path d="M120 190 Q190 160 260 190"/><path d="M300 160 Q370 130 440 160"/><path d="M470 170 Q540 140 610 170"/><path d="M650 185 Q720 155 790 185"/>
+    </g>
+    <!-- Açık renkli kümeler (ışık) -->
+    <g fill="url(#isik)">
+      <circle cx="250" cy="40" r="95"/><circle cx="450" cy="18" r="110"/><circle cx="650" cy="40" r="95"/>
+      <circle cx="190" cy="210" r="80"/><circle cx="370" cy="180" r="90"/><circle cx="540" cy="190" r="90"/><circle cx="720" cy="210" r="80"/>
+      <circle cx="90" cy="335" r="60"/><circle cx="230" cy="357" r="62"/><circle cx="370" cy="347" r="60"/><circle cx="510" cy="361" r="62"/><circle cx="650" cy="355" r="61"/><circle cx="795" cy="339" r="60"/>
+    </g>
+    <!-- Küçük yaprak izleri -->
+    <g fill="#3E8A34" opacity="0.45">
+      <ellipse cx="120" cy="210" rx="11" ry="5" transform="rotate(30 120 210)"/><ellipse cx="300" cy="140" rx="11" ry="5" transform="rotate(-20 300 140)"/>
+      <ellipse cx="420" cy="290" rx="11" ry="5" transform="rotate(15 420 290)"/><ellipse cx="600" cy="150" rx="11" ry="5" transform="rotate(40 600 150)"/>
+      <ellipse cx="760" cy="300" rx="11" ry="5" transform="rotate(-30 760 300)"/><ellipse cx="210" cy="300" rx="11" ry="5" transform="rotate(20 210 300)"/>
+      <ellipse cx="560" cy="310" rx="11" ry="5" transform="rotate(-15 560 310)"/><ellipse cx="690" cy="110" rx="11" ry="5" transform="rotate(10 690 110)"/>
+      <ellipse cx="340" cy="80" rx="11" ry="5" transform="rotate(-35 340 80)"/><ellipse cx="850" cy="230" rx="11" ry="5" transform="rotate(25 850 230)"/>
+      <ellipse cx="60" cy="250" rx="11" ry="5" transform="rotate(-10 60 250)"/><ellipse cx="480" cy="110" rx="11" ry="5" transform="rotate(30 480 110)"/>
+    </g>
+    <!-- Alt kısım gölgesi -->
+    <rect x="0" y="250" width="900" height="270" fill="url(#altgolge)"/>
+    <!-- Çiçekler -->
+    <use xlink:href="#cicek" transform="translate(160 160)"/><use xlink:href="#cicek" transform="translate(330 280) scale(0.9)"/>
+    <use xlink:href="#cicek" transform="translate(620 290)"/><use xlink:href="#cicek" transform="translate(760 170) scale(1.1)"/>
+    <use xlink:href="#cicek" transform="translate(470 250) scale(0.8)"/><use xlink:href="#cicek" transform="translate(90 250) scale(0.9)"/>
+    <use xlink:href="#cicek" transform="translate(560 90)"/><use xlink:href="#cicek" transform="translate(260 110) scale(0.8)"/>
+  </g>
+</svg>

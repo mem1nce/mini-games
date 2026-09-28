@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <radialGradient id="kabuk" cx="0.4" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#E0C8FF"/>
+      <stop offset="0.5" stop-color="#A57AF0"/>
+      <stop offset="1" stop-color="#6A42C0"/>
+    </radialGradient>
+    <linearGradient id="govde" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFE4B0"/>
+      <stop offset="1" stop-color="#F2B866"/>
+    </linearGradient>
+  </defs>
+  <!-- Gövde -->
+  <path d="M26 164 Q30 140 58 140 L162 150 Q182 152 182 168 Q182 180 164 180 L40 180 Q22 180 26 164 Z" fill="url(#govde)" stroke="#8A5A1A" stroke-width="5" stroke-linejoin="round"/>
+  <!-- Kabuk -->
+  <circle cx="120" cy="108" r="52" fill="url(#kabuk)" stroke="#3F2770" stroke-width="6"/>
+  <path d="M120 108 m-4 0 a4 4 0 1 1 8 0 a12 12 0 1 1 -24 0 a22 22 0 1 1 44 0 a33 33 0 1 1 -66 0" fill="none" stroke="#3F2770" stroke-width="5" stroke-linecap="round" opacity="0.6"/>
+  <ellipse cx="100" cy="80" rx="14" ry="8" transform="rotate(-30 100 80)" fill="#FFFFFF" opacity="0.6"/>
+  <!-- Baş ve gözler -->
+  <path d="M40 132 L30 96 M56 130 L62 94" stroke="#8A5A1A" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="48" cy="146" r="24" fill="url(#govde)" stroke="#8A5A1A" stroke-width="5"/>
+  <circle cx="29" cy="92" r="9" fill="#FFFFFF" stroke="#8A5A1A" stroke-width="3"/>
+  <circle cx="63" cy="90" r="9" fill="#FFFFFF" stroke="#8A5A1A" stroke-width="3"/>
+  <circle cx="30" cy="93" r="4" fill="#2A1F45"/>
+  <circle cx="64" cy="91" r="4" fill="#2A1F45"/>
+  <path d="M38 154 Q48 162 58 154" fill="none" stroke="#8A5A1A" stroke-width="4" stroke-linecap="round"/>
+  <ellipse cx="34" cy="150" rx="5" ry="3.5" fill="#FF8FB0" opacity="0.8"/>
+  <ellipse cx="62" cy="150" rx="5" ry="3.5" fill="#FF8FB0" opacity="0.8"/>
+</svg>

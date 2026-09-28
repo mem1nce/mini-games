@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <radialGradient id="tas" cx="0.38" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#DEE1E9"/>
+      <stop offset="0.55" stop-color="#A6ABBA"/>
+      <stop offset="1" stop-color="#777C8E"/>
+    </radialGradient>
+  </defs>
+  <path d="M58 196 C28 176 34 118 68 94 C96 68 152 62 188 84 C224 106 234 162 210 196 C188 226 98 228 58 196 Z" fill="url(#tas)" stroke="#474B5A" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M196 170 C188 196 160 212 124 214" fill="none" stroke="#5E6272" stroke-width="9" stroke-linecap="round" opacity="0.3"/>
+  <g fill="#6E7384" opacity="0.5">
+    <circle cx="80" cy="130" r="4"/><circle cx="190" cy="140" r="3.5"/><circle cx="170" cy="190" r="3"/><circle cx="96" cy="190" r="3.5"/><circle cx="150" cy="104" r="3"/>
+  </g>
+  <path d="M160 88 L150 110 L162 124" fill="none" stroke="#5E6272" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <ellipse cx="96" cy="104" rx="22" ry="11" transform="rotate(-25 96 104)" fill="#FFFFFF" opacity="0.55"/>
+  <!-- Uykulu, sıkılmış yüz -->
+  <path d="M100 150 Q111 158 122 150 M146 150 Q157 158 168 150" fill="none" stroke="#474B5A" stroke-width="5" stroke-linecap="round"/>
+  <path d="M124 176 H144" stroke="#474B5A" stroke-width="5" stroke-linecap="round"/>
+</svg>

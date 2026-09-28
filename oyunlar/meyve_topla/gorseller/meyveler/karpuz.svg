@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="kabuk" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5CC766"/>
+      <stop offset="1" stop-color="#2A7A36"/>
+    </linearGradient>
+    <linearGradient id="beyaz" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F2FFE0"/>
+      <stop offset="1" stop-color="#C4F09A"/>
+    </linearGradient>
+    <radialGradient id="et" cx="0.45" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#FFA6B0"/>
+      <stop offset="0.55" stop-color="#F2465E"/>
+      <stop offset="1" stop-color="#CE2846"/>
+    </radialGradient>
+    <radialGradient id="cekirdek" cx="0.4" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#6A4A5A"/>
+      <stop offset="1" stop-color="#1E1018"/>
+    </radialGradient>
+    <radialGradient id="golge" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#3A2A4A" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#3A2A4A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <g transform="rotate(-8 128 140)">
+    <!-- Kabuk, beyaz kısım, meyve eti -->
+    <path d="M128 34 L230 190 Q128 250 26 190 Z" fill="url(#kabuk)" stroke="#1F5E2A" stroke-width="7" stroke-linejoin="round"/>
+    <path d="M44 204 Q128 240 212 204" fill="none" stroke="#1F6A2E" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+    <path d="M128 44 L220 186 Q128 236 36 186 Z" fill="url(#beyaz)"/>
+    <path d="M128 52 L208 180 Q128 222 48 180 Z" fill="url(#et)"/>
+    <path d="M120 72 L74 150" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" opacity="0.35"/>
+    <circle cx="118" cy="68" r="4" fill="#FFFFFF" opacity="0.6"/>
+    <!-- Çekirdekler -->
+    <g transform="translate(128 98)"><path d="M0 -9 C5 -3 6 4 0 8 C-6 4 -5 -3 0 -9 Z" fill="url(#cekirdek)"/><circle cx="-1.5" cy="-2" r="1.6" fill="#FFFFFF" opacity="0.8"/></g>
+    <g transform="translate(110 128) rotate(-15)"><path d="M0 -9 C5 -3 6 4 0 8 C-6 4 -5 -3 0 -9 Z" fill="url(#cekirdek)"/><circle cx="-1.5" cy="-2" r="1.6" fill="#FFFFFF" opacity="0.8"/></g>
+    <g transform="translate(146 128) rotate(15)"><path d="M0 -9 C5 -3 6 4 0 8 C-6 4 -5 -3 0 -9 Z" fill="url(#cekirdek)"/><circle cx="-1.5" cy="-2" r="1.6" fill="#FFFFFF" opacity="0.8"/></g>
+    <g transform="translate(92 158) rotate(-22)"><path d="M0 -9 C5 -3 6 4 0 8 C-6 4 -5 -3 0 -9 Z" fill="url(#cekirdek)"/><circle cx="-1.5" cy="-2" r="1.6" fill="#FFFFFF" opacity="0.8"/></g>
+    <g transform="translate(128 156)"><path d="M0 -9 C5 -3 6 4 0 8 C-6 4 -5 -3 0 -9 Z" fill="url(#cekirdek)"/><circle cx="-1.5" cy="-2" r="1.6" fill="#FFFFFF" opacity="0.8"/></g>
+    <g transform="translate(164 158) rotate(22)"><path d="M0 -9 C5 -3 6 4 0 8 C-6 4 -5 -3 0 -9 Z" fill="url(#cekirdek)"/><circle cx="-1.5" cy="-2" r="1.6" fill="#FFFFFF" opacity="0.8"/></g>
+    <g transform="translate(110 186) rotate(-12)"><path d="M0 -9 C5 -3 6 4 0 8 C-6 4 -5 -3 0 -9 Z" fill="url(#cekirdek)"/><circle cx="-1.5" cy="-2" r="1.6" fill="#FFFFFF" opacity="0.8"/></g>
+    <g transform="translate(146 186) rotate(12)"><path d="M0 -9 C5 -3 6 4 0 8 C-6 4 -5 -3 0 -9 Z" fill="url(#cekirdek)"/><circle cx="-1.5" cy="-2" r="1.6" fill="#FFFFFF" opacity="0.8"/></g>
+  </g>
+</svg>
