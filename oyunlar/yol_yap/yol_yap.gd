@@ -7,6 +7,9 @@ const Levels := preload("res://oyunlar/yol_yap/bolumler.gd")
 
 enum State { SELECT, PLAYING, ROLLING, CELEBRATING, FINISHED }
 
+## Ekran yönü: SahneGecis bu oyuna geçerken ekranı buna göre döndürür.
+@export_enum("dikey", "yatay") var ekran_yonu: String = "dikey"
+
 ## Bilyenin yuvarlanma hızı (hücre/saniye).
 @export var roll_speed: float = 2.5
 ## Bölüm sonu kutlamasının süresi (saniye); sonra sonraki bölüme geçilir.

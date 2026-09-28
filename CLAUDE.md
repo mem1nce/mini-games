@@ -3,18 +3,46 @@
 Küçük çocuklar (4-8 yaş) için basit eğitici mini oyunlar. Oyun fikirlerini kullanıcı verir, birlikte geliştiririz.
 Uygulamanın adı "Minik Oyunlar" (`application/config/name`; `user://` klasörü de bu adla: `app_userdata/Minik Oyunlar`).
 
+## Takım çalışması
+
+Bu repoyu iki kişi kullanıyor (git kullanıcı adları): **mem1nce** ve **emirsalihgmrk**. İkisinin Claude'u da bu dosyayı okur.
+
+### Dallarla çalışma
+
+- `main` dalı her zaman çalışan sürümdür. `main`'e doğrudan commit veya push yapma (GitHub'da `main` korumalı: PR olmadan push, force push ve dal silme engelli).
+- Her yeni iş için `main`'in güncel halinden yeni bir dal aç: `git checkout main`, `git pull`, sonra `git checkout -b <isim>/<kısa-açıklama>` (ör. `mehmet/meyve-topla-ses`). Commit'lenmemiş değişiklik varsa önce kullanıcıya sor.
+- Bir iş = bir dal. Dallar kısa ömürlü olsun.
+- İş bitince: dalı push'la (`git push -u origin <dal>`), `gh pr create` ile Pull Request aç (açıklamaya neyi değiştirdiğini ve Godot'ta nasıl test edileceğini yaz), sonra onay beklemeden `gh pr merge --merge --delete-branch` ile birleştir. Ardından `main`'e dön, `git pull` yap ve yerel dalı sil (`git branch -d <dal>`; gh sildiyse gerek yok).
+- PR'da çakışma (conflict) varsa birleştirme; dur ve kullanıcıya açıkla.
+- Uzun süren bir işte `main`'deki yenilikleri almak için `main`'i dalına merge et (`git fetch`, sonra `git merge origin/main`). Paylaşılan dallarda rebase yapma.
+- Başkasının açık dalında, sahibi istemedikçe commit yapma.
+- `gh` kurulu değilse veya giriş yapılmamışsa (`gh auth status`), kullanıcıya kurulum ve giriş adımlarını hatırlat: `winget install GitHub.cli`, terminali yeniden aç, `gh auth login` (GitHub.com → HTTPS → tarayıcı ile giriş).
+
+### Sahiplik ve genel kurallar
+
+- Oyun sahipleri:
+  - **mem1nce**: `ucan_kus`, `dondurmaci`, `yol_yap`, `hafiza`, `meyve_topla`
+  - **emirsalihgmrk**: `golge_eslestirme`
+- Herkes sadece kendi oyun klasöründe çalışır. Başkasına ait oyunun dosyalarını açıkça istenmedikçe değiştirme.
+- Ortak dosyalar: `project.godot`, `res://ana_menu/`, `res://ortak/`, `CLAUDE.md`. Bunlarda değişiklik yapmadan önce ne değişeceğini söyle ve onay al; değişiklikleri küçük tut.
+- Yeni oyun eklerken yönünü (dikey/yatay) belirt ve ana menüye kartını ekle; bunu ayrı bir commit olarak yap.
+- Küçük ve sık commit at, açık Türkçe commit mesajları yaz.
+- Çakışma (conflict) çıkarsa kendi başına çözme ve başkasının değişikliğini asla silme. Dur ve kullanıcıya hangi dosyada ne olduğunu açıkla.
+- `git push --force`, `git reset --hard` veya geçmişi değiştiren komutları asla kullanma.
+- `.godot/` klasörü commit'lenmez. İki geliştirici de Godot 4.7.2 kullanır.
+
 ## Proje durumu
 
 - Motor: Godot 4.7, renderer: Mobile (`project.godot`). Hedef: sadece telefon (ileride Android).
-- Ekran: dikey (portrait), temel çözünürlük 720x1280; masaüstünde test penceresi 450x800.
-- Ekran ölçekleme: `canvas_items` + `expand` — görünen alan 720x1280'den uzun/geniş olabilir. Boyutu `get_viewport_rect().size` ile al, anchor/container kullan, sabit piksel konumlarına güvenme.
+- Ekran yönü: **her oyun dikey ya da yatay olabilir, yönünü SahneGecis sistemine bildirmelidir** — oyunun ana sahnesinin kök düğüm script'ine `@export_enum("dikey", "yatay") var ekran_yonu: String = "yatay"` (bu değişkeni olmayan sahne dikey sayılır). Dikey: çizim boyutu 720x1280 (bilgisayarda test penceresi 450x800); yatay: 1280x720 (800x450). Ana menü her zaman dikeydir.
+- Ekran ölçekleme: `canvas_items` + `expand` — görünen alan temel boyuttan uzun/geniş olabilir. Boyutu `get_viewport_rect().size` ile al, anchor/container kullan, sabit piksel konumlarına güvenme.
 - Giriş sadece dokunma (`InputEventScreenTouch`). Masaüstünde test için "Emulate Touch From Mouse" açık. Önemli öğeleri kenarlardan ve üstteki çentik bölgesinden uzak tut (üstten ~90 px, yanlardan ~40 px).
 - Başlangıç sahnesi: ana menü `res://ana_menu/ana_menu.tscn` (bir oyunu tek başına denemek için o oyunun sahnesini F6 ile çalıştır).
 
 ## Uygulama yapısı
 
-- `ana_menu/` — Ana menü: 7 oyun kartı (2 sütun, tek kalan ortada; satırlar ekrana sığmazsa kartlar orantılı küçülür; uzun adlarda kart yazısı küçülür), `OYUNLAR` listesinde. Kart çizimleri oyunların SVG'lerinin kopyaları (`ana_menu/gorseller/`, 2x + mipmap). İlerleme rozeti oyunların kendi `user://*.cfg` kayıtlarından okunur (`_ulasilan_bolum`; Köstebek'te rekor skor); kayıt yoksa gösterilmez. **Yeni oyun eklenince** `OYUNLAR`'a bir satır ve `_ciz()` içine çizimini ekle.
-- `ortak/sahne_gecis.gd` — autoload `SahneGecis`: `sahne_degistir(yol)`, `ana_menuye_don()`, `sahneyi_yeniden_baslat()`; yumuşak kararma/açılma, geçişte eski sahne durur. Android geri tuşu (`quit_on_go_back=false`, `NOTIFICATION_WM_GO_BACK_REQUEST`) ve Escape: oyundan ana menüye, ana menüden çıkış.
+- `ana_menu/` — Ana menü: 6 oyun kartı (2 sütun, tek kalan ortada; uzun adlarda kart yazısı küçülür), `OYUNLAR` listesinde. Kart çizimleri oyunların SVG'lerinin kopyaları (`ana_menu/gorseller/`, 2x + mipmap). İlerleme rozeti oyunların kendi `user://*.cfg` kayıtlarından okunur (`_ulasilan_bolum`); kayıt yoksa gösterilmez. **Yeni oyun eklenince** `OYUNLAR`'a bir satır ve `_ciz()` içine çizimini ekle.
+- `ortak/sahne_gecis.gd` — autoload `SahneGecis`: `sahne_degistir(yol)`, `ana_menuye_don()`, `sahneyi_yeniden_baslat()`; yumuşak kararma/açılma, geçişte eski sahne durur. Ekran yönü: perde kapalıyken yeni sahnenin `ekran_yonu` değeri okunur, `root.content_scale_size` 720x1280 / 1280x720 yapılır, mobilde `DisplayServer.screen_set_orientation`, bilgisayarda pencere çevrilir; sahne ancak bundan sonra ağaca eklenir (`_ready` doğru boyutla çalışır). F6 ile doğrudan açılan yatay sahne perde kapalıyken döndürülüp yeniden yüklenir. Android geri tuşu (`quit_on_go_back=false`, `NOTIFICATION_WM_GO_BACK_REQUEST`) ve Escape: oyundan ana menüye, ana menüden çıkış.
 - `ortak/tema.tres` — proje geneli tema (`gui/theme/custom`): Nunito (değişken font, ağırlıklar `FontVariation` ile; OpenType etiketi sayı olarak yazılmalı: `2003265652` = `wght`), düğme ve panel stilleri, `Baslik` / `KartYazisi` / `Rozet` tip varyasyonları. Fredoka Türkçe "ş" harfini düzgün göstermediği için kullanılmadı.
 - `ortak/basili_geri_dugmesi.gd` — basılı tutunca dolan halkalı geri düğmesi (`press` / `release` / `contains`, `completed` sinyali); dokunmayı oyun sahnesi yönetir. Gölge Eşleştirme ve Köstebek kullanır.
 - `ortak/ses_havuzu.gd` — küçük `AudioStreamPlayer` havuzu (`play(ad, pitch)`; boş oynatıcı yoksa en eski ses susar). Oyunun `sesler.gd`'si bunu `extends` edip `_init`'te `streams` / `volumes` verir. `ortak/ses/sentez.py`: seslerin Python sentez yardımcıları (oyunların `sesler/ses_uret.py` betikleri içe aktarır).
