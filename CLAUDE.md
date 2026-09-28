@@ -11,9 +11,9 @@ Bu repoyu iki kişi kullanıyor (git kullanıcı adları): **mem1nce** ve **emir
 
 - `main` dalı her zaman çalışan sürümdür. `main`'e doğrudan commit veya push yapma (GitHub'da `main` korumalı: PR olmadan push, force push ve dal silme engelli).
 - Her yeni iş için `main`'in güncel halinden yeni bir dal aç: `git checkout main`, `git pull`, sonra `git checkout -b <isim>/<kısa-açıklama>` (ör. `mehmet/meyve-topla-ses`). Commit'lenmemiş değişiklik varsa önce kullanıcıya sor.
-- Bir iş = bir dal. Dallar kısa ömürlü olsun, günlerce açık kalmasın.
-- İş bitince dalı push'la (`git push -u origin <dal>`) ve `gh pr create` ile Pull Request aç. PR açıklamasına neyi değiştirdiğini ve Godot'ta nasıl test edileceğini yaz. `gh` kullanılamıyorsa kullanıcıya PR açma linkini ver: `https://github.com/mem1nce/mini-games/pull/new/<dal>`.
-- PR birleştirildikten sonra `main`'e dön, `git pull` yap, yerel dalı sil (`git branch -d <dal>`).
+- Bir iş = bir dal. Dallar kısa ömürlü olsun.
+- İş bitince: dalı push'la (`git push -u origin <dal>`), `gh pr create` ile Pull Request aç (açıklamaya neyi değiştirdiğini ve Godot'ta nasıl test edileceğini yaz), sonra onay beklemeden `gh pr merge --merge --delete-branch` ile birleştir. Ardından `main`'e dön, `git pull` yap ve yerel dalı sil (`git branch -d <dal>`; gh sildiyse gerek yok).
+- PR'da çakışma (conflict) varsa birleştirme; dur ve kullanıcıya açıkla.
 - Uzun süren bir işte `main`'deki yenilikleri almak için `main`'i dalına merge et (`git fetch`, sonra `git merge origin/main`). Paylaşılan dallarda rebase yapma.
 - Başkasının açık dalında, sahibi istemedikçe commit yapma.
 - `gh` kurulu değilse veya giriş yapılmamışsa (`gh auth status`), kullanıcıya kurulum ve giriş adımlarını hatırlat: `winget install GitHub.cli`, terminali yeniden aç, `gh auth login` (GitHub.com → HTTPS → tarayıcı ile giriş).
