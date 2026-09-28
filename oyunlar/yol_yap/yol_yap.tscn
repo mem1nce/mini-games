@@ -1,0 +1,303 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://oyunlar/yol_yap/yol_yap.gd" id="1_oyun"]
+[ext_resource type="Texture2D" path="res://oyunlar/yol_yap/gorseller/arkaplan.svg" id="2_arka"]
+[ext_resource type="Texture2D" path="res://oyunlar/yol_yap/gorseller/hediye_kutu.svg" id="3_kutu"]
+[ext_resource type="Texture2D" path="res://oyunlar/yol_yap/gorseller/hediye_kapak.svg" id="4_kapak"]
+[ext_resource type="Texture2D" path="res://oyunlar/yol_yap/gorseller/bilye.svg" id="5_bilye"]
+[ext_resource type="Texture2D" path="res://oyunlar/yol_yap/gorseller/geri.svg" id="6_geri"]
+[ext_resource type="Texture2D" path="res://oyunlar/yol_yap/gorseller/yeniden.svg" id="7_yeniden"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tepsi"]
+bg_color = Color(0.85, 0.6, 0.38, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.42, 0.26, 0.15, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+shadow_color = Color(0, 0, 0, 0.15)
+shadow_size = 6
+shadow_offset = Vector2(0, 6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dugme"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.23, 0.18, 0.42, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+shadow_color = Color(0, 0, 0, 0.15)
+shadow_size = 5
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rozet"]
+bg_color = Color(1, 0.85, 0.3, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.23, 0.18, 0.42, 1)
+corner_radius_top_left = 55
+corner_radius_top_right = 55
+corner_radius_bottom_right = 55
+corner_radius_bottom_left = 55
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tekrar"]
+bg_color = Color(1, 0.42, 0.6, 1)
+border_width_bottom = 14
+border_color = Color(0.72, 0.16, 0.35, 1)
+corner_radius_top_left = 80
+corner_radius_top_right = 80
+corner_radius_bottom_right = 80
+corner_radius_bottom_left = 80
+
+[node name="YolYap" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_oyun")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_arka")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Game" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Tray" type="Panel" parent="Game"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 1030.0
+offset_right = 690.0
+offset_bottom = 1240.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tepsi")
+
+[node name="Board" type="Node2D" parent="Game"]
+
+[node name="Terrain" type="Node2D" parent="Game/Board"]
+
+[node name="Hints" type="Node2D" parent="Game/Board"]
+
+[node name="Goal" type="Node2D" parent="Game/Board"]
+
+[node name="Box" type="Sprite2D" parent="Game/Board/Goal"]
+texture = ExtResource("3_kutu")
+
+[node name="Lid" type="Sprite2D" parent="Game/Board/Goal"]
+texture = ExtResource("4_kapak")
+
+[node name="PieceLayer" type="Node2D" parent="Game"]
+
+[node name="Ball" type="Sprite2D" parent="Game"]
+texture = ExtResource("5_bilye")
+
+[node name="Effects" type="Node2D" parent="Game"]
+
+[node name="BackButton" type="Panel" parent="Game"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 60.0
+offset_right = 140.0
+offset_bottom = 170.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dugme")
+
+[node name="Icon" type="TextureRect" parent="Game/BackButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 18.0
+offset_right = -18.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("6_geri")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RestartButton" type="Panel" parent="Game"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 60.0
+offset_right = 270.0
+offset_bottom = 170.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dugme")
+
+[node name="Icon" type="TextureRect" parent="Game/RestartButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 18.0
+offset_right = -18.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_yeniden")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LevelBadge" type="Panel" parent="Game"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -140.0
+offset_top = 60.0
+offset_right = -30.0
+offset_bottom = 170.0
+grow_horizontal = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rozet")
+
+[node name="Label" type="Label" parent="Game/LevelBadge"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.23, 0.18, 0.42, 1)
+theme_override_constants/outline_size = 18
+theme_override_font_sizes/font_size = 64
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cheer" type="HBoxContainer" parent="Game"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -360.0
+offset_right = 360.0
+offset_bottom = -200.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="ReplayButton" type="Panel" parent="Game"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -140.0
+offset_right = 240.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tekrar")
+
+[node name="Label" type="Label" parent="Game/ReplayButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.6, 0.12, 0.3, 1)
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 64
+text = "Tekrar oyna"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelSelect" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Deco" type="HBoxContainer" parent="LevelSelect"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 90.0
+offset_bottom = 240.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Marble" type="TextureRect" parent="LevelSelect/Deco"]
+custom_minimum_size = Vector2(120, 150)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("5_bilye")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Gift" type="TextureRect" parent="LevelSelect/Deco"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_kutu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Grid" type="GridContainer" parent="LevelSelect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -285.0
+offset_top = -330.0
+offset_right = 285.0
+offset_bottom = 440.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 30
+columns = 3
