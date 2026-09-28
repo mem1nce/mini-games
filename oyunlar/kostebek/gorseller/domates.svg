@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <radialGradient id="domates" cx="0.35" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#FFB2A0"/>
+      <stop offset="0.45" stop-color="#FF4A3A"/>
+      <stop offset="1" stop-color="#C41E1E"/>
+    </radialGradient>
+    <linearGradient id="sap" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9BE36E"/>
+      <stop offset="1" stop-color="#2E8A2E"/>
+    </linearGradient>
+  </defs>
+  <!-- Gövde: hafif basık, dilimli -->
+  <path d="M128 72 C168 60 222 80 224 142 C226 196 180 228 128 228 C76 228 30 196 32 142 C34 80 88 60 128 72 Z" fill="url(#domates)" stroke="#7A0E14" stroke-width="7" stroke-linejoin="round"/>
+  <g fill="none" stroke="#A8141A" stroke-width="4.5" stroke-linecap="round" opacity="0.45">
+    <path d="M92 84 C70 120 72 170 92 214"/>
+    <path d="M164 84 C186 120 184 170 164 214"/>
+  </g>
+  <ellipse cx="80" cy="120" rx="14" ry="26" transform="rotate(25 80 120)" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="98" cy="94" r="6" fill="#FFFFFF" opacity="0.8"/>
+  <!-- Yeşil yıldız çanak ve sap -->
+  <path d="M128 60 L144 76 L176 72 L152 88 L162 110 L136 94 L128 116 L120 94 L94 110 L104 88 L80 72 L112 76 Z" fill="url(#sap)" stroke="#1F5E22" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M128 72 C126 56 130 44 140 36" fill="none" stroke="#1F5E22" stroke-width="12" stroke-linecap="round"/>
+  <path d="M128 72 C126 56 130 44 140 36" fill="none" stroke="#6CC04A" stroke-width="5" stroke-linecap="round"/>
+</svg>

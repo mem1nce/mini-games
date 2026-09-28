@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="200" viewBox="0 0 256 200">
+  <!-- Yumuşak "puf" bulutu (bomba). Tek dış hat: önce kalın konturla, sonra konturusuz aynı daireler. -->
+  <defs>
+    <radialGradient id="duman" gradientUnits="userSpaceOnUse" cx="110" cy="70" r="150">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.6" stop-color="#F1EEF7"/>
+      <stop offset="1" stop-color="#D9D3E6"/>
+    </radialGradient>
+  </defs>
+  <g fill="#B9B0CE" stroke="#B9B0CE" stroke-width="12">
+    <circle cx="70" cy="120" r="46"/><circle cx="118" cy="82" r="56"/><circle cx="178" cy="106" r="48"/>
+    <circle cx="138" cy="140" r="44"/><circle cx="96" cy="150" r="36"/><circle cx="202" cy="146" r="30"/>
+  </g>
+  <g fill="url(#duman)">
+    <circle cx="70" cy="120" r="46"/><circle cx="118" cy="82" r="56"/><circle cx="178" cy="106" r="48"/>
+    <circle cx="138" cy="140" r="44"/><circle cx="96" cy="150" r="36"/><circle cx="202" cy="146" r="30"/>
+  </g>
+  <ellipse cx="100" cy="58" rx="22" ry="11" transform="rotate(-20 100 58)" fill="#FFFFFF" opacity="0.9"/>
+</svg>

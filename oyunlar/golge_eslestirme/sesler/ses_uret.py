@@ -1,59 +1,18 @@
 # Gölge Eşleştirme sesleri: sadece Python standart kütüphanesiyle sentezlenir.
 # Çalıştırma: python ses_uret.py   (bu klasöre .wav dosyalarını yazar)
-# Sesler yumuşak ve kısa; tepe seviyesi -6 dBFS, başta/sonda kısa fade (tık sesi olmasın).
+# Sesler yumuşak ve kısa; ortak yardımcılar ortak/ses/sentez.py içinde (tepe -6 dBFS, kısa fade).
 
 import math
 import os
-import struct
-import wave
+import sys
 
-RATE = 44100
-PEAK = 0.5  # -6 dBFS
 HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.join(HERE, "..", "..", "..", "ortak", "ses"))
+from sentez import RATE, bell, melody, mix, note, save as _save, soft_tone  # noqa: E402
 
 
-def note(name: str) -> float:
-    # "C5", "E5", "G#4" gibi nota adlarını frekansa çevirir
-    names = {"C": 0, "C#": 1, "D": 2, "D#": 3, "E": 4, "F": 5, "F#": 6, "G": 7, "G#": 8, "A": 9, "A#": 10, "B": 11}
-    key, octave = name[:-1], int(name[-1])
-    semitone = names[key] + (octave - 4) * 12 - 9
-    return 440.0 * 2.0 ** (semitone / 12.0)
-
-
-def silence(seconds: float) -> list:
-    return [0.0] * int(RATE * seconds)
-
-
-def mix(target: list, source: list, start: float, gain: float = 1.0) -> None:
-    offset = int(start * RATE)
-    if len(target) < offset + len(source):
-        target.extend([0.0] * (offset + len(source) - len(target)))
-    for i, value in enumerate(source):
-        target[offset + i] += value * gain
-
-
-def bell(freq: float, seconds: float, decay: float = 5.0) -> list:
-    # Çan: temel + iki yumuşak üst kısmi, üstel sönüm
-    out = []
-    for i in range(int(RATE * seconds)):
-        t = i / RATE
-        env = math.exp(-decay * t) * min(1.0, t / 0.004)
-        v = math.sin(2 * math.pi * freq * t)
-        v += 0.35 * math.sin(2 * math.pi * freq * 2.0 * t) * math.exp(-3 * t)
-        v += 0.12 * math.sin(2 * math.pi * freq * 2.76 * t) * math.exp(-8 * t)
-        out.append(v * env)
-    return out
-
-
-def soft_tone(freq: float, seconds: float) -> list:
-    # Melodi notası: sinüs + biraz üst ses, yumuşak atak ve sönüm (marimba benzeri)
-    out = []
-    for i in range(int(RATE * seconds)):
-        t = i / RATE
-        env = min(1.0, t / 0.01) * math.exp(-3.2 * t)
-        v = math.sin(2 * math.pi * freq * t) + 0.25 * math.sin(2 * math.pi * freq * 3.0 * t) * math.exp(-10 * t)
-        out.append(v * env)
-    return out
+def save(name: str, samples: list) -> None:
+    _save(HERE, name, samples)
 
 
 def pop() -> list:
@@ -91,14 +50,6 @@ def boing() -> list:
     return out
 
 
-def melody(notes: list, step: float, tail: float) -> list:
-    out = silence(step * len(notes) + tail)
-    for k, name in enumerate(notes):
-        if name:
-            mix(out, soft_tone(note(name), tail + step), k * step)
-    return out
-
-
 def level_end() -> list:
     out = melody(["C5", "E5", "G5", "C6"], 0.13, 0.8)
     mix(out, bell(note("C7"), 0.6, 6.0), 0.52, 0.25)
@@ -116,22 +67,6 @@ def finale() -> list:
     for k, name in enumerate(["C7", "E7", "G7", "C8"]):
         mix(out, bell(note(name), 0.5, 7.0), 1.95 + k * 0.07, 0.15)
     return out
-
-
-def save(name: str, samples: list) -> None:
-    peak = max(abs(v) for v in samples) or 1.0
-    fade = int(RATE * 0.005)
-    n = len(samples)
-    frames = bytearray()
-    for i, v in enumerate(samples):
-        g = min(1.0, i / fade, (n - 1 - i) / fade)
-        frames += struct.pack("<h", int(max(-1.0, min(1.0, v / peak * PEAK * g)) * 32767))
-    with wave.open(os.path.join(HERE, name), "wb") as f:
-        f.setnchannels(1)
-        f.setsampwidth(2)
-        f.setframerate(RATE)
-        f.writeframes(bytes(frames))
-    print(name, round(n / RATE, 2), "sn")
 
 
 if __name__ == "__main__":
