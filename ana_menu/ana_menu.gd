@@ -1,5 +1,5 @@
 extends Control
-# Minik Oyunlar ana menüsü: altı oyunun kartı. Karta dokununca oyun açılır.
+# Minik Oyunlar ana menüsü: oyun kartları. Karta dokununca oyun açılır.
 # Kartlardaki çizimler oyunların kendi SVG'leridir (net görünsünler diye ana_menu/gorseller/
 # içine kopyalanıp 2x ölçekle içe aktarıldı). Yazı tipi ve stiller ortak/tema.tres'ten gelir.
 
@@ -16,6 +16,7 @@ const OYUNLAR := [
 	{"ad": "Hafıza", "sahne": "res://oyunlar/hafiza/hafiza.tscn", "renk": Color("e6ddff"), "cizim": "hafiza", "kayit": "hafiza"},
 	{"ad": "Meyve Topla", "sahne": "res://oyunlar/meyve_topla/meyve_topla.tscn", "renk": Color("ffe7cc"), "cizim": "kirpi", "kayit": "meyve_topla"},
 	{"ad": "Gölge Eşleştirme", "sahne": "res://oyunlar/golge_eslestirme/golge_eslestirme.tscn", "renk": Color("dff1ff"), "cizim": "golge", "kayit": "golge_eslestirme"},
+	{"ad": "Köstebek", "sahne": "res://oyunlar/kostebek/kostebek.tscn", "renk": Color("e3f5d0"), "cizim": "kostebek", "kayit": "kostebek"},
 ]
 
 const KART := Vector2(300, 292)
@@ -210,7 +211,8 @@ func _rozet_olustur(bolum: int) -> PanelContainer:
 	return rozet
 
 
-# Oyunların kendi kayıt dosyalarından ulaşılan bölümü okur; kayıt yoksa 0 döner (rozet gösterilmez)
+# Oyunların kendi kayıt dosyalarından ulaşılan bölümü (Köstebek'te rekor skoru) okur;
+# kayıt yoksa 0 döner (rozet gösterilmez)
 func _ulasilan_bolum(kayit: String) -> int:
 	if kayit == "":
 		return 0
@@ -232,23 +234,34 @@ func _ulasilan_bolum(kayit: String) -> int:
 			return int(ayar.get_value("ilerleme", "bolum", 0)) + 1
 		"golge_eslestirme":
 			return int(ayar.get_value("ilerleme", "bolum", 0)) + 1
+		"kostebek":
+			return int(ayar.get_value("rekor", "skor", 0))   # bölüm yok: rozet rekor skoru gösterir
 	return 0
 
 
+# Kartlar 2 sütun; satırlar ekrana sığmazsa kartlar orantılı küçülür (kart içi düzen aynı kalır)
 func _yerlestir() -> void:
-	var genislik := KART.x * 2.0 + ARALIK
-	var sol := (_ekran.x - genislik) / 2.0
 	var ust_sinir := 230.0
-	var yukseklik := KART.y * 3.0 + ARALIK * 2.0
-	var ust := ust_sinir + maxf(0.0, (_ekran.y - 50.0 - ust_sinir - yukseklik) / 2.0)
+	var alt_bosluk := 50.0
+	var satir_sayisi := ceili(_kartlar.size() / 2.0)
+	var yer_yuksekligi := _ekran.y - ust_sinir - alt_bosluk - ARALIK * (satir_sayisi - 1)
+	var olcek := minf(1.0, yer_yuksekligi / (KART.y * satir_sayisi))
+	var kart := KART * olcek
+	var genislik := kart.x * 2.0 + ARALIK
+	var sol := (_ekran.x - genislik) / 2.0
+	var yukseklik := kart.y * satir_sayisi + ARALIK * (satir_sayisi - 1)
+	var ust := ust_sinir + maxf(0.0, (_ekran.y - alt_bosluk - ust_sinir - yukseklik) / 2.0)
 	for i in _kartlar.size():
 		var satir := floori(i / 2.0)
 		var sutun := i % 2
-		var x := sol + sutun * (KART.x + ARALIK)
+		var x := sol + sutun * (kart.x + ARALIK)
 		if i == _kartlar.size() - 1 and _kartlar.size() % 2 == 1:
-			x = (_ekran.x - KART.x) / 2.0  # tek kalan kart ortada
-		_kartlar[i].position = Vector2(x, ust + satir * (KART.y + ARALIK))
+			x = (_ekran.x - kart.x) / 2.0  # tek kalan kart ortada
+		# pivot kartın ortasında: ölçekli kartın sol üstü position + KART/2 * (1 - olcek) kadar kayar
+		_kartlar[i].position = Vector2(x, ust + satir * (kart.y + ARALIK)) - KART / 2.0 * (1.0 - olcek)
 		_kartlar[i].set_meta("yer", _kartlar[i].position)
+		_kartlar[i].set_meta("olcek", Vector2.ONE * olcek)
+		_kartlar[i].scale = Vector2.ONE * olcek
 
 
 # Başlık yukarıdan süzülür, kartlar sırayla hafifçe zıplayarak gelir
@@ -262,14 +275,15 @@ func _acilis_animasyonu() -> void:
 	for i in _kartlar.size():
 		var kart := _kartlar[i]
 		var yer: Vector2 = kart.get_meta("yer")
+		var olcek: Vector2 = kart.get_meta("olcek")
 		kart.position = yer + Vector2(0, 50)
-		kart.scale = Vector2(0.8, 0.8)
+		kart.scale = olcek * 0.8
 		kart.modulate.a = 0.0
 		var gecikme := 0.25 + i * 0.09
 		var kart_tween := kart.create_tween().set_parallel()
 		kart_tween.tween_property(kart, "modulate:a", 1.0, 0.25).set_delay(gecikme)
 		kart_tween.tween_property(kart, "position", yer, 0.6).set_delay(gecikme).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
-		kart_tween.tween_property(kart, "scale", Vector2.ONE, 0.6).set_delay(gecikme).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+		kart_tween.tween_property(kart, "scale", olcek, 0.6).set_delay(gecikme).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 
 
 func _process(delta: float) -> void:
@@ -308,10 +322,11 @@ func _input(event: InputEvent) -> void:
 func _karta_dokun(index: int) -> void:
 	_secildi = true
 	var kart := _kartlar[index]
+	var olcek: Vector2 = kart.get_meta("olcek")
 	var tween := kart.create_tween()
-	tween.tween_property(kart, "scale", Vector2(0.92, 0.92), 0.08).set_trans(Tween.TRANS_SINE)
-	tween.tween_property(kart, "scale", Vector2(1.04, 1.04), 0.16).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
-	tween.tween_property(kart, "scale", Vector2.ONE, 0.1)
+	tween.tween_property(kart, "scale", olcek * 0.92, 0.08).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(kart, "scale", olcek * 1.04, 0.16).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	tween.tween_property(kart, "scale", olcek, 0.1)
 	tween.tween_callback(SahneGecis.sahne_degistir.bind(OYUNLAR[index]["sahne"]))
 
 
@@ -372,3 +387,12 @@ func _ciz(cizim: Node2D, tur: String) -> void:
 			malzeme.shader = GolgeShader
 			golge.material = malzeme
 			_sprite(cizim, "tavsan.svg", 150.0, Vector2(40, 0), 0.1)
+		"kostebek":
+			# Köstebek Vurma: çukurdan çıkmış kasklı köstebek (oyundaki katman sırasıyla)
+			var cukur := 210.0 / 320.0      # çukur tuvalinin bir biriminin kart içindeki boyu
+			var agiz := Vector2(0, 54)
+			var kostebek_yeri := agiz + Vector2(0, -104.0 * cukur)
+			_sprite(cizim, "cukur_arka.svg", 210.0, agiz)
+			for dosya in ["kostebek.svg", "kostebek_yuz.svg", "kostebek_kask.svg"]:
+				_sprite(cizim, dosya, 256.0 * cukur, kostebek_yeri)
+			_sprite(cizim, "cukur_on.svg", 210.0, agiz)

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96">
+  <!-- Fitil kıvılcımı: kodda titreşir, döner ve boyu değişir -->
+  <path d="M48 2 L56 32 L82 14 L66 40 L94 48 L66 56 L82 82 L56 64 L48 94 L40 64 L14 82 L30 56 L2 48 L30 40 L14 14 L40 32 Z" fill="#FFB020" stroke="#E86A00" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M48 20 L53 38 L70 28 L60 44 L76 48 L60 52 L70 68 L53 58 L48 76 L43 58 L26 68 L36 52 L20 48 L36 44 L26 28 L43 38 Z" fill="#FFE55C"/>
+  <circle cx="48" cy="48" r="10" fill="#FFFFFF"/>
+</svg>

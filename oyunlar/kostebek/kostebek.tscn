@@ -1,0 +1,50 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://oyunlar/kostebek/kostebek.gd" id="1_oyun"]
+[ext_resource type="Resource" path="res://oyunlar/kostebek/denge.tres" id="2_denge"]
+[ext_resource type="Script" path="res://oyunlar/kostebek/arka_plan.gd" id="3_arka"]
+[ext_resource type="Script" path="res://oyunlar/kostebek/efektler.gd" id="4_efekt"]
+[ext_resource type="Script" path="res://oyunlar/kostebek/cikis_yoneticisi.gd" id="5_cikis"]
+[ext_resource type="Script" path="res://oyunlar/kostebek/arayuz.gd" id="6_arayuz"]
+[ext_resource type="Script" path="res://oyunlar/kostebek/sesler.gd" id="7_sesler"]
+
+[node name="Kostebek" type="Control"]
+texture_filter = 4
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_oyun")
+balance = ExtResource("2_denge")
+
+[node name="Background" type="Node2D" parent="."]
+script = ExtResource("3_arka")
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="Holes" type="Node2D" parent="World"]
+
+[node name="Effects" type="Node2D" parent="World"]
+script = ExtResource("4_efekt")
+
+[node name="Spawner" type="Node" parent="."]
+script = ExtResource("5_cikis")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Hud" type="Control" parent="UI"]
+texture_filter = 4
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("6_arayuz")
+
+[node name="Sounds" type="Node" parent="."]
+script = ExtResource("7_sesler")

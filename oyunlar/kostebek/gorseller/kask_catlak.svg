@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="300" viewBox="0 0 256 300">
+  <!-- Kaskın üstündeki çatlaklar (kırılma anında kısa görünür) -->
+  <g transform="matrix(1 0 0 0.86 0 2)">
+  <g fill="none" stroke="#5A3000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M100 8 L108 34 L94 54 L106 76 L96 104"/>
+    <path d="M158 8 L150 32 L164 54 L152 78 L160 104"/>
+    <path d="M94 54 L76 60 M164 54 L184 48 M106 76 L126 70"/>
+  </g>
+  </g>
+</svg>

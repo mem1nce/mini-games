@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="300" viewBox="0 0 256 300">
+  <!-- Köstebek yüzü: şaşkın (kask kırılınca) - kocaman gözler, kalkık kaşlar, "o" ağız -->
+  <g stroke="#2A1F45" stroke-width="4.5">
+    <circle cx="94" cy="108" r="19" fill="#FFFFFF"/>
+    <circle cx="162" cy="108" r="19" fill="#FFFFFF"/>
+  </g>
+  <g fill="#2A1F45">
+    <circle cx="96" cy="110" r="8"/><circle cx="160" cy="110" r="8"/>
+  </g>
+  <g fill="#FFFFFF"><circle cx="99" cy="106" r="3"/><circle cx="163" cy="106" r="3"/></g>
+  <g fill="none" stroke="#3E2412" stroke-width="5" stroke-linecap="round">
+    <path d="M76 78 Q92 68 108 76"/>
+    <path d="M148 76 Q164 68 180 78"/>
+  </g>
+  <ellipse cx="128" cy="180" rx="10" ry="12" fill="#6A2A3A" stroke="#3E2412" stroke-width="4.5"/>
+  <ellipse cx="128" cy="185" rx="6" ry="5" fill="#FF7FA3"/>
+</svg>
