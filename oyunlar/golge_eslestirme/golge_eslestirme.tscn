@@ -1,0 +1,102 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://oyunlar/golge_eslestirme/golge_eslestirme.gd" id="1_oyun"]
+[ext_resource type="Script" path="res://oyunlar/golge_eslestirme/bolum_verisi.gd" id="2_bolum"]
+[ext_resource type="Texture2D" path="res://oyunlar/golge_eslestirme/gorseller/tepeler.svg" id="3_tepeler"]
+[ext_resource type="Script" path="res://oyunlar/golge_eslestirme/kutlama.gd" id="4_kutlama"]
+[ext_resource type="Script" path="res://oyunlar/golge_eslestirme/ipucu_eli.gd" id="5_el"]
+[ext_resource type="Script" path="res://oyunlar/golge_eslestirme/ilerleme_noktalari.gd" id="6_ilerleme"]
+[ext_resource type="Script" path="res://oyunlar/golge_eslestirme/geri_dugmesi.gd" id="7_geri"]
+[ext_resource type="Script" path="res://oyunlar/golge_eslestirme/sesler.gd" id="8_sesler"]
+[ext_resource type="Resource" path="res://oyunlar/golge_eslestirme/bolumler/bolum_01.tres" id="b01"]
+[ext_resource type="Resource" path="res://oyunlar/golge_eslestirme/bolumler/bolum_02.tres" id="b02"]
+[ext_resource type="Resource" path="res://oyunlar/golge_eslestirme/bolumler/bolum_03.tres" id="b03"]
+[ext_resource type="Resource" path="res://oyunlar/golge_eslestirme/bolumler/bolum_04.tres" id="b04"]
+[ext_resource type="Resource" path="res://oyunlar/golge_eslestirme/bolumler/bolum_05.tres" id="b05"]
+[ext_resource type="Resource" path="res://oyunlar/golge_eslestirme/bolumler/bolum_06.tres" id="b06"]
+[ext_resource type="Resource" path="res://oyunlar/golge_eslestirme/bolumler/bolum_07.tres" id="b07"]
+[ext_resource type="Resource" path="res://oyunlar/golge_eslestirme/bolumler/bolum_08.tres" id="b08"]
+[ext_resource type="Resource" path="res://oyunlar/golge_eslestirme/bolumler/bolum_09.tres" id="b09"]
+[ext_resource type="Resource" path="res://oyunlar/golge_eslestirme/bolumler/bolum_10.tres" id="b10"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tepsi"]
+bg_color = Color(1, 1, 1, 0.5)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 0.75)
+corner_radius_top_left = 56
+corner_radius_top_right = 56
+corner_radius_bottom_right = 56
+corner_radius_bottom_left = 56
+shadow_color = Color(0.25, 0.2, 0.45, 0.1)
+shadow_size = 14
+shadow_offset = Vector2(0, 8)
+
+[node name="GolgeEslestirme" type="Control"]
+texture_filter = 4
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_oyun")
+levels = Array[ExtResource("2_bolum")]([ExtResource("b01"), ExtResource("b02"), ExtResource("b03"), ExtResource("b04"), ExtResource("b05"), ExtResource("b06"), ExtResource("b07"), ExtResource("b08"), ExtResource("b09"), ExtResource("b10")])
+
+[node name="Sky" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+
+[node name="Floaters" type="Node2D" parent="."]
+
+[node name="Hills" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -300.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+texture = ExtResource("3_tepeler")
+expand_mode = 1
+
+[node name="Tray" type="Panel" parent="."]
+layout_mode = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tepsi")
+
+[node name="Slots" type="Node2D" parent="."]
+
+[node name="Items" type="Node2D" parent="."]
+
+[node name="Effects" type="Node2D" parent="."]
+script = ExtResource("4_kutlama")
+
+[node name="Hand" type="Node2D" parent="."]
+script = ExtResource("5_el")
+
+[node name="Progress" type="Node2D" parent="."]
+script = ExtResource("6_ilerleme")
+
+[node name="BackButton" type="Control" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 50.0
+offset_right = 150.0
+offset_bottom = 160.0
+mouse_filter = 2
+script = ExtResource("7_geri")
+
+[node name="Sounds" type="Node" parent="."]
+script = ExtResource("8_sesler")

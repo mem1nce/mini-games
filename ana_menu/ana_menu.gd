@@ -1,11 +1,12 @@
 extends Control
-# Minik Oyunlar ana menüsü: beş oyunun kartı. Karta dokununca oyun açılır.
+# Minik Oyunlar ana menüsü: altı oyunun kartı. Karta dokununca oyun açılır.
 # Kartlardaki çizimler oyunların kendi SVG'leridir (net görünsünler diye ana_menu/gorseller/
 # içine kopyalanıp 2x ölçekle içe aktarıldı). Yazı tipi ve stiller ortak/tema.tres'ten gelir.
 
 const G := "res://ana_menu/gorseller/"
 const YolBolumleri := preload("res://oyunlar/yol_yap/bolumler.gd")
 const HafizaVerileri := preload("res://oyunlar/hafiza/veriler.gd")
+const GolgeShader := preload("res://oyunlar/golge_eslestirme/golge.gdshader")
 
 # Yeni oyun eklemek için: buraya bir satır ve _ciz() içine çizimini ekle
 const OYUNLAR := [
@@ -14,6 +15,7 @@ const OYUNLAR := [
 	{"ad": "Yol Yap", "sahne": "res://oyunlar/yol_yap/yol_yap.tscn", "renk": Color("d3f4e2"), "cizim": "yol", "kayit": "yol_yap"},
 	{"ad": "Hafıza", "sahne": "res://oyunlar/hafiza/hafiza.tscn", "renk": Color("e6ddff"), "cizim": "hafiza", "kayit": "hafiza"},
 	{"ad": "Meyve Topla", "sahne": "res://oyunlar/meyve_topla/meyve_topla.tscn", "renk": Color("ffe7cc"), "cizim": "kirpi", "kayit": "meyve_topla"},
+	{"ad": "Gölge Eşleştirme", "sahne": "res://oyunlar/golge_eslestirme/golge_eslestirme.tscn", "renk": Color("dff1ff"), "cizim": "golge", "kayit": "golge_eslestirme"},
 ]
 
 const KART := Vector2(300, 292)
@@ -148,11 +150,22 @@ func _kart_olustur(oyun: Dictionary) -> Panel:
 	ad.position = Vector2(0, KART.y - 78.0)
 	ad.size = Vector2(KART.x, 60)
 	kart.add_child(ad)
+	ad.ready.connect(_yaziyi_sigdir.bind(ad))
 
 	var bolum := _ulasilan_bolum(oyun["kayit"])
 	if bolum > 0:
 		kart.add_child(_rozet_olustur(bolum))
 	return kart
+
+
+# Uzun adlar (ör. "Gölge Eşleştirme") karta sığsın diye yazı biraz küçülür.
+# Tema değerleri ancak düğüm ağaca eklenince doğru okunduğu için ready'de çalışır.
+func _yaziyi_sigdir(ad: Label) -> void:
+	var yazi_tipi := ad.get_theme_font("font")
+	var yazi_boyu := ad.get_theme_font_size("font_size")
+	while yazi_boyu > 24 and yazi_tipi.get_string_size(ad.text, HORIZONTAL_ALIGNMENT_LEFT, -1, yazi_boyu).x > KART.x - 32.0:
+		yazi_boyu -= 2
+	ad.add_theme_font_size_override("font_size", yazi_boyu)
 
 
 # Sağ üst köşede küçük ilerleme rozeti: yıldız ve ulaşılan bölüm
@@ -216,6 +229,8 @@ func _ulasilan_bolum(kayit: String) -> int:
 					en_iyi = maxi(en_iyi, mini(int(ayar.get_value("ilerleme", tema, 0)) + 1, HafizaVerileri.LEVELS.size()))
 			return en_iyi
 		"meyve_topla":
+			return int(ayar.get_value("ilerleme", "bolum", 0)) + 1
+		"golge_eslestirme":
 			return int(ayar.get_value("ilerleme", "bolum", 0)) + 1
 	return 0
 
@@ -350,3 +365,10 @@ func _ciz(cizim: Node2D, tur: String) -> void:
 			_sprite(kok, "portakal.svg", 56.0, Vector2(40, -228), 0.2)
 			_sprite(kok, "cilek.svg", 58.0, Vector2(0, -250))
 			_sprite(kok, "sepet_on.svg", 200.0, Vector2(0, -200))
+		"golge":
+			# Gölge Eşleştirme: tavşanın gölgesi (oyundaki siluet shader'ıyla) ve önünde tavşan
+			var golge := _sprite(cizim, "tavsan.svg", 150.0, Vector2(-38, 6), -0.06)
+			var malzeme := ShaderMaterial.new()
+			malzeme.shader = GolgeShader
+			golge.material = malzeme
+			_sprite(cizim, "tavsan.svg", 150.0, Vector2(40, 0), 0.1)

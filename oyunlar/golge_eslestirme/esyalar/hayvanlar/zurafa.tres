@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ShadowItemData" format=3]
+
+[ext_resource type="Script" path="res://oyunlar/golge_eslestirme/esya_verisi.gd" id="1_veri"]
+[ext_resource type="Texture2D" path="res://oyunlar/golge_eslestirme/esyalar/hayvanlar/zurafa.svg" id="2_gorsel"]
+
+[resource]
+script = ExtResource("1_veri")
+texture = ExtResource("2_gorsel")

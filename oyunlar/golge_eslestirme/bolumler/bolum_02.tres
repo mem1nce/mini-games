@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ShadowLevelData" format=3]
+
+[ext_resource type="Script" path="res://oyunlar/golge_eslestirme/bolum_verisi.gd" id="1_bolum"]
+[ext_resource type="Script" path="res://oyunlar/golge_eslestirme/esya_verisi.gd" id="2_esya"]
+[ext_resource type="Resource" path="res://oyunlar/golge_eslestirme/esyalar/sekiller/kalp.tres" id="3_kalp"]
+[ext_resource type="Resource" path="res://oyunlar/golge_eslestirme/esyalar/sekiller/hilal.tres" id="4_hilal"]
+[ext_resource type="Resource" path="res://oyunlar/golge_eslestirme/esyalar/sekiller/altigen.tres" id="5_altigen"]
+[ext_resource type="Resource" path="res://oyunlar/golge_eslestirme/esyalar/sekiller/dikdortgen.tres" id="6_dikdortgen"]
+
+[resource]
+script = ExtResource("1_bolum")
+items = Array[ExtResource("2_esya")]([ExtResource("3_kalp"), ExtResource("4_hilal"), ExtResource("5_altigen"), ExtResource("6_dikdortgen")])
+sky_top = Color(0.749, 0.8902, 1.0, 1)
+sky_bottom = Color(1.0, 0.9451, 0.851, 1)

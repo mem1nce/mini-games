@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ShadowLevelData" format=3]
+
+[ext_resource type="Script" path="res://oyunlar/golge_eslestirme/bolum_verisi.gd" id="1_bolum"]
+[ext_resource type="Script" path="res://oyunlar/golge_eslestirme/esya_verisi.gd" id="2_esya"]
+[ext_resource type="Resource" path="res://oyunlar/golge_eslestirme/esyalar/oyuncaklar/roket.tres" id="3_roket"]
+[ext_resource type="Resource" path="res://oyunlar/golge_eslestirme/esyalar/oyuncaklar/lego.tres" id="4_lego"]
+[ext_resource type="Resource" path="res://oyunlar/golge_eslestirme/esyalar/oyuncaklar/ayi.tres" id="5_ayi"]
+[ext_resource type="Resource" path="res://oyunlar/golge_eslestirme/esyalar/oyuncaklar/top.tres" id="6_top"]
+
+[resource]
+script = ExtResource("1_bolum")
+items = Array[ExtResource("2_esya")]([ExtResource("3_roket"), ExtResource("4_lego"), ExtResource("5_ayi"), ExtResource("6_top")])
+sky_top = Color(1.0, 0.851, 0.9176, 1)
+sky_bottom = Color(1.0, 0.9608, 0.8549, 1)

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ShadowLevelData" format=3]
+
+[ext_resource type="Script" path="res://oyunlar/golge_eslestirme/bolum_verisi.gd" id="1_bolum"]
+[ext_resource type="Script" path="res://oyunlar/golge_eslestirme/esya_verisi.gd" id="2_esya"]
+[ext_resource type="Resource" path="res://oyunlar/golge_eslestirme/esyalar/hayvanlar/kedi.tres" id="3_kedi"]
+[ext_resource type="Resource" path="res://oyunlar/golge_eslestirme/esyalar/hayvanlar/balik.tres" id="4_balik"]
+[ext_resource type="Resource" path="res://oyunlar/golge_eslestirme/esyalar/hayvanlar/fil.tres" id="5_fil"]
+[ext_resource type="Resource" path="res://oyunlar/golge_eslestirme/esyalar/hayvanlar/zurafa.tres" id="6_zurafa"]
+
+[resource]
+script = ExtResource("1_bolum")
+items = Array[ExtResource("2_esya")]([ExtResource("3_kedi"), ExtResource("4_balik"), ExtResource("5_fil"), ExtResource("6_zurafa")])
+sky_top = Color(0.7882, 0.9412, 0.8392, 1)
+sky_bottom = Color(1.0, 0.9686, 0.8392, 1)
