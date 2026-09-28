@@ -3,6 +3,9 @@ extends Node2D
 
 enum State { READY, PLAYING, GAME_OVER }
 
+## Ekran yönü: SahneGecis bu oyuna geçerken ekranı buna göre döndürür.
+@export_enum("dikey", "yatay") var ekran_yonu: String = "dikey"
+
 # --- Zorluk ayarları (Inspector'dan da değiştirilebilir) ---
 @export_group("Kuş")
 ## Yerçekimi (piksel/sn²). Küçük değer = kuş daha yavaş düşer.

@@ -7,6 +7,9 @@ const Card := preload("res://oyunlar/hafiza/kart.gd")
 
 enum State { SELECT, DEALING, PLAYING, CHECKING, CELEBRATING }
 
+## Ekran yönü: SahneGecis bu oyuna geçerken ekranı buna göre döndürür.
+@export_enum("dikey", "yatay") var ekran_yonu: String = "dikey"
+
 ## Bölüm sonu kutlamasının süresi (saniye); sonra sonraki bölüme geçilir.
 @export var celebration_time: float = 2.0
 ## İlk bölümlerde kartların başta açık gösterildiği süre (saniye).

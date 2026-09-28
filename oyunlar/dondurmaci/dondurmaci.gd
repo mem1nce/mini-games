@@ -4,6 +4,9 @@ extends Control
 
 enum State { ENTERING, CHOOSE_CONTAINER, ADD_SCOOPS, CELEBRATING }
 
+## Ekran yönü: SahneGecis bu oyuna geçerken ekranı buna göre döndürür.
+@export_enum("dikey", "yatay") var ekran_yonu: String = "dikey"
+
 # --- Sipariş kuralları (Inspector'dan da değiştirilebilir) ---
 @export_group("Sipariş kuralları")
 ## İlk müşterilerin istediği top sayısı.

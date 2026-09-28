@@ -2,19 +2,29 @@ extends CanvasLayer
 # Sahne geçişleri (autoload: SahneGecis).
 # - Sahneler arasında yumuşak kararma/açılma
 # - Ana menüye dönüş
+# - Ekran yönü: her oyun dikey ya da yatay olabilir; geçişte ekran karartılınca döndürülür
 # - Android geri tuşu ve bilgisayarda Escape: oyundayken ana menüye döner, ana menüdeyken uygulamadan çıkar
 #
 # Kullanım:
 #   SahneGecis.sahne_degistir("res://oyunlar/hafiza/hafiza.tscn")
 #   SahneGecis.ana_menuye_don()
 #   SahneGecis.sahneyi_yeniden_baslat()
+#
+# Oyun yönünü bildirmek: oyunun ana sahnesinin kök düğüm script'ine şunu ekle
+#   @export_enum("dikey", "yatay") var ekran_yonu: String = "yatay"
+# Bu değişkeni olmayan sahneler dikey sayılır. Ana menü her zaman dikeydir.
 
 const ANA_MENU := "res://ana_menu/ana_menu.tscn"
+const DIKEY := "dikey"
+const YATAY := "yatay"
+const DIKEY_BOYUT := Vector2i(720, 1280)
+const YATAY_BOYUT := Vector2i(1280, 720)
 const KARARMA_SURESI := 0.28
 const ACILMA_SURESI := 0.38
 const PERDE_RENGI := Color("2d2447")
 
-var gecis_suruyor: bool = false
+var gecis_suruyor: bool = true      # açılış perdesi kalkana kadar geri tuşu çalışmasın
+var ekran_yonu: String = DIKEY      # şu an uygulanan yön (proje ayarları dikey başlar)
 var _perde: ColorRect
 
 
@@ -28,7 +38,21 @@ func _ready() -> void:
 	add_child(_perde)
 	# Uygulama açılırken ilk sahne de yumuşakça belirsin
 	_perde.modulate.a = 1.0
-	_ac.call_deferred()
+	_baslangic.call_deferred()
+
+
+# İlk sahne (ana menü ya da F6 ile doğrudan açılan bir oyun) yatay ise perde kapalıyken
+# ekranı döndürüp sahneyi yeni boyutla yeniden yükle
+func _baslangic() -> void:
+	var sahne := get_tree().current_scene
+	if sahne and sahne_yonu(sahne) != ekran_yonu:
+		var yeni := _yukle(sahne.scene_file_path)
+		if yeni:
+			await _yonu_uygula(sahne_yonu(yeni))
+			get_tree().change_scene_to_node(yeni)
+			await get_tree().process_frame
+			await get_tree().process_frame
+	_ac()
 
 
 func _ac() -> void:
@@ -38,7 +62,7 @@ func _ac() -> void:
 	gecis_suruyor = false
 
 
-# Ekranı yumuşakça karartır, sahneyi değiştirir, sonra yeniden açar
+# Ekranı yumuşakça karartır; perde kapalıyken gerekirse ekranı döndürür, sahneyi değiştirir, sonra açar
 func sahne_degistir(yol: String) -> void:
 	if gecis_suruyor:
 		return
@@ -51,8 +75,16 @@ func sahne_degistir(yol: String) -> void:
 	tween.tween_property(_perde, "modulate:a", 1.0, KARARMA_SURESI).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 	await tween.finished
 	get_tree().paused = false
-	get_tree().change_scene_to_file(yol)
-	# Yeni sahne karenin sonunda yüklenir; bir kare bekleyip perdeyi aç
+	var yeni := _yukle(yol)
+	if yeni == null:
+		if mevcut:
+			mevcut.process_mode = Node.PROCESS_MODE_INHERIT
+		_ac()
+		return
+	# Yeni sahne henüz ağaca girmedi (_ready çalışmadı); önce ekran yönü, sonra sahne
+	await _yonu_uygula(sahne_yonu(yeni))
+	get_tree().change_scene_to_node(yeni)
+	# Yeni sahne karenin sonunda yerleşir; iki kare bekleyip perdeyi aç
 	await get_tree().process_frame
 	await get_tree().process_frame
 	_ac()
@@ -73,7 +105,47 @@ func ana_menude_mi() -> bool:
 	return sahne != null and sahne.scene_file_path == ANA_MENU
 
 
-# Android geri tuşu / Escape
+# Sahnenin istediği yön: kök düğümdeki ekran_yonu ("dikey"/"yatay"); yoksa dikey. Ana menü hep dikey.
+func sahne_yonu(sahne: Node) -> String:
+	if sahne.scene_file_path == ANA_MENU:
+		return DIKEY
+	return YATAY if sahne.get("ekran_yonu") == YATAY else DIKEY
+
+
+func _yukle(yol: String) -> Node:
+	var paket := load(yol) as PackedScene
+	if paket == null:
+		push_error("SahneGecis: sahne yüklenemedi: %s" % yol)
+		return null
+	return paket.instantiate()
+
+
+# Ekran yönünü uygular: çizim boyutu (720x1280 / 1280x720), mobilde ekranı döndürür,
+# bilgisayarda pencereyi çevirir. Ekran gerçekten dönene kadar (en fazla ~0.5 sn) bekler.
+func _yonu_uygula(yon: String) -> void:
+	if yon == ekran_yonu:
+		return
+	ekran_yonu = yon
+	var yatay := yon == YATAY
+	get_tree().root.content_scale_size = YATAY_BOYUT if yatay else DIKEY_BOYUT
+	if DisplayServer.get_name() == "headless":
+		return
+	var pencere := get_window()
+	if OS.has_feature("mobile"):
+		DisplayServer.screen_set_orientation(
+			DisplayServer.SCREEN_SENSOR_LANDSCAPE if yatay else DisplayServer.SCREEN_PORTRAIT)
+	elif pencere.mode == Window.MODE_WINDOWED:
+		# Test penceresi: uzun ve kısa kenarı yer değiştir, ekranda ortala
+		var uzun := maxi(pencere.size.x, pencere.size.y)
+		var kisa := mini(pencere.size.x, pencere.size.y)
+		pencere.size = Vector2i(uzun, kisa) if yatay else Vector2i(kisa, uzun)
+		pencere.move_to_center()
+	for i in 30:
+		await get_tree().process_frame
+		if (pencere.size.x > pencere.size.y) == yatay:
+			break
+
+
 func geri() -> void:
 	if gecis_suruyor:
 		return
