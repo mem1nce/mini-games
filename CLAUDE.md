@@ -13,7 +13,7 @@ Bu repoyu iki kişi kullanıyor (git kullanıcı adları): **mem1nce** ve **emir
 - Her yeni iş için `main`'in güncel halinden yeni bir dal aç: `git checkout main`, `git pull`, sonra `git checkout -b <isim>/<kısa-açıklama>` (ör. `mehmet/meyve-topla-ses`).
 - Bir iş = bir dal. Dallar kısa ömürlü olsun.
 - İş bitince izin istemeden: dalı push'la, `gh pr create` ile PR aç, `gh pr merge --merge --delete-branch` ile hemen main'e birleştir, sonra main'e dön ve pull yap. (PR açıklamasına neyi değiştirdiğini ve Godot'ta nasıl test edileceğini yaz; yerel dal kaldıysa `git branch -d <dal>` ile sil.)
-- PR'da çakışma (conflict) varsa birleştirme; dur ve kullanıcıya açıkla.
+- PR'da çakışma (conflict) varsa birleştirme; dur ve kullanıcıya açıkla. (İstisna: çakışma sadece `CLAUDE.md` dosyalarındaysa aşağıdaki `CLAUDE.md` kuralına uy.)
 - Uzun süren bir işte `main`'deki yenilikleri almak için `main`'i dalına merge et (`git fetch`, sonra `git merge origin/main`). Paylaşılan dallarda rebase yapma.
 - Başkasının açık dalında, sahibi istemedikçe commit yapma.
 - `gh` kurulu değilse veya giriş yapılmamışsa (`gh auth status`), kullanıcıya kurulum ve giriş adımlarını hatırlat: `winget install GitHub.cli`, terminali yeniden aç, `gh auth login` (GitHub.com → HTTPS → tarayıcı ile giriş).
@@ -22,12 +22,13 @@ Bu repoyu iki kişi kullanıyor (git kullanıcı adları): **mem1nce** ve **emir
 
 - Oyun sahipleri:
   - **mem1nce**: `ucan_kus`, `dondurmaci`, `yol_yap`, `hafiza`, `meyve_topla`
-  - **emirsalihgmrk**: `golge_eslestirme`
+  - **emirsalihgmrk**: `golge_eslestirme`, `kostebek`
 - Herkes sadece kendi oyun klasöründe çalışır. Başkasına ait oyunun dosyalarını açıkça istenmedikçe değiştirme.
 - Ortak dosyalar: `project.godot`, `res://ana_menu/`, `res://ortak/`, `CLAUDE.md`. Bunlarda değişiklikleri küçük tut.
 - Yeni oyun eklerken yönünü (dikey/yatay) belirt ve ana menüye kartını ekle; bunu ayrı bir commit olarak yap.
 - Küçük ve sık commit at, açık Türkçe commit mesajları yaz.
 - Çakışma (conflict) çıkarsa kendi başına çözme ve başkasının değişikliğini asla silme. Dur ve kullanıcıya hangi dosyada ne olduğunu açıkla.
+- CLAUDE.md'de çakışma çıkarsa iki tarafı da koru ve devam et. (`.gitattributes` içindeki `CLAUDE.md merge=union` sayesinde yerel `git merge` bunu kendiliğinden yapar. GitHub PR ekranı bu ayarı dikkate almayabilir; PR'da çakışma görünürse dalında `git merge origin/main` yap, iki tarafın satırlarını da bırak (aynı satır iki kez geldiyse birini sil), commit'le, push'la ve PR'ı birleştir.)
 - `git push --force`, `git reset --hard` veya geçmişi değiştiren komutları asla kullanma.
 - `.godot/` klasörü commit'lenmez. İki geliştirici de Godot 4.7.2 kullanır.
 
@@ -41,7 +42,7 @@ Bu repoyu iki kişi kullanıyor (git kullanıcı adları): **mem1nce** ve **emir
 
 ## Uygulama yapısı
 
-- `ana_menu/` — Ana menü: 6 oyun kartı (2 sütun, tek kalan ortada; uzun adlarda kart yazısı küçülür), `OYUNLAR` listesinde. Kart çizimleri oyunların SVG'lerinin kopyaları (`ana_menu/gorseller/`, 2x + mipmap). İlerleme rozeti oyunların kendi `user://*.cfg` kayıtlarından okunur (`_ulasilan_bolum`); kayıt yoksa gösterilmez. **Yeni oyun eklenince** `OYUNLAR`'a bir satır ve `_ciz()` içine çizimini ekle.
+- `ana_menu/` — Ana menü: oyun kartları (2 sütun, tek kalan ortada; uzun adlarda kart yazısı küçülür), `OYUNLAR` listesinde. Kart çizimleri oyunların SVG'lerinin kopyaları (`ana_menu/gorseller/`, 2x + mipmap). İlerleme rozeti oyunların kendi `user://*.cfg` kayıtlarından okunur (`_ulasilan_bolum`); kayıt yoksa gösterilmez. **Yeni oyun eklenince** `OYUNLAR`'a bir satır ve `_ciz()` içine çizimini ekle.
 - `ortak/sahne_gecis.gd` — autoload `SahneGecis`: `sahne_degistir(yol)`, `ana_menuye_don()`, `sahneyi_yeniden_baslat()`; yumuşak kararma/açılma, geçişte eski sahne durur. Ekran yönü: perde kapalıyken yeni sahnenin `ekran_yonu` değeri okunur, `root.content_scale_size` 720x1280 / 1280x720 yapılır, mobilde `DisplayServer.screen_set_orientation`, bilgisayarda pencere çevrilir; sahne ancak bundan sonra ağaca eklenir (`_ready` doğru boyutla çalışır). F6 ile doğrudan açılan yatay sahne perde kapalıyken döndürülüp yeniden yüklenir. Android geri tuşu (`quit_on_go_back=false`, `NOTIFICATION_WM_GO_BACK_REQUEST`) ve Escape: oyundan ana menüye, ana menüden çıkış.
 - `ortak/tema.tres` — proje geneli tema (`gui/theme/custom`): Nunito (değişken font, ağırlıklar `FontVariation` ile; OpenType etiketi sayı olarak yazılmalı: `2003265652` = `wght`), düğme ve panel stilleri, `Baslik` / `KartYazisi` / `Rozet` tip varyasyonları. Fredoka Türkçe "ş" harfini düzgün göstermediği için kullanılmadı.
 - `ortak/basili_geri_dugmesi.gd` — basılı tutunca dolan halkalı geri düğmesi (`press` / `release` / `contains`, `completed` sinyali); dokunmayı oyun sahnesi yönetir. Gölge Eşleştirme ve Köstebek kullanır.
@@ -51,14 +52,8 @@ Bu repoyu iki kişi kullanıyor (git kullanıcı adları): **mem1nce** ve **emir
 
 ## Oyunlar
 
-- `oyunlar/ucan_kus/` — Uçan Kuş: dokununca zıplayan kuşla direklerin arasından geçme. Zorluk ayarları `ucan_kus.gd` başında `@export`. Görseller SVG (kuş 3 kare, direk beyaz çizilip `modulate` ile boyanıyor).
-- `oyunlar/dondurmaci/` — Dondurmacı: müşterinin baloncukta gösterdiği dondurmayı (külah/kase + sıralı toplar) hazırlama. Sipariş kuralları `dondurmaci.gd` başında `@export`; hayvanlar, tatlar ve kaplar `ANIMALS` / `FLAVORS` / `CONTAINERS` listelerinde. Görseller `gorseller/` alt klasöründe (her hayvanın `hayvan_x.svg` ve `hayvan_x_mutlu.svg` hali var).
-- `oyunlar/yol_yap/` — Yol Yap: parçaları (blok, rampa, köprü, yay) ızgaraya sürükleyip bilyeyi hediye kutusuna ulaştırma, 10 bölüm. Bölümler `bolumler.gd` (harita dizeleri + parçaların doğru yerleri), bilyenin yolu fiziksiz olarak `yol_mantigi.gd` içinde hesaplanır; `validate()` her bölümün çözülebildiğini kontrol eder (oyun açılırken de çalışır). Parçalar sadece doğru hücreye oturur. İlerleme `user://yol_yap.cfg`.
-- `oyunlar/hafiza/` — Hafıza Kartları: iki tema (hayvanlar, meyveler), 4 bölüm (2x2 → 4x4). Temalar ve bölümler `veriler.gd` içinde (yeni tema = `temalar/` altında yeni klasör + `THEMES`'e bir satır). Kart animasyonları `kart.gd`. İlerleme `user://hafiza.cfg`. Bu oyunun SVG'leri 2x ölçek + mipmap ile içe aktarılır (`.import` içinde `svg/scale=2.0`, `mipmaps/generate=true`) ve kök düğümde `texture_filter = LINEAR_WITH_MIPMAPS` var; yeni SVG eklenince aynı ayarları ver.
-
-- `oyunlar/meyve_topla/` — Meyve Topla: başında sepet taşıyan kirpiyle ağaçtan düşen meyveleri toplama, 12 bölüm + sonsuz mod, güçlendirmeler. Tasarım ve dosya yapısı `TASARIM.md` içinde. Bölüm verileri `bolumler.gd`, akış `meyve_topla.gd`; oyuncu, düşen nesne, bölüm yöneticisi, ağaç, arka plan, efektler ve arayüz ayrı script'lerde. Parçacıklar `CPUParticles2D`. Meyve SVG'leri hafıza oyunundan kopyalandı (zemin gölgesi çıkarılarak). İlerleme `user://meyve_topla.cfg`.
-- `oyunlar/golge_eslestirme/` — Gölge Eşleştirme (1-3 yaş, hiç yazı yok): eşyayı sürükleyip kendi gölgesine bırakma, 10 bölüm, sonra büyük kutlama ve 1. bölüme dönüş. Veri odaklı: her eşya `esyalar/<kategori>/<ad>.svg` + `.tres` (`ShadowItemData`: görsel + siluet grubu), her bölüm `bolumler/bolum_XX.tres` (`ShadowLevelData`), bölüm listesi kök düğümün `levels` dizisinde; `_check_data()` aynı siluet grubundan iki eşyanın aynı bölümde olmasını engeller. Gölge ayrı çizilmez, `golge.gdshader` ile eşyanın kendi görselinden üretilir. Ayarlar (bırakma toleransı, ipucu süresi, animasyon süreleri) `golge_eslestirme.gd` başında `@export`. Tek parmak kilidi (`active_touch`), geri düğmesi basılı tutunca çalışır. Sesler `sesler/ses_uret.py` ile sentezlenmiş `.wav` (`sesler.gd` ortak ses havuzunu kullanır). Ayrıntılar ve yeni eşya/bölüm ekleme `TASARIM.md` içinde. İlerleme `user://golge_eslestirme.cfg`.
-- `oyunlar/kostebek/` — Köstebek Vurma: çukurlardan çıkan köstebeğe (+30) ve meyve/sebzeye (+10) dokunma, bomba 1 can götürür (3 can), kaçan için ceza yok. Kasklı köstebek iki dokunuş ister. Skora bağlı seviyeler (her 150 puan); 6 → 9 çukur. **Bütün denge ayarları `denge.tres`** (`WhackBalance` + `WhackLevelData` seviye dizisi). Durumlar COUNTDOWN / PLAYING / GAME_OVER (`kostebek.gd`), çıkış kuralları `cikis_yoneticisi.gd`, nesneler `cikan_nesne.gd` temelli (`kostebek_nesne` / `meyve_nesne` / `bomba_nesne`). Nesne çukurun maske düğümünde (`clip_children`) çizilir, alt kısmı ön toprak dudağının arkasında kalır (`cukur.gd`). Çoklu dokunma, basış anında vurma. Ayrıntılar `TASARIM.md` içinde. Rekor `user://kostebek.cfg`.
+- Her oyunun kendine özel notları kendi klasöründeki `CLAUDE.md` içindedir (`oyunlar/<oyun_adi>/CLAUDE.md`). Bir oyunda çalışmadan önce onu oku; oyuna özel yeni notları oraya yaz, bu dosyaya değil.
+- Yeni oyun eklerken klasörüne de bir `CLAUDE.md` koy (oyunun kısa tanımı, önemli dosyalar, ayarların yeri, kayıt dosyası).
 
 ## Görsel kontrol
 
