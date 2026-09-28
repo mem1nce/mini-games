@@ -37,6 +37,7 @@ const MAX_CARD_WIDTH := 250.0
 @onready var cards_layer: Node2D = $Game/Cards
 @onready var effects: Node2D = $Game/Effects
 @onready var back_button: Panel = $Game/BackButton
+@onready var select_back_button: Panel = $LevelSelect/BackButton
 @onready var cheer: HBoxContainer = $Game/Cheer
 @onready var level_select: Control = $LevelSelect
 @onready var theme_row: HBoxContainer = $LevelSelect/ThemeRow
@@ -104,6 +105,11 @@ func _input(event: InputEvent) -> void:
 		return
 	var pos := touch.position
 	if state == State.SELECT:
+		# Bölüm seçme ekranı oyunun ilk ekranı: geri ana menüye döner
+		if _is_touched(select_back_button, pos):
+			_press(select_back_button)
+			SahneGecis.ana_menuye_don()
+			return
 		for i in theme_buttons.size():
 			if _is_touched(theme_buttons[i], pos):
 				_select_theme(i)

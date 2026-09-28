@@ -98,6 +98,7 @@ func _ready() -> void:
 	levels.progress_changed.connect(_on_progress_changed)
 	levels.level_completed.connect(_on_level_completed)
 	hud.back_pressed.connect(_go_to_start)
+	hud.menu_pressed.connect(SahneGecis.ana_menuye_don)
 	hud.pause_pressed.connect(_pause)
 	hud.resume_pressed.connect(_resume)
 	hud.start_pressed.connect(_start_game)

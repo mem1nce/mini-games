@@ -4,6 +4,7 @@ extends Control
 # Oyun duraklatılınca da çalışır (bağlı olduğu CanvasLayer'ın process_mode'u ALWAYS).
 
 signal back_pressed
+signal menu_pressed       # başlangıç ekranındaki geri: ana menüye
 signal pause_pressed
 signal resume_pressed
 signal start_pressed
@@ -262,7 +263,10 @@ func _input(event: InputEvent) -> void:
 	match mode:
 		Mode.START:
 			get_viewport().set_input_as_handled()
-			if _hit(_reset, pos):
+			if _hit(_back, pos):
+				_press(_back)
+				menu_pressed.emit()
+			elif _hit(_reset, pos):
 				_on_reset_tap()
 			else:
 				start_pressed.emit()
@@ -336,6 +340,7 @@ func show_start(level_number: int, can_reset: bool) -> void:
 	mode = Mode.START
 	_pause_layer.visible = false
 	_set_top_bar_visible(false)
+	_back.visible = true  # başlangıç ekranında geri ana menüye döner
 	_start.visible = true
 	_badge.text = "Bölüm %d" % level_number
 	_badge.visible = level_number > 1
@@ -393,7 +398,7 @@ func show_play() -> void:
 		tween.tween_callback(_start.hide)
 	if not _bar.visible:
 		_set_top_bar_visible(true)
-		for control in [_back, _bar, _pause]:
+		for control in [_bar, _pause]:
 			var target_y: float = control.position.y
 			control.position.y = target_y - 200.0
 			control.create_tween().tween_property(control, "position:y", target_y, 0.5).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)

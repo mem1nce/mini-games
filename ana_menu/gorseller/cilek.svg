@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <radialGradient id="govde" cx="0.36" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#FF9AAA"/>
+      <stop offset="0.5" stop-color="#F23A55"/>
+      <stop offset="1" stop-color="#C21838"/>
+    </radialGradient>
+    <linearGradient id="yaprak" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#A6EB7E"/>
+      <stop offset="0.6" stop-color="#4CAF50"/>
+      <stop offset="1" stop-color="#2E8B3E"/>
+    </linearGradient>
+    <radialGradient id="cekirdek" cx="0.4" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#FFF6C2"/>
+      <stop offset="1" stop-color="#F0BE3A"/>
+    </radialGradient>
+    <radialGradient id="golge" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#3A2A4A" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#3A2A4A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <!-- Gövde -->
+  <path d="M128 230 C84 216 42 172 44 122 C46 88 76 70 104 76 C114 78 122 82 128 86 C134 82 142 78 152 76 C180 70 210 88 212 122 C214 172 172 216 128 230 Z" fill="url(#govde)" stroke="#7E0F24" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M198 142 C194 180 164 208 132 220" fill="none" stroke="#A0122E" stroke-width="10" stroke-linecap="round" opacity="0.3"/>
+  <!-- Çekirdekler -->
+  <g>
+    <g transform="translate(92 114) rotate(-20)"><ellipse cx="1.5" cy="1.5" rx="5" ry="7" fill="#9E1030" opacity="0.45"/><ellipse rx="3.6" ry="5.6" fill="url(#cekirdek)" stroke="#C48A1A" stroke-width="1.2"/></g>
+    <g transform="translate(128 108)"><ellipse cx="1.5" cy="1.5" rx="5" ry="7" fill="#9E1030" opacity="0.45"/><ellipse rx="3.6" ry="5.6" fill="url(#cekirdek)" stroke="#C48A1A" stroke-width="1.2"/></g>
+    <g transform="translate(164 114) rotate(20)"><ellipse cx="1.5" cy="1.5" rx="5" ry="7" fill="#9E1030" opacity="0.45"/><ellipse rx="3.6" ry="5.6" fill="url(#cekirdek)" stroke="#C48A1A" stroke-width="1.2"/></g>
+    <g transform="translate(72 144) rotate(-25)"><ellipse cx="1.5" cy="1.5" rx="5" ry="7" fill="#9E1030" opacity="0.45"/><ellipse rx="3.6" ry="5.6" fill="url(#cekirdek)" stroke="#C48A1A" stroke-width="1.2"/></g>
+    <g transform="translate(108 142) rotate(-10)"><ellipse cx="1.5" cy="1.5" rx="5" ry="7" fill="#9E1030" opacity="0.45"/><ellipse rx="3.6" ry="5.6" fill="url(#cekirdek)" stroke="#C48A1A" stroke-width="1.2"/></g>
+    <g transform="translate(148 142) rotate(10)"><ellipse cx="1.5" cy="1.5" rx="5" ry="7" fill="#9E1030" opacity="0.45"/><ellipse rx="3.6" ry="5.6" fill="url(#cekirdek)" stroke="#C48A1A" stroke-width="1.2"/></g>
+    <g transform="translate(184 144) rotate(25)"><ellipse cx="1.5" cy="1.5" rx="5" ry="7" fill="#9E1030" opacity="0.45"/><ellipse rx="3.6" ry="5.6" fill="url(#cekirdek)" stroke="#C48A1A" stroke-width="1.2"/></g>
+    <g transform="translate(90 174) rotate(-20)"><ellipse cx="1.5" cy="1.5" rx="5" ry="7" fill="#9E1030" opacity="0.45"/><ellipse rx="3.6" ry="5.6" fill="url(#cekirdek)" stroke="#C48A1A" stroke-width="1.2"/></g>
+    <g transform="translate(128 172)"><ellipse cx="1.5" cy="1.5" rx="5" ry="7" fill="#9E1030" opacity="0.45"/><ellipse rx="3.6" ry="5.6" fill="url(#cekirdek)" stroke="#C48A1A" stroke-width="1.2"/></g>
+    <g transform="translate(166 174) rotate(20)"><ellipse cx="1.5" cy="1.5" rx="5" ry="7" fill="#9E1030" opacity="0.45"/><ellipse rx="3.6" ry="5.6" fill="url(#cekirdek)" stroke="#C48A1A" stroke-width="1.2"/></g>
+    <g transform="translate(110 202) rotate(-12)"><ellipse cx="1.5" cy="1.5" rx="5" ry="7" fill="#9E1030" opacity="0.45"/><ellipse rx="3.6" ry="5.6" fill="url(#cekirdek)" stroke="#C48A1A" stroke-width="1.2"/></g>
+    <g transform="translate(146 202) rotate(12)"><ellipse cx="1.5" cy="1.5" rx="5" ry="7" fill="#9E1030" opacity="0.45"/><ellipse rx="3.6" ry="5.6" fill="url(#cekirdek)" stroke="#C48A1A" stroke-width="1.2"/></g>
+  </g>
+  <!-- Parlama -->
+  <ellipse cx="78" cy="126" rx="11" ry="26" transform="rotate(20 78 126)" fill="#FFFFFF" opacity="0.55"/>
+  <circle cx="94" cy="98" r="6" fill="#FFFFFF" opacity="0.85"/>
+  <!-- Yapraklar ve sap -->
+  <path d="M128 92 C114 102 94 104 78 96 C90 90 96 84 94 70 C108 74 116 72 122 60 C126 70 130 70 134 60 C140 72 148 74 162 70 C160 84 166 90 178 96 C162 104 142 102 128 92 Z" fill="url(#yaprak)" stroke="#1F5E22" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M100 88 Q110 86 118 78 M156 88 Q146 86 138 78" fill="none" stroke="#C8F5A0" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+  <path d="M128 66 C126 50 130 38 140 30" fill="none" stroke="#1F5E22" stroke-width="11" stroke-linecap="round"/>
+  <path d="M128 66 C126 50 130 38 140 30" fill="none" stroke="#6BBF4A" stroke-width="5" stroke-linecap="round"/>
+</svg>

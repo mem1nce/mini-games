@@ -257,6 +257,31 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="BackButton" type="Panel" parent="LevelSelect"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 60.0
+offset_right = 140.0
+offset_bottom = 170.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dugme")
+
+[node name="Icon" type="TextureRect" parent="LevelSelect/BackButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 18.0
+offset_right = -18.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("6_geri")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="Deco" type="HBoxContainer" parent="LevelSelect"]
 layout_mode = 1
 anchors_preset = 10

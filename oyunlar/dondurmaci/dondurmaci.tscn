@@ -6,6 +6,22 @@
 [ext_resource type="Texture2D" path="res://oyunlar/dondurmaci/gorseller/kulah.svg" id="4_kulah"]
 [ext_resource type="Texture2D" path="res://oyunlar/dondurmaci/gorseller/kase.svg" id="5_kase"]
 [ext_resource type="Texture2D" path="res://oyunlar/dondurmaci/gorseller/yildiz.svg" id="6_yildiz"]
+[ext_resource type="Texture2D" path="res://ortak/gorseller/geri.svg" id="7_geri"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_geri"]
+bg_color = Color(1, 1, 1, 0.95)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.23, 0.18, 0.42, 1)
+corner_radius_top_left = 34
+corner_radius_top_right = 34
+corner_radius_bottom_right = 34
+corner_radius_bottom_left = 34
+shadow_color = Color(0.15, 0.1, 0.3, 0.2)
+shadow_size = 8
+shadow_offset = Vector2(0, 5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_baloncuk"]
 bg_color = Color(1, 1, 1, 1)
@@ -188,11 +204,36 @@ columns = 3
 
 [node name="Effects" type="Node2D" parent="."]
 
+[node name="BackButton" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 64.0
+offset_right = 140.0
+offset_bottom = 174.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_geri")
+
+[node name="Icon" type="TextureRect" parent="BackButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_geri")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="StarBox" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 40.0
+offset_left = 164.0
 offset_top = 70.0
-offset_right = 300.0
+offset_right = 424.0
 offset_bottom = 170.0
 mouse_filter = 2
 theme_override_constants/separation = 14

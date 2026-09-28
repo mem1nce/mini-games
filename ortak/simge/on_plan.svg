@@ -1,15 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
-  <!-- Minik Oyunlar uygulama simgesi (ön plan: ortak/simge/on_plan.svg, arka plan: ortak/simge/arka_plan.svg) -->
+  <!-- Minik Oyunlar simgesinin ön planı (saydam zemin). Karakterler ortadaki güvenli alanda
+       (yarıçap ~170) kalır; Android uyarlanabilir simgesinde maske onları kesmez. -->
   <defs>
-    <linearGradient id="z_zemin" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#FFE1EE"/>
-      <stop offset="0.5" stop-color="#E7E4FF"/>
-      <stop offset="1" stop-color="#D4F4E7"/>
-    </linearGradient>
-    <radialGradient id="z_isik" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.85"/>
-      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
-    </radialGradient>
     <radialGradient id="k_diken" gradientUnits="userSpaceOnUse" cx="100" cy="80" r="150">
       <stop offset="0" stop-color="#BE8C5E"/>
       <stop offset="0.55" stop-color="#8A5A36"/>
@@ -60,8 +52,6 @@
     </radialGradient>
     <clipPath id="b_ic"><circle cx="50" cy="50" r="44"/></clipPath>
   </defs>
-  <rect x="8" y="8" width="496" height="496" rx="112" fill="url(#z_zemin)"/>
-  <circle cx="256" cy="262" r="190" fill="url(#z_isik)"/>
 
   <!-- Arka ayak -->
   <ellipse cx="220" cy="416" rx="24" ry="13" fill="url(#k_ayak)" stroke="#2E1A0C" stroke-width="5"/>

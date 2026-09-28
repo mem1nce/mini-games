@@ -1,6 +1,7 @@
-# Mini Games
+# Minik Oyunlar
 
 Küçük çocuklar (4-8 yaş) için basit eğitici mini oyunlar. Oyun fikirlerini kullanıcı verir, birlikte geliştiririz.
+Uygulamanın adı "Minik Oyunlar" (`application/config/name`; `user://` klasörü de bu adla: `app_userdata/Minik Oyunlar`).
 
 ## Proje durumu
 
@@ -8,7 +9,15 @@ Küçük çocuklar (4-8 yaş) için basit eğitici mini oyunlar. Oyun fikirlerin
 - Ekran: dikey (portrait), temel çözünürlük 720x1280; masaüstünde test penceresi 450x800.
 - Ekran ölçekleme: `canvas_items` + `expand` — görünen alan 720x1280'den uzun/geniş olabilir. Boyutu `get_viewport_rect().size` ile al, anchor/container kullan, sabit piksel konumlarına güvenme.
 - Giriş sadece dokunma (`InputEventScreenTouch`). Masaüstünde test için "Emulate Touch From Mouse" açık. Önemli öğeleri kenarlardan ve üstteki çentik bölgesinden uzak tut (üstten ~90 px, yanlardan ~40 px).
-- Ana sahne (test için en son yapılan oyun): `res://oyunlar/meyve_topla/meyve_topla.tscn`
+- Başlangıç sahnesi: ana menü `res://ana_menu/ana_menu.tscn` (bir oyunu tek başına denemek için o oyunun sahnesini F6 ile çalıştır).
+
+## Uygulama yapısı
+
+- `ana_menu/` — Ana menü: 5 oyun kartı (2 sütun, tek kalan ortada), `OYUNLAR` listesinde. Kart çizimleri oyunların SVG'lerinin kopyaları (`ana_menu/gorseller/`, 2x + mipmap). İlerleme rozeti oyunların kendi `user://*.cfg` kayıtlarından okunur (`_ulasilan_bolum`); kayıt yoksa gösterilmez. **Yeni oyun eklenince** `OYUNLAR`'a bir satır ve `_ciz()` içine çizimini ekle.
+- `ortak/sahne_gecis.gd` — autoload `SahneGecis`: `sahne_degistir(yol)`, `ana_menuye_don()`, `sahneyi_yeniden_baslat()`; yumuşak kararma/açılma, geçişte eski sahne durur. Android geri tuşu (`quit_on_go_back=false`, `NOTIFICATION_WM_GO_BACK_REQUEST`) ve Escape: oyundan ana menüye, ana menüden çıkış.
+- `ortak/tema.tres` — proje geneli tema (`gui/theme/custom`): Nunito (değişken font, ağırlıklar `FontVariation` ile; OpenType etiketi sayı olarak yazılmalı: `2003265652` = `wght`), düğme ve panel stilleri, `Baslik` / `KartYazisi` / `Rozet` tip varyasyonları. Fredoka Türkçe "ş" harfini düzgün göstermediği için kullanılmadı.
+- `ortak/gorseller/geri.svg` ortak geri simgesi. `ortak/simge/`: simgenin ön/arka plan SVG'leri ve Android PNG'leri; `icon.svg` bunlardan oluşur.
+- **Geri düğmesi kuralı**: her oyunun ilk ekranında sol üstte geri düğmesi → `SahneGecis.ana_menuye_don()`. Oyun içindeki geri önce oyunun kendi önceki ekranına (bölüm seçme / başlangıç ekranı), oradan ana menüye.
 
 ## Oyunlar
 

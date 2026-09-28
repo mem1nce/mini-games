@@ -65,6 +65,7 @@ const FLAVOR_BOX_SIZE := Vector2(190, 145)
 @onready var star_icon: TextureRect = $StarBox/StarIcon
 @onready var star_label: Label = $StarBox/StarLabel
 @onready var container_buttons := {"kulah": $ConeButton, "kase": $BowlButton}
+@onready var back_button: Panel = $BackButton
 
 var state: State = State.ENTERING
 var stars: int = 0
@@ -93,6 +94,10 @@ func _input(event: InputEvent) -> void:
 	# Sadece dokunma ile oynanır (bilgisayarda fare tıklaması dokunmaya çevrilir)
 	var touch := event as InputEventScreenTouch
 	if touch == null or not touch.pressed:
+		return
+	# Geri: bu oyunun tek ekranı var, doğrudan ana menüye döner
+	if back_button.get_global_rect().grow(16.0).has_point(touch.position):
+		SahneGecis.ana_menuye_don()
 		return
 	if state != State.CHOOSE_CONTAINER and state != State.ADD_SCOOPS:
 		return

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="130" viewBox="0 0 240 130">
+  <defs>
+    <linearGradient id="bulut" gradientUnits="userSpaceOnUse" x1="0" y1="10" x2="0" y2="124">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#E4EEFF"/>
+    </linearGradient>
+  </defs>
+  <g fill="url(#bulut)">
+    <circle cx="70" cy="80" r="42"/>
+    <circle cx="120" cy="58" r="50"/>
+    <circle cx="174" cy="82" r="38"/>
+    <rect x="38" y="80" width="170" height="42" rx="21"/>
+  </g>
+  <ellipse cx="104" cy="40" rx="20" ry="9" fill="#FFFFFF"/>
+</svg>

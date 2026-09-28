@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <!-- Minik Oyunlar simgesinin arka planı (Android uyarlanabilir simgesi için tam kare) -->
+  <defs>
+    <linearGradient id="zemin" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFE1EE"/>
+      <stop offset="0.5" stop-color="#E7E4FF"/>
+      <stop offset="1" stop-color="#D4F4E7"/>
+    </linearGradient>
+    <radialGradient id="isik" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#zemin)"/>
+  <circle cx="256" cy="262" r="190" fill="url(#isik)"/>
+</svg>

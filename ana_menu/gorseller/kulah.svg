@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="170" viewBox="0 0 130 170">
+  <defs><clipPath id="kulah"><path d="M12 30 L118 30 L65 166 Z"/></clipPath></defs>
+  <path d="M12 30 L118 30 L65 166 Z" fill="#F2BE7A"/>
+  <g clip-path="url(#kulah)" stroke="#C98B45" stroke-width="5">
+    <line x1="0" y1="10" x2="130" y2="140"/>
+    <line x1="0" y1="50" x2="120" y2="170"/>
+    <line x1="30" y1="10" x2="130" y2="110"/>
+    <line x1="60" y1="10" x2="130" y2="80"/>
+    <line x1="130" y1="10" x2="0" y2="140"/>
+    <line x1="130" y1="50" x2="10" y2="170"/>
+    <line x1="100" y1="10" x2="0" y2="110"/>
+    <line x1="70" y1="10" x2="0" y2="80"/>
+  </g>
+  <path d="M12 30 L118 30 L65 166 Z" fill="none" stroke="#B0763A" stroke-width="5" stroke-linejoin="round"/>
+  <rect x="4" y="12" width="122" height="30" rx="15" fill="#E9A95E" stroke="#B0763A" stroke-width="5"/>
+</svg>

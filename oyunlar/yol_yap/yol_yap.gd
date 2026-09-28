@@ -48,6 +48,7 @@ const NO_CELL := Vector2i(-1, -1)
 @onready var ball: Sprite2D = $Game/Ball
 @onready var effects: Node2D = $Game/Effects
 @onready var back_button: Panel = $Game/BackButton
+@onready var select_back_button: Panel = $LevelSelect/BackButton
 @onready var restart_button: Panel = $Game/RestartButton
 @onready var level_label: Label = $Game/LevelBadge/Label
 @onready var cheer: HBoxContainer = $Game/Cheer
@@ -114,6 +115,10 @@ func _on_touch_down(index: int, pos: Vector2) -> void:
 		return  # aynı anda tek parça sürüklenir
 	match state:
 		State.SELECT:
+			# Bölüm seçme ekranı oyunun ilk ekranı: geri ana menüye döner
+			if _is_touched(select_back_button, pos):
+				SahneGecis.ana_menuye_don()
+				return
 			for i in level_buttons.size():
 				if _is_touched(level_buttons[i], pos):
 					if i <= completed:

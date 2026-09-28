@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" path="res://oyunlar/ucan_kus/kus_1.svg" id="2_kus1"]
 [ext_resource type="Texture2D" path="res://oyunlar/ucan_kus/kus_2.svg" id="3_kus2"]
 [ext_resource type="Texture2D" path="res://oyunlar/ucan_kus/kus_3.svg" id="4_kus3"]
+[ext_resource type="Texture2D" path="res://ortak/gorseller/geri.svg" id="5_geri"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kus"]
 animations = [{
@@ -35,6 +36,21 @@ corner_radius_bottom_right = 80
 corner_radius_bottom_left = 80
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_odak"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_geri"]
+bg_color = Color(1, 1, 1, 0.95)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.23, 0.18, 0.42, 1)
+corner_radius_top_left = 34
+corner_radius_top_right = 34
+corner_radius_bottom_right = 34
+corner_radius_bottom_left = 34
+shadow_color = Color(0.15, 0.1, 0.3, 0.2)
+shadow_size = 8
+shadow_offset = Vector2(0, 5)
 
 [node name="UcanKus" type="Node2D"]
 script = ExtResource("1_oyun")
@@ -93,12 +109,17 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HeartsBox" type="HBoxContainer" parent="HUD"]
-offset_left = 40.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -300.0
 offset_top = 110.0
-offset_right = 300.0
+offset_right = -40.0
 offset_bottom = 174.0
+grow_horizontal = 0
 mouse_filter = 2
 theme_override_constants/separation = 12
+alignment = 2
 
 [node name="StartScreen" type="Control" parent="HUD"]
 anchors_preset = 15
@@ -203,3 +224,27 @@ theme_override_font_sizes/font_size = 64
 theme_override_styles/focus = SubResource("StyleBoxEmpty_odak")
 theme_override_styles/normal = SubResource("StyleBoxFlat_tekrar")
 text = "Tekrar oyna"
+
+[node name="BackButton" type="Panel" parent="HUD"]
+offset_left = 30.0
+offset_top = 60.0
+offset_right = 140.0
+offset_bottom = 170.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_geri")
+
+[node name="Icon" type="TextureRect" parent="HUD/BackButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_geri")
+expand_mode = 1
+stretch_mode = 5

@@ -54,6 +54,7 @@ const CLOUD_COUNT := 5
 @onready var game_over_screen: Control = $HUD/GameOverScreen
 @onready var result_label: Label = $HUD/GameOverScreen/Box/ResultLabel
 @onready var restart_button: Button = $HUD/GameOverScreen/Box/RestartButton
+@onready var back_button: Panel = $HUD/BackButton
 
 var state: State = State.READY
 var bird_velocity: float = 0.0
@@ -91,6 +92,14 @@ func _input(event: InputEvent) -> void:
 	# Sadece dokunma ile oynanır (bilgisayarda fare tıklaması dokunmaya çevrilir)
 	var touch := event as InputEventScreenTouch
 	if touch == null or not touch.pressed:
+		return
+
+	# Geri: başlangıç ekranındayken ana menüye, oyun sırasında başlangıç ekranına
+	if back_button.get_global_rect().grow(16.0).has_point(touch.position):
+		if state == State.READY:
+			SahneGecis.ana_menuye_don()
+		else:
+			SahneGecis.sahneyi_yeniden_baslat()
 		return
 
 	match state:
