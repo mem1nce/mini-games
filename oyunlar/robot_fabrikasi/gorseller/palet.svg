@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="100" viewBox="0 0 240 100">
+  <defs><radialGradient id="g1" cx="0.4" cy="0.32" r="0.75"><stop offset="0.00" stop-color="#FFFFFF"/><stop offset="0.50" stop-color="#D8D6E6"/><stop offset="1.00" stop-color="#9E9AB8"/></radialGradient><radialGradient id="g2" cx="0.4" cy="0.32" r="0.75"><stop offset="0.00" stop-color="#FFFFFF"/><stop offset="0.50" stop-color="#D8D6E6"/><stop offset="1.00" stop-color="#9E9AB8"/></radialGradient><radialGradient id="g3" cx="0.4" cy="0.32" r="0.75"><stop offset="0.00" stop-color="#FFFFFF"/><stop offset="0.50" stop-color="#D8D6E6"/><stop offset="1.00" stop-color="#9E9AB8"/></radialGradient></defs>
+  <rect x="10" y="14" width="220" height="74" rx="37" fill="#3A3450" stroke="#1A1624" stroke-width="6"/>
+  <rect x="30" y="12" width="9" height="9" rx="2" fill="#6A6480"/><rect x="30" y="81" width="9" height="9" rx="2" fill="#6A6480"/>
+  <rect x="50" y="12" width="9" height="9" rx="2" fill="#6A6480"/><rect x="50" y="81" width="9" height="9" rx="2" fill="#6A6480"/>
+  <rect x="70" y="12" width="9" height="9" rx="2" fill="#6A6480"/><rect x="70" y="81" width="9" height="9" rx="2" fill="#6A6480"/>
+  <rect x="90" y="12" width="9" height="9" rx="2" fill="#6A6480"/><rect x="90" y="81" width="9" height="9" rx="2" fill="#6A6480"/>
+  <rect x="110" y="12" width="9" height="9" rx="2" fill="#6A6480"/><rect x="110" y="81" width="9" height="9" rx="2" fill="#6A6480"/>
+  <rect x="130" y="12" width="9" height="9" rx="2" fill="#6A6480"/><rect x="130" y="81" width="9" height="9" rx="2" fill="#6A6480"/>
+  <rect x="150" y="12" width="9" height="9" rx="2" fill="#6A6480"/><rect x="150" y="81" width="9" height="9" rx="2" fill="#6A6480"/>
+  <rect x="170" y="12" width="9" height="9" rx="2" fill="#6A6480"/><rect x="170" y="81" width="9" height="9" rx="2" fill="#6A6480"/>
+  <rect x="190" y="12" width="9" height="9" rx="2" fill="#6A6480"/><rect x="190" y="81" width="9" height="9" rx="2" fill="#6A6480"/>
+  <rect x="210" y="12" width="9" height="9" rx="2" fill="#6A6480"/><rect x="210" y="81" width="9" height="9" rx="2" fill="#6A6480"/>
+  <circle cx="52.0" cy="51.0" r="24.0" fill="url(#g1)" stroke="#3A3456" stroke-width="4.5" />
+  <circle cx="52.0" cy="51.0" r="7.0" fill="#6A6488" />
+  <circle cx="120.0" cy="51.0" r="24.0" fill="url(#g2)" stroke="#3A3456" stroke-width="4.5" />
+  <circle cx="120.0" cy="51.0" r="7.0" fill="#6A6488" />
+  <circle cx="188.0" cy="51.0" r="24.0" fill="url(#g3)" stroke="#3A3456" stroke-width="4.5" />
+  <circle cx="188.0" cy="51.0" r="7.0" fill="#6A6488" />
+</svg>
