@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MusicSong" format=3]
+
+[ext_resource type="Script" path="res://oyunlar/muzik_kutusu/sarki.gd" id="1_sarki"]
+[ext_resource type="Texture2D" path="res://oyunlar/muzik_kutusu/gorseller/sarki_can.svg" id="2_simge"]
+
+; Tembel Çocuk: Frère Jacques, geleneksel halk ezgisi. Son dizedeki pes sol ksilofonda olmadığı için do2-sol-do2
+
+[resource]
+script = ExtResource("1_sarki")
+icon = ExtResource("2_simge")
+notes = PackedStringArray("do", "re", "mi", "do", "do", "re", "mi", "do", "mi", "fa", "sol", "mi", "fa", "sol", "sol", "la", "sol", "fa", "mi", "do", "sol", "la", "sol", "fa", "mi", "do", "do2", "sol", "do2", "do2", "sol", "do2")
+beats = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 0.5, 0.5, 0.5, 0.5, 1, 1, 0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1, 2, 1, 1, 2)
+tempo = 110.0

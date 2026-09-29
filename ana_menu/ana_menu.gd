@@ -22,6 +22,7 @@ const OYUNLAR := [
 	{"ad": "Araba Yarışı", "sahne": "res://oyunlar/araba_yarisi/araba_yarisi.tscn", "renk": Color("e4e9ff"), "cizim": "araba", "kayit": "araba_yarisi"},
 	{"ad": "Zıpla Zıpla", "sahne": "res://oyunlar/zipla_zipla/zipla_zipla.tscn", "renk": Color("d6f0ff"), "cizim": "zipla", "kayit": "zipla_zipla"},
 	{"ad": "Sihirli Bahçe", "sahne": "res://oyunlar/sihirli_bahce/sihirli_bahce.tscn", "renk": Color("f7e8ff"), "cizim": "bahce", "kayit": "sihirli_bahce"},
+	{"ad": "Müzik Kutusu", "sahne": "res://oyunlar/muzik_kutusu/muzik_kutusu.tscn", "renk": Color("ffe4d6"), "cizim": "muzik", "kayit": ""},
 	{"ad": "Robot Fabrikası", "sahne": "res://oyunlar/robot_fabrikasi/robot_fabrikasi.tscn", "renk": Color("ffe6d4"), "cizim": "robot", "kayit": "robot_fabrikasi"},
 ]
 
@@ -464,6 +465,11 @@ func _ciz(cizim: Node2D, tur: String) -> void:
 			_sprite(cizim, "bahce_aycicegi.svg", 195.0, Vector2(36, -16), 0.06)
 			_sprite(cizim, "bahce_kese.svg", 100.0, Vector2(-60, 38), -0.22)
 			_sprite(cizim, "yildiz.svg", 34.0, Vector2(-70, -46), 0.2)
+		"muzik":
+			# Müzik Kutusu: oyundaki ksilofon simgesi ve renkli notalar
+			_sprite(cizim, "muzik_ksilofon.svg", 200.0, Vector2(4, 14), -0.06)
+			_sprite(cizim, "muzik_nota.svg", 64.0, Vector2(-72, -56), -0.2).modulate = Color("ff6fb5")
+			_sprite(cizim, "muzik_nota_tek.svg", 50.0, Vector2(84, -60), 0.2).modulate = Color("4aa3ff")
 		"robot":
 			# Robot Fabrikası: oyundaki parçalardan tekerlekli robot (gözleri yanık) ve yanında dişli
 			_sprite(cizim, "robot_disli.svg", 80.0, Vector2(-78, 50), 0.3)

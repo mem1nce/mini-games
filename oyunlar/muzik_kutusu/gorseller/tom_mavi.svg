@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="204" height="180" viewBox="0 0 204 180">
+  <defs>
+    <linearGradient id="kab" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#89C3FF"/><stop offset="0.3" stop-color="#4AA3FF"/><stop offset="1" stop-color="#4686DA"/></linearGradient>
+    <radialGradient id="deri" cx="0.4" cy="0.35" r="0.75"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.7" stop-color="#FFF6EA"/><stop offset="1" stop-color="#EADBC8"/></radialGradient>
+  </defs>
+  <path d="M12 48 V132 A90 36 0 0 0 192 132 V48 Z" fill="url(#kab)" stroke="#3B2F6B" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M12 122 A90 36 0 0 0 192 122" fill="none" stroke="#EDE9FF" stroke-width="9"/>
+  <rect x="25" y="73.6" width="10" height="66" rx="5" fill="#EDE9FF" stroke="#3B2F6B" stroke-width="3.5"/>
+  <rect x="61" y="84.9945" width="10" height="66" rx="5" fill="#EDE9FF" stroke="#3B2F6B" stroke-width="3.5"/>
+  <rect x="97" y="88" width="10" height="66" rx="5" fill="#EDE9FF" stroke="#3B2F6B" stroke-width="3.5"/>
+  <rect x="133" y="84.9945" width="10" height="66" rx="5" fill="#EDE9FF" stroke="#3B2F6B" stroke-width="3.5"/>
+  <rect x="169" y="73.6" width="10" height="66" rx="5" fill="#EDE9FF" stroke="#3B2F6B" stroke-width="3.5"/>
+  <ellipse cx="37.2" cy="94.2" rx="7" ry="23.52" transform="rotate(0 37.2 94.2)" fill="#FFFFFF" opacity="0.45"/>
+  <ellipse cx="102" cy="48" rx="90" ry="36" fill="#DCD6F0" stroke="#3B2F6B" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+  <ellipse cx="102" cy="48" rx="78" ry="28" fill="url(#deri)" stroke="#3B2F6B" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+  <ellipse cx="66" cy="37.2" rx="19.8" ry="7.2" transform="rotate(-10 66 37.2)" fill="#FFFFFF" opacity="0.8"/>
+</svg>
