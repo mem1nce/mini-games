@@ -18,6 +18,10 @@ boot_splash/bg_color=Color(0.1765, 0.1412, 0.2784, 1)
 boot_splash/show_image=false
 config/icon="res://icon.svg"
 
+[audio]
+
+general/text_to_speech=true
+
 [autoload]
 
 SahneGecis="*res://ortak/sahne_gecis.gd"

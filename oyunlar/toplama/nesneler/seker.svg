@@ -11,9 +11,9 @@
     </linearGradient>
   </defs>
   <!-- Kanatlar (ambalajın bükülen uçları) -->
-  <path d="M74 128 L20 86 C12 80 6 88 10 96 L24 128 L10 160 C6 168 12 176 20 170 Z" fill="url(#kanat)" stroke="#B86A0E" stroke-width="7" stroke-linejoin="round"/>
-  <path d="M182 128 L236 86 C244 80 250 88 246 96 L232 128 L246 160 C250 168 244 176 236 170 Z" fill="url(#kanat)" stroke="#B86A0E" stroke-width="7" stroke-linejoin="round"/>
-  <path d="M26 102 L54 124 M26 154 L54 132 M230 102 L202 124 M230 154 L202 132" stroke="#C47A12" stroke-width="5" stroke-linecap="round" opacity="0.55"/>
+  <path d="M80 128 L40 96 C32 90 25 97 29 105 L40 128 L29 151 C25 159 32 166 40 160 Z" fill="url(#kanat)" stroke="#B86A0E" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M176 128 L216 96 C224 90 231 97 227 105 L216 128 L227 151 C231 159 224 166 216 160 Z" fill="url(#kanat)" stroke="#B86A0E" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M40 108 L62 124 M40 148 L62 132 M216 108 L194 124 M216 148 L194 132" stroke="#C47A12" stroke-width="5" stroke-linecap="round" opacity="0.55"/>
   <!-- Şeker -->
   <circle cx="128" cy="128" r="62" fill="url(#govde)" stroke="#9A1A5E" stroke-width="7"/>
   <!-- Beyaz çizgiler -->
