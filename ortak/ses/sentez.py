@@ -2,6 +2,7 @@
 # Oyunların sesler/ses_uret.py betikleri bunu içe aktarır:
 #     sys.path.insert(0, <proje>/ortak/ses);  from sentez import *
 # Sesler yumuşak ve kısa olsun: save() tepe seviyesini -6 dBFS'e ayarlar, başta/sonda kısa fade yapar.
+# save_loudness() ise sesleri algılanan yüksekliğe göre eşitler (bir enstrümanın bütün sesleri aynı güçte).
 
 import math
 import os
@@ -101,14 +102,47 @@ def envelope(samples: list, attack: float, decay: float) -> list:
     return [v * min(1.0, (i / RATE) / attack) * math.exp(-decay * i / RATE) for i, v in enumerate(samples)]
 
 
+def highpass(samples: list, cutoff: float) -> list:
+    # Tek kutuplu yüksek geçiren süzgeç: tiz gürültü (zil, marakas) için
+    low = lowpass(samples, cutoff)
+    return [v - l for v, l in zip(samples, low)]
+
+
+def bandpass(samples: list, low_cut: float, high_cut: float) -> list:
+    return lowpass(highpass(samples, low_cut), high_cut)
+
+
+def loudness(samples: list, window: float = 0.3) -> float:
+    # Algılanan yükseklik için kaba ölçü: en yüksek kısa pencerenin (varsayılan 300 ms) RMS'i
+    size = max(1, int(RATE * window))
+    step = max(1, size // 4)
+    best = 0.0
+    for start in range(0, max(1, len(samples) - size + 1), step):
+        part = samples[start:start + size]
+        best = max(best, math.sqrt(sum(v * v for v in part) / len(part)))
+    return best
+
+
+def save_loudness(folder: str, name: str, samples: list, target: float = 0.1) -> None:
+    # save() gibi, ama sesleri tepeye göre değil yüksekliğe (loudness) göre eşitler: hepsinin kısa pencere
+    # RMS'i target olur. Tepe yine PEAK'i (-6 dBFS) geçmez; geçecekse ses biraz kısılır.
+    level = loudness(highpass(samples, 100.0)) or 1.0   # çok pes kısım (telefon hoparlöründe duyulmaz) sayılmaz
+    peak = max(abs(v) for v in samples) or 1.0
+    _write(folder, name, samples, min(target / level, PEAK / peak))
+
+
 def save(folder: str, name: str, samples: list) -> None:
     peak = max(abs(v) for v in samples) or 1.0
+    _write(folder, name, samples, PEAK / peak)
+
+
+def _write(folder: str, name: str, samples: list, gain: float) -> None:
     fade = int(RATE * 0.005)
     n = len(samples)
     frames = bytearray()
     for i, v in enumerate(samples):
         g = min(1.0, i / fade, (n - 1 - i) / fade)
-        frames += struct.pack("<h", int(max(-1.0, min(1.0, v / peak * PEAK * g)) * 32767))
+        frames += struct.pack("<h", int(max(-1.0, min(1.0, v * gain * g)) * 32767))
     with wave.open(os.path.join(folder, name), "wb") as f:
         f.setnchannels(1)
         f.setsampwidth(2)

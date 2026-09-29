@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MusicSong" format=3]
+
+[ext_resource type="Script" path="res://oyunlar/muzik_kutusu/sarki.gd" id="1_sarki"]
+[ext_resource type="Texture2D" path="res://oyunlar/muzik_kutusu/gorseller/sarki_yildiz.svg" id="2_simge"]
+
+; Küçük Yıldız: Ah vous dirai-je, maman (Twinkle Twinkle Little Star), geleneksel halk ezgisi
+
+[resource]
+script = ExtResource("1_sarki")
+icon = ExtResource("2_simge")
+notes = PackedStringArray("do", "do", "sol", "sol", "la", "la", "sol", "fa", "fa", "mi", "mi", "re", "re", "do", "sol", "sol", "fa", "fa", "mi", "mi", "re", "sol", "sol", "fa", "fa", "mi", "mi", "re", "do", "do", "sol", "sol", "la", "la", "sol", "fa", "fa", "mi", "mi", "re", "re", "do")
+beats = PackedFloat32Array(1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2)
+tempo = 120.0

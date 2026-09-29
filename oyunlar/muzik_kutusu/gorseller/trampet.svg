@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="254" height="258" viewBox="0 0 254 258">
+  <defs>
+    <linearGradient id="kab" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFD781"/><stop offset="0.3" stop-color="#FFC23D"/><stop offset="1" stop-color="#CE9D48"/></linearGradient>
+    <radialGradient id="deri" cx="0.4" cy="0.35" r="0.75"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.7" stop-color="#FFF6EA"/><stop offset="1" stop-color="#EADBC8"/></radialGradient>
+  </defs>
+  <path d="M69.5 132 L35 246" stroke="#3B2F6B" stroke-width="14" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+  <path d="M69.5 132 L35 246" stroke="#CFC8E6" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <path d="M184.5 132 L219 246" stroke="#3B2F6B" stroke-width="14" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+  <path d="M184.5 132 L219 246" stroke="#CFC8E6" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <path d="M127 132 L127 246" stroke="#3B2F6B" stroke-width="14" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+  <path d="M127 132 L127 246" stroke="#CFC8E6" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <path d="M12 56 V132 A115 44 0 0 0 242 132 V56 Z" fill="url(#kab)" stroke="#3B2F6B" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M12 122 A115 44 0 0 0 242 122" fill="none" stroke="#EDE9FF" stroke-width="9"/>
+  <rect x="30" y="86.4" width="10" height="58" rx="5" fill="#EDE9FF" stroke="#3B2F6B" stroke-width="3.5"/>
+  <rect x="76" y="100.327" width="10" height="58" rx="5" fill="#EDE9FF" stroke="#3B2F6B" stroke-width="3.5"/>
+  <rect x="122" y="104" width="10" height="58" rx="5" fill="#EDE9FF" stroke="#3B2F6B" stroke-width="3.5"/>
+  <rect x="168" y="100.327" width="10" height="58" rx="5" fill="#EDE9FF" stroke="#3B2F6B" stroke-width="3.5"/>
+  <rect x="214" y="86.4" width="10" height="58" rx="5" fill="#EDE9FF" stroke="#3B2F6B" stroke-width="3.5"/>
+  <ellipse cx="44.2" cy="97.8" rx="7" ry="21.28" transform="rotate(0 44.2 97.8)" fill="#FFFFFF" opacity="0.45"/>
+  <ellipse cx="127" cy="56" rx="115" ry="44" fill="#DCD6F0" stroke="#3B2F6B" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+  <ellipse cx="127" cy="56" rx="103" ry="36" fill="url(#deri)" stroke="#3B2F6B" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+  <ellipse cx="81" cy="42.8" rx="25.3" ry="8.8" transform="rotate(-10 81 42.8)" fill="#FFFFFF" opacity="0.8"/>
+</svg>
