@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+<defs><linearGradient id="ayakkabi" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFB37A"/><stop offset="1" stop-color="#FF6A3D"/></linearGradient></defs>
+<g stroke="#3B2F6B" stroke-width="6" stroke-linecap="round" opacity="0.55"><line x1="6" y1="50" x2="26" y2="50"/><line x1="2" y1="66" x2="22" y2="66"/><line x1="8" y1="82" x2="26" y2="82"/></g>
+<path d="M30 84 L104 84 C112 84 116 90 114 96 C112 101 107 102 100 102 L36 102 C30 102 26 98 26 93 C26 88 27 84 30 84 Z" fill="#FFFFFF" stroke="#3B2F6B" stroke-width="5" stroke-linejoin="round"/>
+<path d="M32 86 C30 70 32 52 38 36 C40 31 45 29 50 31 L62 36 C66 38 70 38 72 35 L76 30 C78 27 82 27 84 30 C92 44 102 56 110 66 C116 73 114 84 106 86 Z" fill="url(#ayakkabi)" stroke="#3B2F6B" stroke-width="5" stroke-linejoin="round"/>
+<g stroke="#3B2F6B" stroke-width="4.5" stroke-linecap="round"><line x1="58" y1="46" x2="74" y2="42"/><line x1="62" y1="56" x2="80" y2="51"/><line x1="66" y1="66" x2="86" y2="60"/></g>
+<path d="M42 44 C44 40 47 38 50 39" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.7"/>
+</svg>

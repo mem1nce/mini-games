@@ -1,0 +1,269 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="320" height="300" viewBox="-160 -150 320 300">
+<g transform="translate(0.00 130.00) scale(0.8000)">
+<g transform="translate(-34.00 -12.00) scale(0.7812 0.7812) translate(-32.00 -20.00) scale(1.0000 1.0000) translate(-0.00 -0.00)">
+  <defs>
+    <radialGradient id="p1_ayak" cx="0.4" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#A06A44"/>
+      <stop offset="1" stop-color="#4E2E18"/>
+    </radialGradient>
+  </defs>
+  <ellipse cx="32" cy="22" rx="26" ry="14" fill="url(#p1_ayak)" stroke="#2E1A0C" stroke-width="5"/>
+  <path d="M44 16 V26 M52 18 V26" stroke="#2E1A0C" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+  <ellipse cx="24" cy="16" rx="8" ry="3" fill="#FFFFFF" opacity="0.35"/>
+</g>
+<g transform="translate(0.00 -90.00) scale(0.7308 0.7308) translate(-130.00 -120.00) scale(1.0000 1.0000) translate(-0.00 -0.00)">
+  <defs>
+    <radialGradient id="p2_diken" gradientUnits="userSpaceOnUse" cx="100" cy="80" r="150">
+      <stop offset="0" stop-color="#BE8C5E"/>
+      <stop offset="0.55" stop-color="#8A5A36"/>
+      <stop offset="1" stop-color="#5A361E"/>
+    </radialGradient>
+    <radialGradient id="p2_yuz" cx="0.45" cy="0.35" r="0.75">
+      <stop offset="0" stop-color="#FFF6EA"/>
+      <stop offset="0.6" stop-color="#FCDDB8"/>
+      <stop offset="1" stop-color="#EBBC8A"/>
+    </radialGradient>
+    <radialGradient id="p2_burun" cx="0.35" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#7A5A4A"/>
+      <stop offset="1" stop-color="#21130C"/>
+    </radialGradient>
+    <radialGradient id="p2_goz" cx="0.4" cy="0.35" r="0.7">
+      <stop offset="0" stop-color="#6A5A96"/>
+      <stop offset="0.55" stop-color="#2A1F45"/>
+      <stop offset="1" stop-color="#150F26"/>
+    </radialGradient>
+    <radialGradient id="p2_yanak" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FF7FA3" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#FF7FA3" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  
+  <path d="M11.9 167.5 L31.1 152.4 L8.1 143.9 L30.1 133.2 L9.4 120.2 L33.1 114.2 L15.5 97.2 L40 96.2 L26.4 75.9 L50.5 80.1 L41.4 57.4 L64.1 66.5 L59.9 42.4 L80.2 56 L81.2 31.5 L98.2 49.1 L104.2 25.4 L117.2 46.1 L127.9 24.1 L136.4 47.1 L151.5 27.9 L154.9 52.1 L173.8 36.4 L172.1 60.8 L193.7 49.4 L187 73 L210.6 66.3 L199.2 87.9 L223.6 86.2 L207.9 105.1 L232.1 108.5 Q222 196 122 226 Q30 220 11.9 167.5 Z" fill="url(#p2_diken)" stroke="#3E2412" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M58 78 L70 92 M84 56 L92 74 M114 48 L118 70 M146 52 L142 72 M174 64 L164 80 M36 112 L54 118 M30 146 L50 148 M198 86 L184 96" fill="none" stroke="#DDAE7E" stroke-width="3.5" stroke-linecap="round" opacity="0.6"/>
+  <path d="M58 72 Q98 40 150 44" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" opacity="0.25"/>
+  
+  <circle cx="174" cy="100" r="13" fill="url(#p2_yuz)" stroke="#3E2412" stroke-width="5"/>
+  <circle cx="174" cy="101" r="6" fill="#F7A9B8"/>
+  
+  <g fill="url(#p2_yuz)" stroke="#3E2412" stroke-width="12">
+    <ellipse cx="150" cy="160" rx="76" ry="62"/>
+    <ellipse cx="214" cy="166" rx="34" ry="23"/>
+  </g>
+  <g fill="url(#p2_yuz)">
+    <ellipse cx="150" cy="160" rx="76" ry="62"/>
+    <ellipse cx="214" cy="166" rx="34" ry="23"/>
+  </g>
+  <ellipse cx="128" cy="122" rx="22" ry="9" transform="rotate(-15 128 122)" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="244" cy="161" r="11" fill="url(#p2_burun)"/>
+  <ellipse cx="240" cy="157" rx="4" ry="2.5" fill="#FFFFFF" opacity="0.8"/>
+  
+  <ellipse cx="150" cy="142" rx="12" ry="15" fill="url(#p2_goz)"/>
+  <ellipse cx="190" cy="140" rx="12" ry="15" fill="url(#p2_goz)"/>
+  <ellipse cx="146" cy="135" rx="5" ry="6" fill="#FFFFFF"/>
+  <ellipse cx="186" cy="133" rx="5" ry="6" fill="#FFFFFF"/>
+  <circle cx="154" cy="148" r="2.5" fill="#FFFFFF" opacity="0.85"/>
+  <circle cx="194" cy="146" r="2.5" fill="#FFFFFF" opacity="0.85"/>
+  
+  <ellipse cx="130" cy="170" rx="15" ry="10" fill="url(#p2_yanak)"/>
+  <ellipse cx="198" cy="184" rx="12" ry="8" fill="url(#p2_yanak)"/>
+  <path d="M204 186 Q213 194 223 187" fill="none" stroke="#3E2412" stroke-width="4" stroke-linecap="round"/>
+</g>
+<g transform="translate(24.00 -10.00) scale(0.7812 0.7812) translate(-32.00 -20.00) scale(1.0000 1.0000) translate(-0.00 -0.00)">
+  <defs>
+    <radialGradient id="p3_ayak" cx="0.4" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#A06A44"/>
+      <stop offset="1" stop-color="#4E2E18"/>
+    </radialGradient>
+  </defs>
+  <ellipse cx="32" cy="22" rx="26" ry="14" fill="url(#p3_ayak)" stroke="#2E1A0C" stroke-width="5"/>
+  <path d="M44 16 V26 M52 18 V26" stroke="#2E1A0C" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+  <ellipse cx="24" cy="16" rx="8" ry="3" fill="#FFFFFF" opacity="0.35"/>
+</g>
+<g transform="translate(0.00 -200.00) scale(0.8333 0.8333) translate(-120.00 -70.00) scale(1.0000 1.0000) translate(-0.00 -0.00)">
+  <defs>
+    <radialGradient id="p4_ic" cx="0.5" cy="0.2" r="0.8">
+      <stop offset="0" stop-color="#9A6632"/>
+      <stop offset="1" stop-color="#4A2A10"/>
+    </radialGradient>
+  </defs>
+  
+  <ellipse cx="120" cy="40" rx="102" ry="24" fill="url(#p4_ic)"/>
+  
+  <path d="M14 40 A106 26 0 0 1 226 40" fill="none" stroke="#6B3E14" stroke-width="18" stroke-linecap="round"/>
+  <path d="M14 40 A106 26 0 0 1 226 40" fill="none" stroke="#D9A45A" stroke-width="11" stroke-linecap="round"/>
+  <path d="M14 40 A106 26 0 0 1 226 40" fill="none" stroke="#B67C38" stroke-width="11" stroke-dasharray="7 7"/>
+</g>
+<g transform="translate(-42.00 -228.00) rotate(-11.46) scale(0.2188 0.2188) translate(-128.00 -128.00) scale(1.0000 1.0000) translate(-0.00 -0.00)">
+  <defs>
+    <radialGradient id="p5_govde" cx="0.35" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#EEFBAE"/>
+      <stop offset="0.5" stop-color="#A8DC45"/>
+      <stop offset="1" stop-color="#5FA52A"/>
+    </radialGradient>
+    <linearGradient id="p5_yaprak" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#A6EB7E"/>
+      <stop offset="1" stop-color="#3A9A3A"/>
+    </linearGradient>
+    <radialGradient id="p5_al" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FFB84D" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#FFB84D" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="p5_golge" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#3A2A4A" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#3A2A4A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  
+  <path d="M128 78 C150 62 206 64 214 120 C222 178 182 228 150 226 C140 225 134 220 128 220 C122 220 116 225 106 226 C74 228 34 178 42 120 C50 64 106 62 128 78 Z" fill="url(#p5_govde)" stroke="#2E6A18" stroke-width="7" stroke-linejoin="round"/>
+  <ellipse cx="168" cy="152" rx="46" ry="58" fill="url(#p5_al)"/>
+  <path d="M198 168 C188 204 162 220 142 222" fill="none" stroke="#3E7A1A" stroke-width="9" stroke-linecap="round" opacity="0.3"/>
+  <path d="M104 84 Q128 96 152 84" fill="none" stroke="#4E8A22" stroke-width="5" stroke-linecap="round" opacity="0.45"/>
+  <g fill="#F4FFD0" opacity="0.6">
+    <circle cx="150" cy="120" r="2"/><circle cx="176" cy="178" r="2"/><circle cx="96" cy="190" r="2"/><circle cx="130" cy="160" r="2"/><circle cx="72" cy="160" r="2"/>
+  </g>
+  
+  <ellipse cx="80" cy="120" rx="12" ry="26" transform="rotate(18 80 120)" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="96" cy="94" r="6" fill="#FFFFFF" opacity="0.85"/>
+  
+  <path d="M128 88 C124 66 128 52 138 40" fill="none" stroke="#4A2E12" stroke-width="12" stroke-linecap="round"/>
+  <path d="M128 88 C124 66 128 52 138 40" fill="none" stroke="#9A6A3A" stroke-width="5" stroke-linecap="round"/>
+  <path d="M136 62 C150 36 186 34 200 48 C186 68 156 74 136 62 Z" fill="url(#p5_yaprak)" stroke="#1F5E22" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M140 60 Q166 54 194 48" fill="none" stroke="#2E7A2A" stroke-width="3" stroke-linecap="round"/>
+  <path d="M150 50 Q164 44 178 42" fill="none" stroke="#DDF7C4" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+</g>
+<g transform="translate(40.00 -228.00) rotate(11.46) scale(0.2188 0.2188) translate(-128.00 -128.00) scale(1.0000 1.0000) translate(-0.00 -0.00)">
+  <defs>
+    <radialGradient id="p6_kabuk" cx="0.35" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#FFE3A6"/>
+      <stop offset="0.5" stop-color="#FFA93A"/>
+      <stop offset="1" stop-color="#EE7410"/>
+    </radialGradient>
+    <radialGradient id="p6_dilim" cx="0.5" cy="0.45" r="0.6">
+      <stop offset="0" stop-color="#FFEDB0"/>
+      <stop offset="1" stop-color="#FFAE36"/>
+    </radialGradient>
+    <linearGradient id="p6_yaprak" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#A6EB7E"/>
+      <stop offset="1" stop-color="#3A9A3A"/>
+    </linearGradient>
+    <radialGradient id="p6_golge" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#3A2A4A" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#3A2A4A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  
+  <circle cx="116" cy="128" r="84" fill="url(#p6_kabuk)" stroke="#9A4A06" stroke-width="7"/>
+  <g fill="#E0700F" opacity="0.35">
+    <circle cx="80" cy="150" r="2.2"/><circle cx="96" cy="178" r="2.2"/><circle cx="140" cy="176" r="2.2"/><circle cx="160" cy="146" r="2.2"/>
+    <circle cx="70" cy="118" r="2.2"/><circle cx="126" cy="196" r="2.2"/><circle cx="150" cy="110" r="2.2"/><circle cx="108" cy="140" r="2.2"/>
+    <circle cx="176" cy="124" r="2.2"/><circle cx="62" cy="176" r="2.2"/><circle cx="120" cy="164" r="2.2"/><circle cx="88" cy="200" r="2.2"/>
+  </g>
+  <path d="M190 150 C184 186 160 206 130 212" fill="none" stroke="#C85A08" stroke-width="10" stroke-linecap="round" opacity="0.3"/>
+  <ellipse cx="78" cy="92" rx="22" ry="13" transform="rotate(-35 78 92)" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="104" cy="74" r="6" fill="#FFFFFF" opacity="0.8"/>
+  
+  <path d="M112 48 C100 30 78 28 68 38 C80 50 98 54 112 48 Z" fill="url(#p6_yaprak)" stroke="#1F5E22" stroke-width="4.5" stroke-linejoin="round"/>
+  <path d="M120 48 C132 22 172 16 186 30 C172 50 142 56 120 48 Z" fill="url(#p6_yaprak)" stroke="#1F5E22" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M124 47 Q152 38 180 30" fill="none" stroke="#2E7A2A" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="116" cy="48" r="7" fill="#7A9A2A" stroke="#3E5A12" stroke-width="3"/>
+  
+  <circle cx="184" cy="194" r="42" fill="#F7931E" stroke="#9A4A06" stroke-width="6"/>
+  <circle cx="184" cy="194" r="35" fill="#FFF3DC"/>
+  <circle cx="184" cy="194" r="30" fill="url(#p6_dilim)"/>
+  <path d="M184 194 L212 194 M184 194 L203.8 213.8 M184 194 L184 222 M184 194 L164.2 213.8 M184 194 L156 194 M184 194 L164.2 174.2 M184 194 L184 166 M184 194 L203.8 174.2" stroke="#FFF6E2" stroke-width="3.5" stroke-linecap="round"/>
+  <circle cx="184" cy="194" r="4" fill="#FFF6E2"/>
+  <path d="M160 182 Q166 170 180 166" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+</g>
+<g transform="translate(0.00 -250.00) scale(0.2266 0.2266) translate(-128.00 -128.00) scale(1.0000 1.0000) translate(-0.00 -0.00)">
+  <defs>
+    <radialGradient id="p7_govde" cx="0.36" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#FF9AAA"/>
+      <stop offset="0.5" stop-color="#F23A55"/>
+      <stop offset="1" stop-color="#C21838"/>
+    </radialGradient>
+    <linearGradient id="p7_yaprak" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#A6EB7E"/>
+      <stop offset="0.6" stop-color="#4CAF50"/>
+      <stop offset="1" stop-color="#2E8B3E"/>
+    </linearGradient>
+    <radialGradient id="p7_cekirdek" cx="0.4" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#FFF6C2"/>
+      <stop offset="1" stop-color="#F0BE3A"/>
+    </radialGradient>
+    <radialGradient id="p7_golge" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#3A2A4A" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#3A2A4A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  
+  <path d="M128 230 C84 216 42 172 44 122 C46 88 76 70 104 76 C114 78 122 82 128 86 C134 82 142 78 152 76 C180 70 210 88 212 122 C214 172 172 216 128 230 Z" fill="url(#p7_govde)" stroke="#7E0F24" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M198 142 C194 180 164 208 132 220" fill="none" stroke="#A0122E" stroke-width="10" stroke-linecap="round" opacity="0.3"/>
+  
+  <g>
+    <g transform="translate(92 114) rotate(-20)"><ellipse cx="1.5" cy="1.5" rx="5" ry="7" fill="#9E1030" opacity="0.45"/><ellipse rx="3.6" ry="5.6" fill="url(#p7_cekirdek)" stroke="#C48A1A" stroke-width="1.2"/></g>
+    <g transform="translate(128 108)"><ellipse cx="1.5" cy="1.5" rx="5" ry="7" fill="#9E1030" opacity="0.45"/><ellipse rx="3.6" ry="5.6" fill="url(#p7_cekirdek)" stroke="#C48A1A" stroke-width="1.2"/></g>
+    <g transform="translate(164 114) rotate(20)"><ellipse cx="1.5" cy="1.5" rx="5" ry="7" fill="#9E1030" opacity="0.45"/><ellipse rx="3.6" ry="5.6" fill="url(#p7_cekirdek)" stroke="#C48A1A" stroke-width="1.2"/></g>
+    <g transform="translate(72 144) rotate(-25)"><ellipse cx="1.5" cy="1.5" rx="5" ry="7" fill="#9E1030" opacity="0.45"/><ellipse rx="3.6" ry="5.6" fill="url(#p7_cekirdek)" stroke="#C48A1A" stroke-width="1.2"/></g>
+    <g transform="translate(108 142) rotate(-10)"><ellipse cx="1.5" cy="1.5" rx="5" ry="7" fill="#9E1030" opacity="0.45"/><ellipse rx="3.6" ry="5.6" fill="url(#p7_cekirdek)" stroke="#C48A1A" stroke-width="1.2"/></g>
+    <g transform="translate(148 142) rotate(10)"><ellipse cx="1.5" cy="1.5" rx="5" ry="7" fill="#9E1030" opacity="0.45"/><ellipse rx="3.6" ry="5.6" fill="url(#p7_cekirdek)" stroke="#C48A1A" stroke-width="1.2"/></g>
+    <g transform="translate(184 144) rotate(25)"><ellipse cx="1.5" cy="1.5" rx="5" ry="7" fill="#9E1030" opacity="0.45"/><ellipse rx="3.6" ry="5.6" fill="url(#p7_cekirdek)" stroke="#C48A1A" stroke-width="1.2"/></g>
+    <g transform="translate(90 174) rotate(-20)"><ellipse cx="1.5" cy="1.5" rx="5" ry="7" fill="#9E1030" opacity="0.45"/><ellipse rx="3.6" ry="5.6" fill="url(#p7_cekirdek)" stroke="#C48A1A" stroke-width="1.2"/></g>
+    <g transform="translate(128 172)"><ellipse cx="1.5" cy="1.5" rx="5" ry="7" fill="#9E1030" opacity="0.45"/><ellipse rx="3.6" ry="5.6" fill="url(#p7_cekirdek)" stroke="#C48A1A" stroke-width="1.2"/></g>
+    <g transform="translate(166 174) rotate(20)"><ellipse cx="1.5" cy="1.5" rx="5" ry="7" fill="#9E1030" opacity="0.45"/><ellipse rx="3.6" ry="5.6" fill="url(#p7_cekirdek)" stroke="#C48A1A" stroke-width="1.2"/></g>
+    <g transform="translate(110 202) rotate(-12)"><ellipse cx="1.5" cy="1.5" rx="5" ry="7" fill="#9E1030" opacity="0.45"/><ellipse rx="3.6" ry="5.6" fill="url(#p7_cekirdek)" stroke="#C48A1A" stroke-width="1.2"/></g>
+    <g transform="translate(146 202) rotate(12)"><ellipse cx="1.5" cy="1.5" rx="5" ry="7" fill="#9E1030" opacity="0.45"/><ellipse rx="3.6" ry="5.6" fill="url(#p7_cekirdek)" stroke="#C48A1A" stroke-width="1.2"/></g>
+  </g>
+  
+  <ellipse cx="78" cy="126" rx="11" ry="26" transform="rotate(20 78 126)" fill="#FFFFFF" opacity="0.55"/>
+  <circle cx="94" cy="98" r="6" fill="#FFFFFF" opacity="0.85"/>
+  
+  <path d="M128 92 C114 102 94 104 78 96 C90 90 96 84 94 70 C108 74 116 72 122 60 C126 70 130 70 134 60 C140 72 148 74 162 70 C160 84 166 90 178 96 C162 104 142 102 128 92 Z" fill="url(#p7_yaprak)" stroke="#1F5E22" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M100 88 Q110 86 118 78 M156 88 Q146 86 138 78" fill="none" stroke="#C8F5A0" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+  <path d="M128 66 C126 50 130 38 140 30" fill="none" stroke="#1F5E22" stroke-width="11" stroke-linecap="round"/>
+  <path d="M128 66 C126 50 130 38 140 30" fill="none" stroke="#6BBF4A" stroke-width="5" stroke-linecap="round"/>
+</g>
+<g transform="translate(0.00 -200.00) scale(0.8333 0.8333) translate(-120.00 -70.00) scale(1.0000 1.0000) translate(-0.00 -0.00)">
+  <defs>
+    <linearGradient id="p8_hasir" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F0C07A"/>
+      <stop offset="1" stop-color="#C4843C"/>
+    </linearGradient>
+    <linearGradient id="p8_golgelik" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5A300E" stop-opacity="0.35"/>
+      <stop offset="0.35" stop-color="#5A300E" stop-opacity="0"/>
+      <stop offset="0.7" stop-color="#5A300E" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5A300E" stop-opacity="0.4"/>
+    </linearGradient>
+    <clipPath id="p8_govde"><path d="M14 40 A106 26 0 0 0 226 40 L206 118 Q204 132 188 132 L52 132 Q36 132 34 118 Z"/></clipPath>
+  </defs>
+  
+  <path d="M14 40 A106 26 0 0 0 226 40 L206 118 Q204 132 188 132 L52 132 Q36 132 34 118 Z" fill="url(#p8_hasir)"/>
+  
+  <g clip-path="url(#p8_govde)" stroke="#A0642A" stroke-width="2">
+    <g fill="#F2C888">
+      <rect x="0" y="62" width="30" height="15" rx="7.5"/><rect x="34" y="62" width="30" height="15" rx="7.5"/><rect x="68" y="62" width="30" height="15" rx="7.5"/><rect x="102" y="62" width="30" height="15" rx="7.5"/><rect x="136" y="62" width="30" height="15" rx="7.5"/><rect x="170" y="62" width="30" height="15" rx="7.5"/><rect x="204" y="62" width="30" height="15" rx="7.5"/>
+      <rect x="-17" y="80" width="30" height="15" rx="7.5"/><rect x="17" y="80" width="30" height="15" rx="7.5"/><rect x="51" y="80" width="30" height="15" rx="7.5"/><rect x="85" y="80" width="30" height="15" rx="7.5"/><rect x="119" y="80" width="30" height="15" rx="7.5"/><rect x="153" y="80" width="30" height="15" rx="7.5"/><rect x="187" y="80" width="30" height="15" rx="7.5"/><rect x="221" y="80" width="30" height="15" rx="7.5"/>
+      <rect x="0" y="98" width="30" height="15" rx="7.5"/><rect x="34" y="98" width="30" height="15" rx="7.5"/><rect x="68" y="98" width="30" height="15" rx="7.5"/><rect x="102" y="98" width="30" height="15" rx="7.5"/><rect x="136" y="98" width="30" height="15" rx="7.5"/><rect x="170" y="98" width="30" height="15" rx="7.5"/><rect x="204" y="98" width="30" height="15" rx="7.5"/>
+      <rect x="-17" y="116" width="30" height="15" rx="7.5"/><rect x="17" y="116" width="30" height="15" rx="7.5"/><rect x="51" y="116" width="30" height="15" rx="7.5"/><rect x="85" y="116" width="30" height="15" rx="7.5"/><rect x="119" y="116" width="30" height="15" rx="7.5"/><rect x="153" y="116" width="30" height="15" rx="7.5"/><rect x="187" y="116" width="30" height="15" rx="7.5"/><rect x="221" y="116" width="30" height="15" rx="7.5"/>
+    </g>
+  </g>
+  <g clip-path="url(#p8_govde)" fill="#FFFFFF" opacity="0.35">
+    <rect x="6" y="64" width="16" height="4" rx="2"/><rect x="40" y="64" width="16" height="4" rx="2"/><rect x="74" y="64" width="16" height="4" rx="2"/><rect x="108" y="64" width="16" height="4" rx="2"/><rect x="142" y="64" width="16" height="4" rx="2"/><rect x="176" y="64" width="16" height="4" rx="2"/>
+    <rect x="23" y="82" width="16" height="4" rx="2"/><rect x="57" y="82" width="16" height="4" rx="2"/><rect x="91" y="82" width="16" height="4" rx="2"/><rect x="125" y="82" width="16" height="4" rx="2"/><rect x="159" y="82" width="16" height="4" rx="2"/><rect x="193" y="82" width="16" height="4" rx="2"/>
+  </g>
+  <path d="M14 40 A106 26 0 0 0 226 40 L206 118 Q204 132 188 132 L52 132 Q36 132 34 118 Z" fill="url(#p8_golgelik)"/>
+  <path d="M14 40 A106 26 0 0 0 226 40 L206 118 Q204 132 188 132 L52 132 Q36 132 34 118 Z" fill="none" stroke="#6B3E14" stroke-width="6" stroke-linejoin="round"/>
+  
+  <path d="M14 40 A106 26 0 0 0 226 40" fill="none" stroke="#6B3E14" stroke-width="19" stroke-linecap="round"/>
+  <path d="M14 40 A106 26 0 0 0 226 40" fill="none" stroke="#E2B064" stroke-width="12" stroke-linecap="round"/>
+  <path d="M14 40 A106 26 0 0 0 226 40" fill="none" stroke="#B67C38" stroke-width="12" stroke-dasharray="7 7"/>
+  <path d="M34 50 Q120 74 206 50" fill="none" stroke="#FFF1CF" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+  
+  <g transform="translate(62 96)">
+    <circle cx="0" cy="-8" r="6" fill="#FF8FB3"/><circle cx="8" cy="-2" r="6" fill="#FF8FB3"/><circle cx="5" cy="7" r="6" fill="#FF8FB3"/>
+    <circle cx="-5" cy="7" r="6" fill="#FF8FB3"/><circle cx="-8" cy="-2" r="6" fill="#FF8FB3"/>
+    <circle cx="0" cy="0" r="5" fill="#FFD84A" stroke="#C47A12" stroke-width="1.5"/>
+  </g>
+</g>
+</g>
+</svg>

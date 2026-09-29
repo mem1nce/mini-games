@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="320" height="300" viewBox="-160 -150 320 300">
+<g transform="translate(-44.00 8.00) rotate(-3.44) scale(0.6641 0.6641) translate(-128.00 -128.00) scale(1.0000 1.0000) translate(-0.00 -0.00)" opacity="0.58">
+  <g transform="rotate(-12 100 60)">
+    <ellipse cx="100" cy="60" rx="21" ry="52" fill="#292E66" stroke="#292E66" stroke-width="8" stroke-linejoin="round"/>
+    <ellipse cx="100" cy="66" rx="10" ry="38" fill="#292E66"/>
+  </g>
+  <g transform="rotate(12 156 60)">
+    <ellipse cx="156" cy="60" rx="21" ry="52" fill="#292E66" stroke="#292E66" stroke-width="8" stroke-linejoin="round"/>
+    <ellipse cx="156" cy="66" rx="10" ry="38" fill="#292E66"/>
+  </g>
+  <circle cx="184" cy="212" r="18" fill="#292E66" stroke="#292E66" stroke-width="8" stroke-linejoin="round"/>
+  <ellipse cx="128" cy="192" rx="58" ry="46" fill="#292E66" stroke="#292E66" stroke-width="8" stroke-linejoin="round"/>
+  <ellipse cx="98" cy="236" rx="24" ry="12" fill="#292E66" stroke="#292E66" stroke-width="8" stroke-linejoin="round"/>
+  <ellipse cx="158" cy="236" rx="24" ry="12" fill="#292E66" stroke="#292E66" stroke-width="8" stroke-linejoin="round"/>
+  <ellipse cx="128" cy="126" rx="62" ry="54" fill="#292E66" stroke="#292E66" stroke-width="8" stroke-linejoin="round"/>
+  <ellipse cx="104" cy="120" rx="10" ry="13" fill="#292E66"/>
+  <ellipse cx="152" cy="120" rx="10" ry="13" fill="#292E66"/>
+  <circle cx="101" cy="115" r="4" fill="#292E66"/>
+  <circle cx="149" cy="115" r="4" fill="#292E66"/>
+  <ellipse cx="84" cy="144" rx="13" ry="8" fill="#292E66" opacity="0.7"/>
+  <ellipse cx="172" cy="144" rx="13" ry="8" fill="#292E66" opacity="0.7"/>
+  <path d="M120 140 Q128 135 136 140 Q133 147 128 148 Q123 147 120 140 Z" fill="#292E66" stroke="#292E66" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M122 154 H134 V162 Q134 166 128 166 Q122 166 122 162 Z" fill="#292E66" stroke="#292E66" stroke-width="3" stroke-linejoin="round"/>
+  <ellipse cx="100" cy="94" rx="16" ry="7" transform="rotate(-20 100 94)" fill="#292E66" opacity="0.9"/>
+</g>
+<g transform="translate(44.00 0.00) rotate(5.73) scale(0.6641 0.6641) translate(-128.00 -128.00) scale(1.0000 1.0000) translate(-0.00 -0.00)">
+  <g transform="rotate(-12 100 60)">
+    <ellipse cx="100" cy="60" rx="21" ry="52" fill="#F7EFFA" stroke="#4A3B6B" stroke-width="8" stroke-linejoin="round"/>
+    <ellipse cx="100" cy="66" rx="10" ry="38" fill="#FF9FBF"/>
+  </g>
+  <g transform="rotate(12 156 60)">
+    <ellipse cx="156" cy="60" rx="21" ry="52" fill="#F7EFFA" stroke="#4A3B6B" stroke-width="8" stroke-linejoin="round"/>
+    <ellipse cx="156" cy="66" rx="10" ry="38" fill="#FF9FBF"/>
+  </g>
+  <circle cx="184" cy="212" r="18" fill="#FFFFFF" stroke="#4A3B6B" stroke-width="8" stroke-linejoin="round"/>
+  <ellipse cx="128" cy="192" rx="58" ry="46" fill="#F7EFFA" stroke="#4A3B6B" stroke-width="8" stroke-linejoin="round"/>
+  <ellipse cx="98" cy="236" rx="24" ry="12" fill="#F7EFFA" stroke="#4A3B6B" stroke-width="8" stroke-linejoin="round"/>
+  <ellipse cx="158" cy="236" rx="24" ry="12" fill="#F7EFFA" stroke="#4A3B6B" stroke-width="8" stroke-linejoin="round"/>
+  <ellipse cx="128" cy="126" rx="62" ry="54" fill="#F7EFFA" stroke="#4A3B6B" stroke-width="8" stroke-linejoin="round"/>
+  <ellipse cx="104" cy="120" rx="10" ry="13" fill="#4A3B6B"/>
+  <ellipse cx="152" cy="120" rx="10" ry="13" fill="#4A3B6B"/>
+  <circle cx="101" cy="115" r="4" fill="#FFFFFF"/>
+  <circle cx="149" cy="115" r="4" fill="#FFFFFF"/>
+  <ellipse cx="84" cy="144" rx="13" ry="8" fill="#FF9FBF" opacity="0.7"/>
+  <ellipse cx="172" cy="144" rx="13" ry="8" fill="#FF9FBF" opacity="0.7"/>
+  <path d="M120 140 Q128 135 136 140 Q133 147 128 148 Q123 147 120 140 Z" fill="#FF7FA3" stroke="#4A3B6B" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M122 154 H134 V162 Q134 166 128 166 Q122 166 122 162 Z" fill="#FFFFFF" stroke="#4A3B6B" stroke-width="3" stroke-linejoin="round"/>
+  <ellipse cx="100" cy="94" rx="16" ry="7" transform="rotate(-20 100 94)" fill="#FFFFFF" opacity="0.9"/>
+</g>
+</svg>
