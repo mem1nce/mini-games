@@ -13,7 +13,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 
 
 def write(name: str, text: str) -> None:
-    with open(os.path.join(HERE, name), "w", encoding="utf-8") as f:
+    with open(os.path.join(HERE, name), "w", encoding="utf-8", newline="\n") as f:
         f.write(text)
     print(name)
 
