@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <radialGradient id="govde" cx="0.38" cy="0.32" r="0.8">
+      <stop offset="0" stop-color="#FFC6E4"/>
+      <stop offset="0.5" stop-color="#FF5FAE"/>
+      <stop offset="1" stop-color="#D62A86"/>
+    </radialGradient>
+    <linearGradient id="kanat" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFE38A"/>
+      <stop offset="1" stop-color="#F5A623"/>
+    </linearGradient>
+  </defs>
+  <!-- Kanatlar (ambalajın bükülen uçları) -->
+  <path d="M80 128 L40 96 C32 90 25 97 29 105 L40 128 L29 151 C25 159 32 166 40 160 Z" fill="url(#kanat)" stroke="#B86A0E" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M176 128 L216 96 C224 90 231 97 227 105 L216 128 L227 151 C231 159 224 166 216 160 Z" fill="url(#kanat)" stroke="#B86A0E" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M40 108 L62 124 M40 148 L62 132 M216 108 L194 124 M216 148 L194 132" stroke="#C47A12" stroke-width="5" stroke-linecap="round" opacity="0.55"/>
+  <!-- Şeker -->
+  <circle cx="128" cy="128" r="62" fill="url(#govde)" stroke="#9A1A5E" stroke-width="7"/>
+  <!-- Beyaz çizgiler -->
+  <path d="M86 96 C104 118 104 140 88 162" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round" opacity="0.85"/>
+  <path d="M128 68 C146 100 146 156 128 188" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round" opacity="0.85"/>
+  <path d="M170 96 C186 118 186 140 170 162" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round" opacity="0.85"/>
+  <circle cx="128" cy="128" r="62" fill="none" stroke="#9A1A5E" stroke-width="7"/>
+  <!-- Parlama -->
+  <ellipse cx="102" cy="98" rx="16" ry="9" transform="rotate(-35 102 98)" fill="#FFFFFF" opacity="0.8"/>
+</svg>

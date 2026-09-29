@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <!-- Kutunun üstündeki rakam kartı (beyaz; kenar rengi oyunda modulate ile verilmez, kart hep beyaz) -->
+  <rect x="8" y="14" width="144" height="140" rx="40" fill="#4A3B6B" opacity="0.18"/>
+  <rect x="8" y="6" width="144" height="140" rx="40" fill="#FFFFFF" stroke="#4A3B6B" stroke-width="7"/>
+  <path d="M40 18 H120" stroke="#E9E4F5" stroke-width="6" stroke-linecap="round"/>
+</svg>

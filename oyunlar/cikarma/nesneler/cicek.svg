@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <radialGradient id="yaprak" cx="0.4" cy="0.35" r="0.8">
+      <stop offset="0" stop-color="#F0D9FF"/>
+      <stop offset="0.55" stop-color="#B57BFF"/>
+      <stop offset="1" stop-color="#8A4FE0"/>
+    </radialGradient>
+    <radialGradient id="orta" cx="0.4" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#FFF6B0"/>
+      <stop offset="0.6" stop-color="#FFD23F"/>
+      <stop offset="1" stop-color="#F5A623"/>
+    </radialGradient>
+  </defs>
+  <!-- Beş taç yaprağı -->
+  <g fill="url(#yaprak)" stroke="#5A2E9E" stroke-width="7">
+    <circle cx="128" cy="62" r="44"/>
+    <circle cx="191" cy="108" r="44"/>
+    <circle cx="167" cy="182" r="44"/>
+    <circle cx="89" cy="182" r="44"/>
+    <circle cx="65" cy="108" r="44"/>
+  </g>
+  <!-- Yaprakların birleştiği yerdeki çizgileri örten iç dolgu -->
+  <circle cx="128" cy="128" r="56" fill="#B57BFF"/>
+  <g fill="#FFFFFF" opacity="0.5">
+    <ellipse cx="116" cy="46" rx="10" ry="6" transform="rotate(-30 116 46)"/>
+    <ellipse cx="54" cy="94" rx="10" ry="6" transform="rotate(-50 54 94)"/>
+  </g>
+  <!-- Orta -->
+  <circle cx="128" cy="128" r="34" fill="url(#orta)" stroke="#C47A12" stroke-width="7"/>
+  <circle cx="118" cy="116" r="8" fill="#FFFFFF" opacity="0.85"/>
+</svg>
