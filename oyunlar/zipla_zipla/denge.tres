@@ -1,0 +1,66 @@
+[gd_resource type="Resource" script_class="JumpBalance" format=3]
+
+[ext_resource type="Script" path="res://oyunlar/zipla_zipla/denge.gd" id="1_denge"]
+[ext_resource type="Script" path="res://oyunlar/zipla_zipla/odul_turu.gd" id="2_odul"]
+[ext_resource type="Texture2D" path="res://oyunlar/zipla_zipla/gorseller/lolipop.svg" id="3_lolipop"]
+[ext_resource type="Texture2D" path="res://oyunlar/zipla_zipla/gorseller/kurabiye.svg" id="4_kurabiye"]
+[ext_resource type="Texture2D" path="res://oyunlar/zipla_zipla/gorseller/cupcake.svg" id="5_cupcake"]
+[ext_resource type="Texture2D" path="res://oyunlar/zipla_zipla/gorseller/yildiz_seker.svg" id="6_yildiz"]
+
+[sub_resource type="Resource" id="Odul_lolipop"]
+script = ExtResource("2_odul")
+id = "lolipop"
+texture = ExtResource("3_lolipop")
+points = 1
+weight = 1.0
+sparkle_color = Color(1, 0.55, 0.75, 1)
+
+[sub_resource type="Resource" id="Odul_kurabiye"]
+script = ExtResource("2_odul")
+id = "kurabiye"
+texture = ExtResource("4_kurabiye")
+points = 1
+weight = 1.0
+sparkle_color = Color(1, 0.8, 0.45, 1)
+
+[sub_resource type="Resource" id="Odul_cupcake"]
+script = ExtResource("2_odul")
+id = "cupcake"
+texture = ExtResource("5_cupcake")
+points = 1
+weight = 1.0
+sparkle_color = Color(1, 0.7, 0.85, 1)
+
+[sub_resource type="Resource" id="Odul_yildiz"]
+script = ExtResource("2_odul")
+id = "yildiz_seker"
+texture = ExtResource("6_yildiz")
+points = 1
+weight = 0.6
+sparkle_color = Color(0.8, 0.65, 1, 1)
+
+[resource]
+script = ExtResource("1_denge")
+easy_steps = 5
+ramp_steps = 60
+speed_start = 100.0
+speed_max = 290.0
+speed_variation = 0.2
+travel_half = 380.0
+reaction_time = 1.0
+width_start = 340.0
+width_min = 160.0
+vanish_start = 5.0
+vanish_min = 2.0
+warn_time = 1.2
+reward_chance_start = 0.5
+reward_chance_end = 0.4
+rewards = Array[ExtResource("2_odul")]([SubResource("Odul_lolipop"), SubResource("Odul_kurabiye"), SubResource("Odul_cupcake"), SubResource("Odul_yildiz")])
+land_overlap_ratio = 0.3
+player_width = 110.0
+edge_slide = 0.8
+slide_time = 0.2
+jump_rise_time = 0.26
+jump_clearance = 60.0
+step_gap = 210.0
+player_screen_ratio = 0.78
