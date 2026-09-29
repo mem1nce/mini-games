@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="280" height="150" viewBox="0 0 280 150">
+  <defs><radialGradient id="g1" cx="0.4" cy="0.3" r="0.8"><stop offset="0.00" stop-color="#FFFFFF"/><stop offset="1.00" stop-color="#E6F2FF"/></radialGradient><radialGradient id="g2" cx="0.4" cy="0.3" r="0.8"><stop offset="0.00" stop-color="#FFFFFF"/><stop offset="1.00" stop-color="#E6F2FF"/></radialGradient></defs>
+  <path d="M 30 140 A 110 110 0 0 1 250 140" fill="none" stroke="#FF5E6E" stroke-width="12"/>
+  <path d="M 41 140 A 99 99 0 0 1 239 140" fill="none" stroke="#FF9A3C" stroke-width="12"/>
+  <path d="M 52 140 A 88 88 0 0 1 228 140" fill="none" stroke="#FFD93D" stroke-width="12"/>
+  <path d="M 63 140 A 77 77 0 0 1 217 140" fill="none" stroke="#6CD46A" stroke-width="12"/>
+  <path d="M 74 140 A 66 66 0 0 1 206 140" fill="none" stroke="#5AA8F0" stroke-width="12"/>
+  <path d="M 85 140 A 55 55 0 0 1 195 140" fill="none" stroke="#A77CF2" stroke-width="12"/>
+  <path d="M 30 140 A 110 110 0 0 1 250 140" fill="none" stroke="#FFFFFF" stroke-width="3" opacity="0.5"/>
+  <path d="M 30 92 C 8 92 6 62 30 58 C 30 32 64 24 78 42 C 88 14 132 10 144 40 C 164 30 190 42 186 66 C 206 70 204 96 182 96 Z" transform="translate(-8 108) scale(0.42 0.42)" fill="url(#g1)" stroke="#8AA4C8" stroke-width="7"/>
+  <path d="M 30 92 C 8 92 6 62 30 58 C 30 32 64 24 78 42 C 88 14 132 10 144 40 C 164 30 190 42 186 66 C 206 70 204 96 182 96 Z" transform="translate(204 108) scale(0.42 0.42)" fill="url(#g2)" stroke="#8AA4C8" stroke-width="7"/>
+</svg>

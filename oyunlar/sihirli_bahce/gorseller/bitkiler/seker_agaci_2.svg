@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="300" viewBox="0 0 240 300">
+  <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="0"><stop offset="0.00" stop-color="#C08A55"/><stop offset="1.00" stop-color="#8A5A32"/></linearGradient><radialGradient id="g2" cx="0.4" cy="0.3" r="0.8"><stop offset="0.00" stop-color="#FFE6F2"/><stop offset="0.50" stop-color="#FFB0D4"/><stop offset="1.00" stop-color="#E070A8"/></radialGradient><linearGradient id="g3" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#A6734A"/><stop offset="1.00" stop-color="#8A5A36"/></linearGradient></defs>
+  <g transform="translate(120 292) scale(1.1) translate(-120 -292)">
+  <path d="M 120.0 230.0 C 116.7 227.0 103.3 215.0 100.0 212.0 " fill="none" stroke="#5E3A22" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 120.0 230.0 C 116.7 227.0 103.3 215.0 100.0 212.0 " fill="none" stroke="#A87444" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 120.0 230.0 C 116.7 227.0 103.3 215.0 100.0 212.0 " fill="none" stroke="#FFFFFF" stroke-width="1.7" stroke-linecap="round" opacity="0.3" transform="translate(-1.2 0)"/>
+  <path d="M 120.0 218.0 C 123.7 215.0 138.3 203.0 142.0 200.0 " fill="none" stroke="#5E3A22" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 120.0 218.0 C 123.7 215.0 138.3 203.0 142.0 200.0 " fill="none" stroke="#A87444" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 120.0 218.0 C 123.7 215.0 138.3 203.0 142.0 200.0 " fill="none" stroke="#FFFFFF" stroke-width="1.7" stroke-linecap="round" opacity="0.3" transform="translate(-1.2 0)"/>
+  <path d="M 111.0 288 C 114.0 248 115.2 226 115.8 196 L 124.2 196 C 124.8 226 126.0 248 129.0 288 Z" fill="url(#g1)" stroke="#5E3A22" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M 118.8 268 C 119.4 228 120.0 246 120.6 216" fill="none" stroke="#5E3A22" stroke-width="2.5" opacity="0.4"/>
+  <g><circle cx="100.0" cy="208.0" r="18.0" fill="#2E6B3A" stroke="#2E6B3A" stroke-width="10"/><circle cx="142.0" cy="196.0" r="20.0" fill="#2E6B3A" stroke="#2E6B3A" stroke-width="10"/><circle cx="120.0" cy="188.0" r="22.0" fill="#2E6B3A" stroke="#2E6B3A" stroke-width="10"/></g>
+  <g><circle cx="100.0" cy="208.0" r="18.0" fill="url(#g2)"/><circle cx="142.0" cy="196.0" r="20.0" fill="url(#g2)"/><circle cx="120.0" cy="188.0" r="22.0" fill="url(#g2)"/></g>
+  <ellipse cx="112.0" cy="180.0" rx="7.0" ry="4.0" transform="rotate(-25 112.0 180.0)" fill="#FFFFFF" opacity="0.4"/>
+  <path d="M 96 292 C 102 282 112 280 120 280 C 130 280 140 282 146 292 Z" fill="url(#g3)" stroke="#5E3A22" stroke-width="4" stroke-linejoin="round"/>
+  </g>
+</svg>

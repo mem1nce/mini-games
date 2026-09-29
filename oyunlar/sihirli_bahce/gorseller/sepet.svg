@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="120" viewBox="0 0 140 120">
+  <defs><linearGradient id="g1" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#F2C680"/><stop offset="0.50" stop-color="#D89A4E"/><stop offset="1.00" stop-color="#B0733A"/></linearGradient></defs>
+  <path d="M 30 56 C 30 10 110 10 110 56" fill="none" stroke="#7A4E22" stroke-width="15" stroke-linecap="round"/>
+  <path d="M 30 56 C 30 10 110 10 110 56" fill="none" stroke="#D8A060" stroke-width="7" stroke-linecap="round"/>
+  <path d="M 14 54 L 126 54 L 114 108 C 112 114 108 116 102 116 L 38 116 C 32 116 28 114 26 108 Z" fill="url(#g1)" stroke="#6E4418" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M 18.0 66 Q 70 72 122.0 66" fill="none" stroke="#8A5A28" stroke-width="2.5" opacity="0.55"/>
+  <path d="M 20.4 76 Q 70 82 119.6 76" fill="none" stroke="#8A5A28" stroke-width="2.5" opacity="0.55"/>
+  <path d="M 22.8 86 Q 70 92 117.2 86" fill="none" stroke="#8A5A28" stroke-width="2.5" opacity="0.55"/>
+  <path d="M 25.2 96 Q 70 102 114.8 96" fill="none" stroke="#8A5A28" stroke-width="2.5" opacity="0.55"/>
+  <path d="M 27.6 106 Q 70 112 112.4 106" fill="none" stroke="#8A5A28" stroke-width="2.5" opacity="0.55"/>
+  <path d="M 32 58 L 28.0 112" stroke="#8A5A28" stroke-width="2.5" opacity="0.4"/>
+  <path d="M 47 58 L 44.6 112" stroke="#8A5A28" stroke-width="2.5" opacity="0.4"/>
+  <path d="M 62 58 L 61.2 112" stroke="#8A5A28" stroke-width="2.5" opacity="0.4"/>
+  <path d="M 77 58 L 77.8 112" stroke="#8A5A28" stroke-width="2.5" opacity="0.4"/>
+  <path d="M 92 58 L 94.4 112" stroke="#8A5A28" stroke-width="2.5" opacity="0.4"/>
+  <path d="M 107 58 L 111.0 112" stroke="#8A5A28" stroke-width="2.5" opacity="0.4"/>
+  <rect x="10" y="48" width="120" height="14" rx="7" fill="#E8B06A" stroke="#6E4418" stroke-width="4.5"/>
+  <ellipse cx="36.0" cy="52.0" rx="12.0" ry="3.0" transform="rotate(0 36.0 52.0)" fill="#FFFFFF" opacity="0.5"/>
+</svg>

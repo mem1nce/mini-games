@@ -1,0 +1,7 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://oyunlar/sihirli_bahce/sihirli_bahce.gd" id="1_oyun"]
+
+[node name="SihirliBahce" type="Node2D"]
+texture_filter = 4
+script = ExtResource("1_oyun")
