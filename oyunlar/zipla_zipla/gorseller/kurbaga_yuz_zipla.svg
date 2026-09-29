@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <!-- Zıplarken: yukarı bakan gözler ve kocaman neşeli ağız -->
+  <defs>
+    <radialGradient id="goz" cx="0.4" cy="0.35" r="0.7">
+      <stop offset="0" stop-color="#6A5A96"/>
+      <stop offset="0.55" stop-color="#2A1F45"/>
+      <stop offset="1" stop-color="#150F26"/>
+    </radialGradient>
+  </defs>
+  <circle cx="84" cy="92" r="14" fill="url(#goz)"/>
+  <circle cx="172" cy="92" r="14" fill="url(#goz)"/>
+  <circle cx="79" cy="86" r="5.5" fill="#FFFFFF"/>
+  <circle cx="167" cy="86" r="5.5" fill="#FFFFFF"/>
+  <path d="M94 148 Q128 150 162 148 Q156 190 128 190 Q100 190 94 148 Z" fill="#8A2A4A" stroke="#3B2F6B" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M108 176 Q128 164 148 176 Q142 188 128 188 Q114 188 108 176 Z" fill="#FF8FB0"/>
+  <g fill="#3B2F6B"><circle cx="116" cy="136" r="3"/><circle cx="140" cy="136" r="3"/></g>
+</svg>

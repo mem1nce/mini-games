@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+  <!-- Tırmanılan basamak simgesi: üst üste üç küçük basamak ve yukarı ok -->
+  <defs>
+    <linearGradient id="cim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#A8F07A"/>
+      <stop offset="1" stop-color="#4FB04C"/>
+    </linearGradient>
+    <linearGradient id="toprak" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#C98B55"/>
+      <stop offset="1" stop-color="#8A5530"/>
+    </linearGradient>
+  </defs>
+  <g stroke="#3B2F6B" stroke-width="4.5" stroke-linejoin="round">
+    <rect x="46" y="16" width="44" height="18" rx="8" fill="url(#toprak)"/>
+    <rect x="28" y="44" width="44" height="18" rx="8" fill="url(#toprak)"/>
+    <rect x="10" y="72" width="44" height="18" rx="8" fill="url(#toprak)"/>
+  </g>
+  <g fill="url(#cim)" stroke="#3B2F6B" stroke-width="3.5" stroke-linejoin="round">
+    <path d="M46 24 Q46 16 54 16 H82 Q90 16 90 24 Z"/>
+    <path d="M28 52 Q28 44 36 44 H64 Q72 44 72 52 Z"/>
+    <path d="M10 80 Q10 72 18 72 H46 Q54 72 54 80 Z"/>
+  </g>
+  <path d="M20 58 V36 M12 44 L20 36 L28 44" fill="none" stroke="#FF7A9A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

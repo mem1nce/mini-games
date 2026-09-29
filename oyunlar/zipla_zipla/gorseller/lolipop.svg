@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+  <!-- Lolipop: pembe sarmal şeker, beyaz sap -->
+  <defs>
+    <radialGradient id="seker" cx="0.38" cy="0.32" r="0.75">
+      <stop offset="0" stop-color="#FFC4DD"/>
+      <stop offset="0.55" stop-color="#FF6FA8"/>
+      <stop offset="1" stop-color="#E0457F"/>
+    </radialGradient>
+    <clipPath id="daire"><circle cx="50" cy="38" r="32"/></clipPath>
+  </defs>
+  <rect x="45" y="56" width="10" height="40" rx="5" fill="#FFFFFF" stroke="#3B2F6B" stroke-width="4.5"/>
+  <circle cx="50" cy="38" r="32" fill="url(#seker)"/>
+  <g clip-path="url(#daire)" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" opacity="0.9">
+    <path d="M50 38 a4 4 0 0 1 8 0 a9 9 0 0 1 -18 0 a14 14 0 0 1 28 0 a19 19 0 0 1 -38 0 a24 24 0 0 1 48 0 a29 29 0 0 1 -58 0"/>
+  </g>
+  <circle cx="50" cy="38" r="32" fill="none" stroke="#3B2F6B" stroke-width="5"/>
+  <ellipse cx="36" cy="22" rx="9" ry="5" transform="rotate(-35 36 22)" fill="#FFFFFF" opacity="0.85"/>
+</svg>
