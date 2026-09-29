@@ -19,6 +19,7 @@ const OYUNLAR := [
 	{"ad": "Köstebek", "sahne": "res://oyunlar/kostebek/kostebek.tscn", "renk": Color("e3f5d0"), "cizim": "kostebek", "kayit": "kostebek"},
 	{"ad": "Toplama", "sahne": "res://oyunlar/toplama/toplama.tscn", "renk": Color("fff0c8"), "cizim": "toplama", "kayit": "toplama"},
 	{"ad": "Çıkarma", "sahne": "res://oyunlar/cikarma/cikarma.tscn", "renk": Color("d4f5f0"), "cizim": "cikarma", "kayit": "cikarma"},
+	{"ad": "Araba Yarışı", "sahne": "res://oyunlar/araba_yarisi/araba_yarisi.tscn", "renk": Color("e4e9ff"), "cizim": "araba", "kayit": "araba_yarisi"},
 ]
 
 const KART := Vector2(300, 292)
@@ -242,6 +243,8 @@ func _ulasilan_bolum(kayit: String) -> int:
 			return int(ayar.get_value("ilerleme", "bolum", 0)) + 1
 		"cikarma":
 			return int(ayar.get_value("ilerleme", "bolum", 0)) + 1
+		"araba_yarisi":
+			return int(ayar.get_value("ilerleme", "acik", 1))   # açılan pist sayısı
 	return 0
 
 
@@ -415,3 +418,25 @@ func _ciz(cizim: Node2D, tur: String) -> void:
 			_sprite(cizim, "eksi.svg", 46.0, Vector2(4, 8))
 			var soluk := _sprite(cizim, "seker.svg", 124.0, Vector2(70, 8), 0.15)
 			soluk.modulate.a = 0.4
+		"araba":
+			# Araba Yarışı: aslan şoförlü kırmızı araba (oyundaki katmanlarla: şoför cama kırpılır) ve bayrak
+			_sprite(cizim, "bayrak.svg", 72.0, Vector2(78, -34), 0.1)
+			var tuval := Node2D.new()   # arabanın 360x224 tuvali; (180, 218) tekerleklerin yere değdiği nokta
+			tuval.scale = Vector2.ONE * 0.64
+			tuval.position = Vector2(-6, 60) - Vector2(180, 218) * 0.64
+			cizim.add_child(tuval)
+			var ic := _sprite(tuval, "araba_ic.svg", 360.0, Vector2(180, 112))
+			ic.clip_children = CanvasItem.CLIP_CHILDREN_AND_DRAW
+			var birim := 1.0 / ic.scale.x
+			var sofor := Sprite2D.new()
+			sofor.texture = load(G + "aslan.svg")
+			sofor.scale = Vector2.ONE * 0.6 * 256.0 / sofor.texture.get_width() * birim
+			sofor.position = (Vector2(182, 76) - Vector2(180, 112) - Vector2(0, -10) * 0.6) * birim
+			ic.add_child(sofor)
+			var direksiyon := Sprite2D.new()
+			direksiyon.texture = load(G + "direksiyon.svg")
+			direksiyon.scale = Vector2.ONE * 360.0 / direksiyon.texture.get_width() * birim
+			ic.add_child(direksiyon)
+			_sprite(tuval, "araba_kirmizi.svg", 360.0, Vector2(180, 112))
+			for x in [98.0, 262.0]:
+				_sprite(tuval, "teker.svg", 88.0, Vector2(x, 178))
