@@ -12,6 +12,9 @@ const RING := Color("ff7a9a")
 const RING_BG := Color(0.23, 0.18, 0.42, 0.15)
 
 var hold_time: float = 1.0
+## Düğmenin dolgu rengi ve ikonu (oyun kendi renginde düğme isterse değiştirir)
+var bg_color: Color = BG
+var icon: Texture2D = ICON
 var _progress: float = 0.0
 var _holding: bool = false
 var _done: bool = false
@@ -57,10 +60,10 @@ func _draw() -> void:
 	var center := size / 2.0
 	var radius := minf(size.x, size.y) / 2.0
 	draw_circle(center + Vector2(0, 6), radius - 6.0, Color(0.2, 0.1, 0.3, 0.16))
-	draw_circle(center, radius - 8.0, BG)
+	draw_circle(center, radius - 8.0, bg_color)
 	draw_arc(center, radius - 8.0, 0.0, TAU, 48, BORDER, 5.0, true)
-	var icon := radius * 1.0
-	draw_texture_rect(ICON, Rect2(center - Vector2(icon, icon) / 2.0, Vector2(icon, icon)), false)
+	var icon_size := radius * 1.0
+	draw_texture_rect(icon, Rect2(center - Vector2(icon_size, icon_size) / 2.0, Vector2(icon_size, icon_size)), false)
 	if _progress > 0.0:
 		draw_arc(center, radius - 1.0, 0.0, TAU, 48, RING_BG, 10.0, true)
 		draw_arc(center, radius - 1.0, -PI / 2.0, -PI / 2.0 + TAU * _progress, 48, RING, 10.0, true)
