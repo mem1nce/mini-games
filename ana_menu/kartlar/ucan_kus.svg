@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="320" height="300" viewBox="-160 -150 320 300">
+<g transform="translate(-62.00 64.00) scale(0.6250 0.6250) translate(-120.00 -65.00) scale(1.0000 1.0000) translate(-0.00 -0.00)" opacity="0.95">
+  <defs>
+    <linearGradient id="p1_bulut" gradientUnits="userSpaceOnUse" x1="0" y1="10" x2="0" y2="124">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#E4EEFF"/>
+    </linearGradient>
+  </defs>
+  <g fill="url(#p1_bulut)">
+    <circle cx="70" cy="80" r="42"/>
+    <circle cx="120" cy="58" r="50"/>
+    <circle cx="174" cy="82" r="38"/>
+    <rect x="38" y="80" width="170" height="42" rx="21"/>
+  </g>
+  <ellipse cx="104" cy="40" rx="20" ry="9" fill="#FFFFFF"/>
+</g>
+<g transform="translate(12.00 -10.00) rotate(-4.58) scale(1.5286 1.5286) translate(-70.00 -60.00) scale(1.0000 1.0000) translate(-0.00 -0.00)">
+  
+  <path d="M30 62 L6 46 Q12 62 6 78 Z" fill="#8E5CF2" stroke="#3B3585" stroke-width="4" stroke-linejoin="round"/>
+  
+  <path d="M66 28 Q58 8 70 4 Q70 16 75 24 Q80 8 94 11 Q84 18 82 30 Z" fill="#B36BFF" stroke="#3B3585" stroke-width="4" stroke-linejoin="round"/>
+  
+  <ellipse cx="68" cy="66" rx="46" ry="42" fill="#6C7BFF" stroke="#3B3585" stroke-width="4"/>
+  
+  <ellipse cx="78" cy="84" rx="28" ry="19" fill="#C9D6FF"/>
+  
+  <circle cx="104" cy="75" r="7" fill="#FF9EC7"/>
+  
+  <ellipse cx="92" cy="52" rx="17" ry="19" fill="#FFFFFF" stroke="#3B3585" stroke-width="3"/>
+  <circle cx="96" cy="55" r="10" fill="#1F1B3F"/>
+  <circle cx="100" cy="50" r="4" fill="#FFFFFF"/>
+  
+  <path d="M112 62 L126 67 L112 72 Z" fill="#FF8FB8" stroke="#3B3585" stroke-width="3" stroke-linejoin="round"/>
+  
+  <g transform="rotate(0 64 70)">
+    <ellipse cx="48" cy="70" rx="20" ry="11" fill="#8E5CF2" stroke="#3B3585" stroke-width="4"/>
+  </g>
+</g>
+</svg>
