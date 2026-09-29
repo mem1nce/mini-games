@@ -9,4 +9,9 @@ Dışarıdan alınan her varlık (yazı tipi, görsel, ses) burada listelenir. Y
 ## Görseller ve sesler
 
 - Oyunlardaki bütün SVG görseller projede elle çizildi.
-- Bütün sesler projede Python ile sentezlendi (`ortak/ses/sentez.py` ve oyunların `sesler/ses_uret.py` betikleri).
+- Sesler projede Python ile sentezlendi (`ortak/ses/sentez.py` ve oyunların `sesler/ses_uret.py` betikleri); aşağıdaki kayıtlar hariç.
+
+## İndirilen sesler (CC0)
+
+- **Kedi miyavlaması** (Müzik Kutusu `sesler/kedi.wav`): "Cat Purr & Meow", Kerzoven, CC0. Kaynak: https://opengameart.org/content/cat-purr-meow (`cat_mewfood.wav`, `oyunlar/muzik_kutusu/sesler/kaynak/` içinde; `ses_uret.py` keser ve seviyesini ayarlar).
+- **Köpek havlaması** (Müzik Kutusu `sesler/kopek.wav`): "Dog Barking Mono", Brandon Morris, CC0 (OGA-BY 3.0 ile çift lisanslı; CC0 seçildi). Kaynak: https://opengameart.org/content/dog-barking-mono (`dog_barking_mono.wav`, aynı klasörde).

@@ -74,7 +74,7 @@ func _land() -> void:
 	create_tween().tween_property(self, "_squash", Vector2.ONE, 0.3).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 
 
-## Şarkı bitti: büyük zıplama ve takla
+## Şarkı bitti: büyük zıplama ve dönüş
 func celebrate() -> void:
 	energy = 1.0
 	if _hop_tween:

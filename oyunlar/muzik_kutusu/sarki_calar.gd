@@ -12,6 +12,13 @@ var song: MusicSong = null
 var step: int = 0
 var _replay_id: int = 0                    # yeni bir replay/stop eski beklemeleri geçersiz kılar
 var _replaying: bool = false
+var _timer: Timer                          # düğümle birlikte silinir: oyundan çıkınca bekleyen nota kalmaz
+
+
+func _ready() -> void:
+	_timer = Timer.new()
+	_timer.one_shot = true
+	add_child(_timer)
 
 
 func is_playing() -> bool:
@@ -63,12 +70,14 @@ func replay(played: MusicSong, delay: float = 0.0, speed: float = 1.0) -> void:
 	var my_id := _replay_id
 	_replaying = true
 	if delay > 0.0:
-		await get_tree().create_timer(delay).timeout
+		_timer.start(delay)
+		await _timer.timeout
 	for i in played.size():
 		if my_id != _replay_id:
 			return
 		replay_note.emit(played.bar(i))
-		await get_tree().create_timer(played.seconds(i) / speed).timeout
+		_timer.start(played.seconds(i) / speed)
+		await _timer.timeout
 	if my_id == _replay_id:
 		_replaying = false
 		replay_ended.emit()
