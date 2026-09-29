@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="280" height="80" viewBox="0 0 280 80">
+  <defs>
+    <radialGradient id="su" cx="0.45" cy="0.4" r="0.6">
+      <stop offset="0" stop-color="#C4ECFF"/>
+      <stop offset="0.6" stop-color="#7FC6F2"/>
+      <stop offset="1" stop-color="#5AA6E0"/>
+    </radialGradient>
+  </defs>
+  <!-- Yol üstünde su birikintisi: hafif dalgalı kenar -->
+  <path d="M 26 44 C 20 26 60 14 104 16 C 140 8 200 10 236 20 C 268 28 270 50 244 60 C 206 74 150 70 118 72 C 72 76 32 64 26 44 Z" fill="#4A8DC8" opacity="0.5"/>
+  <path d="M 32 42 C 28 28 64 20 104 21 C 140 14 196 16 230 24 C 258 31 260 48 238 56 C 204 67 150 64 118 66 C 76 69 38 58 32 42 Z" fill="url(#su)"/>
+  <path d="M 70 30 C 100 24 140 22 170 25" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" opacity="0.75"/>
+  <path d="M 190 30 C 204 31 214 33 222 36" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+  <ellipse cx="130" cy="50" rx="30" ry="5" fill="#FFFFFF" opacity="0.25"/>
+</svg>

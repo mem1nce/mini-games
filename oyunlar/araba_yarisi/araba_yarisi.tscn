@@ -1,0 +1,86 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://oyunlar/araba_yarisi/araba_yarisi.gd" id="1_oyun"]
+[ext_resource type="Script" path="res://oyunlar/araba_yarisi/arka_plan.gd" id="2_arka"]
+[ext_resource type="Script" path="res://oyunlar/araba_yarisi/pist.gd" id="3_pist"]
+[ext_resource type="Script" path="res://oyunlar/araba_yarisi/efektler.gd" id="4_efekt"]
+[ext_resource type="Script" path="res://oyunlar/araba_yarisi/kamera.gd" id="5_kamera"]
+[ext_resource type="Script" path="res://oyunlar/araba_yarisi/arayuz.gd" id="6_arayuz"]
+[ext_resource type="Script" path="res://oyunlar/araba_yarisi/garaj.gd" id="7_garaj"]
+[ext_resource type="Script" path="res://oyunlar/araba_yarisi/harita.gd" id="8_harita"]
+[ext_resource type="Script" path="res://oyunlar/araba_yarisi/podyum.gd" id="9_podyum"]
+[ext_resource type="Script" path="res://oyunlar/araba_yarisi/sesler.gd" id="10_sesler"]
+
+[node name="ArabaYarisi" type="Node2D"]
+texture_filter = 4
+script = ExtResource("1_oyun")
+
+[node name="Arkaplan" type="CanvasLayer" parent="."]
+layer = -10
+script = ExtResource("2_arka")
+
+[node name="Dunya" type="Node2D" parent="."]
+
+[node name="Pist" type="Node2D" parent="Dunya"]
+script = ExtResource("3_pist")
+
+[node name="Arabalar" type="Node2D" parent="Dunya"]
+
+[node name="Yildizlar" type="Node2D" parent="Dunya"]
+
+[node name="Efektler" type="Node2D" parent="Dunya"]
+script = ExtResource("4_efekt")
+
+[node name="Kamera" type="Camera2D" parent="Dunya"]
+script = ExtResource("5_kamera")
+
+[node name="Arayuz" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="Yaris" type="Control" parent="Arayuz"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("6_arayuz")
+
+[node name="Ekranlar" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="Garaj" type="Control" parent="Ekranlar"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("7_garaj")
+
+[node name="Harita" type="Control" parent="Ekranlar"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("8_harita")
+
+[node name="Podyum" type="Control" parent="Ekranlar"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("9_podyum")
+
+[node name="Sesler" type="Node" parent="."]
+script = ExtResource("10_sesler")

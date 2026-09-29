@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="300" viewBox="0 0 120 300">
+  <defs>
+    <radialGradient id="isik" cx="0.5" cy="0.4" r="0.6">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.5" stop-color="#FFF1B0"/>
+      <stop offset="1" stop-color="#FFD166"/>
+    </radialGradient>
+  </defs>
+  <!-- Direk, kıvrık kol ve fener -->
+  <path d="M 30 294 L 30 60 Q 30 26 62 26 L 78 26" fill="none" stroke="#3A3F6E" stroke-width="12" stroke-linecap="round"/>
+  <path d="M 30 294 L 30 60 Q 30 26 62 26 L 78 26" fill="none" stroke="#5A6099" stroke-width="4" stroke-linecap="round"/>
+  <rect x="18" y="276" width="24" height="20" rx="6" fill="#3A3F6E"/>
+  <path d="M 62 30 L 100 30 L 92 50 L 70 50 Z" fill="#3A3F6E" stroke="#262A52" stroke-width="4" stroke-linejoin="round"/>
+  <ellipse cx="81" cy="54" rx="14" ry="9" fill="url(#isik)"/>
+</svg>
