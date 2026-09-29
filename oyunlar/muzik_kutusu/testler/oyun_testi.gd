@@ -68,6 +68,7 @@ func _from_menu() -> void:
 	root.add_child(menu)
 	current_scene = menu
 	await _frames(90)
+	await _shot("00_menu")
 	var index := -1
 	for k in menu.OYUNLAR.size():
 		if menu.OYUNLAR[k]["sahne"] == GAME_SCENE:
