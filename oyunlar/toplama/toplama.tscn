@@ -1,0 +1,114 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://oyunlar/toplama/toplama.gd" id="1_oyun"]
+[ext_resource type="Resource" path="res://oyunlar/toplama/ayarlar.tres" id="2_ayarlar"]
+[ext_resource type="Texture2D" path="res://oyunlar/toplama/gorseller/arka_plan.svg" id="3_tepeler"]
+[ext_resource type="Script" path="res://oyunlar/toplama/nesne_kutusu.gd" id="4_kutu"]
+[ext_resource type="Texture2D" path="res://oyunlar/toplama/gorseller/kutu_a.svg" id="5_kutu_a"]
+[ext_resource type="Texture2D" path="res://oyunlar/toplama/gorseller/kutu_b.svg" id="6_kutu_b"]
+[ext_resource type="Texture2D" path="res://oyunlar/toplama/gorseller/kutu_sonuc.svg" id="7_kutu_sonuc"]
+[ext_resource type="Texture2D" path="res://oyunlar/toplama/gorseller/arti.svg" id="8_arti"]
+[ext_resource type="Texture2D" path="res://oyunlar/toplama/gorseller/esittir.svg" id="9_esittir"]
+[ext_resource type="Script" path="res://oyunlar/toplama/kutlama.gd" id="10_kutlama"]
+[ext_resource type="Script" path="res://oyunlar/toplama/ilerleme_cubugu.gd" id="11_ilerleme"]
+[ext_resource type="Script" path="res://ortak/basili_geri_dugmesi.gd" id="12_geri"]
+[ext_resource type="Script" path="res://oyunlar/toplama/hoparlor_dugmesi.gd" id="13_hoparlor"]
+[ext_resource type="Script" path="res://oyunlar/toplama/sesler.gd" id="14_sesler"]
+[ext_resource type="Script" path="res://oyunlar/toplama/sesli_sayma.gd" id="15_sesli"]
+
+[node name="Toplama" type="Control"]
+texture_filter = 4
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_oyun")
+settings = ExtResource("2_ayarlar")
+
+[node name="Sky" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+
+[node name="Floaters" type="Node2D" parent="."]
+
+[node name="Hills" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -260.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+texture = ExtResource("3_tepeler")
+expand_mode = 1
+
+[node name="Row" type="Node2D" parent="."]
+
+[node name="BoxA" type="Node2D" parent="Row"]
+script = ExtResource("4_kutu")
+box_texture = ExtResource("5_kutu_a")
+number_color = Color(0.84, 0.2, 0.48, 1)
+
+[node name="Plus" type="Sprite2D" parent="Row"]
+texture = ExtResource("8_arti")
+
+[node name="BoxB" type="Node2D" parent="Row"]
+script = ExtResource("4_kutu")
+box_texture = ExtResource("6_kutu_b")
+number_color = Color(0.16, 0.45, 0.84, 1)
+
+[node name="Equals" type="Sprite2D" parent="Row"]
+texture = ExtResource("9_esittir")
+
+[node name="BoxResult" type="Node2D" parent="Row"]
+script = ExtResource("4_kutu")
+box_texture = ExtResource("7_kutu_sonuc")
+number_color = Color(0.22, 0.6, 0.16, 1)
+has_counter = true
+
+[node name="Buttons" type="Node2D" parent="."]
+
+[node name="Flying" type="Node2D" parent="."]
+z_index = 5
+
+[node name="Effects" type="Node2D" parent="."]
+z_index = 6
+script = ExtResource("10_kutlama")
+
+[node name="Progress" type="Node2D" parent="."]
+script = ExtResource("11_ilerleme")
+
+[node name="BackButton" type="Control" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 18.0
+offset_right = 150.0
+offset_bottom = 118.0
+mouse_filter = 2
+script = ExtResource("12_geri")
+
+[node name="Speaker" type="Control" parent="."]
+layout_mode = 0
+offset_left = 1130.0
+offset_top = 18.0
+offset_right = 1230.0
+offset_bottom = 118.0
+mouse_filter = 2
+script = ExtResource("13_hoparlor")
+
+[node name="Sounds" type="Node" parent="."]
+script = ExtResource("14_sesler")
+
+[node name="Narrator" type="Node" parent="."]
+script = ExtResource("15_sesli")

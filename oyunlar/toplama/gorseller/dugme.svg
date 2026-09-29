@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="172" height="150" viewBox="0 0 172 150">
+  <!-- Cevap düğmesi (oyundaki boyuyla aynı oran): beyaz çizilir, oyunda modulate ile boyanır;
+       alttaki gri kabartma rengin koyusu olur -->
+  <defs>
+    <clipPath id="kenar">
+      <rect x="6" y="6" width="160" height="134" rx="46"/>
+    </clipPath>
+  </defs>
+  <rect x="5" y="14" width="162" height="134" rx="47" fill="#4A3B6B" opacity="0.16"/>
+  <g clip-path="url(#kenar)">
+    <rect x="0" y="0" width="172" height="150" fill="#B9AFD0"/>
+    <path d="M0 0 H172 V110 Q86 126 0 110 Z" fill="#FFFFFF"/>
+  </g>
+  <rect x="6" y="6" width="160" height="134" rx="46" fill="none" stroke="#4A3B6B" stroke-width="7"/>
+</svg>
