@@ -22,6 +22,7 @@ const OYUNLAR := [
 	{"ad": "Araba Yarışı", "sahne": "res://oyunlar/araba_yarisi/araba_yarisi.tscn", "renk": Color("e4e9ff"), "cizim": "araba", "kayit": "araba_yarisi"},
 	{"ad": "Zıpla Zıpla", "sahne": "res://oyunlar/zipla_zipla/zipla_zipla.tscn", "renk": Color("d6f0ff"), "cizim": "zipla", "kayit": "zipla_zipla"},
 	{"ad": "Sihirli Bahçe", "sahne": "res://oyunlar/sihirli_bahce/sihirli_bahce.tscn", "renk": Color("f7e8ff"), "cizim": "bahce", "kayit": "sihirli_bahce"},
+	{"ad": "Robot Fabrikası", "sahne": "res://oyunlar/robot_fabrikasi/robot_fabrikasi.tscn", "renk": Color("ffe6d4"), "cizim": "robot", "kayit": "robot_fabrikasi"},
 ]
 
 const KART := Vector2(300, 292)
@@ -251,6 +252,8 @@ func _ulasilan_bolum(kayit: String) -> int:
 			return int(ayar.get_value("rekor", "basamak", 0))   # bölüm yok: rozet rekor basamağı gösterir
 		"sihirli_bahce":
 			return ayar.get_section_keys("album").size() if ayar.has_section("album") else 0   # keşfedilen bitki sayısı
+		"robot_fabrikasi":
+			return int(ayar.get_value("ilerleme", "bolum", 0)) + 1
 	return 0
 
 
@@ -461,3 +464,28 @@ func _ciz(cizim: Node2D, tur: String) -> void:
 			_sprite(cizim, "bahce_aycicegi.svg", 195.0, Vector2(36, -16), 0.06)
 			_sprite(cizim, "bahce_kese.svg", 100.0, Vector2(-60, 38), -0.22)
 			_sprite(cizim, "yildiz.svg", 34.0, Vector2(-70, -46), 0.2)
+		"robot":
+			# Robot Fabrikası: oyundaki parçalardan tekerlekli robot (gözleri yanık) ve yanında dişli
+			_sprite(cizim, "robot_disli.svg", 80.0, Vector2(-78, 50), 0.3)
+			var robot := Node2D.new()
+			robot.position = Vector2(24, 92)
+			robot.scale = Vector2.ONE * 0.66
+			cizim.add_child(robot)
+			for yon in [-1, 1]:
+				var kol := _sprite(robot, "robot_kol.svg", 108.0, Vector2(yon * 54.6, -128), yon * -0.28)
+				kol.centered = false
+				kol.offset = -Vector2(80, 26) * kol.texture.get_width() / 160.0
+				_sprite(robot, "robot_tekerlek.svg", 70.0, Vector2(yon * 42.0, -35))
+			_sprite(robot, "robot_govde.svg", 130.0, Vector2(0, -114))
+			_sprite(robot, "robot_boyun.svg", 44.0, Vector2(0, -165)).scale.y *= 0.35
+			_sprite(robot, "robot_kafa.svg", 112.0, Vector2(0, -206))
+			_sprite(robot, "robot_anten.svg", 76.0, Vector2(0, -283))
+			var gozler := Node2D.new()
+			gozler.position = Vector2(0, -206)
+			robot.add_child(gozler)
+			gozler.draw.connect(func() -> void:
+				for yon in [-1, 1]:
+					var p := Vector2(yon * 11.0, 6.3)
+					gozler.draw_circle(p, 16.0, Color(0.5, 1.0, 1.0, 0.22))
+					gozler.draw_circle(p, 6.6, Color(0.6, 1.0, 1.0))
+					gozler.draw_circle(p + Vector2(-2, -2), 2.3, Color.WHITE))
