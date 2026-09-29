@@ -1,8 +1,9 @@
 extends Node2D
 # Zıpla Zıpla (JumpGame): kurbağa, ekranın ortasında üst üste dizilmiş ve sağa-sola kayan basamaklara
 # zıplayarak tırmanır. Ekrana (ya da boşluk tuşuna) basınca hemen zıplar; konma kararı zıplama anında
-# yatay çakışmayla verilir (deterministik, fizik motoru yok). Iskalarsa düşer ve oyun biter.
-# Üzerinde durulan basamak bir süre sonra titreyip solar ve ufalanır. Bütün denge ayarları denge.tres.
+# yatay çakışmayla verilir (deterministik, fizik motoru yok). Iskalarsa kendi basamağına geri konar;
+# üzerinde durulan basamak bir süre sonra titreyip solar ve ufalanır, kurbağa üstündeyse düşer ve oyun
+# biter. Bütün denge ayarları denge.tres.
 #
 # Durumlar: READY (ilk dokunuşu bekler) -> PLAYING -> FALLING (komik düşüş) -> GAME_OVER (panel).
 
@@ -58,6 +59,7 @@ func _ready() -> void:
 		platform.warning_started.connect(_on_platform_warning)
 		platform.crumbled.connect(_on_platform_crumbled)
 	player.landed.connect(_on_player_landed)
+	player.returned.connect(_on_player_returned)
 	player.missed.connect(_on_player_missed)
 	hud.back_button.hold_time = hold_to_exit
 	hud.back_button.completed.connect(SahneGecis.ana_menuye_don)
@@ -195,6 +197,11 @@ func _on_player_landed(platform: Node2D) -> void:
 		hud.fly_reward(reward.texture, from, reward.sparkle_color, _on_reward_arrived.bind(reward.points, _run_id))
 	spawner.advance(steps)
 	_move_camera(steps, true)
+
+
+# Iskalayıp kendi basamağına geri kondu: yeni basamak sayılmaz, kaybolma süresi sıfırlanmaz
+func _on_player_returned(_platform: Node2D) -> void:
+	sounds.play("kon", randf_range(0.85, 0.95))
 
 
 func _on_reward_arrived(points: int, my_run: int) -> void:

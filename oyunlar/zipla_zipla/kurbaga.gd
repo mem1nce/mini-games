@@ -3,10 +3,12 @@ extends Node2D
 # Konma kararını oyun verir (zıplama anında, deterministik); kurbağa sadece hareketi ve görünüşü yapar:
 # - IDLE: basamağın üstünde, basamakla birlikte kayar; nefes alır, ara sıra göz kırpar.
 # - JUMP: parabol (tepe süresi ve yüksekliğinden g ve ilk hız hesaplanır). Konacaksa x hedef basamağı
-#   izler ve iniş anında `landed`; ıskalayacaksa dümdüz yükselir, tepe noktasında `missed` ve düşmeye geçer.
+#   izler ve iniş anında `landed`; ıskalayacaksa kendi basamağıyla birlikte yükselip ona geri konar
+#   (`returned`). Kendi basamağı bu arada ufalandıysa düşmeye geçer (`missed`).
 # - FALL: sarmal gözler, dışarıda dil, havada bacaklar, yavaşça takla atarak aşağı düşer.
 
 signal landed(platform: Node2D)
+signal returned(platform: Node2D)
 signal missed
 
 enum Mode { IDLE, JUMP, FALL }
@@ -31,6 +33,7 @@ var offset: float = 0.0       # basamağın merkezine göre yatay konum
 
 var _target: Node2D = null
 var _target_offset: float = 0.0
+var _returning: bool = false  # ıskalama: kendi basamağına geri konacak
 var _t: float = 0.0
 var _g: float = 0.0
 var _v0: float = 0.0
@@ -90,19 +93,21 @@ func place(on: Node2D, at_offset: float) -> void:
 	_follow_platform()
 
 
-# Zıplamayı başlatır. target null ise ıskalama: dümdüz yükselir, tepe noktasında düşmeye geçer.
+# Zıplamayı başlatır. target null ise ıskalama: kendi basamağıyla birlikte yükselir ve ona geri konar.
 # height: iki basamak arası, clearance: tepe noktasının üst basamağın ne kadar üstünde olduğu.
 func jump(target: Node2D, target_offset: float, rise_time: float, height: float, clearance: float) -> void:
 	if mode != Mode.IDLE:
 		return
 	mode = Mode.JUMP
-	_target = target
-	_target_offset = target_offset
+	_returning = target == null
+	_target = platform if _returning else target
+	_target_offset = offset if _returning else target_offset
 	var apex := height + clearance
 	_rise = rise_time
 	_g = 2.0 * apex / (rise_time * rise_time)
 	_v0 = _g * rise_time
-	_land_time = rise_time + sqrt(2.0 * clearance / _g)
+	# Konarken üst basamağın hizasına, geri dönerken çıkılan yüksekliğe iner
+	_land_time = rise_time * 2.0 if _returning else rise_time + sqrt(2.0 * clearance / _g)
 	_t = 0.0
 	_x0 = position.x
 	_y0 = position.y
@@ -144,15 +149,16 @@ func _process(delta: float) -> void:
 		Mode.JUMP:
 			_t += delta
 			position.y = _y0 - _v0 * _t + 0.5 * _g * _t * _t
-			if _target:
-				var w := clampf(_t / _land_time, 0.0, 1.0)
-				var goal: float = _target.position.x + _target_offset
-				position.x = lerpf(_x0, goal, w * w * (3.0 - 2.0 * w))
-				if _t >= _land_time:
+			var w := clampf(_t / _land_time, 0.0, 1.0)
+			var goal: float = _target.position.x + _target_offset
+			position.x = lerpf(_x0, goal, w * w * (3.0 - 2.0 * w))
+			if _t >= _land_time:
+				if _target.solid:
 					_land()
-			elif _t >= _rise:
-				_start_fall(0.0)
-				missed.emit()
+				else:
+					# Geri döneceği basamak havadayken ufalandı: aşağı düşmeye devam eder
+					_start_fall(-_v0 + _g * _t)
+					missed.emit()
 		Mode.FALL:
 			_vy += _g * 0.55 * delta
 			position.y += _vy * delta
@@ -175,7 +181,10 @@ func _land() -> void:
 	_follow_platform()
 	_set_pose("sit")
 	_squash_to([Vector2(1.3, 0.72), Vector2(0.9, 1.12), Vector2(1.04, 0.97), Vector2.ONE], [0.07, 0.1, 0.08, 0.08])
-	landed.emit(platform)
+	if _returning:
+		returned.emit(platform)
+	else:
+		landed.emit(platform)
 
 
 func _start_fall(start_vy: float) -> void:

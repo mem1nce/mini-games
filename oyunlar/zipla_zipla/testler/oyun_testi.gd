@@ -165,22 +165,42 @@ func _play() -> void:
 	_check(game.hud._counter_label.text == "0", "sayaç sıfırlanmadı")
 	_check(game.spawner.platform(0).fixed and game.player.platform == game.spawner.platform(0), "kurbağa başlangıç basamağında değil")
 
-	# Iskalama: üstteki basamak uzaktayken dokununca düşmeli (basamak testte bilerek uzağa konur)
+	# Iskalama: üstteki basamak uzaktayken dokununca kendi basamağına geri konmalı (basamak testte
+	# bilerek uzağa konur); geri konuş yeni basamak sayılmaz ve kaybolma süresini sıfırlamaz
 	_tap(Vector2(640, 400))
 	await _climb(2)
 	await _frames(30)
 	_check(game.state == 1, "ıskalama denemesinden önce oyun sürmeli")
+	var home: Node2D = game.player.platform
+	var steps_before: int = game.steps
 	var next: Node2D = game.spawner.platform(game.steps + 1)
 	next.frozen = true
 	next.position.x = game.player.position.x + next.width / 2.0 + game.balance.player_width * 0.4
 	_check(not next.can_land(game.player.position.x, game.balance.player_width, game.balance.land_overlap_ratio), "basamak uzaktayken konulamamalı")
+	var left_before: float = home.time_left()
 	_tap(Vector2(640, 400))
-	await _frames(20)
+	await _frames(14)
 	await _shot("07_iskalama")
+	await _frames(30)
+	_check(game.state == 1 and not game.player.is_airborne(), "ıskalayınca kendi basamağına geri konmalı")
+	_check(game.player.platform == home and game.steps == steps_before, "geri konuş yeni basamak sayılmamalı")
+	_check(home.time_left() < left_before - 0.5, "geri konuş kaybolma süresini sıfırlamamalı")
+	_check(absf(game.player.position.x - (home.position.x + game.player.offset)) < 0.5, "kurbağa basamağıyla birlikte kaymalı")
+	# Basamak kaybolmak üzereyken ıskalarsa: havadayken basamak ufalanır, kurbağa düşer, oyun biter
+	for k in 900:
+		await process_frame
+		if home.time_left() >= 0.0 and home.time_left() < 0.2:
+			break
+	next.position.x = game.player.position.x + next.width / 2.0 + game.balance.player_width * 0.4
+	_tap(Vector2(640, 400))
+	await _wait_state(2, 120)
+	_check(game.state == 2, "havadayken basamağı ufalanınca düşmeli")
+	await _frames(20)
+	await _shot("08_dusme_havada")
 	await _wait_state(3, 600)
-	_check(game.state == 3, "ıskalayınca oyun bitmeli")
+	_check(game.state == 3, "düşünce oyun bitmeli")
 	await _frames(50)
-	await _shot("08_bitti_rekorsuz")
+	await _shot("09_bitti_rekorsuz")
 
 
 # Uygun anda (çakışma geniş) dokunarak `count` basamak daha tırman
