@@ -21,6 +21,7 @@ const OYUNLAR := [
 	{"ad": "Çıkarma", "sahne": "res://oyunlar/cikarma/cikarma.tscn", "renk": Color("d4f5f0"), "cizim": "cikarma", "kayit": "cikarma"},
 	{"ad": "Araba Yarışı", "sahne": "res://oyunlar/araba_yarisi/araba_yarisi.tscn", "renk": Color("e4e9ff"), "cizim": "araba", "kayit": "araba_yarisi"},
 	{"ad": "Zıpla Zıpla", "sahne": "res://oyunlar/zipla_zipla/zipla_zipla.tscn", "renk": Color("d6f0ff"), "cizim": "zipla", "kayit": "zipla_zipla"},
+	{"ad": "Sihirli Bahçe", "sahne": "res://oyunlar/sihirli_bahce/sihirli_bahce.tscn", "renk": Color("f7e8ff"), "cizim": "bahce", "kayit": "sihirli_bahce"},
 ]
 
 const KART := Vector2(300, 292)
@@ -248,6 +249,8 @@ func _ulasilan_bolum(kayit: String) -> int:
 			return int(ayar.get_value("ilerleme", "acik", 1))   # açılan pist sayısı
 		"zipla_zipla":
 			return int(ayar.get_value("rekor", "basamak", 0))   # bölüm yok: rozet rekor basamağı gösterir
+		"sihirli_bahce":
+			return ayar.get_section_keys("album").size() if ayar.has_section("album") else 0   # keşfedilen bitki sayısı
 	return 0
 
 
@@ -453,3 +456,8 @@ func _ciz(cizim: Node2D, tur: String) -> void:
 			_sprite(cizim, "kurbaga_govde.svg", 140.0, govde_yeri)
 			_sprite(cizim, "kurbaga_yuz.svg", 140.0, govde_yeri)
 			_sprite(cizim, "lolipop.svg", 76.0, Vector2(-84, -22), -0.3)
+		"bahce":
+			# Sihirli Bahçe: dev ayçiçeği ve yanında tohum kesesi
+			_sprite(cizim, "bahce_aycicegi.svg", 195.0, Vector2(36, -16), 0.06)
+			_sprite(cizim, "bahce_kese.svg", 100.0, Vector2(-60, 38), -0.22)
+			_sprite(cizim, "yildiz.svg", 34.0, Vector2(-70, -46), 0.2)

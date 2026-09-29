@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="90" viewBox="0 0 60 90">
+  <defs></defs>
+  <path d="M 30 40 L 6.4 35.8" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="6.4" cy="35.8" r="3.5" fill="#FFFFFF" />
+  <path d="M 30 40 L 9.2 28.0" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="9.2" cy="28.0" r="3.5" fill="#FFFFFF" />
+  <path d="M 30 40 L 14.6 21.6" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="14.6" cy="21.6" r="3.5" fill="#FFFFFF" />
+  <path d="M 30 40 L 21.8 17.4" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="21.8" cy="17.4" r="3.5" fill="#FFFFFF" />
+  <path d="M 30 40 L 30.0 16.0" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="30.0" cy="16.0" r="3.5" fill="#FFFFFF" />
+  <path d="M 30 40 L 38.2 17.4" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="38.2" cy="17.4" r="3.5" fill="#FFFFFF" />
+  <path d="M 30 40 L 45.4 21.6" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="45.4" cy="21.6" r="3.5" fill="#FFFFFF" />
+  <path d="M 30 40 L 50.8 28.0" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="50.8" cy="28.0" r="3.5" fill="#FFFFFF" />
+  <path d="M 30 40 L 53.6 35.8" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="53.6" cy="35.8" r="3.5" fill="#FFFFFF" />
+  <path d="M 30 40 L 30 70" stroke="#E8E2D0" stroke-width="2.5"/>
+  <ellipse cx="30" cy="76" rx="4" ry="8" fill="#A87444" stroke="#5E3A22" stroke-width="2"/>
+</svg>

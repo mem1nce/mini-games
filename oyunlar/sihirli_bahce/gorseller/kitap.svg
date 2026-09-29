@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0.00" stop-color="#C9A2FF"/><stop offset="0.50" stop-color="#9A6AE0"/><stop offset="1.00" stop-color="#7348B8"/></linearGradient><radialGradient id="g2" cx="0.4" cy="0.35" r="0.8"><stop offset="0.00" stop-color="#FFE0EE"/><stop offset="1.00" stop-color="#FF8FBE"/></radialGradient></defs>
+  <rect x="30" y="24" width="112" height="120" rx="14" fill="#F4EEDC" stroke="#6A4A2E" stroke-width="5"/>
+  <rect x="18" y="16" width="112" height="124" rx="16" fill="url(#g1)" stroke="#3E2270" stroke-width="6"/>
+  <rect x="18" y="16" width="22" height="124" rx="10" fill="#5E3A9C" opacity="0.6"/>
+  <circle cx="84.0" cy="74.0" r="30.0" fill="#FFFFFF" stroke="#3E2270" stroke-width="4" opacity="0.95"/>
+  <path d="M 0 0 C 3.6 -9.0 15.3 -8.5 18.0 0 C 15.3 8.5 3.6 9.0 0 0 Z" transform="translate(84.0 72.0) rotate(-90.0)" fill="url(#g2)" stroke="#9C2A58" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M 0 0 C 3.6 -9.0 15.3 -8.5 18.0 0 C 15.3 8.5 3.6 9.0 0 0 Z" transform="translate(84.0 72.0) rotate(-18.0)" fill="url(#g2)" stroke="#9C2A58" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M 0 0 C 3.6 -9.0 15.3 -8.5 18.0 0 C 15.3 8.5 3.6 9.0 0 0 Z" transform="translate(84.0 72.0) rotate(54.0)" fill="url(#g2)" stroke="#9C2A58" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M 0 0 C 3.6 -9.0 15.3 -8.5 18.0 0 C 15.3 8.5 3.6 9.0 0 0 Z" transform="translate(84.0 72.0) rotate(126.0)" fill="url(#g2)" stroke="#9C2A58" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M 0 0 C 3.6 -9.0 15.3 -8.5 18.0 0 C 15.3 8.5 3.6 9.0 0 0 Z" transform="translate(84.0 72.0) rotate(198.0)" fill="url(#g2)" stroke="#9C2A58" stroke-width="5" stroke-linejoin="round"/>
+  <circle cx="84.0" cy="72.0" r="7.0" fill="#FFD84A" stroke="#B8861A" stroke-width="3" />
+  <path d="M 106 16 L 106 150 L 114 142 L 122 150 L 122 16 Z" fill="#FF6F8E" stroke="#9C2A48" stroke-width="4" stroke-linejoin="round"/>
+  <ellipse cx="50.0" cy="34.0" rx="14.0" ry="5.0" transform="rotate(-10 50.0 34.0)" fill="#FFFFFF" opacity="0.45"/>
+  <path d="M 132 10 C 133.44 20.56 133.44 20.56 144 22 C 133.44 23.44 133.44 23.44 132 34 C 130.56 23.44 130.56 23.44 120 22 C 130.56 20.56 130.56 20.56 132 10 Z" fill="#FFF6B0" opacity="0.95"/>
+</svg>
