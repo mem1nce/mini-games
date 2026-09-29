@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="224" viewBox="0 0 360 224">
+  <defs>
+    <linearGradient id="govde" gradientUnits="userSpaceOnUse" x1="0" y1="14" x2="0" y2="192">
+      <stop offset="0" stop-color="#FF9A8F"/>
+      <stop offset="0.5" stop-color="#F2545B"/>
+      <stop offset="0.6" stop-color="#F2545B"/>
+      <stop offset="1" stop-color="#BF2E40"/>
+    </linearGradient>
+    <linearGradient id="cam" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#EAF7FF" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#A9DAF7" stop-opacity="0.12"/>
+    </linearGradient>
+    <linearGradient id="tampon" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#C9C6D8"/>
+    </linearGradient>
+    <radialGradient id="far" cx="0.4" cy="0.35" r="0.7">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#FFE27A"/>
+    </radialGradient>
+    <clipPath id="pencere"><path d="M 100 107 C 108 76 130 34 172 30 C 206 27 232 35 246 48 C 259 60 268 82 275 107 Z"/></clipPath>
+    <clipPath id="govde_kirp"><path d="M 51.5 190 C 34 190 22 178 22 158 C 22 132 32 112 60 108 L 84 106 C 92 70 116 22 170 16 C 210 12 240 20 258 36 C 272 50 284 78 292 102 C 318 104 336 114 340 134 C 344 158 340 180 312 190 L 308.5 190 A 48 48 0 1 0 215.5 190 L 144.5 190 A 48 48 0 1 0 51.5 190 Z"/></clipPath>
+  </defs>
+  <path d="M 215.5 190 A 48 48 0 1 1 308.5 190 Z M 51.5 190 A 48 48 0 1 1 144.5 190 Z" fill="#2A2236"/>
+  <!-- Egzoz borusu -->
+  <rect x="6" y="177" width="24" height="11" rx="5" fill="#B9B5C9" stroke="#5E1626" stroke-width="4"/>
+  <!-- Gövde (cam yeri boş) -->
+  <path d="M 51.5 190 C 34 190 22 178 22 158 C 22 132 32 112 60 108 L 84 106 C 92 70 116 22 170 16 C 210 12 240 20 258 36 C 272 50 284 78 292 102 C 318 104 336 114 340 134 C 344 158 340 180 312 190 L 308.5 190 A 48 48 0 1 0 215.5 190 L 144.5 190 A 48 48 0 1 0 51.5 190 Z M 100 107 C 108 76 130 34 172 30 C 206 27 232 35 246 48 C 259 60 268 82 275 107 Z" fill="url(#govde)" fill-rule="evenodd"/>
+  <!-- Alt kısımda yumuşak gölge, omuzda ışık çizgisi -->
+  <g clip-path="url(#govde_kirp)">
+    <path d="M 18 174 C 120 184 240 184 346 170 L 346 200 L 18 200 Z" fill="#BF2E40" opacity="0.45"/>
+    <path d="M 64 120 C 130 115 220 115 302 120" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" opacity="0.4"/>
+  </g>
+  <!-- Cam: hafif mavi ton ve iki yansıma -->
+  <path d="M 100 107 C 108 76 130 34 172 30 C 206 27 232 35 246 48 C 259 60 268 82 275 107 Z" fill="url(#cam)"/>
+  <g clip-path="url(#pencere)" fill="#FFFFFF">
+    <path d="M 250 24 L 270 24 L 226 116 L 206 116 Z" opacity="0.2"/>
+    <path d="M 280 24 L 288 24 L 244 116 L 236 116 Z" opacity="0.16"/>
+    <path d="M 118 60 L 126 60 L 108 100 L 100 100 Z" opacity="0.14"/>
+  </g>
+  <!-- Kapı çizgisi ve kolu -->
+  <path d="M 180 113 C 183 134 183 158 178 186" fill="none" stroke="#5E1626" stroke-width="3" stroke-linecap="round" opacity="0.35"/>
+  <rect x="194" y="121" width="22" height="7" rx="3.5" fill="#FFFFFF" opacity="0.8" stroke="#5E1626" stroke-width="2.5"/>
+  <!-- Dış çizgiler -->
+  <path d="M 51.5 190 C 34 190 22 178 22 158 C 22 132 32 112 60 108 L 84 106 C 92 70 116 22 170 16 C 210 12 240 20 258 36 C 272 50 284 78 292 102 C 318 104 336 114 340 134 C 344 158 340 180 312 190 L 308.5 190 A 48 48 0 1 0 215.5 190 L 144.5 190 A 48 48 0 1 0 51.5 190 Z" fill="none" stroke="#5E1626" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M 100 107 C 108 76 130 34 172 30 C 206 27 232 35 246 48 C 259 60 268 82 275 107 Z" fill="none" stroke="#5E1626" stroke-width="5" stroke-linejoin="round"/>
+  <!-- Tavandaki parlama -->
+  <path d="M 124 34 C 146 24 184 20 212 25" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" opacity="0.6"/>
+  <!-- Far, stop lambası, tamponlar -->
+  <rect x="323" y="120" width="16" height="22" rx="8" fill="url(#far)" stroke="#5E1626" stroke-width="4"/>
+  <rect x="19" y="124" width="12" height="22" rx="5" fill="#FF6B6B" stroke="#5E1626" stroke-width="4"/>
+  <rect x="304" y="172" width="42" height="18" rx="9" fill="url(#tampon)" stroke="#5E1626" stroke-width="4"/>
+  <rect x="13" y="170" width="42" height="18" rx="9" fill="url(#tampon)" stroke="#5E1626" stroke-width="4"/>
+</svg>

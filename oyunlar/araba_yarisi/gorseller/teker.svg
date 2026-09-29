@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 88 88">
+  <defs>
+    <radialGradient id="lastik" cx="0.42" cy="0.38" r="0.7">
+      <stop offset="0" stop-color="#5A5268"/>
+      <stop offset="1" stop-color="#2B2636"/>
+    </radialGradient>
+    <radialGradient id="jant" cx="0.38" cy="0.32" r="0.75">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#CFCCDC"/>
+    </radialGradient>
+  </defs>
+  <circle cx="44" cy="44" r="37.5" fill="url(#lastik)" stroke="#1C1826" stroke-width="5"/>
+  <path d="M 18 34 A 28 28 0 0 1 34 18" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.2"/>
+  <circle cx="44" cy="44" r="23" fill="url(#jant)" stroke="#1C1826" stroke-width="4"/>
+  <circle cx="44.00" cy="30.00" r="4.6" fill="#8D88A3"/><circle cx="57.31" cy="39.67" r="4.6" fill="#8D88A3"/><circle cx="52.23" cy="55.33" r="4.6" fill="#8D88A3"/><circle cx="35.77" cy="55.33" r="4.6" fill="#8D88A3"/><circle cx="30.69" cy="39.67" r="4.6" fill="#8D88A3"/>
+  <circle cx="44" cy="44" r="6" fill="#6E6886"/>
+  <circle cx="42" cy="42" r="2" fill="#FFFFFF" opacity="0.8"/>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="224" viewBox="0 0 360 224">
+  <defs>
+    <linearGradient id="ic" x1="0" y1="0" x2="1" y2="0.4">
+      <stop offset="0" stop-color="#3A3150"/>
+      <stop offset="1" stop-color="#5B4F76"/>
+    </linearGradient>
+  </defs>
+  <path d="M 100 107 C 108 76 130 34 172 30 C 206 27 232 35 246 48 C 259 60 268 82 275 107 Z" fill="url(#ic)"/>
+  <!-- Koltuk arkalığı -->
+  <path d="M 120 107 L 124 68 C 126 56 134 50 146 50 L 152 50 C 162 50 168 58 166 70 L 162 107 Z" fill="#7C6D9A" opacity="0.9"/>
+</svg>
