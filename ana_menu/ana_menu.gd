@@ -18,6 +18,7 @@ const OYUNLAR := [
 	{"ad": "Gölge Eşleştirme", "sahne": "res://oyunlar/golge_eslestirme/golge_eslestirme.tscn", "renk": Color("dff1ff"), "cizim": "golge", "kayit": "golge_eslestirme"},
 	{"ad": "Köstebek", "sahne": "res://oyunlar/kostebek/kostebek.tscn", "renk": Color("e3f5d0"), "cizim": "kostebek", "kayit": "kostebek"},
 	{"ad": "Toplama", "sahne": "res://oyunlar/toplama/toplama.tscn", "renk": Color("fff0c8"), "cizim": "toplama", "kayit": "toplama"},
+	{"ad": "Çıkarma", "sahne": "res://oyunlar/cikarma/cikarma.tscn", "renk": Color("d4f5f0"), "cizim": "cikarma", "kayit": "cikarma"},
 ]
 
 const KART := Vector2(300, 292)
@@ -239,6 +240,8 @@ func _ulasilan_bolum(kayit: String) -> int:
 			return int(ayar.get_value("rekor", "skor", 0))   # bölüm yok: rozet rekor skoru gösterir
 		"toplama":
 			return int(ayar.get_value("ilerleme", "bolum", 0)) + 1
+		"cikarma":
+			return int(ayar.get_value("ilerleme", "bolum", 0)) + 1
 	return 0
 
 
@@ -405,3 +408,10 @@ func _ciz(cizim: Node2D, tur: String) -> void:
 			_sprite(cizim, "arti.svg", 46.0, Vector2(-6, 8))
 			_sprite(cizim, "seker.svg", 112.0, Vector2(56, -28), 0.12)
 			_sprite(cizim, "seker.svg", 112.0, Vector2(62, 44), -0.08)
+		"cikarma":
+			# Çıkarma Öğreniyorum: 2 - 1 şeker (çıkan şeker oyundaki gibi soluk)
+			_sprite(cizim, "seker.svg", 112.0, Vector2(-66, -28), -0.12)
+			_sprite(cizim, "seker.svg", 112.0, Vector2(-60, 44), 0.08)
+			_sprite(cizim, "eksi.svg", 46.0, Vector2(4, 8))
+			var soluk := _sprite(cizim, "seker.svg", 124.0, Vector2(70, 8), 0.15)
+			soluk.modulate.a = 0.4

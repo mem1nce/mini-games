@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="SubtractionSettings" format=3]
+
+[ext_resource type="Script" path="res://oyunlar/cikarma/ayarlar.gd" id="1_ayarlar"]
+[ext_resource type="Script" path="res://oyunlar/cikarma/asama_verisi.gd" id="2_asama"]
+[ext_resource type="Texture2D" path="res://oyunlar/cikarma/nesneler/seker.svg" id="n_seker"]
+[ext_resource type="Texture2D" path="res://oyunlar/cikarma/nesneler/elma.svg" id="n_elma"]
+[ext_resource type="Texture2D" path="res://oyunlar/cikarma/nesneler/yildiz.svg" id="n_yildiz"]
+[ext_resource type="Texture2D" path="res://oyunlar/cikarma/nesneler/top.svg" id="n_top"]
+[ext_resource type="Texture2D" path="res://oyunlar/cikarma/nesneler/cilek.svg" id="n_cilek"]
+[ext_resource type="Texture2D" path="res://oyunlar/cikarma/nesneler/balon.svg" id="n_balon"]
+[ext_resource type="Texture2D" path="res://oyunlar/cikarma/nesneler/kurabiye.svg" id="n_kurabiye"]
+[ext_resource type="Texture2D" path="res://oyunlar/cikarma/nesneler/cicek.svg" id="n_cicek"]
+
+[sub_resource type="Resource" id="Asama_1"]
+script = ExtResource("2_asama")
+level_count = 4
+part_min = 1
+part_max = 3
+max_minuend = 5
+choice_count = 3
+
+[sub_resource type="Resource" id="Asama_2"]
+script = ExtResource("2_asama")
+level_count = 4
+part_min = 1
+part_max = 5
+max_minuend = 7
+choice_count = 3
+
+[sub_resource type="Resource" id="Asama_3"]
+script = ExtResource("2_asama")
+level_count = 4
+part_min = 1
+part_max = 5
+max_minuend = 10
+choice_count = 3
+
+[sub_resource type="Resource" id="Asama_4"]
+script = ExtResource("2_asama")
+level_count = 4
+part_min = 2
+part_max = 9
+max_minuend = 10
+choice_count = 4
+
+[sub_resource type="Resource" id="Asama_5"]
+script = ExtResource("2_asama")
+level_count = 4
+part_min = 2
+part_max = 10
+max_minuend = 20
+choice_count = 4
+
+[resource]
+script = ExtResource("1_ayarlar")
+stages = Array[ExtResource("2_asama")]([SubResource("Asama_1"), SubResource("Asama_2"), SubResource("Asama_3"), SubResource("Asama_4"), SubResource("Asama_5")])
+allow_zero = false
+zero_chance = 0.15
+near_distance = 2
+operand_distractor_chance = 0.4
+object_textures = Array[Texture2D]([ExtResource("n_seker"), ExtResource("n_elma"), ExtResource("n_yildiz"), ExtResource("n_top"), ExtResource("n_cilek"), ExtResource("n_balon"), ExtResource("n_kurabiye"), ExtResource("n_cicek")])
+speech_default = true

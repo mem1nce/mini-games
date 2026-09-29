@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <radialGradient id="govde" cx="0.36" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#C9E6FF"/>
+      <stop offset="0.5" stop-color="#4FA8FF"/>
+      <stop offset="1" stop-color="#2A6FD6"/>
+    </radialGradient>
+  </defs>
+  <!-- İp -->
+  <path d="M128 200 C116 214 140 226 126 244" fill="none" stroke="#4A3B6B" stroke-width="6" stroke-linecap="round"/>
+  <!-- Düğüm -->
+  <path d="M116 206 L140 206 L134 192 L122 192 Z" fill="#2A6FD6" stroke="#1C3F8A" stroke-width="6" stroke-linejoin="round"/>
+  <!-- Balon -->
+  <path d="M128 196 C90 190 50 150 50 98 C50 52 86 16 128 16 C170 16 206 52 206 98 C206 150 166 190 128 196 Z" fill="url(#govde)" stroke="#1C3F8A" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M188 118 C180 150 158 172 136 182" fill="none" stroke="#1C58B8" stroke-width="10" stroke-linecap="round" opacity="0.3"/>
+  <!-- Parlama -->
+  <ellipse cx="94" cy="72" rx="14" ry="28" transform="rotate(28 94 72)" fill="#FFFFFF" opacity="0.7"/>
+  <circle cx="110" cy="44" r="7" fill="#FFFFFF" opacity="0.85"/>
+</svg>

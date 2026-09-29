@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="320" viewBox="0 0 1280 320">
+  <!-- Alttaki yumuşak tepeler (gökyüzü rengi kodda gradyanla verilir) -->
+  <path d="M0 140 Q260 40 560 120 T1280 90 V320 H0 Z" fill="#FFFFFF" opacity="0.35"/>
+  <path d="M0 210 Q360 110 760 190 T1280 170 V320 H0 Z" fill="#FFFFFF" opacity="0.45"/>
+  <g fill="#FFFFFF" opacity="0.5">
+    <circle cx="140" cy="250" r="7"/><circle cx="420" cy="232" r="5"/><circle cx="900" cy="246" r="6"/><circle cx="1150" cy="228" r="5"/>
+  </g>
+</svg>

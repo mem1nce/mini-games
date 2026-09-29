@@ -22,7 +22,7 @@ Bu repoyu iki kişi kullanıyor (git kullanıcı adları): **mem1nce** ve **emir
 
 - Oyun sahipleri:
   - **mem1nce**: `ucan_kus`, `dondurmaci`, `yol_yap`, `hafiza`, `meyve_topla`
-  - **emirsalihgmrk**: `golge_eslestirme`, `kostebek`, `toplama`
+  - **emirsalihgmrk**: `golge_eslestirme`, `kostebek`, `toplama`, `cikarma`
 - Herkes sadece kendi oyun klasöründe çalışır. Başkasına ait oyunun dosyalarını açıkça istenmedikçe değiştirme.
 - Ortak dosyalar: `project.godot`, `res://ana_menu/`, `res://ortak/`, `CLAUDE.md`. Bunlarda değişiklikleri küçük tut.
 - Yeni oyun eklerken yönünü (dikey/yatay) belirt ve ana menüye kartını ekle; bunu ayrı bir commit olarak yap.
@@ -45,7 +45,7 @@ Bu repoyu iki kişi kullanıyor (git kullanıcı adları): **mem1nce** ve **emir
 - `ana_menu/` — Ana menü: oyun kartları (2 sütun, tek kalan ortada; uzun adlarda kart yazısı küçülür), `OYUNLAR` listesinde. Kart çizimleri oyunların SVG'lerinin kopyaları (`ana_menu/gorseller/`, 2x + mipmap). İlerleme rozeti oyunların kendi `user://*.cfg` kayıtlarından okunur (`_ulasilan_bolum`); kayıt yoksa gösterilmez. **Yeni oyun eklenince** `OYUNLAR`'a bir satır ve `_ciz()` içine çizimini ekle.
 - `ortak/sahne_gecis.gd` — autoload `SahneGecis`: `sahne_degistir(yol)`, `ana_menuye_don()`, `sahneyi_yeniden_baslat()`; yumuşak kararma/açılma, geçişte eski sahne durur. Ekran yönü: perde kapalıyken yeni sahnenin `ekran_yonu` değeri okunur, `root.content_scale_size` 720x1280 / 1280x720 yapılır, mobilde `DisplayServer.screen_set_orientation`, bilgisayarda pencere çevrilir; sahne ancak bundan sonra ağaca eklenir (`_ready` doğru boyutla çalışır). F6 ile doğrudan açılan yatay sahne perde kapalıyken döndürülüp yeniden yüklenir. Android geri tuşu (`quit_on_go_back=false`, `NOTIFICATION_WM_GO_BACK_REQUEST`) ve Escape: oyundan ana menüye, ana menüden çıkış.
 - `ortak/tema.tres` — proje geneli tema (`gui/theme/custom`): Nunito (değişken font, ağırlıklar `FontVariation` ile; OpenType etiketi sayı olarak yazılmalı: `2003265652` = `wght`), düğme ve panel stilleri, `Baslik` / `KartYazisi` / `Rozet` tip varyasyonları. Fredoka Türkçe "ş" harfini düzgün göstermediği için kullanılmadı.
-- `ortak/basili_geri_dugmesi.gd` — basılı tutunca dolan halkalı geri düğmesi (`press` / `release` / `contains`, `completed` sinyali); dokunmayı oyun sahnesi yönetir. Gölge Eşleştirme, Köstebek ve Toplama kullanır.
+- `ortak/basili_geri_dugmesi.gd` — basılı tutunca dolan halkalı geri düğmesi (`press` / `release` / `contains`, `completed` sinyali); dokunmayı oyun sahnesi yönetir. Gölge Eşleştirme, Köstebek, Toplama ve Çıkarma kullanır.
 - `ortak/ses_havuzu.gd` — küçük `AudioStreamPlayer` havuzu (`play(ad, pitch)`; boş oynatıcı yoksa en eski ses susar). Oyunun `sesler.gd`'si bunu `extends` edip `_init`'te `streams` / `volumes` verir. `ortak/ses/sentez.py`: seslerin Python sentez yardımcıları (oyunların `sesler/ses_uret.py` betikleri içe aktarır).
 - `ortak/gorseller/geri.svg` ortak geri simgesi. `ortak/simge/`: simgenin ön/arka plan SVG'leri ve Android PNG'leri; `icon.svg` bunlardan oluşur.
 - **Geri düğmesi kuralı**: her oyunun ilk ekranında sol üstte geri düğmesi → `SahneGecis.ana_menuye_don()`. Oyun içindeki geri önce oyunun kendi önceki ekranına (bölüm seçme / başlangıç ekranı), oradan ana menüye.
