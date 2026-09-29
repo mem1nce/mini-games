@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <!-- Nesne kutusu: oyunda NinePatchRect ile esner (köşe payı 60) -->
+  <rect x="6" y="10" width="188" height="184" rx="46" fill="#E0548E"/>
+  <rect x="6" y="6" width="188" height="180" rx="46" fill="#FF7AAE" stroke="#8E1E56" stroke-width="8"/>
+  <rect x="24" y="24" width="152" height="146" rx="30" fill="#FFF0F6" stroke="#E0548E" stroke-width="5"/>
+  <path d="M40 15 H160" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity="0.55"/>
+</svg>
