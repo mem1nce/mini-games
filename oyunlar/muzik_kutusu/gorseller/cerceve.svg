@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="470" viewBox="0 0 1040 470">
+  <defs>
+    <radialGradient id="golge" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#3A2A4A" stop-opacity="0.28"/><stop offset="1" stop-color="#3A2A4A" stop-opacity="0"/></radialGradient>
+    <radialGradient id="uc" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stop-color="#FFE0A8"/><stop offset="0.6" stop-color="#E9A25A"/><stop offset="1" stop-color="#B86F2E"/></radialGradient>
+  </defs>
+  <ellipse cx="520" cy="477" rx="488.8" ry="16" fill="url(#golge)"/>
+  <path d="M30 116.177 L1000 173.423" stroke="#3B2F6B" stroke-width="40" stroke-linecap="round"/>
+  <path d="M30 116.177 L1000 173.423" stroke="#C98A4B" stroke-width="27" stroke-linecap="round"/>
+  <path d="M36 111.177 L994 168.423" stroke="#E8B77A" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="30" cy="116.177" r="22" fill="url(#uc)" stroke="#3B2F6B" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="24" cy="110.177" r="6" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="1000" cy="173.423" r="22" fill="url(#uc)" stroke="#3B2F6B" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="994" cy="167.423" r="6" fill="#FFFFFF" opacity="0.6"/>
+  <path d="M30 403.823 L1000 346.577" stroke="#3B2F6B" stroke-width="40" stroke-linecap="round"/>
+  <path d="M30 403.823 L1000 346.577" stroke="#C98A4B" stroke-width="27" stroke-linecap="round"/>
+  <path d="M36 398.823 L994 341.577" stroke="#E8B77A" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="30" cy="403.823" r="22" fill="url(#uc)" stroke="#3B2F6B" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="24" cy="397.823" r="6" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="1000" cy="346.577" r="22" fill="url(#uc)" stroke="#3B2F6B" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="994" cy="340.577" r="6" fill="#FFFFFF" opacity="0.6"/>
+</svg>

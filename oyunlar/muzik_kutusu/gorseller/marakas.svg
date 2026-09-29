@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 260 260">
+  <defs>
+    <radialGradient id="m1" cx="0.4" cy="0.3" r="0.75"><stop offset="0" stop-color="#FFBEDE"/><stop offset="0.55" stop-color="#FF6FB5"/><stop offset="1" stop-color="#D461A5"/></radialGradient>
+    <radialGradient id="m2" cx="0.4" cy="0.3" r="0.75"><stop offset="0" stop-color="#A5E9E7"/><stop offset="0.55" stop-color="#36CFC9"/><stop offset="1" stop-color="#37ACB4"/></radialGradient>
+  </defs>
+  <g transform="rotate(24 130 150)">
+  <rect x="119" y="130" width="22" height="118" rx="11" fill="#F2C48A" stroke="#3B2F6B" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+  <rect x="112" y="226" width="36" height="22" rx="11" fill="#C98A4B" stroke="#3B2F6B" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+  <ellipse cx="130" cy="84" rx="54" ry="64" fill="url(#m2)" stroke="#3B2F6B" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M82 80 L96 66 L110 80 L124 66 L138 80 L152 66 L166 80 L178 70" fill="none" stroke="#FFD23F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="106" cy="108" r="6" fill="#FFD23F"/>
+  <circle cx="130" cy="116" r="6" fill="#FFD23F"/>
+  <circle cx="154" cy="108" r="6" fill="#FFD23F"/>
+  <circle cx="118" cy="40" r="6" fill="#FFD23F"/>
+  <circle cx="142" cy="40" r="6" fill="#FFD23F"/>
+  <ellipse cx="106" cy="50" rx="12" ry="18" transform="rotate(20 106 50)" fill="#FFFFFF" opacity="0.6"/>
+  </g>
+  <g transform="rotate(-24 130 150)">
+  <rect x="119" y="130" width="22" height="118" rx="11" fill="#F2C48A" stroke="#3B2F6B" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+  <rect x="112" y="226" width="36" height="22" rx="11" fill="#C98A4B" stroke="#3B2F6B" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+  <ellipse cx="130" cy="84" rx="54" ry="64" fill="url(#m1)" stroke="#3B2F6B" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M82 80 L96 66 L110 80 L124 66 L138 80 L152 66 L166 80 L178 70" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="106" cy="108" r="6" fill="#FFFFFF"/>
+  <circle cx="130" cy="116" r="6" fill="#FFFFFF"/>
+  <circle cx="154" cy="108" r="6" fill="#FFFFFF"/>
+  <circle cx="118" cy="40" r="6" fill="#FFFFFF"/>
+  <circle cx="142" cy="40" r="6" fill="#FFFFFF"/>
+  <ellipse cx="106" cy="50" rx="12" ry="18" transform="rotate(20 106 50)" fill="#FFFFFF" opacity="0.6"/>
+  </g>
+</svg>
