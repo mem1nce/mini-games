@@ -1,0 +1,43 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://oyunlar/zipla_zipla/zipla_zipla.gd" id="1_oyun"]
+[ext_resource type="Resource" path="res://oyunlar/zipla_zipla/denge.tres" id="2_denge"]
+[ext_resource type="Script" path="res://oyunlar/zipla_zipla/arka_plan.gd" id="3_arka"]
+[ext_resource type="Script" path="res://oyunlar/zipla_zipla/kurbaga.gd" id="4_kurbaga"]
+[ext_resource type="Script" path="res://oyunlar/zipla_zipla/basamak_uretici.gd" id="5_uretici"]
+[ext_resource type="Script" path="res://oyunlar/zipla_zipla/arayuz.gd" id="6_arayuz"]
+[ext_resource type="Script" path="res://oyunlar/zipla_zipla/sesler.gd" id="7_sesler"]
+
+[node name="ZiplaZipla" type="Node2D"]
+texture_filter = 4
+script = ExtResource("1_oyun")
+balance = ExtResource("2_denge")
+
+[node name="Background" type="CanvasLayer" parent="."]
+script = ExtResource("3_arka")
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="Platforms" type="Node2D" parent="World"]
+
+[node name="Player" type="Node2D" parent="World"]
+script = ExtResource("4_kurbaga")
+
+[node name="Spawner" type="Node" parent="."]
+script = ExtResource("5_uretici")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Hud" type="Control" parent="UI"]
+texture_filter = 4
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("6_arayuz")
+
+[node name="Sounds" type="Node" parent="."]
+script = ExtResource("7_sesler")

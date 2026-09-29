@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="100" viewBox="0 0 160 100">
+  <defs>
+    <linearGradient id="govde" gradientUnits="userSpaceOnUse" x1="0" y1="26" x2="0" y2="92">
+      <stop offset="0" stop-color="#D6F3FF"/>
+      <stop offset="0.55" stop-color="#8FD4FF"/>
+      <stop offset="1" stop-color="#4FA3E6"/>
+    </linearGradient>
+    <linearGradient id="kapak" gradientUnits="userSpaceOnUse" x1="0" y1="20" x2="0" y2="48">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.5" stop-color="#F2FAFF"/>
+      <stop offset="1" stop-color="#D2E9FA"/>
+    </linearGradient>
+    <clipPath id="kirp"><path d="M 27 20 H 133 Q 155 20 155 42 V 76 Q 155 92 139 92 H 21 Q 5 92 5 76 V 42 Q 5 20 27 20 Z"/></clipPath>
+  </defs>
+  <path d="M 27 26 H 133 Q 155 26 155 48 V 76 Q 155 92 139 92 H 21 Q 5 92 5 76 V 48 Q 5 26 27 26 Z" transform="translate(0 5)" fill="#3B2F6B" opacity="0.25"/>
+  <path d="M 27 20 H 133 Q 155 20 155 42 V 76 Q 155 92 139 92 H 21 Q 5 92 5 76 V 42 Q 5 20 27 20 Z" fill="url(#govde)"/>
+  <g clip-path="url(#kirp)">
+    <path d="M -52 70 L -42 52 L -30 68" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+    <circle cx="-26" cy="54" r="2.5" fill="#FFFFFF" opacity="0.85"/>
+    <path d="M 8 70 L 18 52 L 30 68" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+    <circle cx="34" cy="54" r="2.5" fill="#FFFFFF" opacity="0.85"/>
+    <path d="M 68 70 L 78 52 L 90 68" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+    <circle cx="94" cy="54" r="2.5" fill="#FFFFFF" opacity="0.85"/>
+    <path d="M 128 70 L 138 52 L 150 68" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+    <circle cx="154" cy="54" r="2.5" fill="#FFFFFF" opacity="0.85"/>
+    <path d="M -24 84 L -14 66 L -2 82" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+    <circle cx="2" cy="68" r="2.5" fill="#FFFFFF" opacity="0.85"/>
+    <path d="M 36 84 L 46 66 L 58 82" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+    <circle cx="62" cy="68" r="2.5" fill="#FFFFFF" opacity="0.85"/>
+    <path d="M 96 84 L 106 66 L 118 82" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+    <circle cx="122" cy="68" r="2.5" fill="#FFFFFF" opacity="0.85"/>
+    <path d="M 156 84 L 166 66 L 178 82" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+    <circle cx="182" cy="68" r="2.5" fill="#FFFFFF" opacity="0.85"/>
+
+    <path d="M 0 10 H 160 V 40.1 L 160 40.1 L 158 40.7 L 156 41.3 L 154 41.7 L 152 41.9 L 150 42 L 148 41.9 L 146 41.7 L 144 41.3 L 142 40.7 L 140 40.1 L 138 39.3 L 136 38.4 L 134 37.5 L 132 36.5 L 130 35.5 L 128 34.6 L 126 33.7 L 124 32.9 L 122 32.3 L 120 32 L 118 32.3 L 116 32.9 L 114 33.7 L 112 34.6 L 110 35.5 L 108 36.5 L 106 37.5 L 104 38.4 L 102 39.3 L 100 40.1 L 98 40.7 L 96 41.3 L 94 41.7 L 92 41.9 L 90 42 L 88 41.9 L 86 41.7 L 84 41.3 L 82 40.7 L 80 40.1 L 78 39.3 L 76 38.4 L 74 37.5 L 72 36.5 L 70 35.5 L 68 34.6 L 66 33.7 L 64 32.9 L 62 32.3 L 60 32 L 58 32.3 L 56 32.9 L 54 33.7 L 52 34.6 L 50 35.5 L 48 36.5 L 46 37.5 L 44 38.4 L 42 39.3 L 40 40.1 L 38 40.7 L 36 41.3 L 34 41.7 L 32 41.9 L 30 42 L 28 41.9 L 26 41.7 L 24 41.3 L 22 40.7 L 20 40.1 L 18 39.3 L 16 38.4 L 14 37.5 L 12 36.5 L 10 35.5 L 8 34.6 L 6 33.7 L 4 32.9 L 2 32.3 L 0 32 Z" fill="url(#kapak)"/>
+    <path d="M 0 32 L 2 32.3 L 4 32.9 L 6 33.7 L 8 34.6 L 10 35.5 L 12 36.5 L 14 37.5 L 16 38.4 L 18 39.3 L 20 40.1 L 22 40.7 L 24 41.3 L 26 41.7 L 28 41.9 L 30 42 L 32 41.9 L 34 41.7 L 36 41.3 L 38 40.7 L 40 40.1 L 42 39.3 L 44 38.4 L 46 37.5 L 48 36.5 L 50 35.5 L 52 34.6 L 54 33.7 L 56 32.9 L 58 32.3 L 60 32 L 62 32.3 L 64 32.9 L 66 33.7 L 68 34.6 L 70 35.5 L 72 36.5 L 74 37.5 L 76 38.4 L 78 39.3 L 80 40.1 L 82 40.7 L 84 41.3 L 86 41.7 L 88 41.9 L 90 42 L 92 41.9 L 94 41.7 L 96 41.3 L 98 40.7 L 100 40.1 L 102 39.3 L 104 38.4 L 106 37.5 L 108 36.5 L 110 35.5 L 112 34.6 L 114 33.7 L 116 32.9 L 118 32.3 L 120 32 L 122 32.3 L 124 32.9 L 126 33.7 L 128 34.6 L 130 35.5 L 132 36.5 L 134 37.5 L 136 38.4 L 138 39.3 L 140 40.1 L 142 40.7 L 144 41.3 L 146 41.7 L 148 41.9 L 150 42 L 152 41.9 L 154 41.7 L 156 41.3 L 158 40.7 L 160 40.1" fill="none" stroke="#3B2F6B" stroke-width="4" stroke-linejoin="round" opacity="0.9"/>
+    <rect x="0" y="23" width="160" height="4" fill="#FFFFFF" opacity="0.45"/>
+  </g>
+  <path d="M 27 20 H 133 Q 155 20 155 42 V 76 Q 155 92 139 92 H 21 Q 5 92 5 76 V 42 Q 5 20 27 20 Z" fill="none" stroke="#3B2F6B" stroke-width="5" stroke-linejoin="round"/>
+  <ellipse cx="28" cy="29" rx="12" ry="4.5" fill="#FFFFFF" opacity="0.85"/>
+  <circle cx="45" cy="28" r="3" fill="#FFFFFF" opacity="0.8"/>
+</svg>
