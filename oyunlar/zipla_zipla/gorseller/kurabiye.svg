@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+  <!-- Çikolata parçacıklı kurabiye -->
+  <defs>
+    <radialGradient id="hamur" cx="0.4" cy="0.35" r="0.75">
+      <stop offset="0" stop-color="#FFE0A0"/>
+      <stop offset="0.6" stop-color="#F0B35A"/>
+      <stop offset="1" stop-color="#C98336"/>
+    </radialGradient>
+  </defs>
+  <path d="M50 10 C62 9 72 13 80 21 C88 29 92 40 90 52 C89 64 84 74 75 82 C66 89 55 92 44 90 C32 88 22 82 16 72 C10 62 8 50 12 38 C15 27 23 18 33 13 C38 11 44 10 50 10 Z" fill="url(#hamur)" stroke="#3B2F6B" stroke-width="5" stroke-linejoin="round"/>
+  <g fill="#6B3A1E">
+    <path d="M34 30 l8 -3 l3 7 l-7 4 Z"/>
+    <path d="M60 26 l7 1 l-1 8 l-8 -1 Z"/>
+    <path d="M70 50 l7 3 l-4 7 l-6 -4 Z"/>
+    <path d="M44 52 l8 -1 l1 8 l-8 1 Z"/>
+    <path d="M26 58 l7 2 l-2 7 l-7 -2 Z"/>
+    <path d="M52 72 l7 -2 l2 7 l-7 2 Z"/>
+  </g>
+  <g fill="#C98336" opacity="0.7">
+    <circle cx="58" cy="44" r="2"/><circle cx="36" cy="44" r="2"/><circle cx="66" cy="68" r="2"/><circle cx="40" cy="74" r="2"/>
+  </g>
+  <ellipse cx="34" cy="20" rx="9" ry="4.5" transform="rotate(-30 34 20)" fill="#FFFFFF" opacity="0.75"/>
+</svg>

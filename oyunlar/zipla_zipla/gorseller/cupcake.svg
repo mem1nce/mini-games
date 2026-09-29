@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+  <!-- Cupcake: çizgili mavi kalıp, pembe krema, kiraz -->
+  <defs>
+    <linearGradient id="kalip" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#9ED0FF"/>
+      <stop offset="0.5" stop-color="#5CA8F0"/>
+      <stop offset="1" stop-color="#3E84D6"/>
+    </linearGradient>
+    <radialGradient id="krema" cx="0.4" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#FFE3F0"/>
+      <stop offset="0.6" stop-color="#FFA8CC"/>
+      <stop offset="1" stop-color="#F07AAE"/>
+    </radialGradient>
+  </defs>
+  <path d="M20 56 L80 56 L72 92 L28 92 Z" fill="url(#kalip)" stroke="#3B2F6B" stroke-width="5" stroke-linejoin="round"/>
+  <g stroke="#2F6FB8" stroke-width="3" stroke-linecap="round" opacity="0.7">
+    <path d="M34 60 L37 88 M46 60 L47 88 M54 60 L53 88 M66 60 L63 88"/>
+  </g>
+  <path d="M16 58 C10 50 16 40 26 42 C24 30 36 24 44 30 C46 20 60 20 62 30 C70 24 82 30 78 42 C88 40 92 52 84 58 C70 64 30 64 16 58 Z" fill="url(#krema)" stroke="#3B2F6B" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M30 50 C40 54 60 54 72 48" fill="none" stroke="#F07AAE" stroke-width="3" stroke-linecap="round"/>
+  <g fill="#FFFFFF"><circle cx="38" cy="42" r="2.2"/><circle cx="58" cy="38" r="2.2"/><circle cx="68" cy="50" r="2.2"/></g>
+  <g fill="#FFD23F"><circle cx="48" cy="48" r="2.2"/><circle cx="28" cy="52" r="2.2"/></g>
+  <path d="M52 16 Q56 6 64 4" fill="none" stroke="#3B8A3E" stroke-width="3.5" stroke-linecap="round"/>
+  <circle cx="50" cy="22" r="9" fill="#F2545B" stroke="#3B2F6B" stroke-width="4"/>
+  <circle cx="47" cy="19" r="2.5" fill="#FFFFFF" opacity="0.9"/>
+  <ellipse cx="30" cy="36" rx="6" ry="3.5" transform="rotate(-30 30 36)" fill="#FFFFFF" opacity="0.8"/>
+</svg>
