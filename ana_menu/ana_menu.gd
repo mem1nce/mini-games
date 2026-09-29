@@ -20,6 +20,7 @@ const OYUNLAR := [
 	{"ad": "Toplama", "sahne": "res://oyunlar/toplama/toplama.tscn", "renk": Color("fff0c8"), "cizim": "toplama", "kayit": "toplama"},
 	{"ad": "Çıkarma", "sahne": "res://oyunlar/cikarma/cikarma.tscn", "renk": Color("d4f5f0"), "cizim": "cikarma", "kayit": "cikarma"},
 	{"ad": "Araba Yarışı", "sahne": "res://oyunlar/araba_yarisi/araba_yarisi.tscn", "renk": Color("e4e9ff"), "cizim": "araba", "kayit": "araba_yarisi"},
+	{"ad": "Sihirli Bahçe", "sahne": "res://oyunlar/sihirli_bahce/sihirli_bahce.tscn", "renk": Color("f7e8ff"), "cizim": "bahce", "kayit": "sihirli_bahce"},
 ]
 
 const KART := Vector2(300, 292)
@@ -245,6 +246,8 @@ func _ulasilan_bolum(kayit: String) -> int:
 			return int(ayar.get_value("ilerleme", "bolum", 0)) + 1
 		"araba_yarisi":
 			return int(ayar.get_value("ilerleme", "acik", 1))   # açılan pist sayısı
+		"sihirli_bahce":
+			return ayar.get_section_keys("album").size() if ayar.has_section("album") else 0   # keşfedilen bitki sayısı
 	return 0
 
 
@@ -440,3 +443,8 @@ func _ciz(cizim: Node2D, tur: String) -> void:
 			_sprite(tuval, "araba_kirmizi.svg", 360.0, Vector2(180, 112))
 			for x in [98.0, 262.0]:
 				_sprite(tuval, "teker.svg", 88.0, Vector2(x, 178))
+		"bahce":
+			# Sihirli Bahçe: dev ayçiçeği ve yanında tohum kesesi
+			_sprite(cizim, "bahce_aycicegi.svg", 195.0, Vector2(36, -16), 0.06)
+			_sprite(cizim, "bahce_kese.svg", 100.0, Vector2(-60, 38), -0.22)
+			_sprite(cizim, "yildiz.svg", 34.0, Vector2(-70, -46), 0.2)
