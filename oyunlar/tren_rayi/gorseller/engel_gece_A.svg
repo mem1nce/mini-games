@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs><radialGradient id="g1" cx="0.5" cy="0.5" r="0.5"><stop offset="0.00" stop-color="#2A1F3A" stop-opacity="0.28"/><stop offset="1.00" stop-color="#2A1F3A" stop-opacity="0"/></radialGradient><radialGradient id="g2" cx="0.4" cy="0.35" r="0.8"><stop offset="0.00" stop-color="#6FB88A"/><stop offset="0.50" stop-color="#2F6E58"/><stop offset="1.00" stop-color="#1B4238"/></radialGradient><radialGradient id="g3" cx="0.4" cy="0.35" r="0.8"><stop offset="0.00" stop-color="#6FB88A"/><stop offset="0.50" stop-color="#2F6E58"/><stop offset="1.00" stop-color="#1B4238"/></radialGradient><radialGradient id="g4" cx="0.4" cy="0.35" r="0.8"><stop offset="0.00" stop-color="#6FB88A"/><stop offset="0.50" stop-color="#2F6E58"/><stop offset="1.00" stop-color="#1B4238"/></radialGradient></defs>
+  <ellipse cx="70.0" cy="72.0" rx="48.3" ry="41.4" fill="url(#g1)"/>
+  <polygon points="64.0,16.0 74.9,35.7 96.5,29.5 90.3,51.1 110.0,62.0 90.3,72.9 96.5,94.5 74.9,88.3 64.0,108.0 53.1,88.3 31.5,94.5 37.7,72.9 18.0,62.0 37.7,51.1 31.5,29.5 53.1,35.7" fill="url(#g2)" stroke="#4A3B5C" stroke-width="3.0" stroke-linejoin="round" />
+  <polygon points="74.5,29.6 77.7,46.0 94.3,46.5 85.0,60.3 96.4,72.5 80.0,75.7 79.5,92.3 65.7,83.0 53.5,94.4 50.3,78.0 33.7,77.5 43.0,63.7 31.6,51.5 48.0,48.3 48.5,31.7 62.3,41.0" fill="url(#g3)" stroke="#1B4238" stroke-width="1.8" stroke-linejoin="round" />
+  <polygon points="77.0,44.1 75.7,54.8 85.8,58.5 77.3,65.2 81.9,75.0 71.2,73.7 67.5,83.8 60.8,75.3 51.0,79.9 52.3,69.2 42.2,65.5 50.7,58.8 46.1,49.0 56.8,50.3 60.5,40.2 67.2,48.7" fill="url(#g4)" stroke="#1B4238" stroke-width="1.8" stroke-linejoin="round" />
+  <circle cx="64.0" cy="62.0" r="5.5" fill="#8A5A34" stroke="#4A3B5C" stroke-width="1.6" stroke-linejoin="round" />
+  <circle cx="100.2" cy="68.4" r="6.0" fill="#FFE066" opacity="0.35"/>
+  <circle cx="100.2" cy="68.4" r="3.0" fill="#FFE066" />
+  <circle cx="80.0" cy="78.5" r="6.0" fill="#FF7A9A" opacity="0.35"/>
+  <circle cx="80.0" cy="78.5" r="3.0" fill="#FF7A9A" />
+  <circle cx="69.1" cy="98.4" r="6.0" fill="#7FD4FF" opacity="0.35"/>
+  <circle cx="69.1" cy="98.4" r="3.0" fill="#7FD4FF" />
+  <circle cx="53.2" cy="82.3" r="6.0" fill="#FFE066" opacity="0.35"/>
+  <circle cx="53.2" cy="82.3" r="3.0" fill="#FFE066" />
+  <circle cx="30.9" cy="78.1" r="6.0" fill="#FF7A9A" opacity="0.35"/>
+  <circle cx="30.9" cy="78.1" r="3.0" fill="#FF7A9A" />
+  <circle cx="41.3" cy="58.0" r="6.0" fill="#7FD4FF" opacity="0.35"/>
+  <circle cx="41.3" cy="58.0" r="3.0" fill="#7FD4FF" />
+  <circle cx="38.4" cy="35.5" r="6.0" fill="#FFE066" opacity="0.35"/>
+  <circle cx="38.4" cy="35.5" r="3.0" fill="#FFE066" />
+  <circle cx="60.8" cy="39.2" r="6.0" fill="#FF7A9A" opacity="0.35"/>
+  <circle cx="60.8" cy="39.2" r="3.0" fill="#FF7A9A" />
+  <circle cx="81.3" cy="29.5" r="6.0" fill="#7FD4FF" opacity="0.35"/>
+  <circle cx="81.3" cy="29.5" r="3.0" fill="#7FD4FF" />
+  <circle cx="84.7" cy="51.9" r="6.0" fill="#FFE066" opacity="0.35"/>
+  <circle cx="84.7" cy="51.9" r="3.0" fill="#FFE066" />
+</svg>

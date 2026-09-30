@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs><radialGradient id="g1" cx="0.5" cy="0.5" r="0.5"><stop offset="0.00" stop-color="#2A1F3A" stop-opacity="0.28"/><stop offset="1.00" stop-color="#2A1F3A" stop-opacity="0"/></radialGradient><radialGradient id="g2" cx="0.38" cy="0.3" r="0.85"><stop offset="0.00" stop-color="#E9ECF6"/><stop offset="0.50" stop-color="#B7BDD2"/><stop offset="1.00" stop-color="#8990AC"/></radialGradient><radialGradient id="g3" cx="0.4" cy="0.35" r="0.8"><stop offset="0.00" stop-color="#B6ECFF"/><stop offset="0.50" stop-color="#4AA3E8"/><stop offset="1.00" stop-color="#2266A8"/></radialGradient><radialGradient id="g4" cx="0.4" cy="0.35" r="0.8"><stop offset="0.00" stop-color="#FFFFFF"/><stop offset="1.00" stop-color="#CFE9FF"/></radialGradient></defs>
+  <ellipse cx="68.0" cy="72.0" rx="48.0" ry="40.0" fill="url(#g1)"/>
+  <circle cx="64.0" cy="64.0" r="44.0" fill="url(#g2)" stroke="#4A3B5C" stroke-width="3" stroke-linejoin="round" />
+  <circle cx="64.0" cy="64.0" r="34.0" fill="url(#g3)" />
+  <circle cx="84.0" cy="64.0" r="4.0" fill="#FFFFFF" opacity="0.7"/>
+  <circle cx="78.1" cy="78.1" r="4.0" fill="#FFFFFF" opacity="0.7"/>
+  <circle cx="64.0" cy="84.0" r="4.0" fill="#FFFFFF" opacity="0.7"/>
+  <circle cx="49.9" cy="78.1" r="4.0" fill="#FFFFFF" opacity="0.7"/>
+  <circle cx="44.0" cy="64.0" r="4.0" fill="#FFFFFF" opacity="0.7"/>
+  <circle cx="49.9" cy="49.9" r="4.0" fill="#FFFFFF" opacity="0.7"/>
+  <circle cx="64.0" cy="44.0" r="4.0" fill="#FFFFFF" opacity="0.7"/>
+  <circle cx="78.1" cy="49.9" r="4.0" fill="#FFFFFF" opacity="0.7"/>
+  <circle cx="64.0" cy="64.0" r="10.0" fill="url(#g4)" stroke="#6B8FB8" stroke-width="2" stroke-linejoin="round" />
+</svg>

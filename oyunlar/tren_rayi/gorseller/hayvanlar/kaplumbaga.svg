@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <radialGradient id="ten" cx="0.4" cy="0.3" r="0.75">
+      <stop offset="0" stop-color="#D2F7B0"/>
+      <stop offset="0.55" stop-color="#8ED96C"/>
+      <stop offset="1" stop-color="#5AB446"/>
+    </radialGradient>
+    <radialGradient id="kabuk" gradientUnits="userSpaceOnUse" cx="130" cy="104" r="130">
+      <stop offset="0" stop-color="#FFDC8E"/>
+      <stop offset="0.5" stop-color="#F0A94A"/>
+      <stop offset="1" stop-color="#C47828"/>
+    </radialGradient>
+    <radialGradient id="plaka" cx="0.4" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#FFEDBE"/>
+      <stop offset="1" stop-color="#F6C263"/>
+    </radialGradient>
+    <clipPath id="kabukKlip"><path d="M66 196 C66 128 104 90 150 90 C196 90 232 128 232 196 Z"/></clipPath>
+    <radialGradient id="goz" cx="0.4" cy="0.35" r="0.7">
+      <stop offset="0" stop-color="#6A5A96"/>
+      <stop offset="0.55" stop-color="#2A1F45"/>
+      <stop offset="1" stop-color="#150F26"/>
+    </radialGradient>
+    <radialGradient id="yanak" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FF7FA3" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#FF7FA3" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="golge" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#3A2A4A" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#3A2A4A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <ellipse cx="140" cy="242" rx="96" ry="11" fill="url(#golge)"/>
+  <!-- Kuyruk ve bacaklar -->
+  <path d="M226 194 L248 202 L228 212 Z" fill="url(#ten)" stroke="#2F6B2A" stroke-width="5" stroke-linejoin="round"/>
+  <ellipse cx="200" cy="218" rx="19" ry="17" fill="url(#ten)" stroke="#2F6B2A" stroke-width="6"/>
+  <ellipse cx="116" cy="220" rx="19" ry="17" fill="url(#ten)" stroke="#2F6B2A" stroke-width="6"/>
+  <!-- Kabuk -->
+  <path d="M66 196 C66 128 104 90 150 90 C196 90 232 128 232 196 Z" fill="url(#kabuk)" stroke="#7A4414" stroke-width="7" stroke-linejoin="round"/>
+  <g clip-path="url(#kabukKlip)" fill="none" stroke="#B06A22" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M134 118 L166 118 L182 146 L166 174 L134 174 L118 146 Z" fill="url(#plaka)"/>
+    <path d="M134 118 L116 90 M166 118 L184 90 M182 146 L236 150 M118 146 L62 150 M166 174 L176 200 M134 174 L124 200"/>
+  </g>
+  <path d="M90 156 C90 128 108 108 134 102" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" opacity="0.45"/>
+  <circle cx="198" cy="130" r="5" fill="#FFFFFF" opacity="0.5"/>
+  <rect x="58" y="186" width="182" height="24" rx="12" fill="#E9A04A" stroke="#7A4414" stroke-width="6"/>
+  <path d="M92 190 V206 M126 190 V206 M160 190 V206 M194 190 V206" stroke="#7A4414" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+  <!-- Boyun ve kafa -->
+  <ellipse cx="86" cy="178" rx="22" ry="26" fill="url(#ten)" stroke="#2F6B2A" stroke-width="6"/>
+  <circle cx="78" cy="126" r="52" fill="url(#ten)" stroke="#2F6B2A" stroke-width="7"/>
+  <ellipse cx="62" cy="94" rx="15" ry="7" transform="rotate(-25 62 94)" fill="#FFFFFF" opacity="0.55"/>
+  <g fill="#3E8A34" opacity="0.3">
+    <circle cx="96" cy="96" r="4"/><circle cx="106" cy="108" r="3"/><circle cx="46" cy="112" r="3"/>
+  </g>
+  <!-- Gözler -->
+  <ellipse cx="61" cy="122" rx="13" ry="16" fill="url(#goz)"/>
+  <ellipse cx="97" cy="122" rx="13" ry="16" fill="url(#goz)"/>
+  <ellipse cx="57" cy="115" rx="5" ry="6" fill="#FFFFFF"/>
+  <ellipse cx="93" cy="115" rx="5" ry="6" fill="#FFFFFF"/>
+  <circle cx="65" cy="128" r="2.5" fill="#FFFFFF" opacity="0.85"/>
+  <circle cx="101" cy="128" r="2.5" fill="#FFFFFF" opacity="0.85"/>
+  <!-- Yanaklar ve ağız -->
+  <ellipse cx="46" cy="146" rx="13" ry="9" fill="url(#yanak)"/>
+  <ellipse cx="110" cy="146" rx="13" ry="9" fill="url(#yanak)"/>
+  <path d="M70 146 Q79 155 88 146" fill="none" stroke="#2F6B2A" stroke-width="4" stroke-linecap="round"/>
+</svg>

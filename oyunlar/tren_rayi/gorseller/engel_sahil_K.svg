@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs><radialGradient id="g1" cx="0.5" cy="0.5" r="0.5"><stop offset="0.00" stop-color="#2A1F3A" stop-opacity="0.28"/><stop offset="1.00" stop-color="#2A1F3A" stop-opacity="0"/></radialGradient><radialGradient id="g2" cx="0.35" cy="0.3" r="0.9"><stop offset="0.00" stop-color="#FFF0C2"/><stop offset="0.50" stop-color="#F2CE82"/><stop offset="1.00" stop-color="#C99A4E"/></radialGradient><radialGradient id="g3" cx="0.35" cy="0.3" r="0.9"><stop offset="0.00" stop-color="#FFF0C2"/><stop offset="0.50" stop-color="#EBC173"/><stop offset="1.00" stop-color="#B9894A"/></radialGradient><radialGradient id="g4" cx="0.35" cy="0.3" r="0.9"><stop offset="0.00" stop-color="#FFF0C2"/><stop offset="0.50" stop-color="#EBC173"/><stop offset="1.00" stop-color="#B9894A"/></radialGradient><radialGradient id="g5" cx="0.35" cy="0.3" r="0.9"><stop offset="0.00" stop-color="#FFF0C2"/><stop offset="0.50" stop-color="#EBC173"/><stop offset="1.00" stop-color="#B9894A"/></radialGradient><radialGradient id="g6" cx="0.35" cy="0.3" r="0.9"><stop offset="0.00" stop-color="#FFF0C2"/><stop offset="0.50" stop-color="#EBC173"/><stop offset="1.00" stop-color="#B9894A"/></radialGradient></defs>
+  <ellipse cx="70.0" cy="74.0" rx="48.0" ry="38.0" fill="url(#g1)"/>
+  <rect x="26.0" y="30.0" width="76.0" height="68.0" rx="10.0" fill="url(#g2)" stroke="#4A3B5C" stroke-width="3" stroke-linejoin="round" />
+  <circle cx="30.0" cy="34.0" r="13.0" fill="url(#g3)" stroke="#4A3B5C" stroke-width="2.6" stroke-linejoin="round" />
+  <circle cx="30.0" cy="34.0" r="5.0" fill="#C99A4E" />
+  <circle cx="98.0" cy="34.0" r="13.0" fill="url(#g4)" stroke="#4A3B5C" stroke-width="2.6" stroke-linejoin="round" />
+  <circle cx="98.0" cy="34.0" r="5.0" fill="#C99A4E" />
+  <circle cx="30.0" cy="94.0" r="13.0" fill="url(#g5)" stroke="#4A3B5C" stroke-width="2.6" stroke-linejoin="round" />
+  <circle cx="30.0" cy="94.0" r="5.0" fill="#C99A4E" />
+  <circle cx="98.0" cy="94.0" r="13.0" fill="url(#g6)" stroke="#4A3B5C" stroke-width="2.6" stroke-linejoin="round" />
+  <circle cx="98.0" cy="94.0" r="5.0" fill="#C99A4E" />
+  <rect x="50.0" y="50.0" width="28.0" height="28.0" rx="6.0" fill="#E3B66A" stroke="#B9894A" stroke-width="2" stroke-linejoin="round" />
+  <line x1="64" y1="50" x2="64" y2="30" stroke="#8A5A34" stroke-width="2.4"/>
+  <polygon points="64.0,22.0 80.0,27.0 64.0,32.0" fill="#FF6F7D" stroke="#4A3B5C" stroke-width="1.6" stroke-linejoin="round" />
+</svg>
