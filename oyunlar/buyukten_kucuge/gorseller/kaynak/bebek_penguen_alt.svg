@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="260" viewBox="0 0 200 260">
+  <defs>
+    <radialGradient id="kb" cx="0.4" cy="0.3" r="0.75"><stop offset="0" stop-color="#BDD1F6"/><stop offset="0.5" stop-color="#5A8CE8"/><stop offset="1" stop-color="#5275C9"/></radialGradient>
+    <radialGradient id="goz" cx="0.4" cy="0.35" r="0.7"><stop offset="0" stop-color="#6A5A96"/><stop offset="0.55" stop-color="#2A1F45"/><stop offset="1" stop-color="#150F26"/></radialGradient>
+    <radialGradient id="yanak" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#FF7FA3" stop-opacity="0.85"/><stop offset="1" stop-color="#FF7FA3" stop-opacity="0"/></radialGradient>
+    <radialGradient id="yz" cx="0.45" cy="0.35" r="0.8"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.6" stop-color="#FFF4E8"/><stop offset="1" stop-color="#F4D9C6"/></radialGradient>
+    <clipPath id="ust"><path d="M0 0 H200 V162 L186 162 Q100 188 14 162 L0 162 Z"/></clipPath>
+    <clipPath id="alt"><path d="M0 260 V162 L14 162 Q100 136 186 162 L200 162 V260 Z"/></clipPath>
+    <linearGradient id="ic" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3B2F6B"/><stop offset="1" stop-color="#4959A3"/></linearGradient>
+  </defs>
+  <g clip-path="url(#alt)">
+  <g fill="#3B2F6B" stroke="#3B2F6B" stroke-width="14" stroke-linejoin="round" stroke-linecap="round"><circle cx="100" cy="78" r="56"/><ellipse cx="100" cy="168" rx="86" ry="84"/></g>
+  <g fill="url(#kb)"><circle cx="100" cy="78" r="56"/><ellipse cx="100" cy="168" rx="86" ry="84"/></g>
+  <ellipse cx="100" cy="202" rx="52" ry="40" fill="#BDD1F6" stroke="#3B2F6B" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+  <ellipse cx="100" cy="190" rx="8" ry="11" transform="rotate(0 100 202)" fill="#8CAEEF"/>
+  <ellipse cx="100" cy="190" rx="8" ry="11" transform="rotate(72 100 202)" fill="#8CAEEF"/>
+  <ellipse cx="100" cy="190" rx="8" ry="11" transform="rotate(144 100 202)" fill="#8CAEEF"/>
+  <ellipse cx="100" cy="190" rx="8" ry="11" transform="rotate(216 100 202)" fill="#8CAEEF"/>
+  <ellipse cx="100" cy="190" rx="8" ry="11" transform="rotate(288 100 202)" fill="#8CAEEF"/>
+  <circle cx="100" cy="202" r="7" fill="#FFD23F"/>
+  </g>
+  <ellipse cx="66" cy="246" rx="22" ry="10" fill="#5275C9" stroke="#3B2F6B" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+  <ellipse cx="134" cy="246" rx="22" ry="10" fill="#5275C9" stroke="#3B2F6B" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M14 162 Q100 136 186 162 Q100 188 14 163 Z" fill="url(#ic)" stroke="#3B2F6B" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>
