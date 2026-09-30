@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="120" viewBox="0 0 240 120">
+  <defs><linearGradient id="g1" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#FFD3E2"/><stop offset="1.00" stop-color="#F29AB8"/></linearGradient><linearGradient id="g2" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#FFFFFF"/><stop offset="1.00" stop-color="#D8D2E6"/></linearGradient><linearGradient id="g3" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#FFFFFF"/><stop offset="1.00" stop-color="#D8D2E6"/></linearGradient><linearGradient id="g4" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#F29AB8"/><stop offset="1.00" stop-color="#6E5A70"/></linearGradient></defs>
+  <path d="M230.0 2.0 L232.5 2.4 L234.7 3.5 L236.5 5.3 L237.6 7.5 L238.0 10.0 L238.0 108.0 L237.6 110.5 L236.5 112.7 L234.7 114.5 L232.5 115.6 L230.0 116.0 L10.0 116.0 L7.5 115.6 L5.3 114.5 L3.5 112.7 L2.4 110.5 L2.0 108.0 L2.0 10.0 L2.4 7.5 L3.5 5.3 L5.3 3.5 L7.5 2.4 L10.0 2.0 Z M90.0 24.0 L92.5 24.4 L94.7 25.5 L96.5 27.3 L97.6 29.5 L98.0 32.0 L98.0 80.0 L97.6 82.5 L96.5 84.7 L94.7 86.5 L92.5 87.6 L90.0 88.0 L38.0 88.0 L35.5 87.6 L33.3 86.5 L31.5 84.7 L30.4 82.5 L30.0 80.0 L30.0 32.0 L30.4 29.5 L31.5 27.3 L33.3 25.5 L35.5 24.4 L38.0 24.0 Z M202.0 24.0 L204.5 24.4 L206.7 25.5 L208.5 27.3 L209.6 29.5 L210.0 32.0 L210.0 80.0 L209.6 82.5 L208.5 84.7 L206.7 86.5 L204.5 87.6 L202.0 88.0 L150.0 88.0 L147.5 87.6 L145.3 86.5 L143.5 84.7 L142.4 82.5 L142.0 80.0 L142.0 32.0 L142.4 29.5 L143.5 27.3 L145.3 25.5 L147.5 24.4 L150.0 24.0 Z" fill-rule="evenodd" fill="url(#g1)" stroke="#3A2E52" stroke-width="4" stroke-linejoin="round"/>
+  <circle cx="221.5" cy="97.6" r="3.2" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="199.5" cy="13.2" r="3.8" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="128.4" cy="67.6" r="4.5" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="122.6" cy="38.0" r="4.2" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="224.1" cy="77.6" r="3.8" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="69.0" cy="101.5" r="3.8" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="122.4" cy="16.9" r="4.3" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="118.7" cy="12.3" r="3.0" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="121.6" cy="85.4" r="4.2" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="112.2" cy="84.1" r="3.2" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="159.6" cy="13.8" r="4.4" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="11.3" cy="57.5" r="4.0" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="10.4" cy="21.6" r="3.7" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="193.6" cy="12.7" r="4.2" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="160.2" cy="103.3" r="2.9" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="135.2" cy="103.5" r="2.9" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="15.0" cy="86.8" r="3.6" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="144.8" cy="13.6" r="3.4" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="175.7" cy="100.4" r="3.7" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="128.5" cy="15.9" r="3.2" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="19.2" cy="43.3" r="4.0" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="20.9" cy="104.7" r="3.6" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="118.6" cy="69.9" r="3.5" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="128.1" cy="62.5" r="3.0" fill="#FFFFFF" opacity="0.6"/>
+  <rect x="29.0" y="23.0" width="70.0" height="66.0" rx="9.0" fill="none" stroke="#3A2E52" stroke-width="9" stroke-linejoin="round" />
+  <rect x="29.0" y="23.0" width="70.0" height="66.0" rx="9.0" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linejoin="round" />
+  <rect x="22.0" y="91.0" width="84.0" height="9.0" rx="4.0" fill="url(#g2)" stroke="#3A2E52" stroke-width="2.6" stroke-linejoin="round" />
+  <rect x="141.0" y="23.0" width="70.0" height="66.0" rx="9.0" fill="none" stroke="#3A2E52" stroke-width="9" stroke-linejoin="round" />
+  <rect x="141.0" y="23.0" width="70.0" height="66.0" rx="9.0" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linejoin="round" />
+  <rect x="134.0" y="91.0" width="84.0" height="9.0" rx="4.0" fill="url(#g3)" stroke="#3A2E52" stroke-width="2.6" stroke-linejoin="round" />
+  <rect x="0.0" y="108.0" width="240.0" height="12.0" rx="4.0" fill="url(#g4)" stroke="#3A2E52" stroke-width="3" stroke-linejoin="round" />
+  <ellipse cx="40.0" cy="12.0" rx="26.0" ry="3.5" transform="rotate(0 40.0 12.0)" fill="#FFFFFF" opacity="0.45"/>
+</svg>
