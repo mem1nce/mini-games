@@ -1,0 +1,193 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="320" height="300" viewBox="-160 -150 320 300">
+<g transform="translate(-2.00 58.00) rotate(-9.17) scale(1.0300)">
+<g transform="translate(-80.00 0.00) scale(1.2500 1.2500) translate(-64.00 -64.00) scale(1.0000 1.0000) translate(-0.00 -0.00)">
+  <defs><linearGradient id="p1_g1" x1="0" y1="0" x2="1" y2="0"><stop offset="0.00" stop-color="#D99A62"/><stop offset="1.00" stop-color="#A8683A"/></linearGradient><linearGradient id="p1_g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0.00" stop-color="#C9CFDC"/><stop offset="1.00" stop-color="#8A92A8"/></linearGradient></defs>
+  <rect x="7.2" y="37.0" width="12" height="62" rx="4" fill="#2A1F3A" opacity="0.16" transform="rotate(0.0 13.2 68.0)"/>
+  <rect x="28.5" y="37.0" width="12" height="62" rx="4" fill="#2A1F3A" opacity="0.16" transform="rotate(0.0 34.5 68.0)"/>
+  <rect x="49.8" y="37.0" width="12" height="62" rx="4" fill="#2A1F3A" opacity="0.16" transform="rotate(0.0 55.8 68.0)"/>
+  <rect x="71.2" y="37.0" width="12" height="62" rx="4" fill="#2A1F3A" opacity="0.16" transform="rotate(0.0 77.2 68.0)"/>
+  <rect x="92.5" y="37.0" width="12" height="62" rx="4" fill="#2A1F3A" opacity="0.16" transform="rotate(0.0 98.5 68.0)"/>
+  <rect x="113.8" y="37.0" width="12" height="62" rx="4" fill="#2A1F3A" opacity="0.16" transform="rotate(0.0 119.8 68.0)"/>
+  <rect x="4.7" y="33.0" width="12" height="62" rx="4" fill="url(#p1_g1)" stroke="#6B4226" stroke-width="2.2" transform="rotate(0.0 10.7 64.0)"/>
+  <line x1="9.2" y1="40.0" x2="9.2" y2="86.0" stroke="#FFFFFF" stroke-opacity="0.28" stroke-width="2" stroke-linecap="round" transform="rotate(0.0 10.7 64.0)"/>
+  <rect x="26.0" y="33.0" width="12" height="62" rx="4" fill="url(#p1_g1)" stroke="#6B4226" stroke-width="2.2" transform="rotate(0.0 32.0 64.0)"/>
+  <line x1="30.5" y1="40.0" x2="30.5" y2="86.0" stroke="#FFFFFF" stroke-opacity="0.28" stroke-width="2" stroke-linecap="round" transform="rotate(0.0 32.0 64.0)"/>
+  <rect x="47.3" y="33.0" width="12" height="62" rx="4" fill="url(#p1_g1)" stroke="#6B4226" stroke-width="2.2" transform="rotate(0.0 53.3 64.0)"/>
+  <line x1="51.8" y1="40.0" x2="51.8" y2="86.0" stroke="#FFFFFF" stroke-opacity="0.28" stroke-width="2" stroke-linecap="round" transform="rotate(0.0 53.3 64.0)"/>
+  <rect x="68.7" y="33.0" width="12" height="62" rx="4" fill="url(#p1_g1)" stroke="#6B4226" stroke-width="2.2" transform="rotate(0.0 74.7 64.0)"/>
+  <line x1="73.2" y1="40.0" x2="73.2" y2="86.0" stroke="#FFFFFF" stroke-opacity="0.28" stroke-width="2" stroke-linecap="round" transform="rotate(0.0 74.7 64.0)"/>
+  <rect x="90.0" y="33.0" width="12" height="62" rx="4" fill="url(#p1_g1)" stroke="#6B4226" stroke-width="2.2" transform="rotate(0.0 96.0 64.0)"/>
+  <line x1="94.5" y1="40.0" x2="94.5" y2="86.0" stroke="#FFFFFF" stroke-opacity="0.28" stroke-width="2" stroke-linecap="round" transform="rotate(0.0 96.0 64.0)"/>
+  <rect x="111.3" y="33.0" width="12" height="62" rx="4" fill="url(#p1_g1)" stroke="#6B4226" stroke-width="2.2" transform="rotate(0.0 117.3 64.0)"/>
+  <line x1="115.8" y1="40.0" x2="115.8" y2="86.0" stroke="#FFFFFF" stroke-opacity="0.28" stroke-width="2" stroke-linecap="round" transform="rotate(0.0 117.3 64.0)"/>
+  <polygon points="2.0,43.4 130.0,43.4 130.0,50.6 2.0,50.6" fill="#2A1F3A" opacity="0.18"/>
+  <polygon points="2.0,83.4 130.0,83.4 130.0,90.6 2.0,90.6" fill="#2A1F3A" opacity="0.18"/>
+  <polygon points="0.0,40.4 128.0,40.4 128.0,47.6 0.0,47.6" fill="url(#p1_g2)"/>
+  <polyline points="0.0,40.4 128.0,40.4" fill="none" stroke="#454B63" stroke-width="2.2" stroke-linejoin="round"/>
+  <polyline points="0.0,47.6 128.0,47.6" fill="none" stroke="#454B63" stroke-width="2.2" stroke-linejoin="round"/>
+  <polyline points="0.0,43.0 128.0,43.0" fill="none" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.8"/>
+  <polygon points="0.0,80.4 128.0,80.4 128.0,87.6 0.0,87.6" fill="url(#p1_g2)"/>
+  <polyline points="0.0,80.4 128.0,80.4" fill="none" stroke="#454B63" stroke-width="2.2" stroke-linejoin="round"/>
+  <polyline points="0.0,87.6 128.0,87.6" fill="none" stroke="#454B63" stroke-width="2.2" stroke-linejoin="round"/>
+  <polyline points="0.0,83.0 128.0,83.0" fill="none" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.8"/>
+</g>
+<g transform="translate(80.00 0.00) scale(1.2500 1.2500) translate(-64.00 -64.00) scale(1.0000 1.0000) translate(-0.00 -0.00)">
+  <defs><linearGradient id="p2_g1" x1="0" y1="0" x2="1" y2="0"><stop offset="0.00" stop-color="#D99A62"/><stop offset="1.00" stop-color="#A8683A"/></linearGradient><linearGradient id="p2_g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0.00" stop-color="#C9CFDC"/><stop offset="1.00" stop-color="#8A92A8"/></linearGradient></defs>
+  <rect x="7.2" y="37.0" width="12" height="62" rx="4" fill="#2A1F3A" opacity="0.16" transform="rotate(0.0 13.2 68.0)"/>
+  <rect x="28.5" y="37.0" width="12" height="62" rx="4" fill="#2A1F3A" opacity="0.16" transform="rotate(0.0 34.5 68.0)"/>
+  <rect x="49.8" y="37.0" width="12" height="62" rx="4" fill="#2A1F3A" opacity="0.16" transform="rotate(0.0 55.8 68.0)"/>
+  <rect x="71.2" y="37.0" width="12" height="62" rx="4" fill="#2A1F3A" opacity="0.16" transform="rotate(0.0 77.2 68.0)"/>
+  <rect x="92.5" y="37.0" width="12" height="62" rx="4" fill="#2A1F3A" opacity="0.16" transform="rotate(0.0 98.5 68.0)"/>
+  <rect x="113.8" y="37.0" width="12" height="62" rx="4" fill="#2A1F3A" opacity="0.16" transform="rotate(0.0 119.8 68.0)"/>
+  <rect x="4.7" y="33.0" width="12" height="62" rx="4" fill="url(#p2_g1)" stroke="#6B4226" stroke-width="2.2" transform="rotate(0.0 10.7 64.0)"/>
+  <line x1="9.2" y1="40.0" x2="9.2" y2="86.0" stroke="#FFFFFF" stroke-opacity="0.28" stroke-width="2" stroke-linecap="round" transform="rotate(0.0 10.7 64.0)"/>
+  <rect x="26.0" y="33.0" width="12" height="62" rx="4" fill="url(#p2_g1)" stroke="#6B4226" stroke-width="2.2" transform="rotate(0.0 32.0 64.0)"/>
+  <line x1="30.5" y1="40.0" x2="30.5" y2="86.0" stroke="#FFFFFF" stroke-opacity="0.28" stroke-width="2" stroke-linecap="round" transform="rotate(0.0 32.0 64.0)"/>
+  <rect x="47.3" y="33.0" width="12" height="62" rx="4" fill="url(#p2_g1)" stroke="#6B4226" stroke-width="2.2" transform="rotate(0.0 53.3 64.0)"/>
+  <line x1="51.8" y1="40.0" x2="51.8" y2="86.0" stroke="#FFFFFF" stroke-opacity="0.28" stroke-width="2" stroke-linecap="round" transform="rotate(0.0 53.3 64.0)"/>
+  <rect x="68.7" y="33.0" width="12" height="62" rx="4" fill="url(#p2_g1)" stroke="#6B4226" stroke-width="2.2" transform="rotate(0.0 74.7 64.0)"/>
+  <line x1="73.2" y1="40.0" x2="73.2" y2="86.0" stroke="#FFFFFF" stroke-opacity="0.28" stroke-width="2" stroke-linecap="round" transform="rotate(0.0 74.7 64.0)"/>
+  <rect x="90.0" y="33.0" width="12" height="62" rx="4" fill="url(#p2_g1)" stroke="#6B4226" stroke-width="2.2" transform="rotate(0.0 96.0 64.0)"/>
+  <line x1="94.5" y1="40.0" x2="94.5" y2="86.0" stroke="#FFFFFF" stroke-opacity="0.28" stroke-width="2" stroke-linecap="round" transform="rotate(0.0 96.0 64.0)"/>
+  <rect x="111.3" y="33.0" width="12" height="62" rx="4" fill="url(#p2_g1)" stroke="#6B4226" stroke-width="2.2" transform="rotate(0.0 117.3 64.0)"/>
+  <line x1="115.8" y1="40.0" x2="115.8" y2="86.0" stroke="#FFFFFF" stroke-opacity="0.28" stroke-width="2" stroke-linecap="round" transform="rotate(0.0 117.3 64.0)"/>
+  <polygon points="2.0,43.4 130.0,43.4 130.0,50.6 2.0,50.6" fill="#2A1F3A" opacity="0.18"/>
+  <polygon points="2.0,83.4 130.0,83.4 130.0,90.6 2.0,90.6" fill="#2A1F3A" opacity="0.18"/>
+  <polygon points="0.0,40.4 128.0,40.4 128.0,47.6 0.0,47.6" fill="url(#p2_g2)"/>
+  <polyline points="0.0,40.4 128.0,40.4" fill="none" stroke="#454B63" stroke-width="2.2" stroke-linejoin="round"/>
+  <polyline points="0.0,47.6 128.0,47.6" fill="none" stroke="#454B63" stroke-width="2.2" stroke-linejoin="round"/>
+  <polyline points="0.0,43.0 128.0,43.0" fill="none" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.8"/>
+  <polygon points="0.0,80.4 128.0,80.4 128.0,87.6 0.0,87.6" fill="url(#p2_g2)"/>
+  <polyline points="0.0,80.4 128.0,80.4" fill="none" stroke="#454B63" stroke-width="2.2" stroke-linejoin="round"/>
+  <polyline points="0.0,87.6 128.0,87.6" fill="none" stroke="#454B63" stroke-width="2.2" stroke-linejoin="round"/>
+  <polyline points="0.0,83.0 128.0,83.0" fill="none" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.8"/>
+</g>
+<g transform="translate(-76.00 0.00) scale(0.8000 0.8000) translate(-80.00 -55.00) scale(1.0000 1.0000) translate(-0.00 -0.00)">
+  <defs><radialGradient id="p3_g1" cx="0.5" cy="0.5" r="0.5"><stop offset="0.00" stop-color="#2A1F3A" stop-opacity="0.25"/><stop offset="1.00" stop-color="#2A1F3A" stop-opacity="0"/></radialGradient><linearGradient id="p3_g2" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#5C5474"/><stop offset="1.00" stop-color="#2E2842"/></linearGradient><linearGradient id="p3_g3" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#5C5474"/><stop offset="1.00" stop-color="#2E2842"/></linearGradient><linearGradient id="p3_g4" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#5C5474"/><stop offset="1.00" stop-color="#2E2842"/></linearGradient><linearGradient id="p3_g5" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#5C5474"/><stop offset="1.00" stop-color="#2E2842"/></linearGradient><linearGradient id="p3_g6" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#B82E3C"/><stop offset="0.25" stop-color="#F2545E"/><stop offset="0.50" stop-color="#FFB0B0"/><stop offset="0.75" stop-color="#F2545E"/><stop offset="1.00" stop-color="#B82E3C"/></linearGradient><radialGradient id="p3_g7" cx="0.4" cy="0.35" r="0.8"><stop offset="0.00" stop-color="#E8F8FF"/><stop offset="0.50" stop-color="#9FD8F5"/><stop offset="1.00" stop-color="#5AA8D8"/></radialGradient><radialGradient id="p3_g8" cx="0.4" cy="0.35" r="0.8"><stop offset="0.00" stop-color="#E8F8FF"/><stop offset="0.50" stop-color="#9FD8F5"/><stop offset="1.00" stop-color="#5AA8D8"/></radialGradient></defs>
+  <ellipse cx="84.0" cy="62.0" rx="78.0" ry="48.0" fill="url(#p3_g1)"/>
+  <rect x="0.0" y="49.0" width="10.0" height="12.0" rx="3.0" fill="#6E6888" stroke="#4A3B5C" stroke-width="2" stroke-linejoin="round" />
+  <rect x="150.0" y="49.0" width="10.0" height="12.0" rx="3.0" fill="#6E6888" stroke="#4A3B5C" stroke-width="2" stroke-linejoin="round" />
+  <rect x="31.0" y="6.0" width="26.0" height="12.0" rx="5.0" fill="url(#p3_g2)" stroke="#4A3B5C" stroke-width="2.2" stroke-linejoin="round" />
+  <rect x="31.0" y="92.0" width="26.0" height="12.0" rx="5.0" fill="url(#p3_g3)" stroke="#4A3B5C" stroke-width="2.2" stroke-linejoin="round" />
+  <rect x="103.0" y="6.0" width="26.0" height="12.0" rx="5.0" fill="url(#p3_g4)" stroke="#4A3B5C" stroke-width="2.2" stroke-linejoin="round" />
+  <rect x="103.0" y="92.0" width="26.0" height="12.0" rx="5.0" fill="url(#p3_g5)" stroke="#4A3B5C" stroke-width="2.2" stroke-linejoin="round" />
+  <rect x="8.0" y="14.0" width="144.0" height="82.0" rx="20.0" fill="url(#p3_g6)" stroke="#4A3B5C" stroke-width="3" stroke-linejoin="round" />
+  <rect x="16.0" y="22.0" width="128.0" height="66.0" rx="14.0" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" stroke-opacity="0.35"/>
+  <line x1="18" y1="55" x2="142" y2="55" stroke="#B82E3C" stroke-width="2.4" opacity="0.6"/>
+  <circle cx="52.0" cy="55.0" r="19.0" fill="url(#p3_g7)" stroke="#4A3B5C" stroke-width="3" stroke-linejoin="round" />
+  <ellipse cx="46.0" cy="48.0" rx="6.0" ry="3.0" transform="rotate(-35 46.0 48.0)" fill="#FFFFFF" opacity="0.8"/>
+  <circle cx="108.0" cy="55.0" r="19.0" fill="url(#p3_g8)" stroke="#4A3B5C" stroke-width="3" stroke-linejoin="round" />
+  <ellipse cx="102.0" cy="48.0" rx="6.0" ry="3.0" transform="rotate(-35 102.0 48.0)" fill="#FFFFFF" opacity="0.8"/>
+  <ellipse cx="40.0" cy="26.0" rx="26.0" ry="4.0" transform="rotate(0 40.0 26.0)" fill="#FFFFFF" opacity="0.4"/>
+</g>
+<g transform="translate(-90.00 -10.00) scale(0.1953 0.1953) translate(-128.00 -128.00) scale(1.0000 1.0000) translate(-0.00 -0.00)">
+  <defs>
+    <radialGradient id="p4_ten" cx="0.4" cy="0.3" r="0.75">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.6" stop-color="#F8EEF8"/>
+      <stop offset="1" stop-color="#E2D0EC"/>
+    </radialGradient>
+    <linearGradient id="p4_ic" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFC6DA"/>
+      <stop offset="1" stop-color="#FF97BC"/>
+    </linearGradient>
+    <radialGradient id="p4_goz" cx="0.4" cy="0.35" r="0.7">
+      <stop offset="0" stop-color="#6A5A96"/>
+      <stop offset="0.55" stop-color="#2A1F45"/>
+      <stop offset="1" stop-color="#150F26"/>
+    </radialGradient>
+    <radialGradient id="p4_yanak" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FF7FA3" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#FF7FA3" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="p4_golge" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#3A2A4A" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#3A2A4A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <ellipse cx="128" cy="246" rx="80" ry="10" fill="url(#p4_golge)"/>
+  
+  <circle cx="180" cy="212" r="16" fill="url(#p4_ten)" stroke="#6B4F7A" stroke-width="6"/>
+  <ellipse cx="128" cy="214" rx="50" ry="30" fill="url(#p4_ten)" stroke="#6B4F7A" stroke-width="7"/>
+  <ellipse cx="102" cy="238" rx="21" ry="11" fill="url(#p4_ten)" stroke="#6B4F7A" stroke-width="6"/>
+  <ellipse cx="154" cy="238" rx="21" ry="11" fill="url(#p4_ten)" stroke="#6B4F7A" stroke-width="6"/>
+  <ellipse cx="102" cy="238" rx="8" ry="4" fill="#FFB8CF"/>
+  <ellipse cx="154" cy="238" rx="8" ry="4" fill="#FFB8CF"/>
+  
+  <g transform="rotate(-14 104 62)">
+    <ellipse cx="104" cy="62" rx="21" ry="52" fill="url(#p4_ten)" stroke="#6B4F7A" stroke-width="7"/>
+    <ellipse cx="104" cy="68" rx="10" ry="38" fill="url(#p4_ic)"/>
+  </g>
+  <g transform="rotate(14 152 62)">
+    <ellipse cx="152" cy="62" rx="21" ry="52" fill="url(#p4_ten)" stroke="#6B4F7A" stroke-width="7"/>
+    <ellipse cx="152" cy="68" rx="10" ry="38" fill="url(#p4_ic)"/>
+  </g>
+  
+  <ellipse cx="128" cy="136" rx="66" ry="58" fill="url(#p4_ten)" stroke="#6B4F7A" stroke-width="7"/>
+  <path d="M114 84 Q121 70 128 82 Q135 70 142 84" fill="url(#p4_ten)" stroke="#6B4F7A" stroke-width="5" stroke-linejoin="round"/>
+  <ellipse cx="102" cy="104" rx="20" ry="8" transform="rotate(-20 102 104)" fill="#FFFFFF" opacity="0.9"/>
+  
+  <ellipse cx="102" cy="130" rx="15" ry="18" fill="url(#p4_goz)"/>
+  <ellipse cx="154" cy="130" rx="15" ry="18" fill="url(#p4_goz)"/>
+  <ellipse cx="97" cy="122" rx="6" ry="7" fill="#FFFFFF"/>
+  <ellipse cx="149" cy="122" rx="6" ry="7" fill="#FFFFFF"/>
+  <circle cx="107" cy="137" r="3" fill="#FFFFFF" opacity="0.85"/>
+  <circle cx="159" cy="137" r="3" fill="#FFFFFF" opacity="0.85"/>
+  
+  <ellipse cx="80" cy="156" rx="17" ry="11" fill="url(#p4_yanak)"/>
+  <ellipse cx="176" cy="156" rx="17" ry="11" fill="url(#p4_yanak)"/>
+  
+  <path d="M120 150 Q128 145 136 150 Q133 157 128 158 Q123 157 120 150 Z" fill="#FF8FB0" stroke="#6B4F7A" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M122 163 H134 V172 Q134 176 130 176 H126 Q122 176 122 172 Z" fill="#FFFFFF" stroke="#6B4F7A" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M128 163 V176" stroke="#6B4F7A" stroke-width="2"/>
+  <path d="M128 158 V163 M128 163 Q121 169 113 164 M128 163 Q135 169 143 164" fill="none" stroke="#6B4F7A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g transform="translate(70.00 0.00) scale(0.7545 0.7545) translate(-110.00 -60.00) scale(1.0000 1.0000) translate(-0.00 -0.00)">
+  <defs><radialGradient id="p5_g1" cx="0.5" cy="0.5" r="0.5"><stop offset="0.00" stop-color="#2A1F3A" stop-opacity="0.25"/><stop offset="1.00" stop-color="#2A1F3A" stop-opacity="0"/></radialGradient><linearGradient id="p5_g2" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#5C5474"/><stop offset="1.00" stop-color="#2E2842"/></linearGradient><linearGradient id="p5_g3" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#5C5474"/><stop offset="1.00" stop-color="#2E2842"/></linearGradient><linearGradient id="p5_g4" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#5C5474"/><stop offset="1.00" stop-color="#2E2842"/></linearGradient><linearGradient id="p5_g5" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#5C5474"/><stop offset="1.00" stop-color="#2E2842"/></linearGradient><linearGradient id="p5_g6" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#5C5474"/><stop offset="1.00" stop-color="#2E2842"/></linearGradient><linearGradient id="p5_g7" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#5C5474"/><stop offset="1.00" stop-color="#2E2842"/></linearGradient><linearGradient id="p5_g8" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#7A3350"/><stop offset="1.00" stop-color="#5A2240"/></linearGradient><linearGradient id="p5_g9" x1="0" y1="0" x2="1" y2="0"><stop offset="0.00" stop-color="#FFE27A"/><stop offset="1.00" stop-color="#E9A800"/></linearGradient><linearGradient id="p5_g10" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#C7303F"/><stop offset="0.25" stop-color="#FF7A7A"/><stop offset="0.50" stop-color="#FFA3A3"/><stop offset="0.75" stop-color="#E8404C"/><stop offset="1.00" stop-color="#B0283A"/></linearGradient><linearGradient id="p5_g11" x1="0" y1="0" x2="0" y2="1"><stop offset="0.00" stop-color="#FFE27A"/><stop offset="0.50" stop-color="#F5C23A"/><stop offset="1.00" stop-color="#C9900E"/></linearGradient><linearGradient id="p5_g12" x1="0" y1="0" x2="0" y2="1"><stop offset="0.00" stop-color="#FFE27A"/><stop offset="0.50" stop-color="#F5C23A"/><stop offset="1.00" stop-color="#C9900E"/></linearGradient><radialGradient id="p5_g13" cx="0.4" cy="0.35" r="0.8"><stop offset="0.00" stop-color="#8C86A6"/><stop offset="0.50" stop-color="#5C5474"/><stop offset="1.00" stop-color="#3A344E"/></radialGradient><radialGradient id="p5_g14" cx="0.4" cy="0.35" r="0.8"><stop offset="0.00" stop-color="#FFFFFF"/><stop offset="0.50" stop-color="#FFE066"/><stop offset="1.00" stop-color="#F5B400"/></radialGradient><radialGradient id="p5_g15" cx="0.4" cy="0.35" r="0.8"><stop offset="0.00" stop-color="#6E6888"/><stop offset="0.50" stop-color="#3E3856"/><stop offset="1.00" stop-color="#262036"/></radialGradient><radialGradient id="p5_g16" cx="0.35" cy="0.3" r="0.8"><stop offset="0.00" stop-color="#FFF3A6"/><stop offset="0.50" stop-color="#F5C23A"/><stop offset="1.00" stop-color="#C9900E"/></radialGradient><linearGradient id="p5_g17" x1="0" y1="0" x2="0" y2="1"><stop offset="0.00" stop-color="#8FD0FF"/><stop offset="0.50" stop-color="#3E8EEB"/><stop offset="1.00" stop-color="#2A62B8"/></linearGradient></defs>
+  <ellipse cx="114.0" cy="70.0" rx="106.0" ry="52.0" fill="url(#p5_g1)"/>
+  <rect x="41.0" y="8.0" width="30.0" height="12.0" rx="5.0" fill="url(#p5_g2)" stroke="#4A3B5C" stroke-width="2.2" stroke-linejoin="round" />
+  <rect x="41.0" y="100.0" width="30.0" height="12.0" rx="5.0" fill="url(#p5_g3)" stroke="#4A3B5C" stroke-width="2.2" stroke-linejoin="round" />
+  <rect x="89.0" y="8.0" width="30.0" height="12.0" rx="5.0" fill="url(#p5_g4)" stroke="#4A3B5C" stroke-width="2.2" stroke-linejoin="round" />
+  <rect x="89.0" y="100.0" width="30.0" height="12.0" rx="5.0" fill="url(#p5_g5)" stroke="#4A3B5C" stroke-width="2.2" stroke-linejoin="round" />
+  <rect x="137.0" y="8.0" width="30.0" height="12.0" rx="5.0" fill="url(#p5_g6)" stroke="#4A3B5C" stroke-width="2.2" stroke-linejoin="round" />
+  <rect x="137.0" y="100.0" width="30.0" height="12.0" rx="5.0" fill="url(#p5_g7)" stroke="#4A3B5C" stroke-width="2.2" stroke-linejoin="round" />
+  <rect x="14.0" y="16.0" width="194.0" height="88.0" rx="24.0" fill="url(#p5_g8)" stroke="#4A3B5C" stroke-width="3" stroke-linejoin="round" />
+  <polygon points="200.0,32.0 216.0,48.0 216.0,72.0 200.0,88.0" fill="url(#p5_g9)" stroke="#4A3B5C" stroke-width="3" stroke-linejoin="round" />
+  <line x1="204" y1="48" x2="213" y2="48" stroke="#B98A10" stroke-width="2"/>
+  <line x1="204" y1="60" x2="213" y2="60" stroke="#B98A10" stroke-width="2"/>
+  <line x1="204" y1="72" x2="213" y2="72" stroke="#B98A10" stroke-width="2"/>
+  <rect x="68.0" y="28.0" width="132.0" height="64.0" rx="32.0" fill="url(#p5_g10)" stroke="#4A3B5C" stroke-width="3" stroke-linejoin="round" />
+  <rect x="99.0" y="27.0" width="10.0" height="66.0" rx="4.0" fill="url(#p5_g11)" stroke="#4A3B5C" stroke-width="2" stroke-linejoin="round" />
+  <rect x="141.0" y="27.0" width="10.0" height="66.0" rx="4.0" fill="url(#p5_g12)" stroke="#4A3B5C" stroke-width="2" stroke-linejoin="round" />
+  <ellipse cx="132.0" cy="47.0" rx="44.0" ry="5.0" transform="rotate(0 132.0 47.0)" fill="#FFFFFF" opacity="0.5"/>
+  <circle cx="192.0" cy="60.0" r="16.0" fill="url(#p5_g13)" stroke="#4A3B5C" stroke-width="2.6" stroke-linejoin="round" />
+  <circle cx="202.0" cy="60.0" r="13.0" fill="#FFF3A6" opacity="0.35"/>
+  <circle cx="200.0" cy="60.0" r="7.0" fill="url(#p5_g14)" stroke="#4A3B5C" stroke-width="2" stroke-linejoin="round" />
+  <circle cx="170.0" cy="60.0" r="15.0" fill="url(#p5_g15)" stroke="#4A3B5C" stroke-width="3" stroke-linejoin="round" />
+  <circle cx="170.0" cy="60.0" r="8.0" fill="#1C1728" />
+  <ellipse cx="164.0" cy="53.0" rx="5.0" ry="2.4" transform="rotate(-35 164.0 53.0)" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="125.0" cy="60.0" r="11.0" fill="url(#p5_g16)" stroke="#4A3B5C" stroke-width="2.4" stroke-linejoin="round" />
+  <ellipse cx="122.0" cy="56.0" rx="4.0" ry="2.2" transform="rotate(-35 122.0 56.0)" fill="#FFFFFF" opacity="0.8"/>
+  <rect x="10.0" y="18.0" width="66.0" height="84.0" rx="18.0" fill="url(#p5_g17)" stroke="#4A3B5C" stroke-width="3.2" stroke-linejoin="round" />
+  <rect x="18.0" y="26.0" width="50.0" height="68.0" rx="12.0" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" stroke-opacity="0.35"/>
+  <ellipse cx="32.0" cy="32.0" rx="15.0" ry="5.0" transform="rotate(-10 32.0 32.0)" fill="#FFFFFF" opacity="0.5"/>
+</g>
+</g>
+<g transform="translate(-2.00 58.00) scale(1.0300)">
+<g transform="translate(112.00 -38.00) scale(0.4167 0.4167) translate(-48.00 -48.00) scale(1.0000 1.0000) translate(-0.00 -0.00)" opacity="0.95">
+  <defs><radialGradient id="p6_g1" cx="0.38" cy="0.32" r="0.8"><stop offset="0.00" stop-color="#FFFFFF"/><stop offset="0.50" stop-color="#EEEAF6"/><stop offset="1.00" stop-color="#C4BDD8"/></radialGradient></defs>
+  <circle cx="48.0" cy="48.0" r="40.0" fill="url(#p6_g1)" stroke="#B3ABCB" stroke-width="2.5" stroke-linejoin="round" />
+  <circle cx="36.0" cy="40.0" r="20.0" fill="#FFFFFF" opacity="0.7"/>
+</g>
+<g transform="translate(96.00 -82.00) scale(0.5625 0.5625) translate(-48.00 -48.00) scale(1.0000 1.0000) translate(-0.00 -0.00)" opacity="0.90">
+  <defs><radialGradient id="p7_g1" cx="0.38" cy="0.32" r="0.8"><stop offset="0.00" stop-color="#FFFFFF"/><stop offset="0.50" stop-color="#EEEAF6"/><stop offset="1.00" stop-color="#C4BDD8"/></radialGradient></defs>
+  <circle cx="48.0" cy="48.0" r="40.0" fill="url(#p7_g1)" stroke="#B3ABCB" stroke-width="2.5" stroke-linejoin="round" />
+  <circle cx="36.0" cy="40.0" r="20.0" fill="#FFFFFF" opacity="0.7"/>
+</g>
+<g transform="translate(66.00 -128.00) scale(0.7292 0.7292) translate(-48.00 -48.00) scale(1.0000 1.0000) translate(-0.00 -0.00)" opacity="0.85">
+  <defs><radialGradient id="p8_g1" cx="0.38" cy="0.32" r="0.8"><stop offset="0.00" stop-color="#FFFFFF"/><stop offset="0.50" stop-color="#EEEAF6"/><stop offset="1.00" stop-color="#C4BDD8"/></radialGradient></defs>
+  <circle cx="48.0" cy="48.0" r="40.0" fill="url(#p8_g1)" stroke="#B3ABCB" stroke-width="2.5" stroke-linejoin="round" />
+  <circle cx="36.0" cy="40.0" r="20.0" fill="#FFFFFF" opacity="0.7"/>
+</g>
+</g>
+</svg>

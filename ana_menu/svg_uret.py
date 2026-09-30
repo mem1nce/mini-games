@@ -276,11 +276,30 @@ def robot_fabrikasi():
     ]
 
 
+def tren_rayi():
+    # Tren Rayı: ray üstünde lokomotif ve yolcu vagonu (penceresinde tavşan), bacadan yükselen duman pufları
+    g = "tren_rayi/gorseller/"
+    sahne = [
+        parca(g + "ray_duz.svg", 160, (-80, 0)),
+        parca(g + "ray_duz.svg", 160, (80, 0)),
+        parca(g + "vagon_yolcu_kirmizi.svg", 128, (-76, 0)),
+        parca(g + "hayvanlar/tavsan.svg", 50, (-90, -10)),
+        parca(g + "lokomotif.svg", 166, (70, 0)),
+    ]
+    duman = [
+        parca(g + "duman.svg", 40, (112, -38), opaklik=0.95),
+        parca(g + "duman.svg", 54, (96, -82), opaklik=0.9),
+        parca(g + "duman.svg", 70, (66, -128), opaklik=0.85),
+    ]
+    return [grup(sahne, (-2, 58), 1.03, -0.16), grup(duman, (-2, 58), 1.03)]
+
+
 KARTLAR = {
     "ucan_kus": ucan_kus, "dondurmaci": dondurmaci, "yol_yap": yol_yap, "hafiza": hafiza,
     "meyve_topla": meyve_topla, "golge_eslestirme": golge_eslestirme, "kostebek": kostebek,
     "toplama": toplama, "cikarma": cikarma, "araba_yarisi": araba_yarisi, "zipla_zipla": zipla_zipla,
     "sihirli_bahce": sihirli_bahce, "muzik_kutusu": muzik_kutusu, "robot_fabrikasi": robot_fabrikasi,
+    "tren_rayi": tren_rayi,
 }
 
 
