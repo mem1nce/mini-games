@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="768" viewBox="0 0 1024 768">
+  <defs>
+    <mask id="m1" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><polygon points="538,160 538,470 770,470"/></g></mask>
+    <mask id="m2" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><path d="M240 500 L810 500 Q788 612 700 634 L350 634 Q262 612 240 500 Z"/><circle cx="400" cy="560" r="28"/><circle cx="525" cy="560" r="28"/><circle cx="650" cy="560" r="28"/></g></mask>
+    <mask id="m3" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><circle cx="400" cy="560" r="28"/><circle cx="525" cy="560" r="28"/><circle cx="650" cy="560" r="28"/></g></mask>
+    <mask id="m7" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><polygon points="528,96 610,122 528,150"/></g></mask>
+    <mask id="m8" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><polygon points="528,96 610,122 528,150"/></g></mask>
+  </defs>
+  <g id="bolgeler" fill="#F6F2FB">
+    <circle id="gunes" cx="140" cy="140" r="72"/>
+    <path id="bulut" d="M950 150 A24.6 24.6 0 0 1 921.9 178 L850.8 178 L770 178 A33.3 33.3 0 0 1 717.2 167.8 A22.1 22.1 0 0 1 717.2 132.2 A36.8 36.8 0 0 1 770 105 A50.3 50.3 0 0 1 850.8 98.8 A45.4 45.4 0 0 1 921.9 116.6 A27.1 27.1 0 0 1 950 150 Z"/>
+    <path id="deniz" d="M-20 560 Q60 530 140 560 T300 560 T460 560 T620 560 T780 560 T940 560 T1100 560 L1100 800 L-20 800 Z"/>
+    <path id="govde" d="M240 500 L810 500 Q788 612 700 634 L350 634 Q262 612 240 500 Z"/>
+    <circle id="pencere_1" cx="400" cy="560" r="28"/>
+    <circle id="pencere_2" cx="525" cy="560" r="28"/>
+    <circle id="pencere_3" cx="650" cy="560" r="28"/>
+    <polygon id="yelken_buyuk" points="538,160 538,470 770,470"/>
+    <polygon id="yelken_kucuk" points="502,206 502,470 320,470"/>
+    <polygon id="bayrak" points="528,96 610,122 528,150"/>
+  </g>
+  <g id="cizgiler" fill="none" stroke="#3B2F6B" stroke-width="12" stroke-linejoin="round" stroke-linecap="round">
+    <circle cx="140" cy="140" r="72"/>
+    <g mask="url(#m1)"><path d="M950 150 A24.6 24.6 0 0 1 921.9 178 L850.8 178 L770 178 A33.3 33.3 0 0 1 717.2 167.8 A22.1 22.1 0 0 1 717.2 132.2 A36.8 36.8 0 0 1 770 105 A50.3 50.3 0 0 1 850.8 98.8 A45.4 45.4 0 0 1 921.9 116.6 A27.1 27.1 0 0 1 950 150 Z"/></g>
+    <g mask="url(#m2)"><path d="M-20 560 Q60 530 140 560 T300 560 T460 560 T620 560 T780 560 T940 560 T1100 560 L1100 800 L-20 800 Z"/></g>
+    <g mask="url(#m3)"><path d="M240 500 L810 500 Q788 612 700 634 L350 634 Q262 612 240 500 Z"/></g>
+    <circle cx="400" cy="560" r="28"/>
+    <circle cx="525" cy="560" r="28"/>
+    <circle cx="650" cy="560" r="28"/>
+    <g mask="url(#m7)"><path d="M520 500 L520 96" stroke-width="16"/></g>
+    <g mask="url(#m8)"><polygon points="538,160 538,470 770,470"/></g>
+    <polygon points="502,206 502,470 320,470"/>
+    <polygon points="528,96 610,122 528,150"/>
+    <ellipse cx="116" cy="130" rx="9" ry="12" fill="#3B2F6B" stroke="none"/>
+    <circle cx="112.8" cy="125.2" r="3.4" fill="#FFFFFF" stroke="none"/>
+    <ellipse cx="164" cy="130" rx="9" ry="12" fill="#3B2F6B" stroke="none"/>
+    <circle cx="160.8" cy="125.2" r="3.4" fill="#FFFFFF" stroke="none"/>
+    <path d="M116 166 Q140 182 164 166" stroke-width="7"/>
+  </g>
+</svg>

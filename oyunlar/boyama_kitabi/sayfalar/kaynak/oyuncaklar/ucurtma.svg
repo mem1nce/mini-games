@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="768" viewBox="0 0 1024 768">
+  <defs>
+    <mask id="m0" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><polygon points="300,300 512,80 512,300"/></g></mask>
+    <mask id="m7" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><polygon points="724,300 512,566 512,300"/><polygon points="512,566 300,300 512,300"/><polygon points="500,636 426,602 430,670"/><polygon points="500,636 574,602 570,670"/><polygon points="460,724 386,690 390,758"/><polygon points="460,724 534,690 530,758"/></g></mask>
+    <mask id="m8" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><polygon points="724,300 512,566 512,300"/><polygon points="512,566 300,300 512,300"/><polygon points="300,300 512,80 512,300"/></g></mask>
+    <mask id="m9" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><polygon points="512,566 300,300 512,300"/><polygon points="300,300 512,80 512,300"/></g></mask>
+    <mask id="m10" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><polygon points="300,300 512,80 512,300"/></g></mask>
+    <mask id="m12" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><polygon points="500,636 574,602 570,670"/></g></mask>
+    <mask id="m14" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><polygon points="460,724 534,690 530,758"/></g></mask>
+  </defs>
+  <g id="bolgeler" fill="#F6F2FB">
+    <path id="bulut" d="M300 170 A25.5 25.5 0 0 1 271.9 200 L200.8 200 L120 200 A33.5 33.5 0 0 1 67.2 188.5 A22.9 22.9 0 0 1 67.2 151.5 A37.1 37.1 0 0 1 120 123.2 A50.3 50.3 0 0 1 200.8 116.8 A45.5 45.5 0 0 1 271.9 135.3 A27.7 27.7 0 0 1 300 170 Z"/>
+    <circle id="gunes" cx="900" cy="110" r="62"/>
+    <polygon id="parca_1" points="512,80 724,300 512,300"/>
+    <polygon id="parca_2" points="724,300 512,566 512,300"/>
+    <polygon id="parca_3" points="512,566 300,300 512,300"/>
+    <polygon id="parca_4" points="300,300 512,80 512,300"/>
+    <polygon id="fiyonk_1_sol" points="500,636 426,602 430,670"/>
+    <polygon id="fiyonk_1_sag" points="500,636 574,602 570,670"/>
+    <polygon id="fiyonk_2_sol" points="460,724 386,690 390,758"/>
+    <polygon id="fiyonk_2_sag" points="460,724 534,690 530,758"/>
+  </g>
+  <g id="cizgiler" fill="none" stroke="#3B2F6B" stroke-width="12" stroke-linejoin="round" stroke-linecap="round">
+    <g mask="url(#m0)"><path d="M300 170 A25.5 25.5 0 0 1 271.9 200 L200.8 200 L120 200 A33.5 33.5 0 0 1 67.2 188.5 A22.9 22.9 0 0 1 67.2 151.5 A37.1 37.1 0 0 1 120 123.2 A50.3 50.3 0 0 1 200.8 116.8 A45.5 45.5 0 0 1 271.9 135.3 A27.7 27.7 0 0 1 300 170 Z"/></g>
+    <circle cx="900" cy="110" r="62"/>
+    <ellipse cx="880" cy="102" rx="9" ry="12" fill="#3B2F6B" stroke="none"/>
+    <circle cx="876.9" cy="97.2" r="3.4" fill="#FFFFFF" stroke="none"/>
+    <ellipse cx="920" cy="102" rx="9" ry="12" fill="#3B2F6B" stroke="none"/>
+    <circle cx="916.9" cy="97.2" r="3.4" fill="#FFFFFF" stroke="none"/>
+    <path d="M882 132 Q900 146 918 132" stroke-width="7"/>
+    <g mask="url(#m7)"><path d="M512 566 Q480 600 500 636 Q520 680 460 724 Q430 748 396 752" stroke-width="7"/></g>
+    <g mask="url(#m8)"><polygon points="512,80 724,300 512,300"/></g>
+    <g mask="url(#m9)"><polygon points="724,300 512,566 512,300"/></g>
+    <g mask="url(#m10)"><polygon points="512,566 300,300 512,300"/></g>
+    <polygon points="300,300 512,80 512,300"/>
+    <g mask="url(#m12)"><polygon points="500,636 426,602 430,670"/></g>
+    <polygon points="500,636 574,602 570,670"/>
+    <g mask="url(#m14)"><polygon points="460,724 386,690 390,758"/></g>
+    <polygon points="460,724 534,690 530,758"/>
+    <ellipse cx="476" cy="290" rx="16" ry="20" fill="#3B2F6B" stroke="none"/>
+    <circle cx="470.4" cy="282" r="6.1" fill="#FFFFFF" stroke="none"/>
+    <ellipse cx="548" cy="290" rx="16" ry="20" fill="#3B2F6B" stroke="none"/>
+    <circle cx="542.4" cy="282" r="6.1" fill="#FFFFFF" stroke="none"/>
+    <path d="M486 340 Q512 360 538 340" stroke-width="9"/>
+  </g>
+</svg>

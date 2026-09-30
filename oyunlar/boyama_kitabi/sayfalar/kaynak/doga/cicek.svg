@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="768" viewBox="0 0 1024 768">
+  <defs>
+    <mask id="m0" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><path d="M506 600 C440 520 350 540 318 580 C372 640 450 650 506 628 Z"/><path d="M520 520 C590 440 680 460 712 500 C660 560 580 570 520 548 Z"/><path d="M388 640 L636 640 L608 762 L416 762 Z"/><ellipse cx="512" cy="398" rx="88" ry="62" transform="rotate(90 512 398)"/><ellipse cx="399.8" cy="316.5" rx="88" ry="62" transform="rotate(162 399.8 316.5)"/><ellipse cx="624.2" cy="316.5" rx="88" ry="62" transform="rotate(378 624.2 316.5)"/><circle cx="512" cy="280" r="76"/></g></mask>
+    <mask id="m1" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><path d="M388 640 L636 640 L608 762 L416 762 Z"/></g></mask>
+    <mask id="m2" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><ellipse cx="512" cy="398" rx="88" ry="62" transform="rotate(90 512 398)"/></g></mask>
+    <mask id="m4" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><ellipse cx="399.8" cy="316.5" rx="88" ry="62" transform="rotate(162 399.8 316.5)"/><ellipse cx="624.2" cy="316.5" rx="88" ry="62" transform="rotate(378 624.2 316.5)"/><circle cx="512" cy="280" r="76"/></g></mask>
+    <mask id="m5" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><ellipse cx="442.6" cy="184.5" rx="88" ry="62" transform="rotate(234 442.6 184.5)"/><circle cx="512" cy="280" r="76"/></g></mask>
+    <mask id="m6" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><ellipse cx="581.4" cy="184.5" rx="88" ry="62" transform="rotate(306 581.4 184.5)"/><circle cx="512" cy="280" r="76"/></g></mask>
+    <mask id="m7" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><ellipse cx="624.2" cy="316.5" rx="88" ry="62" transform="rotate(378 624.2 316.5)"/><circle cx="512" cy="280" r="76"/></g></mask>
+    <mask id="m8" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><circle cx="512" cy="280" r="76"/></g></mask>
+  </defs>
+  <g id="bolgeler" fill="#F6F2FB">
+    <path id="sap" d="M497 360 C486 500 520 600 500 730 L532 730 C552 600 520 500 529 360 Z"/>
+    <path id="yaprak_sol" d="M506 600 C440 520 350 540 318 580 C372 640 450 650 506 628 Z"/>
+    <path id="yaprak_sag" d="M520 520 C590 440 680 460 712 500 C660 560 580 570 520 548 Z"/>
+    <path id="saksi" d="M388 640 L636 640 L608 762 L416 762 Z"/>
+    <ellipse id="yaprak_1" cx="512" cy="398" rx="88" ry="62" transform="rotate(90 512 398)"/>
+    <ellipse id="yaprak_2" cx="399.8" cy="316.5" rx="88" ry="62" transform="rotate(162 399.8 316.5)"/>
+    <ellipse id="yaprak_3" cx="442.6" cy="184.5" rx="88" ry="62" transform="rotate(234 442.6 184.5)"/>
+    <ellipse id="yaprak_4" cx="581.4" cy="184.5" rx="88" ry="62" transform="rotate(306 581.4 184.5)"/>
+    <ellipse id="yaprak_5" cx="624.2" cy="316.5" rx="88" ry="62" transform="rotate(378 624.2 316.5)"/>
+    <circle id="orta" cx="512" cy="280" r="76"/>
+  </g>
+  <g id="cizgiler" fill="none" stroke="#3B2F6B" stroke-width="12" stroke-linejoin="round" stroke-linecap="round">
+    <g mask="url(#m0)"><path d="M497 360 C486 500 520 600 500 730 L532 730 C552 600 520 500 529 360 Z"/></g>
+    <g mask="url(#m1)"><path d="M506 600 C440 520 350 540 318 580 C372 640 450 650 506 628 Z"/></g>
+    <g mask="url(#m2)"><path d="M520 520 C590 440 680 460 712 500 C660 560 580 570 520 548 Z"/></g>
+    <path d="M388 640 L636 640 L608 762 L416 762 Z"/>
+    <g mask="url(#m4)"><ellipse cx="512" cy="398" rx="88" ry="62" transform="rotate(90 512 398)"/></g>
+    <g mask="url(#m5)"><ellipse cx="399.8" cy="316.5" rx="88" ry="62" transform="rotate(162 399.8 316.5)"/></g>
+    <g mask="url(#m6)"><ellipse cx="442.6" cy="184.5" rx="88" ry="62" transform="rotate(234 442.6 184.5)"/></g>
+    <g mask="url(#m7)"><ellipse cx="581.4" cy="184.5" rx="88" ry="62" transform="rotate(306 581.4 184.5)"/></g>
+    <g mask="url(#m8)"><ellipse cx="624.2" cy="316.5" rx="88" ry="62" transform="rotate(378 624.2 316.5)"/></g>
+    <circle cx="512" cy="280" r="76"/>
+    <ellipse cx="484" cy="266" rx="14" ry="18" fill="#3B2F6B" stroke="none"/>
+    <circle cx="479.1" cy="258.8" r="5.3" fill="#FFFFFF" stroke="none"/>
+    <ellipse cx="540" cy="266" rx="14" ry="18" fill="#3B2F6B" stroke="none"/>
+    <circle cx="535.1" cy="258.8" r="5.3" fill="#FFFFFF" stroke="none"/>
+    <path d="M484 304 Q512 326 540 304" stroke-width="7"/>
+  </g>
+</svg>
