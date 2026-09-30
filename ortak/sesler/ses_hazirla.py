@@ -1,0 +1,240 @@
+# Ortak seslerin hazırlanması: CC0 paketleri indirir, seçilen sesleri kırpar / yumuşatır / seviyelerini eşitler
+# ve bu klasöre .ogg olarak yazar. Hangi sesin nereden geldiği SESLER.md'de (bu listeyle aynı).
+#
+# Gerekenler: Python 3 + soundfile, numpy, scipy (pip install soundfile numpy scipy). İndirilen paketler proje
+# dışında bir önbellek klasörüne açılır (varsayılan: sistem geçici klasörü / minik_sesler_kaynak).
+# Çalıştırma (proje kökünden): python ortak/sesler/ses_hazirla.py [önbellek_klasörü]
+#
+# Seviye hedefleri (kısa pencere RMS, dBFS): arayüz -26, efekt -21, ezgi -19, döngü -30, müzik (ortalama) -22;
+# tepe -1 dBFS'i geçmez. Efektler mono, müzikler stereo. Oyun içindeki ince ayar SesYoneticisi'nde.
+
+import os
+import sys
+import tempfile
+import urllib.parse
+import urllib.request
+import zipfile
+
+import numpy as np
+import soundfile as sf
+from scipy import signal
+
+BURASI = os.path.dirname(os.path.abspath(__file__))
+SR = 44100
+
+KENNEY = "https://kenney.nl/media/pages/assets/"
+OGA = "https://opengameart.org/sites/default/files/"
+PAKETLER = {
+    # ad: (indirme bağlantısı, sayfa)
+    "interface": (KENNEY + "interface-sounds/fa43c1dd4d-1677589452/kenney_interface-sounds.zip", "https://kenney.nl/assets/interface-sounds"),
+    "impact": (KENNEY + "impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip", "https://kenney.nl/assets/impact-sounds"),
+    "jingles": (KENNEY + "music-jingles/f37e530b9e-1677590399/kenney_music-jingles.zip", "https://kenney.nl/assets/music-jingles"),
+    "digital": (KENNEY + "digital-audio/216eac4753-1677590265/kenney_digital-audio.zip", "https://kenney.nl/assets/digital-audio"),
+    "casino": (KENNEY + "casino-audio/", "https://kenney.nl/assets/casino-audio"),
+    "rpg": (KENNEY + "rpg-audio/", "https://kenney.nl/assets/rpg-audio"),
+    "boing": (OGA + "boing.flac", "https://opengameart.org/content/boing"),
+    "zil": (OGA + "pleasing-bell.wav", "https://opengameart.org/content/pleasing-bell-sound-effect"),
+    "yaratik": (OGA + "80-CC0-creature-SFX_0.zip", "https://opengameart.org/content/80-cc0-creature-sfx"),
+    "donguler": (OGA + "sfx_loops.zip", "https://opengameart.org/content/30-cc0-sfx-loops"),
+    "m_menu": (OGA + "HappyClappyLoop.wav", "https://opengameart.org/content/happy-clappy-loop"),
+    "m_kus": (OGA + "flowerbed_fields.ogg", "https://opengameart.org/content/flowerbed-fields-loop"),
+    "m_dondurma": (OGA + "feel_good_island_loop_0.ogg", "https://opengameart.org/content/feel-good-island-loop"),
+    "m_yol": (OGA + "ogg_cozy_puzzle_jingle_result.zip", "https://opengameart.org/content/cozy-puzzle-jingle-result"),
+    "m_hafiza": (OGA + "Heavenly%20Loop_0.ogg", "https://opengameart.org/content/heavenly-loop"),
+    "m_meyve": (OGA + "childrens_march_theme.zip", "https://opengameart.org/content/childrens-march-theme"),
+}
+# Kenney casino ve rpg paketlerinin tam bağlantısı sayfadan okunur (sürüm kodu değişebilir)
+
+# ad: (paket, paketteki dosya, tür, işlemler)
+#   tür: arayuz / efekt / ezgi / dongu / muzik
+#   işlemler: bas/son (sn, kırpma), perde (hız çarpanı: 1.25 = daha tiz ve kısa), alcak (Hz, tiz yumuşatma),
+#             ekle (başka bir ses: (paket, dosya, gecikme sn, kazanç)), sonu_sustur (sn, yumuşak kısılma),
+#             dikis (sn: döngünün iki ucuna çok kısa kısılma; dikişte "tık" duyulan döngüler için)
+SESLER = {
+    # --- Ortak ---
+    "dugme_tik": ("interface", "drop_003.ogg", "arayuz", {}),
+    "geri": ("interface", "drop_003.ogg", "arayuz", {"perde": 0.75}),
+    "kutlama": ("jingles", "jingles_STEEL02.ogg", "ezgi", {}),
+    "konfeti": ("interface", "drop_004.ogg", "efekt", {"ekle": ("interface", "glass_002.ogg", 0.09, 0.7), "alcak": 6000}),
+    "yumusak_hayir": ("interface", "question_002.ogg", "arayuz", {"alcak": 2500}),
+    "ding": ("interface", "glass_005.ogg", "efekt", {}),
+    "ding_yumusak": ("interface", "glass_001.ogg", "efekt", {}),
+    "pop": ("interface", "drop_004.ogg", "efekt", {}),
+    "plop": ("interface", "drop_002.ogg", "efekt", {}),
+    "tink": ("interface", "glass_006.ogg", "arayuz", {}),
+    "basari": ("interface", "confirmation_001.ogg", "efekt", {}),
+    "basari_parlak": ("interface", "confirmation_003.ogg", "efekt", {}),
+    "tamamlandi": ("interface", "confirmation_004.ogg", "efekt", {}),
+    "yukselis": ("interface", "maximize_009.ogg", "efekt", {}),
+    "yildiz_kazanma": ("jingles", "jingles_PIZZI02.ogg", "ezgi", {}),
+    "hediye_acilis": ("jingles", "jingles_PIZZI10.ogg", "ezgi", {}),
+    "bolum_gecisi": ("jingles", "jingles_STEEL10.ogg", "ezgi", {}),
+    # --- Uçan Kuş ---
+    "kanat": ("rpg", "cloth2.ogg", "arayuz", {"son": 0.28, "alcak": 3500, "sonu_sustur": 0.12}),
+    "boing": ("boing", "boing.flac", "efekt", {"son": 0.75, "sonu_sustur": 0.35}),
+    "boing_kisa": ("boing", "boing.flac", "efekt", {"perde": 1.3, "son": 0.42, "sonu_sustur": 0.2}),
+    "yumusak_dusus": ("digital", "highDown.ogg", "efekt", {"alcak": 2200}),
+    # --- Dondurmacı ---
+    "kapi_zili": ("zil", "pleasing-bell.wav", "efekt", {}),
+    "tahta_tok": ("impact", "impactWood_light_001.ogg", "arayuz", {}),
+    "hayvan_sevinc": ("yaratik", "cute_03.ogg", "efekt", {"alcak": 7000}),
+    # --- Yol Yap ---
+    "hisirti": ("rpg", "cloth1.ogg", "arayuz", {"son": 0.45, "alcak": 2500, "sonu_sustur": 0.2}),
+    "bilye_yuvarlanma": ("donguler", "rolling.ogg", "dongu", {"alcak": 1800}),
+    # --- Hafıza ---
+    "kart_cevir": ("casino", "card-place-1.ogg", "arayuz", {"alcak": 7000}),
+    "kart_dagit": ("casino", "card-slide-1.ogg", "arayuz", {"alcak": 7000}),
+    # --- Meyve Topla ---
+    "bonk": ("interface", "bong_001.ogg", "efekt", {}),
+    "sersem": ("yaratik", "ooh.ogg", "efekt", {"alcak": 5000}),
+    "guc_al": ("digital", "powerUp2.ogg", "efekt", {"alcak": 3000}),
+    "guc_bitti": ("digital", "phaserDown1.ogg", "efekt", {"alcak": 2500}),
+    # --- Müzikler (döngülü) ---
+    "muzik_menu": ("m_menu", "HappyClappyLoop.wav", "muzik", {"dikis": 0.006}),
+    "muzik_ucan_kus": ("m_kus", "flowerbed_fields.ogg", "muzik", {"alcak": 5000}),
+    "muzik_dondurmaci": ("m_dondurma", "feel_good_island_loop_0.ogg", "muzik", {}),
+    "muzik_yol_yap": ("m_yol", "Cozy Puzzle Clear (Loop)_BPM85.ogg", "muzik", {"alcak": 7000}),
+    "muzik_hafiza": ("m_hafiza", "Heavenly Loop_0.ogg", "muzik", {}),
+    "muzik_meyve_topla": ("m_meyve", "Children's March Theme.ogg", "muzik", {"alcak": 7000}),
+}
+
+HEDEF = {"arayuz": -26.0, "efekt": -21.0, "ezgi": -19.0, "dongu": -30.0, "muzik": -22.0}
+SIKISTIRMA = {"arayuz": 0.3, "efekt": 0.3, "ezgi": 0.3, "dongu": 0.4, "muzik": 0.55}   # libsndfile vorbis (0 en iyi)
+DONGULU = ("dongu", "muzik")
+
+
+def _indir(url, hedef):
+    if not os.path.exists(hedef):
+        print("indiriliyor", url)
+        istek = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(istek, timeout=120) as y, open(hedef, "wb") as f:
+            f.write(y.read())
+
+
+def _kenney_bag(sayfa):
+    import re
+    istek = urllib.request.Request(sayfa, headers={"User-Agent": "Mozilla/5.0"})
+    html = urllib.request.urlopen(istek, timeout=60).read().decode("utf-8", "ignore")
+    return re.search(r'https://kenney.nl/media/pages/assets/[^"]+\.zip', html).group(0)
+
+
+def paket_klasoru(onbellek, ad):
+    url, sayfa = PAKETLER[ad]
+    klasor = os.path.join(onbellek, ad)
+    if os.path.isdir(klasor):
+        return klasor
+    os.makedirs(klasor, exist_ok=True)
+    if url.endswith("/"):
+        url = _kenney_bag(sayfa)
+    dosya = os.path.join(onbellek, ad + "_" + os.path.basename(url).replace("%20", "_"))
+    _indir(url, dosya)
+    if dosya.endswith(".zip"):
+        with zipfile.ZipFile(dosya) as z:
+            z.extractall(klasor)
+    else:
+        os.replace(dosya, os.path.join(klasor, urllib.parse.unquote(os.path.basename(url))))
+    return klasor
+
+
+def bul(onbellek, paket, ad):
+    klasor = paket_klasoru(onbellek, paket)
+    for kok, _, dosyalar in os.walk(klasor):
+        if ad in dosyalar:
+            return os.path.join(kok, ad)
+    raise FileNotFoundError(f"{paket}: {ad}")
+
+
+def oku(yol, stereo):
+    veri, sr = sf.read(yol, always_2d=True, dtype="float64")
+    if sr != SR:
+        veri = signal.resample_poly(veri, SR, sr, axis=0)
+    if not stereo:
+        veri = veri.mean(axis=1, keepdims=True)
+    elif veri.shape[1] == 1:
+        veri = np.repeat(veri, 2, axis=1)
+    return veri
+
+
+def alcak_geciren(veri, hz, dongu):
+    sos = signal.butter(2, hz, "low", fs=SR, output="sos")
+    if dongu:
+        # Döngü dikişi bozulmasın: sarmal dolgu ile süz, sonra kırp
+        pay = SR
+        dolu = np.concatenate([veri[-pay:], veri, veri[:pay]])
+        return signal.sosfiltfilt(sos, dolu, axis=0)[pay:-pay]
+    return signal.sosfiltfilt(sos, veri, axis=0)
+
+
+def pencere_rms_max(veri, pencere=0.3):
+    x = veri.mean(axis=1)
+    n = max(1, int(SR * pencere))
+    en = 0.0
+    for i in range(0, max(1, len(x) - n + 1), n // 4):
+        en = max(en, float(np.sqrt(np.mean(x[i:i + n] ** 2))))
+    return en
+
+
+def hazirla(onbellek, ad, paket, dosya, tur, isl):
+    dongu = tur in DONGULU
+    veri = oku(bul(onbellek, paket, dosya), tur == "muzik")
+    if "perde" in isl:
+        # Hız çarpanı: yeniden örnekleyerek perde ve süre birlikte değişir
+        oran = isl["perde"]
+        veri = signal.resample(veri, int(len(veri) / oran), axis=0)
+    if "ekle" in isl:
+        p2, d2, gecikme, kazanc = isl["ekle"]
+        ek = oku(bul(onbellek, p2, d2), False) * kazanc
+        bas = int(gecikme * SR)
+        uzunluk = max(len(veri), bas + len(ek))
+        veri = np.pad(veri, ((0, uzunluk - len(veri)), (0, 0)))
+        veri[bas:bas + len(ek)] += ek
+    bas = int(isl.get("bas", 0) * SR)
+    son = int(isl["son"] * SR) if "son" in isl else len(veri)
+    veri = veri[bas:son]
+    if "alcak" in isl:
+        veri = alcak_geciren(veri, isl["alcak"], dongu)
+    if "dikis" in isl:
+        n = int(isl["dikis"] * SR)
+        veri[:n] *= np.linspace(0, 1, n)[:, None]
+        veri[-n:] *= np.linspace(1, 0, n)[:, None]
+    if not dongu:
+        # Baştaki ve sondaki sessizliği at (ses dokunuşla hemen başlasın), kısa açılış ve kapanış
+        esik = np.abs(veri).max() * 0.003
+        aktif = np.where(np.abs(veri).max(axis=1) > esik)[0]
+        if len(aktif):
+            veri = veri[max(0, aktif[0] - int(0.002 * SR)): aktif[-1] + int(0.02 * SR)]
+        acilis = min(len(veri), int(0.003 * SR))
+        veri[:acilis] *= np.linspace(0, 1, acilis)[:, None]
+        kapanis = min(len(veri), int(isl.get("sonu_sustur", 0.03) * SR))
+        veri[-kapanis:] *= np.linspace(1, 0, kapanis)[:, None] ** 2
+    # Seviye
+    if tur == "muzik":
+        olcu = float(np.sqrt(np.mean(veri ** 2)))
+    else:
+        olcu = pencere_rms_max(veri)
+    kazanc = 10 ** (HEDEF[tur] / 20) / max(olcu, 1e-9)
+    tepe = float(np.abs(veri).max()) * kazanc
+    if tepe > 10 ** (-1 / 20):
+        kazanc *= 10 ** (-1 / 20) / tepe
+    veri = veri * kazanc
+    cikti = os.path.join(BURASI, ad + ".ogg")
+    # libsndfile Vorbis'e uzun tampon tek seferde yazılınca (Windows'ta) yığın taşıyor: parça parça yaz
+    with sf.SoundFile(cikti, "w", SR, veri.shape[1], format="OGG", subtype="VORBIS", compression_level=SIKISTIRMA[tur]) as f:
+        for i in range(0, len(veri), 4096):
+            f.write(veri[i:i + 4096].astype(np.float32))
+    return len(veri) / SR, 20 * np.log10(max(pencere_rms_max(veri), 1e-9)), os.path.getsize(cikti)
+
+
+def main():
+    onbellek = sys.argv[1] if len(sys.argv) > 1 else os.path.join(tempfile.gettempdir(), "minik_sesler_kaynak")
+    os.makedirs(onbellek, exist_ok=True)
+    toplam = 0
+    for ad, (paket, dosya, tur, isl) in SESLER.items():
+        sure, rms, boyut = hazirla(onbellek, ad, paket, dosya, tur, isl)
+        toplam += boyut
+        print(f"{ad:22s} {tur:7s} {sure:6.2f} sn  rms {rms:6.1f} dB  {boyut // 1024:5d} KB")
+    print(f"toplam {toplam / 1024 / 1024:.2f} MB")
+
+
+if __name__ == "__main__":
+    main()
