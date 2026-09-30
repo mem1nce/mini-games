@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="sap" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F2B874"/><stop offset="1" stop-color="#C98543"/></linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#EEF2F7"/><stop offset="1" stop-color="#A9B6C8"/></linearGradient>
+  </defs>
+  <path d="M88 10 Q98 6 104 14 L78 66 L64 58 Z" fill="url(#sap)" stroke="#3B2F6B" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M62 56 L80 66 L72 80 L52 70 Z" fill="url(#metal)" stroke="#3B2F6B" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+  <ellipse cx="92" cy="20" rx="3" ry="9" transform="rotate(28 92 20)" fill="#FFFFFF" opacity="0.7"/>
+</svg>

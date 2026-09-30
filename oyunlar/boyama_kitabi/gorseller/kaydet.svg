@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="cerceve" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFD27A"/><stop offset="1" stop-color="#E89A3C"/></linearGradient>
+    <linearGradient id="gok" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#BDE6FF"/><stop offset="1" stop-color="#E9F7FF"/></linearGradient>
+  </defs>
+  <rect x="14" y="22" width="100" height="84" rx="12" fill="url(#cerceve)" stroke="#3B2F6B" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+  <rect x="28" y="36" width="72" height="56" rx="6" fill="url(#gok)" stroke="#3B2F6B" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M28 92 L28 80 Q44 66 58 78 Q72 62 100 80 L100 92 Z" fill="#7BD85A" stroke="#3B2F6B" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="84" cy="52" r="8" fill="#FFD23F" stroke="#3B2F6B" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M64 68.45 C47.5 59.1 52.45 47 64 53.05 C75.55 47 80.5 59.1 64 68.45 Z" fill="#FF6F91" stroke="#3B2F6B" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+  <ellipse cx="26" cy="30" rx="6" ry="3" transform="rotate(-30 26 30)" fill="#FFFFFF" opacity="0.8"/>
+</svg>

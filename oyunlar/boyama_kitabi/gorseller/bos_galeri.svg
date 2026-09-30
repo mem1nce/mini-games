@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="tahta" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#E8A45C"/><stop offset="1" stop-color="#B87A45"/></linearGradient>
+    <linearGradient id="kagit" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#EEF0FA"/></linearGradient>
+    <linearGradient id="kalem" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7BD85A"/><stop offset="1" stop-color="#3FA046"/></linearGradient>
+  </defs>
+  <path d="M150 60 L104 280 M250 60 L296 280 M200 50 L200 280" fill="none" stroke="#3B2F6B" stroke-width="20" stroke-linecap="round"/>
+  <path d="M150 60 L104 280 M250 60 L296 280 M200 50 L200 280" fill="none" stroke="url(#tahta)" stroke-width="9" stroke-linecap="round"/>
+  <rect x="112" y="40" width="176" height="150" rx="10" fill="url(#kagit)" stroke="#3B2F6B" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/>
+  <rect x="100" y="186" width="200" height="18" rx="8" fill="url(#tahta)" stroke="#3B2F6B" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+  <polygon points="98.0,70.0 86.8,74.8 82.0,86.0 77.2,74.8 66.0,70.0 77.2,65.2 82.0,54.0 86.8,65.2" fill="#FFD23F" stroke="#3B2F6B" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+  <polygon points="330.0,58.0 321.6,61.6 318.0,70.0 314.4,61.6 306.0,58.0 314.4,54.4 318.0,46.0 321.6,54.4" fill="#FFD23F" stroke="#3B2F6B" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+  <polygon points="339.0,120.0 332.7,122.7 330.0,129.0 327.3,122.7 321.0,120.0 327.3,117.3 330.0,111.0 332.7,117.3" fill="#FFD23F" stroke="#3B2F6B" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+  <g transform="rotate(14 350 210)">
+    <rect x="330" y="150" width="40" height="110" rx="10" fill="url(#kalem)" stroke="#3B2F6B" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M330 152 L370 152 L350 116 Z" fill="#F7D2B0" stroke="#3B2F6B" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M342 130 L358 130 L350 116 Z" fill="#3FA046" stroke="#3B2F6B" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+  <ellipse cx="342" cy="186" rx="4" ry="5" fill="#3B2F6B"/>
+  <circle cx="340.6" cy="184.2" r="1.6" fill="#FFFFFF"/>
+  <ellipse cx="358" cy="186" rx="4" ry="5" fill="#3B2F6B"/>
+  <circle cx="356.6" cy="184.2" r="1.6" fill="#FFFFFF"/>
+  <path d="M343 200 Q350 205.6 357 200" fill="none" stroke="#3B2F6B" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+  </g>
+</svg>
