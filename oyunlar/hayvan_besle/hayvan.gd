@@ -209,6 +209,7 @@ func _swallow() -> void:
 	_queue.pop_front()
 	eaten += 1
 	bubble.fill_dot()
+	effects.sparkle(mouth_global(), size * 0.6)
 	var tween := create_tween()
 	tween.tween_interval(0.12)
 	tween.tween_callback(sounds.play.bind("nokta", pow(1.122, eaten - 1)))
