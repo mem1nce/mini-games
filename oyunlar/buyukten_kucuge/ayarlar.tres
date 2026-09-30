@@ -1,0 +1,107 @@
+[gd_resource type="Resource" script_class="SizeSettings" load_steps=18 format=3]
+
+[ext_resource type="Script" path="res://oyunlar/buyukten_kucuge/ayarlar.gd" id="1_ayar"]
+[ext_resource type="Script" path="res://oyunlar/buyukten_kucuge/bolum_verisi.gd" id="2_bolum"]
+
+[sub_resource type="Resource" id="b01"]
+script = ExtResource("2_bolum")
+kind = "halka"
+count = 3
+step = 0.25
+
+[sub_resource type="Resource" id="b02"]
+script = ExtResource("2_bolum")
+kind = "dizi"
+count = 3
+step = 0.25
+silhouettes = true
+
+[sub_resource type="Resource" id="b03"]
+script = ExtResource("2_bolum")
+kind = "bebek"
+count = 3
+step = 0.25
+
+[sub_resource type="Resource" id="b04"]
+script = ExtResource("2_bolum")
+kind = "halka"
+count = 4
+step = 0.22
+
+[sub_resource type="Resource" id="b05"]
+script = ExtResource("2_bolum")
+kind = "dizi"
+count = 4
+step = 0.22
+silhouettes = true
+by_height = true
+
+[sub_resource type="Resource" id="b06"]
+script = ExtResource("2_bolum")
+kind = "bebek"
+count = 4
+step = 0.2
+
+[sub_resource type="Resource" id="b07"]
+script = ExtResource("2_bolum")
+kind = "dizi"
+count = 4
+step = 0.2
+
+[sub_resource type="Resource" id="b08"]
+script = ExtResource("2_bolum")
+kind = "halka"
+count = 5
+step = 0.18
+
+[sub_resource type="Resource" id="b09"]
+script = ExtResource("2_bolum")
+kind = "dizi"
+count = 4
+step = 0.2
+silhouettes = true
+ascending = true
+
+[sub_resource type="Resource" id="b10"]
+script = ExtResource("2_bolum")
+kind = "bebek"
+count = 5
+step = 0.18
+strict = true
+
+[sub_resource type="Resource" id="b11"]
+script = ExtResource("2_bolum")
+kind = "dizi"
+count = 5
+step = 0.16
+by_height = true
+
+[sub_resource type="Resource" id="b12"]
+script = ExtResource("2_bolum")
+kind = "halka"
+count = 6
+step = 0.13
+
+[sub_resource type="Resource" id="b13"]
+script = ExtResource("2_bolum")
+kind = "dizi"
+count = 5
+step = 0.15
+ascending = true
+
+[sub_resource type="Resource" id="b14"]
+script = ExtResource("2_bolum")
+kind = "bebek"
+count = 6
+step = 0.15
+strict = true
+
+[sub_resource type="Resource" id="b15"]
+script = ExtResource("2_bolum")
+kind = "dizi"
+count = 6
+step = 0.12
+
+[resource]
+script = ExtResource("1_ayar")
+levels = Array[ExtResource("2_bolum")]([SubResource("b01"), SubResource("b02"), SubResource("b03"), SubResource("b04"), SubResource("b05"), SubResource("b06"), SubResource("b07"), SubResource("b08"), SubResource("b09"), SubResource("b10"), SubResource("b11"), SubResource("b12"), SubResource("b13"), SubResource("b14"), SubResource("b15")])
