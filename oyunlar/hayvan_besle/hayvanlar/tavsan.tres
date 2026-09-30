@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="FeedAnimalData" format=3]
+
+[ext_resource type="Script" path="res://oyunlar/hayvan_besle/hayvan_verisi.gd" id="1_veri"]
+[ext_resource type="Script" path="res://oyunlar/hayvan_besle/yiyecek_verisi.gd" id="2_yveri"]
+[ext_resource type="Texture2D" path="res://oyunlar/hayvan_besle/gorseller/hayvanlar/tavsan_govde.svg" id="3_govde"]
+[ext_resource type="Texture2D" path="res://oyunlar/hayvan_besle/gorseller/hayvanlar/tavsan_kafa.svg" id="4_kafa"]
+[ext_resource type="Resource" path="res://oyunlar/hayvan_besle/yiyecekler/havuc.tres" id="5_yiyecek"]
+[ext_resource type="AudioStream" path="res://oyunlar/hayvan_besle/sesler/tavsan.wav" id="6_ses"]
+
+[resource]
+script = ExtResource("1_veri")
+id = &"tavsan"
+body_texture = ExtResource("3_govde")
+head_texture = ExtResource("4_kafa")
+accepts = Array[ExtResource("2_yveri")]([ExtResource("5_yiyecek")])
+voice = ExtResource("6_ses")
+eye_y = 128.0
+eye_dx = 26.0
+eye_size = Vector2(13, 16)
+mouth_y = 158.0
+mouth_width = 11.0
+cheek_y = 154.0
+cheek_dx = 46.0
+skin_color = Color(0.9725, 0.9333, 0.9725, 1)
+teeth = true

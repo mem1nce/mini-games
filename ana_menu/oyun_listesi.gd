@@ -79,6 +79,9 @@ const OYUNLAR := [
 	{"ad": "Tren Rayı", "klasor": "tren_rayi", "sahne": "res://oyunlar/tren_rayi/tren_rayi.tscn", "kart": "tren_rayi.svg",
 		"renk": "gok", "kategori": "bulmaca", "yon": "yatay", "yeni": true,
 		"ilerleme": {"anahtar": "ilerleme/bolum", "ekle": 1}},
+	{"ad": "Hayvanları Besle", "klasor": "hayvan_besle", "sahne": "res://oyunlar/hayvan_besle/hayvan_besle.tscn", "kart": "hayvan_besle.svg",
+		"renk": "nane", "kategori": "bulmaca", "yon": "yatay", "yeni": true,
+		"ilerleme": {"anahtar": "ilerleme/bolum", "ekle": 1}},
 ]
 
 

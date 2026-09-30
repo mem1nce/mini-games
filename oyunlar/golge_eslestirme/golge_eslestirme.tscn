@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://oyunlar/golge_eslestirme/ilerleme_noktalari.gd" id="6_ilerleme"]
 [ext_resource type="Script" path="res://ortak/basili_geri_dugmesi.gd" id="7_geri"]
 [ext_resource type="Script" path="res://oyunlar/golge_eslestirme/sesler.gd" id="8_sesler"]
+[ext_resource type="Script" path="res://ortak/surukleme_girdisi.gd" id="9_girdi"]
 [ext_resource type="Resource" path="res://oyunlar/golge_eslestirme/bolumler/bolum_01.tres" id="b01"]
 [ext_resource type="Resource" path="res://oyunlar/golge_eslestirme/bolumler/bolum_02.tres" id="b02"]
 [ext_resource type="Resource" path="res://oyunlar/golge_eslestirme/bolumler/bolum_03.tres" id="b03"]
@@ -100,3 +101,6 @@ script = ExtResource("7_geri")
 
 [node name="Sounds" type="Node" parent="."]
 script = ExtResource("8_sesler")
+
+[node name="DragInput" type="Node" parent="."]
+script = ExtResource("9_girdi")

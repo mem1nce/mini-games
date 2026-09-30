@@ -37,8 +37,9 @@ gölgesinin tam altındaki hücrede başlamaz, hücre içinde küçük rastgele 
 
 ## Dokunma
 
-Hepsi `golge_eslestirme.gd` içindeki `_input`'ta. Aynı anda yalnız bir parmak (`active_touch`) bir şey
-tutabilir; diğer parmaklar, avuç içi dokunuşları ve onların kalkması yok sayılır. İptal edilen dokunuşta
+Dokunmayı sahnedeki ortak `DragInput` düğümü (`ortak/surukleme_girdisi.gd`) okur; `golge_eslestirme.gd` onun
+sinyallerini (`item_grabbed` / `item_moved` / `item_dropped` / `item_canceled` / `touched`) dinler. Aynı anda yalnız
+bir parmak (`DragInput.active_touch`) bir şey tutabilir; diğer parmaklar, avuç içi dokunuşları ve onların kalkması yok sayılır. İptal edilen dokunuşta
 veya uygulama arka plana giderse tutulan eşya sessizce yerine döner. Masaüstünde proje ayarındaki
 "Emulate Touch From Mouse" ile fareyle oynanır.
 
@@ -48,7 +49,7 @@ veya uygulama arka plana giderse tutulan eşya sessizce yerine döner. Masaüst�
 golge_eslestirme/
   golge_eslestirme.tscn/.gd  ana sahne (ShadowMatchGame): akış, dokunma, yerleşim, ipucu, kayıt
                              sinyaller: level_completed(index), all_levels_completed
-  esya.gd                    sürüklenen eşya (DraggableItem): picked / dropped sinyalleri, animasyonlar
+  esya.gd                    sürüklenen eşya: ortak/suruklenebilir.gd (DraggableItem) + gölgeye oturma
   golge_yuvasi.gd            gölge (ShadowSlot): eşyanın görseli + golge.gdshader; filled sinyali
   golge.gdshader             siluet: dokunun saydamlığı + tek düze yarı saydam lacivert renk
   ipucu_eli.gd               ipucu eli

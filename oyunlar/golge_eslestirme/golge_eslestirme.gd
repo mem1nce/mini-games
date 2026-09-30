@@ -3,8 +3,8 @@ extends Control
 # sürükleyip kendi gölgesine bırakır. Metin, süre ve ceza yok. 10 bölüm; sonuncudan sonra büyük
 # kutlama ve 1. bölüme dönüş. Bölümler bolumler/*.tres, eşyalar esyalar/<kategori>/*.tres.
 #
-# Dokunmanın tamamı burada (_input) yönetilir: aynı anda tek bir parmak (active_touch) bir şey
-# tutabilir; diğer parmaklar ve avuç içi dokunuşları yok sayılır.
+# Dokunmayı ortak DragInput (ortak/surukleme_girdisi.gd) okur: aynı anda tek bir parmak bir şey
+# tutabilir; diğer parmaklar ve avuç içi dokunuşları yok sayılır. Burada sadece sinyalleri dinlenir.
 
 signal level_completed(index: int)
 signal all_levels_completed
@@ -15,6 +15,7 @@ const HintHand := preload("res://oyunlar/golge_eslestirme/ipucu_eli.gd")
 const Effects := preload("res://oyunlar/golge_eslestirme/kutlama.gd")
 const ProgressDots := preload("res://oyunlar/golge_eslestirme/ilerleme_noktalari.gd")
 const HoldButton := preload("res://ortak/basili_geri_dugmesi.gd")
+const DragInput := preload("res://ortak/surukleme_girdisi.gd")
 const Sounds := preload("res://oyunlar/golge_eslestirme/sesler.gd")
 const TEX_CLOUD: Texture2D = preload("res://oyunlar/golge_eslestirme/gorseller/bulut.svg")
 const SAVE_PATH := "user://golge_eslestirme.cfg"
@@ -69,16 +70,18 @@ const ZONE_GAP := 40.0          # gölge bölgesi ile eşya tepsisi arası
 @onready var progress: ProgressDots = $Progress
 @onready var back_button: HoldButton = $BackButton
 @onready var sounds: Sounds = $Sounds
+@onready var drag_input: DragInput = $DragInput
 
-var state: State = State.LOADING
+var state: State = State.LOADING:
+	set(value):
+		state = value
+		if drag_input:
+			drag_input.enabled = value == State.PLAYING
 var level_index: int = 0
 var item_size: float = 200.0
 var items: Array[Item] = []
 var slots: Array[Slot] = []
 var placed_count: int = 0
-var active_touch: int = -1       # şu an bir şey tutan parmak (-1: yok)
-var dragged: Item = null         # sürüklenen eşya
-var holding_back: bool = false   # parmak geri düğmesinde mi
 var idle_time: float = 0.0
 var run_id: int = 0              # bölüm değişince eski beklemeler devam etmesin
 var sky_gradient := Gradient.new()
@@ -100,6 +103,15 @@ func _ready() -> void:
 	_create_floaters()
 	back_button.hold_time = hold_to_exit
 	back_button.completed.connect(SahneGecis.ana_menuye_don)
+	drag_input.back_button = back_button
+	drag_input.enabled = false
+	drag_input.grab_padding = grab_padding
+	drag_input.drag_scale = drag_scale
+	drag_input.touched.connect(_on_touched)
+	drag_input.item_grabbed.connect(_on_item_picked)
+	drag_input.item_moved.connect(_on_item_moved)
+	drag_input.item_dropped.connect(_on_item_dropped)
+	drag_input.item_canceled.connect(_on_item_canceled)
 	progress.setup(levels.size())
 	level_completed.connect(_on_level_completed)
 	all_levels_completed.connect(_on_all_levels_completed)
@@ -146,89 +158,22 @@ func _valid_items(level: ShadowLevelData) -> Array[ShadowItemData]:
 	return result
 
 
-# --- Dokunma ---
+# --- Dokunma (ortak DragInput sinyalleri) ---
 
-func _input(event: InputEvent) -> void:
-	if SahneGecis.gecis_suruyor:
-		return
-	var touch := event as InputEventScreenTouch
-	if touch:
-		if touch.pressed:
-			_on_press(touch.index, touch.position)
-		elif touch.index == active_touch:
-			_on_release(touch.canceled)
-		return
-	var drag := event as InputEventScreenDrag
-	if drag and drag.index == active_touch:
-		_on_drag(drag.position)
-
-
-func _on_press(index: int, pos: Vector2) -> void:
+func _on_touched() -> void:
 	idle_time = 0.0
 	if hand.visible:
 		hand.stop()
-	# Başka bir parmak zaten bir şey tutuyorsa bu dokunuş yok sayılır
-	if active_touch != -1:
-		return
-	if back_button.contains(pos):
-		active_touch = index
-		holding_back = true
-		back_button.press()
-		return
-	if state != State.PLAYING:
-		return
-	var item := _item_at(pos)
-	if item == null:
-		return
-	active_touch = index
-	dragged = item
-	item.grab(pos, item_size * drag_lift, drag_scale)   # -> picked sinyali -> _on_item_picked
 
 
-func _on_drag(pos: Vector2) -> void:
-	idle_time = 0.0
-	if dragged:
-		dragged.drag_to(pos)
-		dragged.slot.set_hover(_is_on_own_slot(dragged, dragged.drop_point()))
+func _on_item_moved(item: Item, point: Vector2) -> void:
+	item.slot.set_hover(_is_on_own_slot(item, point))
 
 
-func _on_release(canceled: bool) -> void:
-	active_touch = -1
-	idle_time = 0.0
-	if holding_back:
-		holding_back = false
-		back_button.release()
-		return
-	if dragged == null:
-		return
-	var item := dragged
-	dragged = null
-	if canceled:
-		# Dokunma sistem tarafından iptal edildi (ör. bildirim çekmecesi): sessizce geri dönsün
-		item.slot.set_hover(false)
-		item.return_home(return_time, false)
-		return
-	item.release()   # -> dropped sinyali -> _on_item_dropped
-
-
-# Uygulama arka plana giderse tutulan eşya yerine döner
-func _notification(what: int) -> void:
-	if what == NOTIFICATION_APPLICATION_FOCUS_OUT and active_touch != -1:
-		_on_release(true)
-
-
-# Parmağa en yakın, henüz yerleşmemiş eşya (yakalama alanı görselden biraz büyük)
-func _item_at(pos: Vector2) -> Item:
-	var best: Item = null
-	var best_distance := INF
-	for item in items:
-		if item.placed:
-			continue
-		var distance: float = item.grab_distance(pos, grab_padding)
-		if distance < best_distance:
-			best_distance = distance
-			best = item
-	return best
+# Dokunma sistem tarafından iptal edildi (ör. bildirim çekmecesi): sessizce geri dönsün
+func _on_item_canceled(item: Item) -> void:
+	item.slot.set_hover(false)
+	item.return_home(return_time, false)
 
 
 func _is_on_own_slot(item: Item, point: Vector2) -> bool:
@@ -237,7 +182,7 @@ func _is_on_own_slot(item: Item, point: Vector2) -> bool:
 
 # --- Yakalama ve bırakma ---
 
-func _on_item_picked(_item: Node2D) -> void:
+func _on_item_picked(_item: Item) -> void:
 	sounds.play("pop", randf_range(0.95, 1.1))
 
 
@@ -350,6 +295,8 @@ func _build_board(level_items: Array[ShadowItemData]) -> void:
 	var short := minf(get_viewport_rect().size.x, get_viewport_rect().size.y)
 	item_size = clampf(minf(cell_size.x, cell_size.y) * 0.8, short * min_item_ratio, short * item_screen_ratio)
 	hand.set_hand_size(item_size * 1.25)
+	drag_input.lift = item_size * drag_lift
+	drag_input.items = items
 
 	var slot_order := range(count)
 	slot_order.shuffle()
@@ -368,8 +315,6 @@ func _build_board(level_items: Array[ShadowItemData]) -> void:
 		items_layer.add_child(item)
 		item.setup(data, item_size, item_cells[item_order[k]] + _random_offset(jitter))
 		item.slot = slot
-		item.picked.connect(_on_item_picked)
-		item.dropped.connect(_on_item_dropped)
 		item.appear(0.3 + k * 0.12)
 		items.append(item)
 
@@ -471,7 +416,7 @@ func _process(delta: float) -> void:
 			cloud.position = Vector2(screen.x + half, randf_range(80.0, screen.y * 0.75))
 
 	# İpucu: bir süre hiçbir şey yapılmazsa
-	if state == State.PLAYING and active_touch == -1:
+	if state == State.PLAYING and drag_input.active_touch == -1:
 		idle_time += delta
 		if idle_time >= hint_delay:
 			idle_time = 0.0

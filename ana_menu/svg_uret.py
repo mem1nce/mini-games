@@ -294,12 +294,24 @@ def tren_rayi():
     return [grup(sahne, (-2, 58), 1.03, -0.16), grup(duman, (-2, 58), 1.03)]
 
 
+def hayvan_besle():
+    # Hayvanları Besle: ağzı açık mutlu tavşan, yanında tabakta havuç ve üstünde kalpler
+    g = "hayvan_besle/gorseller/"
+    return [
+        parca(g + "tabak.svg", 128, (74, 100)),
+        parca(g + "yiyecekler/havuc.svg", 96, (78, 58), 0.5),
+        parca(g + "kart_tavsan.svg", 206, (-40, 6)),
+        parca(g + "kalp.svg", 40, (40, -92), -0.2),
+        parca(g + "kalp.svg", 28, (80, -116), 0.25),
+    ]
+
+
 KARTLAR = {
     "ucan_kus": ucan_kus, "dondurmaci": dondurmaci, "yol_yap": yol_yap, "hafiza": hafiza,
     "meyve_topla": meyve_topla, "golge_eslestirme": golge_eslestirme, "kostebek": kostebek,
     "toplama": toplama, "cikarma": cikarma, "araba_yarisi": araba_yarisi, "zipla_zipla": zipla_zipla,
     "sihirli_bahce": sihirli_bahce, "muzik_kutusu": muzik_kutusu, "robot_fabrikasi": robot_fabrikasi,
-    "tren_rayi": tren_rayi,
+    "tren_rayi": tren_rayi, "hayvan_besle": hayvan_besle,
 }
 
 
