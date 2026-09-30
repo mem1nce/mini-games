@@ -71,6 +71,7 @@ var time_passed: float = 0.0
 
 
 func _ready() -> void:
+	SesYoneticisi.muzik("ucan_kus", self)
 	lives = start_lives
 	_create_hearts()
 	_create_clouds()
@@ -99,6 +100,7 @@ func _input(event: InputEvent) -> void:
 
 	# Geri: başlangıç ekranındayken ana menüye, oyun sırasında başlangıç ekranına
 	if back_button.get_global_rect().grow(16.0).has_point(touch.position):
+		SesYoneticisi.efekt("geri")
 		if state == State.READY:
 			SahneGecis.ana_menuye_don()
 		else:
@@ -138,6 +140,7 @@ func _start_game() -> void:
 	start_screen.visible = false
 	score_label.visible = true
 	distance_since_spawn = 0.0
+	SesYoneticisi.efekt("yukselis")
 	_spawn_pipe_pair()
 	_flap()
 
@@ -145,6 +148,7 @@ func _start_game() -> void:
 func _flap() -> void:
 	bird_velocity = -flap_strength
 	bird.frame = 0
+	SesYoneticisi.efekt("kanat", -3.0)
 
 
 func _take_hit() -> void:
@@ -152,6 +156,9 @@ func _take_hit() -> void:
 		return
 	lives -= 1
 	_update_hearts()
+	# Yumuşak "boing", ardından kısa, üzgün olmayan bir iniş sesi (can gitti)
+	SesYoneticisi.efekt("boing", -2.0)
+	get_tree().create_timer(0.25).timeout.connect(SesYoneticisi.efekt.bind("yumusak_dusus", -5.0))
 	if lives <= 0:
 		_game_over()
 	else:
@@ -161,6 +168,7 @@ func _take_hit() -> void:
 func _add_point() -> void:
 	score += 1
 	score_label.text = str(score)
+	SesYoneticisi.efekt("ding", -3.0)
 	# Puan yazısı kısa bir an büyüsün
 	score_label.pivot_offset = score_label.size / 2.0
 	var tween := create_tween()
@@ -177,6 +185,7 @@ func _game_over() -> void:
 	result_label.text = "Puan: %d" % score
 
 	await get_tree().create_timer(0.6).timeout
+	SesYoneticisi.ezgi("yildiz_kazanma")
 	game_over_screen.modulate.a = 0.0
 	game_over_screen.visible = true
 	restart_button.pivot_offset = restart_button.size / 2.0
@@ -189,6 +198,7 @@ func _game_over() -> void:
 
 func _restart() -> void:
 	can_restart = false
+	SesYoneticisi.efekt("basari")
 	var tween := create_tween()
 	tween.tween_property(restart_button, "scale", Vector2(0.9, 0.9), 0.08)
 	tween.tween_property(restart_button, "scale", Vector2.ONE, 0.08)
