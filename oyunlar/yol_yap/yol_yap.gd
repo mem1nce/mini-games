@@ -78,6 +78,7 @@ var pulse_tween: Tween
 
 
 func _ready() -> void:
+	SesYoneticisi.muzik("yol_yap", self)
 	_check_levels()
 	_load_progress()
 	_create_level_buttons()
@@ -87,6 +88,10 @@ func _ready() -> void:
 	hint_pulse.tween_property(hints, "modulate:a", 0.45, 0.8)
 	hint_pulse.tween_property(hints, "modulate:a", 1.0, 0.8)
 	_show_level_select()
+
+
+func _exit_tree() -> void:
+	SesYoneticisi.dongu_durdur("bilye_yuvarlanma", 0.1)
 
 
 # Her bölümün çözülebilir olduğunu kontrol et
@@ -120,24 +125,30 @@ func _on_touch_down(index: int, pos: Vector2) -> void:
 		State.SELECT:
 			# Bölüm seçme ekranı oyunun ilk ekranı: geri ana menüye döner
 			if _is_touched(select_back_button, pos):
+				SesYoneticisi.efekt("geri")
 				SahneGecis.ana_menuye_don()
 				return
 			for i in level_buttons.size():
 				if _is_touched(level_buttons[i], pos):
 					if i <= completed:
+						SesYoneticisi.efekt("dugme_tik")
 						_start_level(i)
 					else:
+						SesYoneticisi.efekt("yumusak_hayir")
 						_shake(level_buttons[i])
 					return
 			return
 		State.FINISHED:
 			if _is_touched(replay_button, pos):
+				SesYoneticisi.efekt("basari")
 				_start_level(0)
 				return
 
 	if _is_touched(back_button, pos):
+		SesYoneticisi.efekt("geri")
 		_show_level_select()
 	elif _is_touched(restart_button, pos):
+		SesYoneticisi.efekt("dugme_tik")
 		_start_level(level_index)
 	elif state == State.PLAYING:
 		var piece := _piece_at(pos)
@@ -185,6 +196,7 @@ func _start_level(index: int) -> void:
 
 
 func _stop_level_animations() -> void:
+	SesYoneticisi.dongu_durdur("bilye_yuvarlanma", 0.1)
 	run_id += 1
 	for tween in level_tweens:
 		if tween.is_valid():
@@ -371,6 +383,7 @@ func _pick_up(piece: Node2D, index: int, pos: Vector2) -> void:
 	drag_offset = piece.position - pos
 	piece.set_meta("cell", NO_CELL)  # yerleştirilmişse geri alındı
 	piece_layer.move_child(piece, -1)
+	SesYoneticisi.efekt("pop", -6.0)
 	hints.queue_redraw()
 	_level_tween().tween_property(_sprite_of(piece), "scale", _piece_scale() * 1.1, 0.1)
 
@@ -384,6 +397,7 @@ func _drop() -> void:
 	var tween := _level_tween()
 	if target != NO_CELL:
 		# Hücreye otur ve hafifçe esne
+		SesYoneticisi.efekt("tahta_tok")
 		piece.set_meta("cell", target)
 		tween.tween_property(piece, "position", _cell_position(target), 0.1)
 		tween.parallel().tween_property(sprite, "scale", _piece_scale(), 0.1)
@@ -393,6 +407,7 @@ func _drop() -> void:
 		_check_complete()
 	else:
 		# Yanlış yer: ceza yok, yumuşakça tepsiye döner
+		SesYoneticisi.efekt("hisirti")
 		tween.tween_property(piece, "position", piece.get_meta("home"), 0.35) \
 			.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 		tween.parallel().tween_property(sprite, "scale", _piece_scale(), 0.2)
@@ -464,6 +479,7 @@ func _roll_ball() -> void:
 		var center := _ball_center(point)
 		var distance := last.distance_to(center)
 		var time := maxf(distance / (roll_speed * cell_size), 0.05)
+		tween.tween_callback(_rolling_sound.bind(point["kind"] != "fall" and point["kind"] != "jump"))
 		match point["kind"]:
 			"fall":
 				tween.tween_property(ball, "position", center, time * 0.7) \
@@ -480,6 +496,7 @@ func _roll_ball() -> void:
 				tween.parallel().tween_property(ball, "rotation", rot, time)
 		last = center
 	await tween.finished
+	_rolling_sound(false)
 	if my_run != run_id:
 		return
 
@@ -487,6 +504,13 @@ func _roll_ball() -> void:
 		_enter_gift(my_run, points[points.size() - 1], points[points.size() - 2])
 	else:
 		_ball_failed(my_run)
+
+
+func _rolling_sound(on: bool) -> void:
+	if on:
+		SesYoneticisi.dongu_baslat("bilye_yuvarlanma")
+	else:
+		SesYoneticisi.dongu_durdur("bilye_yuvarlanma", 0.12)
 
 
 func _ball_center(point: Dictionary) -> Vector2:
@@ -506,6 +530,7 @@ func _squash_spring(cell: Vector2i) -> void:
 	for piece in pieces:
 		if piece.get_meta("type") == Logic.SPRING and piece.get_meta("cell") == cell:
 			var sprite := _sprite_of(piece)
+			SesYoneticisi.efekt("boing_kisa")
 			var tween := _level_tween()
 			tween.tween_property(sprite, "scale", _piece_scale() * Vector2(1.15, 0.6), 0.08)
 			tween.tween_property(sprite, "scale", _piece_scale(), 0.4) \
@@ -514,6 +539,7 @@ func _squash_spring(cell: Vector2i) -> void:
 
 func _enter_gift(my_run: int, goal_point: Dictionary, before_goal: Dictionary) -> void:
 	# Kapak açılır
+	SesYoneticisi.efekt("hediye_acilis")
 	var lid_tween := _level_tween()
 	lid_tween.tween_property(goal_lid, "position", lid_rest + Vector2(cell_size * 0.4, -cell_size * 0.9), 0.35) \
 		.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
@@ -571,6 +597,7 @@ func _celebrate(my_run: int) -> void:
 	if level_index == Levels.LIST.size() - 1:
 		# Son bölüm: daha büyük kutlama ve "Tekrar oyna" düğmesi
 		_show_cheer("Tebrikler!", true)
+		SesYoneticisi.ezgi("kutlama")
 		for wave in 3:
 			_spawn_confetti(90)
 			await get_tree().create_timer(0.7).timeout
@@ -584,6 +611,7 @@ func _celebrate(my_run: int) -> void:
 			.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	else:
 		_show_cheer(WORDS.pick_random(), false)
+		SesYoneticisi.ezgi("tamamlandi")
 		_spawn_confetti(70)
 		await get_tree().create_timer(celebration_time).timeout
 		if my_run != run_id:
@@ -618,6 +646,7 @@ func _show_cheer(word: String, big: bool) -> void:
 
 
 func _spawn_confetti(count: int) -> void:
+	SesYoneticisi.efekt("konfeti", -4.0)
 	var screen := get_viewport_rect().size
 	for i in count:
 		var bit := Polygon2D.new()
