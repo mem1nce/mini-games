@@ -1,7 +1,9 @@
 extends Node2D
 # Kule Yapma (Hayvan Apartmanı) ana sahnesi (dikey). Ekranlar: giriş (oynat, apartmanlarım), oyun, galeri, apartman.
-# Oyunda: dokununca vinçteki kat bırakılır, tween'le düşer; kulenin üstüne denk gelirse mıknatısla ortaya kayıp oturur,
-# ıskalarsa yere düşüp zıplar ve kaybolur. Fizik motoru yok. Tasarım TASARIM.md'de, notlar CLAUDE.md'de.
+# Oyunda: dokununca vinçteki kat bırakılır, tween'le düşer. Çok küçük kaymalar mıknatısla ortaya kayar, daha büyükleri
+# kaymış olarak oturur ve kuleyi eğer; ağırlık merkezi alttaki katın dışındaysa kat devrilir (1 kalp). Eğim sınırı
+# aşılırsa en üst 1-2 kat devrilir (1 kalp). Kalpler bitince kule komikçe yıkılır, hayvanlar şemsiye ve balonlarla
+# süzülür, ulaşılan kat kutlanır ve "tekrar dene" çıkar. Fizik motoru yok. Tasarım TASARIM.md'de, notlar CLAUDE.md'de.
 
 ## Ekran yönü: SahneGecis bu oyuna geçerken ekranı buna göre döndürür.
 @export_enum("dikey", "yatay") var ekran_yonu: String = "dikey"
@@ -26,7 +28,9 @@ const G := "res://oyunlar/kule_yapma/gorseller/"
 const SOZLER := ["Harika!", "Süper!", "Tebrikler!"]
 const HARF_RENKLERI := [Color("ff5a6e"), Color("ff9f40"), Color("ffc93d"), Color("5cc95c"), Color("4fa8ff"), Color("a66bff")]
 
-enum Durum { GIRIS, OYUN, KUTLAMA, SONU, GALERI, APARTMAN }
+enum Durum { GIRIS, OYUN, KUTLAMA, SONU, GALERI, APARTMAN, YIKILIS, SONUC }
+const SEMSIYELER := ["semsiye_kirmizi", "semsiye_mavi", "semsiye_sari", "ucan_balon_pembe", "ucan_balon_yesil", "ucan_balon_mor"]
+const KALP_ICIN_SERI := 3        # art arda bu kadar mükemmel 1 kalp geri verir
 
 var kayit := Kayit.new()
 var durum := Durum.GIRIS
@@ -70,6 +74,16 @@ var _rekor_asildi := false
 var _oturum := 0
 var _sonu_sayac := 0.0
 var _parmak := -1
+var _kalp := 3
+var _kalpler: Array[TextureRect] = []
+var _kalp_kutu: Control
+var _seri := 0                   # art arda mükemmel sayısı (kalp kazanmak için)
+var _en_yuksek := 0              # bu denemede ulaşılan en yüksek kat
+var _sonuc: Control
+var _tekrar: Control
+var _nabiz: Tween
+var _sonuc_sayi: Label
+var _suzulenler: Node2D
 
 
 func _ready() -> void:
@@ -100,6 +114,8 @@ func _ready() -> void:
 	_dunya.add_child(kule)
 	_dusenler = Node2D.new()
 	_dunya.add_child(_dusenler)
+	_suzulenler = Node2D.new()
+	_dunya.add_child(_suzulenler)
 	efektler = Efektler.new()
 	_dunya.add_child(efektler)
 	vinc = Vinc.new()
@@ -138,6 +154,38 @@ func _arayuzu_kur() -> void:
 	_duraklat = _yuvarlak_dugme(load(G + "duraklat.svg"), 104.0)
 	_duraklat.position = Vector2(_ekran.x - 140.0, 24.0)
 	_ui.add_child(_duraklat)
+	# Kalpler (ekranın üstünde, ortada)
+	_kalp_kutu = Control.new()
+	_kalp_kutu.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_ui.add_child(_kalp_kutu)
+	# Sonuç: ulaşılan kat ve büyük "tekrar dene"
+	_sonuc = Control.new()
+	_sonuc.size = _ekran
+	_sonuc.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_sonuc.visible = false
+	_ui.add_child(_sonuc)
+	var ikon := _doku_dugmesi(G + "kule_ikon.svg", Rect2(_ekran.x * 0.5 - 150.0, _ekran.y * 0.27, 110, 138))
+	_sonuc.add_child(ikon)
+	_sonuc_sayi = Label.new()
+	_sonuc_sayi.theme_type_variation = &"Baslik"
+	var ayar := LabelSettings.new()
+	ayar.font = _sonuc_sayi.get_theme_font("font", &"Baslik")
+	ayar.font_size = 130
+	ayar.font_color = Color("ffb020")
+	ayar.outline_size = 22
+	ayar.outline_color = Color.WHITE
+	ayar.shadow_size = 8
+	ayar.shadow_color = Color(0.1, 0.15, 0.3, 0.3)
+	ayar.shadow_offset = Vector2(0, 6)
+	_sonuc_sayi.label_settings = ayar
+	_sonuc_sayi.position = Vector2(_ekran.x * 0.5 - 20.0, _ekran.y * 0.27 - 10.0)
+	_sonuc_sayi.size = Vector2(200, 160)
+	_sonuc_sayi.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	_sonuc_sayi.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_sonuc.add_child(_sonuc_sayi)
+	_tekrar = _yuvarlak_dugme(load(G + "tekrar.svg"), 230.0)
+	_tekrar.position = Vector2(_ekran.x * 0.5 - 115.0, _ekran.y * 0.43)
+	_sonuc.add_child(_tekrar)
 	# Giriş: büyük oynat ve apartmanlarım
 	_giris = Control.new()
 	_giris.size = _ekran
@@ -251,6 +299,58 @@ func _cubugu_ciz() -> void:
 		_tac.position.y = r.size.y - 6.0 - (r.size.y - 12.0) * clampf(kayit.rekor / ust, 0.0, 1.0) - 17.0
 
 
+# --- Kalpler ---
+
+func _kalpleri_kur() -> void:
+	for k in _kalpler:
+		k.queue_free()
+	_kalpler.clear()
+	var en_fazla := int(level["kalp"])
+	var boy := Vector2(64, 58)
+	var aralik := 12.0
+	var genislik := en_fazla * boy.x + (en_fazla - 1) * aralik
+	for i in en_fazla:
+		var k := _doku_dugmesi(G + "kalp.svg", Rect2(_ekran.x * 0.5 - genislik * 0.5 + i * (boy.x + aralik), 46.0, boy.x, boy.y))
+		k.pivot_offset = boy * 0.5
+		_kalp_kutu.add_child(k)
+		_kalpler.append(k)
+	_kalpleri_guncelle()
+
+
+func _kalpleri_guncelle() -> void:
+	for i in _kalpler.size():
+		_kalpler[i].texture = load(G + ("kalp.svg" if i < _kalp else "kalp_bos.svg"))
+
+
+func _kalp_kaybet() -> void:
+	if _kalp <= 0:
+		return
+	_kalp -= 1
+	_seri = 0
+	_sesler.play("kalp_git")
+	var k := _kalpler[_kalp]
+	var tween := k.create_tween()
+	tween.tween_property(k, "scale", Vector2(1.4, 1.4), 0.12).set_trans(Tween.TRANS_SINE)
+	tween.tween_callback(_kalpleri_guncelle)
+	tween.tween_property(k, "scale", Vector2.ONE, 0.35).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	for i in 2:
+		tween.tween_property(k, "rotation", 0.2, 0.08)
+		tween.tween_property(k, "rotation", -0.2, 0.08)
+	tween.tween_property(k, "rotation", 0.0, 0.08)
+
+
+func _kalp_kazan() -> void:
+	if _kalp >= int(level["kalp"]):
+		return
+	var k := _kalpler[_kalp]
+	_kalp += 1
+	_sesler.play("kalp_gel")
+	_kalpleri_guncelle()
+	k.scale = Vector2.ZERO
+	k.create_tween().tween_property(k, "scale", Vector2.ONE, 0.45).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	efektler.parilti(kamera.sol_ust() + k.get_global_rect().get_center(), Color("ffb0c4"), 14, 30.0)
+
+
 # --- Ekranlar ---
 
 func _giris_ekrani() -> void:
@@ -258,8 +358,10 @@ func _giris_ekrani() -> void:
 	durum = Durum.GIRIS
 	_giris.visible = true
 	_sonu.visible = false
+	_sonuc.visible = false
 	_duraklat.visible = false
 	_cubuk.visible = false
+	_kalp_kutu.visible = false
 	_bolumu_hazirla()
 	_geri_dugmesi_kur()
 	_oynat.scale = Vector2(0.6, 0.6)
@@ -270,6 +372,8 @@ func _giris_ekrani() -> void:
 func _bolumu_hazirla() -> void:
 	level = Bolumler.level(kayit.bolum)
 	for c in _dusenler.get_children():
+		c.queue_free()
+	for c in _suzulenler.get_children():
 		c.queue_free()
 	if vinc.asili:
 		vinc.asili.queue_free()
@@ -284,6 +388,10 @@ func _bolumu_hazirla() -> void:
 	vinc.aci = level["aci"]
 	vinc.dikey = level["dikey"]
 	_kombo = 0
+	_seri = 0
+	_en_yuksek = 0
+	_kalp = int(level["kalp"])
+	_kalpleri_kur()
 	_rekor_asildi = false
 	_cubuk.queue_redraw()
 
@@ -293,8 +401,10 @@ func _oyunu_baslat() -> void:
 	durum = Durum.OYUN
 	_giris.visible = false
 	_sonu.visible = false
+	_sonuc.visible = false
 	_duraklat.visible = true
 	_cubuk.visible = true
+	_kalp_kutu.visible = true
 	_geri_dugmesi_kur()
 	_yeni_kat()
 
@@ -388,6 +498,11 @@ func _input(event: InputEvent) -> void:
 				durum = Durum.GALERI
 				_giris.visible = false
 				_galeri.ac(kayit.apartmanlar, _ekran)
+		Durum.SONUC:
+			if _tekrar.get_global_rect().has_point(p):
+				_sicrat(_tekrar)
+				_sesler.play("dokun")
+				_tekrar_dene()
 		Durum.SONU:
 			if _sonu_apartman.get_global_rect().has_point(p):
 				_sicrat(_sonu_apartman)
@@ -471,16 +586,26 @@ func _birak() -> void:
 	await tween.finished
 	if oturum != _oturum:
 		return
-	var karar: String = kule.karar(blok.global_position.x, level["tolerans"], blok.genislik())
-	if karar == "iska":
-		_iska(blok)
+	var karar: Dictionary = kule.karar(blok.global_position, level["miknatis"], blok.genislik())
+	if karar["tur"] == "devril":
 		_kombo = 0
-		await get_tree().create_timer(0.55, false).timeout
-		if oturum == _oturum and durum == Durum.OYUN:
-			_yeni_kat()
+		_seri = 0
+		await _devril(blok, karar)
+		if oturum != _oturum:
+			return
+		_kalp_kaybet()
+		await _sonraki_adim(oturum, 0.35)
 		return
-	await _otur(blok, karar == "mukemmel")
+	await _otur(blok, karar)
 	if oturum != _oturum:
+		return
+	# Eğim sınırı aşıldıysa en üst katlar devrilir
+	if absf(kule.egim()) > float(level["egim_siniri"]):
+		await _ust_katlar_devrilsin()
+		if oturum != _oturum:
+			return
+		_kalp_kaybet()
+		await _sonraki_adim(oturum, 0.35)
 		return
 	var hedef := int(level["hedef"])
 	if hedef > 0 and kule.sayi() >= hedef:
@@ -488,29 +613,46 @@ func _birak() -> void:
 		return
 	if hedef == 0 and kule.sayi() > kayit.rekor:
 		_rekor_kir()
-	await get_tree().create_timer(0.3, false).timeout
-	if oturum == _oturum and durum == Durum.OYUN:
+	await _sonraki_adim(oturum, 0.3)
+
+
+# Kalp kaldıysa yeni kat gelir, bittiyse kule yıkılır
+func _sonraki_adim(oturum: int, bekle: float) -> void:
+	await get_tree().create_timer(bekle, false).timeout
+	if oturum != _oturum or durum != Durum.OYUN:
+		return
+	if _kalp <= 0:
+		_yikil()
+	else:
 		_yeni_kat()
 
 
-# Mıknatıs: kat yumuşakça ortaya kayar, oturur, esner; hayvanlar taşınır
-func _otur(blok: Node2D, mukemmel: bool) -> void:
-	var tepe: Vector2 = kule.tepe()
-	var hedef := tepe + Vector2(0, -blok.yukseklik() * 0.5)
-	var tween := blok.create_tween()
+# Kat oturur: mıknatıs payındaysa ortaya kayar, değilse bırakıldığı yerde kalır; esner, hayvanlar taşınır
+func _otur(blok: Node2D, karar: Dictionary) -> void:
+	var yerel := Vector2(float(karar["x"]), kule.ust_yerel() - blok.yukseklik() * 0.5)
+	var hedef: Vector2 = kule.to_global(yerel)
+	var tween := blok.create_tween().set_parallel()
 	tween.tween_property(blok, "global_position", hedef, 0.14).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	tween.tween_property(blok, "rotation", kule.rotation, 0.14)
 	await tween.finished
-	kule.yerlestir(blok)
+	var alt_ust: Vector2 = kule.to_global(Vector2(float(karar["x"]), kule.ust_yerel()))
+	kule.yerlestir(blok, float(karar["x"]))
+	_en_yuksek = maxi(_en_yuksek, kule.sayi())
 	_sesler.play("otur")
-	efektler.toz(tepe, blok.genislik())
+	efektler.toz(alt_ust, blok.genislik())
 	blok.tasin()
 	get_tree().create_timer(0.2, false).timeout.connect(func() -> void: _sesler.play("tasin"))
 	_cubuk.queue_redraw()
-	if mukemmel:
+	if karar["tur"] == "mukemmel":
 		_kombo += 1
-		_mukemmel(tepe + Vector2(0, -blok.yukseklik() * 0.5))
+		_seri += 1
+		_mukemmel(alt_ust + Vector2(0, -blok.yukseklik() * 0.5))
+		if _seri >= KALP_ICIN_SERI:
+			_seri = 0
+			_kalp_kazan()
 	else:
 		_kombo = 0
+		_seri = 0
 
 
 # Mükemmel: parıltı, ışık halkası ve yazı; art arda mükemmellerde kombo (daha çok yıldız, daha büyük halka)
@@ -546,34 +688,67 @@ func _mukemmel(yer: Vector2) -> void:
 	tween.tween_callback(yazi.queue_free)
 
 
-# Iska: kulenin yanından düşer; yer yakınsa sevimlice zıplar, "puf" diye kaybolur
-func _iska(blok: Node2D) -> void:
-	_sesler.play("iska")
-	var tepe: Vector2 = kule.tepe()
-	var yon := signf(blok.global_position.x - tepe.x)
-	if yon == 0.0:
-		yon = 1.0
-	var yan: float = tepe.x + yon * (blok.genislik() + 30.0)
-	var yer_y: float = _zemin_y - blok.yukseklik() * 0.5 + 10.0
+# Ağırlık merkezi kenarın dışında: kat kenarın üstünde yana yatarak devrilir (kenara değmiyorsa doğrudan düşer),
+# yere düşüp zıplar ve "puf" diye kaybolur
+func _devril(blok: Node2D, karar: Dictionary) -> void:
+	_sesler.play("devril")
+	var yon: float = karar["yon"]
+	if karar["temas"]:
+		var mentese: Vector2 = kule.to_global(Vector2(float(karar["kenar"]), kule.ust_yerel()))
+		var kol: Vector2 = blok.global_position - mentese
+		var aci0: float = blok.rotation
+		var tween := blok.create_tween()
+		tween.tween_method(func(t: float) -> void:
+			var a := yon * t * 1.7
+			blok.global_position = mentese + kol.rotated(a)
+			blok.rotation = aci0 + a, 0.0, 1.0, 0.5).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+		await tween.finished
+	await _yere_dus(blok, yon, 1.7)
+
+
+# Kat yere düşer: yana savrulur, döner; yer yakınsa zıplar ve "puf", uzaksa düşerken söner
+func _yere_dus(blok: Node2D, yon: float, donus: float) -> void:
+	var yer_y: float = _zemin_y - blok.yukseklik() * 0.45
 	var uzak: bool = yer_y - blok.global_position.y > 900.0
-	var hedef_y: float = blok.global_position.y + 700.0 if uzak else yer_y
+	var hedef_y: float = blok.global_position.y + 800.0 if uzak else yer_y
 	var sure: float = sqrt(2.0 * maxf(20.0, hedef_y - blok.global_position.y) / yercekimi)
+	var yan: float = clampf(blok.global_position.x + yon * randf_range(120.0, 220.0), 40.0, _ekran.x - 40.0)
 	var tween := blok.create_tween()
-	tween.tween_property(blok, "global_position:x", yan, 0.2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	tween.tween_property(blok, "global_position:x", yan, sure).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	tween.parallel().tween_property(blok, "global_position:y", hedef_y, sure).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
-	tween.parallel().tween_property(blok, "rotation", yon * 0.5, sure)
+	tween.parallel().tween_property(blok, "rotation", blok.rotation + yon * donus, sure)
 	if uzak:
 		tween.parallel().tween_property(blok, "modulate:a", 0.0, sure)
 	else:
-		tween.tween_property(blok, "global_position:y", hedef_y - 60.0, 0.18).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-		tween.parallel().tween_property(blok, "rotation", yon * 0.2, 0.18)
-		tween.tween_property(blok, "global_position:y", hedef_y, 0.2).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+		tween.tween_property(blok, "global_position:y", hedef_y - 70.0, 0.2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		tween.parallel().tween_property(blok, "rotation", blok.rotation + yon * (donus + 0.6), 0.2)
+		tween.tween_property(blok, "global_position:y", hedef_y, 0.22).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
 		tween.tween_callback(func() -> void:
 			efektler.puf(blok.global_position)
 			_sesler.play("puf"))
 		tween.tween_property(blok, "scale", Vector2(1.2, 0.2), 0.18).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
 		tween.parallel().tween_property(blok, "modulate:a", 0.0, 0.18)
 	tween.tween_callback(blok.queue_free)
+	await tween.finished
+
+
+# Eğim sınırı aşıldı: kule o yana iyice yatar, en üstteki 1-2 kat devrilip düşer
+func _ust_katlar_devrilsin() -> void:
+	var yon := signf(kule.egim())
+	var adet := 2 if kule.sayi() >= 3 and absf(kule.egim()) > float(level["egim_siniri"]) * 1.3 else 1
+	_sesler.play("devril")
+	kule.sallanma = false
+	var tween := kule.create_tween()
+	tween.tween_property(kule, "rotation", kule.rotation + yon * 0.06, 0.3).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	await tween.finished
+	var dusenler: Array[Node2D] = kule.ust_katlari_ayir(adet, _dusenler)
+	kule.sallanma = true
+	_kombo = 0
+	_seri = 0
+	for i in dusenler.size():
+		_yere_dus(dusenler[i], yon, 1.9 + i * 0.4)
+	_cubuk.queue_redraw()
+	await get_tree().create_timer(0.6, false).timeout
 
 
 func _rekor_kir() -> void:
@@ -585,6 +760,137 @@ func _rekor_kir() -> void:
 		_sesler.play("rekor")
 		efektler.yildizlar(kule.tepe(), 10)
 		_sicrat(_cubuk)
+
+
+# --- Kalpler bitti: yumuşak, komik yıkılış ---
+
+func _yikil() -> void:
+	durum = Durum.YIKILIS
+	var oturum := _oturum
+	if Bolumler.sonsuz_mu(kayit.bolum) and kule.sayi() >= 3:
+		kayit.apartman_ekle(kule.veri(level["tema"]))
+		kayit.kaydet()
+	if vinc.asili:
+		vinc.asili.queue_free()
+		vinc.asili = null
+		vinc.hazir = false
+	_duraklat.visible = false
+	_cubuk.visible = false
+	# 1) Kule yumuşakça sallanır
+	kule.sallanma = false
+	var sallan := kule.create_tween()
+	for i in 4:
+		sallan.tween_property(kule, "rotation", 0.06 * (1.0 if i % 2 == 0 else -1.0), 0.16).set_trans(Tween.TRANS_SINE)
+	await sallan.finished
+	if oturum != _oturum:
+		return
+	# 2) Katlar zıplayarak dağılır, kamera yere iner
+	var hayvanlar: Array = [kule.zemin.hayvan]
+	kule.zemin.hayvanlari_gizle()
+	for k in kule.katlar:
+		hayvanlar.append(k.hayvan)
+		k.hayvanlari_gizle()
+	var dusenler: Array[Node2D] = kule.ust_katlari_ayir(kule.sayi(), _dusenler)
+	_sesler.play("yikil")
+	for i in dusenler.size():
+		var blok := dusenler[i]
+		var yon := -1.0 if i % 2 == 0 else 1.0
+		get_tree().create_timer(i * 0.05, false).timeout.connect(func() -> void: _yere_dus(blok, yon, randf_range(1.0, 2.6)))
+	kule.rotation = 0.0
+	kamera.hedef_y = kamera.baslangic_y
+	await get_tree().create_timer(1.3, false).timeout
+	if oturum != _oturum:
+		return
+	# 3) Hayvanlar şemsiye ve balonlarla süzülerek yere iner
+	_sesler.play("suzul")
+	var secilen: Array = []
+	for h in hayvanlar:
+		if not h in secilen:
+			secilen.append(h)
+	secilen = secilen.slice(0, 6)
+	var bas := randi()
+	for i in secilen.size():
+		var x := _ekran.x * (i + 0.5) / secilen.size() + randf_range(-20.0, 20.0)
+		_suzul(secilen[i], x, i * 0.25, SEMSIYELER[(i + bas) % SEMSIYELER.size()])
+	await get_tree().create_timer(3.6 + secilen.size() * 0.25, false).timeout
+	if oturum != _oturum:
+		return
+	_sonucu_goster()
+
+
+# Bir hayvan şemsiye/balonla yukarıdan sallanarak iner; yere değince şemsiye uçup gider, hayvan zıplar ve el sallar
+func _suzul(hayvan: String, x: float, gecikme: float, tutacak: String) -> void:
+	var kok := Node2D.new()
+	_suzulenler.add_child(kok)
+	var ust := Sprite2D.new()
+	ust.texture = load(G + tutacak + ".svg")
+	var balon := tutacak.begins_with("ucan_balon")
+	ust.scale = Vector2.ONE * (70.0 if balon else 120.0) / ust.texture.get_width()
+	ust.position = Vector2(12, -120 if balon else -104)
+	kok.add_child(ust)
+	var h := Sprite2D.new()
+	h.texture = load(G + "hayvanlar/%s.svg" % hayvan)
+	h.scale = Vector2.ONE * 96.0 / h.texture.get_width()
+	kok.add_child(h)
+	var bas_y: float = kamera.sol_ust().y - 180.0
+	var yer_y: float = _zemin_y - 44.0
+	kok.position = Vector2(x, bas_y)
+	var faz := randf() * TAU
+	var tween := kok.create_tween()
+	tween.tween_interval(gecikme)
+	tween.tween_method(func(t: float) -> void:
+		kok.position = Vector2(x + sin(t * 9.0 + faz) * 36.0, lerpf(bas_y, yer_y, t))
+		kok.rotation = cos(t * 9.0 + faz) * 0.14, 0.0, 1.0, 3.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	tween.tween_callback(func() -> void: efektler.toz(kok.global_position + Vector2(0, 44), 60.0))
+	tween.tween_property(ust, "position:y", ust.position.y - 400.0, 1.2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+	tween.parallel().tween_property(ust, "modulate:a", 0.0, 1.2)
+	tween.parallel().tween_property(kok, "rotation", 0.0, 0.2)
+	for i in 2:
+		tween.tween_property(h, "position:y", -34.0, 0.18).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		tween.tween_property(h, "position:y", 0.0, 0.2).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+	# yerde el sallar gibi sağa sola kıpırdar
+	for i in 6:
+		tween.tween_property(h, "rotation", 0.18, 0.2).set_trans(Tween.TRANS_SINE)
+		tween.tween_property(h, "rotation", -0.18, 0.2).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(h, "rotation", 0.0, 0.2)
+
+
+# Ulaşılan kat sayısı kutlanır; büyük "tekrar dene"
+func _sonucu_goster() -> void:
+	durum = Durum.SONUC
+	_sonuc.visible = true
+	_sonuc_sayi.text = str(_en_yuksek)
+	_sesler.play("rekor")
+	var merkez: Vector2 = kamera.sol_ust() + Vector2(_ekran.x * 0.5, _ekran.y * 0.33)
+	efektler.yildizlar(merkez, 6 + mini(_en_yuksek, 10))
+	efektler.parilti(merkez, Color("fff6b0"), 18, 90.0)
+	for c in [_sonuc_sayi, _tekrar]:
+		c.pivot_offset = c.size * 0.5
+		c.scale = Vector2(0.3, 0.3)
+		c.create_tween().tween_property(c, "scale", Vector2.ONE, 0.5).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	if _nabiz and _nabiz.is_valid():
+		_nabiz.kill()
+	_nabiz = _tekrar.create_tween().set_loops()
+	_nabiz.tween_interval(0.6)
+	_nabiz.tween_property(_tekrar, "scale", Vector2(1.06, 1.06), 0.45).set_trans(Tween.TRANS_SINE)
+	_nabiz.tween_property(_tekrar, "scale", Vector2.ONE, 0.45).set_trans(Tween.TRANS_SINE)
+
+
+# Aynı bölüm baştan (hedefe ulaşmadan sonraki bölüme geçilmez)
+func _tekrar_dene() -> void:
+	if durum != Durum.SONUC:
+		return
+	durum = Durum.KUTLAMA
+	if _nabiz and _nabiz.is_valid():
+		_nabiz.kill()
+	_tekrar.scale = Vector2.ONE
+	_sonuc.visible = false
+	var tween := create_tween()
+	tween.tween_property(_dunya, "modulate:a", 0.0, 0.3)
+	await tween.finished
+	_bolumu_hazirla()
+	create_tween().tween_property(_dunya, "modulate:a", 1.0, 0.3)
+	_oyunu_baslat()
 
 
 # --- Bölüm sonu ---
@@ -671,7 +977,8 @@ func _soz() -> void:
 func _process(delta: float) -> void:
 	if _duraklatildi:
 		return
-	kamera.tepeyi_izle(kule.tepe().y)
+	if durum != Durum.YIKILIS and durum != Durum.SONUC:
+		kamera.tepeyi_izle(kule.tepe().y)
 	vinc.position = kamera.sol_ust()
 	manzara.guncelle(kamera.position.y)
 	if durum == Durum.SONU:

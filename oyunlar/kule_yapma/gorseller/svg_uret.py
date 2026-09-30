@@ -598,7 +598,73 @@ def fx_ui():
     write("tac.svg", s.text())
 
 
+def kalp_pts(cx, cy, r, n=48):
+    # Kalp eğrisi (parametrik), yaklaşık 2r genişlikte
+    pts = []
+    for i in range(n):
+        t = 2 * math.pi * i / n
+        x = 16 * math.sin(t) ** 3
+        y = -(13 * math.cos(t) - 5 * math.cos(2 * t) - 2 * math.cos(3 * t) - math.cos(4 * t))
+        pts.append((cx + x * r / 16.0, cy + y * r / 16.0))
+    return pts
+
+
+def hearts_ui():
+    s = Svg(100, 90)
+    poly(s, kalp_pts(50, 44, 42), s.rgrad(["#FFB0C4", "#FF5A7E", "#D8325A"], 0.35, 0.3, 0.8), INK, 5)
+    shine(s, 30, 28, 10, 6, -35, 0.7)
+    write("kalp.svg", s.text())
+    s = Svg(100, 90)
+    poly(s, kalp_pts(50, 44, 42), "#FFFFFF", INK, 5, 'fill-opacity="0.55"')
+    poly(s, kalp_pts(50, 44, 30), "none", "#C9C2DA", 4, 'stroke-dasharray="6 7"')
+    write("kalp_bos.svg", s.text())
+    # Tekrar dene: dönen ok
+    s = Svg(120, 120)
+    pts = [(60 + 34 * math.cos(math.radians(a)), 62 + 34 * math.sin(math.radians(a))) for a in range(-60, 221, 8)]
+    pline(s, pts, INK, 22)
+    pline(s, pts, "#4FC45F", 13)
+    a0 = math.radians(-60)
+    ex, ey = pts[0]
+    tx, ty = math.sin(a0), -math.cos(a0)
+    nx, ny = math.cos(a0), math.sin(a0)
+    poly(s, [(ex + tx * 20, ey + ty * 20), (ex + nx * 18 - tx * 5, ey + ny * 18 - ty * 5), (ex - nx * 18 - tx * 5, ey - ny * 18 - ty * 5)], "#4FC45F", INK, 5)
+    write("tekrar.svg", s.text())
+
+
+def floaters():
+    # Şemsiye (140x150): kubbe ve sap; tutma noktası (70, 146)
+    for ad, (acik, koyu) in (("kirmizi", ("#FF9A9A", "#E8534A")), ("mavi", ("#9FD0FF", "#3E8EEB")), ("sari", ("#FFE98A", "#F5B400"))):
+        s = Svg(140, 150)
+        pline(s, [(70, 40), (70, 136)], INK, 7)
+        pline(s, [(70, 40), (70, 136)], "#8A5A34", 3.4)
+        s.add(f'<path d="M70 146 Q70 138 62 138" fill="none" stroke="{INK}" stroke-width="7" stroke-linecap="round"/>')
+        s.add('<path d="M70 146 Q70 138 62 138" fill="none" stroke="#8A5A34" stroke-width="3.4" stroke-linecap="round"/>')
+        kubbe = [(70 + 64 * math.cos(math.radians(a)), 62 - 52 * math.sin(math.radians(a))) for a in range(0, 181, 6)]
+        alt = []
+        for k in range(4):
+            x0 = 6 + k * 32
+            alt += [(x0 + 32 * t / 6, 62 + 9 * math.sin(math.pi * t / 6)) for t in range(7)]
+        poly(s, kubbe[::-1] + alt[1:], s.lgrad([acik, koyu]), INK, 4)
+        for k in (1, 2, 3):
+            x = 6 + k * 32
+            pline(s, [(70, 12), (x, 62)], "#FFFFFF", 3, 'opacity="0.6"')
+        circle(s, 70, 9, 5, "#FFD23F", INK, 2)
+        shine(s, 44, 34, 14, 6, -30, 0.5)
+        write(f"semsiye_{ad}.svg", s.text())
+    # Oyuncak balon (80x160): tutma noktası (40, 156)
+    for ad, (acik, orta, koyu) in (("pembe", ("#FFC6DE", "#FF7FB5", "#D04A86")), ("yesil", ("#B6F2B4", "#4FC45F", "#2A8A3E")),
+                                   ("mor", ("#DCC6FF", "#A66BFF", "#6E3EC2"))):
+        s = Svg(80, 160)
+        pline(s, [(40, 86), (46, 104), (34, 124), (44, 142), (40, 156)], "#6E6888", 2.6)
+        ellipse(s, 40, 44, 32, 40, s.rgrad([acik, orta, koyu], 0.38, 0.3, 0.8), INK, 3.4)
+        poly(s, [(40, 82), (33, 92), (47, 92)], orta, INK, 2.6)
+        shine(s, 28, 28, 8, 12, -25, 0.6)
+        write(f"ucan_balon_{ad}.svg", s.text())
+
+
 if __name__ == "__main__":
+    hearts_ui()
+    floaters()
     ic("kare")
     ic("yuvarlak")
     for ad in TASARIMLAR:

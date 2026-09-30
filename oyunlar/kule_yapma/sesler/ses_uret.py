@@ -100,7 +100,60 @@ def isler() -> list:
     return out
 
 
+def devril() -> list:
+    # Kat devriliyor: komik, aşağı kayan "vuuuup" + titreme
+    out = []
+    phase = 0.0
+    n = int(RATE * 0.7)
+    for i in range(n):
+        t = i / RATE
+        f = 520 * math.exp(-1.6 * t) + 120 + 18 * math.sin(2 * math.pi * 9 * t)
+        phase += 2 * math.pi * f / RATE
+        out.append(math.sin(phase) * min(1.0, t / 0.02) * math.exp(-2.2 * t))
+    return out
+
+
+def kalp_git() -> list:
+    # Kalp gitti: yumuşak, üzgün olmayan iki nota aşağı
+    out = silence(0.7)
+    mix(out, bell(note("E5"), 0.5, decay=6.0), 0.0, 0.6)
+    mix(out, bell(note("C5"), 0.5, decay=6.0), 0.14, 0.6)
+    return out
+
+
+def kalp_gel() -> list:
+    out = silence(0.9)
+    for k, n in enumerate(["C6", "E6", "G6", "C7"]):
+        mix(out, bell(note(n), 0.6, decay=6.0), k * 0.07, 0.45)
+    mix(out, sweep(400, 900, 0.2, attack=0.01, decay=8.0, curve=0.6), 0.0, 0.3)
+    return out
+
+
+def yikil() -> list:
+    # Kule dağılıyor: yumuşak tahta tıkırtıları ve "boing"ler
+    out = silence(1.8)
+    for k in range(9):
+        t0 = 0.08 + k * 0.17
+        mix(out, envelope(lowpass(noise(0.08, 20 + k), 900), 0.002, 40.0), t0, 0.7)
+        mix(out, sweep(260 + (k % 3) * 60, 140, 0.14, attack=0.002, decay=18.0), t0, 0.5)
+    return out
+
+
+def suzul() -> list:
+    # Hayvanlar şemsiyeyle süzülüyor: tatlı, inen ıslık
+    out = silence(1.6)
+    mix(out, sweep(1200, 700, 1.4, attack=0.1, decay=1.5, curve=0.8), 0.0, 0.4)
+    for k, n in enumerate(["G5", "E5", "C5"]):
+        mix(out, bell(note(n), 0.5, decay=6.0), 0.2 + k * 0.4, 0.3)
+    return out
+
+
 if __name__ == "__main__":
+    save("devril", devril())
+    save("kalp_git", kalp_git())
+    save("kalp_gel", kalp_gel())
+    save("yikil", yikil(), 0.08)
+    save("suzul", suzul(), 0.07)
     save("birak", birak(), 0.07)
     save("otur", otur())
     save("mukemmel", mukemmel())

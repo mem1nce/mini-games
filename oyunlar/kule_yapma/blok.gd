@@ -96,6 +96,12 @@ func hemen_goster() -> void:
 		s.scale = s.get_meta("olcek")
 
 
+# Kule yıkılınca hayvanlar ayrı süzülür; katın penceresinde kalmasınlar
+func hayvanlari_gizle() -> void:
+	for h in _hayvanlar:
+		h.visible = false
+
+
 func el_salla(sure: float) -> void:
 	_salla = maxf(_salla, sure)
 
