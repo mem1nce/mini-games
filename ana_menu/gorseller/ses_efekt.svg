@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+<defs><linearGradient id="hop" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9ED0FF"/><stop offset="1" stop-color="#3E8EEB"/></linearGradient></defs>
+<path d="M12 46 C12 43 14 41 17 41 L32 41 L54 22 C57 19.5 62 21 62 25 L62 95 C62 99 57 100.5 54 98 L32 79 L17 79 C14 79 12 77 12 74 Z" fill="url(#hop)" stroke="#3B2F6B" stroke-width="5" stroke-linejoin="round"/>
+<path d="M20 48 L30 48" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity="0.55"/>
+<g fill="none" stroke="#3B2F6B" stroke-width="7" stroke-linecap="round"><path d="M74 46 C80 53 80 67 74 74"/><path d="M86 36 C98 50 98 70 86 84"/></g>
+</svg>
