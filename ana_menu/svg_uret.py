@@ -313,6 +313,7 @@ def boyama_kitabi():
         parca(g + "kart.svg", 300, (6, -4)),
         parca(g + "kova.svg", 92, (-104, 92), -0.15),
         parca(g + "kova_renk.svg", 92, (-104, 92), -0.15, renkler={"#FFFFFF": "#4AA3FF"}),
+    ]
 
 
 def balik_tutma():
