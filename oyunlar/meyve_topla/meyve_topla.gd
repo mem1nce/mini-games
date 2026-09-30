@@ -79,6 +79,7 @@ var _textures := {}
 
 
 func _ready() -> void:
+	SesYoneticisi.muzik("meyve_topla", self)
 	screen = get_viewport_rect().size
 	ground_y = screen.y - ground_margin
 
@@ -177,6 +178,7 @@ func _begin_level() -> void:
 	hud.set_bar_fruit(_item_texture(bar_fruit), target != "")
 	hud.set_progress(0, levels.goal(), false)
 	backdrop.set_phase(levels.background(), 2.0)
+	SesYoneticisi.ezgi("bolum_gecisi")
 	hud.show_banner("Bölüm %d" % (levels.level_index + 1), banner_time)
 	var wait := banner_time + 0.2
 	if target != "":
@@ -204,6 +206,8 @@ func _on_level_completed() -> void:
 	_end_power()
 	levels.save_progress(levels.level_index + 1)
 	player.dance(celebration_time)
+	SesYoneticisi.ezgi("kutlama")
+	SesYoneticisi.efekt("konfeti", -4.0)
 	effects.confetti(screen)
 	effects.sparkle_ring(player.basket_position())
 	hud.show_cheer(WORDS.pick_random(), celebration_time - 0.6)
@@ -226,6 +230,7 @@ func _retry_level() -> void:
 	if my_run != run_id:
 		return
 	hud.show_retry()
+	SesYoneticisi.efekt("yukselis", -3.0)
 	hud.set_progress(0, levels.goal(), true)
 	await get_tree().create_timer(2.0, false).timeout
 	if my_run != run_id:
@@ -305,6 +310,7 @@ func _process(delta: float) -> void:
 		power_left -= delta
 		hud.update_power(power_left / power_duration)
 		if power_left <= 0.0:
+			SesYoneticisi.efekt("guc_bitti")
 			_end_power()
 
 
@@ -342,17 +348,25 @@ func _on_catch(item: Item) -> void:
 				hud.fly_icon(item.picture, pos + world.position)
 				item.queue_free()
 				combo += 1
+				# Art arda tuttukça "pop" biraz incelir
+				SesYoneticisi.efekt("pop", -3.0, 1.0 + minf(combo, 8) * 0.025)
 				if combo % combo_step == 0:
+					SesYoneticisi.efekt("basari_parlak", -2.0)
 					effects.sparkle_ring(player.position + Vector2(0, -130))
 					effects.popup_text(player.position + Vector2(0, -350), "x%d" % (floori(float(combo) / combo_step) + 1))
 				levels.add_catch()
 			else:
 				# Hedef olmayan meyve cezasız seker
 				item.bounce_off(side)
+				SesYoneticisi.efekt("boing_kisa", -7.0)
 				player.bump()
 				effects.puff(Vector2(pos.x, player.catch_line_y()))
 		"kotu":
 			item.knock_away(side)
+			# Komik "bonk", sersemleme, sonra yumuşak can kaybı
+			SesYoneticisi.efekt("bonk")
+			_sound_later(0.12, "sersem", -2.0)
+			_sound_later(0.45, "yumusak_dusus", -6.0)
 			combo = 0
 			hearts -= 1
 			hud.set_hearts(hearts, hearts_max, true)
@@ -363,8 +377,14 @@ func _on_catch(item: Item) -> void:
 				_retry_level()
 		"guc":
 			effects.pop(pos)
+			SesYoneticisi.efekt("guc_al")
 			item.pop()
 			_start_power(item.kind)
+
+
+# Oyun duraklatılınca bekleyen ses de bekler
+func _sound_later(delay: float, sound: String, volume_db: float) -> void:
+	get_tree().create_timer(delay, false).timeout.connect(SesYoneticisi.efekt.bind(sound, volume_db))
 
 
 func _on_landed(item: Item) -> void:

@@ -6,3 +6,4 @@
 - Kart animasyonları `kart.gd`.
 - İlerleme `user://hafiza.cfg`.
 - SVG'ler 2x ölçek + mipmap ile içe aktarılır (`.import` içinde `svg/scale=2.0`, `mipmaps/generate=true`) ve kök düğümde `texture_filter = LINEAR_WITH_MIPMAPS` var. Yeni SVG eklenince aynı ayarları ver.
+- Sesler (`SesYoneticisi`, `hafiza.gd`): müzik `hafiza`; `kart_dagit`, `kart_cevir`, eşleşme `ding_yumusak`, eşleşmeme `yumusak_hayir`, bölüm sonu `kutlama` + `konfeti`.

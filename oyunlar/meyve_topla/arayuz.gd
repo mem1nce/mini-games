@@ -265,26 +265,33 @@ func _input(event: InputEvent) -> void:
 			get_viewport().set_input_as_handled()
 			if _hit(_back, pos):
 				_press(_back)
+				SesYoneticisi.efekt("geri")
 				menu_pressed.emit()
 			elif _hit(_reset, pos):
+				SesYoneticisi.efekt("dugme_tik")
 				_on_reset_tap()
 			else:
+				SesYoneticisi.efekt("dugme_tik")
 				start_pressed.emit()
 		Mode.PLAY:
 			if _hit(_back, pos):
 				get_viewport().set_input_as_handled()
 				_press(_back)
+				SesYoneticisi.efekt("geri")
 				back_pressed.emit()
 			elif _hit(_pause, pos):
 				get_viewport().set_input_as_handled()
 				_press(_pause)
+				SesYoneticisi.efekt("dugme_tik")
 				pause_pressed.emit()
 		Mode.PAUSED:
 			get_viewport().set_input_as_handled()
 			if _hit(_back, pos):
+				SesYoneticisi.efekt("geri")
 				back_pressed.emit()
 			else:
 				_press(_play_button)
+				SesYoneticisi.efekt("dugme_tik")
 				resume_pressed.emit()
 
 

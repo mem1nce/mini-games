@@ -7,3 +7,4 @@ Başında sepet taşıyan kirpiyle ağaçtan düşen meyveleri toplama, 12 böl�
 - Parçacıklar `CPUParticles2D`.
 - Meyve SVG'leri hafıza oyunundan kopyalandı (zemin gölgesi çıkarılarak).
 - İlerleme `user://meyve_topla.cfg`.
+- Sesler (`SesYoneticisi`, `meyve_topla.gd` ve düğmeler `arayuz.gd`): müzik `meyve_topla`; meyve `pop` (kombo arttıkça ince), kombo `basari_parlak`, kötü nesne `bonk` + `sersem` + `yumusak_dusus`, güç `guc_al` / `guc_bitti`, bölüm başı `bolum_gecisi`, bölüm sonu `kutlama`.

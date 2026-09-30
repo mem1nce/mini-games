@@ -5,6 +5,7 @@
 #    Tuval 320x300, merkez (0, 0): viewBox="-160 -150 320 300". Parça yerleştirme Godot'taki Sprite2D gibidir:
 #    parca(dosya, genislik, (x, y), aci) → dosya genislik kadar geniş, merkezi (x, y)'de, aci radyan döndürülmüş.
 # 2) Kategori sekmesi simgeleri: ana_menu/gorseller/sekme_<kategori>.svg (120x120)
+# 3) Ses düğmesi simgeleri: ana_menu/gorseller/ses_<mod>.svg (120x120; hepsi açık / sadece efektler / sessiz)
 #
 # Yeni oyun: KARTLAR'a bir fonksiyon ekle (ya da oyunun tek bir SVG'sini parca() ile ortala), betiği çalıştır,
 # sonra Godot'u açıp yeni SVG'nin içe aktarma ayarını 2x + mipmap yap (diğer kartlarınki gibi).
@@ -519,6 +520,52 @@ def sekme_ogren():
     return _simge(defs, govde)
 
 
+# --- Ses düğmesi simgeleri (120x120) ---
+
+def _hoparlor(ust, alt):
+    defs = _parlak(ust, alt, "hop")
+    govde = ('<path d="M12 46 C12 43 14 41 17 41 L32 41 L54 22 C57 19.5 62 21 62 25 L62 95 C62 99 57 100.5 54 98 '
+             'L32 79 L17 79 C14 79 12 77 12 74 Z" fill="url(#hop)" stroke="%s" stroke-width="5" stroke-linejoin="round"/>\n'
+             '<path d="M20 48 L30 48" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity="0.55"/>\n'
+             % MUREKKEP)
+    return defs, govde
+
+
+def _dalgalar():
+    return ('<g fill="none" stroke="%s" stroke-width="7" stroke-linecap="round">'
+            '<path d="M74 46 C80 53 80 67 74 74"/><path d="M86 36 C98 50 98 70 86 84"/></g>\n' % MUREKKEP)
+
+
+def ses_hepsi():
+    # Hoparlör, ses dalgaları ve küçük bir nota: müzik de efektler de açık
+    defs, govde = _hoparlor("#B9A8FF", "#7B6CF6")
+    defs += _parlak("#FFB3CF", "#FF6F9C", "nota")
+    govde += ('<g fill="none" stroke="%s" stroke-width="7" stroke-linecap="round"><path d="M74 48 C80 55 80 65 74 72"/></g>\n'
+              '<path d="M108 22 L108 70" stroke="%s" stroke-width="5.5" stroke-linecap="round"/>\n'
+              '<path d="M108 22 C110 32 118 34 117 46" fill="none" stroke="%s" stroke-width="5.5" stroke-linecap="round"/>\n'
+              '<ellipse cx="99" cy="72" rx="11" ry="8.5" transform="rotate(-22 99 72)" fill="url(#nota)" stroke="%s" stroke-width="5"/>\n'
+              '<ellipse cx="96" cy="69" rx="4" ry="2.5" transform="rotate(-22 96 69)" fill="#FFFFFF" opacity="0.6"/>\n'
+              % (MUREKKEP, MUREKKEP, MUREKKEP, MUREKKEP))
+    return _simge(defs, govde)
+
+
+def ses_efekt():
+    # Hoparlör ve ses dalgaları (müzik kapalı, efektler açık)
+    defs, govde = _hoparlor("#9ED0FF", "#3E8EEB")
+    return _simge(defs, govde + _dalgalar())
+
+
+def ses_kapali():
+    # Soluk hoparlör ve yumuşak çarpı
+    defs, govde = _hoparlor("#E4E1EE", "#AFA8C6")
+    govde += ('<g stroke="%s" stroke-width="7" stroke-linecap="round">'
+              '<line x1="78" y1="46" x2="104" y2="72"/><line x1="104" y1="46" x2="78" y2="72"/></g>\n' % MUREKKEP)
+    return _simge(defs, govde)
+
+
+SES_SIMGELERI = {"hepsi": ses_hepsi, "efekt": ses_efekt, "kapali": ses_kapali}
+
+
 SEKMELER = {"hepsi": sekme_hepsi, "hareket": sekme_hareket, "bulmaca": sekme_bulmaca,
             "yaratici": sekme_yaratici, "ogren": sekme_ogren}
 
@@ -530,4 +577,6 @@ if __name__ == "__main__":
         _yaz(os.path.join(KART_KLASORU, ad + ".svg"), kart_svg(fonksiyon()))
     for ad, fonksiyon in SEKMELER.items():
         _yaz(os.path.join(GORSEL_KLASORU, "sekme_%s.svg" % ad), fonksiyon())
-    print("%d kart, %d sekme simgesi yazıldı" % (len(KARTLAR), len(SEKMELER)))
+    for ad, fonksiyon in SES_SIMGELERI.items():
+        _yaz(os.path.join(GORSEL_KLASORU, "ses_%s.svg" % ad), fonksiyon())
+    print("%d kart, %d sekme, %d ses simgesi yazıldı" % (len(KARTLAR), len(SEKMELER), len(SES_SIMGELERI)))

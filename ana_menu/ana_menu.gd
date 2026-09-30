@@ -9,6 +9,7 @@ extends Control
 const OyunListesi := preload("res://ana_menu/oyun_listesi.gd")
 const OyunKarti := preload("res://ana_menu/oyun_karti.gd")
 const Sekme := preload("res://ana_menu/sekme.gd")
+const SesDugmesi := preload("res://ana_menu/ses_dugmesi.gd")
 const YUMUSAK_DAIRE: Texture2D = preload("res://ana_menu/gorseller/yumusak_daire.svg")
 
 # Oyun testleri menüden oyun açarken bunları kullanır: OYUNLAR[i]["sahne"] ve _kartlar[i] (aynı sıra)
@@ -33,6 +34,7 @@ var _gorunen: Array[Control] = []     # seçili sekmede görünen kartlar, sıra
 var _sekme := "hepsi"
 var _ekran := Vector2(720, 1280)
 var _baslik: HBoxContainer
+var _ses_dugmesi: Control
 var _alan: Control                     # kartların kaydığı, kırpılan bölge
 var _icerik: Control
 var _ust_golge: TextureRect
@@ -53,6 +55,7 @@ var _son_zaman := 0
 var _kayiyor := false
 var _basili_kart: Control = null
 var _basili_sekme: Control = null
+var _ses_basili := false
 var _secildi := false
 
 
@@ -61,8 +64,10 @@ func _ready() -> void:
 	_ekran = get_viewport_rect().size
 	for hata in OyunListesi.dogrula():
 		push_error("Ana menü listesi: " + hata)
+	SesYoneticisi.muzik("menu", self)
 	_arka_plan_olustur()
 	_baslik_olustur()
+	_ses_dugmesi_olustur()
 	_sekmeleri_olustur()
 	_alani_olustur()
 	for i in OYUNLAR.size():
@@ -132,6 +137,15 @@ func _baslik_olustur() -> void:
 		etiket.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 		etiket.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		_baslik.add_child(etiket)
+
+
+# Sağ üstte, başlıkla aynı hizada küçük ses düğmesi
+func _ses_dugmesi_olustur() -> void:
+	var boyut := 84.0
+	_ses_dugmesi = SesDugmesi.new()
+	add_child(_ses_dugmesi)
+	_ses_dugmesi.kur(boyut)
+	_ses_dugmesi.position = Vector2(_ekran.x - KENAR - boyut, _baslik.position.y + (_baslik.size.y - boyut) / 2.0)
 
 
 func _sekme_boyu() -> Vector2:
@@ -223,6 +237,8 @@ func _acilis_animasyonu() -> void:
 		.set_delay(0.05).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	for i in _sekmeler.size():
 		_sekmeler[i].giris(0.1 + i * 0.05)
+	_ses_dugmesi.modulate.a = 0.0
+	_ses_dugmesi.create_tween().tween_property(_ses_dugmesi, "modulate:a", 1.0, 0.4).set_delay(0.3)
 	_kartlari_getir(0.25)
 
 
@@ -244,6 +260,7 @@ func _ekranda_mi(kart: Control) -> bool:
 # --- Sekme seçimi ---
 
 func _sekme_sec(id: String) -> void:
+	SesYoneticisi.efekt("dugme_tik")
 	if id == _sekme:
 		# Aynı sekmeye dokununca liste yumuşakça başa döner
 		_hiz = 0.0
@@ -289,6 +306,10 @@ func _dokunma_basladi(dokunma: InputEventScreenTouch) -> void:
 	_kayiyor = false
 	var akiyordu := absf(_hiz) > 150.0
 	_hiz = 0.0
+	if _ses_dugmesi.icinde_mi(dokunma.position):
+		_ses_basili = true
+		_ses_dugmesi.bas()
+		return
 	if dokunma.position.y < _alan_ust():
 		for sekme in _sekmeler:
 			if sekme.get_global_rect().has_point(dokunma.position):
@@ -318,6 +339,9 @@ func _suruklendi(surukleme: InputEventScreenDrag) -> void:
 		if _basili_sekme:
 			_basili_sekme.iptal()
 			_basili_sekme = null
+		if _ses_basili:
+			_ses_basili = false
+			_ses_dugmesi.iptal()
 	if not _surukleniyor:
 		return
 	var fark := _son_y - surukleme.position.y
@@ -338,6 +362,12 @@ func _dokunma_bitti(dokunma: InputEventScreenTouch) -> void:
 	if Time.get_ticks_usec() - _son_zaman > 90000:
 		_hiz = 0.0
 	_hiz = clampf(_hiz, -5000.0, 5000.0)
+	if _ses_basili:
+		_ses_basili = false
+		if _ses_dugmesi.icinde_mi(dokunma.position):
+			_ses_dugmesi.degistir()
+		else:
+			_ses_dugmesi.iptal()
 	if _basili_sekme:
 		var sekme := _basili_sekme
 		_basili_sekme = null
@@ -358,6 +388,7 @@ func _oyunu_ac(kart: Control) -> void:
 	_hiz = 0.0
 	_son_sekme = _sekme
 	_son_kaydirma = clampf(_konum, 0.0, _en_fazla)
+	SesYoneticisi.efekt("dugme_tik")
 	if OyunListesi.yeni_mi(kart.oyun):
 		OyunListesi.acildi_isaretle(kart.oyun)
 	kart.birak(SahneGecis.sahne_degistir.bind(kart.oyun["sahne"]))

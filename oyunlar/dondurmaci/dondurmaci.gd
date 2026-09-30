@@ -84,6 +84,7 @@ var feedback_tweens: Dictionary = {}  # düğüm -> sallanma/parlama tween'i
 
 
 func _ready() -> void:
+	SesYoneticisi.muzik("dondurmaci", self)
 	_create_flavor_boxes()
 	for button: Panel in container_buttons.values():
 		button.add_theme_stylebox_override("panel", _make_box_style(Color("fffaf2")))
@@ -100,6 +101,7 @@ func _input(event: InputEvent) -> void:
 		return
 	# Geri: bu oyunun tek ekranı var, doğrudan ana menüye döner
 	if back_button.get_global_rect().grow(16.0).has_point(touch.position):
+		SesYoneticisi.efekt("geri")
 		SahneGecis.ana_menuye_don()
 		return
 	if state != State.CHOOSE_CONTAINER and state != State.ADD_SCOOPS:
@@ -125,11 +127,14 @@ func _on_container_tapped(id: String) -> void:
 	if state == State.ADD_SCOOPS:
 		return  # kap zaten seçildi
 	if id != order_container:
+		SesYoneticisi.efekt("yumusak_hayir")
 		_shake(container_buttons[id])
 		_glow(container_buttons[order_container])
 		return
 
 	_bounce(container_buttons[id])
+	# Külah tahta gibi "tok", kase cam gibi "tink"
+	SesYoneticisi.efekt("tahta_tok" if id == "kulah" else "tink")
 	made_container = id
 	ice_cream = _build_ice_cream(id, [])
 	prep.add_child(ice_cream)
@@ -144,17 +149,21 @@ func _on_flavor_tapped(index: int) -> void:
 	var box := flavor_boxes[index]
 	if state == State.CHOOSE_CONTAINER:
 		# Önce kap seçilmeli: doğru kabı göster
+		SesYoneticisi.efekt("yumusak_hayir")
 		_shake(box)
 		_glow(container_buttons[order_container])
 		return
 
 	var wanted := order_flavors[made_count]
 	if FLAVORS[index]["id"] != wanted:
+		SesYoneticisi.efekt("yumusak_hayir")
 		_shake(box)
 		_glow(flavor_boxes[_flavor_index(wanted)])
 		return
 
 	_bounce(box)
+	# Her yeni top biraz daha ince "plop"
+	SesYoneticisi.efekt("plop", 0.0, 1.0 + made_count * 0.07)
 	_add_scoop(ice_cream, made_container, made_count, FLAVORS[index]["texture"], true)
 	made_count += 1
 	if made_count == order_flavors.size():
@@ -181,6 +190,7 @@ func _next_customer() -> void:
 	customer.position = CUSTOMER_POS - Vector2(screen_width, 0)
 	customer.rotation = 0.0
 	customer.visible = true
+	SesYoneticisi.efekt("kapi_zili", -3.0)
 	var walk := create_tween()
 	walk.tween_property(customer, "position", CUSTOMER_POS, 0.8) \
 		.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
@@ -238,6 +248,7 @@ func _serve() -> void:
 	state = State.CELEBRATING
 	_update_step_visuals()
 	await get_tree().create_timer(0.55).timeout  # son top yerine otursun
+	SesYoneticisi.ezgi("tamamlandi")
 
 	# Dondurma müşterinin eline uçar
 	ice_cream.reparent(effects)
@@ -252,6 +263,7 @@ func _serve() -> void:
 	# Müşteri sevinir: mutlu yüz, zıplama, kalpler ve bir yıldız
 	create_tween().tween_property(bubble, "scale", Vector2.ZERO, 0.2)
 	customer.texture = ANIMALS[animal_index]["happy"]
+	SesYoneticisi.efekt("hayvan_sevinc")
 	var jump := create_tween()
 	for i in 2:
 		jump.tween_property(customer, "position:y", CUSTOMER_POS.y - 50.0, 0.18) \
@@ -424,6 +436,7 @@ func _fly_star() -> void:
 
 
 func _add_star() -> void:
+	SesYoneticisi.ezgi("yildiz_kazanma")
 	stars += 1
 	star_label.text = str(stars)
 	star_icon.pivot_offset = star_icon.size / 2.0
