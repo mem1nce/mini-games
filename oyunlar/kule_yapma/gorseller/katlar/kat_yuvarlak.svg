@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="120" viewBox="0 0 240 120">
+  <defs><linearGradient id="g1" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#E2D4FF"/><stop offset="1.00" stop-color="#A98BEA"/></linearGradient><linearGradient id="g2" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#A98BEA"/><stop offset="1.00" stop-color="#6E5A70"/></linearGradient></defs>
+  <path d="M230.0 2.0 L232.5 2.4 L234.7 3.5 L236.5 5.3 L237.6 7.5 L238.0 10.0 L238.0 108.0 L237.6 110.5 L236.5 112.7 L234.7 114.5 L232.5 115.6 L230.0 116.0 L10.0 116.0 L7.5 115.6 L5.3 114.5 L3.5 112.7 L2.4 110.5 L2.0 108.0 L2.0 10.0 L2.4 7.5 L3.5 5.3 L5.3 3.5 L7.5 2.4 L10.0 2.0 Z M95.0 56.0 L94.5 61.4 L93.1 66.6 L90.8 71.5 L87.7 75.9 L83.9 79.7 L79.5 82.8 L74.6 85.1 L69.4 86.5 L64.0 87.0 L58.6 86.5 L53.4 85.1 L48.5 82.8 L44.1 79.7 L40.3 75.9 L37.2 71.5 L34.9 66.6 L33.5 61.4 L33.0 56.0 L33.5 50.6 L34.9 45.4 L37.2 40.5 L40.3 36.1 L44.1 32.3 L48.5 29.2 L53.4 26.9 L58.6 25.5 L64.0 25.0 L69.4 25.5 L74.6 26.9 L79.5 29.2 L83.9 32.3 L87.7 36.1 L90.8 40.5 L93.1 45.4 L94.5 50.6 Z M207.0 56.0 L206.5 61.4 L205.1 66.6 L202.8 71.5 L199.7 75.9 L195.9 79.7 L191.5 82.8 L186.6 85.1 L181.4 86.5 L176.0 87.0 L170.6 86.5 L165.4 85.1 L160.5 82.8 L156.1 79.7 L152.3 75.9 L149.2 71.5 L146.9 66.6 L145.5 61.4 L145.0 56.0 L145.5 50.6 L146.9 45.4 L149.2 40.5 L152.3 36.1 L156.1 32.3 L160.5 29.2 L165.4 26.9 L170.6 25.5 L176.0 25.0 L181.4 25.5 L186.6 26.9 L191.5 29.2 L195.9 32.3 L199.7 36.1 L202.8 40.5 L205.1 45.4 L206.5 50.6 Z" fill-rule="evenodd" fill="url(#g1)" stroke="#3A2E52" stroke-width="4" stroke-linejoin="round"/>
+  <circle cx="98.5" cy="100.2" r="5.4" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" stroke-opacity="0.6"/>
+  <circle cx="109.0" cy="55.4" r="4.9" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" stroke-opacity="0.6"/>
+  <circle cx="163.7" cy="101.5" r="6.0" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" stroke-opacity="0.6"/>
+  <circle cx="13.7" cy="94.1" r="3.0" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" stroke-opacity="0.6"/>
+  <circle cx="21.6" cy="99.0" r="5.3" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" stroke-opacity="0.6"/>
+  <circle cx="119.9" cy="46.0" r="5.3" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" stroke-opacity="0.6"/>
+  <circle cx="187.4" cy="103.9" r="6.8" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" stroke-opacity="0.6"/>
+  <circle cx="64.0" cy="56.0" r="33.0" fill="none" stroke="#3A2E52" stroke-width="9" stroke-linejoin="round" />
+  <circle cx="64.0" cy="56.0" r="33.0" fill="none" stroke="#FFF3C2" stroke-width="5" stroke-linejoin="round" />
+  <circle cx="176.0" cy="56.0" r="33.0" fill="none" stroke="#3A2E52" stroke-width="9" stroke-linejoin="round" />
+  <circle cx="176.0" cy="56.0" r="33.0" fill="none" stroke="#FFF3C2" stroke-width="5" stroke-linejoin="round" />
+  <rect x="0.0" y="108.0" width="240.0" height="12.0" rx="4.0" fill="url(#g2)" stroke="#3A2E52" stroke-width="3" stroke-linejoin="round" />
+  <ellipse cx="40.0" cy="12.0" rx="26.0" ry="3.5" transform="rotate(0 40.0 12.0)" fill="#FFFFFF" opacity="0.45"/>
+</svg>
