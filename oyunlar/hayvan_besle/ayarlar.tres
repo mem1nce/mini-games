@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="FeedSettings" format=3]
+
+[ext_resource type="Script" path="res://oyunlar/hayvan_besle/ayarlar.gd" id="1_ayar"]
+[ext_resource type="Script" path="res://oyunlar/hayvan_besle/asama_verisi.gd" id="2_asama"]
+[ext_resource type="Script" path="res://oyunlar/hayvan_besle/hayvan_verisi.gd" id="3_hveri"]
+[ext_resource type="Resource" path="res://oyunlar/hayvan_besle/hayvanlar/tavsan.tres" id="h_tavsan"]
+[ext_resource type="Resource" path="res://oyunlar/hayvan_besle/hayvanlar/kopek.tres" id="h_kopek"]
+[ext_resource type="Resource" path="res://oyunlar/hayvan_besle/hayvanlar/kedi.tres" id="h_kedi"]
+[ext_resource type="Resource" path="res://oyunlar/hayvan_besle/hayvanlar/maymun.tres" id="h_maymun"]
+[ext_resource type="Resource" path="res://oyunlar/hayvan_besle/hayvanlar/fare.tres" id="h_fare"]
+[ext_resource type="Resource" path="res://oyunlar/hayvan_besle/hayvanlar/ayi.tres" id="h_ayi"]
+[ext_resource type="Resource" path="res://oyunlar/hayvan_besle/hayvanlar/sincap.tres" id="h_sincap"]
+[ext_resource type="Resource" path="res://oyunlar/hayvan_besle/hayvanlar/inek.tres" id="h_inek"]
+[ext_resource type="Resource" path="res://oyunlar/hayvan_besle/hayvanlar/panda.tres" id="h_panda"]
+[ext_resource type="Resource" path="res://oyunlar/hayvan_besle/hayvanlar/kus.tres" id="h_kus"]
+
+[sub_resource type="Resource" id="asama_1"]
+script = ExtResource("2_asama")
+level_count = 3
+animal_count = 2
+want_min = 1
+want_max = 1
+bubble_always = true
+distractor_count = 0
+
+[sub_resource type="Resource" id="asama_2"]
+script = ExtResource("2_asama")
+level_count = 3
+animal_count = 3
+want_min = 1
+want_max = 1
+bubble_always = true
+distractor_count = 0
+
+[sub_resource type="Resource" id="asama_3"]
+script = ExtResource("2_asama")
+level_count = 3
+animal_count = 3
+want_min = 1
+want_max = 3
+bubble_always = false
+distractor_count = 0
+
+[sub_resource type="Resource" id="asama_4"]
+script = ExtResource("2_asama")
+level_count = 3
+animal_count = 4
+want_min = 1
+want_max = 3
+bubble_always = false
+distractor_count = 1
+
+[resource]
+script = ExtResource("1_ayar")
+animals = Array[ExtResource("3_hveri")]([ExtResource("h_tavsan"), ExtResource("h_kopek"), ExtResource("h_kedi"), ExtResource("h_maymun"), ExtResource("h_fare"), ExtResource("h_ayi"), ExtResource("h_sincap"), ExtResource("h_inek"), ExtResource("h_panda"), ExtResource("h_kus")])
+stages = Array[ExtResource("2_asama")]([SubResource("asama_1"), SubResource("asama_2"), SubResource("asama_3"), SubResource("asama_4")])

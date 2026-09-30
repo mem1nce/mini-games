@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="FeedFoodData" format=3]
+
+[ext_resource type="Script" path="res://oyunlar/hayvan_besle/yiyecek_verisi.gd" id="1_veri"]
+[ext_resource type="Texture2D" path="res://oyunlar/hayvan_besle/gorseller/yiyecekler/havuc.svg" id="2_gorsel"]
+
+[resource]
+script = ExtResource("1_veri")
+id = &"havuc"
+texture = ExtResource("2_gorsel")

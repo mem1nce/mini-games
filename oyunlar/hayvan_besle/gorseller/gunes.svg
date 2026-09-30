@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <radialGradient id="gunes" cx="0.4" cy="0.3" r="0.75"><stop offset="0" stop-color="#FFF6B0"/><stop offset="0.6" stop-color="#FFD84A"/><stop offset="1" stop-color="#FFB52E"/></radialGradient>
+  </defs>
+  <path d="M164.0 100.0 L190.0 100.0 M151.8 137.6 L172.8 152.9 M119.8 160.9 L127.8 185.6 M80.2 160.9 L72.2 185.6 M48.2 137.6 L27.2 152.9 M36.0 100.0 L10.0 100.0 M48.2 62.4 L27.2 47.1 M80.2 39.1 L72.2 14.4 M119.8 39.1 L127.8 14.4 M151.8 62.4 L172.8 47.1 " stroke="#FFC83A" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="100" cy="100" r="54" fill="url(#gunes)" stroke="#3B2F6B" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M76 96 Q84 88 92 96 M108 96 Q116 88 124 96" fill="none" stroke="#3B2F6B" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M84 114 Q100 128 116 114" fill="none" stroke="#3B2F6B" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+  <ellipse cx="72" cy="112" rx="9" ry="5" fill="#FF9AB0" opacity="0.7"/><ellipse cx="128" cy="112" rx="9" ry="5" fill="#FF9AB0" opacity="0.7"/>
+</svg>

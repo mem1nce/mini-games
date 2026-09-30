@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="300" viewBox="0 0 1600 300">
+  <defs>
+    <linearGradient id="cim" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9EDB7E"/><stop offset="1" stop-color="#7CC862"/></linearGradient>
+  </defs>
+  <path d="M0 120 Q260 50 560 110 T1100 96 T1600 110 V300 H0 Z" fill="url(#cim)"/>
+</svg>
