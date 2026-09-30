@@ -82,6 +82,8 @@ const OYUNLAR := [
 	{"ad": "Hayvanları Besle", "klasor": "hayvan_besle", "sahne": "res://oyunlar/hayvan_besle/hayvan_besle.tscn", "kart": "hayvan_besle.svg",
 		"renk": "nane", "kategori": "bulmaca", "yon": "yatay", "yeni": true,
 		"ilerleme": {"anahtar": "ilerleme/bolum", "ekle": 1}},
+	{"ad": "Boyama Kitabı", "klasor": "boyama_kitabi", "sahne": "res://oyunlar/boyama_kitabi/boyama_kitabi.tscn", "kart": "boyama_kitabi.svg",
+		"renk": "leylak", "kategori": "yaratici", "yon": "yatay", "yeni": true},
 ]
 
 
