@@ -1,0 +1,7 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://oyunlar/balik_tutma/balik_tutma.gd" id="1_oyun"]
+
+[node name="BalikTutma" type="Node2D"]
+texture_filter = 4
+script = ExtResource("1_oyun")

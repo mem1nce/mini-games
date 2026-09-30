@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="170" viewBox="0 0 120 170">
+  <defs><radialGradient id="g1" cx="0.4" cy="0.3" r="0.8"><stop offset="0.00" stop-color="#FFE0F0"/><stop offset="0.50" stop-color="#FF9CCB"/><stop offset="1.00" stop-color="#E86AA8"/></radialGradient></defs>
+  <polyline points="30.0,70.0 35.0,76.0 35.5,82.0 30.8,88.0 25.5,94.0 24.2,100.0 28.3,106.0 33.9,112.0 35.9,118.0 32.5,124.0 26.7,130.0 24.0,136.0 26.8,142.0 32.5,148.0 35.9,154.0" fill="none" stroke="#C85A94" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+  <polyline points="30.0,70.0 35.0,76.0 35.5,82.0 30.8,88.0 25.5,94.0 24.2,100.0 28.3,106.0 33.9,112.0 35.9,118.0 32.5,124.0 26.7,130.0 24.0,136.0 26.8,142.0 32.5,148.0 35.9,154.0" fill="none" stroke="#FFC6E2" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" />
+  <polyline points="51.0,70.0 51.5,76.0 46.8,82.0 41.5,88.0 40.2,94.0 44.3,100.0 49.9,106.0 51.9,112.0 48.5,118.0 42.7,124.0 40.0,130.0 42.8,136.0 48.5,142.0 51.9,148.0 49.9,154.0" fill="none" stroke="#C85A94" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+  <polyline points="51.0,70.0 51.5,76.0 46.8,82.0 41.5,88.0 40.2,94.0 44.3,100.0 49.9,106.0 51.9,112.0 48.5,118.0 42.7,124.0 40.0,130.0 42.8,136.0 48.5,142.0 51.9,148.0 49.9,154.0" fill="none" stroke="#FFC6E2" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" />
+  <polyline points="65.5,70.0 60.8,76.0 55.5,82.0 54.2,88.0 58.3,94.0 63.9,100.0 65.9,106.0 62.5,112.0 56.7,118.0 54.0,124.0 56.8,130.0 62.5,136.0 65.9,142.0 63.9,148.0 58.3,154.0" fill="none" stroke="#C85A94" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+  <polyline points="65.5,70.0 60.8,76.0 55.5,82.0 54.2,88.0 58.3,94.0 63.9,100.0 65.9,106.0 62.5,112.0 56.7,118.0 54.0,124.0 56.8,130.0 62.5,136.0 65.9,142.0 63.9,148.0 58.3,154.0" fill="none" stroke="#FFC6E2" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" />
+  <polyline points="74.8,70.0 69.5,76.0 68.2,82.0 72.3,88.0 77.9,94.0 79.9,100.0 76.5,106.0 70.7,112.0 68.0,118.0 70.8,124.0 76.5,130.0 79.9,136.0 77.9,142.0 72.3,148.0 68.2,154.0" fill="none" stroke="#C85A94" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+  <polyline points="74.8,70.0 69.5,76.0 68.2,82.0 72.3,88.0 77.9,94.0 79.9,100.0 76.5,106.0 70.7,112.0 68.0,118.0 70.8,124.0 76.5,130.0 79.9,136.0 77.9,142.0 72.3,148.0 68.2,154.0" fill="none" stroke="#FFC6E2" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" />
+  <polyline points="85.5,70.0 84.2,76.0 88.3,82.0 93.9,88.0 95.9,94.0 92.5,100.0 86.7,106.0 84.0,112.0 86.8,118.0 92.5,124.0 95.9,130.0 93.9,136.0 88.3,142.0 84.2,148.0 85.5,154.0" fill="none" stroke="#C85A94" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+  <polyline points="85.5,70.0 84.2,76.0 88.3,82.0 93.9,88.0 95.9,94.0 92.5,100.0 86.7,106.0 84.0,112.0 86.8,118.0 92.5,124.0 95.9,130.0 93.9,136.0 88.3,142.0 84.2,148.0 85.5,154.0" fill="none" stroke="#FFC6E2" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M12 72 Q12 12 60 10 Q108 12 108 72 Q96 80 84 72 Q72 80 60 72 Q48 80 36 72 Q24 80 12 72 Z" fill="url(#g1)" stroke="#8A2A5E" stroke-width="4" stroke-linejoin="round" opacity="0.95"/>
+  <ellipse cx="40.0" cy="30.0" rx="16.0" ry="7.0" transform="rotate(-30 40.0 30.0)" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="46.0" cy="50.0" r="7.0" fill="#3A1F45" />
+  <circle cx="44.0" cy="47.0" r="2.6" fill="#FFFFFF" />
+  <circle cx="74.0" cy="50.0" r="7.0" fill="#3A1F45" />
+  <circle cx="72.0" cy="47.0" r="2.6" fill="#FFFFFF" />
+  <path d="M52 60 Q60 66 68 60" fill="none" stroke="#3A1F45" stroke-width="3" stroke-linecap="round"/>
+  <ellipse cx="34.0" cy="60.0" rx="7.0" ry="4.0" fill="#FF7FA3" opacity="0.6"/>
+  <ellipse cx="86.0" cy="60.0" rx="7.0" ry="4.0" fill="#FF7FA3" opacity="0.6"/>
+</svg>
