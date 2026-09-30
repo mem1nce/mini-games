@@ -342,6 +342,35 @@ def balik_tutma():
     ]
 
 
+def _tonlar(eski, yeni):
+    """Büyükten Küçüğe şablon tonlarını (açık, çok açık, kendisi, koyu, çok koyu) bir renkten ötekine çevirir"""
+    def karistir(a, b, t):
+        a, b = [int(a[k:k + 2], 16) for k in (1, 3, 5)], [int(b[k:k + 2], 16) for k in (1, 3, 5)]
+        return "#%02X%02X%02X" % tuple(round(a[k] + (b[k] - a[k]) * t) for k in range(3))
+    def tonlar(c):
+        return [karistir(c, "#FFFFFF", 0.6), karistir(c, "#FFFFFF", 0.3), c, karistir(c, "#3B2F6B", 0.25), karistir(c, "#3B2F6B", 0.55)]
+    return dict(zip(tonlar(eski), tonlar(yeni)))
+
+
+def buyukten_kucuge():
+    # Büyükten Küçüğe: yıldızlı halka kulesi ve yan yana büyükten küçüğe üç iç içe bebek
+    g = "buyukten_kucuge/gorseller/"
+    k = g + "kaynak/"
+    kule = [
+        parca(k + "direk.svg", 126, (-92, 38)),
+        parca(k + "halka.svg", 116, (-92, 89), renkler=_tonlar("#FF5A6E", "#5CC95C")),
+        parca(k + "halka.svg", 94, (-92, 61), renkler=_tonlar("#FF5A6E", "#4FA8FF")),
+        parca(k + "halka.svg", 74, (-92, 38), renkler=_tonlar("#FF5A6E", "#FFB13D")),
+        parca(g + "yildiz.svg", 54, (-92, -70), 0.2),
+    ]
+    bebekler = []
+    for x, w in ((6, 104), (82, 78), (128, 56)):
+        h = w * 298 / 200
+        for yari in ("alt", "ust"):
+            bebekler.append(parca(k + "bebek_tavsan_%s.svg" % yari, w, (x, 132 - h / 2)))
+    return kule + bebekler
+
+
 KARTLAR = {
     "balik_tutma": balik_tutma,
     "ucan_kus": ucan_kus, "dondurmaci": dondurmaci, "yol_yap": yol_yap, "hafiza": hafiza,
@@ -349,6 +378,7 @@ KARTLAR = {
     "toplama": toplama, "cikarma": cikarma, "araba_yarisi": araba_yarisi, "zipla_zipla": zipla_zipla,
     "sihirli_bahce": sihirli_bahce, "muzik_kutusu": muzik_kutusu, "robot_fabrikasi": robot_fabrikasi,
     "tren_rayi": tren_rayi, "hayvan_besle": hayvan_besle, "boyama_kitabi": boyama_kitabi,
+    "buyukten_kucuge": buyukten_kucuge,
 }
 
 

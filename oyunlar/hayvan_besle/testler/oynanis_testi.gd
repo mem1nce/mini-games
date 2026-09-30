@@ -71,10 +71,10 @@ func _from_menu() -> void:
 	_check(index >= 0, "ana menüde Hayvanları Besle kartı yok")
 	if index < 0:
 		return
-	# Kart en altta: liste sona kaydırılır, sonra karta dokunulur
-	menu._konum = menu._en_fazla
-	await _frames(30)
+	# Liste kart görünecek kadar kaydırılır (yeni oyunlar eklendikçe kart ortalarda kalabilir), sonra karta dokunulur
 	var card: Control = menu._kartlar[index]
+	menu._konum = clampf(card.position.y - 40.0, 0.0, menu._en_fazla)
+	await _frames(30)
 	_tap(card.get_global_rect().get_center())
 	for k in 400:
 		await process_frame
