@@ -3,6 +3,7 @@
 #     sys.path.insert(0, <proje>/ortak/ses);  from sentez import *
 # Sesler yumuşak ve kısa olsun: save() tepe seviyesini -6 dBFS'e ayarlar, başta/sonda kısa fade yapar.
 # save_loudness() ise sesleri algılanan yüksekliğe göre eşitler (bir enstrümanın bütün sesleri aynı güçte).
+# voice() / resonate(): formantlı çizgi film "ses teli" (hayvan sesleri). check_all(klasör): yazılan wav'ları denetler.
 
 import math
 import os
@@ -149,3 +150,121 @@ def _write(folder: str, name: str, samples: list, gain: float) -> None:
         f.setframerate(RATE)
         f.writeframes(bytes(frames))
     print(name, round(n / RATE, 2), "sn")
+
+
+# --- Ses teli ve formantlar (hayvan sesleri; Müzik Kutusu ve Hayvanları Besle kullanır) ---
+
+def resonate(samples: list, formants) -> list:
+    # Zamanla değişebilen formant süzgeçleri (ünlü rengi). formants(t) -> [(frekans, bant genişliği, kazanç), ...]
+    out = [0.0] * len(samples)
+    states = None
+    for i, x in enumerate(samples):
+        bank = formants(i / RATE)
+        if states is None:
+            states = [[0.0, 0.0] for _ in bank]
+        y_total = 0.0
+        for k, (freq, bw, gain) in enumerate(bank):
+            r = math.exp(-math.pi * bw / RATE)
+            a1 = -2 * r * math.cos(2 * math.pi * freq / RATE)
+            a2 = r * r
+            y = (1 - r) * x - a1 * states[k][0] - a2 * states[k][1]
+            states[k][1] = states[k][0]
+            states[k][0] = y
+            y_total += y * gain
+        out[i] = y_total
+    return out
+
+
+def voice(seconds: float, f0, amp, formants, buzz: float = 1.0, breath: float = 0.0, seed: int = 1) -> list:
+    # Ses teli: testere dişi (buzz) + nefes gürültüsü, perde f0(t), genlik amp(t), sonra formantlar
+    rng = random.Random(seed)
+    source = []
+    phase = 0.0
+    for i in range(int(RATE * seconds)):
+        t = i / RATE
+        phase = (phase + f0(t) / RATE) % 1.0
+        saw = 2.0 * phase - 1.0
+        source.append((buzz * saw + breath * rng.uniform(-1, 1)) * amp(t))
+    return resonate(source, formants)
+
+
+def smooth_env(t: float, seconds: float, attack: float, release: float) -> float:
+    if t < attack:
+        return math.sin(0.5 * math.pi * t / attack)
+    if t > seconds - release:
+        return max(0.0, math.cos(0.5 * math.pi * (t - (seconds - release)) / release))
+    return 1.0
+
+
+def glide(points: list, t: float) -> float:
+    # [(zaman, değer), ...] noktaları arasında yumuşak (kosinüs) geçiş
+    if t <= points[0][0]:
+        return points[0][1]
+    for (t0, v0), (t1, v1) in zip(points, points[1:]):
+        if t <= t1:
+            k = (1 - math.cos(math.pi * (t - t0) / (t1 - t0))) / 2
+            return v0 + (v1 - v0) * k
+    return points[-1][1]
+
+
+# --- Denetim ---
+
+def read_wav(path: str) -> list:
+    with wave.open(path, "rb") as f:
+        channels, width, rate, n = f.getnchannels(), f.getsampwidth(), f.getframerate(), f.getnframes()
+        data = f.readframes(n)
+    if width != 2:
+        raise ValueError("%s: sadece 16 bit WAV okunur" % path)
+    values = struct.unpack("<%dh" % (n * channels), data)
+    mono = [sum(values[i * channels:(i + 1) * channels]) / channels / 32768.0 for i in range(n)]
+    if rate != RATE:
+        ratio = rate / RATE
+        mono = [mono[min(n - 1, int(i * ratio))] for i in range(int(n / ratio))]
+    return mono
+
+
+def count_clicks(s: list) -> int:
+    # Tık: çevresindeki sese göre çok büyük, tek örneklik sıçrama (gürültülü seslerde doğal sıçramalar sayılmaz)
+    size = int(RATE * 0.002)
+    clicks = 0
+    for i in range(1, len(s)):
+        jump = abs(s[i] - s[i - 1])
+        if jump < 0.05:
+            continue
+        around = s[max(0, i - size):i - 1] + s[i + 1:i + size]
+        local = [abs(b - a) for a, b in zip(around, around[1:])]
+        typical = sorted(local)[len(local) // 2] if local else 0.0
+        if jump > 10 * typical + 0.02:
+            clicks += 1
+    return clicks
+
+
+def check_all(folder: str) -> bool:
+    # Yazılan her dosyayı geri okuyup denetler: tepe, baş/son yumuşaklığı, DC kayması, tık (ani sıçrama), yükseklik
+    ok = True
+    print("\n%-16s %6s %7s %7s %7s %6s" % ("dosya", "sn", "tepe dB", "yük. dB", "DC", "baş/son"))
+    for name in sorted(os.listdir(folder)):
+        if not name.endswith(".wav"):
+            continue
+        s = read_wav(os.path.join(folder, name))
+        peak = max(abs(v) for v in s)
+        dc = sum(s) / len(s)
+        edge = max(abs(s[0]), abs(s[-1]))
+        level = loudness(highpass(s, 100.0))
+        clicks = count_clicks(s)
+        problems = []
+        if peak > 0.51:
+            problems.append("tepe -6 dBFS'i aşıyor")
+        if edge > 0.002:
+            problems.append("baş/son sessiz değil (tık)")
+        if abs(dc) > 0.01:
+            problems.append("DC kayması")
+        if clicks:
+            problems.append("%d tık/cızırtı" % clicks)
+        if any(v != v for v in s):
+            problems.append("NaN")
+        ok = ok and not problems
+        print("%-16s %6.2f %7.1f %7.1f %7.4f %6.4f %s" % (
+            name, len(s) / RATE, 20 * math.log10(peak), 20 * math.log10(max(level, 1e-9)), dc, edge,
+            " ".join(problems) or "tamam"))
+    return ok
