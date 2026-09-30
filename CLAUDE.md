@@ -21,7 +21,7 @@ Bu repoyu iki kişi kullanıyor (git kullanıcı adları): **mem1nce** ve **emir
 ### Sahiplik ve genel kurallar
 
 - Oyun sahipleri:
-  - **mem1nce**: `ucan_kus`, `dondurmaci`, `yol_yap`, `hafiza`, `meyve_topla`, `araba_yarisi`, `sihirli_bahce`, `robot_fabrikasi`, `tren_rayi`
+  - **mem1nce**: `ucan_kus`, `dondurmaci`, `yol_yap`, `hafiza`, `meyve_topla`, `araba_yarisi`, `sihirli_bahce`, `robot_fabrikasi`, `tren_rayi`, `balik_tutma`
   - **emirsalihgmrk**: `golge_eslestirme`, `kostebek`, `toplama`, `cikarma`, `zipla_zipla`, `muzik_kutusu`, `hayvan_besle`
 - Herkes sadece kendi oyun klasöründe çalışır. Başkasına ait oyunun dosyalarını açıkça istenmedikçe değiştirme.
 - Ortak dosyalar: `project.godot`, `res://ana_menu/`, `res://ortak/`, `CLAUDE.md`. Bunlarda değişiklikleri küçük tut.
