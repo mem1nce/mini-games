@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="120" viewBox="0 0 240 120">
+  <defs><linearGradient id="g1" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#FFF1C8"/><stop offset="0.50" stop-color="#FFD58A"/><stop offset="1.00" stop-color="#E9A95A"/></linearGradient><linearGradient id="g2" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#FFF1C8"/><stop offset="0.50" stop-color="#FFD58A"/><stop offset="1.00" stop-color="#E9A95A"/></linearGradient></defs>
+  <rect x="29.0" y="21.0" width="70.0" height="70.0" rx="10.0" fill="url(#g1)" />
+  <polygon points="31.0,23.0 51.0,23.0 37.0,59.0" fill="#FF8FB0" opacity="0.9"/>
+  <polygon points="97.0,23.0 77.0,23.0 91.0,59.0" fill="#FF8FB0" opacity="0.9"/>
+  <rect x="29.0" y="77.0" width="70.0" height="14.0" rx="0.0" fill="#C98A4A" opacity="0.6"/>
+  <rect x="141.0" y="21.0" width="70.0" height="70.0" rx="10.0" fill="url(#g2)" />
+  <polygon points="143.0,23.0 163.0,23.0 149.0,59.0" fill="#FF8FB0" opacity="0.9"/>
+  <polygon points="209.0,23.0 189.0,23.0 203.0,59.0" fill="#FF8FB0" opacity="0.9"/>
+  <rect x="141.0" y="77.0" width="70.0" height="14.0" rx="0.0" fill="#C98A4A" opacity="0.6"/>
+</svg>

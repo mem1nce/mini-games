@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <radialGradient id="ten" cx="0.4" cy="0.3" r="0.75">
+      <stop offset="0" stop-color="#E0CBFA"/>
+      <stop offset="0.55" stop-color="#A983E3"/>
+      <stop offset="1" stop-color="#7A52BE"/>
+    </radialGradient>
+    <radialGradient id="kanat" cx="0.4" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#A987E6"/>
+      <stop offset="1" stop-color="#6A43AE"/>
+    </radialGradient>
+    <radialGradient id="gogus" cx="0.5" cy="0.35" r="0.7">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#EADCFF"/>
+    </radialGradient>
+    <radialGradient id="disk" cx="0.5" cy="0.4" r="0.6">
+      <stop offset="0" stop-color="#F7F0FF"/>
+      <stop offset="1" stop-color="#D8C3FA"/>
+    </radialGradient>
+    <linearGradient id="gaga" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFDA70"/>
+      <stop offset="1" stop-color="#F29A1E"/>
+    </linearGradient>
+    <radialGradient id="yaprak" cx="0.4" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#B8F08A"/>
+      <stop offset="1" stop-color="#3E9E3E"/>
+    </radialGradient>
+    <radialGradient id="goz" cx="0.4" cy="0.35" r="0.7">
+      <stop offset="0" stop-color="#6A5A96"/>
+      <stop offset="0.55" stop-color="#2A1F45"/>
+      <stop offset="1" stop-color="#150F26"/>
+    </radialGradient>
+    <radialGradient id="yanak" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FF7FA3" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#FF7FA3" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <!-- Dal -->
+  <path d="M10 234 Q128 222 244 236" fill="none" stroke="#5A3414" stroke-width="22" stroke-linecap="round"/>
+  <path d="M10 234 Q128 222 244 236" fill="none" stroke="#A66C38" stroke-width="12" stroke-linecap="round"/>
+  <path d="M24 230 Q80 224 110 224" fill="none" stroke="#D29A60" stroke-width="3" stroke-linecap="round"/>
+  <path d="M218 232 C226 212 246 208 252 216 C246 232 232 238 218 232 Z" fill="url(#yaprak)" stroke="#2F6B2A" stroke-width="4" stroke-linejoin="round"/>
+  <!-- Kulak tüyleri -->
+  <path d="M68 66 L54 18 L102 44 Z" fill="url(#ten)" stroke="#3F2770" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M188 66 L202 18 L154 44 Z" fill="url(#ten)" stroke="#3F2770" stroke-width="7" stroke-linejoin="round"/>
+  <!-- Gövde -->
+  <path d="M128 28 C190 28 216 84 214 142 C212 204 176 230 128 230 C80 230 44 204 42 142 C40 84 66 28 128 28 Z" fill="url(#ten)" stroke="#3F2770" stroke-width="7"/>
+  <ellipse cx="98" cy="48" rx="22" ry="8" transform="rotate(-15 98 48)" fill="#FFFFFF" opacity="0.4"/>
+  <ellipse cx="128" cy="184" rx="48" ry="40" fill="url(#gogus)"/>
+  <path d="M104 168 q6 6 12 0 M124 168 q6 6 12 0 M144 168 q6 6 12 0 M114 186 q6 6 12 0 M134 186 q6 6 12 0 M104 204 q6 6 12 0 M124 204 q6 6 12 0 M144 204 q6 6 12 0" fill="none" stroke="#BFA3EA" stroke-width="3" stroke-linecap="round"/>
+  <!-- Kanatlar -->
+  <ellipse cx="50" cy="156" rx="20" ry="48" transform="rotate(12 50 156)" fill="url(#kanat)" stroke="#3F2770" stroke-width="7"/>
+  <ellipse cx="206" cy="156" rx="20" ry="48" transform="rotate(-12 206 156)" fill="url(#kanat)" stroke="#3F2770" stroke-width="7"/>
+  <path d="M46 130 Q40 156 48 182" fill="none" stroke="#C9B2F2" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+  <path d="M210 130 Q216 156 208 182" fill="none" stroke="#C9B2F2" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+  <!-- Yüz diskleri ve gözler -->
+  <circle cx="98" cy="104" r="38" fill="url(#disk)"/>
+  <circle cx="158" cy="104" r="38" fill="url(#disk)"/>
+  <path d="M68 70 Q96 56 122 72 M188 70 Q160 56 134 72" fill="none" stroke="#3F2770" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="98" cy="106" r="26" fill="#FFFFFF" stroke="#3F2770" stroke-width="4"/>
+  <circle cx="158" cy="106" r="26" fill="#FFFFFF" stroke="#3F2770" stroke-width="4"/>
+  <ellipse cx="100" cy="108" rx="16" ry="18" fill="url(#goz)"/>
+  <ellipse cx="156" cy="108" rx="16" ry="18" fill="url(#goz)"/>
+  <ellipse cx="94" cy="100" rx="6" ry="7" fill="#FFFFFF"/>
+  <ellipse cx="150" cy="100" rx="6" ry="7" fill="#FFFFFF"/>
+  <circle cx="106" cy="115" r="3" fill="#FFFFFF" opacity="0.85"/>
+  <circle cx="162" cy="115" r="3" fill="#FFFFFF" opacity="0.85"/>
+  <!-- Yanaklar ve gaga -->
+  <ellipse cx="66" cy="138" rx="15" ry="10" fill="url(#yanak)"/>
+  <ellipse cx="190" cy="138" rx="15" ry="10" fill="url(#yanak)"/>
+  <path d="M117 130 Q128 124 139 130 L128 148 Z" fill="url(#gaga)" stroke="#8A5208" stroke-width="3.5" stroke-linejoin="round"/>
+  <!-- Ayaklar -->
+  <g fill="url(#gaga)" stroke="#8A5208" stroke-width="3">
+    <circle cx="100" cy="228" r="7"/><circle cx="112" cy="231" r="7"/><circle cx="124" cy="229" r="7"/>
+    <circle cx="134" cy="229" r="7"/><circle cx="146" cy="231" r="7"/><circle cx="158" cy="228" r="7"/>
+  </g>
+</svg>

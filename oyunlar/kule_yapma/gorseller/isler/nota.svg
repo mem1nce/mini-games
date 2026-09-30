@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="70" viewBox="0 0 60 70">
+  <defs></defs>
+  <rect x="38.0" y="8.0" width="7.0" height="44.0" rx="3.0" fill="#A66BFF" stroke="#3A2E52" stroke-width="2.4" stroke-linejoin="round" />
+  <ellipse cx="30.0" cy="54.0" rx="13.0" ry="10.0" fill="#A66BFF" stroke="#3A2E52" stroke-width="2.6" stroke-linejoin="round" transform="rotate(-20.0 30.0 54.0)" />
+  <polygon points="40.0,8.0 56.0,16.0 56.0,26.0 42.0,20.0" fill="#A66BFF" stroke="#3A2E52" stroke-width="2.4" stroke-linejoin="round" />
+</svg>

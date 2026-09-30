@@ -87,6 +87,9 @@ const OYUNLAR := [
 	{"ad": "Balık Tutma", "klasor": "balik_tutma", "sahne": "res://oyunlar/balik_tutma/balik_tutma.tscn", "kart": "balik_tutma.svg",
 		"renk": "turkuaz", "kategori": "ogren", "yon": "dikey", "yeni": true,
 		"ilerleme": {"anahtar": "ilerleme/bolum", "ekle": 1}},
+	{"ad": "Kule Yapma", "klasor": "kule_yapma", "sahne": "res://oyunlar/kule_yapma/kule_yapma.tscn", "kart": "kule_yapma.svg",
+		"renk": "seftali", "kategori": "hareket", "yon": "dikey", "yeni": true,
+		"ilerleme": {"anahtar": "ilerleme/bolum", "ekle": 1}},
 ]
 
 

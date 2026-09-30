@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="120" viewBox="0 0 240 120">
+  <defs><linearGradient id="g1" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#F29A7E"/><stop offset="1.00" stop-color="#C65A4A"/></linearGradient><linearGradient id="g2" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#FFF6EC"/><stop offset="1.00" stop-color="#D8D2E6"/></linearGradient><linearGradient id="g3" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#FFF6EC"/><stop offset="1.00" stop-color="#D8D2E6"/></linearGradient><linearGradient id="g4" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#C65A4A"/><stop offset="1.00" stop-color="#6E5A70"/></linearGradient></defs>
+  <path d="M230.0 2.0 L232.5 2.4 L234.7 3.5 L236.5 5.3 L237.6 7.5 L238.0 10.0 L238.0 108.0 L237.6 110.5 L236.5 112.7 L234.7 114.5 L232.5 115.6 L230.0 116.0 L10.0 116.0 L7.5 115.6 L5.3 114.5 L3.5 112.7 L2.4 110.5 L2.0 108.0 L2.0 10.0 L2.4 7.5 L3.5 5.3 L5.3 3.5 L7.5 2.4 L10.0 2.0 Z M90.0 24.0 L92.5 24.4 L94.7 25.5 L96.5 27.3 L97.6 29.5 L98.0 32.0 L98.0 80.0 L97.6 82.5 L96.5 84.7 L94.7 86.5 L92.5 87.6 L90.0 88.0 L38.0 88.0 L35.5 87.6 L33.3 86.5 L31.5 84.7 L30.4 82.5 L30.0 80.0 L30.0 32.0 L30.4 29.5 L31.5 27.3 L33.3 25.5 L35.5 24.4 L38.0 24.0 Z M202.0 24.0 L204.5 24.4 L206.7 25.5 L208.5 27.3 L209.6 29.5 L210.0 32.0 L210.0 80.0 L209.6 82.5 L208.5 84.7 L206.7 86.5 L204.5 87.6 L202.0 88.0 L150.0 88.0 L147.5 87.6 L145.3 86.5 L143.5 84.7 L142.4 82.5 L142.0 80.0 L142.0 32.0 L142.4 29.5 L143.5 27.3 L145.3 25.5 L147.5 24.4 L150.0 24.0 Z" fill-rule="evenodd" fill="url(#g1)" stroke="#3A2E52" stroke-width="4" stroke-linejoin="round"/>
+  <line x1="6.0" y1="16.0" x2="234.0" y2="16.0" stroke="#9E3E36" stroke-width="2.2" stroke-linecap="round" opacity="0.5"/>
+  <line x1="10" y1="16" x2="10" y2="30" stroke="#9E3E36" stroke-width="2" opacity="0.45"/>
+  <line x1="122" y1="16" x2="122" y2="30" stroke="#9E3E36" stroke-width="2" opacity="0.45"/>
+  <line x1="6.0" y1="30.0" x2="24.0" y2="30.0" stroke="#9E3E36" stroke-width="2.2" stroke-linecap="round" opacity="0.5"/>
+  <line x1="104.0" y1="30.0" x2="136.0" y2="30.0" stroke="#9E3E36" stroke-width="2.2" stroke-linecap="round" opacity="0.5"/>
+  <line x1="216.0" y1="30.0" x2="234.0" y2="30.0" stroke="#9E3E36" stroke-width="2.2" stroke-linecap="round" opacity="0.5"/>
+  <line x1="6.0" y1="44.0" x2="24.0" y2="44.0" stroke="#9E3E36" stroke-width="2.2" stroke-linecap="round" opacity="0.5"/>
+  <line x1="104.0" y1="44.0" x2="136.0" y2="44.0" stroke="#9E3E36" stroke-width="2.2" stroke-linecap="round" opacity="0.5"/>
+  <line x1="216.0" y1="44.0" x2="234.0" y2="44.0" stroke="#9E3E36" stroke-width="2.2" stroke-linecap="round" opacity="0.5"/>
+  <line x1="10" y1="44" x2="10" y2="58" stroke="#9E3E36" stroke-width="2" opacity="0.45"/>
+  <line x1="122" y1="44" x2="122" y2="58" stroke="#9E3E36" stroke-width="2" opacity="0.45"/>
+  <line x1="6.0" y1="58.0" x2="24.0" y2="58.0" stroke="#9E3E36" stroke-width="2.2" stroke-linecap="round" opacity="0.5"/>
+  <line x1="104.0" y1="58.0" x2="136.0" y2="58.0" stroke="#9E3E36" stroke-width="2.2" stroke-linecap="round" opacity="0.5"/>
+  <line x1="216.0" y1="58.0" x2="234.0" y2="58.0" stroke="#9E3E36" stroke-width="2.2" stroke-linecap="round" opacity="0.5"/>
+  <line x1="6.0" y1="72.0" x2="24.0" y2="72.0" stroke="#9E3E36" stroke-width="2.2" stroke-linecap="round" opacity="0.5"/>
+  <line x1="104.0" y1="72.0" x2="136.0" y2="72.0" stroke="#9E3E36" stroke-width="2.2" stroke-linecap="round" opacity="0.5"/>
+  <line x1="216.0" y1="72.0" x2="234.0" y2="72.0" stroke="#9E3E36" stroke-width="2.2" stroke-linecap="round" opacity="0.5"/>
+  <line x1="10" y1="72" x2="10" y2="86" stroke="#9E3E36" stroke-width="2" opacity="0.45"/>
+  <line x1="122" y1="72" x2="122" y2="86" stroke="#9E3E36" stroke-width="2" opacity="0.45"/>
+  <line x1="6.0" y1="86.0" x2="24.0" y2="86.0" stroke="#9E3E36" stroke-width="2.2" stroke-linecap="round" opacity="0.5"/>
+  <line x1="104.0" y1="86.0" x2="136.0" y2="86.0" stroke="#9E3E36" stroke-width="2.2" stroke-linecap="round" opacity="0.5"/>
+  <line x1="216.0" y1="86.0" x2="234.0" y2="86.0" stroke="#9E3E36" stroke-width="2.2" stroke-linecap="round" opacity="0.5"/>
+  <line x1="6.0" y1="100.0" x2="234.0" y2="100.0" stroke="#9E3E36" stroke-width="2.2" stroke-linecap="round" opacity="0.5"/>
+  <line x1="10" y1="100" x2="10" y2="114" stroke="#9E3E36" stroke-width="2" opacity="0.45"/>
+  <line x1="38" y1="100" x2="38" y2="114" stroke="#9E3E36" stroke-width="2" opacity="0.45"/>
+  <line x1="66" y1="100" x2="66" y2="114" stroke="#9E3E36" stroke-width="2" opacity="0.45"/>
+  <line x1="94" y1="100" x2="94" y2="114" stroke="#9E3E36" stroke-width="2" opacity="0.45"/>
+  <line x1="122" y1="100" x2="122" y2="114" stroke="#9E3E36" stroke-width="2" opacity="0.45"/>
+  <line x1="150" y1="100" x2="150" y2="114" stroke="#9E3E36" stroke-width="2" opacity="0.45"/>
+  <line x1="178" y1="100" x2="178" y2="114" stroke="#9E3E36" stroke-width="2" opacity="0.45"/>
+  <line x1="206" y1="100" x2="206" y2="114" stroke="#9E3E36" stroke-width="2" opacity="0.45"/>
+  <rect x="29.0" y="23.0" width="70.0" height="66.0" rx="9.0" fill="none" stroke="#3A2E52" stroke-width="9" stroke-linejoin="round" />
+  <rect x="29.0" y="23.0" width="70.0" height="66.0" rx="9.0" fill="none" stroke="#FFF6EC" stroke-width="5" stroke-linejoin="round" />
+  <rect x="22.0" y="91.0" width="84.0" height="9.0" rx="4.0" fill="url(#g2)" stroke="#3A2E52" stroke-width="2.6" stroke-linejoin="round" />
+  <rect x="141.0" y="23.0" width="70.0" height="66.0" rx="9.0" fill="none" stroke="#3A2E52" stroke-width="9" stroke-linejoin="round" />
+  <rect x="141.0" y="23.0" width="70.0" height="66.0" rx="9.0" fill="none" stroke="#FFF6EC" stroke-width="5" stroke-linejoin="round" />
+  <rect x="134.0" y="91.0" width="84.0" height="9.0" rx="4.0" fill="url(#g3)" stroke="#3A2E52" stroke-width="2.6" stroke-linejoin="round" />
+  <rect x="0.0" y="108.0" width="240.0" height="12.0" rx="4.0" fill="url(#g4)" stroke="#3A2E52" stroke-width="3" stroke-linejoin="round" />
+  <ellipse cx="40.0" cy="12.0" rx="26.0" ry="3.5" transform="rotate(0 40.0 12.0)" fill="#FFFFFF" opacity="0.45"/>
+</svg>

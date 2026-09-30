@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="120" viewBox="0 0 240 120">
+  <defs><linearGradient id="g1" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#5E6AB8"/><stop offset="1.00" stop-color="#34397A"/></linearGradient><linearGradient id="g2" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#FFE9A0"/><stop offset="1.00" stop-color="#D8D2E6"/></linearGradient><linearGradient id="g3" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#FFE9A0"/><stop offset="1.00" stop-color="#D8D2E6"/></linearGradient><linearGradient id="g4" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#34397A"/><stop offset="1.00" stop-color="#6E5A70"/></linearGradient></defs>
+  <path d="M230.0 2.0 L232.5 2.4 L234.7 3.5 L236.5 5.3 L237.6 7.5 L238.0 10.0 L238.0 108.0 L237.6 110.5 L236.5 112.7 L234.7 114.5 L232.5 115.6 L230.0 116.0 L10.0 116.0 L7.5 115.6 L5.3 114.5 L3.5 112.7 L2.4 110.5 L2.0 108.0 L2.0 10.0 L2.4 7.5 L3.5 5.3 L5.3 3.5 L7.5 2.4 L10.0 2.0 Z M90.0 24.0 L92.5 24.4 L94.7 25.5 L96.5 27.3 L97.6 29.5 L98.0 32.0 L98.0 80.0 L97.6 82.5 L96.5 84.7 L94.7 86.5 L92.5 87.6 L90.0 88.0 L38.0 88.0 L35.5 87.6 L33.3 86.5 L31.5 84.7 L30.4 82.5 L30.0 80.0 L30.0 32.0 L30.4 29.5 L31.5 27.3 L33.3 25.5 L35.5 24.4 L38.0 24.0 Z M202.0 24.0 L204.5 24.4 L206.7 25.5 L208.5 27.3 L209.6 29.5 L210.0 32.0 L210.0 80.0 L209.6 82.5 L208.5 84.7 L206.7 86.5 L204.5 87.6 L202.0 88.0 L150.0 88.0 L147.5 87.6 L145.3 86.5 L143.5 84.7 L142.4 82.5 L142.0 80.0 L142.0 32.0 L142.4 29.5 L143.5 27.3 L145.3 25.5 L147.5 24.4 L150.0 24.0 Z" fill-rule="evenodd" fill="url(#g1)" stroke="#3A2E52" stroke-width="4" stroke-linejoin="round"/>
+  <polygon points="169.2,97.1 170.4,100.3 173.8,100.4 171.1,102.5 172.1,105.9 169.2,103.9 166.3,105.9 167.3,102.5 164.6,100.4 168.0,100.3" fill="#FFE9A0" opacity="0.85"/>
+  <polygon points="116.4,66.2 117.6,68.5 120.1,68.9 118.3,70.7 118.7,73.2 116.4,72.1 114.2,73.2 114.5,70.7 112.8,68.9 115.3,68.5" fill="#FFE9A0" opacity="0.85"/>
+  <polygon points="140.1,95.3 141.3,98.4 144.6,98.6 142.0,100.7 142.9,103.9 140.1,102.1 137.3,103.9 138.2,100.7 135.6,98.6 138.9,98.4" fill="#FFE9A0" opacity="0.85"/>
+  <polygon points="129.9,49.5 131.1,53.3 135.1,53.2 131.8,55.5 133.1,59.2 129.9,56.9 126.8,59.2 128.0,55.5 124.8,53.2 128.8,53.3" fill="#FFE9A0" opacity="0.85"/>
+  <polygon points="204.6,95.8 205.7,99.7 209.8,99.6 206.5,101.9 207.8,105.7 204.6,103.3 201.3,105.7 202.6,101.9 199.3,99.6 203.4,99.7" fill="#FFE9A0" opacity="0.85"/>
+  <polygon points="126.8,67.6 128.0,70.4 131.0,70.7 128.7,72.7 129.4,75.6 126.8,74.0 124.2,75.6 124.9,72.7 122.6,70.7 125.6,70.4" fill="#FFE9A0" opacity="0.85"/>
+  <rect x="29.0" y="23.0" width="70.0" height="66.0" rx="9.0" fill="none" stroke="#3A2E52" stroke-width="9" stroke-linejoin="round" />
+  <rect x="29.0" y="23.0" width="70.0" height="66.0" rx="9.0" fill="none" stroke="#FFE9A0" stroke-width="5" stroke-linejoin="round" />
+  <rect x="22.0" y="91.0" width="84.0" height="9.0" rx="4.0" fill="url(#g2)" stroke="#3A2E52" stroke-width="2.6" stroke-linejoin="round" />
+  <rect x="141.0" y="23.0" width="70.0" height="66.0" rx="9.0" fill="none" stroke="#3A2E52" stroke-width="9" stroke-linejoin="round" />
+  <rect x="141.0" y="23.0" width="70.0" height="66.0" rx="9.0" fill="none" stroke="#FFE9A0" stroke-width="5" stroke-linejoin="round" />
+  <rect x="134.0" y="91.0" width="84.0" height="9.0" rx="4.0" fill="url(#g3)" stroke="#3A2E52" stroke-width="2.6" stroke-linejoin="round" />
+  <rect x="0.0" y="108.0" width="240.0" height="12.0" rx="4.0" fill="url(#g4)" stroke="#3A2E52" stroke-width="3" stroke-linejoin="round" />
+  <ellipse cx="40.0" cy="12.0" rx="26.0" ry="3.5" transform="rotate(0 40.0 12.0)" fill="#FFFFFF" opacity="0.45"/>
+</svg>

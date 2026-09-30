@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="50" viewBox="0 0 80 50">
+  <defs><radialGradient id="g1" cx="0.4" cy="0.3" r="0.8"><stop offset="0.00" stop-color="#FFFFFF"/><stop offset="1.00" stop-color="#9FD0FF"/></radialGradient></defs>
+  <ellipse cx="40.0" cy="30.0" rx="14.0" ry="10.0" fill="url(#g1)" stroke="#3A2E52" stroke-width="2.4" stroke-linejoin="round" />
+  <polygon points="34.0,26.0 10.0,10.0 22.0,30.0" fill="#9FD0FF" stroke="#3A2E52" stroke-width="2.2" stroke-linejoin="round" />
+  <polygon points="46.0,26.0 70.0,10.0 58.0,30.0" fill="#9FD0FF" stroke="#3A2E52" stroke-width="2.2" stroke-linejoin="round" />
+  <polygon points="52.0,30.0 62.0,32.0 52.0,35.0" fill="#FFB020" stroke="#3A2E52" stroke-width="1.6" stroke-linejoin="round" />
+  <circle cx="46.0" cy="27.0" r="2.4" fill="#3A2E52" />
+</svg>

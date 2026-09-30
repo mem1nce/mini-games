@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <defs><linearGradient id="g1" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#FFD3E2"/><stop offset="1.00" stop-color="#F29AB8"/></linearGradient></defs>
+  <rect x="26.0" y="34.0" width="68.0" height="80.0" rx="8.0" fill="url(#g1)" stroke="#3A2E52" stroke-width="4" stroke-linejoin="round" />
+  <polygon points="18.0,38.0 60.0,8.0 102.0,38.0" fill="#E8534A" stroke="#3A2E52" stroke-width="4" stroke-linejoin="round" />
+  <rect x="38.0" y="48.0" width="18.0" height="18.0" rx="4.0" fill="#FFF1C8" stroke="#3A2E52" stroke-width="2.4" stroke-linejoin="round" />
+  <rect x="64.0" y="48.0" width="18.0" height="18.0" rx="4.0" fill="#FFF1C8" stroke="#3A2E52" stroke-width="2.4" stroke-linejoin="round" />
+  <rect x="38.0" y="74.0" width="18.0" height="18.0" rx="4.0" fill="#FFF1C8" stroke="#3A2E52" stroke-width="2.4" stroke-linejoin="round" />
+  <rect x="64.0" y="74.0" width="18.0" height="18.0" rx="4.0" fill="#FFF1C8" stroke="#3A2E52" stroke-width="2.4" stroke-linejoin="round" />
+  <rect x="50.0" y="96.0" width="20.0" height="18.0" rx="4.0" fill="#6FB8FF" stroke="#3A2E52" stroke-width="2.4" stroke-linejoin="round" />
+</svg>
