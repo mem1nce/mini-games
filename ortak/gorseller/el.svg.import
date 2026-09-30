@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://pr8ub61sxu3u"
-path="res://.godot/imported/el.svg-893a0cc32cbea8f4341673d7db2173c4.ctex"
+path="res://.godot/imported/el.svg-b84bcb141c4745cdedeeadbc8359ddf3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://oyunlar/golge_eslestirme/gorseller/el.svg"
-dest_files=["res://.godot/imported/el.svg-893a0cc32cbea8f4341673d7db2173c4.ctex"]
+source_file="res://ortak/gorseller/el.svg"
+dest_files=["res://.godot/imported/el.svg-b84bcb141c4745cdedeeadbc8359ddf3.ctex"]
 
 [params]
 

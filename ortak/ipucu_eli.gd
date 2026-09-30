@@ -1,8 +1,9 @@
 extends Node2D
 # İpucu eli (HintHand): çocuk bir süre bir şey yapmazsa bir eşyanın üstüne iner, "basar",
-# eşyanın kendi gölgesine kayar ve kaybolur. Düğümün konumu parmak ucudur.
+# hedefine kayar ve kaybolur (play(nereden, nereye)). Düğümün konumu parmak ucudur.
+# Ortak: Gölge Eşleştirme ve Büyükten Küçüğe kullanır.
 
-const TEXTURE: Texture2D = preload("res://oyunlar/golge_eslestirme/gorseller/el.svg")
+const TEXTURE: Texture2D = preload("res://ortak/gorseller/el.svg")
 const TIP := Vector2(112.0, 12.0)    # el.svg içinde parmak ucunun yeri (256x256 çizimde)
 const TILT := -0.26                  # el hafif sağa yatık dursun
 

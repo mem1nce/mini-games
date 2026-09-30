@@ -35,6 +35,9 @@ var grab_padding: float = 1.25
 var lift: float = 70.0
 ## Sürüklerken nesnenin büyüme oranı
 var drag_scale: float = 1.15
+## Bırakma toleransı: hedef alanı her yönde (kısa kenarına göre) bu oranda büyütülür (drop_area()).
+## Bırakma kararını oyun verir; bu değeri kullanan oyunlar ayarı buradan alır.
+var drop_tolerance: float = 0.35
 
 var active_touch: int = -1       # şu an bir şey tutan parmak (-1: yok)
 var dragged: Draggable = null
@@ -110,6 +113,11 @@ func cancel() -> void:
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_APPLICATION_FOCUS_OUT and active_touch != -1:
 		_on_release(true)
+
+
+# Hedef alanının bırakma toleransıyla büyütülmüş hali (cömert bırakma)
+func drop_area(target: Rect2) -> Rect2:
+	return target.grow(minf(target.size.x, target.size.y) * drop_tolerance)
 
 
 # Parmağa en yakın, tutulabilir nesne (yakalama alanı görselden biraz büyük)

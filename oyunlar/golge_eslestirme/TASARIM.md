@@ -52,7 +52,7 @@ golge_eslestirme/
   esya.gd                    sürüklenen eşya: ortak/suruklenebilir.gd (DraggableItem) + gölgeye oturma
   golge_yuvasi.gd            gölge (ShadowSlot): eşyanın görseli + golge.gdshader; filled sinyali
   golge.gdshader             siluet: dokunun saydamlığı + tek düze yarı saydam lacivert renk
-  ipucu_eli.gd               ipucu eli
+  (ipucu eli ortak: ortak/ipucu_eli.gd + ortak/gorseller/el.svg; Büyükten Küçüğe de kullanır)
   geri_dugmesi.gd            basılı tutunca dolan halkalı geri düğmesi
   ilerleme_noktalari.gd      üstteki 10 nokta
   kutlama.gd                 CPUParticles2D yıldız/konfeti efektleri, final

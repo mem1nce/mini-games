@@ -11,7 +11,7 @@ signal all_levels_completed
 
 const Item := preload("res://oyunlar/golge_eslestirme/esya.gd")
 const Slot := preload("res://oyunlar/golge_eslestirme/golge_yuvasi.gd")
-const HintHand := preload("res://oyunlar/golge_eslestirme/ipucu_eli.gd")
+const HintHand := preload("res://ortak/ipucu_eli.gd")
 const Effects := preload("res://oyunlar/golge_eslestirme/kutlama.gd")
 const ProgressDots := preload("res://oyunlar/golge_eslestirme/ilerleme_noktalari.gd")
 const HoldButton := preload("res://ortak/basili_geri_dugmesi.gd")
