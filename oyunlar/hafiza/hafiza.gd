@@ -61,6 +61,7 @@ var textures := {}                 # yol -> Texture2D önbelleği
 
 
 func _ready() -> void:
+	SesYoneticisi.muzik("hafiza", self)
 	_check_data()
 	_load_progress()
 	var sky_texture := GradientTexture2D.new()
@@ -111,24 +112,29 @@ func _input(event: InputEvent) -> void:
 		# Bölüm seçme ekranı oyunun ilk ekranı: geri ana menüye döner
 		if _is_touched(select_back_button, pos):
 			_press(select_back_button)
+			SesYoneticisi.efekt("geri")
 			SahneGecis.ana_menuye_don()
 			return
 		for i in theme_buttons.size():
 			if _is_touched(theme_buttons[i], pos):
+				SesYoneticisi.efekt("dugme_tik")
 				_select_theme(i)
 				return
 		for i in level_buttons.size():
 			if _is_touched(level_buttons[i], pos):
 				if i <= _completed_count():
 					_press(level_buttons[i])
+					SesYoneticisi.efekt("dugme_tik")
 					_start_level(i)
 				else:
+					SesYoneticisi.efekt("yumusak_hayir")
 					_shake(level_buttons[i])
 				return
 		return
 
 	if _is_touched(back_button, pos):
 		_press(back_button)
+		SesYoneticisi.efekt("geri")
 		_show_level_select()
 		return
 	if state != State.PLAYING or open_cards.size() >= 2:
@@ -136,6 +142,7 @@ func _input(event: InputEvent) -> void:
 	for card in cards:
 		if not card.is_open and not card.is_matched and card.contains(pos):
 			card.tap_open()
+			SesYoneticisi.efekt("kart_cevir", -2.0)
 			open_cards.append(card)
 			if open_cards.size() == 2:
 				state = State.CHECKING
@@ -356,6 +363,7 @@ func _start_level(index: int) -> void:
 		var cell := Vector2(k % cols, floori(float(k) / cols))
 		card.position = origin + cell * (card_size + Vector2(gap, gap)) + card_size / 2.0
 		card.deal(deal_from, k * 0.08)
+		_sound_later(my_run, k * 0.08, "kart_dagit", -4.0)
 		cards.append(card)
 
 	await get_tree().create_timer(deck.size() * 0.08 + 0.6).timeout
@@ -364,6 +372,7 @@ func _start_level(index: int) -> void:
 
 	if level["preview"]:
 		# Kartlar kısa süre açık gösterilir, sonra kapanır
+		SesYoneticisi.efekt("kart_cevir", -2.0)
 		for k in cards.size():
 			cards[k].flip(true)
 			await get_tree().create_timer(0.05).timeout
@@ -372,6 +381,7 @@ func _start_level(index: int) -> void:
 		await get_tree().create_timer(preview_time).timeout
 		if my_run != run_id:
 			return
+		SesYoneticisi.efekt("kart_cevir", -2.0)
 		for k in cards.size():
 			cards[k].flip(false)
 			await get_tree().create_timer(0.04).timeout
@@ -392,6 +402,7 @@ func _check_pair() -> void:
 		return
 
 	if first.item_id == second.item_id:
+		SesYoneticisi.efekt("ding_yumusak")
 		first.celebrate()
 		second.celebrate()
 		_burst_stars(first.global_position, first.card_size)
@@ -405,6 +416,8 @@ func _check_pair() -> void:
 		await get_tree().create_timer(maxf(mismatch_time - 0.55, 0.1)).timeout
 		if my_run != run_id:
 			return
+		SesYoneticisi.efekt("yumusak_hayir", -3.0)
+		_sound_later(my_run, 0.35, "kart_cevir", -4.0)  # sallandıktan sonra kapanır
 		first.shake_and_close()
 		second.shake_and_close()
 		await get_tree().create_timer(0.8).timeout
@@ -412,6 +425,13 @@ func _check_pair() -> void:
 			return
 		open_cards.clear()
 		state = State.PLAYING
+
+
+# Bölüm hâlâ aynıysa sesi biraz sonra çal
+func _sound_later(my_run: int, delay: float, sound: String, volume_db: float) -> void:
+	await get_tree().create_timer(delay).timeout
+	if my_run == run_id:
+		SesYoneticisi.efekt(sound, volume_db)
 
 
 func _level_complete(my_run: int) -> void:
@@ -426,6 +446,8 @@ func _level_complete(my_run: int) -> void:
 	for k in cards.size():
 		cards[k].hop(k * 0.04)
 	_show_cheer(WORDS.pick_random())
+	SesYoneticisi.ezgi("kutlama")
+	SesYoneticisi.efekt("konfeti", -4.0)
 	_spawn_confetti(90)
 	await get_tree().create_timer(celebration_time).timeout
 	if my_run != run_id:
