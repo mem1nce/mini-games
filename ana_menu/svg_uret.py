@@ -342,7 +342,39 @@ def balik_tutma():
     ]
 
 
+def kule_yapma():
+    # Kule Yapma: zemin kat + iki kat + çatı (pencerelerde hayvanlar), yanda halatta sallanan kat
+    g = "kule_yapma/gorseller/"
+
+    def kat(ad, ic, y, hayvan, pencereler, boy):
+        parcalar = [parca(g + "katlar/%s.svg" % ic, genislik[ad], (0, y))]
+        for px, py in pencereler:
+            parcalar.append(parca(g + "hayvanlar/%s.svg" % hayvan, boy, (px, y + py + (128 - 104) * boy / 256 + 4)))
+        parcalar.append(parca(g + "katlar/kat_%s.svg" % ad, genislik[ad], (0, y)))
+        return parcalar
+
+    genislik = {"zemin": 260, "pembe": 240, "balkon": 240, "cati": 270}
+    kule = []
+    kule += kat("zemin", "ic_zemin", -75, "tavsan", [(-76, -15), (76, -15)], 80)
+    kule += kat("balkon", "ic_kare", -210, "panda", [(-56, -4), (56, -4)], 82)
+    kule += kat("pembe", "ic_kare", -330, "penguen", [(-56, -4), (56, -4)], 82)
+    kule += kat("cati", "ic_cati", -465, "aslan", [(0, 21)], 66)
+    asili = [parca(g + "katlar/ic_kare.svg", 240, (0, 0)),
+             parca(g + "hayvanlar/zurafa.svg", 82, (-56, 4)), parca(g + "hayvanlar/zurafa.svg", 82, (56, 4)),
+             parca(g + "katlar/kat_tente.svg", 240, (0, 0))]
+    # Halatlar kancadan (kartın üst kenarının dışından) katın üst köşelerine
+    halat = ('<g stroke="#3A2E52" stroke-width="8" stroke-linecap="round"><line x1="0" y1="-320" x2="-86" y2="-58"/>'
+             '<line x1="0" y1="-320" x2="86" y2="-58"/></g>\n'
+             '<g stroke="#B8B0CC" stroke-width="3.4" stroke-linecap="round"><line x1="0" y1="-320" x2="-86" y2="-58"/>'
+             '<line x1="0" y1="-320" x2="86" y2="-58"/></g>\n')
+    return [
+        grup(kule, (-58, 148), 0.52),
+        grup([halat] + asili, (86, -22), 0.46, 0.2),
+    ]
+
+
 KARTLAR = {
+    "kule_yapma": kule_yapma,
     "balik_tutma": balik_tutma,
     "ucan_kus": ucan_kus, "dondurmaci": dondurmaci, "yol_yap": yol_yap, "hafiza": hafiza,
     "meyve_topla": meyve_topla, "golge_eslestirme": golge_eslestirme, "kostebek": kostebek,
