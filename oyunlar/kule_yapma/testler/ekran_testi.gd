@@ -32,13 +32,36 @@ func _initialize() -> void:
 	await shot("k03_mukemmel")
 	await frames(60)
 	await shot("k04_oturdu")
-	# Bilerek ıska: en uçtayken bırak
-	await bekle(func() -> bool: return game.vinc.hazir, 300)
-	await bekle(func() -> bool: return absf(game.vinc.asili.global_position.x - 360.0) > 95.0, 400)
-	tap(Vector2(360, 900))
+	# Aynı yana kaymış iki kat: kule eğilir
+	for i in 2:
+		await kaymis_birak(0.24, 0.29)
+		await bekle(func() -> bool: return game.vinc.hazir, 400)
+	await frames(30)
+	await shot("k05_egik_kule")
+	# Büyük sallanmayla devrilme
+	game.vinc.aci = 1.2
+	await kaymis_birak(-0.9, -0.62)
+	await frames(26)
+	await shot("k05b_devriliyor")
+	await frames(30)
+	await shot("k05c_kalp_gitti")
+	# Kalpler bitsin: eğim sınırı çok küçük
+	game.vinc.aci = game.level["aci"]
+	game.level = game.level.duplicate()
+	game.level["egim_siniri"] = 0.05
+	while game.durum == game.Durum.OYUN:
+		await kaymis_birak(0.24, 0.3)
+		await bekle(func() -> bool: return game.vinc.hazir or game.durum != game.Durum.OYUN, 400)
 	await frames(40)
-	await shot("k05_iska")
-	await frames(60)
+	await shot("k05d_yikilis")
+	await bekle(func() -> bool: return game._suzulenler.get_child_count() > 0, 400)
+	await frames(100)
+	await shot("k05e_suzulme")
+	await bekle(func() -> bool: return game.durum == game.Durum.SONUC, 600)
+	await frames(40)
+	await shot("k05f_sonuc")
+	tap(game._tekrar.get_global_rect().get_center())
+	await bekle(func() -> bool: return game.durum == game.Durum.OYUN and game.vinc.hazir, 400)
 	while game.durum == game.Durum.OYUN:
 		await tam_ortada_birak()
 		await frames(30)
@@ -85,6 +108,17 @@ func _initialize() -> void:
 	else:
 		DirAccess.remove_absolute(ProjectSettings.globalize_path(Kayit.PATH))
 	quit()
+
+
+# Kat, tepeye göre verilen kayma aralığındayken bırakılır
+func kaymis_birak(a: float, b: float) -> void:
+	await bekle(func() -> bool: return game.vinc.hazir, 300)
+	await bekle(func() -> bool:
+		if game.vinc.asili == null:
+			return false
+		var k: float = (game.vinc.asili.global_position.x - game.kule.tepe().x) / game.vinc.asili.genislik()
+		return k >= a and k <= b, 1200)
+	tap(Vector2(360, 900))
 
 
 # Kat tam ortadan geçerken bırakır, oturmasını bekler

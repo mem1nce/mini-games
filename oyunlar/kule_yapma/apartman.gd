@@ -65,7 +65,8 @@ func ac(apartman: Dictionary, ekran: Vector2) -> void:
 		var b: Node2D = Blok.new()
 		_dunya.add_child(b)
 		b.kur(katlar[i], hayvanlar[i] if i < hayvanlar.size() else "panda")
-		b.position = Vector2(ekran.x * 0.5, y - b.yukseklik() * 0.5)
+		var kayma: float = float(apartman["x"][i]) if apartman.has("x") and i < apartman["x"].size() else 0.0
+		b.position = Vector2(ekran.x * 0.5 + kayma, y - b.yukseklik() * 0.5)
 		b.hemen_goster()
 		y -= b.yukseklik()
 		_bloklar.append(b)

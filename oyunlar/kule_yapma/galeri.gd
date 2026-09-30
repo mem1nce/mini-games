@@ -97,7 +97,11 @@ func _mini_kule(apartman: Dictionary, r: Rect2) -> Node2D:
 	var toplam := 0.0
 	for k in katlar:
 		toplam += Blok.boyut(k).y
-	var olcek := minf((r.size.x - 20.0) / 270.0, (r.size.y - 30.0) / toplam)
+	var kaymalar: Array = apartman.get("x", [])
+	var genislik := 270.0
+	for x in kaymalar:
+		genislik = maxf(genislik, 270.0 + absf(float(x)) * 2.0)
+	var olcek := minf((r.size.x - 20.0) / genislik, (r.size.y - 30.0) / toplam)
 	kok.scale = Vector2.ONE * olcek
 	kok.position = Vector2(r.get_center().x, r.end.y - 14.0)
 	var y := 0.0
@@ -105,7 +109,7 @@ func _mini_kule(apartman: Dictionary, r: Rect2) -> Node2D:
 		var b: Node2D = Blok.new()
 		kok.add_child(b)
 		b.kur(katlar[i], hayvanlar[i] if i < hayvanlar.size() else "panda")
-		b.position = Vector2(0, y - b.yukseklik() * 0.5)
+		b.position = Vector2(float(kaymalar[i]) if i < kaymalar.size() else 0.0, y - b.yukseklik() * 0.5)
 		b.hemen_goster()
 		b.set_process(false)
 		y -= b.yukseklik()
