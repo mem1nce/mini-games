@@ -1,0 +1,13 @@
+# Balık Tutma
+
+4-8 yaş, **dikey** ekran, yazı yok (sadece kutlamada tek kelime), ceza yok. Kayıktaki penguen ağ kepçeyle (kanca yok) balık ve çöp toplar; görev baloncuğundaki resimleri (renk, desen, boyut, sayı, ışıklı balık, çöp) tamamlar. Çöp bölümlerinde su temizlendikçe berraklaşır. Yakalanan türler akvaryum koleksiyonuna girer. Tasarım, bölüm tablosu ve dosya listesi `TASARIM.md` içinde.
+
+- **Balık türleri `balik_turleri.gd` `TURLER`** (renk, desen, boyut, derinlik, hız, nadir, ışık) ve `eslesir()` (görev gereksinimi ↔ balık/çöp). Akvaryum sırası `SIRA`; temaya özel nadirler `NADIR_TEMA` (`NADIR_SANSI` ile ara sıra gelir). Yeni tür: önce `gorseller/svg_uret.py` `TURLER`'e ekleyip betiği çalıştır, sonra buraya satır ve `SIRA`'ya ad.
+- **Bölümler `bolumler.gd` `LEVELS`**: `tema` (gol/deniz/mercan/derin), `gorev` (gereksinim listesi; bir nesne ilk uyan dolmamış gereksinime sayılır, özel olanı öne yaz; toplam en fazla 6 simge), `havuz`, `balik_sayisi`, `cop`, `denizanasi`, `hiz`. `validate()` açılışta çalışır.
+- Karar yeri `balik_tutma.gd` `_teslim()`: görevdeyse balık kovaya (bölüm sonunda akvaryuma uçar), ilk kez yakalanan ilgisiz tür tanıtımla akvaryuma, bilinen ilgisiz tür yüzgecini sallayıp suya geri; çöp geri dönüşüm kutusuna ve su bir adım berraklaşır (`su.berraklik_ayarla`, `su_yuzeyi.bulaniklik_ayarla`, `uretici.ek_balik`). Denizanası ağa değerse ağ titrer, içindeki balık kaçar.
+- Olta `olta.gd`: ağ parmağı yumuşak takip eder; beklerken torba suyun üstünde kalır (`BEKLEME_ALTI`; suya değerse yüzeydeki balıkları kendiliğinden yakalar). Kayık `kayik.gd`: parmağa göre kayar, parmak öbür yana geçince penguen o yana döner.
+- Katmanlar: dünya (`su` → `uretici` → `olta` → `kayik` → `su_yuzeyi` → `efektler`; duraklatılabilir) → katman 5 arayüz (görev baloncuğu, kutlama, akvaryum simgesi, duraklat) → katman 10 akvaryum ekranı. Duraklatma ve akvaryum `get_tree().paused`; akış zamanlayıcıları `create_timer(..., false)` (duraklayınca beklesin).
+- Gölgelendiriciler (görev simgesi soluk hali, akvaryum silueti): Godot 4'te `fragment()` içinde `COLOR` doku rengiyle çarpılmış gelir; dokuyu bir daha çarpma.
+- Görseller `gorseller/svg_uret.py` (2x + mipmap; `huzme.svg` 1x). Penguen hafıza oyunundaki penguenden türetildi (oltalı, mutlu, şaşkın; sarı balıkçı şapkası). Sesler `sesler/ses_uret.py` (ortak `sentez.py`).
+- Testler: `testler/oyun_testi.gd` (headless, `--fixed-fps 60`; 16 bölümü dokunarak oynar), `testler/ekran_testi.gd` (pencereli, `--resolution 450x800 ... -- <klasör>`). İkisi de `user://balik_tutma.cfg`'yi yedekleyip geri yazar.
+- Kayıt `user://balik_tutma.cfg`: `[ilerleme] bolum` (bitirilen bölüm sayısı, 16'dan sonra baştan), `[akvaryum] <tür> = kaç kez`. Ana menü rozeti bolum+1.

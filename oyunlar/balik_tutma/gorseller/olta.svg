@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="36" viewBox="0 0 260 36">
+  <defs><linearGradient id="g1" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#F2D38A"/><stop offset="0.50" stop-color="#C9965A"/><stop offset="1.00" stop-color="#A0703A"/></linearGradient><linearGradient id="g2" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#6E7496"/><stop offset="1.00" stop-color="#3E3856"/></linearGradient><radialGradient id="g3" cx="0.35" cy="0.3" r="0.8"><stop offset="0.00" stop-color="#FFFFFF"/><stop offset="0.50" stop-color="#C9CFDC"/><stop offset="1.00" stop-color="#7E86A0"/></radialGradient></defs>
+  <path d="M6 12 L256 16 L256 20 L6 24 Z" fill="url(#g1)" stroke="#2E2A4F" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="67.0" y="11.0" width="6.0" height="14.0" rx="2.0" fill="#8A5A34" />
+  <rect x="137.0" y="11.0" width="6.0" height="14.0" rx="2.0" fill="#8A5A34" />
+  <rect x="197.0" y="11.0" width="6.0" height="14.0" rx="2.0" fill="#8A5A34" />
+  <rect x="2.0" y="8.0" width="50.0" height="20.0" rx="8.0" fill="url(#g2)" stroke="#2E2A4F" stroke-width="3" stroke-linejoin="round" />
+  <circle cx="40.0" cy="26.0" r="9.0" fill="url(#g3)" stroke="#2E2A4F" stroke-width="2.4" stroke-linejoin="round" />
+  <circle cx="254.0" cy="18.0" r="4.0" fill="#E8534A" stroke="#2E2A4F" stroke-width="1.6" stroke-linejoin="round" />
+</svg>

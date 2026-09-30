@@ -84,6 +84,9 @@ const OYUNLAR := [
 		"ilerleme": {"anahtar": "ilerleme/bolum", "ekle": 1}},
 	{"ad": "Boyama Kitabı", "klasor": "boyama_kitabi", "sahne": "res://oyunlar/boyama_kitabi/boyama_kitabi.tscn", "kart": "boyama_kitabi.svg",
 		"renk": "leylak", "kategori": "yaratici", "yon": "yatay", "yeni": true},
+	{"ad": "Balık Tutma", "klasor": "balik_tutma", "sahne": "res://oyunlar/balik_tutma/balik_tutma.tscn", "kart": "balik_tutma.svg",
+		"renk": "turkuaz", "kategori": "ogren", "yon": "dikey", "yeni": true,
+		"ilerleme": {"anahtar": "ilerleme/bolum", "ekle": 1}},
 ]
 
 

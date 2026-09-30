@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140">
+  <defs><radialGradient id="g1" cx="0.4" cy="0.35" r="0.8"><stop offset="0.00" stop-color="#FFF6C2"/><stop offset="0.50" stop-color="#FFD23F"/><stop offset="1.00" stop-color="#F5A800"/></radialGradient></defs>
+  <polyline points="114.0,70.0 132.0,70.0" fill="none" stroke="#FFD23F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+  <polyline points="108.1,92.0 123.7,101.0" fill="none" stroke="#FFD23F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+  <polyline points="92.0,108.1 101.0,123.7" fill="none" stroke="#FFD23F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+  <polyline points="70.0,114.0 70.0,132.0" fill="none" stroke="#FFD23F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+  <polyline points="48.0,108.1 39.0,123.7" fill="none" stroke="#FFD23F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+  <polyline points="31.9,92.0 16.3,101.0" fill="none" stroke="#FFD23F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+  <polyline points="26.0,70.0 8.0,70.0" fill="none" stroke="#FFD23F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+  <polyline points="31.9,48.0 16.3,39.0" fill="none" stroke="#FFD23F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+  <polyline points="48.0,31.9 39.0,16.3" fill="none" stroke="#FFD23F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+  <polyline points="70.0,26.0 70.0,8.0" fill="none" stroke="#FFD23F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+  <polyline points="92.0,31.9 101.0,16.3" fill="none" stroke="#FFD23F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+  <polyline points="108.1,48.0 123.7,39.0" fill="none" stroke="#FFD23F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="70.0" cy="70.0" r="36.0" fill="url(#g1)" stroke="#C98A00" stroke-width="4" stroke-linejoin="round" />
+  <ellipse cx="58.0" cy="56.0" rx="10.0" ry="5.0" transform="rotate(-35 58.0 56.0)" fill="#FFFFFF" opacity="0.6"/>
+</svg>

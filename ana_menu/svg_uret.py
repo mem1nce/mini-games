@@ -313,10 +313,36 @@ def boyama_kitabi():
         parca(g + "kart.svg", 300, (6, -4)),
         parca(g + "kova.svg", 92, (-104, 92), -0.15),
         parca(g + "kova_renk.svg", 92, (-104, 92), -0.15, renkler={"#FFFFFF": "#4AA3FF"}),
+
+
+def balik_tutma():
+    # Balık Tutma: dalgalı su üstünde kayıkta oltalı penguen; oltanın ucundaki ağda palyaço balığı, suda sıçrayan balık
+    g = "balik_tutma/gorseller/"
+    # Su: dalgalı üst kenar + alt yarım elips (çokgen; Godot'nun SVG çizicisi yatay teğetli eğride degradeyi kaybedebiliyor)
+    ust = [(x, 60 + 5 * math.sin(x / 14.0)) for x in range(-150, 151, 6)]
+    alt = [(150 * math.cos(math.radians(a)), 60 + 84 * math.sin(math.radians(a))) for a in range(0, 181, 6)]
+    dalga = " ".join("%.1f,%.1f" % p for p in ust)
+    su = ('<defs><linearGradient id="bt_su" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8FE3F0"/>'
+          '<stop offset="1" stop-color="#3A9FD8"/></linearGradient></defs>\n'
+          '<polygon points="%s" fill="url(#bt_su)" stroke="#2E6FA8" stroke-width="4" stroke-linejoin="round"/>\n'
+          '<polyline points="%s" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.85"/>\n'
+          % (" ".join("%.1f,%.1f" % p for p in ust + alt), dalga))
+    kabarcik = "".join('<circle cx="%d" cy="%d" r="%d" fill="#FFFFFF" fill-opacity="0.35" stroke="#FFFFFF" stroke-width="2"/>' % c
+                       for c in ((-100, 104, 7), (-84, 124, 5), (40, 118, 6)))
+    return [
+        su,
+        parca(g + "baliklar/kirmizi_top.svg", 74, (74, 104), -0.35),
+        kabarcik + "\n",
+        parca(g + "olta.svg", 150, (-11, -3), -0.5, merkez=(10, 18)),
+        parca(g + "penguen_olta.svg", 150, (-68, -30)),
+        parca(g + "kayik_on.svg", 230, (-52, 44)),
+        parca(g + "ag.svg", 72, (121, -14)),
+        parca(g + "baliklar/palyaco.svg", 56, (121, 2), 0.2),
     ]
 
 
 KARTLAR = {
+    "balik_tutma": balik_tutma,
     "ucan_kus": ucan_kus, "dondurmaci": dondurmaci, "yol_yap": yol_yap, "hafiza": hafiza,
     "meyve_topla": meyve_topla, "golge_eslestirme": golge_eslestirme, "kostebek": kostebek,
     "toplama": toplama, "cikarma": cikarma, "araba_yarisi": araba_yarisi, "zipla_zipla": zipla_zipla,
