@@ -1,0 +1,7 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://oyunlar/tren_rayi/tren_rayi.gd" id="1_oyun"]
+
+[node name="TrenRayi" type="Node2D"]
+texture_filter = 4
+script = ExtResource("1_oyun")

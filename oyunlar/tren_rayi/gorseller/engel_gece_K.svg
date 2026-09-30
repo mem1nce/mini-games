@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs><radialGradient id="g1" cx="0.5" cy="0.5" r="0.5"><stop offset="0.00" stop-color="#2A1F3A" stop-opacity="0.28"/><stop offset="1.00" stop-color="#2A1F3A" stop-opacity="0"/></radialGradient><linearGradient id="g2" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#FF9A8A"/><stop offset="1.00" stop-color="#E0584E"/></linearGradient><linearGradient id="g3" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#C9453E"/><stop offset="1.00" stop-color="#A8322E"/></linearGradient></defs>
+  <ellipse cx="70.0" cy="74.0" rx="50.0" ry="42.0" fill="url(#g1)"/>
+  <polygon points="18.0,26.0 110.0,26.0 110.0,64.0 18.0,64.0" fill="url(#g2)" stroke="#4A3B5C" stroke-width="3" stroke-linejoin="round" />
+  <polygon points="18.0,64.0 110.0,64.0 110.0,102.0 18.0,102.0" fill="url(#g3)" stroke="#4A3B5C" stroke-width="3" stroke-linejoin="round" />
+  <line x1="28" y1="28" x2="28" y2="62" stroke="#FFFFFF" stroke-width="1.6" opacity="0.3"/>
+  <line x1="42" y1="28" x2="42" y2="62" stroke="#FFFFFF" stroke-width="1.6" opacity="0.3"/>
+  <line x1="56" y1="28" x2="56" y2="62" stroke="#FFFFFF" stroke-width="1.6" opacity="0.3"/>
+  <line x1="70" y1="28" x2="70" y2="62" stroke="#FFFFFF" stroke-width="1.6" opacity="0.3"/>
+  <line x1="84" y1="28" x2="84" y2="62" stroke="#FFFFFF" stroke-width="1.6" opacity="0.3"/>
+  <line x1="98" y1="28" x2="98" y2="62" stroke="#FFFFFF" stroke-width="1.6" opacity="0.3"/>
+  <rect x="80.0" y="36.0" width="16.0" height="18.0" rx="3.0" fill="#8C8FA8" stroke="#4A3B5C" stroke-width="2" stroke-linejoin="round" />
+  <rect x="34.0" y="72.0" width="20.0" height="16.0" rx="4.0" fill="#FFE27A" stroke="#4A3B5C" stroke-width="2" stroke-linejoin="round" opacity="0.95"/>
+  <circle cx="44.0" cy="80.0" r="16.0" fill="#FFE27A" opacity="0.25"/>
+</svg>

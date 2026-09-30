@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs><radialGradient id="g1" cx="0.5" cy="0.5" r="0.5"><stop offset="0.00" stop-color="#2A1F3A" stop-opacity="0.2"/><stop offset="1.00" stop-color="#2A1F3A" stop-opacity="0"/></radialGradient><radialGradient id="g2" cx="0.4" cy="0.35" r="0.8"><stop offset="0.00" stop-color="#A8E6D8"/><stop offset="0.50" stop-color="#4AA89A"/><stop offset="1.00" stop-color="#2A7A70"/></radialGradient></defs>
+  <ellipse cx="67.0" cy="70.0" rx="48.0" ry="38.0" fill="url(#g1)"/>
+  <ellipse cx="64.0" cy="64.0" rx="47.0" ry="37.0" fill="#8C7A5A" stroke="#4A3B5C" stroke-width="3" stroke-linejoin="round" />
+  <ellipse cx="64.0" cy="64.0" rx="42.0" ry="32.0" fill="url(#g2)" />
+  <path d="M43.0 56.0 q7.6 -3.8 15.1 0" stroke="#FFFFFF" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.7"/>
+  <path d="M66.1 75.2 q6.3 -3.2 12.6 0" stroke="#FFFFFF" stroke-width="2.4" fill="none" stroke-linecap="round" opacity="0.5"/>
+  <ellipse cx="30.0" cy="44.0" rx="3.0" ry="8.0" fill="#8A5A34" stroke="#4A3B5C" stroke-width="1.4" stroke-linejoin="round" />
+  <ellipse cx="36.0" cy="40.0" rx="3.0" ry="8.0" fill="#8A5A34" stroke="#4A3B5C" stroke-width="1.4" stroke-linejoin="round" />
+  <ellipse cx="94.0" cy="86.0" rx="3.0" ry="8.0" fill="#8A5A34" stroke="#4A3B5C" stroke-width="1.4" stroke-linejoin="round" />
+  <ellipse cx="100.0" cy="82.0" rx="3.0" ry="8.0" fill="#8A5A34" stroke="#4A3B5C" stroke-width="1.4" stroke-linejoin="round" />
+</svg>

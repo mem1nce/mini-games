@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs><radialGradient id="g1" cx="0.5" cy="0.5" r="0.5"><stop offset="0.00" stop-color="#2A1F3A" stop-opacity="0.2"/><stop offset="1.00" stop-color="#2A1F3A" stop-opacity="0"/></radialGradient><radialGradient id="g2" cx="0.4" cy="0.35" r="0.8"><stop offset="0.00" stop-color="#FFFFFF"/><stop offset="0.50" stop-color="#C8E8FF"/><stop offset="1.00" stop-color="#8CC4EE"/></radialGradient></defs>
+  <ellipse cx="67.0" cy="70.0" rx="50.0" ry="40.0" fill="url(#g1)"/>
+  <ellipse cx="64.0" cy="64.0" rx="49.0" ry="39.0" fill="#FFFFFF" stroke="#4A3B5C" stroke-width="3" stroke-linejoin="round" />
+  <ellipse cx="64.0" cy="64.0" rx="44.0" ry="34.0" fill="url(#g2)" />
+  <path d="M42.0 55.5 q7.9 -4.1 15.8 0" stroke="#FFFFFF" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.7"/>
+  <path d="M66.2 75.9 q6.6 -3.4 13.2 0" stroke="#FFFFFF" stroke-width="2.4" fill="none" stroke-linecap="round" opacity="0.5"/>
+  <line x1="40" y1="58" x2="58" y2="70" stroke="#FFFFFF" stroke-width="2" opacity="0.75"/>
+  <line x1="58" y1="70" x2="72" y2="62" stroke="#FFFFFF" stroke-width="2" opacity="0.75"/>
+  <line x1="72" y1="62" x2="90" y2="72" stroke="#FFFFFF" stroke-width="2" opacity="0.75"/>
+</svg>

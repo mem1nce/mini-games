@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="110" viewBox="0 0 160 110">
+  <defs><radialGradient id="g1" cx="0.5" cy="0.5" r="0.5"><stop offset="0.00" stop-color="#2A1F3A" stop-opacity="0.25"/><stop offset="1.00" stop-color="#2A1F3A" stop-opacity="0"/></radialGradient><linearGradient id="g2" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#5C5474"/><stop offset="1.00" stop-color="#2E2842"/></linearGradient><linearGradient id="g3" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#5C5474"/><stop offset="1.00" stop-color="#2E2842"/></linearGradient><linearGradient id="g4" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#5C5474"/><stop offset="1.00" stop-color="#2E2842"/></linearGradient><linearGradient id="g5" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#5C5474"/><stop offset="1.00" stop-color="#2E2842"/></linearGradient><linearGradient id="g6" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#D08E0A"/><stop offset="0.25" stop-color="#FFC93D"/><stop offset="0.50" stop-color="#FFF1A6"/><stop offset="0.75" stop-color="#FFC93D"/><stop offset="1.00" stop-color="#D08E0A"/></linearGradient><linearGradient id="g7" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#8BC96A"/><stop offset="1.00" stop-color="#5E9E48"/></linearGradient></defs>
+  <ellipse cx="84.0" cy="62.0" rx="78.0" ry="48.0" fill="url(#g1)"/>
+  <rect x="0.0" y="49.0" width="10.0" height="12.0" rx="3.0" fill="#6E6888" stroke="#4A3B5C" stroke-width="2" stroke-linejoin="round" />
+  <rect x="150.0" y="49.0" width="10.0" height="12.0" rx="3.0" fill="#6E6888" stroke="#4A3B5C" stroke-width="2" stroke-linejoin="round" />
+  <rect x="31.0" y="6.0" width="26.0" height="12.0" rx="5.0" fill="url(#g2)" stroke="#4A3B5C" stroke-width="2.2" stroke-linejoin="round" />
+  <rect x="31.0" y="92.0" width="26.0" height="12.0" rx="5.0" fill="url(#g3)" stroke="#4A3B5C" stroke-width="2.2" stroke-linejoin="round" />
+  <rect x="103.0" y="6.0" width="26.0" height="12.0" rx="5.0" fill="url(#g4)" stroke="#4A3B5C" stroke-width="2.2" stroke-linejoin="round" />
+  <rect x="103.0" y="92.0" width="26.0" height="12.0" rx="5.0" fill="url(#g5)" stroke="#4A3B5C" stroke-width="2.2" stroke-linejoin="round" />
+  <rect x="8.0" y="14.0" width="144.0" height="82.0" rx="16.0" fill="url(#g6)" stroke="#4A3B5C" stroke-width="3" stroke-linejoin="round" />
+  <rect x="18.0" y="24.0" width="124.0" height="62.0" rx="10.0" fill="url(#g7)" stroke="#4A3B5C" stroke-width="2" stroke-linejoin="round" />
+  <circle cx="38.6" cy="43.9" r="5.0" fill="#FFFFFF" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="34.7" cy="46.0" r="5.0" fill="#FFFFFF" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="28.8" cy="43.0" r="5.0" fill="#FFFFFF" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="30.8" cy="34.9" r="5.0" fill="#FFFFFF" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="37.3" cy="35.0" r="5.0" fill="#FFFFFF" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="34.0" cy="40.0" r="3.6" fill="#FFB020" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="67.5" cy="68.3" r="5.0" fill="#FF7FA8" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="63.2" cy="71.9" r="5.0" fill="#FF7FA8" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="57.1" cy="69.5" r="5.0" fill="#FF7FA8" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="61.6" cy="60.0" r="5.0" fill="#FF7FA8" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="64.9" cy="60.8" r="5.0" fill="#FF7FA8" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="62.0" cy="66.0" r="3.6" fill="#FFB020" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="94.0" cy="38.6" r="5.0" fill="#FF9A5A" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="89.3" cy="43.8" r="5.0" fill="#FF9A5A" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="82.1" cy="38.9" r="5.0" fill="#FF9A5A" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="83.1" cy="34.5" r="5.0" fill="#FF9A5A" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="92.1" cy="33.6" r="5.0" fill="#FF9A5A" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="88.0" cy="38.0" r="3.6" fill="#FFB020" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="119.5" cy="68.9" r="5.0" fill="#FF7FA8" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="112.1" cy="68.5" r="5.0" fill="#FF7FA8" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="110.3" cy="62.2" r="5.0" fill="#FF7FA8" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="112.9" cy="58.9" r="5.0" fill="#FF7FA8" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="121.6" cy="61.8" r="5.0" fill="#FF7FA8" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="116.0" cy="64.0" r="3.6" fill="#FFB020" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="46.0" cy="72.0" r="5.0" fill="#FFFFFF" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="39.4" cy="78.0" r="5.0" fill="#FFFFFF" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="34.0" cy="72.6" r="5.0" fill="#FFFFFF" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="38.8" cy="66.1" r="5.0" fill="#FFFFFF" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="45.0" cy="68.7" r="5.0" fill="#FFFFFF" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="40.0" cy="72.0" r="3.6" fill="#FFB020" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="123.1" cy="39.1" r="5.0" fill="#FF7FA8" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="114.5" cy="40.9" r="5.0" fill="#FF7FA8" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="112.9" cy="39.2" r="5.0" fill="#FF7FA8" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="113.8" cy="31.8" r="5.0" fill="#FF7FA8" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="119.9" cy="30.3" r="5.0" fill="#FF7FA8" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="118.0" cy="36.0" r="3.6" fill="#FFB020" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="84.5" cy="60.0" r="5.0" fill="#FFE066" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="78.3" cy="61.8" r="5.0" fill="#FFE066" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="74.0" cy="56.3" r="5.0" fill="#FFE066" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="78.8" cy="50.1" r="5.0" fill="#FFE066" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="84.5" cy="52.1" r="5.0" fill="#FFE066" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <circle cx="80.0" cy="56.0" r="3.6" fill="#FFB020" stroke="#4A3B5C" stroke-width="1.2" stroke-linejoin="round" />
+  <ellipse cx="40.0" cy="26.0" rx="26.0" ry="4.0" transform="rotate(0 40.0 26.0)" fill="#FFFFFF" opacity="0.4"/>
+</svg>

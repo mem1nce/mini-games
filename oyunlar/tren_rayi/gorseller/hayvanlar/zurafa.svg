@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <radialGradient id="ten" cx="0.4" cy="0.3" r="0.75">
+      <stop offset="0" stop-color="#FFF1BC"/>
+      <stop offset="0.55" stop-color="#FFD466"/>
+      <stop offset="1" stop-color="#EFAA38"/>
+    </radialGradient>
+    <radialGradient id="burun" cx="0.5" cy="0.35" r="0.7">
+      <stop offset="0" stop-color="#FFF8E2"/>
+      <stop offset="1" stop-color="#F7DCA2"/>
+    </radialGradient>
+    <radialGradient id="boynuz" cx="0.4" cy="0.3" r="0.75">
+      <stop offset="0" stop-color="#E7A060"/>
+      <stop offset="1" stop-color="#95521E"/>
+    </radialGradient>
+    <radialGradient id="leke" cx="0.4" cy="0.35" r="0.7">
+      <stop offset="0" stop-color="#F2A452"/>
+      <stop offset="1" stop-color="#D47A2C"/>
+    </radialGradient>
+    <radialGradient id="goz" cx="0.4" cy="0.35" r="0.7">
+      <stop offset="0" stop-color="#6A5A96"/>
+      <stop offset="0.55" stop-color="#2A1F45"/>
+      <stop offset="1" stop-color="#150F26"/>
+    </radialGradient>
+    <radialGradient id="yanak" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FF7FA3" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#FF7FA3" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="golge" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#3A2A4A" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#3A2A4A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <ellipse cx="128" cy="246" rx="76" ry="10" fill="url(#golge)"/>
+  <!-- Bacaklar, gövde ve boyun -->
+  <rect x="96" y="210" width="24" height="32" rx="10" fill="url(#ten)" stroke="#8A5A12" stroke-width="6"/>
+  <rect x="136" y="210" width="24" height="32" rx="10" fill="url(#ten)" stroke="#8A5A12" stroke-width="6"/>
+  <path d="M96 234 H120 V238 Q120 244 114 244 H102 Q96 244 96 238 Z M136 234 H160 V238 Q160 244 154 244 H142 Q136 244 136 238 Z" fill="#8A5A2A"/>
+  <ellipse cx="128" cy="210" rx="52" ry="28" fill="url(#ten)" stroke="#8A5A12" stroke-width="7"/>
+  <path d="M106 150 L106 206 Q128 214 150 206 L150 150 Z" fill="url(#ten)" stroke="#8A5A12" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M106 196 Q128 204 150 196 L150 214 Q128 222 106 214 Z" fill="url(#ten)"/>
+  <path d="M114 160 Q110 180 114 198" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity="0.45"/>
+  <circle cx="120" cy="186" r="7" fill="url(#leke)"/>
+  <circle cx="140" cy="168" r="5" fill="url(#leke)"/>
+  <circle cx="92" cy="206" r="7" fill="url(#leke)"/>
+  <circle cx="164" cy="212" r="8" fill="url(#leke)"/>
+  <circle cx="128" cy="222" r="5" fill="url(#leke)"/>
+  <!-- Boynuzlar -->
+  <rect x="92" y="34" width="14" height="40" rx="7" fill="url(#ten)" stroke="#8A5A12" stroke-width="6"/>
+  <rect x="150" y="34" width="14" height="40" rx="7" fill="url(#ten)" stroke="#8A5A12" stroke-width="6"/>
+  <circle cx="99" cy="32" r="12" fill="url(#boynuz)" stroke="#8A5A12" stroke-width="6"/>
+  <circle cx="157" cy="32" r="12" fill="url(#boynuz)" stroke="#8A5A12" stroke-width="6"/>
+  <circle cx="95" cy="28" r="3.5" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="153" cy="28" r="3.5" fill="#FFFFFF" opacity="0.6"/>
+  <!-- Kulaklar -->
+  <ellipse cx="56" cy="88" rx="28" ry="13" transform="rotate(-25 56 88)" fill="url(#ten)" stroke="#8A5A12" stroke-width="6"/>
+  <ellipse cx="58" cy="88" rx="16" ry="6" transform="rotate(-25 58 88)" fill="#F7B3B3"/>
+  <ellipse cx="200" cy="88" rx="28" ry="13" transform="rotate(25 200 88)" fill="url(#ten)" stroke="#8A5A12" stroke-width="6"/>
+  <ellipse cx="198" cy="88" rx="16" ry="6" transform="rotate(25 198 88)" fill="#F7B3B3"/>
+  <!-- Kafa ve burun (tek dış hat) -->
+  <g stroke="#8A5A12" stroke-width="14">
+    <ellipse cx="128" cy="106" rx="60" ry="54" fill="url(#ten)"/>
+    <ellipse cx="128" cy="148" rx="48" ry="32" fill="url(#burun)"/>
+  </g>
+  <ellipse cx="128" cy="106" rx="60" ry="54" fill="url(#ten)"/>
+  <ellipse cx="128" cy="148" rx="48" ry="32" fill="url(#burun)"/>
+  <!-- Lekeler -->
+  <circle cx="84" cy="88" r="11" fill="url(#leke)"/>
+  <circle cx="174" cy="82" r="8" fill="url(#leke)"/>
+  <circle cx="128" cy="64" r="7" fill="url(#leke)"/>
+  <circle cx="178" cy="112" r="5" fill="url(#leke)"/>
+  <path d="M116 56 Q121 42 128 54 Q134 42 140 56" fill="url(#leke)" stroke="#8A5A12" stroke-width="4" stroke-linejoin="round"/>
+  <ellipse cx="102" cy="72" rx="18" ry="8" transform="rotate(-20 102 72)" fill="#FFFFFF" opacity="0.5"/>
+  <!-- Gözler -->
+  <ellipse cx="101" cy="104" rx="15" ry="18" fill="url(#goz)"/>
+  <ellipse cx="155" cy="104" rx="15" ry="18" fill="url(#goz)"/>
+  <ellipse cx="96" cy="96" rx="6" ry="7" fill="#FFFFFF"/>
+  <ellipse cx="150" cy="96" rx="6" ry="7" fill="#FFFFFF"/>
+  <circle cx="106" cy="111" r="3" fill="#FFFFFF" opacity="0.85"/>
+  <circle cx="160" cy="111" r="3" fill="#FFFFFF" opacity="0.85"/>
+  <!-- Yanaklar -->
+  <ellipse cx="78" cy="128" rx="16" ry="10" fill="url(#yanak)"/>
+  <ellipse cx="178" cy="128" rx="16" ry="10" fill="url(#yanak)"/>
+  <!-- Burun delikleri ve ağız -->
+  <ellipse cx="113" cy="142" rx="5" ry="4" fill="#8A5A12"/>
+  <ellipse cx="143" cy="142" rx="5" ry="4" fill="#8A5A12"/>
+  <path d="M112 156 Q128 168 144 156" fill="none" stroke="#8A5A12" stroke-width="4" stroke-linecap="round"/>
+</svg>

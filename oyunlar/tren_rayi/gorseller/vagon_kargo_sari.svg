@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="110" viewBox="0 0 160 110">
+  <defs><radialGradient id="g1" cx="0.5" cy="0.5" r="0.5"><stop offset="0.00" stop-color="#2A1F3A" stop-opacity="0.25"/><stop offset="1.00" stop-color="#2A1F3A" stop-opacity="0"/></radialGradient><linearGradient id="g2" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#5C5474"/><stop offset="1.00" stop-color="#2E2842"/></linearGradient><linearGradient id="g3" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#5C5474"/><stop offset="1.00" stop-color="#2E2842"/></linearGradient><linearGradient id="g4" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#5C5474"/><stop offset="1.00" stop-color="#2E2842"/></linearGradient><linearGradient id="g5" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#5C5474"/><stop offset="1.00" stop-color="#2E2842"/></linearGradient><linearGradient id="g6" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#D08E0A"/><stop offset="0.25" stop-color="#FFC93D"/><stop offset="0.50" stop-color="#FFF1A6"/><stop offset="0.75" stop-color="#FFC93D"/><stop offset="1.00" stop-color="#D08E0A"/></linearGradient><linearGradient id="g7" x1="0.0" y1="0.0" x2="0.0" y2="1.0"><stop offset="0.00" stop-color="#FFF1A6"/><stop offset="1.00" stop-color="#FFC93D"/></linearGradient></defs>
+  <ellipse cx="84.0" cy="62.0" rx="78.0" ry="48.0" fill="url(#g1)"/>
+  <rect x="0.0" y="49.0" width="10.0" height="12.0" rx="3.0" fill="#6E6888" stroke="#4A3B5C" stroke-width="2" stroke-linejoin="round" />
+  <rect x="150.0" y="49.0" width="10.0" height="12.0" rx="3.0" fill="#6E6888" stroke="#4A3B5C" stroke-width="2" stroke-linejoin="round" />
+  <rect x="31.0" y="6.0" width="26.0" height="12.0" rx="5.0" fill="url(#g2)" stroke="#4A3B5C" stroke-width="2.2" stroke-linejoin="round" />
+  <rect x="31.0" y="92.0" width="26.0" height="12.0" rx="5.0" fill="url(#g3)" stroke="#4A3B5C" stroke-width="2.2" stroke-linejoin="round" />
+  <rect x="103.0" y="6.0" width="26.0" height="12.0" rx="5.0" fill="url(#g4)" stroke="#4A3B5C" stroke-width="2.2" stroke-linejoin="round" />
+  <rect x="103.0" y="92.0" width="26.0" height="12.0" rx="5.0" fill="url(#g5)" stroke="#4A3B5C" stroke-width="2.2" stroke-linejoin="round" />
+  <rect x="8.0" y="14.0" width="144.0" height="82.0" rx="12.0" fill="url(#g6)" stroke="#4A3B5C" stroke-width="3" stroke-linejoin="round" />
+  <line x1="22" y1="18" x2="22" y2="92" stroke="#D08E0A" stroke-width="2" opacity="0.45"/>
+  <line x1="34" y1="18" x2="34" y2="92" stroke="#D08E0A" stroke-width="2" opacity="0.45"/>
+  <line x1="46" y1="18" x2="46" y2="92" stroke="#D08E0A" stroke-width="2" opacity="0.45"/>
+  <line x1="58" y1="18" x2="58" y2="92" stroke="#D08E0A" stroke-width="2" opacity="0.45"/>
+  <line x1="70" y1="18" x2="70" y2="92" stroke="#D08E0A" stroke-width="2" opacity="0.45"/>
+  <line x1="82" y1="18" x2="82" y2="92" stroke="#D08E0A" stroke-width="2" opacity="0.45"/>
+  <line x1="94" y1="18" x2="94" y2="92" stroke="#D08E0A" stroke-width="2" opacity="0.45"/>
+  <line x1="106" y1="18" x2="106" y2="92" stroke="#D08E0A" stroke-width="2" opacity="0.45"/>
+  <line x1="118" y1="18" x2="118" y2="92" stroke="#D08E0A" stroke-width="2" opacity="0.45"/>
+  <line x1="130" y1="18" x2="130" y2="92" stroke="#D08E0A" stroke-width="2" opacity="0.45"/>
+  <line x1="142" y1="18" x2="142" y2="92" stroke="#D08E0A" stroke-width="2" opacity="0.45"/>
+  <rect x="62.0" y="38.0" width="36.0" height="34.0" rx="6.0" fill="url(#g7)" stroke="#4A3B5C" stroke-width="2.4" stroke-linejoin="round" />
+  <line x1="80" y1="40" x2="80" y2="70" stroke="#D08E0A" stroke-width="2"/>
+  <ellipse cx="40.0" cy="26.0" rx="26.0" ry="4.0" transform="rotate(0 40.0 26.0)" fill="#FFFFFF" opacity="0.4"/>
+</svg>

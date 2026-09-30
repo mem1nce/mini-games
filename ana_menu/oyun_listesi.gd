@@ -76,6 +76,9 @@ const OYUNLAR := [
 	{"ad": "Robot Fabrikası", "klasor": "robot_fabrikasi", "sahne": "res://oyunlar/robot_fabrikasi/robot_fabrikasi.tscn", "kart": "robot_fabrikasi.svg",
 		"renk": "limon", "kategori": "ogren", "yon": "yatay", "yeni": true,
 		"ilerleme": {"anahtar": "ilerleme/bolum", "ekle": 1}},
+	{"ad": "Tren Rayı", "klasor": "tren_rayi", "sahne": "res://oyunlar/tren_rayi/tren_rayi.tscn", "kart": "tren_rayi.svg",
+		"renk": "gok", "kategori": "bulmaca", "yon": "yatay", "yeni": true,
+		"ilerleme": {"anahtar": "ilerleme/bolum", "ekle": 1}},
 ]
 
 
