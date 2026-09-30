@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <radialGradient id="kirmizi" cx="0.4" cy="0.3" r="0.75"><stop offset="0" stop-color="#FFA3A3"/><stop offset="0.6" stop-color="#FF5B5B"/><stop offset="1" stop-color="#D93A4A"/></radialGradient>
+  </defs>
+  <circle cx="64" cy="64" r="54" fill="url(#kirmizi)" stroke="#3B2F6B" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M42 42 L86 86 M86 42 L42 86" fill="none" stroke="#FFFFFF" stroke-width="15" stroke-linecap="round"/>
+  <ellipse cx="40" cy="34" rx="12" ry="6" transform="rotate(-30 40 34)" fill="#FFFFFF" opacity="0.8"/>
+</svg>

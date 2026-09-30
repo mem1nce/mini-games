@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="768" viewBox="0 0 1024 768">
+  <defs>
+    <mask id="m1" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><polygon points="480,380 570,252 648,252 620,380"/></g></mask>
+    <mask id="m2" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><path d="M160 420 Q160 360 260 355 L790 350 Q900 355 912 420 Q900 482 790 486 L260 486 Q160 480 160 420 Z"/></g></mask>
+    <mask id="m3" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><path d="M160 420 Q160 360 260 355 L790 350 Q900 355 912 420 Q900 482 790 486 L260 486 Q160 480 160 420 Z"/><circle cx="480" cy="414" r="27"/><circle cx="570" cy="414" r="27"/><circle cx="660" cy="414" r="27"/></g></mask>
+    <mask id="m4" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><ellipse cx="930" cy="478" rx="18" ry="58"/><path d="M160 420 Q160 360 260 355 L790 350 Q900 355 912 420 Q900 482 790 486 L260 486 Q160 480 160 420 Z"/><circle cx="916" cy="420" r="24"/></g></mask>
+    <mask id="m5" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><path d="M160 420 Q160 360 260 355 L790 350 Q900 355 912 420 Q900 482 790 486 L260 486 Q160 480 160 420 Z"/><circle cx="916" cy="420" r="24"/></g></mask>
+    <mask id="m6" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><path d="M790 364 Q862 366 890 404 L790 404 Z"/><circle cx="390" cy="414" r="27"/><circle cx="480" cy="414" r="27"/><circle cx="570" cy="414" r="27"/><circle cx="660" cy="414" r="27"/><ellipse cx="226" cy="452" rx="76" ry="26" transform="rotate(-8 226 452)"/><polygon points="470,452 620,452 530,616 452,616"/><circle cx="916" cy="420" r="24"/></g></mask>
+    <mask id="m7" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><circle cx="916" cy="420" r="24"/></g></mask>
+    <mask id="m9" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><polygon points="470,452 620,452 530,616 452,616"/></g></mask>
+    <mask id="m10" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><polygon points="470,452 620,452 530,616 452,616"/></g></mask>
+  </defs>
+  <g id="bolgeler" fill="#F6F2FB">
+    <path id="bulut_1" d="M360 610 A29.3 29.3 0 0 1 331.4 647.6 A46.5 46.5 0 0 1 256.4 648 L163.6 648 A46.5 46.5 0 0 1 88.6 647.6 A29.3 29.3 0 0 1 60 610 A29.3 29.3 0 0 1 88.6 572.4 A48.7 48.7 0 0 1 163.6 549.1 A57.5 57.5 0 0 1 256.4 549.1 A48.7 48.7 0 0 1 331.4 572.4 A29.3 29.3 0 0 1 360 610 Z"/>
+    <path id="bulut_2" d="M950 160 A26.5 26.5 0 0 1 919.6 190 L842.6 190 L755 190 A36.1 36.1 0 0 1 697.8 179.2 A23.7 23.7 0 0 1 697.8 140.8 A39.8 39.8 0 0 1 755 111.5 A54.5 54.5 0 0 1 842.6 104.9 A49.2 49.2 0 0 1 919.6 124 A29.2 29.2 0 0 1 950 160 Z"/>
+    <polygon id="kuyruk" points="170,382 116,196 232,214 310,382"/>
+    <polygon id="uzak_kanat" points="480,380 570,252 648,252 620,380"/>
+    <ellipse id="pervane_ust" cx="930" cy="362" rx="18" ry="58"/>
+    <ellipse id="pervane_alt" cx="930" cy="478" rx="18" ry="58"/>
+    <path id="govde" d="M160 420 Q160 360 260 355 L790 350 Q900 355 912 420 Q900 482 790 486 L260 486 Q160 480 160 420 Z"/>
+    <path id="kokpit" d="M790 364 Q862 366 890 404 L790 404 Z"/>
+    <circle id="pencere_1" cx="390" cy="414" r="27"/>
+    <circle id="pencere_2" cx="480" cy="414" r="27"/>
+    <circle id="pencere_3" cx="570" cy="414" r="27"/>
+    <circle id="pencere_4" cx="660" cy="414" r="27"/>
+    <ellipse id="kuyruk_kanadi" cx="226" cy="452" rx="76" ry="26" transform="rotate(-8 226 452)"/>
+    <polygon id="kanat" points="470,452 620,452 530,616 452,616"/>
+    <circle id="pervane_gobegi" cx="916" cy="420" r="24"/>
+  </g>
+  <g id="cizgiler" fill="none" stroke="#3B2F6B" stroke-width="12" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M360 610 A29.3 29.3 0 0 1 331.4 647.6 A46.5 46.5 0 0 1 256.4 648 L163.6 648 A46.5 46.5 0 0 1 88.6 647.6 A29.3 29.3 0 0 1 60 610 A29.3 29.3 0 0 1 88.6 572.4 A48.7 48.7 0 0 1 163.6 549.1 A57.5 57.5 0 0 1 256.4 549.1 A48.7 48.7 0 0 1 331.4 572.4 A29.3 29.3 0 0 1 360 610 Z"/>
+    <g mask="url(#m1)"><path d="M950 160 A26.5 26.5 0 0 1 919.6 190 L842.6 190 L755 190 A36.1 36.1 0 0 1 697.8 179.2 A23.7 23.7 0 0 1 697.8 140.8 A39.8 39.8 0 0 1 755 111.5 A54.5 54.5 0 0 1 842.6 104.9 A49.2 49.2 0 0 1 919.6 124 A29.2 29.2 0 0 1 950 160 Z"/></g>
+    <g mask="url(#m2)"><polygon points="170,382 116,196 232,214 310,382"/></g>
+    <g mask="url(#m3)"><polygon points="480,380 570,252 648,252 620,380"/></g>
+    <g mask="url(#m4)"><ellipse cx="930" cy="362" rx="18" ry="58"/></g>
+    <g mask="url(#m5)"><ellipse cx="930" cy="478" rx="18" ry="58"/></g>
+    <g mask="url(#m6)"><path d="M160 420 Q160 360 260 355 L790 350 Q900 355 912 420 Q900 482 790 486 L260 486 Q160 480 160 420 Z"/></g>
+    <g mask="url(#m7)"><path d="M790 364 Q862 366 890 404 L790 404 Z"/></g>
+    <circle cx="390" cy="414" r="27"/>
+    <g mask="url(#m9)"><circle cx="480" cy="414" r="27"/></g>
+    <g mask="url(#m10)"><circle cx="570" cy="414" r="27"/></g>
+    <circle cx="660" cy="414" r="27"/>
+    <ellipse cx="226" cy="452" rx="76" ry="26" transform="rotate(-8 226 452)"/>
+    <polygon points="470,452 620,452 530,616 452,616"/>
+    <circle cx="916" cy="420" r="24"/>
+  </g>
+</svg>

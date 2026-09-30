@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <radialGradient id="yesil" cx="0.4" cy="0.3" r="0.75"><stop offset="0" stop-color="#A8F08A"/><stop offset="0.6" stop-color="#5BCB4C"/><stop offset="1" stop-color="#36A03A"/></radialGradient>
+  </defs>
+  <circle cx="64" cy="64" r="54" fill="url(#yesil)" stroke="#3B2F6B" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M36 66 L56 86 L94 44" fill="none" stroke="#FFFFFF" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+  <ellipse cx="40" cy="34" rx="12" ry="6" transform="rotate(-30 40 34)" fill="#FFFFFF" opacity="0.8"/>
+</svg>

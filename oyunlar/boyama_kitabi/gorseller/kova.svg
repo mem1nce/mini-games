@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="kova" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#DCE7F2"/><stop offset="0.5" stop-color="#B7C8DC"/><stop offset="1" stop-color="#8FA3BE"/></linearGradient>
+  </defs>
+  <path d="M40 30 Q64 -6 88 30" fill="none" stroke="#3B2F6B" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M28 50 L100 50 L92 112 Q64 122 36 112 Z" fill="url(#kova)" stroke="#3B2F6B" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+  <ellipse cx="44" cy="72" rx="5" ry="14" transform="rotate(8 44 72)" fill="#FFFFFF" opacity="0.7"/>
+</svg>

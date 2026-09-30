@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="768" viewBox="0 0 1024 768">
+  <defs>
+    <mask id="m0" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><ellipse cx="846" cy="420" rx="22" ry="58" transform="rotate(28 846 420)"/><ellipse cx="810" cy="398" rx="24" ry="66"/><path d="M744 470 Q810 440 876 470 Q846 620 808 760 Q772 620 744 470 Z"/></g></mask>
+    <mask id="m1" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><ellipse cx="810" cy="398" rx="24" ry="66"/><path d="M744 470 Q810 440 876 470 Q846 620 808 760 Q772 620 744 470 Z"/></g></mask>
+    <mask id="m2" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><path d="M744 470 Q810 440 876 470 Q846 620 808 760 Q772 620 744 470 Z"/></g></mask>
+    <mask id="m3" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><path d="M-20 728 Q250 700 512 724 Q780 748 1044 714 L1044 800 L-20 800 Z"/></g></mask>
+    <mask id="m4" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><ellipse cx="512" cy="580" rx="150" ry="135"/><ellipse cx="512" cy="604" rx="85" ry="88"/><ellipse cx="440" cy="706" rx="76" ry="36"/><ellipse cx="584" cy="706" rx="76" ry="36"/></g></mask>
+    <mask id="m6" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><ellipse cx="440" cy="180" rx="24" ry="90" transform="rotate(-12 440 180)"/><ellipse cx="512" cy="340" rx="160" ry="135"/></g></mask>
+    <mask id="m7" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><ellipse cx="584" cy="180" rx="24" ry="90" transform="rotate(12 584 180)"/><ellipse cx="512" cy="340" rx="160" ry="135"/></g></mask>
+    <mask id="m8" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><ellipse cx="512" cy="340" rx="160" ry="135"/></g></mask>
+    <mask id="m9" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><ellipse cx="512" cy="340" rx="160" ry="135"/></g></mask>
+    <mask id="m10" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><ellipse cx="512" cy="604" rx="85" ry="88"/><ellipse cx="440" cy="706" rx="76" ry="36"/><ellipse cx="584" cy="706" rx="76" ry="36"/><ellipse cx="430" cy="560" rx="40" ry="64" transform="rotate(28 430 560)"/><ellipse cx="594" cy="560" rx="40" ry="64" transform="rotate(-28 594 560)"/><ellipse cx="512" cy="340" rx="160" ry="135"/><ellipse cx="512" cy="400" rx="64" ry="46"/></g></mask>
+    <mask id="m11" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><ellipse cx="440" cy="706" rx="76" ry="36"/><ellipse cx="584" cy="706" rx="76" ry="36"/><ellipse cx="430" cy="560" rx="40" ry="64" transform="rotate(28 430 560)"/><ellipse cx="594" cy="560" rx="40" ry="64" transform="rotate(-28 594 560)"/></g></mask>
+    <mask id="m12" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><ellipse cx="584" cy="706" rx="76" ry="36"/></g></mask>
+    <mask id="m16" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><ellipse cx="512" cy="400" rx="64" ry="46"/></g></mask>
+  </defs>
+  <g id="bolgeler" fill="#F6F2FB">
+    <ellipse id="yaprak_1" cx="772" cy="420" rx="22" ry="58" transform="rotate(-28 772 420)"/>
+    <ellipse id="yaprak_2" cx="846" cy="420" rx="22" ry="58" transform="rotate(28 846 420)"/>
+    <ellipse id="yaprak_3" cx="810" cy="398" rx="24" ry="66"/>
+    <path id="havuc" d="M744 470 Q810 440 876 470 Q846 620 808 760 Q772 620 744 470 Z"/>
+    <path id="cimen" d="M-20 728 Q250 700 512 724 Q780 748 1044 714 L1044 800 L-20 800 Z"/>
+    <ellipse id="kulak_sol" cx="440" cy="168" rx="48" ry="125" transform="rotate(-12 440 168)"/>
+    <ellipse id="kulak_sag" cx="584" cy="168" rx="48" ry="125" transform="rotate(12 584 168)"/>
+    <ellipse id="kulak_ici_sol" cx="440" cy="180" rx="24" ry="90" transform="rotate(-12 440 180)"/>
+    <ellipse id="kulak_ici_sag" cx="584" cy="180" rx="24" ry="90" transform="rotate(12 584 180)"/>
+    <ellipse id="govde" cx="512" cy="580" rx="150" ry="135"/>
+    <ellipse id="gobek" cx="512" cy="604" rx="85" ry="88"/>
+    <ellipse id="ayak_sol" cx="440" cy="706" rx="76" ry="36"/>
+    <ellipse id="ayak_sag" cx="584" cy="706" rx="76" ry="36"/>
+    <ellipse id="kol_sol" cx="430" cy="560" rx="40" ry="64" transform="rotate(28 430 560)"/>
+    <ellipse id="kol_sag" cx="594" cy="560" rx="40" ry="64" transform="rotate(-28 594 560)"/>
+    <ellipse id="kafa" cx="512" cy="340" rx="160" ry="135"/>
+    <ellipse id="agiz" cx="512" cy="400" rx="64" ry="46"/>
+  </g>
+  <g id="cizgiler" fill="none" stroke="#3B2F6B" stroke-width="12" stroke-linejoin="round" stroke-linecap="round">
+    <g mask="url(#m0)"><ellipse cx="772" cy="420" rx="22" ry="58" transform="rotate(-28 772 420)"/></g>
+    <g mask="url(#m1)"><ellipse cx="846" cy="420" rx="22" ry="58" transform="rotate(28 846 420)"/></g>
+    <g mask="url(#m2)"><ellipse cx="810" cy="398" rx="24" ry="66"/></g>
+    <g mask="url(#m3)"><path d="M744 470 Q810 440 876 470 Q846 620 808 760 Q772 620 744 470 Z"/></g>
+    <g mask="url(#m4)"><path d="M-20 728 Q250 700 512 724 Q780 748 1044 714 L1044 800 L-20 800 Z"/></g>
+    <path d="M770 530 L800 526 M780 590 L806 586 M790 650 L810 648" stroke-width="7"/>
+    <g mask="url(#m6)"><ellipse cx="440" cy="168" rx="48" ry="125" transform="rotate(-12 440 168)"/></g>
+    <g mask="url(#m7)"><ellipse cx="584" cy="168" rx="48" ry="125" transform="rotate(12 584 168)"/></g>
+    <g mask="url(#m8)"><ellipse cx="440" cy="180" rx="24" ry="90" transform="rotate(-12 440 180)"/></g>
+    <g mask="url(#m9)"><ellipse cx="584" cy="180" rx="24" ry="90" transform="rotate(12 584 180)"/></g>
+    <g mask="url(#m10)"><ellipse cx="512" cy="580" rx="150" ry="135"/></g>
+    <g mask="url(#m11)"><ellipse cx="512" cy="604" rx="85" ry="88"/></g>
+    <g mask="url(#m12)"><ellipse cx="440" cy="706" rx="76" ry="36"/></g>
+    <ellipse cx="584" cy="706" rx="76" ry="36"/>
+    <ellipse cx="430" cy="560" rx="40" ry="64" transform="rotate(28 430 560)"/>
+    <ellipse cx="594" cy="560" rx="40" ry="64" transform="rotate(-28 594 560)"/>
+    <g mask="url(#m16)"><ellipse cx="512" cy="340" rx="160" ry="135"/></g>
+    <ellipse cx="512" cy="400" rx="64" ry="46"/>
+    <ellipse cx="452" cy="318" rx="22" ry="28" fill="#3B2F6B" stroke="none"/>
+    <circle cx="444.3" cy="306.8" r="8.4" fill="#FFFFFF" stroke="none"/>
+    <ellipse cx="572" cy="318" rx="22" ry="28" fill="#3B2F6B" stroke="none"/>
+    <circle cx="564.3" cy="306.8" r="8.4" fill="#FFFFFF" stroke="none"/>
+    <path d="M496 380 Q512 370 528 380 L512 396 Z" fill="#3B2F6B" stroke="#3B2F6B" stroke-width="7"/>
+    <path d="M512 396 V412 M512 412 Q498 428 484 416 M512 412 Q526 428 540 416" stroke-width="7"/>
+  </g>
+</svg>

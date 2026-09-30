@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="768" viewBox="0 0 1024 768">
+  <defs>
+    <mask id="m1" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><path d="M430 480 L482 356 Q490 338 512 338 L560 338 L560 480 Z"/><path d="M592 480 L592 338 L652 338 Q680 338 698 362 L770 480 Z"/><path d="M140 560 Q140 460 240 455 L880 455 Q960 460 960 540 L960 575 Q960 605 930 605 L170 605 Q140 605 140 575 Z"/></g></mask>
+    <mask id="m2" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><path d="M140 560 Q140 460 240 455 L880 455 Q960 460 960 540 L960 575 Q960 605 930 605 L170 605 Q140 605 140 575 Z"/></g></mask>
+    <mask id="m3" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><path d="M140 560 Q140 460 240 455 L880 455 Q960 460 960 540 L960 575 Q960 605 930 605 L170 605 Q140 605 140 575 Z"/></g></mask>
+    <mask id="m4" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><ellipse cx="930" cy="505" rx="20" ry="30"/><circle cx="300" cy="610" r="88"/><circle cx="300" cy="610" r="42"/><circle cx="790" cy="610" r="88"/><circle cx="790" cy="610" r="42"/></g></mask>
+    <mask id="m6" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><circle cx="300" cy="610" r="42"/></g></mask>
+    <mask id="m8" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><circle cx="790" cy="610" r="42"/></g></mask>
+  </defs>
+  <g id="bolgeler" fill="#F6F2FB">
+    <path id="bulut" d="M330 150 A26.5 26.5 0 0 1 299.6 180 L222.6 180 L135 180 A36 36 0 0 1 77.8 169.8 A24.6 24.6 0 0 1 77.8 130.2 A40.1 40.1 0 0 1 135 99.8 A54.5 54.5 0 0 1 222.6 92.9 A49.3 49.3 0 0 1 299.6 112.7 A29.8 29.8 0 0 1 330 150 Z"/>
+    <path id="kabin" d="M330 470 L420 332 Q440 305 480 305 L660 305 Q700 305 725 335 L820 470 Z"/>
+    <path id="cam_arka" d="M430 480 L482 356 Q490 338 512 338 L560 338 L560 480 Z"/>
+    <path id="cam_on" d="M592 480 L592 338 L652 338 Q680 338 698 362 L770 480 Z"/>
+    <path id="govde" d="M140 560 Q140 460 240 455 L880 455 Q960 460 960 540 L960 575 Q960 605 930 605 L170 605 Q140 605 140 575 Z"/>
+    <ellipse id="far" cx="930" cy="505" rx="20" ry="30"/>
+    <circle id="lastik_arka" cx="300" cy="610" r="88"/>
+    <circle id="jant_arka" cx="300" cy="610" r="42"/>
+    <circle id="lastik_on" cx="790" cy="610" r="88"/>
+    <circle id="jant_on" cx="790" cy="610" r="42"/>
+  </g>
+  <g id="cizgiler" fill="none" stroke="#3B2F6B" stroke-width="12" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M330 150 A26.5 26.5 0 0 1 299.6 180 L222.6 180 L135 180 A36 36 0 0 1 77.8 169.8 A24.6 24.6 0 0 1 77.8 130.2 A40.1 40.1 0 0 1 135 99.8 A54.5 54.5 0 0 1 222.6 92.9 A49.3 49.3 0 0 1 299.6 112.7 A29.8 29.8 0 0 1 330 150 Z"/>
+    <g mask="url(#m1)"><path d="M330 470 L420 332 Q440 305 480 305 L660 305 Q700 305 725 335 L820 470 Z"/></g>
+    <g mask="url(#m2)"><path d="M430 480 L482 356 Q490 338 512 338 L560 338 L560 480 Z"/></g>
+    <g mask="url(#m3)"><path d="M592 480 L592 338 L652 338 Q680 338 698 362 L770 480 Z"/></g>
+    <g mask="url(#m4)"><path d="M140 560 Q140 460 240 455 L880 455 Q960 460 960 540 L960 575 Q960 605 930 605 L170 605 Q140 605 140 575 Z"/></g>
+    <ellipse cx="930" cy="505" rx="20" ry="30"/>
+    <g mask="url(#m6)"><circle cx="300" cy="610" r="88"/></g>
+    <circle cx="300" cy="610" r="42"/>
+    <g mask="url(#m8)"><circle cx="790" cy="610" r="88"/></g>
+    <circle cx="790" cy="610" r="42"/>
+    <path d="M576 480 V585 M620 500 H660" stroke-width="9"/>
+  </g>
+</svg>

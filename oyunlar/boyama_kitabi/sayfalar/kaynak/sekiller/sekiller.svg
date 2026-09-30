@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="768" viewBox="0 0 1024 768">
+  <g id="bolgeler" fill="#F6F2FB">
+    <circle id="daire" cx="190" cy="220" r="126"/>
+    <rect id="kare" x="397" y="105" width="230" height="230" rx="20"/>
+    <polygon id="ucgen" points="834,90 964,336 704,336"/>
+    <ellipse id="oval" cx="190" cy="562" rx="140" ry="100"/>
+    <polygon id="baklava" points="512,420 652,562 512,704 372,562"/>
+    <polygon id="altigen" points="966,562 900,676.3 768,676.3 702,562 768,447.7 900,447.7"/>
+  </g>
+  <g id="cizgiler" fill="none" stroke="#3B2F6B" stroke-width="12" stroke-linejoin="round" stroke-linecap="round">
+    <circle cx="190" cy="220" r="126"/>
+    <rect x="397" y="105" width="230" height="230" rx="20"/>
+    <polygon points="834,90 964,336 704,336"/>
+    <ellipse cx="190" cy="562" rx="140" ry="100"/>
+    <polygon points="512,420 652,562 512,704 372,562"/>
+    <polygon points="966,562 900,676.3 768,676.3 702,562 768,447.7 900,447.7"/>
+  </g>
+</svg>

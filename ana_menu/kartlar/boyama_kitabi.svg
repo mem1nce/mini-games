@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="320" height="300" viewBox="-160 -150 320 300">
+<g transform="translate(6.00 -4.00) scale(0.9375 0.9375) translate(-160.00 -150.00) scale(1.0000 1.0000) translate(-0.00 -0.00)">
+  <defs>
+    <linearGradient id="p1_kagit" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#F1EEFA"/></linearGradient>
+    <linearGradient id="p1_k1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FF8A8A"/><stop offset="1" stop-color="#E0485A"/></linearGradient>
+    <linearGradient id="p1_k2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8FD0FF"/><stop offset="1" stop-color="#3E8EEB"/></linearGradient>
+    <linearGradient id="p1_k3" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFE58A"/><stop offset="1" stop-color="#F2B53D"/></linearGradient>
+  </defs>
+  <rect x="36" y="26" width="220" height="220" rx="16" transform="rotate(-5 146 136)" fill="url(#p1_kagit)" stroke="#3B2F6B" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/>
+  <g transform="rotate(-5 146 136)">
+    <path d="M90 110 L84 50 L130 84 Z" fill="#FFA84D" stroke="#3B2F6B" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M202 110 L208 50 L162 84 Z" fill="#FFFFFF" stroke="#3B2F6B" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+    <ellipse cx="146" cy="190" rx="62" ry="46" fill="#FFFFFF" stroke="#3B2F6B" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M146 144 L146 236 Q208 232 208 190 Q208 146 146 144 Z" fill="#8B6CF6" opacity="0.9"/>
+    <ellipse cx="146" cy="190" rx="62" ry="46" fill="none" stroke="#3B2F6B" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+    <ellipse cx="146" cy="120" rx="72" ry="58" fill="#FFA84D" stroke="#3B2F6B" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M146 62 L146 178 Q74 176 74 120 Q74 64 146 62 Z" fill="#FFFFFF"/>
+    <ellipse cx="146" cy="120" rx="72" ry="58" fill="none" stroke="#3B2F6B" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+    <ellipse cx="122" cy="116" rx="7" ry="8.75" fill="#3B2F6B"/>
+    <circle cx="119.55" cy="112.85" r="2.8" fill="#FFFFFF"/>
+    <ellipse cx="170" cy="116" rx="7" ry="8.75" fill="#3B2F6B"/>
+    <circle cx="167.55" cy="112.85" r="2.8" fill="#FFFFFF"/>
+    <path d="M139 136 H153 L146 144 Z" fill="#3B2F6B"/>
+  </g>
+  <g transform="rotate(20 232 200)">
+    <rect x="218" y="130" width="28" height="104" rx="7" fill="url(#p1_k1)" stroke="#3B2F6B" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M218 132 L246 132 L232 100 Z" fill="#F7D2B0" stroke="#3B2F6B" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+  </g>
+  <g transform="rotate(34 262 200)">
+    <rect x="248" y="130" width="28" height="104" rx="7" fill="url(#p1_k2)" stroke="#3B2F6B" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M248 132 L276 132 L262 100 Z" fill="#F7D2B0" stroke="#3B2F6B" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+  </g>
+  <g transform="rotate(48 290 200)">
+    <rect x="276" y="130" width="28" height="104" rx="7" fill="url(#p1_k3)" stroke="#3B2F6B" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M276 132 L304 132 L290 100 Z" fill="#F7D2B0" stroke="#3B2F6B" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+  </g>
+  <polygon points="58.0,250.0 44.9,254.9 40.0,268.0 35.1,254.9 22.0,250.0 35.1,245.1 40.0,232.0 44.9,245.1" fill="#FFD23F" stroke="#3B2F6B" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+</g>
+<g transform="translate(-104.00 92.00) rotate(-8.59) scale(0.7188 0.7188) translate(-64.00 -64.00) scale(1.0000 1.0000) translate(-0.00 -0.00)">
+  <defs>
+    <linearGradient id="p2_kova" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#DCE7F2"/><stop offset="0.5" stop-color="#B7C8DC"/><stop offset="1" stop-color="#8FA3BE"/></linearGradient>
+  </defs>
+  <path d="M40 30 Q64 -6 88 30" fill="none" stroke="#3B2F6B" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M28 50 L100 50 L92 112 Q64 122 36 112 Z" fill="url(#p2_kova)" stroke="#3B2F6B" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+  <ellipse cx="44" cy="72" rx="5" ry="14" transform="rotate(8 44 72)" fill="#FFFFFF" opacity="0.7"/>
+</g>
+<g transform="translate(-104.00 92.00) rotate(-8.59) scale(0.7188 0.7188) translate(-64.00 -64.00) scale(1.0000 1.0000) translate(-0.00 -0.00)">
+  <ellipse cx="64" cy="50" rx="36" ry="11" fill="#4AA3FF" stroke="#3B2F6B" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M88 54 Q90 70 96 76 Q102 84 96 90 Q88 92 88 82 Z" fill="#4AA3FF" stroke="#3B2F6B" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <ellipse cx="108" cy="114" rx="14" ry="6" fill="#4AA3FF" stroke="#3B2F6B" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"/>
+</g>
+</svg>

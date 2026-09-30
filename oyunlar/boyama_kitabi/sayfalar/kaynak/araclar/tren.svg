@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="768" viewBox="0 0 1024 768">
+  <defs>
+    <mask id="m0" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><path d="M326 160 A24.2 24.2 0 0 1 304.9 192.8 A29.8 29.8 0 0 1 257.5 200.9 A27.4 27.4 0 0 1 219.5 178.2 A22.6 22.6 0 0 1 219.5 141.8 A27.4 27.4 0 0 1 257.5 119.1 A29.8 29.8 0 0 1 304.9 127.2 A24.2 24.2 0 0 1 326 160 Z"/></g></mask>
+    <mask id="m3" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><path d="M-20 704 L1044 704 L1044 800 L-20 800 Z"/><rect x="60" y="420" width="290" height="196" rx="20"/><circle cx="130" cy="650" r="50"/><circle cx="270" cy="650" r="50"/></g></mask>
+    <mask id="m4" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><path d="M-20 704 L1044 704 L1044 800 L-20 800 Z"/><rect x="380" y="300" width="220" height="330" rx="16"/><rect x="370" y="560" width="540" height="60" rx="14"/><rect x="60" y="420" width="290" height="196" rx="20"/><circle cx="270" cy="650" r="50"/><circle cx="480" cy="668" r="72"/><circle cx="480" cy="668" r="28"/></g></mask>
+    <mask id="m5" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><rect x="690" y="610" width="150" height="100"/><path d="M-20 704 L1044 704 L1044 800 L-20 800 Z"/><rect x="380" y="300" width="220" height="330" rx="16"/><rect x="590" y="420" width="330" height="210" rx="60"/><rect x="370" y="560" width="540" height="60" rx="14"/><circle cx="480" cy="668" r="72"/><circle cx="700" cy="670" r="50"/></g></mask>
+    <mask id="m6" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><path d="M-20 704 L1044 704 L1044 800 L-20 800 Z"/><rect x="590" y="420" width="330" height="210" rx="60"/><rect x="370" y="560" width="540" height="60" rx="14"/><circle cx="700" cy="670" r="50"/><circle cx="830" cy="670" r="50"/></g></mask>
+    <mask id="m7" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><polygon points="860,600 990,704 860,704"/><circle cx="130" cy="650" r="50"/><circle cx="270" cy="650" r="50"/><circle cx="480" cy="668" r="72"/><circle cx="480" cy="668" r="28"/><circle cx="700" cy="670" r="50"/><circle cx="830" cy="670" r="50"/></g></mask>
+    <mask id="m14" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><circle cx="480" cy="668" r="72"/></g></mask>
+    <mask id="m15" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><circle cx="480" cy="668" r="72"/></g></mask>
+    <mask id="m16" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><circle cx="480" cy="668" r="72"/></g></mask>
+    <mask id="m18" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><circle cx="700" cy="670" r="50"/></g></mask>
+    <mask id="m19" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><circle cx="700" cy="670" r="50"/></g></mask>
+    <mask id="m20" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><circle cx="830" cy="670" r="50"/></g></mask>
+    <mask id="m21" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><circle cx="830" cy="670" r="50"/></g></mask>
+    <mask id="m24" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><rect x="590" y="420" width="330" height="210" rx="60"/></g></mask>
+    <mask id="m25" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><rect x="754" y="262" width="124" height="44" rx="14"/><rect x="590" y="420" width="330" height="210" rx="60"/></g></mask>
+    <mask id="m27" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><rect x="356" y="268" width="268" height="50" rx="16"/><rect x="424" y="346" width="132" height="108" rx="20"/><rect x="590" y="420" width="330" height="210" rx="60"/><rect x="370" y="560" width="540" height="60" rx="14"/><circle cx="480" cy="668" r="72"/><circle cx="480" cy="668" r="28"/></g></mask>
+    <mask id="m30" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><circle cx="928" cy="474" r="30"/><polygon points="860,600 990,704 860,704"/><rect x="370" y="560" width="540" height="60" rx="14"/><circle cx="700" cy="670" r="50"/><circle cx="830" cy="670" r="50"/></g></mask>
+    <mask id="m32" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><rect x="370" y="560" width="540" height="60" rx="14"/><circle cx="830" cy="670" r="50"/></g></mask>
+    <mask id="m33" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><circle cx="480" cy="668" r="72"/><circle cx="700" cy="670" r="50"/><circle cx="830" cy="670" r="50"/></g></mask>
+    <mask id="m34" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><rect x="96" y="458" width="94" height="82" rx="14"/><rect x="220" y="458" width="94" height="82" rx="14"/><circle cx="130" cy="650" r="50"/><circle cx="270" cy="650" r="50"/></g></mask>
+    <mask id="m40" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><circle cx="480" cy="668" r="28"/></g></mask>
+  </defs>
+  <g id="bolgeler" fill="#F6F2FB">
+    <path id="duman_1" d="M242 90 A25.5 25.5 0 0 1 220.9 125.4 A32.8 32.8 0 0 1 170 140 A32.8 32.8 0 0 1 119.1 125.4 A25.5 25.5 0 0 1 98 90 A25.5 25.5 0 0 1 119.1 54.6 A32.8 32.8 0 0 1 170 40 A32.8 32.8 0 0 1 220.9 54.6 A25.5 25.5 0 0 1 242 90 Z"/>
+    <path id="duman_2" d="M326 160 A24.2 24.2 0 0 1 304.9 192.8 A29.8 29.8 0 0 1 257.5 200.9 A27.4 27.4 0 0 1 219.5 178.2 A22.6 22.6 0 0 1 219.5 141.8 A27.4 27.4 0 0 1 257.5 119.1 A29.8 29.8 0 0 1 304.9 127.2 A24.2 24.2 0 0 1 326 160 Z"/>
+    <path id="duman_3" d="M746 170 A19.7 19.7 0 0 1 728.7 196.6 A24.5 24.5 0 0 1 689.8 203.1 A22.5 22.5 0 0 1 658.6 184.8 A18.3 18.3 0 0 1 658.6 155.2 A22.5 22.5 0 0 1 689.8 136.9 A24.5 24.5 0 0 1 728.7 143.4 A19.7 19.7 0 0 1 746 170 Z"/>
+    <rect id="bosluk_1" x="150" y="600" width="90" height="110"/>
+    <rect id="bosluk_2" x="300" y="590" width="150" height="120"/>
+    <rect id="bosluk_3" x="520" y="610" width="160" height="100"/>
+    <rect id="bosluk_4" x="690" y="610" width="150" height="100"/>
+    <path id="ray" d="M-20 704 L1044 704 L1044 800 L-20 800 Z"/>
+    <ellipse id="kubbe" cx="690" cy="426" rx="44" ry="36"/>
+    <path id="baca" d="M786 426 L770 298 L862 298 L846 426 Z"/>
+    <rect id="baca_ucu" x="754" y="262" width="124" height="44" rx="14"/>
+    <rect id="kabin" x="380" y="300" width="220" height="330" rx="16"/>
+    <rect id="cati" x="356" y="268" width="268" height="50" rx="16"/>
+    <rect id="kabin_cami" x="424" y="346" width="132" height="108" rx="20"/>
+    <rect id="kazan" x="590" y="420" width="330" height="210" rx="60"/>
+    <circle id="far" cx="928" cy="474" r="30"/>
+    <polygon id="mahmuz" points="860,600 990,704 860,704"/>
+    <rect id="sasi" x="370" y="560" width="540" height="60" rx="14"/>
+    <rect id="vagon" x="60" y="420" width="290" height="196" rx="20"/>
+    <rect id="vagon_cami_1" x="96" y="458" width="94" height="82" rx="14"/>
+    <rect id="vagon_cami_2" x="220" y="458" width="94" height="82" rx="14"/>
+    <circle id="teker_vagon_1" cx="130" cy="650" r="50"/>
+    <circle id="teker_vagon_2" cx="270" cy="650" r="50"/>
+    <circle id="teker_buyuk" cx="480" cy="668" r="72"/>
+    <circle id="gobek_buyuk" cx="480" cy="668" r="28"/>
+    <circle id="teker_1" cx="700" cy="670" r="50"/>
+    <circle id="teker_2" cx="830" cy="670" r="50"/>
+  </g>
+  <g id="cizgiler" fill="none" stroke="#3B2F6B" stroke-width="12" stroke-linejoin="round" stroke-linecap="round">
+    <g mask="url(#m0)"><path d="M242 90 A25.5 25.5 0 0 1 220.9 125.4 A32.8 32.8 0 0 1 170 140 A32.8 32.8 0 0 1 119.1 125.4 A25.5 25.5 0 0 1 98 90 A25.5 25.5 0 0 1 119.1 54.6 A32.8 32.8 0 0 1 170 40 A32.8 32.8 0 0 1 220.9 54.6 A25.5 25.5 0 0 1 242 90 Z"/></g>
+    <path d="M326 160 A24.2 24.2 0 0 1 304.9 192.8 A29.8 29.8 0 0 1 257.5 200.9 A27.4 27.4 0 0 1 219.5 178.2 A22.6 22.6 0 0 1 219.5 141.8 A27.4 27.4 0 0 1 257.5 119.1 A29.8 29.8 0 0 1 304.9 127.2 A24.2 24.2 0 0 1 326 160 Z"/>
+    <path d="M746 170 A19.7 19.7 0 0 1 728.7 196.6 A24.5 24.5 0 0 1 689.8 203.1 A22.5 22.5 0 0 1 658.6 184.8 A18.3 18.3 0 0 1 658.6 155.2 A22.5 22.5 0 0 1 689.8 136.9 A24.5 24.5 0 0 1 728.7 143.4 A19.7 19.7 0 0 1 746 170 Z"/>
+    <g mask="url(#m3)"><rect x="150" y="600" width="90" height="110"/></g>
+    <g mask="url(#m4)"><rect x="300" y="590" width="150" height="120"/></g>
+    <g mask="url(#m5)"><rect x="520" y="610" width="160" height="100"/></g>
+    <g mask="url(#m6)"><rect x="690" y="610" width="150" height="100"/></g>
+    <g mask="url(#m7)"><path d="M-20 704 L1044 704 L1044 800 L-20 800 Z"/></g>
+    <rect x="10" y="720" width="34" height="16" rx="5" fill="#3B2F6B" stroke="none"/>
+    <rect x="74" y="720" width="34" height="16" rx="5" fill="#3B2F6B" stroke="none"/>
+    <rect x="138" y="720" width="34" height="16" rx="5" fill="#3B2F6B" stroke="none"/>
+    <rect x="202" y="720" width="34" height="16" rx="5" fill="#3B2F6B" stroke="none"/>
+    <rect x="266" y="720" width="34" height="16" rx="5" fill="#3B2F6B" stroke="none"/>
+    <rect x="330" y="720" width="34" height="16" rx="5" fill="#3B2F6B" stroke="none"/>
+    <g mask="url(#m14)"><rect x="394" y="720" width="34" height="16" rx="5" fill="#3B2F6B" stroke="none"/></g>
+    <g mask="url(#m15)"><rect x="458" y="720" width="34" height="16" rx="5" fill="#3B2F6B" stroke="none"/></g>
+    <g mask="url(#m16)"><rect x="522" y="720" width="34" height="16" rx="5" fill="#3B2F6B" stroke="none"/></g>
+    <rect x="586" y="720" width="34" height="16" rx="5" fill="#3B2F6B" stroke="none"/>
+    <g mask="url(#m18)"><rect x="650" y="720" width="34" height="16" rx="5" fill="#3B2F6B" stroke="none"/></g>
+    <g mask="url(#m19)"><rect x="714" y="720" width="34" height="16" rx="5" fill="#3B2F6B" stroke="none"/></g>
+    <g mask="url(#m20)"><rect x="778" y="720" width="34" height="16" rx="5" fill="#3B2F6B" stroke="none"/></g>
+    <g mask="url(#m21)"><rect x="842" y="720" width="34" height="16" rx="5" fill="#3B2F6B" stroke="none"/></g>
+    <rect x="906" y="720" width="34" height="16" rx="5" fill="#3B2F6B" stroke="none"/>
+    <rect x="970" y="720" width="34" height="16" rx="5" fill="#3B2F6B" stroke="none"/>
+    <g mask="url(#m24)"><ellipse cx="690" cy="426" rx="44" ry="36"/></g>
+    <g mask="url(#m25)"><path d="M786 426 L770 298 L862 298 L846 426 Z"/></g>
+    <rect x="754" y="262" width="124" height="44" rx="14"/>
+    <g mask="url(#m27)"><rect x="380" y="300" width="220" height="330" rx="16"/></g>
+    <rect x="356" y="268" width="268" height="50" rx="16"/>
+    <rect x="424" y="346" width="132" height="108" rx="20"/>
+    <g mask="url(#m30)"><rect x="590" y="420" width="330" height="210" rx="60"/></g>
+    <circle cx="928" cy="474" r="30"/>
+    <g mask="url(#m32)"><polygon points="860,600 990,704 860,704"/></g>
+    <g mask="url(#m33)"><rect x="370" y="560" width="540" height="60" rx="14"/></g>
+    <g mask="url(#m34)"><rect x="60" y="420" width="290" height="196" rx="20"/></g>
+    <rect x="96" y="458" width="94" height="82" rx="14"/>
+    <rect x="220" y="458" width="94" height="82" rx="14"/>
+    <path d="M346 590 H384" stroke-width="18"/>
+    <circle cx="130" cy="650" r="50"/>
+    <circle cx="270" cy="650" r="50"/>
+    <g mask="url(#m40)"><circle cx="480" cy="668" r="72"/></g>
+    <circle cx="480" cy="668" r="28"/>
+    <circle cx="700" cy="670" r="50"/>
+    <circle cx="830" cy="670" r="50"/>
+  </g>
+</svg>

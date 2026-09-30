@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="768" viewBox="0 0 1024 768">
+  <defs>
+    <mask id="m0" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><polygon points="590.8,301.6 806.8,314.2 639.4,451.4"/><polygon points="384.6,451.4 217.2,314.2 433.2,301.6"/><polygon points="590.8,301.6 639.4,451.4 512,544 384.6,451.4 433.2,301.6"/></g></mask>
+    <mask id="m1" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><polygon points="639.4,451.4 694.2,660.8 512,544"/><polygon points="590.8,301.6 639.4,451.4 512,544 384.6,451.4 433.2,301.6"/></g></mask>
+    <mask id="m2" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><polygon points="512,544 329.8,660.8 384.6,451.4"/><polygon points="590.8,301.6 639.4,451.4 512,544 384.6,451.4 433.2,301.6"/></g></mask>
+    <mask id="m3" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><polygon points="384.6,451.4 217.2,314.2 433.2,301.6"/><polygon points="590.8,301.6 639.4,451.4 512,544 384.6,451.4 433.2,301.6"/></g></mask>
+    <mask id="m4" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><polygon points="590.8,301.6 639.4,451.4 512,544 384.6,451.4 433.2,301.6"/></g></mask>
+  </defs>
+  <g id="bolgeler" fill="#F6F2FB">
+    <polygon id="kol_1" points="433.2,301.6 512,100 590.8,301.6"/>
+    <polygon id="kol_2" points="590.8,301.6 806.8,314.2 639.4,451.4"/>
+    <polygon id="kol_3" points="639.4,451.4 694.2,660.8 512,544"/>
+    <polygon id="kol_4" points="512,544 329.8,660.8 384.6,451.4"/>
+    <polygon id="kol_5" points="384.6,451.4 217.2,314.2 433.2,301.6"/>
+    <polygon id="orta" points="590.8,301.6 639.4,451.4 512,544 384.6,451.4 433.2,301.6"/>
+    <polygon id="kucuk_yildiz_1" points="97.8,61.5 129.9,99.6 178.2,87.7 152,130 178.2,172.3 129.9,160.4 97.8,198.5 94.1,148.8 48,130 94.1,111.2"/>
+    <polygon id="kucuk_yildiz_2" points="896.5,58.4 920,102.3 969.8,100.7 935.3,136.7 952.2,183.5 907.3,161.8 868,192.4 874.8,143 833.6,115 882.6,106.2"/>
+    <polygon id="kucuk_yildiz_3" points="133.5,578.4 147.4,626.2 196.4,635 155.2,663 162,712.4 122.7,681.8 77.8,703.5 94.7,656.7 60.2,620.7 110,622.3"/>
+    <polygon id="kucuk_yildiz_4" points="920.2,581.5 923.9,631.2 970,650 923.9,668.8 920.2,718.5 888.1,680.4 839.8,692.3 866,650 839.8,607.7 888.1,619.6"/>
+  </g>
+  <g id="cizgiler" fill="none" stroke="#3B2F6B" stroke-width="12" stroke-linejoin="round" stroke-linecap="round">
+    <g mask="url(#m0)"><polygon points="433.2,301.6 512,100 590.8,301.6"/></g>
+    <g mask="url(#m1)"><polygon points="590.8,301.6 806.8,314.2 639.4,451.4"/></g>
+    <g mask="url(#m2)"><polygon points="639.4,451.4 694.2,660.8 512,544"/></g>
+    <g mask="url(#m3)"><polygon points="512,544 329.8,660.8 384.6,451.4"/></g>
+    <g mask="url(#m4)"><polygon points="384.6,451.4 217.2,314.2 433.2,301.6"/></g>
+    <polygon points="590.8,301.6 639.4,451.4 512,544 384.6,451.4 433.2,301.6"/>
+    <polygon points="97.8,61.5 129.9,99.6 178.2,87.7 152,130 178.2,172.3 129.9,160.4 97.8,198.5 94.1,148.8 48,130 94.1,111.2"/>
+    <polygon points="896.5,58.4 920,102.3 969.8,100.7 935.3,136.7 952.2,183.5 907.3,161.8 868,192.4 874.8,143 833.6,115 882.6,106.2"/>
+    <polygon points="133.5,578.4 147.4,626.2 196.4,635 155.2,663 162,712.4 122.7,681.8 77.8,703.5 94.7,656.7 60.2,620.7 110,622.3"/>
+    <polygon points="920.2,581.5 923.9,631.2 970,650 923.9,668.8 920.2,718.5 888.1,680.4 839.8,692.3 866,650 839.8,607.7 888.1,619.6"/>
+    <ellipse cx="476" cy="404" rx="16" ry="22" fill="#3B2F6B" stroke="none"/>
+    <circle cx="470.4" cy="395.2" r="6.1" fill="#FFFFFF" stroke="none"/>
+    <ellipse cx="548" cy="404" rx="16" ry="22" fill="#3B2F6B" stroke="none"/>
+    <circle cx="542.4" cy="395.2" r="6.1" fill="#FFFFFF" stroke="none"/>
+    <path d="M486 452 Q512 474 538 452" stroke-width="8"/>
+  </g>
+</svg>

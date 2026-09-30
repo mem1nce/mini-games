@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="768" viewBox="0 0 1024 768">
+  <defs>
+    <mask id="m0" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><circle cx="512" cy="64" r="30"/><rect x="330" y="120" width="364" height="240" rx="40"/></g></mask>
+    <mask id="m2" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><rect x="330" y="120" width="364" height="240" rx="40"/><rect x="310" y="400" width="404" height="250" rx="36"/></g></mask>
+    <mask id="m3" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><rect x="330" y="120" width="364" height="240" rx="40"/></g></mask>
+    <mask id="m4" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><rect x="330" y="120" width="364" height="240" rx="40"/></g></mask>
+    <mask id="m5" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><circle cx="440" cy="222" r="50"/><circle cx="584" cy="222" r="50"/><rect x="430" y="290" width="164" height="44" rx="16"/></g></mask>
+    <mask id="m16" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><rect x="310" y="400" width="404" height="250" rx="36"/><circle cx="284" cy="614" r="46"/></g></mask>
+    <mask id="m17" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><rect x="310" y="400" width="404" height="250" rx="36"/><circle cx="740" cy="614" r="46"/></g></mask>
+    <mask id="m18" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><rect x="360" y="700" width="130" height="50" rx="20"/><rect x="310" y="400" width="404" height="250" rx="36"/></g></mask>
+    <mask id="m19" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><rect x="534" y="700" width="130" height="50" rx="20"/><rect x="310" y="400" width="404" height="250" rx="36"/></g></mask>
+    <mask id="m22" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><rect x="390" y="440" width="244" height="130" rx="24"/><circle cx="442" cy="505" r="25"/><circle cx="512" cy="505" r="25"/><circle cx="582" cy="505" r="25"/><circle cx="284" cy="614" r="46"/><circle cx="740" cy="614" r="46"/></g></mask>
+    <mask id="m23" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><circle cx="442" cy="505" r="25"/><circle cx="512" cy="505" r="25"/><circle cx="582" cy="505" r="25"/></g></mask>
+  </defs>
+  <g id="bolgeler" fill="#F6F2FB">
+    <circle id="anten" cx="512" cy="64" r="30"/>
+    <rect id="boyun" x="470" y="350" width="84" height="60"/>
+    <rect id="kulak_sol" x="296" y="190" width="44" height="92" rx="12"/>
+    <rect id="kulak_sag" x="684" y="190" width="44" height="92" rx="12"/>
+    <rect id="kafa" x="330" y="120" width="364" height="240" rx="40"/>
+    <circle id="goz_sol" cx="440" cy="222" r="50"/>
+    <circle id="goz_sag" cx="584" cy="222" r="50"/>
+    <rect id="agiz" x="430" y="290" width="164" height="44" rx="16"/>
+    <rect id="kol_sol" x="248" y="420" width="72" height="170" rx="30"/>
+    <rect id="kol_sag" x="704" y="420" width="72" height="170" rx="30"/>
+    <rect id="bacak_sol" x="386" y="630" width="86" height="90" rx="16"/>
+    <rect id="bacak_sag" x="552" y="630" width="86" height="90" rx="16"/>
+    <rect id="ayak_sol" x="360" y="700" width="130" height="50" rx="20"/>
+    <rect id="ayak_sag" x="534" y="700" width="130" height="50" rx="20"/>
+    <rect id="govde" x="310" y="400" width="404" height="250" rx="36"/>
+    <rect id="pano" x="390" y="440" width="244" height="130" rx="24"/>
+    <circle id="dugme_1" cx="442" cy="505" r="25"/>
+    <circle id="dugme_2" cx="512" cy="505" r="25"/>
+    <circle id="dugme_3" cx="582" cy="505" r="25"/>
+    <circle id="el_sol" cx="284" cy="614" r="46"/>
+    <circle id="el_sag" cx="740" cy="614" r="46"/>
+  </g>
+  <g id="cizgiler" fill="none" stroke="#3B2F6B" stroke-width="12" stroke-linejoin="round" stroke-linecap="round">
+    <g mask="url(#m0)"><path d="M512 70 L512 124" stroke-width="14"/></g>
+    <circle cx="512" cy="64" r="30"/>
+    <g mask="url(#m2)"><rect x="470" y="350" width="84" height="60"/></g>
+    <g mask="url(#m3)"><rect x="296" y="190" width="44" height="92" rx="12"/></g>
+    <g mask="url(#m4)"><rect x="684" y="190" width="44" height="92" rx="12"/></g>
+    <g mask="url(#m5)"><rect x="330" y="120" width="364" height="240" rx="40"/></g>
+    <circle cx="440" cy="222" r="50"/>
+    <circle cx="584" cy="222" r="50"/>
+    <rect x="430" y="290" width="164" height="44" rx="16"/>
+    <ellipse cx="440" cy="222" rx="18" ry="18" fill="#3B2F6B" stroke="none"/>
+    <circle cx="433.7" cy="214.8" r="6.8" fill="#FFFFFF" stroke="none"/>
+    <ellipse cx="584" cy="222" rx="18" ry="18" fill="#3B2F6B" stroke="none"/>
+    <circle cx="577.7" cy="214.8" r="6.8" fill="#FFFFFF" stroke="none"/>
+    <circle cx="470" cy="312" r="6" fill="#3B2F6B" stroke="none"/>
+    <circle cx="512" cy="312" r="6" fill="#3B2F6B" stroke="none"/>
+    <circle cx="554" cy="312" r="6" fill="#3B2F6B" stroke="none"/>
+    <g mask="url(#m16)"><rect x="248" y="420" width="72" height="170" rx="30"/></g>
+    <g mask="url(#m17)"><rect x="704" y="420" width="72" height="170" rx="30"/></g>
+    <g mask="url(#m18)"><rect x="386" y="630" width="86" height="90" rx="16"/></g>
+    <g mask="url(#m19)"><rect x="552" y="630" width="86" height="90" rx="16"/></g>
+    <rect x="360" y="700" width="130" height="50" rx="20"/>
+    <rect x="534" y="700" width="130" height="50" rx="20"/>
+    <g mask="url(#m22)"><rect x="310" y="400" width="404" height="250" rx="36"/></g>
+    <g mask="url(#m23)"><rect x="390" y="440" width="244" height="130" rx="24"/></g>
+    <circle cx="442" cy="505" r="25"/>
+    <circle cx="512" cy="505" r="25"/>
+    <circle cx="582" cy="505" r="25"/>
+    <circle cx="284" cy="614" r="46"/>
+    <circle cx="740" cy="614" r="46"/>
+  </g>
+</svg>

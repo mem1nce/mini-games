@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="sap" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F2B874"/><stop offset="1" stop-color="#C98543"/></linearGradient>
+    <linearGradient id="saman" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE58A"/><stop offset="1" stop-color="#F2B53D"/></linearGradient>
+  </defs>
+  <path d="M96 8 Q104 6 106 14 L74 70 L66 64 Z" fill="url(#sap)" stroke="#3B2F6B" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M60 56 L84 72 Q78 104 52 122 L14 98 Q36 80 60 56 Z" fill="url(#saman)" stroke="#3B2F6B" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M64 60 L80 70" stroke="#3B2F6B" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M46 86 L30 106 M56 92 L42 114 M66 96 L56 118" fill="none" stroke="#3B2F6B" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <polygon points="116.0,58.0 109.0,61.0 106.0,68.0 103.0,61.0 96.0,58.0 103.0,55.0 106.0,48.0 109.0,55.0" fill="#FFD23F" stroke="#3B2F6B" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <polygon points="107.0,92.0 102.1,94.1 100.0,99.0 97.9,94.1 93.0,92.0 97.9,89.9 100.0,85.0 102.1,89.9" fill="#FFD23F" stroke="#3B2F6B" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <polygon points="30.0,40.0 24.4,42.4 22.0,48.0 19.6,42.4 14.0,40.0 19.6,37.6 22.0,32.0 24.4,37.6" fill="#FFD23F" stroke="#3B2F6B" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

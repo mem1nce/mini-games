@@ -306,6 +306,16 @@ def hayvan_besle():
     ]
 
 
+def boyama_kitabi():
+    # Boyama Kitabı: yarısı boyanmış kedi sayfası ve boya kalemleri, yanında boya kovası
+    g = "boyama_kitabi/gorseller/"
+    return [
+        parca(g + "kart.svg", 300, (6, -4)),
+        parca(g + "kova.svg", 92, (-104, 92), -0.15),
+        parca(g + "kova_renk.svg", 92, (-104, 92), -0.15, renkler={"#FFFFFF": "#4AA3FF"}),
+    ]
+
+
 def balik_tutma():
     # Balık Tutma: dalgalı su üstünde kayıkta oltalı penguen; oltanın ucundaki ağda palyaço balığı, suda sıçrayan balık
     g = "balik_tutma/gorseller/"
@@ -338,7 +348,7 @@ KARTLAR = {
     "meyve_topla": meyve_topla, "golge_eslestirme": golge_eslestirme, "kostebek": kostebek,
     "toplama": toplama, "cikarma": cikarma, "araba_yarisi": araba_yarisi, "zipla_zipla": zipla_zipla,
     "sihirli_bahce": sihirli_bahce, "muzik_kutusu": muzik_kutusu, "robot_fabrikasi": robot_fabrikasi,
-    "tren_rayi": tren_rayi, "hayvan_besle": hayvan_besle,
+    "tren_rayi": tren_rayi, "hayvan_besle": hayvan_besle, "boyama_kitabi": boyama_kitabi,
 }
 
 

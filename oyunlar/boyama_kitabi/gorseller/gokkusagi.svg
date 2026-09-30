@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="sap" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F2B874"/><stop offset="1" stop-color="#C98543"/></linearGradient>
+  </defs>
+  <path d="M14 76 A50 50 0 0 1 114 76" fill="none" stroke="#FF5B5B" stroke-width="7.5"/>
+  <path d="M21 76 A43 43 0 0 1 107 76" fill="none" stroke="#FF9A3D" stroke-width="7.5"/>
+  <path d="M28 76 A36 36 0 0 1 100 76" fill="none" stroke="#FFD23F" stroke-width="7.5"/>
+  <path d="M35 76 A29 29 0 0 1 93 76" fill="none" stroke="#7BD85A" stroke-width="7.5"/>
+  <path d="M42 76 A22 22 0 0 1 86 76" fill="none" stroke="#4AA3FF" stroke-width="7.5"/>
+  <path d="M49 76 A15 15 0 0 1 79 76" fill="none" stroke="#8B6CF6" stroke-width="7.5"/>
+  <path d="M10 76 A54 54 0 0 1 118 76" fill="none" stroke="#3B2F6B" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M53 76 A11 11 0 0 1 75 76" fill="none" stroke="#3B2F6B" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M96 58 Q104 54 108 60 L88 104 L76 98 Z" fill="url(#sap)" stroke="#3B2F6B" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M76 98 L88 104 Q84 118 68 122 Q62 122 62 118 Q70 112 72 106 Z" fill="#FF6FB5" stroke="#3B2F6B" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <polygon points="33.0,100.0 26.9,102.9 24.0,109.0 21.1,102.9 15.0,100.0 21.1,97.1 24.0,91.0 26.9,97.1" fill="#FFD23F" stroke="#3B2F6B" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <polygon points="46.0,112.0 41.9,113.9 40.0,118.0 38.1,113.9 34.0,112.0 38.1,110.1 40.0,106.0 41.9,110.1" fill="#FFD23F" stroke="#3B2F6B" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

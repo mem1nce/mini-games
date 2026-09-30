@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="768" viewBox="0 0 1024 768">
+  <defs>
+    <mask id="m0" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><circle cx="512" cy="384" r="160"/></g></mask>
+    <mask id="m1" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><circle cx="512" cy="384" r="160"/></g></mask>
+    <mask id="m2" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><circle cx="512" cy="384" r="160"/></g></mask>
+    <mask id="m3" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><circle cx="512" cy="384" r="160"/></g></mask>
+    <mask id="m4" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><circle cx="512" cy="384" r="160"/></g></mask>
+    <mask id="m5" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><circle cx="512" cy="384" r="160"/></g></mask>
+    <mask id="m6" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><circle cx="512" cy="384" r="160"/></g></mask>
+    <mask id="m7" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><circle cx="512" cy="384" r="160"/></g></mask>
+  </defs>
+  <g id="bolgeler" fill="#F6F2FB">
+    <polygon id="isin_1" points="477.3,258.7 512,54 546.7,258.7"/>
+    <polygon id="isin_2" points="576.1,270.9 745.3,150.7 625.1,319.9"/>
+    <polygon id="isin_3" points="637.3,349.3 842,384 637.3,418.7"/>
+    <polygon id="isin_4" points="625.1,448.1 745.3,617.3 576.1,497.1"/>
+    <polygon id="isin_5" points="546.7,509.3 512,714 477.3,509.3"/>
+    <polygon id="isin_6" points="447.9,497.1 278.7,617.3 398.9,448.1"/>
+    <polygon id="isin_7" points="386.7,418.7 182,384 386.7,349.3"/>
+    <polygon id="isin_8" points="398.9,319.9 278.7,150.7 447.9,270.9"/>
+    <circle id="gunes" cx="512" cy="384" r="160"/>
+  </g>
+  <g id="cizgiler" fill="none" stroke="#3B2F6B" stroke-width="12" stroke-linejoin="round" stroke-linecap="round">
+    <g mask="url(#m0)"><polygon points="477.3,258.7 512,54 546.7,258.7"/></g>
+    <g mask="url(#m1)"><polygon points="576.1,270.9 745.3,150.7 625.1,319.9"/></g>
+    <g mask="url(#m2)"><polygon points="637.3,349.3 842,384 637.3,418.7"/></g>
+    <g mask="url(#m3)"><polygon points="625.1,448.1 745.3,617.3 576.1,497.1"/></g>
+    <g mask="url(#m4)"><polygon points="546.7,509.3 512,714 477.3,509.3"/></g>
+    <g mask="url(#m5)"><polygon points="447.9,497.1 278.7,617.3 398.9,448.1"/></g>
+    <g mask="url(#m6)"><polygon points="386.7,418.7 182,384 386.7,349.3"/></g>
+    <g mask="url(#m7)"><polygon points="398.9,319.9 278.7,150.7 447.9,270.9"/></g>
+    <circle cx="512" cy="384" r="160"/>
+    <ellipse cx="456" cy="360" rx="22" ry="28" fill="#3B2F6B" stroke="none"/>
+    <circle cx="448.3" cy="348.8" r="8.4" fill="#FFFFFF" stroke="none"/>
+    <ellipse cx="568" cy="360" rx="22" ry="28" fill="#3B2F6B" stroke="none"/>
+    <circle cx="560.3" cy="348.8" r="8.4" fill="#FFFFFF" stroke="none"/>
+    <path d="M452 430 Q512 482 572 430" stroke-width="9"/>
+    <ellipse cx="420" cy="424" rx="26" ry="14" fill="#FF9AB0" stroke="none"/>
+    <ellipse cx="604" cy="424" rx="26" ry="14" fill="#FF9AB0" stroke="none"/>
+  </g>
+</svg>

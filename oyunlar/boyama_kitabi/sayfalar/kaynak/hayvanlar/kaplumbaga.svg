@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="768" viewBox="0 0 1024 768">
+  <defs>
+    <mask id="m2" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><ellipse cx="330" cy="640" rx="50" ry="72"/><path d="M240 580 C240 330 370 230 510 230 C650 230 780 330 780 580 Z"/><path d="M222 560 L798 560 Q806 614 760 616 L262 616 Q216 614 222 560 Z"/></g></mask>
+    <mask id="m3" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><ellipse cx="626" cy="642" rx="50" ry="72"/><ellipse cx="846" cy="470" rx="92" ry="78"/><path d="M240 580 C240 330 370 230 510 230 C650 230 780 330 780 580 Z"/><path d="M222 560 L798 560 Q806 614 760 616 L262 616 Q216 614 222 560 Z"/></g></mask>
+    <mask id="m4" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><path d="M240 580 C240 330 370 230 510 230 C650 230 780 330 780 580 Z"/><path d="M222 560 L798 560 Q806 614 760 616 L262 616 Q216 614 222 560 Z"/></g></mask>
+    <mask id="m5" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><path d="M240 580 C240 330 370 230 510 230 C650 230 780 330 780 580 Z"/><path d="M222 560 L798 560 Q806 614 760 616 L262 616 Q216 614 222 560 Z"/></g></mask>
+    <mask id="m6" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><path d="M240 580 C240 330 370 230 510 230 C650 230 780 330 780 580 Z"/><path d="M222 560 L798 560 Q806 614 760 616 L262 616 Q216 614 222 560 Z"/></g></mask>
+    <mask id="m7" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><path d="M240 580 C240 330 370 230 510 230 C650 230 780 330 780 580 Z"/></g></mask>
+    <mask id="m8" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><polygon points="588,412 549,479.5 471,479.5 432,412 471,344.5 549,344.5"/><polygon points="408,474 380,522.5 324,522.5 296,474 324,425.5 380,425.5"/><polygon points="724,474 696,522.5 640,522.5 612,474 640,425.5 696,425.5"/><polygon points="450,322 426,363.6 378,363.6 354,322 378,280.4 426,280.4"/><polygon points="666,322 642,363.6 594,363.6 570,322 594,280.4 642,280.4"/><path d="M222 560 L798 560 Q806 614 760 616 L262 616 Q216 614 222 560 Z"/></g></mask>
+    <mask id="m9" maskUnits="userSpaceOnUse" x="-100" y="-100" width="1224" height="968"><rect x="-100" y="-100" width="1224" height="968" fill="#FFFFFF"/><g fill="#000000" stroke="none"><polygon points="450,322 426,363.6 378,363.6 354,322 378,280.4 426,280.4"/><polygon points="666,322 642,363.6 594,363.6 570,322 594,280.4 642,280.4"/></g></mask>
+  </defs>
+  <g id="bolgeler" fill="#F6F2FB">
+    <circle id="gunes" cx="130" cy="120" r="70"/>
+    <path id="bulut" d="M940 120 A25.5 25.5 0 0 1 911.9 150 L840.8 150 L760 150 A33.4 33.4 0 0 1 707.2 138.8 A23.3 23.3 0 0 1 707.2 101.2 A37.3 37.3 0 0 1 760 72.4 A50.3 50.3 0 0 1 840.8 65.8 A45.6 45.6 0 0 1 911.9 84.6 A28 28 0 0 1 940 120 Z"/>
+    <ellipse id="arka_bacak_1" cx="420" cy="600" rx="42" ry="64"/>
+    <ellipse id="arka_bacak_2" cx="716" cy="600" rx="42" ry="64"/>
+    <ellipse id="on_bacak_1" cx="330" cy="640" rx="50" ry="72"/>
+    <ellipse id="on_bacak_2" cx="626" cy="642" rx="50" ry="72"/>
+    <polygon id="kuyruk" points="250,566 116,646 258,612"/>
+    <ellipse id="kafa" cx="846" cy="470" rx="92" ry="78"/>
+    <path id="kabuk" d="M240 580 C240 330 370 230 510 230 C650 230 780 330 780 580 Z"/>
+    <polygon id="pul_1" points="588,412 549,479.5 471,479.5 432,412 471,344.5 549,344.5"/>
+    <polygon id="pul_2" points="408,474 380,522.5 324,522.5 296,474 324,425.5 380,425.5"/>
+    <polygon id="pul_3" points="724,474 696,522.5 640,522.5 612,474 640,425.5 696,425.5"/>
+    <polygon id="pul_4" points="450,322 426,363.6 378,363.6 354,322 378,280.4 426,280.4"/>
+    <polygon id="pul_5" points="666,322 642,363.6 594,363.6 570,322 594,280.4 642,280.4"/>
+    <path id="kenar" d="M222 560 L798 560 Q806 614 760 616 L262 616 Q216 614 222 560 Z"/>
+  </g>
+  <g id="cizgiler" fill="none" stroke="#3B2F6B" stroke-width="12" stroke-linejoin="round" stroke-linecap="round">
+    <circle cx="130" cy="120" r="70"/>
+    <path d="M940 120 A25.5 25.5 0 0 1 911.9 150 L840.8 150 L760 150 A33.4 33.4 0 0 1 707.2 138.8 A23.3 23.3 0 0 1 707.2 101.2 A37.3 37.3 0 0 1 760 72.4 A50.3 50.3 0 0 1 840.8 65.8 A45.6 45.6 0 0 1 911.9 84.6 A28 28 0 0 1 940 120 Z"/>
+    <g mask="url(#m2)"><ellipse cx="420" cy="600" rx="42" ry="64"/></g>
+    <g mask="url(#m3)"><ellipse cx="716" cy="600" rx="42" ry="64"/></g>
+    <g mask="url(#m4)"><ellipse cx="330" cy="640" rx="50" ry="72"/></g>
+    <g mask="url(#m5)"><ellipse cx="626" cy="642" rx="50" ry="72"/></g>
+    <g mask="url(#m6)"><polygon points="250,566 116,646 258,612"/></g>
+    <g mask="url(#m7)"><ellipse cx="846" cy="470" rx="92" ry="78"/></g>
+    <g mask="url(#m8)"><path d="M240 580 C240 330 370 230 510 230 C650 230 780 330 780 580 Z"/></g>
+    <g mask="url(#m9)"><polygon points="588,412 549,479.5 471,479.5 432,412 471,344.5 549,344.5"/></g>
+    <polygon points="408,474 380,522.5 324,522.5 296,474 324,425.5 380,425.5"/>
+    <polygon points="724,474 696,522.5 640,522.5 612,474 640,425.5 696,425.5"/>
+    <polygon points="450,322 426,363.6 378,363.6 354,322 378,280.4 426,280.4"/>
+    <polygon points="666,322 642,363.6 594,363.6 570,322 594,280.4 642,280.4"/>
+    <path d="M222 560 L798 560 Q806 614 760 616 L262 616 Q216 614 222 560 Z"/>
+    <ellipse cx="878" cy="442" rx="16" ry="20" fill="#3B2F6B" stroke="none"/>
+    <circle cx="872.4" cy="434" r="6.1" fill="#FFFFFF" stroke="none"/>
+    <path d="M876 504 Q904 516 922 492" stroke-width="9"/>
+    <ellipse cx="106" cy="112" rx="9" ry="11" fill="#3B2F6B" stroke="none"/>
+    <circle cx="102.8" cy="107.6" r="3.4" fill="#FFFFFF" stroke="none"/>
+    <ellipse cx="154" cy="112" rx="9" ry="11" fill="#3B2F6B" stroke="none"/>
+    <circle cx="150.8" cy="107.6" r="3.4" fill="#FFFFFF" stroke="none"/>
+    <path d="M110 146 Q130 160 150 146" stroke-width="7"/>
+  </g>
+</svg>
