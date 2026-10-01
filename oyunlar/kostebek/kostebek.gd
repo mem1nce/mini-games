@@ -1,7 +1,7 @@
 extends Control
-# Köstebek Vurma (WhackAMoleGame): çukurlardan köstebek, meyve/sebze ya da bomba çıkar.
+# Köstebek Vurma (MoleGame): çukurlardan köstebek, meyve/sebze ya da bomba çıkar.
 # Köstebek +30, meyve +10, bomba 1 can götürür; kaçan hiçbir şey için ceza yok. 3 can bitince oyun biter.
-# Skor arttıkça seviye atlanır ve oyun hızlanır; bütün denge değerleri denge.tres (WhackBalance) içinde.
+# Skor arttıkça seviye atlanır ve oyun hızlanır; bütün denge değerleri denge.tres (MoleBalance) içinde.
 #
 # Durumlar: COUNTDOWN (3-2-1) -> PLAYING -> GAME_OVER (skor, rekor, tekrar oyna / ana menü).
 # Dokunmanın tamamı burada (_input): her parmak ayrı sayılır, vurma basış anında olur.
@@ -19,7 +19,7 @@ const Sounds := preload("res://oyunlar/kostebek/sesler.gd")
 enum State { COUNTDOWN, PLAYING, GAME_OVER }
 
 ## Bütün denge ayarları (puanlar, can, seviyeler...). Değiştirmek için denge.tres'i aç.
-@export var balance: WhackBalance
+@export var balance: MoleBalance
 ## Basılı tutunca ana menüye dönme süresi (saniye).
 @export var hold_to_exit: float = 0.6
 ## Geri sayımda her sayının süresi (saniye).

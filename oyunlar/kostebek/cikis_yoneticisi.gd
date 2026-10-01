@@ -1,5 +1,5 @@
 extends Node
-# Spawner: ne zaman, hangi çukurdan, ne çıkacağına karar verir. Değerler denge.tres'ten (WhackBalance).
+# Spawner: ne zaman, hangi çukurdan, ne çıkacağına karar verir. Değerler denge.tres'ten (MoleBalance).
 # Kurallar: aynı anda en fazla max_active nesne; boşalan çukur hole_cooldown kadar dinlenir ve
 # bir önceki çukur (başka seçenek varsa) seçilmez; bomba art arda max_bombs_in_row'dan fazla gelmez
 # ve ekranda max_bombs_on_screen'den fazla bomba olmaz.
@@ -11,8 +11,8 @@ const Mole := preload("res://oyunlar/kostebek/kostebek_nesne.gd")
 const Fruit := preload("res://oyunlar/kostebek/meyve_nesne.gd")
 const Bomb := preload("res://oyunlar/kostebek/bomba_nesne.gd")
 
-var balance: WhackBalance
-var level: WhackLevelData
+var balance: MoleBalance
+var level: MoleLevelData
 var holes: Array[Node2D] = []
 var running: bool = false
 var holding: bool = false        # çukurlar yeniden dizilirken yeni çıkış yok

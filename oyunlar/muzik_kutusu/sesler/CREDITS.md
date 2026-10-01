@@ -1,6 +1,9 @@
 # Hayvan sesi kaynakları (hepsi CC0 / kamu malı)
 
-`kaynak/` içindeki kayıtlar `ses_uret.py` ile kesilip yüksekliği eşitlenir.
+`kaynak/` içindeki kayıtlar `ses_uret.py` ile kesilip yüksekliği eşitlenir. BigSoundBank kayıtları Joseph Sardin'e
+aittir (CC0; sitenin lisans sayfası: https://bigsoundbank.com/licenses.html). Lisanslar 1 Ekim 2026'da kaynak
+sayfalarından doğrulandı. Buraya yeni bir kayıt eklenince kökteki `CREDITS.md` ve uygulamadaki Lisanslar ekranı
+(`ana_menu/lisans_metinleri.gd`) de güncellenmeli.
 
 | Ses | Dosya | Kaynak | Lisans |
 |---|---|---|---|

@@ -76,7 +76,7 @@ Ayarlar (`@export`, kök düğümün Inspector'ında): `drop_tolerance`, `grab_p
 |---|---|
 | 1 | daire, kare, üçgen, yıldız |
 | 2 | kalp, hilal, altıgen, dikdörtgen |
-| 3 | roket, lego, oyuncak ayı, top |
+| 3 | roket, blok, oyuncak ayı, top |
 | 4 | topaç, davul, uçurtma, çıngırak |
 | 5 | kedi, balık, fil, zürafa |
 | 6 | köpek, kuş, tavşan, kaplumbağa |
@@ -86,7 +86,7 @@ Ayarlar (`@export`, kök düğümün Inspector'ında): `drop_tolerance`, `grab_p
 | 10 | baklava, oyuncak ayı, fil, helikopter |
 
 Siluet grupları (aynı bölümde birlikte olamaz): `yuvarlak` (daire, oval, top), `dortgen` (kare,
-dikdörtgen, lego), `baklava` (baklava, uçurtma), `uzun_arac` (otobüs, tren). Oyun açılırken
+dikdörtgen, blok), `baklava` (baklava, uçurtma), `uzun_arac` (otobüs, tren). Oyun açılırken
 `_check_data()` bunu ve boş/tekrarlı eşyaları denetler, sorun varsa Godot çıktısına hata yazar.
 
 ## Yeni eşya eklemek

@@ -1,4 +1,4 @@
-class_name WhackBalance
+class_name MoleBalance
 extends Resource
 # Köstebek Vurma'nın bütün denge ayarları (tek yer: denge.tres).
 # Seviye skordan hesaplanır: seviye = 1 + skor / points_per_level. Son seviyeden sonrası son seviyedir.
@@ -38,11 +38,11 @@ extends Resource
 @export var min_touch_size: float = 130.0
 
 @export_group("Seviyeler")
-## Sırayla seviye 1, 2, 3... Yeni seviye için diziye bir WhackLevelData ekle.
-@export var levels: Array[WhackLevelData] = []
+## Sırayla seviye 1, 2, 3... Yeni seviye için diziye bir MoleLevelData ekle.
+@export var levels: Array[MoleLevelData] = []
 
 
-func level_data(level: int) -> WhackLevelData:
+func level_data(level: int) -> MoleLevelData:
 	return levels[clampi(level - 1, 0, levels.size() - 1)]
 
 
