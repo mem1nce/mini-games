@@ -94,8 +94,7 @@ func dokun(nokta: Vector2) -> String:
 
 
 func duduk() -> void:
-	if sesler:
-		sesler.play("duduk")
+	SesYoneticisi.efekt("tren_duduk", -5.0)
 	_efektler.dudum(tren.baca_konumu(), HUCRE * 0.7)
 	# Düdükle birlikte kısa bir hızlanma
 	var tween := create_tween()

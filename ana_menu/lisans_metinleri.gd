@@ -16,6 +16,7 @@ const SES_KAYNAKLARI := [
 	["Interface Sounds, Impact Sounds, Music Jingles, Digital Audio, Casino Audio, RPG Audio", "Kenney", "kenney.nl"],
 	["Boing", "Aeva", "opengameart.org/content/boing"],
 	["Pleasing Bell Sound Effect", "Spring Spring", "opengameart.org/content/pleasing-bell-sound-effect"],
+	["Steam whistle, Steam release sounds", "bart", "opengameart.org/content/steam-whistle"],
 	["80 CC0 creature SFX, 30 CC0 SFX loops", "rubberduck", "opengameart.org"],
 	["Happy Clappy Loop", "OwlishMedia", "opengameart.org/content/happy-clappy-loop"],
 	["Flowerbed Fields", "Zane Little Music", "opengameart.org/content/flowerbed-fields-loop"],

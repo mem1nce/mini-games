@@ -2,6 +2,7 @@
 
 Bütün indirilen sesler **CC0** (kamu malı): isim vermek gerekmez, ticari kullanım serbest. CC-BY veya lisansı belirsiz ses yok.
 "sentez" paketindeki sesler indirilmedi, `ses_hazirla.py` içinde kodla üretildi (bize ait).
+Tren sesleri (`tren_*.ogg`) indirilen gerçek buhar kayıtlarından `ses_hazirla.py` içindeki fonksiyonlarla kuruldu.
 Dosyalar `ses_hazirla.py` ile hazırlandı: kırpma, gerekirse perde değiştirme ve tiz yumuşatma (alçak geçiren süzgeç),
 seviye eşitleme, .ogg Vorbis. Efektler mono, müzikler stereo ve döngülü (`.import` içinde `loop=true`).
 Çalma: `ortak/ses_yoneticisi.gd` (autoload `SesYoneticisi`).
@@ -29,6 +30,8 @@ Paketler proje dışındaki bir önbellek klasörüne indirilir; projeye sadece 
 | m_yol | Cozy Puzzle Jingle / Result | mintodog | https://opengameart.org/content/cozy-puzzle-jingle-result | CC0 |
 | m_hafiza | Heavenly Loop | isaiah658 | https://opengameart.org/content/heavenly-loop | CC0 |
 | m_meyve | Children's March Theme | cleytonkauffman | https://opengameart.org/content/childrens-march-theme | CC0 |
+| buhar_duduk | Steam whistle | bart | https://opengameart.org/content/steam-whistle | CC0 |
+| buhar | Steam release sounds | bart | https://opengameart.org/content/steam-release-sounds | CC0 |
 | sentez | (bu projede üretildi) | Minik Oyunlar | `ses_hazirla.py` içindeki sentez fonksiyonları | bize ait |
 
 \* Feel Good Island sayfada iki lisanslı (CC0 ve OGA-BY 3.0); CC0 seçeneğiyle kullanıldı. Sayfaya göre orijinal
@@ -73,6 +76,9 @@ Denenip kullanılmayan: "dings" (OpenGameArt, CC-BY-SA 4.0), isim verme ve aynı
 | guc_al.ogg | digital | powerUp2.ogg | tiz yumuşatma | Meyve Topla güçlendirme alındı |
 | guc_bitti.ogg | digital | phaserDown1.ogg | tiz yumuşatma | Meyve Topla güçlendirme bitti |
 | vuus.ogg | sentez | `vuus()` | süzülmüş gürültü (yükselip alçalan rüzgar), tiz yumuşatma | Uçan Kuş hızlanma |
+| tren_duduk.ogg | buhar_duduk | steam_whistle.wav | `tren_duduk()`: kaydın sabit bölümünden iki ses birlikte (Sol5 + Si5), kısa + uzun üfleme ("tü-tüüt"), tiz yumuşatma | Tren Rayı: kalkış, istasyona varış, giriş ekranında trene dokunma |
+| tren_cufcuf.ogg | buhar | steam hisses - Marker #1.wav, #2, #3, #4 (steam_hisses.zip) | `tren_cufcuf()`: dört kısa puf kalınlaştırılıp 0,3 sn arayla dizildi (ilk vuruş vurgulu), kuyruklar başa sarıldı; dikişsiz döngü | Tren Rayı: tren hareket ederken (perde ve seviye hıza bağlı) |
+| tren_fren.ogg | buhar | steam hisses - Marker #3.wav (steam_hisses.zip) | `tren_fren()`: biraz yavaşlatıldı, yumuşak başlangıç, tiz yumuşatma ("pşşş") | Tren Rayı: yolcu duraklarında, eksik yolda ve istasyonda duruş |
 | muzik_menu.ogg | m_menu | HappyClappyLoop.wav | dikişte çok kısa kısılma | ana menü |
 | muzik_ucan_kus.ogg | m_kus | flowerbed_fields.ogg | tiz yumuşatma (5 kHz) | Uçan Kuş |
 | muzik_dondurmaci.ogg | m_dondurma | feel_good_island_loop_0.ogg | | Dondurmacı |
@@ -80,4 +86,4 @@ Denenip kullanılmayan: "dings" (OpenGameArt, CC-BY-SA 4.0), isim verme ve aynı
 | muzik_hafiza.ogg | m_hafiza | Heavenly Loop_0.ogg | | Hafıza |
 | muzik_meyve_topla.ogg | m_meyve | Children's March Theme.ogg | tiz yumuşatma | Meyve Topla |
 
-Toplam boyut yaklaşık 4.5 MB.
+Toplam boyut yaklaşık 4.7 MB.

@@ -4,7 +4,8 @@
 # Gerekenler: Python 3 + soundfile, numpy, scipy (pip install soundfile numpy scipy). İndirilen paketler proje
 # dışında bir önbellek klasörüne açılır (varsayılan: sistem geçici klasörü / minik_sesler_kaynak).
 # Çalıştırma (proje kökünden): python ortak/sesler/ses_hazirla.py [önbellek_klasörü] [ses adları...]
-# (ad verilirse sadece o sesler yeniden üretilir). "sentez" paketindeki sesler indirilmez, bu dosyada üretilir.
+# (ad verilirse sadece o sesler yeniden üretilir). "sentez" paketindeki sesler indirilmez, bu dosyada üretilir;
+# "kurgu" paketindekiler indirilen kayıtlardan bu dosyadaki bir fonksiyonla kurulur (ör. tren sesleri).
 #
 # Seviye hedefleri (kısa pencere RMS, dBFS): arayüz -26, efekt -21, ezgi -19, döngü -30, müzik (ortalama) -22;
 # tepe -1 dBFS'i geçmez. Efektler mono, müzikler stereo. Oyun içindeki ince ayar SesYoneticisi'nde.
@@ -37,6 +38,8 @@ PAKETLER = {
     "zil": (OGA + "pleasing-bell.wav", "https://opengameart.org/content/pleasing-bell-sound-effect"),
     "yaratik": (OGA + "80-CC0-creature-SFX_0.zip", "https://opengameart.org/content/80-cc0-creature-sfx"),
     "donguler": (OGA + "sfx_loops.zip", "https://opengameart.org/content/30-cc0-sfx-loops"),
+    "buhar_duduk": (OGA + "steam_whistle.wav", "https://opengameart.org/content/steam-whistle"),
+    "buhar": (OGA + "steam_hisses.zip", "https://opengameart.org/content/steam-release-sounds"),
     "m_menu": (OGA + "HappyClappyLoop.wav", "https://opengameart.org/content/happy-clappy-loop"),
     "m_kus": (OGA + "flowerbed_fields.ogg", "https://opengameart.org/content/flowerbed-fields-loop"),
     "m_dondurma": (OGA + "feel_good_island_loop_0.ogg", "https://opengameart.org/content/feel-good-island-loop"),
@@ -91,6 +94,10 @@ SESLER = {
     "guc_al": ("digital", "powerUp2.ogg", "efekt", {"alcak": 3000}),
     "guc_bitti": ("digital", "phaserDown1.ogg", "efekt", {"alcak": 2500}),
     "vuus": ("sentez", "vuus", "efekt", {"alcak": 2800}),
+    # --- Tren Rayı (gerçek buhar kayıtlarından kuruldu; kaynak paketler: buhar_duduk, buhar) ---
+    "tren_duduk": ("kurgu", "tren_duduk", "efekt", {"alcak": 5000}),
+    "tren_cufcuf": ("kurgu", "tren_cufcuf", "dongu", {}),
+    "tren_fren": ("kurgu", "tren_fren", "efekt", {"alcak": 3000, "sonu_sustur": 0.35}),
     # --- Müzikler (döngülü) ---
     "muzik_menu": ("m_menu", "HappyClappyLoop.wav", "muzik", {"dikis": 0.006}),
     "muzik_ucan_kus": ("m_kus", "flowerbed_fields.ogg", "muzik", {"alcak": 5000}),
@@ -176,7 +183,7 @@ def pencere_rms_max(veri, pencere=0.3):
     return en
 
 
-def vuus():
+def vuus(_onbellek=None):
     """Rüzgar "vuuş"u: merkez frekansı yükselip alçalan bant geçiren gürültü, yumuşak çan biçimli zarf"""
     n = int(0.55 * SR)
     t = np.linspace(0.0, 1.0, n)
@@ -193,12 +200,68 @@ def vuus():
     return (cikis * zarf / zarf.max())[:, None]
 
 
-SENTEZ = {"vuus": vuus}
+def _kenar(n, acilis, kapanis):
+    """Yumuşak açılıp kapanan zarf (yarım kosinüs kenarlar; süreler sn)"""
+    zarf = np.ones(n)
+    a, k = min(n, int(acilis * SR)), min(n, int(kapanis * SR))
+    zarf[:a] = 0.5 - 0.5 * np.cos(np.linspace(0, np.pi, a))
+    zarf[n - k:] *= 0.5 + 0.5 * np.cos(np.linspace(0, np.pi, k))
+    return zarf
+
+
+def tren_duduk(onbellek):
+    """Oyuncak tren düdüğü "tü-tüüt": gerçek buhar düdüğü kaydının kararlı bölümünden iki ses birlikte
+    (Sol5 + Si5, büyük üçlü: neşeli), önce kısa sonra uzun üfleme"""
+    ham = oku(bul(onbellek, "buhar_duduk", "steam_whistle.wav"), False)[:, 0]
+    duz = ham[int(1.2 * SR):int(2.05 * SR)]           # düdüğün tam açıldığı, sabit bölüm (temel ses 742 Hz)
+    sol = signal.resample(duz, int(len(duz) * 742.0 / 784.0))
+    si = signal.resample(duz, int(len(duz) * 742.0 / 988.0))
+    cikis = np.zeros(int(0.70 * SR))
+    for bas, sure, kaynak_bas in ((0.0, 0.15, 0.0), (0.22, 0.46, 0.1)):
+        n = int(sure * SR)
+        k = int(kaynak_bas * SR)
+        ufleme = (sol[k:k + n] + 0.55 * si[k:k + n]) * _kenar(n, 0.022, 0.09)
+        i = int(bas * SR)
+        cikis[i:i + n] += ufleme
+    return cikis[:, None]
+
+
+def tren_cufcuf(onbellek):
+    """Dört vuruşluk "çuf çuf" döngüsü: gerçek buhar kayıtlarından kısa, kalınlaştırılmış puflar; ilk vuruş
+    vurgulu. Puf kuyrukları döngünün başına sarıldığı için dikiş duyulmaz. Oyunda hız perdeyle değişir."""
+    adim = 0.30
+    n = int(4 * adim * SR)
+    dongu = np.zeros(n)
+    sos = signal.butter(4, [140, 1150], "band", fs=SR, output="sos")
+    for i, (kayit, guc) in enumerate((("1", 1.0), ("3", 0.6), ("2", 0.8), ("4", 0.6))):
+        ham = oku(bul(onbellek, "buhar", "steam hisses - Marker #%s.wav" % kayit), False)[:, 0]
+        parca = ham[:int(0.3 * SR)]
+        puf = signal.sosfilt(sos, signal.resample(parca, int(len(parca) / 0.55)))    # 0.55 hız: daha kalın
+        t = np.arange(len(puf)) / SR
+        puf *= np.minimum(t / 0.014, 1.0) * np.exp(-t / 0.075)
+        puf *= guc / np.sqrt(np.mean(puf[:int(0.15 * SR)] ** 2))
+        np.add.at(dongu, (int(i * adim * SR) + np.arange(len(puf))) % n, puf)
+    return dongu[:, None]
+
+
+def tren_fren(onbellek):
+    """Duruş: yumuşak "pşşş". Gerçek buhar boşaltma kaydı, biraz yavaşlatılmış ve yumuşak başlangıçlı"""
+    ham = oku(bul(onbellek, "buhar", "steam hisses - Marker #3.wav"), False)[:, 0]
+    parca = ham[:int(0.95 * SR)]
+    ses = signal.resample(parca, int(len(parca) / 0.8))
+    ses = signal.sosfilt(signal.butter(2, 350, "high", fs=SR, output="sos"), ses)
+    return (ses * _kenar(len(ses), 0.04, 0.3))[:, None]
+
+
+SENTEZ = {"vuus": vuus, "tren_duduk": tren_duduk, "tren_cufcuf": tren_cufcuf, "tren_fren": tren_fren}
 
 
 def hazirla(onbellek, ad, paket, dosya, tur, isl):
     dongu = tur in DONGULU
-    veri = SENTEZ[dosya]() if paket == "sentez" else oku(bul(onbellek, paket, dosya), tur == "muzik")
+    if paket in ("sentez", "kurgu"):
+        veri = SENTEZ[dosya](onbellek)
+    else:
+        veri = oku(bul(onbellek, paket, dosya), tur == "muzik")
     if "perde" in isl:
         # Hız çarpanı: yeniden örnekleyerek perde ve süre birlikte değişir
         oran = isl["perde"]
