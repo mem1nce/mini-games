@@ -9,7 +9,9 @@ Dışarıdan alınan her varlık (yazı tipi, görsel, ses) burada listelenir. Y
 ## Görseller ve sesler
 
 - Oyunlardaki bütün SVG görseller projede elle çizildi.
-- Sesler projede Python ile sentezlendi (`ortak/ses/sentez.py` ve oyunların `sesler/ses_uret.py` betikleri); aşağıdaki kayıtlar hariç.
+- Oyunların kendi sesleri projede Python ile sentezlendi (`ortak/ses/sentez.py` ve oyunların `sesler/ses_uret.py` betikleri); aşağıdaki kayıtlar hariç.
+- Ortak sesler ve müzikler (`ortak/sesler/`) CC0 paketlerinden alındı (Kenney, OpenGameArt); dosya dosya dökümü `ortak/sesler/SESLER.md` içinde.
+- Bütün varlıkların telif ve lisans incelemesi `LISANSLAR.md` içinde. Uygulamadaki Lisanslar ekranının metinleri `ana_menu/lisans_metinleri.gd`'de; buraya ya da `SESLER.md`'ye yeni bir dış kaynak eklenince orası da güncellenmeli.
 
 ## İndirilen sesler (CC0)
 

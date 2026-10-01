@@ -1,3 +1,7 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+
+# Python önbelleği
+__pycache__/
+*.pyc
