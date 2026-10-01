@@ -37,7 +37,7 @@ enum State { LOADING, PLAYING, CELEBRATING }
 ## ... ve en az. Ekran çok doluysa bile eşyalar bundan küçük olmaz.
 @export_range(0.15, 0.4) var min_item_ratio: float = 0.2
 ## Basılı tutunca geri dönme süresi (saniye).
-@export var hold_to_exit: float = 1.0
+@export var hold_to_exit: float = 0.6
 
 @export_group("Görünüm ve animasyon")
 ## Sürüklerken eşyanın büyüme oranı.

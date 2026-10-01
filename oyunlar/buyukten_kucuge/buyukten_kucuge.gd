@@ -41,7 +41,7 @@ enum State { TRANSITION, PLAYING, CELEBRATING }
 ## Bu kadar saniye hiçbir şey yapılmazsa ipucu: sıradaki doğru nesne parlar, el onu hedefe götürür.
 @export var hint_delay: float = 8.0
 ## Basılı tutunca geri dönme süresi (saniye).
-@export var hold_to_exit: float = 1.0
+@export var hold_to_exit: float = 0.6
 
 @export_group("Görünüm ve animasyon")
 ## Sürüklerken nesnenin büyüme oranı.

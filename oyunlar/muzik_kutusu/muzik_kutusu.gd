@@ -14,7 +14,7 @@ extends Node2D
 ## Bu kadar saniye hiçbir şeye dokunulmazsa bir parça hafifçe parlayıp zıplayarak davet eder.
 @export var invite_after: float = 15.0
 ## Basılı tutunca ana menüye dönme süresi (saniye).
-@export var hold_to_exit: float = 1.0
+@export var hold_to_exit: float = 0.6
 
 const G := "res://oyunlar/muzik_kutusu/gorseller/"
 const BUS := &"MuzikKutusu"

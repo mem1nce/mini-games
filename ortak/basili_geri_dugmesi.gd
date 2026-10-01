@@ -11,13 +11,14 @@ const BORDER := Color(0.23, 0.18, 0.42)
 const RING := Color("ff7a9a")
 const RING_BG := Color(0.23, 0.18, 0.42, 0.15)
 
-var hold_time: float = 1.0
+var hold_time: float = 0.6
 ## Düğmenin dolgu rengi ve ikonu (oyun kendi renginde düğme isterse değiştirir)
 var bg_color: Color = BG
 var icon: Texture2D = ICON
 var _progress: float = 0.0
 var _holding: bool = false
 var _done: bool = false
+var _finger: int = -1
 
 
 func _ready() -> void:
@@ -25,8 +26,44 @@ func _ready() -> void:
 	pivot_offset = size / 2.0
 
 
+## Sahnedeki hazır bir Panel'in yerine geçer (aynı konum ve boyut, aynı üst düğüm); Panel gizlenir.
+static func replace(panel: Control, time: float = 0.6) -> Control:
+	var button := new()
+	button.position = panel.position
+	button.size = panel.size
+	button.hold_time = time
+	panel.get_parent().add_child(button)
+	panel.hide()
+	return button
+
+
 func contains(point: Vector2) -> bool:
 	return is_visible_in_tree() and get_global_rect().grow(10.0).has_point(point)
+
+
+## Dokunma olayını kendi parmağıyla takip eder; olayı kullandıysa true döner.
+func handle_touch(touch: InputEventScreenTouch) -> bool:
+	if touch.pressed:
+		if _finger == -1 and contains(touch.position):
+			_finger = touch.index
+			press()
+			return true
+		return false
+	if touch.index == _finger:
+		_finger = -1
+		release()
+		return true
+	return false
+
+
+## Aynı sahnede tekrar kullanılacaksa (tamamlanınca ekran değişmiyorsa) düğmeyi sıfırlar.
+func reset() -> void:
+	_done = false
+	_holding = false
+	_finger = -1
+	_progress = 0.0
+	scale = Vector2.ONE
+	queue_redraw()
 
 
 func press() -> void:

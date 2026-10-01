@@ -179,7 +179,7 @@ func _make_back() -> void:
 		back.queue_free()
 	back = HoldButton.new()
 	back.size = Vector2(104, 104)
-	back.hold_time = 0.8
+	back.hold_time = 0.6
 	back.position = Vector2(40, 26)
 	back.completed.connect(back_completed.emit)
 	add_child(back)

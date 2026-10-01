@@ -18,7 +18,7 @@ enum State { READY, PLAYING, FALLING, GAME_OVER }
 ## Bütün denge ayarları (hız, genişlik, kaybolma, ödüller, konma toleransı...). Değiştirmek için denge.tres'i aç.
 @export var balance: JumpBalance
 ## Basılı tutunca ana menüye dönme süresi (saniye).
-@export var hold_to_exit: float = 1.0
+@export var hold_to_exit: float = 0.6
 ## Konunca kameranın yukarı kayma süresi (saniye).
 @export var camera_time: float = 0.45
 

@@ -108,7 +108,7 @@ func show_garage(color: String, driver: int) -> void:
 	_back = HoldButton.new()
 	_back.size = Vector2(104, 104)
 	_back.position = Vector2(40, 26)
-	_back.hold_time = 0.8
+	_back.hold_time = 0.6
 	_back.completed.connect(back_completed.emit)
 	add_child(_back)
 	_back_touch = -1
