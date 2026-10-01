@@ -1,6 +1,8 @@
 # Tren Rayı sesleri: sadece Python standart kütüphanesiyle sentezlenir.
 # Çalıştırma: python ses_uret.py   (bu klasöre .wav dosyalarını yazar)
-# Ortak yardımcılar ortak/ses/sentez.py içinde. Yumuşak, oyuncak tren sesleri; ani ya da sert ses yok.
+# Ortak yardımcılar ortak/ses/sentez.py içinde. Yumuşak arayüz ve kutlama sesleri; ani ya da sert ses yok.
+# Trenin kendi sesleri (düdük, "çuf çuf", fren) burada üretilmez: gerçek buhar kayıtlarından hazırlanıp
+# ortak seslere kondu (ortak/sesler/tren_*.ogg, kaynaklar ortak/sesler/SESLER.md).
 
 import math
 import os
@@ -39,41 +41,8 @@ def tamam() -> list:
     return out
 
 
-def duduk() -> list:
-    # Buharlı tren düdüğü: üç sesli akor, hafif titreşimli, nefesli
-    seconds = 0.9
-    out = []
-    n = int(RATE * seconds)
-    breath = lowpass(noise(seconds, 7), 3000)
-    for i in range(n):
-        t = i / RATE
-        env = min(1.0, t / 0.06) * min(1.0, (seconds - t) / 0.25)
-        vib = 1.0 + 0.006 * math.sin(2 * math.pi * 5.5 * t)
-        v = 0.0
-        for f, g in ((587.3, 1.0), (740.0, 0.8), (880.0, 0.6)):
-            v += g * math.sin(2 * math.pi * f * vib * t)
-        out.append((v * 0.4 + breath[i] * 0.25) * env)
-    return out
 
 
-def cuf() -> list:
-    # Tek buhar pufu (hareket ederken arka arkaya çalar)
-    return envelope(lowpass(highpass(noise(0.2, 11), 300), 1600), 0.01, 18.0)
-
-
-def hareket() -> list:
-    # Kalkış: kısa düdük + iki "çuf"
-    out = silence(1.1)
-    mix(out, duduk()[: int(RATE * 0.45)], 0.0, 0.8)
-    mix(out, cuf(), 0.5, 1.0)
-    mix(out, cuf(), 0.78, 0.9)
-    return out
-
-
-def fren() -> list:
-    # Nazik duruş: yumuşak "pşşş"
-    out = envelope(lowpass(highpass(noise(0.5, 13), 1500), 5000), 0.05, 5.0)
-    return out
 
 
 def soru() -> list:
@@ -130,10 +99,6 @@ if __name__ == "__main__":
     save("tik", tik())
     save("civata", civata())
     save("tamam", tamam())
-    save("duduk", duduk())
-    save("cuf", cuf(), 0.07)
-    save("hareket", hareket())
-    save("fren", fren(), 0.06)
     save("soru", soru())
     save("yolcu", yolcu())
     save("varis", varis())

@@ -22,6 +22,14 @@ const GirisEkrani := preload("res://oyunlar/tren_rayi/giris_ekrani.gd")
 const Sesler := preload("res://oyunlar/tren_rayi/sesler.gd")
 const HoldButton := preload("res://ortak/basili_geri_dugmesi.gd")
 const G := "res://oyunlar/tren_rayi/gorseller/"
+# Tren sesleri ortak seslerden (SesYoneticisi): "çuf çuf" döngüsü trenin o anki hızını izler
+const CUF := "tren_cufcuf"
+const CUF_PERDE_YAVAS := 0.7     # tren yeni kalkarken / dururken döngünün hızı
+const CUF_PERDE_HIZLI := 1.3     # tren en hızlıyken
+const CUF_DB_YAVAS := -16.0
+const CUF_DB_HIZLI := -4.0
+const DUDUK_DB := -5.0
+const FREN_DB := -9.0
 
 enum Durum { GIRIS, OYUN, YOLCULUK, KUTLAMA }
 
@@ -48,7 +56,8 @@ var _bosta := 0.0
 var _oturum := 0                 # ekran değişince süren yolculuk/kutlama beklemeleri iptal olsun diye
 var _zaman := 0.0
 var _rng := RandomNumberGenerator.new()
-var _cuf_sayac := 0.0
+var _cuf_caliyor := false
+var _onceki_mesafe := 0.0
 
 
 func _ready() -> void:
@@ -277,7 +286,7 @@ func _yolculuk() -> void:
 	tren.yol = bilgi["yol"]
 	var h: float = izgara.hucre
 	var hiz := tren_hizi * h
-	_sesler.play("hareket")
+	SesYoneticisi.efekt("tren_duduk", DUDUK_DB)
 	await get_tree().create_timer(0.35).timeout
 	if oturum != _oturum:
 		return
@@ -288,7 +297,7 @@ func _yolculuk() -> void:
 			await tren.git(durak["s"], hiz)
 			if oturum != _oturum:
 				return
-			_sesler.play("fren")
+			SesYoneticisi.efekt("tren_fren", FREN_DB)
 			var yolcu: Node2D = izgara.yolcu_al(durak["hucre"])
 			if yolcu:
 				await get_tree().create_timer(0.2).timeout
@@ -303,6 +312,9 @@ func _yolculuk() -> void:
 		await tren.git(durak_s, hiz)
 		if oturum != _oturum:
 			return
+		# İstasyona varış: yumuşak duruş ve neşeli düdük
+		SesYoneticisi.efekt("tren_fren", FREN_DB)
+		SesYoneticisi.efekt("tren_duduk", DUDUK_DB)
 		await _kutla(alinan > 0 and alinan == bilgi["yolcu_sayisi"])
 	else:
 		# Eksik noktada nazikçe durur, "?" çıkar, yavaşça başlangıca döner
@@ -310,7 +322,7 @@ func _yolculuk() -> void:
 		await tren.git(hedef, hiz * 0.85)
 		if oturum != _oturum:
 			return
-		_sesler.play("fren")
+		SesYoneticisi.efekt("tren_fren", FREN_DB)
 		await _soru_goster()
 		if oturum != _oturum:
 			return
@@ -374,8 +386,29 @@ func _process(delta: float) -> void:
 		if _bosta > hint_delay:
 			_bosta = 0.0
 			izgara.ipucu()
-	if tren and tren.hareket_ediyor:
-		_cuf_sayac -= delta
-		if _cuf_sayac <= 0.0:
-			_cuf_sayac = 0.34
-			_sesler.play("cuf", _rng.randf_range(0.9, 1.1))
+	_cuf_guncelle(delta)
+
+
+# "Çuf çuf" döngüsü: tren hareket ederken çalar; perdesi (ve temposu) ile seviyesi trenin o anki hızına bağlıdır
+func _cuf_guncelle(delta: float) -> void:
+	var oran := 0.0
+	if is_instance_valid(tren) and izgara and tren.hareket_ediyor and delta > 0.0:
+		# 1.0 = ortalama yolculuk hızı; yumuşak kalkış ve duruş yüzünden tepe hız bunun ~1.6 katı
+		oran = absf(tren.mesafe - _onceki_mesafe) / delta / (tren_hizi * izgara.hucre)
+	if is_instance_valid(tren):
+		_onceki_mesafe = tren.mesafe
+	if oran < 0.04:
+		if _cuf_caliyor:
+			_cuf_caliyor = false
+			SesYoneticisi.dongu_durdur(CUF, 0.25)
+		return
+	var t := clampf(oran / 1.6, 0.0, 1.0)
+	if not _cuf_caliyor:
+		_cuf_caliyor = true
+		SesYoneticisi.dongu_baslat(CUF, CUF_DB_YAVAS, CUF_PERDE_YAVAS)
+	SesYoneticisi.dongu_perde(CUF, lerpf(CUF_PERDE_YAVAS, CUF_PERDE_HIZLI, t))
+	SesYoneticisi.dongu_seviye(CUF, lerpf(CUF_DB_YAVAS, CUF_DB_HIZLI, sqrt(t)))
+
+
+func _exit_tree() -> void:
+	SesYoneticisi.dongu_durdur(CUF, 0.1)
