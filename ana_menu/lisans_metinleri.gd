@@ -25,6 +25,8 @@ const SES_KAYNAKLARI := [
 	["Children's March Theme", "Cleyton Kauffman", "opengameart.org/content/childrens-march-theme"],
 	["Cat Purr & Meow", "Kerzoven", "opengameart.org/content/cat-purr-meow"],
 	["Dog Barking Mono", "Brandon Morris", "opengameart.org/content/dog-barking-mono"],
+	["Cow Moos #1, Sheep #1, Ducks, Rooster Song", "Joseph Sardin", "bigsoundbank.com"],
+	["Ribbit Frog Sounds", "EZduzziteh", "opengameart.org/content/ribbit-frog-sounds"],
 ]
 
 const OFL := """This Font Software is licensed under the SIL Open Font License, Version 1.1.

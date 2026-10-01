@@ -6,7 +6,10 @@ oyun motoru. Dışarıdan alınan varlıkların kısa listesi `CREDITS.md`'de, o
 
 **Sonuç:** ticari yayına engel bir lisans sorunu bulunmadı. Dışarıdan alınan her şey CC0 ya da OFL lisanslı,
 geri kalan her şey projede üretildi. Bir görsel önlem olarak değiştirildi (Uçan Kuş direği), uygulamaya
-Lisanslar ekranı eklendi. Arkadaşımın oyunlarında üç küçük öneri var (aşağıda).
+Lisanslar ekranı eklendi. Arkadaşımın oyunlarındaki iki marka adı (dosya ve sınıf adlarında) temizlendi.
+
+İkinci tur (1 Ekim 2026, akşam): arkadaşımın Müzik Kutusu'na eklediği beş yeni hayvan sesi kaydı incelendi
+(hepsi CC0) ve onun oyunlarındaki bulgular, kendi isteğimle düzeltildi.
 
 Durum sütunu: **uygun** (sorun yok), **düzeltildi** (bu incelemede değiştirildi), **kontrol edilmeli** (bir insanın
 bakması gerekiyor; ayrıntı "Manuel kontrol gerekenler" bölümünde).
@@ -35,7 +38,7 @@ bakması gerekiyor; ayrıntı "Manuel kontrol gerekenler" bölümünde).
 | `oyunlar/tren_rayi/gorseller/` (80 SVG) | projede çizildi (`svg_uret.py`) | bize ait | uygun: lokomotif üstten görünüşlü ve yüzsüz |
 | `oyunlar/balik_tutma/gorseller/` (88 SVG) | projede çizildi (`svg_uret.py`) | bize ait | uygun: çöp nesnelerinde (şişe, kutu, poşet) yazı ya da logo yok |
 | `oyunlar/kule_yapma/gorseller/` (65 SVG) | projede çizildi (`svg_uret.py`) | bize ait | uygun |
-| Arkadaşımın 9 oyunu (311 SVG, 60 PNG) | projede çizildi; boyama sayfaları kendi SVG'lerinden üretildi | bize ait | uygun; bir isim önerisi var (aşağıda) |
+| Arkadaşımın 9 oyunu (311 SVG, 60 PNG) | projede çizildi; boyama sayfaları kendi SVG'lerinden üretildi | bize ait | uygun; bir dosya adı **düzeltildi** (aşağıda) |
 | `ana_menu/kartlar/` (20 SVG) | oyunların kendi SVG'lerinden birleştirildi (`ana_menu/svg_uret.py`) | bize ait | uygun |
 | `ana_menu/gorseller/` (11 SVG) | projede çizildi | bize ait | uygun |
 | `ortak/gorseller/` (2 SVG) | projede çizildi | bize ait | uygun |
@@ -49,8 +52,10 @@ Hiçbir görselde gerçek marka logosu, marka yazısı ya da ambalajı yok.
 |---|---|---|---|
 | `ortak/sesler/` (38 ses) | Kenney ve OpenGameArt paketleri; dökümü `SESLER.md` | CC0 | uygun: 16 kaynak sayfası yeniden doğrulandı |
 | `ortak/sesler/vuus.ogg` | projede kodla üretildi (`ses_hazirla.py`) | bize ait | uygun |
-| Oyunların `sesler/` klasörleri (194 wav) | projede Python ile sentezlendi (`ses_uret.py` betikleri) | bize ait | uygun |
+| Oyunların `sesler/` klasörleri (188 wav) | projede Python ile sentezlendi (`ses_uret.py` betikleri) | bize ait | uygun |
 | `muzik_kutusu/sesler/kedi.wav`, `kopek.wav` ve `hayvan_besle`'deki kopyaları | OpenGameArt: "Cat Purr & Meow" (Kerzoven), "Dog Barking Mono" (Brandon Morris) | CC0 | uygun: sayfalar doğrulandı |
+| `muzik_kutusu/sesler/inek.wav`, `koyun.wav`, `ordek.wav`, `horoz.wav` (inek `hayvan_besle`'de de var) | BigSoundBank (Joseph Sardin): "Cow Moos #1", "Sheep #1", "Ducks", "Rooster Song" | CC0 | uygun: dört sayfa ve sitenin lisans sayfası doğrulandı |
+| `muzik_kutusu/sesler/kurbaga.wav` | OpenGameArt: "Ribbit Frog Sounds" (EZduzziteh) | CC0 | uygun: sayfa doğrulandı |
 | Müzik Kutusu şarkıları (`sarkilar/`, 3 ezgi) | geleneksel ezgiler: Twinkle Twinkle, Mary Had a Little Lamb, Frère Jacques | kamu malı | uygun |
 
 - `SESLER.md`'deki 39 satır ile `ortak/sesler/` içindeki 39 dosya birebir eşleşiyor; listede olmayan ses yok.
@@ -58,6 +63,8 @@ Hiçbir görselde gerçek marka logosu, marka yazısı ya da ambalajı yok.
 - "Feel Good Island" döngüsü, Brandon Morris'in özgün parçasından başka bir kullanıcının kırptığı sürüm. Özgün
   parçanın sayfası da CC0 / OGA-BY çift lisanslı, yani yeniden lisanslama geçerli.
 - Kaynağı ya da lisansı belirsiz ses bulunmadı; bu yüzden hiçbir ses değiştirilmedi.
+- Müzik Kutusu'nun indirilen kayıtları `oyunlar/muzik_kutusu/sesler/CREDITS.md`'de dosya dosya yazılı; özgün
+  kayıtlar `sesler/kaynak/` içinde duruyor (`.gdignore` sayesinde uygulamaya girmiyor).
 
 ## Yazı tipleri
 
@@ -74,8 +81,8 @@ Projede başka yazı tipi yok. SVG'lerin hiçbirinde yazı ya da yazı tipi adı
 |---|---|---|
 | Benim 11 oyunum, `ana_menu/`, `ortak/`, `project.godot` | başka oyun, film ya da marka adı yok ("flappy" dahil) | uygun |
 | Uygulama adı "Minik Oyunlar" | aramada aynı adlı bir uygulama çıkmadı, ama bu kesin kanıt değil | **kontrol edilmeli** |
-| Gölge Eşleştirme: `lego.svg`, `lego.tres`, `TASARIM.md` | "LEGO" tescilli marka; yalnızca dosya adında, ekranda görünmüyor | arkadaşıma öneri |
-| Köstebek: `WhackBalance`, `WhackLevelData`, `WhackAMoleGame` | "Whac-A-Mole" tescilli marka; yalnızca kod içinde | arkadaşıma öneri |
+| Gölge Eşleştirme: bir oyuncak bloğun dosya adı tescilli bir oyuncak markasıydı | yalnızca dosya adında, ekranda görünmüyordu | **düzeltildi**: `blok` |
+| Köstebek: sınıf adları tescilli bir oyun adını ("Whac-A-Mole") çağrıştırıyordu | yalnızca kod içinde | **düzeltildi**: `Mole...` |
 | `GELISTIRMELER.md` | Google Play adı ve bağlantıları (politika notları) | uygun: uygulamaya girmiyor |
 
 ## Uygulama simgesi ve oyun motoru
@@ -105,27 +112,39 @@ Projede başka yazı tipi yok. SVG'lerin hiçbirinde yazı ya da yazı tipi adı
 4. **`CREDITS.md`**. "Sesler projede sentezlendi" cümlesi ortak ses paketleri eklendikten sonra eksik kalmıştı;
    `SESLER.md`'ye ve bu dosyaya gönderme eklendi.
 5. **`.gitignore`**. Python önbellek dosyaları (`__pycache__/`, `*.pyc`) eklendi.
+6. **Gölge Eşleştirme: blok adı.** `esyalar/oyuncaklar/` içindeki oyuncak bloğun dosyaları tescilli bir marka
+   adını taşıyordu; `blok.svg`, `blok.svg.import`, `blok.tres` olarak yeniden adlandırıldı,
+   `bolumler/bolum_03.tres` ve `TASARIM.md` güncellendi. Görsel aynı (genel bir çıkıntılı yapı bloğu).
+   Oyunun 10 bölümlük oynanış testi geçti.
+7. **Köstebek: sınıf adları.** `WhackBalance` → `MoleBalance`, `WhackLevelData` → `MoleLevelData`; yorumlardaki
+   `WhackAMoleGame` → `MoleGame`, `WhackGameState` → `MoleGameState` (`denge.tres` içindeki `script_class`
+   dahil). Davranış değişmedi; denge dosyası yeni adlarla yükleniyor.
+8. **Hayvanları Besle: derlenmiş Python dosyası.** `gorseller/__pycache__/svg_uret.cpython-314.pyc` repodan
+   çıkarıldı (lisans sorunu değildi, repoda durmaması gerekiyordu).
+9. **Yeni hayvan sesleri kayıtlara işlendi.** BigSoundBank ve "Ribbit Frog Sounds" kaynakları `CREDITS.md`'ye ve
+   Lisanslar ekranına (`ana_menu/lisans_metinleri.gd`) eklendi.
 
 Yazı tipi lisans dosyası (`OFL.txt`) zaten `ortak/fontlar/` içindeydi; eklemeye gerek kalmadı.
 
 ## Arkadaşımın oyunları
 
-Bu oyunlarda hiçbir dosya değiştirilmedi. Ciddi bir sorun yok; üç küçük öneri:
+Ciddi bir sorun yoktu. İlk turda bulunan üç küçük konu ikinci turda düzeltildi (yukarıda 6, 7 ve 8. maddeler);
+arkadaşımın bilmesi gerekenler:
 
-1. **Gölge Eşleştirme: "lego" adı.** `esyalar/oyuncaklar/lego.svg`, `lego.tres`, `bolumler/bolum_03.tres` ve
-   `TASARIM.md`. Ad ekranda görünmüyor, ama "LEGO" tescilli bir marka. Öneri: dosyaları `blok` olarak yeniden
-   adlandırmak ve `bolum_03.tres` ile `lego.tres` içindeki yolları güncellemek. Görsel (kırmızı çıkıntılı yapı
-   bloğu) genel bir oyuncak blok çizimi; istenirse çıkıntı sayısı ya da oranı değiştirilerek daha da uzaklaştırılabilir.
-2. **Köstebek: `Whack...` sınıf adları.** `denge.gd` (`WhackBalance`), `seviye_verisi.gd` (`WhackLevelData`),
-   yorumlarda `WhackAMoleGame`, `WhackGameState`. Yalnızca kod içinde, kullanıcı görmez; risk düşük. Öneri:
-   bir sonraki dokunuşta `Mole...` gibi nötr adlara çevirmek (`denge.tres` içindeki `script_class` da değişir).
-3. **Hayvanları Besle: derlenmiş Python dosyası repoda.** `gorseller/__pycache__/svg_uret.cpython-314.pyc`.
-   Lisans sorunu değil, ama repoda durmamalı: `git rm --cached` ile çıkarılabilir (`.gitignore` artık engelliyor).
+1. **Gölge Eşleştirme:** oyuncak bloğun dosyaları artık `esyalar/oyuncaklar/blok.*`. Yeni eşya eklerken dosya
+   adlarında marka adı kullanılmamalı.
+2. **Köstebek:** sınıflar artık `MoleBalance` ve `MoleLevelData`. Açık bir dalında eski adlar varsa `main`'i
+   dalına alırken bu adları güncellemesi gerekir.
+3. **Hayvanları Besle:** `__pycache__` klasörü artık repoda izlenmiyor (dosya diskte duruyor, `.gitignore` engelliyor).
+4. **Yeni dış kaynak eklerken:** `oyunlar/muzik_kutusu/sesler/CREDITS.md`'deki gibi kaydetmeye devam etsin; ayrıca
+   kökteki `CREDITS.md` ve Lisanslar ekranı (`ana_menu/lisans_metinleri.gd`) de güncellenmeli.
 
-Sorun olmayanlar: kedi ve köpek sesleri (CC0, sayfalar doğrulandı, kaynak dosyalar `.gdignore`'lu klasörde),
-Müzik Kutusu şarkıları (kamu malı geleneksel ezgiler), boyama sayfaları (kendi SVG'lerinden üretilmiş),
-Toplama ve Çıkarma'daki sesli sayma (cihazın kendi seslendirmesi, pakete ses dosyası girmiyor). Turuncu-beyaz
-çizgili balık gerçek bir tür (palyaço balığı) ve sade çizilmiş; bir film karakterini kopyalamıyor.
+Sorun olmayanlar: bütün indirilen hayvan sesleri (CC0, sayfalar doğrulandı, özgün kayıtlar `.gdignore`'lu
+klasörde), Müzik Kutusu şarkıları (kamu malı geleneksel ezgiler), boyama sayfaları (kendi SVG'lerinden
+üretilmiş), Toplama ve Çıkarma'daki sesli sayma (cihazın kendi seslendirmesi, pakete ses dosyası girmiyor).
+Turuncu-beyaz çizgili balık gerçek bir tür (palyaço balığı) ve sade çizilmiş; bir film karakterini
+kopyalamıyor. Mavi lokomotif yüzsüz, genel bir oyuncak tren. Aslan sesi hâlâ sentez (yer tutucu); gerçek
+kayıtla değiştirilirse o da CC0 olmalı ve kaydedilmeli.
 
 ## Manuel kontrol gerekenler
 

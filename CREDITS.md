@@ -17,3 +17,5 @@ Dışarıdan alınan her varlık (yazı tipi, görsel, ses) burada listelenir. Y
 
 - **Kedi miyavlaması** (Müzik Kutusu `sesler/kedi.wav`; Hayvanları Besle'de kopyası): "Cat Purr & Meow", Kerzoven, CC0. Kaynak: https://opengameart.org/content/cat-purr-meow (`cat_mewfood.wav`, `oyunlar/muzik_kutusu/sesler/kaynak/` içinde; `ses_uret.py` keser ve seviyesini ayarlar).
 - **Köpek havlaması** (Müzik Kutusu `sesler/kopek.wav`; Hayvanları Besle'de kopyası): "Dog Barking Mono", Brandon Morris, CC0 (OGA-BY 3.0 ile çift lisanslı; CC0 seçildi). Kaynak: https://opengameart.org/content/dog-barking-mono (`dog_barking_mono.wav`, aynı klasörde).
+- **İnek, koyun, ördek, horoz** (Müzik Kutusu `sesler/inek.wav`, `koyun.wav`, `ordek.wav`, `horoz.wav`; inek Hayvanları Besle'de kopyası): BigSoundBank, Joseph Sardin, CC0. Kaynak: https://bigsoundbank.com ("Cow Moos #1", "Sheep #1", "Ducks", "Rooster Song"); dosya dosya bağlantılar `oyunlar/muzik_kutusu/sesler/CREDITS.md` içinde.
+- **Kurbağa** (Müzik Kutusu `sesler/kurbaga.wav`): "Ribbit Frog Sounds", EZduzziteh, CC0. Kaynak: https://opengameart.org/content/ribbit-frog-sounds (`frog_ribbit_03.wav`).
