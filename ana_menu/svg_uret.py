@@ -6,6 +6,7 @@
 #    parca(dosya, genislik, (x, y), aci) → dosya genislik kadar geniş, merkezi (x, y)'de, aci radyan döndürülmüş.
 # 2) Kategori sekmesi simgeleri: ana_menu/gorseller/sekme_<kategori>.svg (120x120)
 # 3) Ses düğmesi simgeleri: ana_menu/gorseller/ses_<mod>.svg (120x120; hepsi açık / sadece efektler / sessiz)
+#    ve bilgi düğmesinin simgesi: ana_menu/gorseller/bilgi.svg
 #
 # Yeni oyun: KARTLAR'a bir fonksiyon ekle (ya da oyunun tek bir SVG'sini parca() ile ortala), betiği çalıştır,
 # sonra Godot'u açıp yeni SVG'nin içe aktarma ayarını 2x + mipmap yap (diğer kartlarınki gibi).
@@ -566,6 +567,15 @@ def ses_kapali():
 SES_SIMGELERI = {"hepsi": ses_hepsi, "efekt": ses_efekt, "kapali": ses_kapali}
 
 
+def bilgi():
+    # Bilgi düğmesinin "i" simgesi (ebeveyn kapısı: Lisanslar ekranı)
+    defs = _parlak("#9B8CFF", "#6A5AE8", "bilgi")
+    govde = ('<circle cx="60" cy="26" r="15" fill="url(#bilgi)" stroke="%s" stroke-width="6"/>\n'
+             '<rect x="45" y="50" width="30" height="62" rx="15" fill="url(#bilgi)" stroke="%s" stroke-width="6"/>\n'
+             % (MUREKKEP, MUREKKEP))
+    return _simge(defs, govde)
+
+
 SEKMELER = {"hepsi": sekme_hepsi, "hareket": sekme_hareket, "bulmaca": sekme_bulmaca,
             "yaratici": sekme_yaratici, "ogren": sekme_ogren}
 
@@ -579,4 +589,5 @@ if __name__ == "__main__":
         _yaz(os.path.join(GORSEL_KLASORU, "sekme_%s.svg" % ad), fonksiyon())
     for ad, fonksiyon in SES_SIMGELERI.items():
         _yaz(os.path.join(GORSEL_KLASORU, "ses_%s.svg" % ad), fonksiyon())
+    _yaz(os.path.join(GORSEL_KLASORU, "bilgi.svg"), bilgi())
     print("%d kart, %d sekme, %d ses simgesi yazıldı" % (len(KARTLAR), len(SEKMELER), len(SES_SIMGELERI)))

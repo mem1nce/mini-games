@@ -23,6 +23,10 @@ const KARARMA_SURESI := 0.28
 const ACILMA_SURESI := 0.38
 const PERDE_RENGI := Color("2d2447")
 
+## Açık bir üst ekran (ör. ana menüdeki Lisanslar) geri tuşunu kendisi karşılamak isterse buraya bir fonksiyon
+## verir; kapanırken Callable() ile boşaltır. Verilmişse geri() başka bir şey yapmadan onu çağırır.
+var geri_yakalayici := Callable()
+
 var gecis_suruyor: bool = true      # açılış perdesi kalkana kadar geri tuşu çalışmasın
 var ekran_yonu: String = DIKEY      # şu an uygulanan yön (proje ayarları dikey başlar)
 var _perde: ColorRect
@@ -148,6 +152,9 @@ func _yonu_uygula(yon: String) -> void:
 
 func geri() -> void:
 	if gecis_suruyor:
+		return
+	if geri_yakalayici.is_valid():
+		geri_yakalayici.call()
 		return
 	if ana_menude_mi():
 		get_tree().quit()

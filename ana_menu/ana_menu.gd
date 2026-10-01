@@ -10,6 +10,10 @@ const OyunListesi := preload("res://ana_menu/oyun_listesi.gd")
 const OyunKarti := preload("res://ana_menu/oyun_karti.gd")
 const Sekme := preload("res://ana_menu/sekme.gd")
 const SesDugmesi := preload("res://ana_menu/ses_dugmesi.gd")
+const Lisanslar := preload("res://ana_menu/lisanslar.gd")
+const BasiliDugme := preload("res://ortak/basili_geri_dugmesi.gd")
+const BILGI_SIMGESI: Texture2D = preload("res://ana_menu/gorseller/bilgi.svg")
+const EBEVEYN_BEKLEME := 3.0    # bilgi düğmesi bu kadar saniye basılı tutulunca Lisanslar açılır (ebeveyn kapısı)
 const YUMUSAK_DAIRE: Texture2D = preload("res://ana_menu/gorseller/yumusak_daire.svg")
 
 # Oyun testleri menüden oyun açarken bunları kullanır: OYUNLAR[i]["sahne"] ve _kartlar[i] (aynı sıra)
@@ -35,6 +39,10 @@ var _sekme := "hepsi"
 var _ekran := Vector2(720, 1280)
 var _baslik: HBoxContainer
 var _ses_dugmesi: Control
+var _bilgi_dugmesi: Control           # ebeveyn kapısı: basılı tutunca Lisanslar ekranı
+var _bilgi_ipucu: Label
+var _ipucu_tween: Tween
+var _lisanslar: Control = null
 var _alan: Control                     # kartların kaydığı, kırpılan bölge
 var _icerik: Control
 var _ust_golge: TextureRect
@@ -68,6 +76,7 @@ func _ready() -> void:
 	_arka_plan_olustur()
 	_baslik_olustur()
 	_ses_dugmesi_olustur()
+	_bilgi_dugmesi_olustur()
 	_sekmeleri_olustur()
 	_alani_olustur()
 	for i in OYUNLAR.size():
@@ -146,6 +155,57 @@ func _ses_dugmesi_olustur() -> void:
 	add_child(_ses_dugmesi)
 	_ses_dugmesi.kur(boyut)
 	_ses_dugmesi.position = Vector2(_ekran.x - KENAR - boyut, _baslik.position.y + (_baslik.size.y - boyut) / 2.0)
+
+
+# Sol üstte küçük, soluk bilgi düğmesi: çocuk kazara açmasın diye 3 sn basılı tutmak gerekir
+func _bilgi_dugmesi_olustur() -> void:
+	var boyut := 84.0
+	_bilgi_dugmesi = BasiliDugme.new()
+	_bilgi_dugmesi.hold_time = EBEVEYN_BEKLEME
+	_bilgi_dugmesi.icon = BILGI_SIMGESI
+	_bilgi_dugmesi.size = Vector2(boyut, boyut)
+	_bilgi_dugmesi.position = Vector2(KENAR, _ses_dugmesi.position.y)
+	_bilgi_dugmesi.modulate.a = 0.7
+	_bilgi_dugmesi.completed.connect(_lisanslari_ac)
+	add_child(_bilgi_dugmesi)
+	_bilgi_ipucu = Label.new()
+	_bilgi_ipucu.theme_type_variation = &"Rozet"
+	_bilgi_ipucu.text = "Ebeveynler için: 3 saniye basılı tutun"
+	_bilgi_ipucu.add_theme_font_size_override("font_size", 26)
+	_bilgi_ipucu.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	_bilgi_ipucu.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_bilgi_ipucu.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	_bilgi_ipucu.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	# İki düğmenin arasında, başlığın yerinde görünür
+	_bilgi_ipucu.position = Vector2(KENAR + boyut + 12.0, _baslik.position.y)
+	_bilgi_ipucu.size = Vector2(_ekran.x - 2.0 * (KENAR + boyut + 12.0), _baslik.size.y)
+	_bilgi_ipucu.modulate.a = 0.0
+	add_child(_bilgi_ipucu)
+
+
+# Kısa dokunuşta ne yapılacağını söyleyen küçük yazı, kısa süre başlığın yerinde görünür
+func _bilgi_ipucu_goster() -> void:
+	if _ipucu_tween and _ipucu_tween.is_valid():
+		_ipucu_tween.kill()
+	_ipucu_tween = create_tween()
+	_ipucu_tween.tween_property(_baslik, "modulate:a", 0.0, 0.15)
+	_ipucu_tween.parallel().tween_property(_bilgi_ipucu, "modulate:a", 1.0, 0.15)
+	_ipucu_tween.tween_interval(2.2)
+	_ipucu_tween.tween_property(_bilgi_ipucu, "modulate:a", 0.0, 0.3)
+	_ipucu_tween.parallel().tween_property(_baslik, "modulate:a", 1.0, 0.3)
+
+
+func _lisanslari_ac() -> void:
+	SesYoneticisi.efekt("dugme_tik")
+	_hiz = 0.0
+	_lisanslar = Lisanslar.new()
+	add_child(_lisanslar)
+	_lisanslar.kapandi.connect(_lisanslar_kapandi)
+
+
+func _lisanslar_kapandi() -> void:
+	_lisanslar = null
+	_bilgi_dugmesi.reset()
 
 
 func _sekme_boyu() -> Vector2:
@@ -239,6 +299,8 @@ func _acilis_animasyonu() -> void:
 		_sekmeler[i].giris(0.1 + i * 0.05)
 	_ses_dugmesi.modulate.a = 0.0
 	_ses_dugmesi.create_tween().tween_property(_ses_dugmesi, "modulate:a", 1.0, 0.4).set_delay(0.3)
+	_bilgi_dugmesi.modulate.a = 0.0
+	_bilgi_dugmesi.create_tween().tween_property(_bilgi_dugmesi, "modulate:a", 0.7, 0.4).set_delay(0.3)
 	_kartlari_getir(0.25)
 
 
@@ -280,7 +342,7 @@ func _sekme_sec(id: String) -> void:
 # --- Dokunma ---
 
 func _input(event: InputEvent) -> void:
-	if _secildi or SahneGecis.gecis_suruyor:
+	if _secildi or SahneGecis.gecis_suruyor or _lisanslar != null:
 		return
 	var tekerlek := event as InputEventMouseButton
 	if tekerlek and tekerlek.pressed and tekerlek.button_index in [MOUSE_BUTTON_WHEEL_UP, MOUSE_BUTTON_WHEEL_DOWN]:
@@ -288,6 +350,10 @@ func _input(event: InputEvent) -> void:
 		return
 	var dokunma := event as InputEventScreenTouch
 	if dokunma:
+		if _parmak == -1 and _bilgi_dugmesi.handle_touch(dokunma):
+			if not dokunma.pressed and _lisanslar == null:
+				_bilgi_ipucu_goster()
+			return
 		if dokunma.pressed and _parmak == -1:
 			_dokunma_basladi(dokunma)
 		elif not dokunma.pressed and dokunma.index == _parmak:
