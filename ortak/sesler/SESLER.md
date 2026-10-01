@@ -1,6 +1,7 @@
 # Ortak sesler
 
-Bütün sesler **CC0** (kamu malı): isim vermek gerekmez, ticari kullanım serbest. CC-BY veya lisansı belirsiz ses yok.
+Bütün indirilen sesler **CC0** (kamu malı): isim vermek gerekmez, ticari kullanım serbest. CC-BY veya lisansı belirsiz ses yok.
+"sentez" paketindeki sesler indirilmedi, `ses_hazirla.py` içinde kodla üretildi (bize ait).
 Dosyalar `ses_hazirla.py` ile hazırlandı: kırpma, gerekirse perde değiştirme ve tiz yumuşatma (alçak geçiren süzgeç),
 seviye eşitleme, .ogg Vorbis. Efektler mono, müzikler stereo ve döngülü (`.import` içinde `loop=true`).
 Çalma: `ortak/ses_yoneticisi.gd` (autoload `SesYoneticisi`).
@@ -28,6 +29,7 @@ Paketler proje dışındaki bir önbellek klasörüne indirilir; projeye sadece 
 | m_yol | Cozy Puzzle Jingle / Result | mintodog | https://opengameart.org/content/cozy-puzzle-jingle-result | CC0 |
 | m_hafiza | Heavenly Loop | isaiah658 | https://opengameart.org/content/heavenly-loop | CC0 |
 | m_meyve | Children's March Theme | cleytonkauffman | https://opengameart.org/content/childrens-march-theme | CC0 |
+| sentez | (bu projede üretildi) | Minik Oyunlar | `ses_hazirla.py` içindeki sentez fonksiyonları | bize ait |
 
 \* Feel Good Island sayfada iki lisanslı (CC0 ve OGA-BY 3.0); CC0 seçeneğiyle kullanıldı. Sayfaya göre orijinal
 parça Brandon Morris'in; zorunlu olmasa da istenirse emeği anılabilir.
@@ -70,6 +72,7 @@ Denenip kullanılmayan: "dings" (OpenGameArt, CC-BY-SA 4.0), isim verme ve aynı
 | sersem.ogg | yaratik | ooh.ogg | tiz yumuşatma | Meyve Topla kirpi sersemledi |
 | guc_al.ogg | digital | powerUp2.ogg | tiz yumuşatma | Meyve Topla güçlendirme alındı |
 | guc_bitti.ogg | digital | phaserDown1.ogg | tiz yumuşatma | Meyve Topla güçlendirme bitti |
+| vuus.ogg | sentez | `vuus()` | süzülmüş gürültü (yükselip alçalan rüzgar), tiz yumuşatma | Uçan Kuş hızlanma |
 | muzik_menu.ogg | m_menu | HappyClappyLoop.wav | dikişte çok kısa kısılma | ana menü |
 | muzik_ucan_kus.ogg | m_kus | flowerbed_fields.ogg | tiz yumuşatma (5 kHz) | Uçan Kuş |
 | muzik_dondurmaci.ogg | m_dondurma | feel_good_island_loop_0.ogg | | Dondurmacı |

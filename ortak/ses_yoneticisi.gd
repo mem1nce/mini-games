@@ -6,6 +6,7 @@ extends Node
 #   SesYoneticisi.dongu_baslat("bilye_yuvarlanma") / dongu_durdur(...)   döngülü efekt
 #   SesYoneticisi.muzik("ucan_kus", self)         oyun müziği (muzik_<ad>.ogg); öncekiyle yumuşak geçiş. Sahip düğüm
 #                                                 ağaçtan çıkınca müzik kendiliğinden söner (müziksiz sahneye geçince).
+#   SesYoneticisi.muzik_hizi(1.04)                çalan müziği hafifçe hızlandırır (perde de değişir); muzik() 1'e döndürür
 #   SesYoneticisi.sonraki_mod()                   hepsi açık → sadece efektler → sessiz (user://ses_ayari.cfg)
 # Ses yolları: Master → Muzik, Efekt (default_bus_layout.tres). Sessiz modda Master kapanır (bütün oyunlar susar).
 # Uygulama arka plana geçince müzik ve döngüler durur, geri gelince devam eder.
@@ -37,6 +38,7 @@ var _muzik_tweenleri: Array = [null, null]
 var _aktif := 0
 var _muzik_adi := ""
 var _muzik_sahibi: WeakRef = null
+var _hiz_tween: Tween
 var _kisma := 0.0
 var _kisma_tween: Tween
 var _muzik_yolu := 1
@@ -195,6 +197,7 @@ func muzik(ad: String, sahip: Node = null, gecis := 1.2) -> void:
 	var simdiki := _muzikler[_aktif]
 	if ad == _muzik_adi and simdiki.playing:
 		_muzik_sesi(_aktif, 0.0, 0.3)
+		muzik_hizi(1.0)
 		return
 	var akis := _akis("muzik_" + ad, true)
 	if akis == null:
@@ -203,12 +206,23 @@ func muzik(ad: String, sahip: Node = null, gecis := 1.2) -> void:
 	_muzik_adi = ad
 	_muzik_sesi(_aktif, SESSIZ_DB, gecis, true)
 	_aktif = 1 - _aktif
+	if _hiz_tween and _hiz_tween.is_valid():
+		_hiz_tween.kill()
 	var yeni := _muzikler[_aktif]
 	yeni.stream = akis
+	yeni.pitch_scale = 1.0
 	yeni.volume_db = SESSIZ_DB
 	yeni.stream_paused = false
 	yeni.play()
 	_muzik_sesi(_aktif, 0.0, gecis)
+
+
+# Çalan müziğin hızı: küçük değişiklikler için (perde de aynı oranda değişir)
+func muzik_hizi(carpan: float, sure := 0.8) -> void:
+	if _hiz_tween and _hiz_tween.is_valid():
+		_hiz_tween.kill()
+	_hiz_tween = create_tween()
+	_hiz_tween.tween_property(_muzikler[_aktif], "pitch_scale", clampf(carpan, 0.5, 2.0), sure)
 
 
 func muzik_durdur(gecis := 1.0) -> void:
