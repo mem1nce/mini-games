@@ -5,9 +5,9 @@
 #
 # - Ksilofon: ksilofon_1..8.wav (Do5 ... Do6), her nota ayrı sentezlenir.
 # - Davul seti: bas, trampet, tom_ince, tom_kalin, zil, marakas.
-# - Hayvanlar: kedi ve köpek kaynak/ içindeki CC0 kayıtlardan kesilir (bkz. CREDITS.md). Diğerleri çizgi film
-#   tarzı sentezlenmiş yer tutuculardır; gerçek kayıtla değiştirmek için aynı adla (ör. inek.wav) bu klasöre
-#   koymak yeter. kaynak/ klasöründe kayıt yoksa kedi/köpek için de sentez kullanılır.
+# - Hayvanlar: kedi, köpek, inek, koyun, ördek, horoz, kurbağa kaynak/ içindeki CC0 kayıtlardan kesilir (bkz.
+#   CREDITS.md); kayıt yoksa sentez kullanılır. Aslan hâlâ sentezlenmiş yer tutucudur; gerçek kayıtla
+#   değiştirmek için aynı adla (aslan.wav) bu klasöre koymak yeter.
 # - kutlama.wav: şarkı bitince çalan kısa neşeli arpej.
 
 import math
@@ -262,10 +262,17 @@ if __name__ == "__main__":
     save("kedi.wav", samples)
     samples, kinds["kopek.wav"] = from_recording("dog_barking_mono.wav", 0.0, 0.82, dog_synth)
     save("kopek.wav", samples)
-    for name, fn in (("inek.wav", cow), ("koyun.wav", sheep), ("ordek.wav", duck), ("horoz.wav", rooster),
-                     ("kurbaga.wav", frog), ("aslan.wav", lion)):
-        save(name, fn(), TARGET * (0.85 if name == "aslan.wav" else 1.0))
-        kinds[name] = "sentez (yer tutucu)"
+    for name, file, start, end, fallback in (("inek.wav", "cow_moo_0546.wav", 0.12, 1.28, cow),
+                                             ("koyun.wav", "sheep_2343.wav", 0.0, 0.85, sheep),
+                                             ("ordek.wav", "ducks_0276.wav", 0.06, 0.95, duck),
+                                             ("horoz.wav", "rooster_0283.wav", 0.05, 2.15, rooster),
+                                             ("kurbaga.wav", "frog_ribbit_03.wav", 0.0, 0.5, frog)):
+        samples, kinds[name] = from_recording(file, start, end, fallback)
+        if name == "kurbaga.wav":
+            samples = soften_peaks(samples, 3.0)       # kısa ve keskin tepeli kayıt: yoksa diğerlerinden kısık kalır
+        save(name, samples)
+    save("aslan.wav", lion(), TARGET * 0.85)
+    kinds["aslan.wav"] = "sentez (yer tutucu)"
     save("kutlama.wav", celebration())
     print("\nHayvan sesleri:")
     for name, kind in kinds.items():
