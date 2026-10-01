@@ -61,7 +61,7 @@ enum State { SHOWING, WAITING, WRONG, CORRECT, LEVEL_DONE, FINALE }
 ## Son bölümdeki büyük kutlamanın süresi.
 @export var finale_time: float = 4.5
 ## Basılı tutunca ana menüye dönme süresi.
-@export var hold_to_exit: float = 1.0
+@export var hold_to_exit: float = 0.6
 
 const TOP_AREA := 118.0          # üstte geri düğmesi, ilerleme çubuğu, hoparlör
 const SIDE_MARGIN := 40.0

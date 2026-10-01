@@ -81,6 +81,7 @@ class PowerRing extends Control:
 			draw_arc(center, radius - 11.0, -PI / 2.0, -PI / 2.0 + TAU * ratio, 64, ring_color, 9.0, true)
 
 
+const HoldButton := preload("res://ortak/basili_geri_dugmesi.gd")
 const TEX_BACK: Texture2D = preload("res://oyunlar/meyve_topla/gorseller/geri.svg")
 const TEX_PAUSE: Texture2D = preload("res://oyunlar/meyve_topla/gorseller/duraklat.svg")
 const TEX_PLAY: Texture2D = preload("res://oyunlar/meyve_topla/gorseller/oynat.svg")
@@ -98,7 +99,7 @@ const RAINBOW := [Color("ff5a6e"), Color("ff9f40"), Color("ffc93d"), Color("5cc9
 const OUTLINE := Color("3b2a5a")
 
 var mode: Mode = Mode.START
-var _back: Panel
+var _back: Control
 var _pause: Panel
 var _bar: Bar
 var _bar_icon: TextureRect
@@ -125,8 +126,10 @@ var _bar_tween: Tween
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 
-	_back = _round_button(TEX_BACK)
+	_back = HoldButton.new()
+	_back.completed.connect(_on_back_completed)
 	_place(_back, Vector4(0, 0, 0, 0), Vector4(28, 44, 138, 154))
+	_back.pivot_offset = _back.size / 2.0
 	_pause = _round_button(TEX_PAUSE)
 	_place(_pause, Vector4(1, 0, 1, 0), Vector4(-138, 44, -28, 154))
 
@@ -257,42 +260,44 @@ func _pop_in(control: Control, delay: float = 0.0) -> void:
 
 func _input(event: InputEvent) -> void:
 	var touch := event as InputEventScreenTouch
-	if touch == null or not touch.pressed:
+	if touch == null:
+		return
+	# Geri düğmesi basılı tutulur (başlangıçta ana menüye, oyunda başlangıç ekranına)
+	if _back.handle_touch(touch):
+		get_viewport().set_input_as_handled()
+		return
+	if not touch.pressed:
 		return
 	var pos := touch.position
 	match mode:
 		Mode.START:
 			get_viewport().set_input_as_handled()
-			if _hit(_back, pos):
-				_press(_back)
-				SesYoneticisi.efekt("geri")
-				menu_pressed.emit()
-			elif _hit(_reset, pos):
+			if _hit(_reset, pos):
 				SesYoneticisi.efekt("dugme_tik")
 				_on_reset_tap()
 			else:
 				SesYoneticisi.efekt("dugme_tik")
 				start_pressed.emit()
 		Mode.PLAY:
-			if _hit(_back, pos):
-				get_viewport().set_input_as_handled()
-				_press(_back)
-				SesYoneticisi.efekt("geri")
-				back_pressed.emit()
-			elif _hit(_pause, pos):
+			if _hit(_pause, pos):
 				get_viewport().set_input_as_handled()
 				_press(_pause)
 				SesYoneticisi.efekt("dugme_tik")
 				pause_pressed.emit()
 		Mode.PAUSED:
 			get_viewport().set_input_as_handled()
-			if _hit(_back, pos):
-				SesYoneticisi.efekt("geri")
-				back_pressed.emit()
-			else:
-				_press(_play_button)
-				SesYoneticisi.efekt("dugme_tik")
-				resume_pressed.emit()
+			_press(_play_button)
+			SesYoneticisi.efekt("dugme_tik")
+			resume_pressed.emit()
+
+
+func _on_back_completed() -> void:
+	SesYoneticisi.efekt("geri")
+	_back.reset()
+	if mode == Mode.START:
+		menu_pressed.emit()
+	else:
+		back_pressed.emit()
 
 
 # --- Başlangıç ekranı ---

@@ -21,7 +21,7 @@ enum State { COUNTDOWN, PLAYING, GAME_OVER }
 ## Bütün denge ayarları (puanlar, can, seviyeler...). Değiştirmek için denge.tres'i aç.
 @export var balance: WhackBalance
 ## Basılı tutunca ana menüye dönme süresi (saniye).
-@export var hold_to_exit: float = 1.0
+@export var hold_to_exit: float = 0.6
 ## Geri sayımda her sayının süresi (saniye).
 @export var countdown_step: float = 0.8
 ## Bombaya dokununca ekran sarsıntısının gücü (piksel).

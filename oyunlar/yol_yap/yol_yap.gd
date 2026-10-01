@@ -4,6 +4,7 @@ extends Control
 
 const Logic := preload("res://oyunlar/yol_yap/yol_mantigi.gd")
 const Levels := preload("res://oyunlar/yol_yap/bolumler.gd")
+const HoldButton := preload("res://ortak/basili_geri_dugmesi.gd")
 
 enum State { SELECT, PLAYING, ROLLING, CELEBRATING, FINISHED }
 
@@ -50,8 +51,10 @@ const NO_CELL := Vector2i(-1, -1)
 @onready var piece_layer: Node2D = $Game/PieceLayer
 @onready var ball: Sprite2D = $Game/Ball
 @onready var effects: Node2D = $Game/Effects
-@onready var back_button: Panel = $Game/BackButton
-@onready var select_back_button: Panel = $LevelSelect/BackButton
+@onready var back_panel: Panel = $Game/BackButton
+@onready var select_back_panel: Panel = $LevelSelect/BackButton
+var back_button: Control
+var select_back_button: Control
 @onready var restart_button: Panel = $Game/RestartButton
 @onready var level_label: Label = $Game/LevelBadge/Label
 @onready var cheer: HBoxContainer = $Game/Cheer
@@ -79,6 +82,10 @@ var pulse_tween: Tween
 
 func _ready() -> void:
 	SesYoneticisi.muzik("yol_yap", self)
+	back_button = HoldButton.replace(back_panel)
+	back_button.completed.connect(_on_back_completed)
+	select_back_button = HoldButton.replace(select_back_panel)
+	select_back_button.completed.connect(_on_select_back_completed)
 	_check_levels()
 	_load_progress()
 	_create_level_buttons()
@@ -108,6 +115,10 @@ func _input(event: InputEvent) -> void:
 	# Sadece dokunma ile oynanır (bilgisayarda fare dokunmaya çevrilir)
 	if event is InputEventScreenTouch:
 		var touch := event as InputEventScreenTouch
+		# Geri düğmeleri basılı tutulur: bölüm seçmede ana menüye, oyunda bölüm seçmeye döner
+		var back: Control = select_back_button if state == State.SELECT else back_button
+		if back.handle_touch(touch):
+			return
 		if touch.pressed:
 			_on_touch_down(touch.index, touch.position)
 		elif touch.index == drag_touch_index and dragging != null:
@@ -123,11 +134,6 @@ func _on_touch_down(index: int, pos: Vector2) -> void:
 		return  # aynı anda tek parça sürüklenir
 	match state:
 		State.SELECT:
-			# Bölüm seçme ekranı oyunun ilk ekranı: geri ana menüye döner
-			if _is_touched(select_back_button, pos):
-				SesYoneticisi.efekt("geri")
-				SahneGecis.ana_menuye_don()
-				return
 			for i in level_buttons.size():
 				if _is_touched(level_buttons[i], pos):
 					if i <= completed:
@@ -144,16 +150,24 @@ func _on_touch_down(index: int, pos: Vector2) -> void:
 				_start_level(0)
 				return
 
-	if _is_touched(back_button, pos):
-		SesYoneticisi.efekt("geri")
-		_show_level_select()
-	elif _is_touched(restart_button, pos):
+	if _is_touched(restart_button, pos):
 		SesYoneticisi.efekt("dugme_tik")
 		_start_level(level_index)
 	elif state == State.PLAYING:
 		var piece := _piece_at(pos)
 		if piece != null:
 			_pick_up(piece, index, pos)
+
+
+func _on_select_back_completed() -> void:
+	SesYoneticisi.efekt("geri")
+	SahneGecis.ana_menuye_don()
+
+
+func _on_back_completed() -> void:
+	SesYoneticisi.efekt("geri")
+	back_button.reset()
+	_show_level_select()
 
 
 func _is_touched(control: Control, pos: Vector2) -> bool:

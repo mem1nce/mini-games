@@ -62,6 +62,7 @@ enum State { READY, PLAYING, GAME_OVER }
 ## Çarptıktan sonra kuşun yanıp söndüğü (dokunulmaz olduğu) süre.
 @export var blink_duration: float = 1.5
 
+const HoldButton := preload("res://ortak/basili_geri_dugmesi.gd")
 const PIPE_TEXTURE: Texture2D = preload("res://oyunlar/ucan_kus/direk.svg")
 const CLOUD_TEXTURE: Texture2D = preload("res://oyunlar/ucan_kus/bulut.svg")
 const HEART_TEXTURE: Texture2D = preload("res://oyunlar/ucan_kus/kalp.svg")
@@ -92,7 +93,8 @@ const SPARKLE_COUNT := 8
 @onready var game_over_screen: Control = $HUD/GameOverScreen
 @onready var result_label: Label = $HUD/GameOverScreen/Box/ResultLabel
 @onready var restart_button: Button = $HUD/GameOverScreen/Box/RestartButton
-@onready var back_button: Panel = $HUD/BackButton
+@onready var back_panel: Panel = $HUD/BackButton
+var back_button: Control
 
 var state: State = State.READY
 var bird_velocity: float = 0.0
@@ -114,6 +116,8 @@ var score_base_y: float = 0.0
 
 func _ready() -> void:
 	SesYoneticisi.muzik("ucan_kus", self)
+	back_button = HoldButton.replace(back_panel)
+	back_button.completed.connect(_on_back_completed)
 	lives = start_lives
 	_create_hearts()
 	_create_clouds()
@@ -140,16 +144,11 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	# Sadece dokunma ile oynanır (bilgisayarda fare tıklaması dokunmaya çevrilir)
 	var touch := event as InputEventScreenTouch
-	if touch == null or not touch.pressed:
+	if touch == null:
 		return
 
-	# Geri: başlangıç ekranındayken ana menüye, oyun sırasında başlangıç ekranına
-	if back_button.get_global_rect().grow(16.0).has_point(touch.position):
-		SesYoneticisi.efekt("geri")
-		if state == State.READY:
-			SahneGecis.ana_menuye_don()
-		else:
-			SahneGecis.sahneyi_yeniden_baslat()
+	# Geri (basılı tutulur): başlangıç ekranındayken ana menüye, oyun sırasında başlangıç ekranına
+	if back_button.handle_touch(touch) or not touch.pressed:
 		return
 
 	match state:
@@ -161,6 +160,14 @@ func _input(event: InputEvent) -> void:
 			# Düğmenin biraz dışına basılsa da kabul et
 			if can_restart and restart_button.get_global_rect().grow(30.0).has_point(touch.position):
 				_restart()
+
+
+func _on_back_completed() -> void:
+	SesYoneticisi.efekt("geri")
+	if state == State.READY:
+		SahneGecis.ana_menuye_don()
+	else:
+		SahneGecis.sahneyi_yeniden_baslat()
 
 
 func _process(delta: float) -> void:

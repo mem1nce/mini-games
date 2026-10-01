@@ -24,6 +24,8 @@ enum State { ENTERING, CHOOSE_CONTAINER, ADD_SCOOPS, CELEBRATING }
 
 # Tatlar: yeni tat için gorseller/ klasörüne top SVG'si çiz ve buraya bir satır ekle.
 # Tat kutuları bu listeden otomatik oluşur (3 sütun).
+const HoldButton := preload("res://ortak/basili_geri_dugmesi.gd")
+
 const FLAVORS := [
 	{"id": "cilek", "texture": preload("res://oyunlar/dondurmaci/gorseller/top_cilek.svg"), "box_color": Color("ffd6e6")},
 	{"id": "cikolata", "texture": preload("res://oyunlar/dondurmaci/gorseller/top_cikolata.svg"), "box_color": Color("ecd3c2")},
@@ -68,7 +70,8 @@ const FLAVOR_BOX_SIZE := Vector2(190, 145)
 @onready var star_icon: TextureRect = $StarBox/StarIcon
 @onready var star_label: Label = $StarBox/StarLabel
 @onready var container_buttons := {"kulah": $ConeButton, "kase": $BowlButton}
-@onready var back_button: Panel = $BackButton
+@onready var back_panel: Panel = $BackButton
+var back_button: Control
 
 var state: State = State.ENTERING
 var stars: int = 0
@@ -85,6 +88,8 @@ var feedback_tweens: Dictionary = {}  # düğüm -> sallanma/parlama tween'i
 
 func _ready() -> void:
 	SesYoneticisi.muzik("dondurmaci", self)
+	back_button = HoldButton.replace(back_panel)
+	back_button.completed.connect(_on_back_completed)
 	_create_flavor_boxes()
 	for button: Panel in container_buttons.values():
 		button.add_theme_stylebox_override("panel", _make_box_style(Color("fffaf2")))
@@ -97,12 +102,10 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	# Sadece dokunma ile oynanır (bilgisayarda fare tıklaması dokunmaya çevrilir)
 	var touch := event as InputEventScreenTouch
-	if touch == null or not touch.pressed:
+	if touch == null:
 		return
-	# Geri: bu oyunun tek ekranı var, doğrudan ana menüye döner
-	if back_button.get_global_rect().grow(16.0).has_point(touch.position):
-		SesYoneticisi.efekt("geri")
-		SahneGecis.ana_menuye_don()
+	# Geri: bu oyunun tek ekranı var; basılı tutunca ana menüye döner
+	if back_button.handle_touch(touch) or not touch.pressed:
 		return
 	if state != State.CHOOSE_CONTAINER and state != State.ADD_SCOOPS:
 		return
@@ -115,6 +118,11 @@ func _input(event: InputEvent) -> void:
 		if _is_touched(flavor_boxes[i], touch.position):
 			_on_flavor_tapped(i)
 			return
+
+
+func _on_back_completed() -> void:
+	SesYoneticisi.efekt("geri")
+	SahneGecis.ana_menuye_don()
 
 
 func _is_touched(control: Control, pos: Vector2) -> bool:

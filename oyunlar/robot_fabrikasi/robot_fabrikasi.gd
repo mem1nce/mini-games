@@ -141,7 +141,7 @@ func _build() -> void:
 	_back = HoldButton.new()
 	_back.size = Vector2(104, 104)
 	_back.position = Vector2(36, 24)
-	_back.hold_time = 0.8
+	_back.hold_time = 0.6
 	_back.completed.connect(_leave)
 	_ui.add_child(_back)
 	var screens := CanvasLayer.new()

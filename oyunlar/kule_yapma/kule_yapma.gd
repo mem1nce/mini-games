@@ -269,7 +269,7 @@ func _geri_dugmesi_kur() -> void:
 	_geri = HoldButton.new()
 	_geri.size = Vector2(104, 104)
 	_geri.position = Vector2(36, 24)
-	_geri.hold_time = 0.8
+	_geri.hold_time = 0.6
 	_geri.completed.connect(_geri_basildi)
 	_ui.add_child(_geri)
 	_geri_parmak = -1

@@ -4,6 +4,7 @@ extends Control
 
 const Data := preload("res://oyunlar/hafiza/veriler.gd")
 const Card := preload("res://oyunlar/hafiza/kart.gd")
+const HoldButton := preload("res://ortak/basili_geri_dugmesi.gd")
 
 enum State { SELECT, DEALING, PLAYING, CHECKING, CELEBRATING }
 
@@ -39,8 +40,10 @@ const MAX_CARD_WIDTH := 250.0
 @onready var game: Control = $Game
 @onready var cards_layer: Node2D = $Game/Cards
 @onready var effects: Node2D = $Game/Effects
-@onready var back_button: Panel = $Game/BackButton
-@onready var select_back_button: Panel = $LevelSelect/BackButton
+@onready var back_panel: Panel = $Game/BackButton
+@onready var select_back_panel: Panel = $LevelSelect/BackButton
+var back_button: Control
+var select_back_button: Control
 @onready var cheer: HBoxContainer = $Game/Cheer
 @onready var level_select: Control = $LevelSelect
 @onready var theme_row: HBoxContainer = $LevelSelect/ThemeRow
@@ -62,6 +65,10 @@ var textures := {}                 # yol -> Texture2D önbelleği
 
 func _ready() -> void:
 	SesYoneticisi.muzik("hafiza", self)
+	back_button = HoldButton.replace(back_panel)
+	back_button.completed.connect(_on_back_completed)
+	select_back_button = HoldButton.replace(select_back_panel)
+	select_back_button.completed.connect(_on_select_back_completed)
 	_check_data()
 	_load_progress()
 	var sky_texture := GradientTexture2D.new()
@@ -105,16 +112,14 @@ func _theme_texture(theme_data: Dictionary, file_name: String) -> Texture2D:
 
 func _input(event: InputEvent) -> void:
 	var touch := event as InputEventScreenTouch
-	if touch == null or not touch.pressed:
+	if touch == null:
+		return
+	# Geri düğmeleri basılı tutulur; bölüm seçme ekranında ana menüye, oyunda bölüm seçmeye döner
+	var back: Control = select_back_button if state == State.SELECT else back_button
+	if back.handle_touch(touch) or not touch.pressed:
 		return
 	var pos := touch.position
 	if state == State.SELECT:
-		# Bölüm seçme ekranı oyunun ilk ekranı: geri ana menüye döner
-		if _is_touched(select_back_button, pos):
-			_press(select_back_button)
-			SesYoneticisi.efekt("geri")
-			SahneGecis.ana_menuye_don()
-			return
 		for i in theme_buttons.size():
 			if _is_touched(theme_buttons[i], pos):
 				SesYoneticisi.efekt("dugme_tik")
@@ -132,11 +137,6 @@ func _input(event: InputEvent) -> void:
 				return
 		return
 
-	if _is_touched(back_button, pos):
-		_press(back_button)
-		SesYoneticisi.efekt("geri")
-		_show_level_select()
-		return
 	if state != State.PLAYING or open_cards.size() >= 2:
 		return
 	for card in cards:
@@ -148,6 +148,17 @@ func _input(event: InputEvent) -> void:
 				state = State.CHECKING
 				_check_pair()
 			return
+
+
+func _on_select_back_completed() -> void:
+	SesYoneticisi.efekt("geri")
+	SahneGecis.ana_menuye_don()
+
+
+func _on_back_completed() -> void:
+	SesYoneticisi.efekt("geri")
+	back_button.reset()
+	_show_level_select()
 
 
 func _is_touched(control: Control, pos: Vector2) -> bool:
