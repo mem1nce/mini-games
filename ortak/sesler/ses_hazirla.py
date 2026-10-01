@@ -113,11 +113,29 @@ DONGULU = ("dongu", "muzik")
 
 
 def _indir(url, hedef):
-    if not os.path.exists(hedef):
-        print("indiriliyor", url)
-        istek = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-        with urllib.request.urlopen(istek, timeout=120) as y, open(hedef, "wb") as f:
-            f.write(y.read())
+    """Yarıda kesilen indirme yarım dosya bırakmasın: geçici ada yazılır, tamamlanınca asıl ada taşınır.
+    Bağlantı koparsa birkaç kez yeniden denenir."""
+    if os.path.exists(hedef):
+        return
+    gecici = hedef + ".indiriliyor"
+    for deneme in range(4):
+        try:
+            print("indiriliyor", url)
+            istek = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(istek, timeout=120) as y, open(gecici, "wb") as f:
+                while True:
+                    parca = y.read(1 << 16)
+                    if not parca:
+                        break
+                    f.write(parca)
+                beklenen = y.headers.get("Content-Length")
+            if beklenen and int(beklenen) != os.path.getsize(gecici):
+                raise IOError("eksik indi: %s / %s bayt" % (os.path.getsize(gecici), beklenen))
+            os.replace(gecici, hedef)
+            return
+        except Exception as hata:  # noqa: BLE001
+            print("  indirme hatası (%d. deneme): %s" % (deneme + 1, hata))
+    raise IOError("indirilemedi: " + url)
 
 
 def _kenney_bag(sayfa):
@@ -130,13 +148,13 @@ def _kenney_bag(sayfa):
 def paket_klasoru(onbellek, ad):
     url, sayfa = PAKETLER[ad]
     klasor = os.path.join(onbellek, ad)
-    if os.path.isdir(klasor):
+    if os.path.isdir(klasor) and os.listdir(klasor):
         return klasor
-    os.makedirs(klasor, exist_ok=True)
     if url.endswith("/"):
         url = _kenney_bag(sayfa)
     dosya = os.path.join(onbellek, ad + "_" + os.path.basename(url).replace("%20", "_"))
     _indir(url, dosya)
+    os.makedirs(klasor, exist_ok=True)       # klasör ancak indirme tamamlanınca oluşur
     if dosya.endswith(".zip"):
         with zipfile.ZipFile(dosya) as z:
             z.extractall(klasor)

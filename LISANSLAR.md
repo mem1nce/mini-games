@@ -3,6 +3,8 @@
 İnceleme tarihi: 1 Ekim 2026. Kapsam: projedeki bütün görseller, sesler, yazı tipleri, isimler, uygulama simgesi ve
 oyun motoru. Dışarıdan alınan varlıkların kısa listesi `CREDITS.md`'de, ortak seslerin dosya dosya dökümü
 `ortak/sesler/SESLER.md`'de durur; bu dosya incelemenin sonucunu ve yapılan değişiklikleri anlatır.
+Kanıtlar (kaynak sayfaları, arşiv kopyaları, dosya özetleri) `LISANS_KANITLARI.md`'de; kayıtların tutarlılığı
+`python lisans_denetle.py` ile denetlenir.
 
 **Sonuç:** ticari yayına engel bir lisans sorunu bulunmadı. Dışarıdan alınan her şey CC0 ya da OFL lisanslı,
 geri kalan her şey projede üretildi. Bir görsel önlem olarak değiştirildi (Uçan Kuş direği), uygulamaya
@@ -123,6 +125,11 @@ Projede başka yazı tipi yok. SVG'lerin hiçbirinde yazı ya da yazı tipi adı
    dahil). Davranış değişmedi; denge dosyası yeni adlarla yükleniyor.
 8. **Hayvanları Besle: derlenmiş Python dosyası.** `gorseller/__pycache__/svg_uret.cpython-314.pyc` repodan
    çıkarıldı (lisans sorunu değildi, repoda durmaması gerekiyordu).
+11. **Kanıtlar kaydedildi ve denetim betiği eklendi** (2 Ekim 2026). `LISANS_KANITLARI.md`: 28 kaynak
+    sayfasının Internet Archive'daki tarihli kopyası (hepsinin lisansı gösterdiği doğrulandı), ortak seslerde
+    kullanılan her orijinal dosyanın SHA-256 özeti, paketlerin içindeki lisans dosyaları. `lisans_denetle.py`:
+    kayıtsız ses, lisanssız yazı tipi, dış kaynak izi taşıyan görsel, marka adı ya da ağ bağlantısı eklenirse
+    hata verir. `ses_hazirla.py`'deki indirme, yarıda kesilince yarım dosya bırakmayacak şekilde düzeltildi.
 10. **Tren Rayı'nın tren sesleri değiştirildi.** Eski düdük, "çuf", kalkış ve fren sesleri oyunun kendi
     betiğinde sinüs ve gürültüyle sentezlenmişti (lisans sorunu yoktu, ama kulağa garip geliyordu). Yerlerine
     OpenGameArt'taki CC0 gerçek buhar kayıtlarından hazırlanan `tren_duduk.ogg`, `tren_cufcuf.ogg` ve
@@ -161,8 +168,8 @@ kayıtla değiştirilirse o da CC0 olmalı ve kaydedilmeli.
    kontrol edilmeli.
 3. **Sesleri dinlemek.** Lisanslar sayfalardan doğrulandı, ama sesleri dinleyemedim. Tanıdık bir melodiye
    benzeyen bir müzik olursa (özellikle altı müzik döngüsü) haber verilmeli.
-4. **Lisans kanıtı.** CC0 geri alınamaz, ama sayfalar ileride silinebilir. Kaynak sayfalarının birer kopyasını
-   (PDF ya da ekran görüntüsü) saklamak iyi olur; bağlantılar `SESLER.md` ve `CREDITS.md`'de.
+4. **Lisans kanıtı (yapıldı).** Kaynak sayfalarının Internet Archive kopyaları ve dosya özetleri
+   `LISANS_KANITLARI.md`'ye kaydedildi. İstenirse sayfaların PDF kopyası da ayrıca saklanabilir, ama gerekli değil.
 5. **Oyun düzenlerinin benzerliği.** Dondurmacı (konuşma balonunda sipariş, altta kaplar ve tatlar) ve Yol Yap
    (ızgaraya parça yerleştirip bilyeyi hedefe ulaştırma) yaygın oyun türleri; projede sıfırdan tasarlandı ve
    bildiğim bir oyunun birebir kopyası değil. Yine de piyasadaki bütün çocuk oyunlarıyla karşılaştıramadım;
