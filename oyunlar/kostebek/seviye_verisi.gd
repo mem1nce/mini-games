@@ -1,4 +1,4 @@
-class_name WhackLevelData
+class_name MoleLevelData
 extends Resource
 # Köstebek Vurma: bir seviyenin zorluk değerleri. Seviyeler denge.tres içindeki Levels dizisinde.
 # Olasılıklar: bomb_chance + fruit_chance kadarı bomba/meyve, kalanı köstebek.

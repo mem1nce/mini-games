@@ -1,5 +1,5 @@
 extends RefCounted
-# WhackGameState: skor, can, seviye ve rekor. Olaylar sinyallerle gider; ekranı oyun sahnesi günceller.
+# MoleGameState: skor, can, seviye ve rekor. Olaylar sinyallerle gider; ekranı oyun sahnesi günceller.
 # Rekor user://kostebek.cfg içinde ([rekor] skor). Ana menü rozeti de buradan okur.
 
 signal score_changed(score: int, delta: int, at: Vector2)
@@ -9,14 +9,14 @@ signal game_over
 
 const SAVE_PATH := "user://kostebek.cfg"
 
-var balance: WhackBalance
+var balance: MoleBalance
 var score: int = 0
 var lives: int = 3
 var level: int = 1
 var best: int = 0
 
 
-func _init(game_balance: WhackBalance) -> void:
+func _init(game_balance: MoleBalance) -> void:
 	balance = game_balance
 	best = load_best()
 	reset()

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="WhackBalance" format=3]
+[gd_resource type="Resource" script_class="MoleBalance" format=3]
 
 [ext_resource type="Script" path="res://oyunlar/kostebek/denge.gd" id="1_denge"]
 [ext_resource type="Script" path="res://oyunlar/kostebek/seviye_verisi.gd" id="2_seviye"]

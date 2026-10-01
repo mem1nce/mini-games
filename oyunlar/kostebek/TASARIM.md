@@ -56,12 +56,12 @@ alt kısmı dudağın arkasında kalır. Kask parçaları ve duman maskenin dı�
 
 ```
 kostebek/
-  kostebek.tscn / .gd     ana sahne (WhackAMoleGame): durumlar COUNTDOWN / PLAYING / GAME_OVER,
+  kostebek.tscn / .gd     ana sahne (MoleGame): durumlar COUNTDOWN / PLAYING / GAME_OVER,
                           dokunma, çukur yerleşimi; sinyal: state_changed
-  oyun_durumu.gd          WhackGameState: skor, can, seviye, rekor; sinyaller score_changed, life_lost,
+  oyun_durumu.gd          MoleGameState: skor, can, seviye, rekor; sinyaller score_changed, life_lost,
                           level_up, game_over
-  denge.gd / denge.tres   WhackBalance: BÜTÜN denge ayarları + seviye dizisi
-  seviye_verisi.gd        WhackLevelData: bir seviyenin değerleri
+  denge.gd / denge.tres   MoleBalance: BÜTÜN denge ayarları + seviye dizisi
+  seviye_verisi.gd        MoleLevelData: bir seviyenin değerleri
   cikis_yoneticisi.gd     Spawner: ne zaman / nereden / ne çıkacak; sinyal: item_spawned
   cukur.gd                Hole: katmanlar, maske, dokunma alanı; sinyal: emptied
   cikan_nesne.gd          PopUpItem: çıkma / bekleme / inme; sinyaller hit, escaped, finished
@@ -100,7 +100,7 @@ Seviyeler (`levels` dizisi; son seviyeden sonrası son seviye). Kalan olasılık
 | 7 | 0.95 | 0.55–0.85 | 3 | 0.17 | 0.38 | 0.33 | 9 |
 | 8+ | 0.9 | 0.5–0.8 | 3 | 0.18 | 0.42 | 0.32 | 9 |
 
-Yeni seviye: `levels` dizisine bir öğe ekle (New WhackLevelData). Oyun açılırken `WhackBalance.problems()`
+Yeni seviye: `levels` dizisine bir öğe ekle (New MoleLevelData). Oyun açılırken `MoleBalance.problems()`
 değerleri denetler (olasılık toplamı, aralıklar, çukur sayısı) ve sorun varsa Godot çıktısına hata yazar.
 
 ## Görseller
