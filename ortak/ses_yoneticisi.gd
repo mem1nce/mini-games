@@ -4,6 +4,7 @@ extends Node
 #                                                 tekrar gelirse birleştirilir; aynı anda en fazla EFEKT_OYNATICI ses)
 #   SesYoneticisi.ezgi("kutlama")                 kutlama ezgisi: çalarken müzik kısa süre kısılır
 #   SesYoneticisi.dongu_baslat("bilye_yuvarlanma") / dongu_durdur(...)   döngülü efekt
+#   SesYoneticisi.dongu_perde(ad, perde) / dongu_seviye(ad, db)         çalan döngünün hızı ve seviyesi (ör. tren)
 #   SesYoneticisi.muzik("ucan_kus", self)         oyun müziği (muzik_<ad>.ogg); öncekiyle yumuşak geçiş. Sahip düğüm
 #                                                 ağaçtan çıkınca müzik kendiliğinden söner (müziksiz sahneye geçince).
 #   SesYoneticisi.muzik_hizi(1.04)                çalan müziği hafifçe hızlandırır (perde de değişir); muzik() 1'e döndürür
@@ -170,6 +171,13 @@ func dongu_perde(ad: String, perde: float) -> void:
 	var p: AudioStreamPlayer = _donguler.get(ad)
 	if p:
 		p.pitch_scale = clampf(perde, 0.5, 2.0)
+
+
+func dongu_seviye(ad: String, ses_db: float) -> void:
+	var p: AudioStreamPlayer = _donguler.get(ad)
+	var sonum: Tween = _dongu_sonumleri.get(ad)
+	if p and not (sonum and sonum.is_valid()):
+		p.volume_db = ses_db
 
 
 func dongu_durdur(ad: String, sure := 0.2) -> void:
