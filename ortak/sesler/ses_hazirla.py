@@ -3,7 +3,8 @@
 #
 # Gerekenler: Python 3 + soundfile, numpy, scipy (pip install soundfile numpy scipy). İndirilen paketler proje
 # dışında bir önbellek klasörüne açılır (varsayılan: sistem geçici klasörü / minik_sesler_kaynak).
-# Çalıştırma (proje kökünden): python ortak/sesler/ses_hazirla.py [önbellek_klasörü]
+# Çalıştırma (proje kökünden): python ortak/sesler/ses_hazirla.py [önbellek_klasörü] [ses adları...]
+# (ad verilirse sadece o sesler yeniden üretilir). "sentez" paketindeki sesler indirilmez, bu dosyada üretilir.
 #
 # Seviye hedefleri (kısa pencere RMS, dBFS): arayüz -26, efekt -21, ezgi -19, döngü -30, müzik (ortalama) -22;
 # tepe -1 dBFS'i geçmez. Efektler mono, müzikler stereo. Oyun içindeki ince ayar SesYoneticisi'nde.
@@ -89,6 +90,7 @@ SESLER = {
     "sersem": ("yaratik", "ooh.ogg", "efekt", {"alcak": 5000}),
     "guc_al": ("digital", "powerUp2.ogg", "efekt", {"alcak": 3000}),
     "guc_bitti": ("digital", "phaserDown1.ogg", "efekt", {"alcak": 2500}),
+    "vuus": ("sentez", "vuus", "efekt", {"alcak": 2800}),
     # --- Müzikler (döngülü) ---
     "muzik_menu": ("m_menu", "HappyClappyLoop.wav", "muzik", {"dikis": 0.006}),
     "muzik_ucan_kus": ("m_kus", "flowerbed_fields.ogg", "muzik", {"alcak": 5000}),
@@ -174,9 +176,29 @@ def pencere_rms_max(veri, pencere=0.3):
     return en
 
 
+def vuus():
+    """Rüzgar "vuuş"u: merkez frekansı yükselip alçalan bant geçiren gürültü, yumuşak çan biçimli zarf"""
+    n = int(0.55 * SR)
+    t = np.linspace(0.0, 1.0, n)
+    gurultu = np.random.default_rng(7).standard_normal(n)
+    merkez = 320.0 + 1100.0 * np.sin(np.pi * t ** 0.8) ** 2
+    f = 2.0 * np.sin(np.pi * merkez / SR)
+    alt = bant = 0.0
+    cikis = np.zeros(n)
+    for i in range(n):          # durum değişkenli süzgeç (Q ≈ 2.5)
+        alt += f[i] * bant
+        bant += f[i] * (gurultu[i] - alt - 0.4 * bant)
+        cikis[i] = bant
+    zarf = t ** 1.2 * (1.0 - t) ** 2.0
+    return (cikis * zarf / zarf.max())[:, None]
+
+
+SENTEZ = {"vuus": vuus}
+
+
 def hazirla(onbellek, ad, paket, dosya, tur, isl):
     dongu = tur in DONGULU
-    veri = oku(bul(onbellek, paket, dosya), tur == "muzik")
+    veri = SENTEZ[dosya]() if paket == "sentez" else oku(bul(onbellek, paket, dosya), tur == "muzik")
     if "perde" in isl:
         # Hız çarpanı: yeniden örnekleyerek perde ve süre birlikte değişir
         oran = isl["perde"]
@@ -226,10 +248,14 @@ def hazirla(onbellek, ad, paket, dosya, tur, isl):
 
 
 def main():
-    onbellek = sys.argv[1] if len(sys.argv) > 1 else os.path.join(tempfile.gettempdir(), "minik_sesler_kaynak")
+    adlar = [a for a in sys.argv[1:] if a in SESLER]
+    diger = [a for a in sys.argv[1:] if a not in SESLER]
+    onbellek = diger[0] if diger else os.path.join(tempfile.gettempdir(), "minik_sesler_kaynak")
     os.makedirs(onbellek, exist_ok=True)
     toplam = 0
     for ad, (paket, dosya, tur, isl) in SESLER.items():
+        if adlar and ad not in adlar:
+            continue
         sure, rms, boyut = hazirla(onbellek, ad, paket, dosya, tur, isl)
         toplam += boyut
         print(f"{ad:22s} {tur:7s} {sure:6.2f} sn  rms {rms:6.1f} dB  {boyut // 1024:5d} KB")
