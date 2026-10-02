@@ -10,7 +10,7 @@
 #   5. Her kaynak paketin sayfası LISANS_KANITLARI.md'de, yapanı Lisanslar ekranında (lisans_metinleri.gd)
 #   6. Her yazı tipinin yanında lisans dosyası var
 #   7. SVG'lerde dış kaynak izi yok (çizim programı imzası, gömülü resim, yazı tipi adı)
-#   8. Dosya adlarında ve kodda bilinen oyun / marka adı yok
+#   8. Dosya adlarında, kodda ve çeviri tablosunda (ceviriler.csv) bilinen oyun / marka adı yok
 #   9. Kodda ağ bağlantısı, reklam, analiz ya da izin gerektiren özellik yok (gizlilik politikasıyla uyum)
 #  10. Kayıtlar yalnızca user:// içine yazılıyor (geliştirici araçları hariç)
 
@@ -25,7 +25,12 @@ UYGUN_LISANSLAR = ("CC0", "bize ait")
 MARKALAR = ("flappy", "lego", "whack", "mario", "nintendo", "pokemon", "pikachu", "disney", "pixar", "minecraft",
             "angry bird", "angrybird", "tetris", "sonic", "mcqueen", "wall-e", "bb-8", "bb8", "r2d2", "r2-d2",
             "peppa", "paw patrol", "minion", "spongebob", "barbie", "hello kitty", "toca boca", "candy crush",
-            "fruit ninja", "doodle jump", "subway surf", "cocomelon", "baby shark", "bluey")
+            "fruit ninja", "doodle jump", "subway surf", "cocomelon", "baby shark", "bluey",
+            # oyuncak ve çocuk markaları, Türk çocuk çizgi filmleri, dondurma markası
+            "jenga", "brio", "duplo", "playmobil", "hot wheels", "crayola", "play-doh", "tamagotchi", "pepee",
+            "niloya", "rafadan", "kral şakir", "algida",
+            # "memory" Ravensburger'in tescilli markası (eşleştirme kartı oyunu); oyun adında kullanılmaz
+            "memory")
 AG_VE_IZIN = ("HTTPRequest", "HTTPClient", "WebSocketPeer", "StreamPeerTCP", "PacketPeerUDP", "ENetConnection",
               "ENetMultiplayerPeer", "WebRTC", "TCPServer", "UDPServer", "UPNP", "JavaScriptBridge", "shell_open",
               "vibrate_handheld", "AudioStreamMicrophone", "AudioEffectRecord", "AudioEffectCapture", "CameraFeed",
@@ -152,7 +157,7 @@ def denetle():
                 sorun("%s: dış kaynak izi olabilir ('%s')" % (d, m.group(0)))
 
     # 8. marka adları (dosya adları ve metin dosyaları)
-    metin_uzantilari = (".gd", ".tscn", ".tres", ".godot", ".md", ".py", ".cfg", ".json")
+    metin_uzantilari = (".gd", ".tscn", ".tres", ".godot", ".md", ".py", ".cfg", ".json", ".csv")
     for d in hepsi:
         if d in RAPOR_DOSYALARI or d.endswith("OFL.txt"):
             continue

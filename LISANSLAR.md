@@ -13,6 +13,10 @@ Lisanslar ekranı eklendi. Arkadaşımın oyunlarındaki iki marka adı (dosya v
 İkinci tur (1 Ekim 2026, akşam): arkadaşımın Müzik Kutusu'na eklediği beş yeni hayvan sesi kaydı incelendi
 (hepsi CC0) ve onun oyunlarındaki bulgular, kendi isteğimle düzeltildi.
 
+Üçüncü tur (2 Ekim 2026, yayın öncesi): son incelemeden sonra eklenen çeviri tablosu (`ortak/ceviri/ceviriler.csv`)
+ve yeni dosyalar incelendi. Yeni ses ya da yazı tipi yok; tek yeni görsel (`meyve_topla/gorseller/agac_tac_genis.svg`)
+projede çizildi. İki İngilizce ad değiştirildi (aşağıda 12. madde), denetim betiği çeviri tablosunu da tarar oldu.
+
 Durum sütunu: **uygun** (sorun yok), **düzeltildi** (bu incelemede değiştirildi), **kontrol edilmeli** (bir insanın
 bakması gerekiyor; ayrıntı "Manuel kontrol gerekenler" bölümünde).
 
@@ -85,6 +89,8 @@ Projede başka yazı tipi yok. SVG'lerin hiçbirinde yazı ya da yazı tipi adı
 |---|---|---|
 | Benim 11 oyunum, `ana_menu/`, `ortak/`, `project.godot` | başka oyun, film ya da marka adı yok ("flappy" dahil) | uygun |
 | Uygulama adı "Minik Oyunlar" | aramada aynı adlı bir uygulama çıkmadı, ama bu kesin kanıt değil | **kontrol edilmeli** |
+| İngilizce uygulama adı "Tiny Games" | Google Play'de aynı adlı bir çocuk etkinlik uygulaması var ("Tiny Games - play everyday"); "Minik Games" adı da başka bir çocuk uygulamasında kullanılıyor | **düzeltildi**: "Bouncy Zoo: Kids Games 4-8". Önce düşünülen "Tumble Zoo" adıyla bir oyun olduğu için bu seçildi. Google Play'de çok benzer adlı "Bouncy Zoo Escape" adlı bir hayvan oyunu var; birebir aynı değil, ama mağaza ve marka aramasında bakılmalı (aşağıda "Manuel kontrol gerekenler" 1) |
+| Hafıza'nın İngilizce adı "Memory" | "memory®" Ravensburger'in birçok ülkede tescilli markası; şirket adında bu sözcük geçen uygulamalara itiraz etti, 2017'de Amsterdam İstinaf Mahkemesi markayı korudu | **düzeltildi**: "Find the Pairs" |
 | Gölge Eşleştirme: bir oyuncak bloğun dosya adı tescilli bir oyuncak markasıydı | yalnızca dosya adında, ekranda görünmüyordu | **düzeltildi**: `blok` |
 | Köstebek: sınıf adları tescilli bir oyun adını ("Whac-A-Mole") çağrıştırıyordu | yalnızca kod içinde | **düzeltildi**: `Mole...` |
 | `GELISTIRMELER.md` | Google Play adı ve bağlantıları (politika notları) | uygun: uygulamaya girmiyor |
@@ -134,6 +140,12 @@ Projede başka yazı tipi yok. SVG'lerin hiçbirinde yazı ya da yazı tipi adı
     betiğinde sinüs ve gürültüyle sentezlenmişti (lisans sorunu yoktu, ama kulağa garip geliyordu). Yerlerine
     OpenGameArt'taki CC0 gerçek buhar kayıtlarından hazırlanan `tren_duduk.ogg`, `tren_cufcuf.ogg` ve
     `tren_fren.ogg` kondu; eski dört `.wav` dosyası ve üretim kodu projeden silindi. Ayrıntı `SESLER.md`'de.
+12. **İngilizce adlar ve denetim** (2 Ekim 2026, üçüncü tur). Çeviri tablosunda uygulama adı "Tiny Games" →
+    "Bouncy Zoo: Kids Games 4-8" (`project.godot` `config/name_localized`; menü başlığı "Bouncy Zoo"), Hafıza'nın
+    adı "Memory" → "Find the Pairs". Lisanslar ekranının İngilizce girişindeki "Nearly all drawings" Türkçesiyle
+    aynı olacak şekilde "All drawings" yapıldı (bütün çizimler özgün). `lisans_denetle.py` artık `.csv` dosyalarını
+    da tarıyor; marka listesine "memory", oyuncak markaları (Jenga, Brio, Duplo, Playmobil...), Türk çocuk çizgi
+    filmleri (Pepee, Niloya, Rafadan Tayfa, Kral Şakir) ve Algida eklendi.
 9. **Yeni hayvan sesleri kayıtlara işlendi.** BigSoundBank ve "Ribbit Frog Sounds" kaynakları `CREDITS.md`'ye ve
    Lisanslar ekranına (`ana_menu/lisans_metinleri.gd`) eklendi.
 
@@ -161,8 +173,9 @@ kayıtla değiştirilirse o da CC0 olmalı ve kaydedilmeli.
 
 ## Manuel kontrol gerekenler
 
-1. **Uygulama adı.** "Minik Oyunlar" için Google Play, App Store ve TÜRKPATENT marka sorgusunda aynı ya da çok
-   benzer bir ad var mı bakılmalı. Web aramasında birebir eşleşme çıkmadı, ama mağaza içi arama yapılmadı.
+1. **Uygulama adı.** "Minik Oyunlar" ve "Bouncy Zoo" için Google Play, App Store ve TÜRKPATENT / EUIPO marka
+   sorgusunda aynı ya da çok benzer bir ad var mı bakılmalı. Web aramasında birebir eşleşme çıkmadı, ama Google
+   Play'de "Bouncy Zoo Escape" adlı bir hayvan oyunu var (ad çok yakın); mağaza içi arama yapılmadı.
 2. **Android dışa aktarım ayarları.** `export_presets.cfg` repoda yok. Dışa aktarım kurulurken başlatıcı
    simgelerinin `ortak/simge/` altındaki dosyalara bağlandığı ve varsayılan Godot simgesinin kalmadığı
    kontrol edilmeli.
