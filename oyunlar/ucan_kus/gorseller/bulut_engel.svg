@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="140" viewBox="0 0 256 140">
+<defs><linearGradient id="b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F3F1FF"/><stop offset="1" stop-color="#C9C6EE"/></linearGradient></defs>
+<path d="M52 122 C20 122 12 86 40 76 C36 44 76 30 96 52 C108 18 166 18 176 54 C206 40 236 66 220 92 C244 100 236 124 212 122 Z" fill="url(#b)" stroke="#5C5F9E" stroke-width="7" stroke-linejoin="round"/>
+<path d="M70 62 C78 50 92 48 100 56" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
+<path d="M96 88 q12 10 24 0" fill="none" stroke="#3B2F6B" stroke-width="6" stroke-linecap="round"/>
+<path d="M144 88 q12 10 24 0" fill="none" stroke="#3B2F6B" stroke-width="6" stroke-linecap="round"/>
+<path d="M124 104 q8 7 16 0" fill="none" stroke="#3B2F6B" stroke-width="5" stroke-linecap="round"/>
+<ellipse cx="88" cy="102" rx="10" ry="6" fill="#FF9CC6" opacity="0.7"/><ellipse cx="176" cy="102" rx="10" ry="6" fill="#FF9CC6" opacity="0.7"/>
+<path d="M198 34 l12 0 l-12 14 l12 0" fill="none" stroke="#5C5F9E" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M222 12 l8 0 l-8 10 l8 0" fill="none" stroke="#5C5F9E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

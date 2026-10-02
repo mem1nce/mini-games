@@ -29,7 +29,7 @@ bakması gerekiyor; ayrıntı "Manuel kontrol gerekenler" bölümünde).
 
 | Dosya / klasör | Kaynak | Lisans | Durum |
 |---|---|---|---|
-| `oyunlar/ucan_kus/` (6 SVG) | projede çizildi | bize ait | **düzeltildi** (direk; aşağıda) |
+| `oyunlar/ucan_kus/` (5 SVG + `gorseller/` 34 SVG) | projede çizildi (`gorseller/svg_uret.py`) | bize ait | **düzeltildi** (direk; aşağıda). Yatay sürümde her bölgenin kendi sütunu var (ağaç gövdesi, bina, buz, palmiye gövdesi, gece sütunu): hepsi başlıksız, yuvarlak uçlu |
 | `oyunlar/dondurmaci/gorseller/` (24 SVG) | projede çizildi | bize ait | uygun |
 | `oyunlar/yol_yap/gorseller/` (16 SVG) | projede çizildi | bize ait | uygun |
 | `oyunlar/hafiza/` (27 SVG) | projede çizildi | bize ait | uygun |

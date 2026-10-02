@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dc0nlaiw0mx2e"
-path="res://.godot/imported/direk.svg-87eba23c8af3869da321f6264c7ccad5.ctex"
+uid="uid://bj8rd014000gr"
+path="res://.godot/imported/katman_gece_uzak.svg-d98c41d9cffc8e733ce9397196aaf557.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://oyunlar/ucan_kus/direk.svg"
-dest_files=["res://.godot/imported/direk.svg-87eba23c8af3869da321f6264c7ccad5.ctex"]
+source_file="res://oyunlar/ucan_kus/gorseller/katman_gece_uzak.svg"
+dest_files=["res://.godot/imported/katman_gece_uzak.svg-d98c41d9cffc8e733ce9397196aaf557.ctex"]
 
 [params]
 

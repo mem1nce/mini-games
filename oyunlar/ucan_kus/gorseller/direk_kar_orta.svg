@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="132" height="1400" viewBox="0 0 132 1400">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#D4EEFF"/><stop offset="1" stop-color="#9FD2F5"/></linearGradient></defs>
+<path d="M6 1420 L6 31 Q6 5 32 5 L100 5 Q126 5 126 31 L126 1420 Z" fill="url(#g)"/>
+<path d="M20 90 l45 70 l10 50 l-27 -60 Z" fill="#FFFFFF" opacity="0.38"/>
+<path d="M23 285 l31 70 l10 50 l-18 -60 Z" fill="#FFFFFF" opacity="0.38"/>
+<path d="M38 510 l37 70 l10 50 l-22 -60 Z" fill="#FFFFFF" opacity="0.38"/>
+<path d="M63 714 l37 70 l10 50 l-22 -60 Z" fill="#FFFFFF" opacity="0.38"/>
+<path d="M33 940 l53 70 l10 50 l-32 -60 Z" fill="#FFFFFF" opacity="0.38"/>
+<path d="M24 1146 l52 70 l10 50 l-31 -60 Z" fill="#FFFFFF" opacity="0.38"/>
+<path d="M22 1305 l44 70 l10 50 l-27 -60 Z" fill="#FFFFFF" opacity="0.38"/>
+<rect x="18" y="60" width="10" height="1400" rx="5" fill="#FFFFFF" opacity="0.6"/>
+<rect x="106" y="60" width="12" height="1400" fill="#6FB2E3" opacity="0.4"/>
+<path d="M6 31 Q6 5 32 5 L100 5 Q126 5 126 31 L126 46 q-40 20 -40 2 q-40 18 -40 0 q-40 20 -40 -2 Z" fill="#FFFFFF"/>
+<path d="M6 1420 L6 31 Q6 5 32 5 L100 5 Q126 5 126 31 L126 1420 Z" fill="none" stroke="#4E86B8" stroke-width="6"/>
+</svg>
