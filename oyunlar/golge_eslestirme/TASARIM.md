@@ -2,19 +2,16 @@
 
 Eşyayı parmakla sürükleyip kendi gölgesine bırakma oyunu. Hedef yaş 1-3: **hiç yazı yok**, süre/puan/ceza yok.
 
-## Ekran düzeni (dikey, `expand`)
+## Ekran düzeni (yatay 1280x720, `expand`)
 
 ```
-┌──────────────────────────────┐
-│ (←)      ● ● ● ○ · · · · · · │  geri (basılı tut) + 10 bölüm noktası
-│                              │
-│    ▲ gölge        ● gölge    │  üst bölge: gölgeler (2 sütun)
-│    ★ gölge        ■ gölge    │
-│ ╭──────────────────────────╮ │
-│ │   ●             ▲        │ │  alt tepsi: eşyalar (2 sütun)
-│ │   ■             ★        │ │
-│ ╰──────────────────────────╯ │
-└──────────────────────────────┘
+┌────────────────────────────────────────────────────────┐
+│ (←)          ● ● ● ○ · · · · · ·                       │  geri (basılı tut) + 10 bölüm noktası
+│                                  ╭──────────────────╮  │
+│    ▲ gölge        ● gölge        │   ●        ▲     │  │  solda gölgeler (2 sütun),
+│    ★ gölge        ■ gölge        │   ■        ★     │  │  sağda eşya tepsisi (2 sütun)
+│                                  ╰──────────────────╯  │
+└────────────────────────────────────────────────────────┘
 ```
 
 Boyutlar `get_viewport_rect().size`'dan hesaplanır (telefon ve tablet oranında denendi).
