@@ -9,7 +9,7 @@ const Turler := preload("res://oyunlar/balik_tutma/balik_turleri.gd")
 const G := "res://oyunlar/balik_tutma/gorseller/"
 const COP_TURLERI := ["sise", "poset", "teneke"]
 const SIMGE := 72.0
-const BALON_Y := 100.0        # görev baloncuğunun üst kenarı (penguenin kafasının üstünde kalsın)
+const BALON_Y := 60.0         # görev baloncuğunun üst kenarı (penguenin kafasının üstünde kalsın)
 const SOLUK := """
 shader_type canvas_item;
 // Baloncuktaki henüz toplanmamış simge soluk ve yarı saydam; dolu = 1 olunca asıl renkleri.

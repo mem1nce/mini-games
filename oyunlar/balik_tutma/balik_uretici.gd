@@ -35,9 +35,9 @@ func kur(p_level: Dictionary, ekran: Vector2, yuzey_y: float, dip_y: float, p_go
 		_balik_ekle(true)
 	for i in int(level.get("denizanasi", 0)):
 		var d: Node2D = Denizanasi.new()
-		d.position = Vector2(_rng.randf_range(ekran.x * 0.15, ekran.x * 0.85), _rng.randf_range(alan.position.y + 80.0, alan.end.y - 40.0))
+		d.position = Vector2(_rng.randf_range(ekran.x * 0.15, ekran.x * 0.85), alan.get_center().y)
 		add_child(d)
-		d.kur(Rect2(40.0, alan.position.y + 60.0, ekran.x - 80.0, alan.size.y - 80.0), 96.0)
+		d.kur(Rect2(40.0, alan.position.y, ekran.x - 80.0, alan.size.y), 96.0)
 		denizanalari.append(d)
 	_copleri_kur(int(level.get("cop", 0)), ekran)
 
