@@ -63,6 +63,9 @@ func kur(p_oyun: Dictionary, boyut: Vector2, faz: float) -> void:
 	ad.size = Vector2(boyut.x, yazi_payi)
 	ic.add_child(ad)
 	_yaziyi_sigdir(ad, roundi(boyut.x * 0.112), boyut.x - 30.0)
+	# Yazı küçülünce etiketin büyümüş boyutu kalmasın (yoksa ortadan kayar)
+	ad.position = Vector2(0, boyut.y - yazi_payi - 4.0)
+	ad.size = Vector2(boyut.x, yazi_payi)
 
 	var bolum := OyunListesi.ilerleme(oyun)
 	if bolum > 0:
