@@ -206,7 +206,7 @@ func _start_level() -> void:
 		box.filled.connect(func() -> void: _sounds.play("dolu"))
 		box.appear(delay + i * 0.12)
 		boxes.append(box)
-	manager.start(manager.index, boxes)
+	manager.start(manager.index, data, boxes)
 	_belt.speed = manager.level["speed"]
 	_belt.running = true
 	_set_lever(true, false)

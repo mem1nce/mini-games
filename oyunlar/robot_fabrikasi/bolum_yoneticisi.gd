@@ -18,9 +18,9 @@ func _init() -> void:
 	rng.randomize()
 
 
-func start(p_index: int, p_boxes: Array) -> void:
+func start(p_index: int, p_level: Dictionary, p_boxes: Array) -> void:
 	index = p_index
-	level = Bolumler.level(index, rng)
+	level = p_level
 	boxes = p_boxes
 	_circulating.clear()
 	for b in boxes.size():
