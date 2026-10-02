@@ -9,7 +9,7 @@ const HoldButton := preload("res://ortak/basili_geri_dugmesi.gd")
 enum State { SELECT, DEALING, PLAYING, CHECKING, CELEBRATING }
 
 ## Ekran yönü: SahneGecis bu oyuna geçerken ekranı buna göre döndürür.
-@export_enum("dikey", "yatay") var ekran_yonu: String = "dikey"
+@export_enum("dikey", "yatay") var ekran_yonu: String = "yatay"
 
 ## Bölüm sonu kutlamasının süresi (saniye); sonra sonraki bölüme geçilir.
 @export var celebration_time: float = 2.0
@@ -30,8 +30,9 @@ const TEX_BUBBLE: Texture2D = preload("res://oyunlar/hafiza/gorseller/kabarcik.s
 const SAVE_PATH := "user://hafiza.cfg"
 const WORDS := ["Harika!", "Süper!", "Tebrikler!"]
 const RAINBOW := [Color("ff5a6e"), Color("ff9f40"), Color("ffc93d"), Color("5cc95c"), Color("4fa8ff"), Color("a66bff")]
-const BOARD_TOP := 200.0
-const BOARD_BOTTOM_MARGIN := 70.0
+const BOARD_TOP := 130.0
+const LEVEL_BUTTON := 240.0   # bölüm seçme düğmesinin kenarı
+const BOARD_BOTTOM_MARGIN := 40.0
 const CARD_ASPECT := 1.2          # kart yüksekliği / genişliği
 const MAX_CARD_WIDTH := 250.0
 
@@ -187,7 +188,7 @@ func _create_theme_buttons() -> void:
 	for i in Data.THEMES.size():
 		var theme_data: Dictionary = Data.THEMES[i]
 		var button := Panel.new()
-		button.custom_minimum_size = Vector2(250, 200)
+		button.custom_minimum_size = Vector2(200, 150)
 		button.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		var icon := TextureRect.new()
 		icon.texture = _theme_texture(theme_data, theme_data["icon"])
@@ -251,7 +252,7 @@ func _build_level_buttons() -> void:
 		var level: Dictionary = Data.LEVELS[i]
 		var open := i <= done
 		var button := Panel.new()
-		button.custom_minimum_size = Vector2(280, 280)
+		button.custom_minimum_size = Vector2(LEVEL_BUTTON, LEVEL_BUTTON)
 		button.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		button.add_theme_stylebox_override("panel", _panel_style(Color(1, 1, 1, 0.92), (theme_data["accent"] as Color) if open else Color("c9c3dc"), 6))
 
@@ -260,7 +261,7 @@ func _build_level_buttons() -> void:
 		grid.columns = level["cols"]
 		grid.add_theme_constant_override("h_separation", 6)
 		grid.add_theme_constant_override("v_separation", 6)
-		var cell_w := minf((220.0 - 6.0 * (level["cols"] - 1)) / level["cols"], (220.0 - 6.0 * (level["rows"] - 1)) / level["rows"] / CARD_ASPECT)
+		var cell_w := minf((LEVEL_BUTTON - 60.0 - 6.0 * (level["cols"] - 1)) / level["cols"], (LEVEL_BUTTON - 60.0 - 6.0 * (level["rows"] - 1)) / level["rows"] / CARD_ASPECT)
 		for k in level["cols"] * level["rows"]:
 			var mini_card := TextureRect.new()
 			mini_card.texture = back
@@ -287,8 +288,8 @@ func _build_level_buttons() -> void:
 			star.texture = TEX_STAR
 			star.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 			star.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-			star.position = Vector2(206, -22)
-			star.size = Vector2(90, 90)
+			star.position = Vector2(LEVEL_BUTTON - 74.0, -22)
+			star.size = Vector2(80, 80)
 			star.mouse_filter = Control.MOUSE_FILTER_IGNORE
 			button.add_child(star)
 

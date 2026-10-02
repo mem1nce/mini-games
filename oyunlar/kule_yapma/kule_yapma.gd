@@ -6,7 +6,7 @@ extends Node2D
 # süzülür, ulaşılan kat kutlanır ve "tekrar dene" çıkar. Fizik motoru yok. Tasarım TASARIM.md'de, notlar CLAUDE.md'de.
 
 ## Ekran yönü: SahneGecis bu oyuna geçerken ekranı buna göre döndürür.
-@export_enum("dikey", "yatay") var ekran_yonu: String = "dikey"
+@export_enum("dikey", "yatay") var ekran_yonu: String = "yatay"
 ## Düşme ivmesi (px/sn²); büyük = daha hızlı düşer
 @export var yercekimi: float = 2600.0
 ## Bölüm sonu panelinde dokunulmazsa kendiliğinden devam etme süresi (sn)

@@ -29,7 +29,7 @@ const THEMES := [
 # preview: bölüm başında bütün kartlar kısa süre açık gösterilir
 const LEVELS := [
 	{"cols": 2, "rows": 2, "preview": true},
-	{"cols": 2, "rows": 3, "preview": true},
-	{"cols": 3, "rows": 4, "preview": false},
+	{"cols": 3, "rows": 2, "preview": true},
+	{"cols": 4, "rows": 3, "preview": false},
 	{"cols": 4, "rows": 4, "preview": false},
 ]

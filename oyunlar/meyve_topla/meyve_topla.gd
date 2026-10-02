@@ -17,7 +17,7 @@ const G := "res://oyunlar/meyve_topla/gorseller/"
 enum State { START, BANNER, PLAYING, CELEBRATING, RETRY }
 
 ## Ekran yönü: SahneGecis bu oyuna geçerken ekranı buna göre döndürür.
-@export_enum("dikey", "yatay") var ekran_yonu: String = "dikey"
+@export_enum("dikey", "yatay") var ekran_yonu: String = "yatay"
 
 @export_group("Kirpi")
 ## Kirpinin parmağı ne kadar çabuk yakaladığı (büyük = daha az gecikme).

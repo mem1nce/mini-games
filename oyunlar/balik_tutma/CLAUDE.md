@@ -1,6 +1,6 @@
 # Balık Tutma
 
-4-8 yaş, **dikey** ekran, yazı yok (sadece kutlamada tek kelime), ceza yok. Kayıktaki penguen ağ kepçeyle (kanca yok) balık ve çöp toplar; görev baloncuğundaki resimleri (renk, desen, boyut, sayı, ışıklı balık, çöp) tamamlar. Çöp bölümlerinde su temizlendikçe berraklaşır. Yakalanan türler akvaryum koleksiyonuna girer. Tasarım, bölüm tablosu ve dosya listesi `TASARIM.md` içinde.
+4-8 yaş, **yatay** ekran, yazı yok (sadece kutlamada tek kelime), ceza yok. Kayıktaki penguen ağ kepçeyle (kanca yok) balık ve çöp toplar; görev baloncuğundaki resimleri (renk, desen, boyut, sayı, ışıklı balık, çöp) tamamlar. Çöp bölümlerinde su temizlendikçe berraklaşır. Yakalanan türler akvaryum koleksiyonuna girer. Tasarım, bölüm tablosu ve dosya listesi `TASARIM.md` içinde.
 
 - **Balık türleri `balik_turleri.gd` `TURLER`** (renk, desen, boyut, derinlik, hız, nadir, ışık) ve `eslesir()` (görev gereksinimi ↔ balık/çöp). Akvaryum sırası `SIRA`; temaya özel nadirler `NADIR_TEMA` (`NADIR_SANSI` ile ara sıra gelir). Yeni tür: önce `gorseller/svg_uret.py` `TURLER`'e ekleyip betiği çalıştır, sonra buraya satır ve `SIRA`'ya ad.
 - **Bölümler `bolumler.gd` `LEVELS`**: `tema` (gol/deniz/mercan/derin), `gorev` (gereksinim listesi; bir nesne ilk uyan dolmamış gereksinime sayılır, özel olanı öne yaz; toplam en fazla 6 simge), `havuz`, `balik_sayisi`, `cop`, `denizanasi`, `hiz`. `validate()` açılışta çalışır.
