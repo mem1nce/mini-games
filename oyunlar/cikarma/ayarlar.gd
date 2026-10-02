@@ -22,10 +22,6 @@ extends Resource
 ## Kutulardaki nesne türleri; her bölümde biri seçilir (bütün kutularda aynı nesne).
 @export var object_textures: Array[Texture2D] = []
 
-@export_group("Sesli sayma")
-## Cihazda Türkçe ses varsa sesli sayma ilk açılışta açık mı.
-@export var speech_default: bool = true
-
 
 func level_count() -> int:
 	var total := 0

@@ -12,9 +12,7 @@
 [ext_resource type="Script" path="res://oyunlar/toplama/kutlama.gd" id="10_kutlama"]
 [ext_resource type="Script" path="res://oyunlar/toplama/ilerleme_cubugu.gd" id="11_ilerleme"]
 [ext_resource type="Script" path="res://ortak/basili_geri_dugmesi.gd" id="12_geri"]
-[ext_resource type="Script" path="res://oyunlar/toplama/hoparlor_dugmesi.gd" id="13_hoparlor"]
 [ext_resource type="Script" path="res://oyunlar/toplama/sesler.gd" id="14_sesler"]
-[ext_resource type="Script" path="res://oyunlar/toplama/sesli_sayma.gd" id="15_sesli"]
 
 [node name="Toplama" type="Control"]
 texture_filter = 4
@@ -98,17 +96,6 @@ offset_bottom = 118.0
 mouse_filter = 2
 script = ExtResource("12_geri")
 
-[node name="Speaker" type="Control" parent="."]
-layout_mode = 0
-offset_left = 1130.0
-offset_top = 18.0
-offset_right = 1230.0
-offset_bottom = 118.0
-mouse_filter = 2
-script = ExtResource("13_hoparlor")
-
 [node name="Sounds" type="Node" parent="."]
 script = ExtResource("14_sesler")
 
-[node name="Narrator" type="Node" parent="."]
-script = ExtResource("15_sesli")

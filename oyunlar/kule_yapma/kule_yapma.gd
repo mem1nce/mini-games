@@ -18,6 +18,9 @@ const Blok := preload("res://oyunlar/kule_yapma/blok.gd")
 const Kule := preload("res://oyunlar/kule_yapma/kule.gd")
 const Vinc := preload("res://oyunlar/kule_yapma/vinc.gd")
 const Kamera := preload("res://oyunlar/kule_yapma/kamera.gd")
+
+# Vinç yatay ekranda kısa kalan yüksekliğe sığsın diye ekranın üstüne doğru kaydırılır (px)
+const VINC_YUKARI := -40.0
 const Manzara := preload("res://oyunlar/kule_yapma/manzara.gd")
 const Apartman := preload("res://oyunlar/kule_yapma/apartman.gd")
 const Galeri := preload("res://oyunlar/kule_yapma/galeri.gd")
@@ -979,7 +982,7 @@ func _process(delta: float) -> void:
 		return
 	if durum != Durum.YIKILIS and durum != Durum.SONUC:
 		kamera.tepeyi_izle(kule.tepe().y)
-	vinc.position = kamera.sol_ust()
+	vinc.position = kamera.sol_ust() + Vector2(0.0, VINC_YUKARI)
 	manzara.guncelle(kamera.position.y)
 	if durum == Durum.SONU:
 		_sonu_sayac -= delta

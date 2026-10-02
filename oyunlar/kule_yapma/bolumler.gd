@@ -2,7 +2,7 @@ extends RefCounted
 # Kule Yapma bölümleri. Her bölüm bir sözlük (hepsi kolayca değiştirilebilir):
 #   "hedef":       kat sayısı (son kat çatı katıdır; zemin kat sayılmaz)
 #   "hiz":         vinç sallanma hızı (radyan/sn)
-#   "aci":         sallanma açısı (radyan); halat 170 px, yani kat ±sin(aci)*170 px gider
+#   "aci":         sallanma açısı (radyan); halat 140 px, yani kat ±sin(aci)*140 px gider
 #   "dikey":       sallanırken yukarı aşağı oynama (px); 0 = yok
 #   "miknatis":    mıknatıs payı (kat genişliğinin oranı): alttaki katın ortasına bu kadar yakın bırakılan kat ortaya
 #                  kayar; daha uzaktaki kat bırakıldığı yerde kaymış olarak kalır

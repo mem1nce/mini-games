@@ -46,13 +46,13 @@ Bütün `.gd`, `.tscn`, `.tres` dosyaları ve `project.godot` aşağıdaki API'l
 | Reklam, uygulama içi satın alma, analiz ya da çökme raporlama SDK'sı, Android eklentisi (`Engine.get_singleton`) | Yok |
 | Cihaz kimliği (`OS.get_unique_id`), konum, kamera, mikrofon, pano, titreşim, izin isteme | Yok |
 | Kalıcı veri | Sadece `user://` altında yerel ilerleme dosyaları (aşağıda). Kişisel veri yok, cihazdan çıkmıyor. |
-| Metinden sese (TTS) | Toplama ve Çıkarma sayıları cihazın TTS motoruna okutuyor (`DisplayServer.tts_speak`). Giden metin sadece sayılar ("beş eksi iki eder üç"). Uygulama veri göndermiyor, ama bazı cihazların TTS motoru ağ üzerinden ses kullanabilir (bkz. madde 9). |
+| Metinden sese (TTS) | Kullanılmıyor (Toplama ve Çıkarma'daki sesli sayma kaldırıldı). |
 
 İlerleme dosyaları:
 - `yol_yap.cfg`, `hafiza.cfg`, `meyve_topla.cfg`: ulaşılan bölüm.
 - `golge_eslestirme.cfg`: ulaşılan bölüm.
 - `kostebek.cfg`: rekor skor.
-- `toplama.cfg`, `cikarma.cfg`: bölüm ve sesli sayma tercihi.
+- `toplama.cfg`, `cikarma.cfg`: ulaşılan bölüm.
 - `araba_yarisi.cfg`: açık pist sayısı, yıldızlar, seçilen renk ve hayvan.
 
 İsim, e-posta, yaş gibi bilgi hiçbir yerde istenmiyor.
@@ -69,7 +69,6 @@ Bütün `.gd`, `.tscn`, `.tres` dosyaları ve `project.godot` aşağıdaki API'l
 | 6 | 🟠 | Uçan Kuş: can, oyun sonu, puan ve yazılar | `oyunlar/ucan_kus/` | mem1nce |
 | 7 | 🟠 | Meyve Topla: kalp kaybı, taş/çürük elma ve yazılar | `oyunlar/meyve_topla/` | mem1nce |
 | 8 | 🟠 | Öğrenmeye katkı: refleks oyunlarına öğrenme ekleme | birkaç oyun | sahipler |
-| 9 | 🟠 | Seslendirme kalitesi: TTS yerine kayıtlı ses | `oyunlar/toplama/`, `oyunlar/cikarma/` | emirsalihgmrk |
 | 10 | 🟡 | Tutarlı geri düğmesi | 5 oyun | sahipler |
 | 11 | 🟡 | Ana menüde Android geri tuşu uygulamayı hemen kapatıyor | `ortak/sahne_gecis.gd` | ortak |
 | 12 | 🟡 | Sadece renge dayalı ayrım (renk körlüğü) | `oyunlar/dondurmaci/` | mem1nce |
@@ -203,18 +202,6 @@ Bu maddeler arkadaşının oyunu olduğu için sadece raporlandı, dosyalarına 
 - Uçan Kuş: renkli halkalardan geçerek renk tanıma.
 - Mağaza açıklamasında her oyunun neyi desteklediğini yaz (madde 15).
 
-#### 9. 🟠 Seslendirme kalitesi: TTS yerine kayıtlı ses (sahibi emirsalihgmrk)
-
-**Sorun:**
-- Toplama ve Çıkarma'daki sesli sayma cihazın TTS motoruna bağlı (`sesli_sayma.gd`).
-- Cihazda Türkçe ses yoksa sayma **tamamen sessiz** kalıyor. Oyun bozulmuyor ama öğretici kısım kayboluyor.
-- TTS sesi robotik olabilir ve cihazdan cihaza değişiyor.
-- Bazı TTS motorları ağ üzerinden ses kullanabiliyor. Giden metin sadece sayılar olduğu için gizlilik riski düşük, ama gizlilik metninde anılmalı.
-
-**Kaynak:** Teacher Approved ölçütü: *"Language, vocabulary, and audio design are high quality and appropriate for the app's target age group(s)"*. Bu ölçüt seslendirmeyi de açıkça kapsıyor.
-
-**Öneri:** 0-20 arası sayıları ve "artı / eksi / eder" kelimelerini sıcak bir insan sesiyle kaydedip `.ogg`/`.wav` olarak ekle. TTS sadece yedek olarak kalsın. Aynı kayıtlar madde 8'deki seslendirmelerde de kullanılabilir (sayılar, renkler, hayvan ve meyve adları).
-
 #### 10. 🟡 Tutarlı geri düğmesi
 
 **Sorun:** İki farklı geri düğmesi davranışı var:
@@ -268,7 +255,7 @@ Aynı simgenin oyundan oyuna farklı davranması çocuğun kafasını karıştı
 
 #### 16. 🟢 Okumayı gerektiren küçük yazılar
 
-- **Ana menü:** Kartlarda oyunların adı yazıyor. Okuma bilmeyen çocuk için karta dokunulunca adın seslendirilmesi iyi olur (madde 9'daki kayıtlarla).
+- **Ana menü:** Kartlarda oyunların adı yazıyor. Okuma bilmeyen çocuk için karta dokunulunca adın seslendirilmesi iyi olur.
 - **Kutlama yazıları:** Hafıza, Yol Yap ve Meyve Topla'daki "Harika!", "Süper!", "Tebrikler!" yazıları yanında sesli de söylenebilir.
 
 #### 17. 🟢 Test ve betikler pakete girmesin

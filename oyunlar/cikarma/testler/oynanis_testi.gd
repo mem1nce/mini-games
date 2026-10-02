@@ -133,20 +133,9 @@ func _play_level(game: Node, level: int) -> bool:
 	return true
 
 
-# Hoparlör düğmesi (cihazda Türkçe ses varsa görünür) ve kutudaki nesneye dokunma
+# Kutudaki nesneye dokunma
 func _test_extras(game: Node) -> void:
 	await _wait(func() -> bool: return game.state == game.State.WAITING, 600)
-	if game.speaker.visible:
-		var before: bool = game.narrator.enabled
-		_tap(game.speaker.get_global_rect().get_center())
-		_check(game.narrator.enabled != before, "hoparlör düğmesi sesli saymayı değiştirmedi")
-		var config := ConfigFile.new()
-		config.load(SAVE_PATH)
-		_check(bool(config.get_value("ayarlar", "sesli_sayma", before)) != before, "sesli sayma ayarı kaydedilmedi")
-		_tap(game.speaker.get_global_rect().get_center())
-		_check(game.narrator.enabled == before, "hoparlör düğmesi geri açılmadı")
-	else:
-		print("Not: cihazda Türkçe TTS sesi yok, hoparlör düğmesi gizli")
 	var sprite: Sprite2D = game.box_a.objects[0]
 	await create_timer(0.3).timeout
 	_tap(sprite.global_position)
