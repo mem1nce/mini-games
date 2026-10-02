@@ -11,6 +11,9 @@ config_version=5
 [application]
 
 config/name="Minik Oyunlar"
+config/name_localized={
+"en": "Tiny Games"
+}
 run/main_scene="res://ana_menu/ana_menu.tscn"
 config/quit_on_go_back=false
 config/features=PackedStringArray("4.7", "Mobile")
@@ -48,6 +51,11 @@ pointing/emulate_touch_from_mouse=true
 [physics]
 
 3d/physics_engine="Jolt Physics"
+
+[internationalization]
+
+locale/fallback="en"
+locale/translations=PackedStringArray("res://ortak/ceviri/ceviriler.tr.translation", "res://ortak/ceviri/ceviriler.en.translation")
 
 [rendering]
 
