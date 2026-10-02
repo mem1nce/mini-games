@@ -42,7 +42,7 @@ func _ready() -> void:
 	_place(back_button, Vector4(0, 0, 0, 0), Vector4(40, 50, 150, 160))
 
 	_score_panel = _panel(Color(1, 1, 1, 0.94), 46)
-	_place(_score_panel, Vector4(0.5, 0, 0.5, 0), Vector4(-125, 58, 125, 152))
+	_place(_score_panel, Vector4(0.5, 0, 0.5, 0), Vector4(-105, 20, 105, 92))
 	var row := HBoxContainer.new()
 	row.alignment = BoxContainer.ALIGNMENT_CENTER
 	row.add_theme_constant_override("separation", 10)
@@ -50,15 +50,15 @@ func _ready() -> void:
 	_score_panel.add_child(row)
 	row.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	var star := _texture_rect(TEX_STAR)
-	star.custom_minimum_size = Vector2(62, 62)
+	star.custom_minimum_size = Vector2(48, 48)
 	row.add_child(star)
-	_score_label = _label(58, 0, INK)
-	_score_label.custom_minimum_size = Vector2(120, 0)
+	_score_label = _label(44, 0, INK)
+	_score_label.custom_minimum_size = Vector2(90, 0)
 	row.add_child(_score_label)
 
 	_level_badge = Control.new()
 	_level_badge.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	_place(_level_badge, Vector4(0.5, 0, 0.5, 0), Vector4(-34, 150, 34, 218))
+	_place(_level_badge, Vector4(0.5, 0, 0.5, 0), Vector4(118, 24, 182, 88))
 	var badge_star := _texture_rect(TEX_STAR)
 	_level_badge.add_child(badge_star)
 	badge_star.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
@@ -71,7 +71,7 @@ func _ready() -> void:
 	hearts_box.alignment = BoxContainer.ALIGNMENT_END
 	hearts_box.add_theme_constant_override("separation", 8)
 	hearts_box.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	_place(hearts_box, Vector4(1, 0, 1, 0), Vector4(-250, 76, -40, 134))
+	_place(hearts_box, Vector4(1, 0, 1, 0), Vector4(-250, 26, -40, 82))
 	for k in 6:
 		var heart := _texture_rect(TEX_HEART)
 		heart.custom_minimum_size = Vector2(62, 56)

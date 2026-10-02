@@ -27,9 +27,11 @@ enum State { COUNTDOWN, PLAYING, GAME_OVER }
 ## Bombaya dokununca ekran sarsıntısının gücü (piksel).
 @export var bomb_shake: float = 12.0
 
-const TOP_AREA := 230.0        # üstte arayüz (geri, skor, kalpler)
+const TOP_AREA := 150.0        # üstte arayüz (geri, skor, kalpler)
 const SIDE_MARGIN := 40.0
-const BOTTOM_MARGIN := 50.0
+const BOTTOM_MARGIN := 30.0
+# Nesnenin çukurdan taşan kısmının satır hesabına katılan oranı (üstteki satıra biraz taşabilir)
+const OVERLAP_SHARE := 0.7
 const COUNT_COLORS: Array[Color] = [Color("ff7a9a"), Color("ffa53d"), Color("5cc95c")]
 const MOLE_TEXT_COLOR := Color("ffd23f")
 const FRUIT_TEXT_COLOR := Color("8ee05a")
@@ -286,21 +288,22 @@ func _build_holes(count: int) -> void:
 	spawner.set_holes(holes)
 
 
-# 6 çukur: 2 sütun x 3 satır; 9 çukur: 3x3. Çukur boyu, ekran oranı ne olursa olsun hücreye
+# Yatay: 6 çukur 3x2, 9 çukur 3x3; dikey: 2x3 / 3x3. Çukur boyu, ekran oranı ne olursa olsun hücreye
 # sığacak şekilde (nesnenin çukurdan taşan yüksekliği dahil) hesaplanır; ızgara alana ortalanır.
 func _layout_holes() -> void:
 	if holes.is_empty():
 		return
 	var screen := get_viewport_rect().size
 	var area := Rect2(SIDE_MARGIN, TOP_AREA, screen.x - SIDE_MARGIN * 2.0, screen.y - TOP_AREA - BOTTOM_MARGIN)
-	var cols := 2 if hole_count <= 6 else 3
+	var landscape := screen.x > screen.y
+	var cols := 3 if landscape or hole_count > 6 else 2
 	var rows := ceili(hole_count / float(cols))
 	var cell := Vector2(area.size.x / cols, area.size.y / rows)
-	var extent := Hole.TOP_EXTENT + Hole.BOTTOM_EXTENT
+	var extent := Hole.TOP_EXTENT * OVERLAP_SHARE + Hole.BOTTOM_EXTENT
 	var s := minf(cell.x * 0.92 / Hole.WIDTH, cell.y * 0.98 / extent)
 	for k in holes.size():
 		var row := floori(k / float(cols))
 		var col := k % cols
 		var center := Vector2(area.position.x + (col + 0.5) * cell.x,
-			area.position.y + row * cell.y + (cell.y - extent * s) / 2.0 + Hole.TOP_EXTENT * s)
+			area.position.y + row * cell.y + (cell.y - extent * s) / 2.0 + Hole.TOP_EXTENT * OVERLAP_SHARE * s)
 		holes[k].place(center, Hole.WIDTH * s)
