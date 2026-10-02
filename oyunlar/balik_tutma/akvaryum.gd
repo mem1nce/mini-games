@@ -1,6 +1,6 @@
 extends Control
-# Akvaryum koleksiyonu: üstte büyük akvaryum (cam, su, kum, yosun, kabarcık); yakalanan türler içinde yüzer.
-# Altında bütün türlerin ızgarası: yakalananlar renkli, yakalanmamışlar gri siluet. Dokunulan balık takla atar.
+# Akvaryum koleksiyonu (yatay): solda büyük akvaryum (cam, su, kum, yosun, kabarcık); yakalanan türler içinde yüzer.
+# Sağda bütün türlerin ızgarası: yakalananlar renkli, yakalanmamışlar gri siluet. Dokunulan balık takla atar.
 # Sol üstteki düğme kapatır.
 
 signal kapandi
@@ -57,7 +57,7 @@ func ac(akvaryum: Dictionary, ekran: Vector2) -> void:
 	_icerik.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_icerik.draw.connect(_ciz)
 	add_child(_icerik)
-	_tank = Rect2(46, 150, ekran.x - 92, minf(480.0, ekran.y * 0.37))
+	_tank = Rect2(180, 50, 380, ekran.y - 100)
 	# Yosunlar
 	for i in 4:
 		var y := Sprite2D.new()
@@ -103,18 +103,20 @@ func ac(akvaryum: Dictionary, ekran: Vector2) -> void:
 	# Bütün türlerin ızgarası
 	var sutun := 5
 	var satir := ceili(Turler.SIRA.size() / float(sutun))
-	var ust := _tank.end.y + 26.0
-	var hucre := minf((ekran.x - 92.0) / sutun, (ekran.y - 40.0 - ust) / satir)
-	var sol := (ekran.x - hucre * sutun) * 0.5
+	var ust := _tank.position.y - 8.0
+	var alan_sol := _tank.end.x + 40.0
+	var alan_gen := ekran.x - 46.0 - alan_sol
+	var hucre := minf(alan_gen / sutun, (ekran.y - 40.0 - ust) / satir)
+	var sol := alan_sol + (alan_gen - hucre * sutun) * 0.5
 	for i in Turler.SIRA.size():
 		var tur: String = Turler.SIRA[i]
-		var r := Rect2(sol + (i % sutun) * hucre, ust + floori(i / float(sutun)) * hucre, hucre, hucre).grow(-5.0)
+		var r := Rect2(sol + (i % sutun) * hucre, ust + floori(i / float(sutun)) * hucre, hucre, hucre).grow(-4.0)
 		var simge := TextureRect.new()
 		simge.texture = Turler.doku(tur)
 		simge.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 		simge.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-		simge.position = r.position + Vector2(8, 8)
-		simge.size = r.size - Vector2(16, 16)
+		simge.position = r.position + Vector2(5, 5)
+		simge.size = r.size - Vector2(10, 10)
 		simge.pivot_offset = simge.size * 0.5
 		simge.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		var yakalandi := akvaryum.has(tur)
@@ -229,7 +231,7 @@ func _ciz() -> void:
 	panel.set_corner_radius_all(36)
 	panel.shadow_color = Color(0, 0, 0.2, 0.3)
 	panel.shadow_size = 16
-	_icerik.draw_style_box(panel, Rect2(22, 130, size.x - 44, size.y - 150))
+	_icerik.draw_style_box(panel, Rect2(150, 24, size.x - 172, size.y - 48))
 	# Akvaryum: su, kum, cam
 	var bant := 18
 	for i in bant:
