@@ -10,7 +10,7 @@
 
 ### Uzun açıklama
 
-Minik Oyunlar, küçük çocukların güvenle keşfedebileceği renkli ve sade mini oyunlardan oluşur. Uygulama çevrimdışı çalışır; reklam, uygulama içi satın alma, hesap açma ve kişisel veri toplama içermez.
+Bouncy Zoo, küçük çocukların güvenle keşfedebileceği renkli ve sade mini oyunlardan oluşur. Uygulama çevrimdışı çalışır; reklam, uygulama içi satın alma, hesap açma ve kişisel veri toplama içermez.
 
 Çocuklar büyük dokunma alanları, yumuşak sesler ve sevimli şekillerle kendi hızlarında oynar. Yanlış cevaplarda ceza yoktur; denemek, keşfetmek ve tekrar oynamak teşvik edilir. İlerleme ve Boyama Kitabı eserleri yalnızca cihazda saklanır.
 
@@ -56,13 +56,13 @@ Ad-free, offline educational mini-games for children ages 4–8.
 
 ### Full description
 
-Bouncy Zoo: Kids Games 4-8 is a collection of colorful, simple mini-games designed for young children. The app works offline and includes no ads, in-app purchases, accounts, or collection of personal data.
+Bouncy Zoo is a collection of colorful, simple mini-games designed for young children. The app works offline and includes no ads, in-app purchases, accounts, or collection of personal data.
 
 Children can explore at their own pace using large touch targets, gentle sounds, and friendly shapes. There are no harsh penalties for mistakes: the app encourages trying, discovering, and playing again. Progress and Coloring Book artwork stay on the device.
 
 ### Games and skills
 
-Feed the Animals — matching and fine motor skills; Coloring Book — creativity, colors, and hand-eye coordination; Ice Cream Shop — ordering, patterns, and following instructions; Fishing — attention, timing, and coordination; Magic Garden — creative exploration and cause and effect; Music Box — listening, rhythm, and animal sounds; Collect Fruit — attention and reaction; Find the Pairs — visual recall and matching; Match the Shadows — shape recognition; Build a Road — planning and spatial thinking; Train Tracks — problem solving and sequencing; Big to Small — size comparison; Robot Factory — assembling and patterns; Mole Game — reaction and attention; Flying Bird — timing and hand-eye coordination; Build a Tower — balance and fine motor skills; Addition — counting and early math; Car Race — direction and timing; Jump Jump — rhythm and reaction; Subtraction — early math and comparing quantities.
+Feed the Animals — matching and fine motor skills; Coloring Book — creativity, colors, and hand-eye coordination; Ice Cream Maker — ordering, patterns, and following instructions; Fishing — attention, timing, and coordination; Magic Garden — creative exploration and cause and effect; Music Box — listening, rhythm, and animal sounds; Fruit Picking — attention and reaction; Find the Pairs — visual recall and matching; Shadow Match — shape recognition; Build a Road — planning and spatial thinking; Train Tracks — problem solving and sequencing; Big to Small — size comparison; Robot Factory — assembling and patterns; Mole — reaction and attention; Flying Bird — timing and hand-eye coordination; Tower Building — balance and fine motor skills; Addition — counting and early math; Car Race — direction and timing; Jump Jump — rhythm and reaction; Subtraction — early math and comparing quantities.
 
 ### Features
 
