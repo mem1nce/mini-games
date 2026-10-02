@@ -51,6 +51,7 @@ var _icerik: Control
 var _ust_golge: TextureRect
 var _lekeler: Array[Sprite2D] = []
 var _zaman := 0.0
+var _yeniden_kurulacak := false
 
 # Kaydırma
 var _konum := 0.0
@@ -73,6 +74,7 @@ var _secildi := false
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_ekran = get_viewport_rect().size
+	get_viewport().size_changed.connect(_boyut_degisti)
 	for hata in OyunListesi.dogrula():
 		push_error("Ana menü listesi: " + hata)
 	SesYoneticisi.muzik("menu", self)
@@ -465,6 +467,24 @@ func _oyunu_ac(kart: Control) -> void:
 	if OyunListesi.yeni_mi(kart.oyun):
 		OyunListesi.acildi_isaretle(kart.oyun)
 	kart.birak(SahneGecis.sahne_degistir.bind(kart.oyun["sahne"]))
+
+
+# Düzen açılıştaki ekran boyutuna göre kurulur. Pencere sonradan büyür ya da küçülürse
+# (ör. ilk açılışta oyun penceresi yerine oturunca) menü aynı sekme ve kaydırmayla yeniden kurulur.
+func _boyut_degisti() -> void:
+	if _yeniden_kurulacak:
+		return
+	_yeniden_kurulacak = true
+	# Pencere yerine otursun diye kısa bekle (art arda gelen boyut değişiklikleri tek sefer sayılır)
+	await get_tree().create_timer(0.2).timeout
+	_yeniden_kurulacak = false
+	if get_tree().current_scene != self or _secildi or _lisanslar:
+		return
+	if get_viewport_rect().size.is_equal_approx(_ekran):
+		return
+	_son_sekme = _sekme
+	_son_kaydirma = _konum
+	get_tree().reload_current_scene()
 
 
 # --- Her kare ---
