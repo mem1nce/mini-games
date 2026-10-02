@@ -24,6 +24,14 @@ var _finger: int = -1
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	pivot_offset = size / 2.0
+	# Çentikli telefonlarda düğme çentiğin altında kalmasın: oyun yerini verdikten sonra güvenli alana alınır
+	EkranYardimcisi.ekran_degisti.connect(_guvenliye_al)
+	_guvenliye_al.call_deferred()
+
+
+## Düğmeyi güvenli alanın içine iter. Oyun düğmeyi sonradan başka bir yere taşırsa yeniden çağırabilir.
+func _guvenliye_al() -> void:
+	EkranYardimcisi.guvenliye_it(self)
 
 
 ## Sahnedeki hazır bir Panel'in yerine geçer (aynı konum ve boyut, aynı üst düğüm); Panel gizlenir.
