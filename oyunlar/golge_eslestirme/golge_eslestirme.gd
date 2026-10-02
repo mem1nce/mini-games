@@ -55,10 +55,10 @@ enum State { LOADING, PLAYING, CELEBRATING }
 ## Gölge rengi: koyu lacivert, yarı saydam.
 @export var shadow_color: Color = Color(0.16, 0.18, 0.4, 0.58)
 
-const TOP_AREA := 190.0         # üstte geri düğmesi ve ilerleme noktaları
+const TOP_AREA := 150.0         # üstte geri düğmesi ve ilerleme noktaları
 const SIDE_MARGIN := 40.0
-const BOTTOM_MARGIN := 50.0
-const ZONE_GAP := 40.0          # gölge bölgesi ile eşya tepsisi arası
+const BOTTOM_MARGIN := 44.0
+const ZONE_GAP := 64.0          # gölge bölgesi ile eşya tepsisi arası
 
 @onready var sky: TextureRect = $Sky
 @onready var floaters: Node2D = $Floaters
@@ -284,7 +284,7 @@ func _clear_board() -> void:
 
 # --- Yerleşim ---
 
-# Gölgeler üst bölgede, eşyalar alttaki tepside; ikisi de 2 sütunlu ızgara. Her bölümde
+# Yatay ekran: gölgeler solda, eşyalar sağdaki tepside yan yana; ikisi de 2 sütunlu ızgara. Her bölümde
 # yerler karışır ve hiçbir eşya kendi gölgesinin tam altındaki hücrede başlamaz.
 func _build_board(level_items: Array[ShadowItemData]) -> void:
 	var count := level_items.size()
@@ -319,14 +319,14 @@ func _build_board(level_items: Array[ShadowItemData]) -> void:
 		items.append(item)
 
 
-# [gölge bölgesi, eşya bölgesi]
+# [gölge bölgesi (sol), eşya bölgesi (sağ)]
 func _zones() -> Array[Rect2]:
 	var screen := get_viewport_rect().size
 	var area := Rect2(SIDE_MARGIN, TOP_AREA, screen.x - SIDE_MARGIN * 2.0, screen.y - TOP_AREA - BOTTOM_MARGIN)
-	var zone_height := (area.size.y - ZONE_GAP) / 2.0
-	var top := Rect2(area.position, Vector2(area.size.x, zone_height))
-	var bottom := Rect2(area.position + Vector2(0.0, zone_height + ZONE_GAP), Vector2(area.size.x, zone_height))
-	return [top, bottom]
+	var zone_width := (area.size.x - ZONE_GAP) / 2.0
+	var left := Rect2(area.position, Vector2(zone_width, area.size.y))
+	var right := Rect2(area.position + Vector2(zone_width + ZONE_GAP, 0.0), Vector2(zone_width, area.size.y))
+	return [left, right]
 
 
 func _cell_size(zone: Rect2, count: int) -> Vector2:
