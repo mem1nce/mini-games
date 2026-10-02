@@ -4,17 +4,19 @@ extends SceneTree
 # Denetler: bütün bitki görselleri var; keseler sadece kendi bitkilerini verir ve nadirler daha seyrek çıkar;
 # ekilen bitki 4 kez su + güneşle olgunlaşır; fazla suda birikinti olur, güneş kurutur; gece bitkisi gündüz
 # kapalı, gece açık; rüzgar tohumu boş parsele taşır; toplanan bitki albüme eklenir; kayıt geri yüklenir.
-# Hata varsa çıkış kodu 1. Sonunda user://sihirli_bahce.cfg silinir.
+# Hata varsa çıkış kodu 1. user://sihirli_bahce.cfg yedeklenir ve sonunda geri yazılır.
 
 const Bitkiler := preload("res://oyunlar/sihirli_bahce/bitkiler.gd")
 const Kayit := preload("res://oyunlar/sihirli_bahce/kayit.gd")
 
 var failures := 0
 var game: Node
+var _backup := PackedByteArray()
+var _had_save := false
 
 
 func _initialize() -> void:
-	DirAccess.remove_absolute(ProjectSettings.globalize_path(Kayit.PATH))
+	_save_backup(Kayit.PATH)
 	root.content_scale_size = Vector2i(1280, 720)
 	_check_data()
 	game = load("res://oyunlar/sihirli_bahce/sihirli_bahce.tscn").instantiate()
@@ -26,9 +28,25 @@ func _initialize() -> void:
 	await _check_save()
 	game.queue_free()
 	await process_frame
-	DirAccess.remove_absolute(ProjectSettings.globalize_path(Kayit.PATH))
+	_save_restore(Kayit.PATH)
 	print("SONUÇ: ", "hepsi geçti" if failures == 0 else "%d hata" % failures)
 	quit(1 if failures > 0 else 0)
+
+
+# Kullanıcının kaydı test boyunca yedekte durur, sonunda geri yazılır (kayıt yoksa testin yazdığı silinir)
+func _save_backup(path: String) -> void:
+	if FileAccess.file_exists(path):
+		_backup = FileAccess.get_file_as_bytes(path)
+		_had_save = true
+	DirAccess.remove_absolute(ProjectSettings.globalize_path(path))
+
+
+func _save_restore(path: String) -> void:
+	DirAccess.remove_absolute(ProjectSettings.globalize_path(path))
+	if _had_save:
+		var file := FileAccess.open(path, FileAccess.WRITE)
+		file.store_buffer(_backup)
+		file.close()
 
 
 func _check_data() -> void:
