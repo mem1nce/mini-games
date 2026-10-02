@@ -6,11 +6,11 @@
 ## Türkçe
 
 **Son güncelleme:** [tarih]  
-**Uygulama:** Minik Oyunlar / Bouncy Zoo: Kids Games 4-8  
+**Uygulama:** Bouncy Zoo  
 **Yayıncı:** [şirket veya kişi adı]  
 **İletişim:** [e-posta]
 
-Minik Oyunlar okul öncesi çocuklara yönelik, çevrimdışı çalışan eğitici mini oyunlar uygulamasıdır.
+Bouncy Zoo 4–8 yaş çocuklara yönelik, çevrimdışı çalışan eğitici mini oyunlar uygulamasıdır.
 
 ### Topladığımız veriler
 
@@ -37,11 +37,11 @@ Bu metin Türkiye KVKK, AB GDPR, ABD COPPA, Google Play Families ve Apple Kids g
 ## English
 
 **Last updated:** [date]  
-**App:** Minik Oyunlar / Bouncy Zoo: Kids Games 4-8  
+**App:** Bouncy Zoo  
 **Publisher:** [company or person]  
 **Contact:** [email]
 
-Minik Oyunlar is an offline educational mini-game app for preschool children.
+Bouncy Zoo is an offline educational mini-game app for children ages 4–8.
 
 ### Information we collect
 
