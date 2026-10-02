@@ -94,7 +94,9 @@ func _build_layers() -> void:
 	_critters.sound.connect(_play)
 	var plot_root := Node2D.new()
 	_world.add_child(plot_root)
-	var spacing := minf(250.0, (_size.x - 100.0) / Kayit.PLOT_COUNT)
+	# Uçtaki parseller çentiğin altında kalmasın: güvenli alan boşluğu büyükse parseller biraz sıklaşır
+	var side := maxf(EkranYardimcisi.kenar_payi(SIDE_LEFT), EkranYardimcisi.kenar_payi(SIDE_RIGHT))
+	var spacing := minf(250.0, (_size.x - 100.0 - 2.0 * maxf(side - 60.0, 0.0)) / Kayit.PLOT_COUNT)
 	for i in Kayit.PLOT_COUNT:
 		var plot: Node2D = Parsel.new()
 		plot.position = Vector2(_size.x * 0.5 + (i - 2) * spacing, soil_y)
@@ -123,7 +125,8 @@ func _build_ui() -> void:
 	var tray := Control.new()
 	tray.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	tray.size = Vector2(PACK_SIZE.x * 3 + 140, 56)
-	tray.position = Vector2((_size.x - tray.size.x) * 0.5, _size.y - 48)
+	var bottom: float = EkranYardimcisi.guvenli_bosluklar()["alt"]      # alttaki hareket çubuğu
+	tray.position = Vector2((_size.x - tray.size.x) * 0.5, _size.y - 48 - bottom)
 	tray.draw.connect(func() -> void:
 		var style := StyleBoxFlat.new()
 		style.bg_color = Color("d8a060")
@@ -133,18 +136,19 @@ func _build_ui() -> void:
 		style.shadow_color = Color(0.2, 0.1, 0.05, 0.25)
 		style.shadow_size = 8
 		style.shadow_offset = Vector2(0, 5)
-		tray.draw_style_box(style, Rect2(Vector2.ZERO, tray.size + Vector2(0, 30)))
+		tray.draw_style_box(style, Rect2(Vector2.ZERO, tray.size + Vector2(0, 30 + bottom)))
 		tray.draw_line(Vector2(20, 14), Vector2(tray.size.x - 20, 14), Color(1, 1, 1, 0.35), 4.0, true))
 	_ui.add_child(tray)
 	for k in Bitkiler.PACKS.size():
 		var pack := _texture_rect(load(G + "kese_%s.svg" % Bitkiler.PACKS[k]), PACK_SIZE)
-		pack.position = Vector2(_size.x * 0.5 + (k - 1) * (PACK_SIZE.x + 34) - PACK_SIZE.x * 0.5, _size.y - PACK_SIZE.y - 10)
+		pack.position = Vector2(_size.x * 0.5 + (k - 1) * (PACK_SIZE.x + 34) - PACK_SIZE.x * 0.5, _size.y - PACK_SIZE.y - 10 - bottom)
 		pack.set_meta("home", pack.position)
 		_ui.add_child(pack)
 		_packs.append(pack)
 	_album_icon = _texture_rect(load(G + "kitap.svg"), Vector2(ICON_SIZE, ICON_SIZE))
 	_album_icon.position = Vector2(_size.x - ICON_SIZE - 36, 22)
 	_ui.add_child(_album_icon)
+	EkranYardimcisi.guvenliye_it(_album_icon)
 	_back = HoldButton.new()
 	_back.size = Vector2(104, 104)
 	_back.position = Vector2(36, 24)

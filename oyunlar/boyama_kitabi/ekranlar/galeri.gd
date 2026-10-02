@@ -111,9 +111,12 @@ func _make_card(art: Dictionary) -> Control:
 
 
 func _layout() -> void:
-	back.position = Vector2(40, 14)
-	_grid.position = Vector2(40, TOP)
-	_grid.size = Vector2(size.x - 80, size.y - TOP)
+	# Çentikli telefonlarda kenar payı güvenli alan kadar büyür
+	var side_left := EkranYardimcisi.kenar_payi(SIDE_LEFT, 40.0)
+	var side_right := EkranYardimcisi.kenar_payi(SIDE_RIGHT, 40.0)
+	back.position = Vector2(side_left, 14)
+	_grid.position = Vector2(side_left, TOP)
+	_grid.size = Vector2(size.x - side_left - side_right, size.y - TOP)
 	var width := (_grid.size.x - GAP * (COLUMNS - 1)) / COLUMNS
 	var card_size := Vector2(width, (width - 28.0) * 0.75 + 28.0)
 	var rows := ceili(_cards.size() / float(COLUMNS))

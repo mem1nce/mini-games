@@ -145,8 +145,9 @@ func _arayuzu_kur() -> void:
 	_ui.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 	katman.add_child(_ui)
 	_cubuk = Control.new()
-	_cubuk.position = Vector2(_ekran.x - 66.0, 300.0)
-	_cubuk.size = Vector2(40.0, 520.0)
+	# Çubuk duraklat düğmesinin altından ekranın altına kadar uzanır (ekran yüksekliğine göre; alttan taşmaz)
+	_cubuk.position = Vector2(_ekran.x - 66.0, 230.0)
+	_cubuk.size = Vector2(40.0, _ekran.y - 230.0 - EkranYardimcisi.kenar_payi(SIDE_BOTTOM, 40.0))
 	_cubuk.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_cubuk.draw.connect(_cubugu_ciz)
 	_ui.add_child(_cubuk)
@@ -238,6 +239,9 @@ func _arayuzu_kur() -> void:
 	_apartman.sesler = _sesler
 	_apartman.kapandi.connect(_apartmandan_don)
 	ust.add_child(_apartman)
+	# Çentikli telefonlarda sağ kenardaki düğme ve çubuk çentiğin altında kalmasın
+	EkranYardimcisi.guvenliye_it(_duraklat)
+	EkranYardimcisi.guvenliye_it(_cubuk, 24.0)
 
 
 func _doku_dugmesi(dosya: String, r: Rect2) -> TextureRect:
@@ -385,6 +389,7 @@ func _bolumu_hazirla() -> void:
 	_zemin.texture = load(G + "manzara/zemin_%s.svg" % level["tema"])
 	_zemin.scale = Vector2.ONE * 900.0 / _zemin.texture.get_width()
 	_zemin.position = Vector2(_ekran.x * 0.5 - 450.0, _zemin_y - 20.0)
+	Manzara.zemini_dose(_zemin, _ekran.x)
 	kule.kur(_hayvan_sec())
 	kamera.sifirla()
 	vinc.hiz = level["hiz"]

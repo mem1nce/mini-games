@@ -5,6 +5,7 @@ extends Node2D
 # Sürprizler: kuş sürüsü geçer (7. kat), balon yanından süzülür (11. kat), ay göz kırpar gibi parlar (21. kat).
 
 const G := "res://oyunlar/kule_yapma/gorseller/manzara/"
+const ZEMIN_RENGI := Color("6fb84e")     # tepeler.svg'nin alt kenarının rengi
 const KAT := 90.0                # manzaranın yükseklik ölçüsü (kat başına px; 20 katlık kule uzaya ulaşsın)
 # Gökyüzü renkleri (kat, üst renk, alt renk)
 const GOK := [
@@ -27,6 +28,7 @@ var _yildizlar: Array = []
 var _zaman := 0.0
 var _surprizler := {}
 var _ay: Sprite2D
+var _tepe: Sprite2D              # ortadaki tepe parçası: altı zemin rengiyle ekranın altına kadar doldurulur
 
 
 func kur(p_ekran: Vector2, p_zemin_y: float) -> void:
@@ -39,8 +41,9 @@ func kur(p_ekran: Vector2, p_zemin_y: float) -> void:
 	var rng := RandomNumberGenerator.new()
 	rng.seed = 11
 	# Şehir (tepelerin arkasında, tabanı yerde), tepeler ve köy
-	_sus("sehir.svg", 1500.0, Vector2(ekran.x * 0.5, zemin_y - 310.0), 0.72)
-	_sus("tepeler.svg", 1300.0, Vector2(ekran.x * 0.5, zemin_y - 150.0), 0.86)
+	# Geniş ekranlarda (ör. 21:9) yanlarda boşluk kalmasın diye ayna kopyalarla ekran genişliğince döşenir
+	_serit("sehir.svg", 1500.0, zemin_y - 310.0, 0.72)
+	_tepe = _serit("tepeler.svg", 1300.0, zemin_y - 150.0, 0.86)
 	# Gökyüzü süsleri: "k" katında ekranın ortasına gelecek yükseklikte, kameradan biraz yavaş kayar (paralaks 0.9);
 	# böylece kendi yüksekliklerinden önce görünmezler
 	for i in 9:
@@ -56,6 +59,34 @@ func kur(p_ekran: Vector2, p_zemin_y: float) -> void:
 	_yildizlar.clear()
 	for i in 90:
 		_yildizlar.append([Vector2(rng.randf_range(0, ekran.x), rng.randf_range(0, ekran.y)), rng.randf_range(1.2, 3.2), rng.randf() * TAU])
+
+
+# Ekranın ortasına bir parça, iki yanına da ekranı kaplayana kadar ayna kopyaları koyar (kenarlar birbirine uyar)
+func _serit(dosya: String, genislik: float, dunya_y: float, paralaks: float) -> Sprite2D:
+	var orta: Sprite2D = _sus(dosya, genislik, Vector2(ekran.x * 0.5, dunya_y), paralaks)["dugum"]
+	var yan_sayisi := ceili(maxf(ekran.x - genislik, 0.0) / 2.0 / genislik)
+	for i in range(1, yan_sayisi + 1):
+		for yon in [-1.0, 1.0]:
+			var kopya: Sprite2D = _sus(dosya, genislik, Vector2(ekran.x * 0.5 + yon * i * (genislik - 2.0), dunya_y), paralaks)["dugum"]
+			kopya.flip_h = i % 2 == 1
+	return orta
+
+
+## Zemin şeridi (900 px) geniş ya da uzun ekranlarda ada gibi kalmasın: iki yanına ayna kopyaları eklenir
+## (kenarlar birbirine uyar), böylece zemin ekranı boydan boya kaplar
+static func zemini_dose(zemin: Sprite2D, ekran_genisligi: float) -> void:
+	for c in zemin.get_children():
+		c.queue_free()
+	var gen := float(zemin.texture.get_width())
+	var yan_sayisi := ceili(maxf(ekran_genisligi / zemin.scale.x - gen, 0.0) / 2.0 / gen)
+	for i in range(1, yan_sayisi + 1):
+		for yon in [-1.0, 1.0]:
+			var kopya := Sprite2D.new()
+			kopya.texture = zemin.texture
+			kopya.centered = false
+			kopya.flip_h = i % 2 == 1
+			kopya.position = Vector2(yon * i * (gen - 2.0), 0)
+			zemin.add_child(kopya)
 
 
 # "k" katındayken ekranın ortasına denk gelen dünya y'si
@@ -110,6 +141,11 @@ func _draw() -> void:
 		var t := float(i) / (bant - 1)
 		var renk: Color = ust[0].lerp(alt[1], t)
 		draw_rect(Rect2(0, ekran.y * i / bant, ekran.x, ekran.y / bant + 1.0), renk)
+	# Tepelerin altı: daha uzun ekranlarda (ör. 4:3 tablet) altta boşluk kalmasın diye zemin rengiyle dolar
+	if _tepe and is_instance_valid(_tepe):
+		var tepe_alt := _tepe.position.y + _tepe.texture.get_height() * _tepe.scale.y * 0.5
+		if tepe_alt < ekran.y:
+			draw_rect(Rect2(0, tepe_alt - 3.0, ekran.x, ekran.y - tepe_alt + 3.0), ZEMIN_RENGI)
 	# Yıldızlar: gün batımından sonra belirir, göz kırpar
 	var parlaklik := clampf((kat - 19.0) / 5.0, 0.0, 1.0)
 	if parlaklik > 0.0:

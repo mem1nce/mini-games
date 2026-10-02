@@ -46,7 +46,7 @@ func _big_button(icon: String, accent: Color) -> ColoringIconButton:
 
 
 func _layout() -> void:
-	back.position = Vector2(40, 14)
+	back.position = Vector2(EkranYardimcisi.kenar_payi(SIDE_LEFT, 40.0), 14)
 	var center := size * 0.5 + Vector2(0, 20)
 	var gap := minf(150.0, size.x * 0.1)
 	new_button.position = center - Vector2(new_button.size.x + gap * 0.5, new_button.size.y * 0.5)

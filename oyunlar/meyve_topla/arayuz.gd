@@ -128,13 +128,16 @@ func _ready() -> void:
 
 	_back = HoldButton.new()
 	_back.completed.connect(_on_back_completed)
-	_place(_back, Vector4(0, 0, 0, 0), Vector4(40, 24, 136, 120))
+	# Çentikli telefonlarda üst çubuk iki yandan güvenli alan kadar içeri girer (l / r: ek kenar payı)
+	var l := EkranYardimcisi.kenar_payi(SIDE_LEFT, 40.0) - 40.0
+	var r := EkranYardimcisi.kenar_payi(SIDE_RIGHT, 40.0) - 40.0
+	_place(_back, Vector4(0, 0, 0, 0), Vector4(40 + l, 24, 136 + l, 120))
 	_back.pivot_offset = _back.size / 2.0
 	_pause = _round_button(TEX_PAUSE)
-	_place(_pause, Vector4(1, 0, 1, 0), Vector4(-136, 24, -40, 120))
+	_place(_pause, Vector4(1, 0, 1, 0), Vector4(-136 - r, 24, -40 - r, 120))
 
 	_bar = Bar.new()
-	_place(_bar, Vector4(0, 0, 1, 0), Vector4(160, 42, -400, 118))
+	_place(_bar, Vector4(0, 0, 1, 0), Vector4(160 + l, 42, -400 - r, 118))
 	_bar_ring = _texture_rect(TEX_GLOW)
 	_bar_ring.position = Vector2(-34, -34)
 	_bar_ring.size = Vector2(144, 144)
@@ -152,10 +155,10 @@ func _ready() -> void:
 	_hearts_box.alignment = BoxContainer.ALIGNMENT_CENTER
 	_hearts_box.add_theme_constant_override("separation", 10)
 	_hearts_box.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	_place(_hearts_box, Vector4(1, 0, 1, 0), Vector4(-380, 42, -156, 118))
+	_place(_hearts_box, Vector4(1, 0, 1, 0), Vector4(-380 - r, 42, -156 - r, 118))
 
 	_power = PowerRing.new()
-	_place(_power, Vector4(1, 0, 1, 0), Vector4(-136, 134, -40, 230))
+	_place(_power, Vector4(1, 0, 1, 0), Vector4(-136 - r, 134, -40 - r, 230))
 	_power_icon = _texture_rect(null)
 	_power.add_child(_power_icon)
 	_place(_power_icon, Vector4(0, 0, 1, 1), Vector4(22, 22, -22, -22))
@@ -346,6 +349,7 @@ func _build_start() -> void:
 	_reset = _round_button(TEX_RETRY)
 	_start.add_child(_reset)
 	_place(_reset, Vector4(0, 1, 0, 1), Vector4(28, -136, 124, -40))
+	EkranYardimcisi.guvenliye_it.call_deferred(_reset)
 
 
 func show_start(level_number: int, can_reset: bool) -> void:

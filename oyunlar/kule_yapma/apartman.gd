@@ -58,6 +58,7 @@ func ac(apartman: Dictionary, ekran: Vector2) -> void:
 	zemin.centered = false
 	zemin.position = Vector2(ekran.x * 0.5 - 450.0, _zemin_y - 20.0)
 	_dunya.add_child(zemin)
+	Manzara.zemini_dose(zemin, ekran.x)
 	var y := _zemin_y
 	var katlar: Array = apartman["katlar"]
 	var hayvanlar: Array = apartman["hayvanlar"]

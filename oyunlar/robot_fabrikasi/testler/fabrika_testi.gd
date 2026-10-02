@@ -4,7 +4,7 @@ extends SceneTree
 # Denetler: bölüm verisi geçerli, bütün parça ve robot görselleri var; parça dokunarak sürüklenip doğru kutuya
 # girer, yanlış kutudan banda geri döner; bandın sonundaki parça borudan geri gelir; kol bandı durdurur;
 # 15 bölümün hepsi bitirilip robot montajı tamamlanır, galeri ve kayıt güncellenir, kayıt geri yüklenir.
-# Hata varsa çıkış kodu 1. Sonunda user://robot_fabrikasi.cfg silinir.
+# Hata varsa çıkış kodu 1. user://robot_fabrikasi.cfg yedeklenir ve sonunda geri yazılır.
 
 const Bolumler := preload("res://oyunlar/robot_fabrikasi/bolumler.gd")
 const Yonetici := preload("res://oyunlar/robot_fabrikasi/bolum_yoneticisi.gd")
@@ -13,10 +13,12 @@ const Robot := preload("res://oyunlar/robot_fabrikasi/robot.gd")
 
 var failures := 0
 var game: Node
+var _backup := PackedByteArray()
+var _had_save := false
 
 
 func _initialize() -> void:
-	DirAccess.remove_absolute(ProjectSettings.globalize_path(Yonetici.PATH))
+	_save_backup(Yonetici.PATH)
 	root.content_scale_size = Vector2i(1280, 720)
 	_check_data()
 	game = load("res://oyunlar/robot_fabrikasi/robot_fabrikasi.tscn").instantiate()
@@ -30,9 +32,25 @@ func _initialize() -> void:
 	await _check_save()
 	game.queue_free()
 	await process_frame
-	DirAccess.remove_absolute(ProjectSettings.globalize_path(Yonetici.PATH))
+	_save_restore(Yonetici.PATH)
 	print("SONUÇ: ", "hepsi geçti" if failures == 0 else "%d hata" % failures)
 	quit(1 if failures > 0 else 0)
+
+
+# Kullanıcının kaydı test boyunca yedekte durur, sonunda geri yazılır (kayıt yoksa testin yazdığı silinir)
+func _save_backup(path: String) -> void:
+	if FileAccess.file_exists(path):
+		_backup = FileAccess.get_file_as_bytes(path)
+		_had_save = true
+	DirAccess.remove_absolute(ProjectSettings.globalize_path(path))
+
+
+func _save_restore(path: String) -> void:
+	DirAccess.remove_absolute(ProjectSettings.globalize_path(path))
+	if _had_save:
+		var file := FileAccess.open(path, FileAccess.WRITE)
+		file.store_buffer(_backup)
+		file.close()
 
 
 func _check_data() -> void:

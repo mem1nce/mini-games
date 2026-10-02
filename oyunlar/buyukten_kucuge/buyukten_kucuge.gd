@@ -127,6 +127,7 @@ func _start_level(index: int) -> void:
 	stars.set_current(index)
 	if activity:
 		activity.queue_free()
+	generator.side = maxf(EkranYardimcisi.kenar_payi(SIDE_LEFT, SizeLevelGenerator.SIDE), EkranYardimcisi.kenar_payi(SIDE_RIGHT, SizeLevelGenerator.SIDE))
 	plan = generator.generate(index, get_viewport_rect().size)
 	activity = ACTIVITIES[plan.kind].instantiate()
 	holder.add_child(activity)

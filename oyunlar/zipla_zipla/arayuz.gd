@@ -49,7 +49,8 @@ func _ready() -> void:
 	_place(back_button, Vector4(0, 0, 0, 0), Vector4(SIDE, TOP, SIDE + 116, TOP + 116))
 
 	_counter = _panel(Color(1, 1, 1, 0.96), 34)
-	_place(_counter, Vector4(1, 0, 1, 0), Vector4(-SIDE - 240, TOP + 10, -SIDE, TOP + 106))
+	var right := EkranYardimcisi.kenar_payi(SIDE_RIGHT, SIDE)      # çentik sağdaysa sayaç içeri girer
+	_place(_counter, Vector4(1, 0, 1, 0), Vector4(-right - 240, TOP + 10, -right, TOP + 106))
 	var row := HBoxContainer.new()
 	row.alignment = BoxContainer.ALIGNMENT_CENTER
 	row.add_theme_constant_override("separation", 8)

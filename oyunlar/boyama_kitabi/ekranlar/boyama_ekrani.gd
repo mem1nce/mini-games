@@ -93,13 +93,17 @@ func setup(sound_pool: Node, page: String, artwork: String) -> void:
 
 
 func _layout() -> void:
-	back.position = Vector2(SIDE, 14)
-	palette.position = Vector2(SIDE - 12.0, 120)
+	# Çentikli telefonlarda yan sütunlar güvenli alan kadar içeri girer, tuval aradaki yeri doldurur
+	var side_left := EkranYardimcisi.kenar_payi(SIDE_LEFT, SIDE)
+	var side_right := EkranYardimcisi.kenar_payi(SIDE_RIGHT, SIDE)
+	var left := LEFT + side_left - SIDE
+	back.position = Vector2(side_left, 14)
+	palette.position = Vector2(side_left - 12.0, 120)
 	palette.size = Vector2(LEFT - SIDE + 12.0 - 8.0, size.y - 124)
 	toolbar.size = Vector2(ColoringToolBar.CELL * 2.0 + 8.0, size.y - 16)
-	toolbar.position = Vector2(size.x - SIDE - toolbar.size.x + 8.0, 10)
-	canvas.position = Vector2(LEFT, 6)
-	canvas.size = Vector2(toolbar.position.x - 8.0 - LEFT, size.y - 12)
+	toolbar.position = Vector2(size.x - side_right - toolbar.size.x + 8.0, 10)
+	canvas.position = Vector2(left, 6)
+	canvas.size = Vector2(toolbar.position.x - 8.0 - left, size.y - 12)
 	zoom_button.position = canvas.position + Vector2(canvas.size.x - zoom_button.size.x - 14.0, 14.0)
 	zoom_button.pivot_offset = zoom_button.size * 0.5
 	queue_redraw()

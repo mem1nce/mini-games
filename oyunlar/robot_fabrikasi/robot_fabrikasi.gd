@@ -101,7 +101,7 @@ func _build() -> void:
 	_belt.need_part.connect(_feed_belt)
 	_belt.part_recycled.connect(_on_recycled)
 	_helper = Yardimci.new()
-	_helper.position = Vector2(92, _size.y - 20.0)
+	_helper.position = Vector2(92 + float(EkranYardimcisi.guvenli_bosluklar()["sol"]), _size.y - 20.0)
 	_world.add_child(_helper)
 	_helper.setup(_effects)
 	_build_lever()
@@ -144,6 +144,8 @@ func _build() -> void:
 	_back.hold_time = 0.6
 	_back.completed.connect(_leave)
 	_ui.add_child(_back)
+	# Çentikli telefonlarda sağ üstteki düğmeler çentiğin altında kalmasın (aralarındaki düzen bozulmadan)
+	EkranYardimcisi.guvenliye_it_grup([_gallery_icon, _pause])
 	var screens := CanvasLayer.new()
 	screens.layer = 10
 	add_child(screens)
@@ -169,7 +171,7 @@ func _round_button(icon: Texture2D, diameter: float) -> Control:
 
 func _build_lever() -> void:
 	_lever = Node2D.new()
-	_lever.position = Vector2(_size.x - 92, _size.y - 20.0)
+	_lever.position = Vector2(_size.x - 92 - float(EkranYardimcisi.guvenli_bosluklar()["sag"]), _size.y - 20.0)
 	_world.add_child(_lever)
 	_lever_stick = Sprite2D.new()
 	_lever_stick.texture = load(G + "kol_sap.svg")
@@ -200,7 +202,7 @@ func _start_level() -> void:
 	var count: int = data["boxes"].size()
 	for i in count:
 		var box: Node2D = Kutu.new()
-		box.position = Vector2(_size.x * 0.5 + (i - (count - 1) * 0.5) * BOX_SPACING, BOX_Y + (_size.y - 720.0) * 0.5)
+		box.position = Vector2(_size.x * 0.5 + (i - (count - 1) * 0.5) * BOX_SPACING, BOX_Y + (_size.y - EkranYardimcisi.tasarim_boyutu().y) * 0.5)
 		_boxes_root.add_child(box)
 		box.setup(data["boxes"][i], Bolumler.capacity(data, i), _effects)
 		box.filled.connect(func() -> void: _sounds.play("dolu"))

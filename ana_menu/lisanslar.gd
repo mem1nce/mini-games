@@ -48,8 +48,11 @@ func _ready() -> void:
 	_icerik = VBoxContainer.new()
 	_icerik.add_theme_constant_override("separation", 14)
 	_icerik.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	_icerik.position = Vector2(KENAR, 0)
-	_icerik.size = Vector2(_ekran.x - 2.0 * KENAR, 0)
+	# Çentikli telefonlarda yazılar çentiğin altında kalmasın
+	var sol := EkranYardimcisi.kenar_payi(SIDE_LEFT, KENAR)
+	var sag := EkranYardimcisi.kenar_payi(SIDE_RIGHT, KENAR)
+	_icerik.position = Vector2(sol, 0)
+	_icerik.size = Vector2(_ekran.x - sol - sag, 0)
 	_alan.add_child(_icerik)
 	_basligi_olustur()
 	_icerigi_doldur()
@@ -73,7 +76,7 @@ func _basligi_olustur() -> void:
 	_geri = Control.new()
 	_geri.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_geri.size = Vector2(88, 88)
-	_geri.position = Vector2(KENAR, 60)
+	_geri.position = Vector2(EkranYardimcisi.kenar_payi(SIDE_LEFT, KENAR), 60)
 	_geri.pivot_offset = _geri.size / 2.0
 	_geri.draw.connect(_geri_ciz)
 	add_child(_geri)

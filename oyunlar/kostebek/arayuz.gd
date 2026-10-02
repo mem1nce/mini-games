@@ -71,7 +71,9 @@ func _ready() -> void:
 	hearts_box.alignment = BoxContainer.ALIGNMENT_END
 	hearts_box.add_theme_constant_override("separation", 8)
 	hearts_box.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	_place(hearts_box, Vector4(1, 0, 1, 0), Vector4(-250, 26, -40, 82))
+	# Çentikli telefonlarda kalpler çentiğin altında kalmasın
+	var right := EkranYardimcisi.kenar_payi(SIDE_RIGHT, 40.0)
+	_place(hearts_box, Vector4(1, 0, 1, 0), Vector4(-210 - right, 26, -right, 82))
 	for k in 6:
 		var heart := _texture_rect(TEX_HEART)
 		heart.custom_minimum_size = Vector2(62, 56)
