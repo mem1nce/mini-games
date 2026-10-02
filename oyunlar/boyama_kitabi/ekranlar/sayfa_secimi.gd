@@ -90,15 +90,18 @@ func _make_card(page: String) -> Control:
 
 
 func _layout() -> void:
-	back.position = Vector2(40, 14)
+	# Çentikli telefonlarda kenar payı güvenli alan kadar büyür
+	var side_left := EkranYardimcisi.kenar_payi(SIDE_LEFT, 40.0)
+	var side_right := EkranYardimcisi.kenar_payi(SIDE_RIGHT, 40.0)
+	back.position = Vector2(side_left, 14)
 	var tab_step := 124.0
 	var tabs_width := tab_step * (_tabs.size() - 1) + 100.0
-	var start := maxf(170.0, (size.x - tabs_width) * 0.5)
+	var start := maxf(side_left + 130.0, (size.x - tabs_width) * 0.5)
 	for i in _tabs.size():
 		_tabs[i].position = Vector2(start + i * tab_step, 12)
 		_tabs[i].pivot_offset = _tabs[i].size * 0.5
-	_grid.position = Vector2(40, TOP)
-	_grid.size = Vector2(size.x - 80, size.y - TOP)
+	_grid.position = Vector2(side_left, TOP)
+	_grid.size = Vector2(size.x - side_left - side_right, size.y - TOP)
 	# Kartlar iki satır ekrana tam sığacak kadar büyür (alttaki satır taşmasın), ızgara ortalanır
 	var width := (_grid.size.x - GAP * (COLUMNS - 1)) / COLUMNS
 	var fit_height := (_grid.size.y - GRID_TOP - GAP - GRID_BOTTOM) * 0.5

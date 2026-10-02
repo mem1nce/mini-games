@@ -114,7 +114,8 @@ func _layout() -> void:
 	var top := background.floor_bottom(FLOOR_Y) + 10.0
 	hud.layout(size, top, size.y - 12.0)
 	var right := hud.column_left(size) - 24.0
-	_area = Rect2(SIDE - 16.0, top, right - (SIDE - 16.0), size.y - top - 14.0)
+	var left := EkranYardimcisi.kenar_payi(SIDE_LEFT, SIDE - 16.0)
+	_area = Rect2(left, top, right - left, size.y - top - 14.0)
 	for each in instruments:
 		each.fit(_area)
 	_kill_slides()

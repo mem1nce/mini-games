@@ -369,9 +369,11 @@ func _build_buttons(choices: Array[int], delay: float) -> void:
 
 func _layout() -> void:
 	var screen := get_viewport_rect().size
-	back_button.position = Vector2(SIDE_MARGIN, 18.0)
+	# Çentikli telefonlarda kenar payı güvenli alan kadar büyür (iki yanda aynı: satır ortada kalır)
+	var side := maxf(EkranYardimcisi.kenar_payi(SIDE_LEFT, SIDE_MARGIN), EkranYardimcisi.kenar_payi(SIDE_RIGHT, SIDE_MARGIN))
+	back_button.position = Vector2(side, 18.0)
 	var bar_left := back_button.position.x + back_button.size.x + 40.0
-	var bar_right := screen.x - SIDE_MARGIN
+	var bar_right := screen.x - side
 	progress.width = minf(bar_right - bar_left, 760.0)
 	progress.position = Vector2((bar_left + bar_right) / 2.0, back_button.position.y + back_button.size.y / 2.0)
 	progress.queue_redraw()
@@ -380,7 +382,7 @@ func _layout() -> void:
 	# satır küçülür; uzun telefonda artan genişlik kutulara verilir (nesneler daha büyük olur).
 	var area_top := TOP_AREA
 	var area_bottom := screen.y - BOTTOM_MARGIN - BUTTON_SIZE.y - 18.0
-	var area_width := screen.x - SIDE_MARGIN * 2.0
+	var area_width := screen.x - side * 2.0
 	var area_height := area_bottom - area_top
 	var overhang := CARD_OVERHANG + COUNTER_OVERHANG
 	var min_width := BOX_SIZE.x * 2.0 + WIDE_BOX_SIZE.x + SIGN_SIZE * 2.0 + ROW_GAP * 4.0

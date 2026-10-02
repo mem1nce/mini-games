@@ -294,7 +294,9 @@ func _layout_holes() -> void:
 	if holes.is_empty():
 		return
 	var screen := get_viewport_rect().size
-	var area := Rect2(SIDE_MARGIN, TOP_AREA, screen.x - SIDE_MARGIN * 2.0, screen.y - TOP_AREA - BOTTOM_MARGIN)
+	# Çentikli telefonlarda kenar payı güvenli alan kadar büyür (iki yanda aynı: çukurlar ortada kalır)
+	var side := maxf(EkranYardimcisi.kenar_payi(SIDE_LEFT, SIDE_MARGIN), EkranYardimcisi.kenar_payi(SIDE_RIGHT, SIDE_MARGIN))
+	var area := Rect2(side, TOP_AREA, screen.x - side * 2.0, screen.y - TOP_AREA - BOTTOM_MARGIN)
 	var landscape := screen.x > screen.y
 	var cols := 3 if landscape or hole_count > 6 else 2
 	var rows := ceili(hole_count / float(cols))

@@ -64,11 +64,12 @@ func layout(size: Vector2, top: float, bottom: float) -> void:
 	var column := BUTTON * _buttons.size() + GAP * (_buttons.size() - 1)
 	var y := top + maxf(0.0, (bottom - top - column) / 2.0)
 	for k in _buttons.size():
-		_buttons[k].position = Vector2(size.x - SIDE - BUTTON, y + k * (BUTTON + GAP))
+		_buttons[k].position = Vector2(column_left(size), y + k * (BUTTON + GAP))
 
 
 func column_left(size: Vector2) -> float:
-	return size.x - SIDE - BUTTON
+	# Çentik sağdaysa düğme sütunu güvenli alan kadar içeri girer
+	return size.x - EkranYardimcisi.kenar_payi(SIDE_RIGHT, SIDE) - BUTTON
 
 
 func selector_at(point: Vector2) -> int:

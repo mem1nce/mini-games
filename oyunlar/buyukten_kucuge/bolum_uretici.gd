@@ -89,6 +89,8 @@ class Plan:
 
 
 var settings: SizeSettings
+## Kenar boşluğu: oyun, çentikli telefonlarda güvenli alan kadar büyütür (iki yanda aynı: düzen ortada kalır)
+var side: float = SIDE
 var rng := RandomNumberGenerator.new()
 var _last_art := {}
 
@@ -110,7 +112,7 @@ func generate(index: int, screen: Vector2) -> Plan:
 	plan.count = level.count
 	plan.step = maxf(level.step, settings.min_step)
 	plan.screen = screen
-	plan.area = Rect2(SIDE, TOP_BAR, screen.x - 2.0 * SIDE, screen.y - TOP_BAR - BOTTOM)
+	plan.area = Rect2(side, TOP_BAR, screen.x - 2.0 * side, screen.y - TOP_BAR - BOTTOM)
 	plan.floor_y = screen.y * FLOOR
 	plan.touch = settings.touch_ratio * minf(screen.x, screen.y)
 	match level.kind:

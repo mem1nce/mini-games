@@ -322,7 +322,9 @@ func _build_board(level_items: Array[ShadowItemData]) -> void:
 # [gölge bölgesi (sol), eşya bölgesi (sağ)]
 func _zones() -> Array[Rect2]:
 	var screen := get_viewport_rect().size
-	var area := Rect2(SIDE_MARGIN, TOP_AREA, screen.x - SIDE_MARGIN * 2.0, screen.y - TOP_AREA - BOTTOM_MARGIN)
+	# Çentikli telefonlarda kenar payı güvenli alan kadar büyür (tepsi çerçevesi 16 px dışarı taşar)
+	var side := maxf(EkranYardimcisi.kenar_payi(SIDE_LEFT, SIDE_MARGIN, 24.0), EkranYardimcisi.kenar_payi(SIDE_RIGHT, SIDE_MARGIN, 24.0))
+	var area := Rect2(side, TOP_AREA, screen.x - side * 2.0, screen.y - TOP_AREA - BOTTOM_MARGIN)
 	var zone_width := (area.size.x - ZONE_GAP) / 2.0
 	var left := Rect2(area.position, Vector2(zone_width, area.size.y))
 	var right := Rect2(area.position + Vector2(zone_width + ZONE_GAP, 0.0), Vector2(zone_width, area.size.y))

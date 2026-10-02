@@ -148,7 +148,12 @@ func _on_resized() -> void:
 # hiçbir yiyeceği kendi hayvanının altına koymaz)
 func _span() -> Vector2:
 	var screen := get_viewport_rect().size
-	return Vector2(SIDE_LEFT, screen.x - SIDE_RIGHT)
+	# Çentikli telefonlarda kenar boşluğu güvenli alan kadar büyür
+	var safe: Dictionary = EkranYardimcisi.guvenli_bosluklar()
+	var inset := maxf(float(safe["sol"]), float(safe["sag"]))
+	if inset <= 0.0:
+		return Vector2(SIDE_LEFT, screen.x - SIDE_RIGHT)
+	return Vector2(maxf(SIDE_LEFT, inset + 8.0), screen.x - maxf(SIDE_RIGHT, inset + 8.0))
 
 
 func _build_level() -> void:
