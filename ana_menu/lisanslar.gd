@@ -96,29 +96,29 @@ func _geri_ciz() -> void:
 
 func _icerigi_doldur() -> void:
 	_bosluk(6)
-	_metin(Metinler.GIRIS, 26, YAZI)
+	_metin(tr(Metinler.GIRIS), 26, YAZI)
 
-	_bolum("Oyun motoru: Godot Engine")
-	_metin("Bu uygulama Godot Engine %s ile yapıldı (godotengine.org). Godot, MIT lisansıyla dağıtılır:" % Engine.get_version_info()["string"], 24, YAZI)
+	_bolum(tr("Oyun motoru: Godot Engine"))
+	_metin(tr("Bu uygulama Godot Engine %s ile yapıldı (godotengine.org). Godot, MIT lisansıyla dağıtılır:") % Engine.get_version_info()["string"], 24, YAZI)
 	_metin(_akit(Engine.get_license_text()), 20, SOLUK)
 
-	_bolum("Yazı tipi: Nunito")
-	_metin(Metinler.NUNITO_TELIF + "\nSIL Open Font License 1.1 ile lisanslıdır:", 24, YAZI)
+	_bolum(tr("Yazı tipi: Nunito"))
+	_metin(Metinler.NUNITO_TELIF + "\n" + tr("SIL Open Font License 1.1 ile lisanslıdır:"), 24, YAZI)
 	_metin(_akit(Metinler.OFL), 20, SOLUK)
 
-	_bolum("Sesler ve müzikler")
-	_metin(Metinler.SES_ACIKLAMA, 24, YAZI)
+	_bolum(tr("Sesler ve müzikler"))
+	_metin(tr(Metinler.SES_ACIKLAMA), 24, YAZI)
 	var satirlar := PackedStringArray()
 	for kaynak: Array in Metinler.SES_KAYNAKLARI:
 		satirlar.append("• %s\n   %s, %s" % kaynak)
 	_metin("\n".join(satirlar), 22, SOLUK)
 
-	_bolum("Godot içindeki bileşenler")
-	_metin("Godot Engine aşağıdaki açık kaynaklı bileşenleri içerir (bileşen, telif sahipleri, lisans):", 24, YAZI)
+	_bolum(tr("Godot içindeki bileşenler"))
+	_metin(tr("Godot Engine aşağıdaki açık kaynaklı bileşenleri içerir (bileşen, telif sahipleri, lisans):"), 24, YAZI)
 	_metin(_bilesen_listesi(), 20, SOLUK)
 
 	_bosluk(10)
-	_tam_metin_dugmesi = _dugme("Tam lisans metinlerini göster")
+	_tam_metin_dugmesi = _dugme(tr("Tam lisans metinlerini göster"))
 	_bosluk(80)
 
 
@@ -135,9 +135,9 @@ func _bilesen_listesi() -> String:
 		var liste: Array = sahipler.keys()
 		var ek := ""
 		if liste.size() > 3:
-			ek = " ve diğerleri"
+			ek = tr(" ve diğerleri")
 			liste.resize(3)
-		satirlar.append("• %s\n   © %s%s\n   Lisans: %s" % [bilesen["name"], "; ".join(liste), ek, ", ".join(lisanslar.keys())])
+		satirlar.append("• %s\n   © %s%s\n   %s" % [bilesen["name"], "; ".join(liste), ek, tr("Lisans: %s") % ", ".join(lisanslar.keys())])
 	return "\n".join(satirlar)
 
 

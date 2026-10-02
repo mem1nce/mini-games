@@ -313,7 +313,7 @@ func _build_start() -> void:
 	title.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_start.add_child(title)
 	_place(title, Vector4(0, 0, 1, 0), Vector4(0, 190, 0, 330))
-	var letters := _rainbow_word(title, "Meyve Topla", 96)
+	var letters := _rainbow_word(title, tr("Meyve Topla"), 96)
 	# Başlık harfleri sırayla dalgalansın
 	for i in letters.size():
 		var wave := letters[i].create_tween().set_loops()
@@ -354,7 +354,7 @@ func show_start(level_number: int, can_reset: bool) -> void:
 	_set_top_bar_visible(false)
 	_back.visible = true  # başlangıç ekranında geri ana menüye döner
 	_start.visible = true
-	_badge.text = "Bölüm %d" % level_number
+	_badge.text = tr("Bölüm %d") % level_number
 	_badge.visible = level_number > 1
 	_reset.visible = can_reset
 	_disarm_reset()
@@ -393,7 +393,7 @@ func _disarm_reset() -> void:
 
 
 func set_level_badge(level_number: int) -> void:
-	_badge.text = "Bölüm %d" % level_number
+	_badge.text = tr("Bölüm %d") % level_number
 	if level_number <= 1:
 		var tween := _badge.create_tween()
 		tween.tween_property(_badge, "scale", Vector2.ZERO, 0.3).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)

@@ -931,7 +931,7 @@ func _sonraki_bolum() -> void:
 
 
 func _soz() -> void:
-	var soz: String = SOZLER.pick_random()
+	var soz: String = tr(SOZLER.pick_random())
 	var satir := HBoxContainer.new()
 	satir.alignment = BoxContainer.ALIGNMENT_CENTER
 	satir.add_theme_constant_override("separation", 2)

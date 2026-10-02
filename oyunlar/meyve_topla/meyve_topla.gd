@@ -179,7 +179,7 @@ func _begin_level() -> void:
 	hud.set_progress(0, levels.goal(), false)
 	backdrop.set_phase(levels.background(), 2.0)
 	SesYoneticisi.ezgi("bolum_gecisi")
-	hud.show_banner("Bölüm %d" % (levels.level_index + 1), banner_time)
+	hud.show_banner(tr("Bölüm %d") % (levels.level_index + 1), banner_time)
 	var wait := banner_time + 0.2
 	if target != "":
 		await get_tree().create_timer(banner_time * 0.8, false).timeout
@@ -210,7 +210,7 @@ func _on_level_completed() -> void:
 	SesYoneticisi.efekt("konfeti", -4.0)
 	effects.confetti(screen)
 	effects.sparkle_ring(player.basket_position())
-	hud.show_cheer(WORDS.pick_random(), celebration_time - 0.6)
+	hud.show_cheer(tr(WORDS.pick_random()), celebration_time - 0.6)
 	await get_tree().create_timer(celebration_time, false).timeout
 	if my_run != run_id:
 		return
