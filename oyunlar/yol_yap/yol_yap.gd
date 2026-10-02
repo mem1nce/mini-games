@@ -87,6 +87,9 @@ func _ready() -> void:
 	back_button.completed.connect(_on_back_completed)
 	select_back_button = HoldButton.replace(select_back_panel)
 	select_back_button.completed.connect(_on_select_back_completed)
+	# Çentikli telefonlarda köşe düğmeleri çentiğin altında kalmasın (geri + yeniden başlat birlikte kayar)
+	EkranYardimcisi.guvenliye_it_grup([back_button, restart_button])
+	EkranYardimcisi.guvenliye_it(level_label.get_parent())
 	_check_levels()
 	_load_progress()
 	_create_level_buttons()
@@ -232,18 +235,23 @@ func _level_tween() -> Tween:
 func _layout_board() -> void:
 	var screen := get_viewport_rect().size
 	var map_dims := Logic.map_size(level)
-	var tray_left := screen.x - TRAY_WIDTH - SCREEN_MARGIN
-	var board_bottom := screen.y - 40.0
-	var available := Vector2(tray_left - 20.0 - SCREEN_MARGIN, board_bottom - BOARD_TOP)
+	var left := EkranYardimcisi.kenar_payi(SIDE_LEFT, SCREEN_MARGIN)
+	var right := EkranYardimcisi.kenar_payi(SIDE_RIGHT, SCREEN_MARGIN)
+	# Geniş telefonlarda ızgara ve tepsi kenarlara dağılmasın: tasarım genişliğinde, ekranın ortasında dururlar
+	var width := minf(screen.x - left - right, EkranYardimcisi.tasarim_boyutu().x - 2.0 * SCREEN_MARGIN)
+	var area_left := left + (screen.x - left - right - width) / 2.0
+	var tray_left := area_left + width - TRAY_WIDTH
+	var board_bottom := screen.y - EkranYardimcisi.kenar_payi(SIDE_BOTTOM, 40.0)
+	var available := Vector2(tray_left - 20.0 - area_left, board_bottom - BOARD_TOP)
 	# Haritanın üstündeki boş satırlar yer kaplamasın: ızgara sadece dolu satırlar + 2 satır boşlukla ölçeklenir
 	var visible_rows := mini(map_dims.y, map_dims.y - _empty_top_rows() + 2)
 	cell_size = floorf(minf(minf(available.x / map_dims.x, available.y / visible_rows), 110.0))
 	var board_size := Vector2(map_dims) * cell_size
 	# Izgara tepsinin solunda, kalan alanda ortada ve altta dursun
-	board_origin = Vector2(SCREEN_MARGIN + (available.x - board_size.x) / 2.0, board_bottom - board_size.y)
+	board_origin = Vector2(area_left + (available.x - board_size.x) / 2.0, board_bottom - board_size.y)
 	board.position = board_origin
 	tray.position = Vector2(tray_left, TRAY_TOP)
-	tray.size = Vector2(TRAY_WIDTH, screen.y - 40.0 - TRAY_TOP)
+	tray.size = Vector2(TRAY_WIDTH, board_bottom - TRAY_TOP)
 
 
 # Üstten kaç satır tamamen boş (parçaların yerleri de dolu sayılır)
