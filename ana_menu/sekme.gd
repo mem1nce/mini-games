@@ -47,9 +47,10 @@ func kur(p_kategori: Dictionary, boyut: Vector2) -> void:
 	_ad.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	_ad.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	_ad.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_ic.add_child(_ad)
+	# Boyut ağaca eklendikten sonra verilir; önce verilirse etiket varsayılan yazı boyuyla yüksek kalır ve yazı aşağı kayar
 	_ad.position = Vector2(0, boyut.y * 0.7)
 	_ad.size = Vector2(boyut.x, boyut.y * 0.24)
-	_ic.add_child(_ad)
 	_guncelle()
 
 
