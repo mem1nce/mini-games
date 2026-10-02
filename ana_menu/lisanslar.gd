@@ -116,6 +116,9 @@ func _icerigi_doldur() -> void:
 		satirlar.append("• %s\n   %s, %s" % kaynak)
 	_metin("\n".join(satirlar), 22, SOLUK)
 
+	_bolum("Gizlilik / Privacy")
+	_metin(Metinler.GIZLILIK, 22, YAZI)
+
 	_bolum(tr("Godot içindeki bileşenler"))
 	_metin(tr("Godot Engine aşağıdaki açık kaynaklı bileşenleri içerir (bileşen, telif sahipleri, lisans):"), 24, YAZI)
 	_metin(_bilesen_listesi(), 20, SOLUK)

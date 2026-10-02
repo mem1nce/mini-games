@@ -119,4 +119,4 @@ func save_progress() -> void:
 	config.set_value("ilerleme", "bolum", index)
 	for id in gallery:
 		config.set_value("galeri", id, gallery[id])
-	config.save(PATH)
+	GuvenliKayit.save_config(config, PATH)

@@ -11,6 +11,18 @@ const NUNITO_TELIF := "Copyright 2014 The Nunito Project Authors (https://github
 
 const SES_ACIKLAMA := "Müzikler ve bazı ses efektleri aşağıdaki CC0 (kamu malı) kaynaklardan alındı ve bu uygulama için düzenlendi. CC0 isim vermeyi gerektirmez; emeği geçenlere teşekkür ederiz. Diğer sesler bu uygulama için üretildi."
 
+const GIZLILIK := """Gizlilik / Privacy
+
+Bu uygulama çevrimdışı çalışır. Kişisel veri, cihaz kimliği, konum, kamera veya mikrofon verisi toplamaz. Reklam, kullanım istatistiği, çökme raporlama, hesap, sosyal özellik ve uygulama içi satın alma yoktur. İnternete bağlanılmaz.
+
+Oyun ilerlemesi, ses tercihi ve Boyama Kitabı eserleri yalnızca bu cihazda saklanır; yayıncıya gönderilmez. Uygulama silinirse yerel kayıtlar kaybolabilir.
+
+This app works offline. It does not collect personal data, device identifiers, location, camera or microphone data. It has no ads, usage measurement, crash reporting, accounts, social features or in-app purchases. It does not connect to the internet.
+
+Game progress, sound preferences and Coloring Book artwork are stored only on this device and are not sent to the publisher. Local records may be lost when the app is deleted.
+
+Bu metin taslaktır; mağaza yayını öncesinde yayıncının iletişim bilgileri ve hukuki inceleme tamamlanmalıdır. This text is a draft and requires publisher contact details and legal review before release."""
+
 # [ad, yapan, kaynak]
 const SES_KAYNAKLARI := [
 	["Interface Sounds, Impact Sounds, Music Jingles, Digital Audio, Casino Audio, RPG Audio", "Kenney", "kenney.nl"],

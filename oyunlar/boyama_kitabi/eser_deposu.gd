@@ -66,7 +66,7 @@ static func save_art(id: String, page: String, colors: PackedColorArray, brush: 
 		DirAccess.remove_absolute(folder + "firca.png")
 	if thumb != null:
 		thumb.save_png(folder + "kucuk.png")
-	config.save(folder + "eser.cfg")
+	GuvenliKayit.save_config(config, folder + "eser.cfg")
 	return id
 
 

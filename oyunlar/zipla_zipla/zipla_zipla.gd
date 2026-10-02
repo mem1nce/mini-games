@@ -276,4 +276,4 @@ static func save_result(climbed: int, collected: int) -> void:
 	config.load(SAVE_PATH)
 	config.set_value("rekor", "basamak", maxi(climbed, int(config.get_value("rekor", "basamak", 0))))
 	config.set_value("rekor", "odul", maxi(collected, int(config.get_value("rekor", "odul", 0))))
-	config.save(SAVE_PATH)
+	GuvenliKayit.save_config(config, SAVE_PATH)

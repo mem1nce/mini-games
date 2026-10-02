@@ -416,4 +416,4 @@ func _load_progress() -> void:
 func _save_progress() -> void:
 	var config := ConfigFile.new()
 	config.set_value("ilerleme", "bolum", level_index)
-	config.save(SAVE_PATH)
+	GuvenliKayit.save_config(config, SAVE_PATH)
