@@ -78,10 +78,10 @@ func _yazi_yuksekligi() -> float:
 
 # Uzun adlar (ör. "Gölge Eşleştirme") karta sığsın diye yazı biraz küçülür
 func _yaziyi_sigdir(ad: Label, boy: int, genislik: float) -> void:
-	var yazi_tipi := ad.get_theme_font("font", &"KartYazisi")
-	while boy > 20 and yazi_tipi.get_string_size(ad.text, HORIZONTAL_ALIGNMENT_LEFT, -1, boy).x > genislik:
-		boy -= 1
 	ad.add_theme_font_size_override("font_size", boy)
+	while boy > 14 and ad.get_minimum_size().x > genislik:
+		boy -= 1
+		ad.add_theme_font_size_override("font_size", boy)
 
 
 func _zemini_ciz() -> void:

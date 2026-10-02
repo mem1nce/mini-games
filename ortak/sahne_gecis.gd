@@ -12,7 +12,7 @@ extends CanvasLayer
 #
 # Oyun yönünü bildirmek: oyunun ana sahnesinin kök düğüm script'ine şunu ekle
 #   @export_enum("dikey", "yatay") var ekran_yonu: String = "yatay"
-# Bu değişkeni olmayan sahneler dikey sayılır. Ana menü her zaman dikeydir.
+# Bu değişkeni olmayan sahneler yatay sayılır. Ana menü her zaman yataydır. (Bütün oyunlar yataydır.)
 
 const ANA_MENU := "res://ana_menu/ana_menu.tscn"
 const DIKEY := "dikey"
@@ -28,7 +28,7 @@ const PERDE_RENGI := Color("2d2447")
 var geri_yakalayici := Callable()
 
 var gecis_suruyor: bool = true      # açılış perdesi kalkana kadar geri tuşu çalışmasın
-var ekran_yonu: String = DIKEY      # şu an uygulanan yön (proje ayarları dikey başlar)
+var ekran_yonu: String = YATAY      # şu an uygulanan yön (proje ayarları yatay başlar)
 var _perde: ColorRect
 
 
@@ -109,11 +109,11 @@ func ana_menude_mi() -> bool:
 	return sahne != null and sahne.scene_file_path == ANA_MENU
 
 
-# Sahnenin istediği yön: kök düğümdeki ekran_yonu ("dikey"/"yatay"); yoksa dikey. Ana menü hep dikey.
+# Sahnenin istediği yön: kök düğümdeki ekran_yonu ("dikey"/"yatay"); yoksa yatay. Ana menü hep yatay.
 func sahne_yonu(sahne: Node) -> String:
 	if sahne.scene_file_path == ANA_MENU:
-		return DIKEY
-	return YATAY if sahne.get("ekran_yonu") == YATAY else DIKEY
+		return YATAY
+	return DIKEY if sahne.get("ekran_yonu") == DIKEY else YATAY
 
 
 func _yukle(yol: String) -> Node:
