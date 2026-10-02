@@ -27,7 +27,7 @@ func kaydet() -> void:
 	ayar.set_value("ilerleme", "bolum", bolum)
 	ayar.set_value("ilerleme", "rekor", rekor)
 	ayar.set_value("apartmanlar", "liste", apartmanlar)
-	ayar.save(PATH)
+	GuvenliKayit.save_config(ayar, PATH)
 
 
 func apartman_ekle(apartman: Dictionary) -> void:

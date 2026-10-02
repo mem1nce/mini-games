@@ -155,7 +155,7 @@ static func acildi_isaretle(oyun: Dictionary) -> void:
 	var ayar := ConfigFile.new()
 	ayar.load(MENU_KAYDI)
 	ayar.set_value("acilan", oyun["klasor"], true)
-	ayar.save(MENU_KAYDI)
+	GuvenliKayit.save_config(ayar, MENU_KAYDI)
 
 
 # Listedeki hataları bulur (menü açılırken ve menü testinde çalışır)

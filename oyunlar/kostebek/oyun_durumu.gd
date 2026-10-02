@@ -56,7 +56,7 @@ func finish() -> bool:
 	var config := ConfigFile.new()
 	config.load(SAVE_PATH)
 	config.set_value("rekor", "skor", best)
-	config.save(SAVE_PATH)
+	GuvenliKayit.save_config(config, SAVE_PATH)
 	return true
 
 

@@ -37,4 +37,4 @@ static func save_state(state: Dictionary) -> void:
 	for id in album:
 		config.set_value("album", id, album[id])
 	config.set_value("ipucu", "ekme", state["hint_done"])
-	config.save(PATH)
+	GuvenliKayit.save_config(config, PATH)

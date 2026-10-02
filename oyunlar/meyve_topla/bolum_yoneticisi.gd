@@ -29,7 +29,7 @@ func save_progress(index: int) -> void:
 	saved_index = index
 	var config := ConfigFile.new()
 	config.set_value("ilerleme", "bolum", index)
-	config.save(SAVE_PATH)
+	GuvenliKayit.save_config(config, SAVE_PATH)
 
 
 func reset_progress() -> void:

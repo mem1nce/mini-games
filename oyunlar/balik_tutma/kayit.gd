@@ -23,7 +23,7 @@ func kaydet() -> void:
 	ayar.set_value("ilerleme", "bolum", bolum)
 	for tur in akvaryum:
 		ayar.set_value("akvaryum", tur, akvaryum[tur])
-	ayar.save(PATH)
+	GuvenliKayit.save_config(ayar, PATH)
 
 
 func yeni_mi(tur: String) -> bool:

@@ -41,4 +41,4 @@ func kaydet() -> void:
 	var ayar := ConfigFile.new()
 	ayar.set_value("ilerleme", "bolum", bolum)
 	ayar.set_value("ilerleme", "vagon", vagon)
-	ayar.save(PATH)
+	GuvenliKayit.save_config(ayar, PATH)

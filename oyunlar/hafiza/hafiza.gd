@@ -651,4 +651,4 @@ func _save_progress() -> void:
 	for theme_id in completed:
 		config.set_value("ilerleme", theme_id, completed[theme_id])
 	config.set_value("ayar", "tema", theme_index)
-	config.save(SAVE_PATH)
+	GuvenliKayit.save_config(config, SAVE_PATH)

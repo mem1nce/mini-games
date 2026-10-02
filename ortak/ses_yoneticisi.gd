@@ -288,7 +288,7 @@ func _yukle() -> void:
 func _kaydet() -> void:
 	var ayar := ConfigFile.new()
 	ayar.set_value("ses", "mod", mod)
-	ayar.save(AYAR)
+	GuvenliKayit.save_config(ayar, AYAR)
 
 
 # --- Arka plan ---

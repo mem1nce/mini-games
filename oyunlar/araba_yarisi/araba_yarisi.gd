@@ -450,7 +450,7 @@ func _save() -> void:
 			config.set_value("yildiz", "pist_%d" % (i + 1), _best[i])
 	config.set_value("garaj", "renk", _color)
 	config.set_value("garaj", "hayvan", _driver)
-	config.save(SAVE_PATH)
+	GuvenliKayit.save_config(config, SAVE_PATH)
 
 
 # Yarış bitti: kaçıncı olursa olsun sonraki pist açılır, en iyi yıldız saklanır
