@@ -610,7 +610,7 @@ func _celebrate(my_run: int) -> void:
 
 	if level_index == Levels.LIST.size() - 1:
 		# Son bölüm: daha büyük kutlama ve "Tekrar oyna" düğmesi
-		_show_cheer("Tebrikler!", true)
+		_show_cheer(tr("Tebrikler!"), true)
 		SesYoneticisi.ezgi("kutlama")
 		for wave in 3:
 			_spawn_confetti(90)
@@ -624,7 +624,7 @@ func _celebrate(my_run: int) -> void:
 		_level_tween().tween_property(replay_button, "scale", Vector2.ONE, 0.4) \
 			.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	else:
-		_show_cheer(WORDS.pick_random(), false)
+		_show_cheer(tr(WORDS.pick_random()), false)
 		SesYoneticisi.ezgi("tamamlandi")
 		_spawn_confetti(70)
 		await get_tree().create_timer(celebration_time).timeout

@@ -35,7 +35,7 @@ func _ses(ad: String) -> void:
 
 # Ortada büyük, zıplayan tek kelime: harfler farklı renklerde
 func _soz(ekran: Vector2) -> void:
-	var soz: String = SOZLER.pick_random()
+	var soz: String = tr(SOZLER.pick_random())
 	var satir := HBoxContainer.new()
 	satir.alignment = BoxContainer.ALIGNMENT_CENTER
 	satir.add_theme_constant_override("separation", 2)

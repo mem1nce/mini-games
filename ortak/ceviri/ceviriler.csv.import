@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://dmsd2jfnbsnf"
+
+[deps]
+
+files=["res://ortak/ceviri/ceviriler.tr.translation", "res://ortak/ceviri/ceviriler.en.translation"]
+
+source_file="res://ortak/ceviri/ceviriler.csv"
+dest_files=["res://ortak/ceviri/ceviriler.tr.translation", "res://ortak/ceviri/ceviriler.en.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

@@ -99,7 +99,7 @@ func _fly(sprite: Sprite2D, slot: Node2D, robot: Node2D, from: Vector2) -> void:
 
 # Ortada büyük, zıplayan tek kelime: harfler farklı renklerde
 func _cheer(size: Vector2) -> void:
-	var word: String = WORDS.pick_random()
+	var word: String = tr(WORDS.pick_random())
 	var row := HBoxContainer.new()
 	row.alignment = BoxContainer.ALIGNMENT_CENTER
 	row.add_theme_constant_override("separation", 2)

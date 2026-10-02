@@ -456,7 +456,7 @@ func _level_complete(my_run: int) -> void:
 		return
 	for k in cards.size():
 		cards[k].hop(k * 0.04)
-	_show_cheer(WORDS.pick_random())
+	_show_cheer(tr(WORDS.pick_random()))
 	SesYoneticisi.ezgi("kutlama")
 	SesYoneticisi.efekt("konfeti", -4.0)
 	_spawn_confetti(90)

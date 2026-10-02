@@ -238,7 +238,7 @@ func _game_over() -> void:
 	bird.modulate.a = 1.0
 	bird.pause()
 	score_label.visible = false
-	result_label.text = "Puan: %d" % score
+	result_label.text = tr("Puan: %d") % score
 	SesYoneticisi.muzik_hizi(1.0)
 
 	await get_tree().create_timer(0.6).timeout

@@ -14,7 +14,7 @@ var _voice: String = ""
 
 
 func _ready() -> void:
-	_voice = _find_turkish_voice()
+	_voice = _find_voice()
 	available = _voice != ""
 
 
@@ -22,16 +22,21 @@ func _exit_tree() -> void:
 	stop()
 
 
-func _find_turkish_voice() -> String:
+func _find_voice() -> String:
 	if not ProjectSettings.get_setting("audio/general/text_to_speech", false):
 		return ""
 	if not DisplayServer.has_feature(DisplayServer.FEATURE_TEXT_TO_SPEECH):
 		return ""
 	for voice in DisplayServer.tts_get_voices():
 		var language := str(voice.get("language", "")).to_lower()
-		if language.begins_with("tr"):
+		if language.begins_with(_voice_language()):
 			return str(voice.get("id", ""))
 	return ""
+
+
+# Cihaz Türkçeyse Türkçe, değilse İngilizce ses aranır (çeviri yedek dili de İngilizce)
+func _voice_language() -> String:
+	return "tr" if TranslationServer.get_locale().begins_with("tr") else "en"
 
 
 func is_active() -> bool:
@@ -39,7 +44,7 @@ func is_active() -> bool:
 
 
 static func number_word(n: int) -> String:
-	return WORDS[n] if n >= 0 and n < WORDS.size() else str(n)
+	return TranslationServer.translate(WORDS[n]) if n >= 0 and n < WORDS.size() else str(n)
 
 
 func say(text: String, interrupt: bool = true) -> void:
@@ -53,12 +58,12 @@ func say_number(n: int) -> void:
 
 
 func say_problem(a: int, b: int) -> void:
-	say("%s eksi %s" % [number_word(a), number_word(b)])
+	say(tr("%s eksi %s") % [number_word(a), number_word(b)])
 
 
 # interrupt false: sayma sesleri bitince sıraya girer
 func say_result(a: int, b: int, interrupt: bool = true) -> void:
-	say("%s eksi %s eder %s" % [number_word(a), number_word(b), number_word(a - b)], interrupt)
+	say(tr("%s eksi %s eder %s") % [number_word(a), number_word(b), number_word(a - b)], interrupt)
 
 
 func stop() -> void:
