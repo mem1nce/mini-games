@@ -235,13 +235,28 @@ func _layout_board() -> void:
 	var tray_left := screen.x - TRAY_WIDTH - SCREEN_MARGIN
 	var board_bottom := screen.y - 40.0
 	var available := Vector2(tray_left - 20.0 - SCREEN_MARGIN, board_bottom - BOARD_TOP)
-	cell_size = floorf(minf(minf(available.x / map_dims.x, available.y / map_dims.y), 110.0))
+	# Haritanın üstündeki boş satırlar yer kaplamasın: ızgara sadece dolu satırlar + 2 satır boşlukla ölçeklenir
+	var visible_rows := mini(map_dims.y, map_dims.y - _empty_top_rows() + 2)
+	cell_size = floorf(minf(minf(available.x / map_dims.x, available.y / visible_rows), 110.0))
 	var board_size := Vector2(map_dims) * cell_size
 	# Izgara tepsinin solunda, kalan alanda ortada ve altta dursun
 	board_origin = Vector2(SCREEN_MARGIN + (available.x - board_size.x) / 2.0, board_bottom - board_size.y)
 	board.position = board_origin
 	tray.position = Vector2(tray_left, TRAY_TOP)
 	tray.size = Vector2(TRAY_WIDTH, screen.y - 40.0 - TRAY_TOP)
+
+
+# Üstten kaç satır tamamen boş (parçaların yerleri de dolu sayılır)
+func _empty_top_rows() -> int:
+	var map: Array = level["map"]
+	var top := map.size()
+	for r in map.size():
+		if (map[r] as String).strip_edges().replace(".", "") != "":
+			top = r
+			break
+	for piece in level["pieces"]:
+		top = mini(top, (piece["cell"] as Vector2i).y)
+	return top
 
 
 func _build_terrain() -> void:
