@@ -2,21 +2,24 @@
 
 Başındaki sepetle ağaçtan düşen meyveleri toplayan sevimli bir kirpi. 4-8 yaş, okuma gerektirmez.
 
-## Ekran düzeni (720x1280 dikey, `expand`)
+## Ekran düzeni (1280x720 yatay, `expand`)
 
 ```
-┌──────────────────────────────┐
-│ [←]   [🍎▓▓▓▓░░░░░░🧺]   [⏸]  │  üst çubuk: geri, ilerleme, duraklat
-│          ❤ ❤ ❤               │  kalpler         (güçlendirme göstergesi sağda)
-│  ░░ ağaç tacı (üst kısım) ░░ │
-│   ╿    ╿    ╿    ╿    ╿    ╿  │  6 sallanabilir dal; meyveler dal uçlarında belirir
-│  ☁         gövde        ☀    │  gökyüzü bandı: bulut, güneş/ay, yıldız
-│ ~~~ uzak tepeler ~~~~~~~~~~~ │
-│ ~~~ yakın tepeler, çiçekler ~ │
-│        🧺                     │  sepet kirpinin başında
-│      (kirpi)   ·gölge        │  zemin çizgisi: ekran altından ~110 px yukarıda
-└──────────────────────────────┘
+┌────────────────────────────────────────────────────────┐
+│ [←] [🍎▓▓▓▓░░░░░░🧺]  ❤ ❤ ❤                       [⏸] │  üst çubuk: geri, ilerleme, kalpler, duraklat
+│▓▓▓▓▓▓▓▓▓▓▓ geniş yaprak tacı (üstte bant) ▓▓▓▓▓▓▓▓▓▓▓▓│  (güçlendirme göstergesi duraklat altında)
+│█   ╿    ╿    ╿    ╿    ╿    ╿    ╿    ╿            █│  8 sallanabilir dal; meyveler dal uçlarında belirir
+│█  ☁                       ☀                         █│  yan gövdeler ekran kenarında, gökyüzü bandı
+│█ ~~~ uzak tepeler ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ █│
+│█ ~~~ yakın tepeler, çiçekler ~~~~~~~~~~~~~~~~~~~~~~~ █│
+│█             🧺 (kirpi, 0.8 ölçek)                    █│  zemin çizgisi: ekran altından 70 px yukarıda
+└────────────────────────────────────────────────────────┘
 ```
+
+Ağaç artık ekranın ortasında değil: taç üstte genişliğe yayılan bir yaprak bandı (`agac_tac_genis.svg`,
+yatayda ekrana göre ölçeklenir, dikeyde sabit), iki yan gövde kenarlarda durur. Böylece dallardan sepete
+inen düşme yolu açık kalır. Tepeler ve çimen dikeyde basık çizilir. Düşme hızı `fall_speed_scale` (0.8) ile
+çarpılır; kirpi `player_scale` (0.8) ile küçültülür.
 
 ## Oynanış
 
@@ -82,7 +85,7 @@ meyve_topla/
   bolum_yoneticisi.gd      bölüm ilerlemesi, ne zaman ne düşeceği, kayıt (user://meyve_topla.cfg)
   oyuncu.gd                kirpi: takip, yürüme, yüz halleri, sepet ve birikme, dans, sersemleme
   dusen_nesne.gd           düşen nesne: belirme, sallanma, düşüş, rüzgar, gölge, sekme, sinek
-  agac.gd                  taç, gövde, sallanan dallar, yaprak dökülmesi
+  agac.gd                  geniş taç, yan gövdeler, sallanan dallar, yaprak dökülmesi
   arka_plan.gd             katmanlı arka plan ve zaman dilimi geçişleri
   efektler.gd              CPUParticles2D parçacıklar, konfeti, ekran sarsıntısı, açılır yazılar
   arayuz.gd                üst çubuk, ilerleme, kalpler, güçlendirme göstergesi, ekranlar

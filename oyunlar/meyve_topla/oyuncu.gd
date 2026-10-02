@@ -180,15 +180,15 @@ func _turn(direction: int) -> void:
 # --- Sepet ---
 
 func catch_line_y() -> float:
-	return position.y + _basket.position.y + RIM_Y
+	return position.y + (_basket.position.y + RIM_Y) * scale.y
 
 
 func catch_half_width() -> float:
-	return CATCH_HALF_WIDTH * width_scale
+	return CATCH_HALF_WIDTH * width_scale * scale.x
 
 
 func basket_position() -> Vector2:
-	return position + _basket.position + Vector2(0, RIM_Y)
+	return position + (_basket.position + Vector2(0, RIM_Y)) * scale
 
 
 # Yakalanan meyve bulunduğu yerden sepetteki yerine süzülür; sepet esneyip zıplar
