@@ -92,7 +92,7 @@ func _initialize() -> void:
 	change_scene_to_file(MENU)
 	await _gecis_bekle()
 	if centik:
-		root.get_node("EkranYardimcisi").deneme_bosluklari = DENEME_BOSLUKLARI
+		EkranYardimcisi.deneme_bosluklari = DENEME_BOSLUKLARI
 		_isaret_ekle()
 
 	var sahneler: Array = []
@@ -170,7 +170,7 @@ func _isaret_ekle() -> void:
 func _guvenli_alan_denetle(ad: String) -> void:
 	if not centik or current_scene == null:
 		return
-	var alan: Rect2 = root.get_node("EkranYardimcisi").guvenli_alan().grow(1.0)
+	var alan: Rect2 = EkranYardimcisi.guvenli_alan().grow(1.0)
 	for dugum in current_scene.find_children("*", "Control", true, false):
 		var c := dugum as Control
 		var betik: Script = c.get_script()

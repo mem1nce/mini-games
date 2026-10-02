@@ -75,7 +75,7 @@ func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_ekran = get_viewport_rect().size
 	get_viewport().size_changed.connect(_boyut_degisti)
-	EkranYardimcisi.ekran_degisti.connect(_boyut_degisti)
+	EkranYardimcisi.degisince(_boyut_degisti)
 	for hata in OyunListesi.dogrula():
 		push_error("Ana menü listesi: " + hata)
 	SesYoneticisi.muzik("menu", self)

@@ -25,7 +25,7 @@ func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	pivot_offset = size / 2.0
 	# Çentikli telefonlarda düğme çentiğin altında kalmasın: oyun yerini verdikten sonra güvenli alana alınır
-	EkranYardimcisi.ekran_degisti.connect(_guvenliye_al)
+	EkranYardimcisi.degisince(_guvenliye_al)
 	_guvenliye_al.call_deferred()
 
 
