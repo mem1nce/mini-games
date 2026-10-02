@@ -14,6 +14,8 @@ const OUT := Color("3b2f6b")
 const COLUMNS := 3
 const TOP := 128.0
 const GAP := 26.0
+const GRID_TOP := 14.0
+const GRID_BOTTOM := 20.0             # alt satırın gölgesine yer
 
 var game: Node
 var category: String = ""
@@ -97,13 +99,18 @@ func _layout() -> void:
 		_tabs[i].pivot_offset = _tabs[i].size * 0.5
 	_grid.position = Vector2(40, TOP)
 	_grid.size = Vector2(size.x - 80, size.y - TOP)
+	# Kartlar iki satır ekrana tam sığacak kadar büyür (alttaki satır taşmasın), ızgara ortalanır
 	var width := (_grid.size.x - GAP * (COLUMNS - 1)) / COLUMNS
+	var fit_height := (_grid.size.y - GRID_TOP - GAP - GRID_BOTTOM) * 0.5
+	width = minf(width, (fit_height - 24.0) / 0.75 + 24.0)
 	var card_size := Vector2(width, (width - 24.0) * 0.75 + 24.0)
+	var left := (_grid.size.x - (width * COLUMNS + GAP * (COLUMNS - 1))) * 0.5
 	var rows := ceili(_cards.size() / float(COLUMNS))
-	_scroller.max_offset = maxf(0.0, rows * (card_size.y + GAP) + 20.0 - _grid.size.y)
+	var content := GRID_TOP + rows * card_size.y + (rows - 1) * GAP + GRID_BOTTOM
+	_scroller.max_offset = maxf(0.0, content - _grid.size.y)
 	for i in _cards.size():
 		_cards[i].size = card_size
-		_cards[i].position = Vector2((i % COLUMNS) * (width + GAP), 14.0 + (i / COLUMNS) * (card_size.y + GAP) - _scroller.offset)
+		_cards[i].position = Vector2(left + (i % COLUMNS) * (width + GAP), GRID_TOP + (i / COLUMNS) * (card_size.y + GAP) - _scroller.offset)
 	queue_redraw()
 
 

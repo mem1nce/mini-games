@@ -36,13 +36,21 @@ func kur(p_kategori: Dictionary, boyut: Vector2) -> void:
 	_ad = Label.new()
 	_ad.theme_type_variation = &"KartYazisi"
 	_ad.text = kategori["ad"]
-	_ad.add_theme_font_size_override("font_size", roundi(boyut.x * 0.155))
+	var yazi_boyu := roundi(boyut.x * 0.155)
+	_ad.add_theme_font_size_override("font_size", yazi_boyu)
+	# Uzun ad sekmeye sığsın; etiket kendiliğinden büyüyüp ortadan kaymasın
+	_ad.clip_text = true
+	var yazi_yazi: Font = _ad.get_theme_font("font")
+	while yazi_boyu > 10 and yazi_yazi.get_string_size(tr(_ad.text), HORIZONTAL_ALIGNMENT_LEFT, -1, yazi_boyu).x > boyut.x - 8.0:
+		yazi_boyu -= 1
+	_ad.add_theme_font_size_override("font_size", yazi_boyu)
 	_ad.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	_ad.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	_ad.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_ic.add_child(_ad)
+	# Boyut ağaca eklendikten sonra verilir; önce verilirse etiket varsayılan yazı boyuyla yüksek kalır ve yazı aşağı kayar
 	_ad.position = Vector2(0, boyut.y * 0.7)
 	_ad.size = Vector2(boyut.x, boyut.y * 0.24)
-	_ic.add_child(_ad)
 	_guncelle()
 
 

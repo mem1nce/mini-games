@@ -6,7 +6,7 @@ extends Node2D
 ## Ekran yönü: SahneGecis bu oyuna geçerken ekranı buna göre döndürür.
 @export_enum("dikey", "yatay") var ekran_yonu: String = "yatay"
 ## Su yüzeyinin yüksekliği (px, üstten)
-@export var yuzey_y: float = 440.0
+@export var yuzey_y: float = 355.0
 
 const Bolumler := preload("res://oyunlar/balik_tutma/bolumler.gd")
 const Turler := preload("res://oyunlar/balik_tutma/balik_turleri.gd")

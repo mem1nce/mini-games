@@ -51,6 +51,7 @@ var _icerik: Control
 var _ust_golge: TextureRect
 var _lekeler: Array[Sprite2D] = []
 var _zaman := 0.0
+var _yeniden_kurulacak := false
 
 # Kaydırma
 var _konum := 0.0
@@ -73,6 +74,7 @@ var _secildi := false
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_ekran = get_viewport_rect().size
+	get_viewport().size_changed.connect(_boyut_degisti)
 	for hata in OyunListesi.dogrula():
 		push_error("Ana menü listesi: " + hata)
 	SesYoneticisi.muzik("menu", self)
@@ -136,7 +138,7 @@ func _baslik_olustur() -> void:
 	_baslik.alignment = BoxContainer.ALIGNMENT_BEGIN
 	_baslik.add_theme_constant_override("separation", 14)
 	_baslik.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	_baslik.position = Vector2(KENAR + DUGME_BOYU + 24.0, UST_BOSLUK)
+	_baslik.position = Vector2(_yan_kenar() + DUGME_BOYU + 24.0, UST_BOSLUK)
 	_baslik.size = Vector2(380, _sekme_boyu().y)
 	add_child(_baslik)
 	for parca in [["Minik", Color("ff7a9a")], ["Oyunlar", Color("7b6cf6")]]:
@@ -157,7 +159,7 @@ func _ses_dugmesi_olustur() -> void:
 	_ses_dugmesi = SesDugmesi.new()
 	add_child(_ses_dugmesi)
 	_ses_dugmesi.kur(boyut)
-	_ses_dugmesi.position = Vector2(_ekran.x - KENAR - boyut, _baslik.position.y + (_baslik.size.y - boyut) / 2.0)
+	_ses_dugmesi.position = Vector2(_ekran.x - _yan_kenar() - boyut, _baslik.position.y + (_baslik.size.y - boyut) / 2.0)
 
 
 # Sol üstte küçük, soluk bilgi düğmesi: çocuk kazara açmasın diye 3 sn basılı tutmak gerekir
@@ -167,7 +169,7 @@ func _bilgi_dugmesi_olustur() -> void:
 	_bilgi_dugmesi.hold_time = EBEVEYN_BEKLEME
 	_bilgi_dugmesi.icon = BILGI_SIMGESI
 	_bilgi_dugmesi.size = Vector2(boyut, boyut)
-	_bilgi_dugmesi.position = Vector2(KENAR, _ses_dugmesi.position.y)
+	_bilgi_dugmesi.position = Vector2(_yan_kenar(), _ses_dugmesi.position.y)
 	_bilgi_dugmesi.modulate.a = 0.7
 	_bilgi_dugmesi.completed.connect(_lisanslari_ac)
 	add_child(_bilgi_dugmesi)
@@ -220,7 +222,7 @@ func _sekmeleri_olustur() -> void:
 	var sayi := OyunListesi.KATEGORILER.size()
 	var aralik := 12.0
 	# Sekmeler ses düğmesinin soluna dayanır
-	var sol := _ekran.x - KENAR - DUGME_BOYU - 24.0 - boyut.x * sayi - aralik * (sayi - 1)
+	var sol := _ekran.x - _yan_kenar() - DUGME_BOYU - 24.0 - boyut.x * sayi - aralik * (sayi - 1)
 	for i in sayi:
 		var sekme: Control = Sekme.new()
 		add_child(sekme)
@@ -272,10 +274,16 @@ func _kart_boyu() -> Vector2:
 	return Vector2(roundf(genislik), roundf(genislik * KART_ORANI))
 
 
+# Kart ızgarasının ekran kenarına uzaklığı; geniş ekranda ızgara ortalanır, üst satır da bu kenarlara hizalanır
+func _yan_kenar() -> float:
+	var boyut := _kart_boyu()
+	return roundf((_ekran.x - boyut.x * SUTUN - ARALIK * (SUTUN - 1)) / 2.0)
+
+
 # Seçili sekmenin kartlarını SUTUN sütuna dizer, kaydırma sınırını hesaplar
 func _yerlestir() -> void:
 	var boyut := _kart_boyu()
-	var sol := (_ekran.x - boyut.x * SUTUN - ARALIK * (SUTUN - 1)) / 2.0
+	var sol := _yan_kenar()
 	var ust_bosluk := 14.0
 	_gorunen.clear()
 	for kart in _kartlar:
@@ -459,6 +467,24 @@ func _oyunu_ac(kart: Control) -> void:
 	if OyunListesi.yeni_mi(kart.oyun):
 		OyunListesi.acildi_isaretle(kart.oyun)
 	kart.birak(SahneGecis.sahne_degistir.bind(kart.oyun["sahne"]))
+
+
+# Düzen açılıştaki ekran boyutuna göre kurulur. Pencere sonradan büyür ya da küçülürse
+# (ör. ilk açılışta oyun penceresi yerine oturunca) menü aynı sekme ve kaydırmayla yeniden kurulur.
+func _boyut_degisti() -> void:
+	if _yeniden_kurulacak:
+		return
+	_yeniden_kurulacak = true
+	# Pencere yerine otursun diye kısa bekle (art arda gelen boyut değişiklikleri tek sefer sayılır)
+	await get_tree().create_timer(0.2).timeout
+	_yeniden_kurulacak = false
+	if get_tree().current_scene != self or _secildi or _lisanslar:
+		return
+	if get_viewport_rect().size.is_equal_approx(_ekran):
+		return
+	_son_sekme = _sekme
+	_son_kaydirma = _konum
+	get_tree().reload_current_scene()
 
 
 # --- Her kare ---

@@ -9,6 +9,7 @@ const Turler := preload("res://oyunlar/balik_tutma/balik_turleri.gd")
 const G := "res://oyunlar/balik_tutma/gorseller/"
 const COP_TURLERI := ["sise", "poset", "teneke"]
 const SIMGE := 72.0
+const BALON_Y := 60.0         # görev baloncuğunun üst kenarı (penguenin kafasının üstünde kalsın)
 const SOLUK := """
 shader_type canvas_item;
 // Baloncuktaki henüz toplanmamış simge soluk ve yarı saydam; dolu = 1 olunca asıl renkleri.
@@ -49,7 +50,7 @@ func kur(gorev: Array, ekran_x: float) -> void:
 	var balon_boyu := Vector2(genislik * olcek + 44.0, SIMGE * 1.25 * olcek + 30.0)
 	_balon = Control.new()
 	_balon.size = balon_boyu
-	_balon.position = Vector2((ekran_x - balon_boyu.x) * 0.5, 138.0)
+	_balon.position = Vector2((ekran_x - balon_boyu.x) * 0.5, BALON_Y)
 	_balon.pivot_offset = balon_boyu * 0.5
 	_balon.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_balon.draw.connect(_balonu_ciz)
@@ -144,4 +145,4 @@ func tamam() -> bool:
 func _process(delta: float) -> void:
 	_zaman += delta
 	if _balon:
-		_balon.position.y = 138.0 + sin(_zaman * 1.4) * 3.0
+		_balon.position.y = BALON_Y + sin(_zaman * 1.4) * 3.0
