@@ -142,7 +142,7 @@ func _baslik_olustur() -> void:
 	_baslik.position = Vector2(_yan_kenar() + DUGME_BOYU + 24.0, UST_BOSLUK)
 	_baslik.size = Vector2(380, _sekme_boyu().y)
 	add_child(_baslik)
-	for parca in [["Minik", Color("ff7a9a")], ["Oyunlar", Color("7b6cf6")]]:
+	for parca in [["Bouncy", Color("ff7a9a")], ["Zoo", Color("7b6cf6")]]:
 		var etiket := Label.new()
 		etiket.theme_type_variation = &"Baslik"
 		etiket.text = parca[0]

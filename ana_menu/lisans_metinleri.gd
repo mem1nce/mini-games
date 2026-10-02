@@ -5,7 +5,7 @@ extends RefCounted
 # OFL metni ortak/fontlar/OFL.txt ile aynıdır (dışa aktarımda .txt dosyaları pakete girmeyebildiği için buraya
 # gömüldü); ses listesi ortak/sesler/SESLER.md ve CREDITS.md ile aynı tutulmalı.
 
-const GIRIS := "Minik Oyunlar'daki bütün çizimler ve seslerin çoğu bu uygulama için özgün olarak hazırlandı. Uygulamada kullanılan açık lisanslı bileşenler aşağıdadır."
+const GIRIS := "Bouncy Zoo'daki bütün çizimler ve seslerin çoğu bu uygulama için özgün olarak hazırlandı. Uygulamada kullanılan açık lisanslı bileşenler aşağıdadır."
 
 const NUNITO_TELIF := "Copyright 2014 The Nunito Project Authors (https://github.com/googlefonts/nunito)"
 
