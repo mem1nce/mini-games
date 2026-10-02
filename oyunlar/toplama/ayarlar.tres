@@ -59,4 +59,3 @@ zero_chance = 0.15
 near_distance = 2
 addend_distractor_chance = 0.4
 object_textures = Array[Texture2D]([ExtResource("n_seker"), ExtResource("n_elma"), ExtResource("n_yildiz"), ExtResource("n_top"), ExtResource("n_cilek"), ExtResource("n_balon"), ExtResource("n_kurabiye"), ExtResource("n_cicek")])
-speech_default = true

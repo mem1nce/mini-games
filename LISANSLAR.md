@@ -154,7 +154,7 @@ arkadaşımın bilmesi gerekenler:
 
 Sorun olmayanlar: bütün indirilen hayvan sesleri (CC0, sayfalar doğrulandı, özgün kayıtlar `.gdignore`'lu
 klasörde), Müzik Kutusu şarkıları (kamu malı geleneksel ezgiler), boyama sayfaları (kendi SVG'lerinden
-üretilmiş), Toplama ve Çıkarma'daki sesli sayma (cihazın kendi seslendirmesi, pakete ses dosyası girmiyor).
+üretilmiş).
 Turuncu-beyaz çizgili balık gerçek bir tür (palyaço balığı) ve sade çizilmiş; bir film karakterini
 kopyalamıyor. Mavi lokomotif yüzsüz, genel bir oyuncak tren. Aslan sesi hâlâ sentez (yer tutucu); gerçek
 kayıtla değiştirilirse o da CC0 olmalı ve kaydedilmeli.

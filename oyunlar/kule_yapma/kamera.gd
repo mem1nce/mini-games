@@ -2,7 +2,7 @@ extends Camera2D
 # Kulenin tepesini yumuşakça izleyen kamera: tepe ekranın alt yarısında (TEPE_EKRAN_Y) kalacak şekilde yukarı kayar,
 # hiç aşağı inmez (bölüm başında sıfırlanır). Yatayda sabit.
 
-const TEPE_EKRAN_Y := 820.0
+const TEPE_EKRAN_Y := 600.0
 
 var ekran := Vector2(720, 1280)
 var hedef_y := 640.0

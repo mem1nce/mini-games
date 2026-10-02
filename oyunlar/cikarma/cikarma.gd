@@ -16,9 +16,7 @@ signal state_changed(state: State)
 const ObjectBox := preload("res://oyunlar/cikarma/nesne_kutusu.gd")
 const AnswerButton := preload("res://oyunlar/cikarma/cevap_dugmesi.gd")
 const Progress := preload("res://oyunlar/cikarma/ilerleme_cubugu.gd")
-const SpeakerButton := preload("res://oyunlar/cikarma/hoparlor_dugmesi.gd")
 const Effects := preload("res://oyunlar/cikarma/kutlama.gd")
-const Narrator := preload("res://oyunlar/cikarma/sesli_sayma.gd")
 const HoldButton := preload("res://ortak/basili_geri_dugmesi.gd")
 const Sounds := preload("res://oyunlar/cikarma/sesler.gd")
 const TEX_CLOUD: Texture2D = preload("res://oyunlar/cikarma/gorseller/bulut.svg")
@@ -49,9 +47,6 @@ enum State { SHOWING, WAITING, WRONG, CORRECT, LEVEL_DONE, FINALE }
 @export var count_step_max: float = 0.6
 ## Bir nesnenin uçuş süresi.
 @export var object_flight_time: float = 0.45
-## Sesli saymada her sayının okunması için adım en az bu kadar olmalı (değilse sayılar okunmaz;
-## her durumda sonunda "beş eksi iki eder üç" okunur).
-@export var speech_min_step: float = 0.5
 
 @export_group("Diğer süreler")
 ## Doğru düğmenin "?" kartına uçuş süresi.
@@ -63,7 +58,7 @@ enum State { SHOWING, WAITING, WRONG, CORRECT, LEVEL_DONE, FINALE }
 ## Basılı tutunca ana menüye dönme süresi.
 @export var hold_to_exit: float = 0.6
 
-const TOP_AREA := 118.0          # üstte geri düğmesi, ilerleme çubuğu, hoparlör
+const TOP_AREA := 118.0          # üstte geri düğmesi, ilerleme çubuğu
 const SIDE_MARGIN := 40.0
 const BOTTOM_MARGIN := 26.0
 const BOX_SIZE := Vector2(320, 290)          # B ve sonuç kutularının en küçük boyu (en fazla 10 nesne)
@@ -93,9 +88,7 @@ const MAJOR_SCALE := [0, 2, 4, 5, 7, 9, 11, 12]
 @onready var effects: Effects = $Effects
 @onready var progress: Progress = $Progress
 @onready var back_button: HoldButton = $BackButton
-@onready var speaker: SpeakerButton = $Speaker
 @onready var sounds: Sounds = $Sounds
-@onready var narrator: Narrator = $Narrator
 
 var state: State = State.SHOWING
 var level_index: int = 0
@@ -111,10 +104,7 @@ func _ready() -> void:
 	for issue in settings.problems():
 		push_error("Çıkarma Öğreniyorum: " + issue)
 	generator = SubtractionGenerator.new(settings)
-	narrator.enabled = settings.speech_default
 	_load()
-	speaker.visible = narrator.available
-	speaker.is_on = narrator.enabled
 	back_button.hold_time = hold_to_exit
 	back_button.completed.connect(SahneGecis.ana_menuye_don)
 	_setup_sky()
@@ -149,9 +139,6 @@ func _on_press(index: int, pos: Vector2) -> void:
 		back_touch = index
 		back_button.press()
 		return
-	if speaker.contains(pos):
-		_toggle_speech()
-		return
 	if state == State.WAITING:
 		for button in buttons:
 			if button.contains(pos):
@@ -172,14 +159,6 @@ func _release_back() -> void:
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_APPLICATION_FOCUS_OUT and back_touch != -1:
 		_release_back()
-
-
-func _toggle_speech() -> void:
-	speaker.toggle()
-	narrator.enabled = speaker.is_on
-	if not narrator.enabled:
-		narrator.stop()
-	_save()
 
 
 # --- Cevap ---
@@ -208,7 +187,6 @@ func _run_correct(button: AnswerButton) -> void:
 	for k in buttons.size():
 		buttons[k].fade_out(k * 0.05)
 	buttons.clear()
-	narrator.stop()
 	sounds.play("ucus")
 	# Düğme "?" kartının üstüne uçar, rakam karta yerleşir
 	var target_scale := box_result.card_global_size() / BUTTON_SIZE.y
@@ -267,11 +245,9 @@ func _count_objects(my_run: int) -> void:
 	var total := problem.answer
 	var sources: Array[Sprite2D] = box_a.release_objects()
 	if total == 0:
-		narrator.say_result(problem.a, problem.b)
 		await get_tree().create_timer(0.6).timeout
 		return
 	var step := clampf(count_total_time / total, count_step_min, count_step_max)
-	var speak_each := narrator.is_active() and step >= speech_min_step
 	for k in sources.size():
 		var sprite := sources[k]
 		sprite.reparent(flying, true)
@@ -281,29 +257,25 @@ func _count_objects(my_run: int) -> void:
 		tween.tween_method(_move_on_curve.bind(sprite, sprite.global_position, control, target), 0.0, 1.0, object_flight_time).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 		tween.parallel().tween_property(sprite, "rotation", TAU * (1 if k % 2 == 0 else -1), object_flight_time)
 		tween.parallel().tween_property(sprite, "scale", Vector2.ONE * box_result.object_scale(sprite.texture) * box_result.global_scale.x, object_flight_time)
-		tween.tween_callback(_on_object_arrived.bind(sprite, k + 1, total, speak_each, my_run))
+		tween.tween_callback(_on_object_arrived.bind(sprite, k + 1, total, my_run))
 		await get_tree().create_timer(step).timeout
 		if my_run != run_id:
 			return
 	await get_tree().create_timer(object_flight_time + 0.15).timeout
 	if my_run != run_id:
 		return
-	# Sonunda işlemin tamamı okunur ("beş eksi iki eder üç")
-	narrator.say_result(problem.a, problem.b, not speak_each)
 
 
 func _move_on_curve(t: float, sprite: Sprite2D, start: Vector2, control: Vector2, target: Vector2) -> void:
 	sprite.global_position = start.lerp(control, t).lerp(control.lerp(target, t), t)
 
 
-func _on_object_arrived(sprite: Sprite2D, number: int, total: int, speak_each: bool, my_run: int) -> void:
+func _on_object_arrived(sprite: Sprite2D, number: int, total: int, my_run: int) -> void:
 	if my_run != run_id:
 		return
 	box_result.adopt(sprite, total)
 	box_result.set_counter(number)
 	sounds.play("sayma", _count_pitch(number, total))
-	if speak_each:
-		narrator.say_number(number)
 
 
 # Sayma sesinin perdesi her sayışta majör gamda bir basamak yükselir; toplam 8'den büyükse
@@ -335,9 +307,6 @@ func _start_level(index: int) -> void:
 	var end_a := box_a.fill(problem.a, texture, cell, 0.15, step)
 	var end_b := box_b.fill(problem.b, texture, cell, end_a - 0.2, step, true)
 	_build_buttons(problem.choices, end_b - 0.2)
-	get_tree().create_timer(0.4).timeout.connect(func() -> void:
-		if my_run == run_id:
-			narrator.say_problem(problem.a, problem.b))
 	await get_tree().create_timer(end_b - 0.2 + buttons.size() * 0.08 + 0.4).timeout
 	if my_run == run_id:
 		_set_state(State.WAITING)
@@ -401,9 +370,8 @@ func _build_buttons(choices: Array[int], delay: float) -> void:
 func _layout() -> void:
 	var screen := get_viewport_rect().size
 	back_button.position = Vector2(SIDE_MARGIN, 18.0)
-	speaker.position = Vector2(screen.x - SIDE_MARGIN - speaker.size.x, 18.0)
 	var bar_left := back_button.position.x + back_button.size.x + 40.0
-	var bar_right := speaker.position.x - 40.0
+	var bar_right := screen.x - SIDE_MARGIN
 	progress.width = minf(bar_right - bar_left, 760.0)
 	progress.position = Vector2((bar_left + bar_right) / 2.0, back_button.position.y + back_button.size.y / 2.0)
 	progress.queue_redraw()
@@ -495,11 +463,9 @@ func _load() -> void:
 	if config.load(SAVE_PATH) != OK:
 		return
 	level_index = clampi(int(config.get_value("ilerleme", "bolum", 0)), 0, maxi(settings.level_count() - 1, 0))
-	narrator.enabled = bool(config.get_value("ayarlar", "sesli_sayma", narrator.enabled))
 
 
 func _save() -> void:
 	var config := ConfigFile.new()
 	config.set_value("ilerleme", "bolum", level_index)
-	config.set_value("ayarlar", "sesli_sayma", narrator.enabled)
 	config.save(SAVE_PATH)

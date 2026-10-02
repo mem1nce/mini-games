@@ -3,7 +3,7 @@ extends Node2D
 # halatta kat sarkaç gibi sallanır; ileriki bölümlerde makara hafifçe yukarı aşağı da oynar. Dokununca kat bırakılır.
 
 const G := "res://oyunlar/kule_yapma/gorseller/"
-const HALAT := 170.0
+const HALAT := 140.0
 
 var hiz := 1.5                   # sarkaç açısal hızı (radyan/sn)
 var aci := 0.42                  # en büyük sallanma açısı
