@@ -4,7 +4,7 @@ extends Node2D
 # berraklığı, duraklatma, akvaryum ve bölüm sonu kutlaması. Tasarım TASARIM.md'de, notlar CLAUDE.md'de.
 
 ## Ekran yönü: SahneGecis bu oyuna geçerken ekranı buna göre döndürür.
-@export_enum("dikey", "yatay") var ekran_yonu: String = "dikey"
+@export_enum("dikey", "yatay") var ekran_yonu: String = "yatay"
 ## Su yüzeyinin yüksekliği (px, üstten)
 @export var yuzey_y: float = 440.0
 

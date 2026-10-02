@@ -1,6 +1,6 @@
 extends SceneTree
 # Ana menü ekran görüntüleri (pencereli). Proje kökünden:
-#   godot --path . --fixed-fps 60 --resolution 720x1280 -s res://ana_menu/testler/ekran_testi.gd -- <klasör> [GxY]
+#   godot --path . --fixed-fps 60 --resolution 1280x720 -s res://ana_menu/testler/ekran_testi.gd -- <klasör> [GxY]
 # İsteğe bağlı GxY (ör. 720x1600, 960x1280) farklı ekran oranı dener. Açılış, basılı kart, kaydırılmış liste,
 # alt uçta esneme ve her sekmenin görüntüsünü <klasör> içine kaydeder. user://ana_menu.cfg'ye dokunmaz.
 

@@ -312,7 +312,7 @@ func _build_start() -> void:
 	title.add_theme_constant_override("separation", 0)
 	title.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_start.add_child(title)
-	_place(title, Vector4(0, 0, 1, 0), Vector4(0, 190, 0, 330))
+	_place(title, Vector4(0, 0, 1, 0), Vector4(0, 60, 0, 190))
 	var letters := _rainbow_word(title, tr("Meyve Topla"), 96)
 	# Başlık harfleri sırayla dalgalansın
 	for i in letters.size():
@@ -333,12 +333,12 @@ func _build_start() -> void:
 	_badge.add_theme_stylebox_override("normal", badge_style)
 	_badge.add_theme_color_override("font_color", Color("ff7f50"))
 	_start.add_child(_badge)
-	_place(_badge, Vector4(0.5, 0.5, 0.5, 0.5), Vector4(-150, -130, 150, -60))
+	_place(_badge, Vector4(0.5, 0.5, 0.5, 0.5), Vector4(-150, -145, 150, -75))
 
 	_tap_label = _label(56, 20)
 	_tap_label.text = "Başlamak için dokun"
 	_start.add_child(_tap_label)
-	_place(_tap_label, Vector4(0, 0.5, 1, 0.5), Vector4(20, -30, -20, 60))
+	_place(_tap_label, Vector4(0, 0.5, 1, 0.5), Vector4(20, -65, -20, 5))
 	var pulse := _tap_label.create_tween().set_loops()
 	pulse.tween_property(_tap_label, "modulate:a", 0.45, 0.7).set_trans(Tween.TRANS_SINE)
 	pulse.tween_property(_tap_label, "modulate:a", 1.0, 0.7).set_trans(Tween.TRANS_SINE)

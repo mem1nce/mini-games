@@ -16,6 +16,7 @@ var _yedek := {}
 
 
 func _initialize() -> void:
+	root.content_scale_aspect = Window.CONTENT_SCALE_ASPECT_KEEP    # headless pencere kare; çizim alanı yine 1280x720 olsun
 	gecis = root.get_node("SahneGecis")
 	_kayitlari_yedekle()
 	DirAccess.remove_absolute(ProjectSettings.globalize_path(OyunListesi.MENU_KAYDI))
@@ -41,7 +42,7 @@ func _listeyi_denetle() -> void:
 		var sahne: Node = load(oyun["sahne"]).instantiate()
 		var yon = sahne.get("ekran_yonu")
 		sahne.free()
-		_expect((yon if yon != null else "dikey") == oyun["yon"], "%s yönü listede doğru (%s)" % [oyun["ad"], oyun["yon"]])
+		_expect((yon if yon != null else "yatay") == oyun["yon"], "%s yönü listede doğru (%s)" % [oyun["ad"], oyun["yon"]])
 
 
 func _kaydirma_denetle() -> void:
@@ -58,18 +59,21 @@ func _kaydirma_denetle() -> void:
 	_expect(menu._konum > 150.0, "liste parmakla kaydı (%.0f)" % menu._konum)
 	# Hızlı fiske: parmak kalktıktan sonra da akar
 	var once: float = menu._konum
-	await _drag_hizli(Vector2(360, 1000), Vector2(0, -300))
+	await _drag_hizli(Vector2(640, 650), Vector2(0, -300))
 	var birakinca: float = menu._konum
-	await _frames(30)
-	_expect(menu._konum > birakinca + 40.0 or is_equal_approx(menu._konum, menu._en_fazla), "momentumla akmaya devam etti (%.0f → %.0f)" % [birakinca, menu._konum])
+	var en_uzak: float = birakinca
+	for i in 30:
+		await process_frame
+		en_uzak = maxf(en_uzak, menu._konum)
+	_expect(en_uzak > birakinca + 40.0 or birakinca >= menu._en_fazla, "momentumla akmaya devam etti (%.0f → %.0f)" % [birakinca, en_uzak])
 	_expect(menu._konum > once, "fiske listeyi aşağı kaydırdı")
 	await _frames(120)
 	# Üst uçtan aşağı çekince esner, bırakınca geri döner
 	menu._konum = 0.0
-	_touch(Vector2(360, 700), true)
-	await _drag(Vector2(360, 700), Vector2(360, 1000), 12)
+	_touch(Vector2(640, 250), true)
+	await _drag(Vector2(640, 250), Vector2(640, 550), 12)
 	_expect(menu._konum < -40.0, "üst uçta esnedi (%.0f)" % menu._konum)
-	_touch(Vector2(360, 1000), false)
+	_touch(Vector2(640, 550), false)
 	await _frames(60)
 	_expect(absf(menu._konum) < 1.0, "bırakınca başa geri döndü (%.1f)" % menu._konum)
 
@@ -100,7 +104,7 @@ func _oyunlari_ac() -> void:
 			await _sahne_bekle(MENU)
 		await _frames(20)
 		menu = current_scene
-		_expect(gecis.ekran_yonu == "dikey", "%s sonrası menü dikey" % oyun["ad"])
+		_expect(gecis.ekran_yonu == "yatay", "%s sonrası menü yatay" % oyun["ad"])
 		_expect(is_equal_approx(menu._konum, konum), "%s sonrası kaydırma korundu (%.0f / %.0f)" % [oyun["ad"], menu._konum, konum])
 		if yeniydi:
 			_expect(menu._kartlar[i]._yeni == null, "%s açılınca Yeni rozeti kayboldu" % oyun["ad"])

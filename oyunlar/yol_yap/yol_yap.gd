@@ -9,7 +9,7 @@ const HoldButton := preload("res://ortak/basili_geri_dugmesi.gd")
 enum State { SELECT, PLAYING, ROLLING, CELEBRATING, FINISHED }
 
 ## Ekran yönü: SahneGecis bu oyuna geçerken ekranı buna göre döndürür.
-@export_enum("dikey", "yatay") var ekran_yonu: String = "dikey"
+@export_enum("dikey", "yatay") var ekran_yonu: String = "yatay"
 
 ## Bilyenin yuvarlanma hızı (hücre/saniye).
 @export var roll_speed: float = 2.5
@@ -36,9 +36,10 @@ const SAVE_PATH := "user://yol_yap.cfg"
 const WORDS := ["Harika!", "Süper!", "Tebrikler!"]
 const RAINBOW := [Color("ff5a5a"), Color("ff9f40"), Color("ffc93d"), Color("5cc95c"), Color("4fa8ff"), Color("a66bff")]
 const TEXTURE_CELL := 100.0      # SVG'lerde bir hücre 100 piksel
-const BOARD_TOP := 190.0         # ızgaranın başlayabileceği en üst nokta (düğmelerin altı)
-const TRAY_HEIGHT := 210.0
-const TRAY_BOTTOM_MARGIN := 40.0
+const BOARD_TOP := 130.0         # ızgaranın başlayabileceği en üst nokta (düğmelerin altı)
+const TRAY_WIDTH := 250.0        # parça tepsisi ekranın sağında dikey bir şerit
+const TRAY_TOP := 190.0
+const SCREEN_MARGIN := 30.0
 const NO_CELL := Vector2i(-1, -1)
 
 @onready var game: Control = $Game
@@ -231,15 +232,16 @@ func _level_tween() -> Tween:
 func _layout_board() -> void:
 	var screen := get_viewport_rect().size
 	var map_dims := Logic.map_size(level)
-	var tray_top := screen.y - TRAY_HEIGHT - TRAY_BOTTOM_MARGIN
-	var available := Vector2(screen.x - 60.0, tray_top - 20.0 - BOARD_TOP)
+	var tray_left := screen.x - TRAY_WIDTH - SCREEN_MARGIN
+	var board_bottom := screen.y - 40.0
+	var available := Vector2(tray_left - 20.0 - SCREEN_MARGIN, board_bottom - BOARD_TOP)
 	cell_size = floorf(minf(minf(available.x / map_dims.x, available.y / map_dims.y), 110.0))
 	var board_size := Vector2(map_dims) * cell_size
-	# Izgara tepsinin hemen üstünde, yatayda ortada dursun
-	board_origin = Vector2((screen.x - board_size.x) / 2.0, tray_top - 20.0 - board_size.y)
+	# Izgara tepsinin solunda, kalan alanda ortada ve altta dursun
+	board_origin = Vector2(SCREEN_MARGIN + (available.x - board_size.x) / 2.0, board_bottom - board_size.y)
 	board.position = board_origin
-	tray.position = Vector2(30.0, tray_top)
-	tray.size = Vector2(screen.x - 60.0, TRAY_HEIGHT)
+	tray.position = Vector2(tray_left, TRAY_TOP)
+	tray.size = Vector2(TRAY_WIDTH, screen.y - 40.0 - TRAY_TOP)
 
 
 func _build_terrain() -> void:
@@ -298,18 +300,16 @@ func _build_pieces() -> void:
 		types.append(p["type"])
 	types.shuffle()
 
-	# Tepside yan yana ve ortalı dizilsin
+	# Tepside alt alta ve ortalı dizilsin
 	var gap := 18.0
-	var total := gap * (types.size() - 1)
-	for type: String in types:
-		total += _piece_width(type) * cell_size
-	var x := tray.position.x + (tray.size.x - total) / 2.0
-	var y := tray.position.y + (tray.size.y - cell_size) / 2.0
+	var total := (cell_size + gap) * types.size() - gap
+	var y := tray.position.y + (tray.size.y - total) / 2.0
 	for type: String in types:
 		var piece := _make_piece(type)
+		var x := tray.position.x + (tray.size.x - _piece_width(type) * cell_size) / 2.0
 		piece.position = Vector2(x, y)
 		piece.set_meta("home", piece.position)
-		x += _piece_width(type) * cell_size + gap
+		y += cell_size + gap
 
 
 func _make_piece(type: String) -> Node2D:

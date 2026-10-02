@@ -9,7 +9,7 @@ extends RefCounted
 #   "kart"      kart görseli (ana_menu/kartlar/ içinde, 320x300 tuval)
 #   "renk"      kartın pastel rengi: PALET'teki bir ad
 #   "kategori"  KATEGORILER'deki bir kimlik ("hepsi" hariç)
-#   "yon"       "dikey" / "yatay" (bilgi amaçlı; ekranı oyunun kendi ekran_yonu değeri çevirir, menü testi ikisini karşılaştırır)
+#   "yon"       "yatay" (eskiden "dikey" de olabilirdi; bilgi amaçlı; ekranı oyunun kendi ekran_yonu değeri çevirir, menü testi ikisini karşılaştırır)
 #   "ilerleme"  (isteğe bağlı) bölümlü oyunlarda kartın köşesindeki küçük rozet:
 #               {"anahtar": "bolum/anahtar", "ekle": 1, "en_fazla": 10} → user://<klasor>.cfg içinden okunur.
 #               Anahtar "*" ise bölümdeki en büyük değer alınır (ör. Hafıza'da temaların en ilerisi).
@@ -46,25 +46,25 @@ const OYUNLAR := [
 	{"ad": "Boyama Kitabı", "klasor": "boyama_kitabi", "sahne": "res://oyunlar/boyama_kitabi/boyama_kitabi.tscn", "kart": "boyama_kitabi.svg",
 		"renk": "leylak", "kategori": "yaratici", "yon": "yatay"},
 	{"ad": "Dondurmacı", "klasor": "dondurmaci", "sahne": "res://oyunlar/dondurmaci/dondurmaci.tscn", "kart": "dondurmaci.svg",
-		"renk": "pembe", "kategori": "bulmaca", "yon": "dikey"},
+		"renk": "pembe", "kategori": "bulmaca", "yon": "yatay"},
 	{"ad": "Balık Tutma", "klasor": "balik_tutma", "sahne": "res://oyunlar/balik_tutma/balik_tutma.tscn", "kart": "balik_tutma.svg",
-		"renk": "turkuaz", "kategori": "ogren", "yon": "dikey",
+		"renk": "turkuaz", "kategori": "ogren", "yon": "yatay",
 		"ilerleme": {"anahtar": "ilerleme/bolum", "ekle": 1}},
 	{"ad": "Sihirli Bahçe", "klasor": "sihirli_bahce", "sahne": "res://oyunlar/sihirli_bahce/sihirli_bahce.tscn", "kart": "sihirli_bahce.svg",
 		"renk": "leylak", "kategori": "yaratici", "yon": "yatay"},
 	{"ad": "Müzik Kutusu", "klasor": "muzik_kutusu", "sahne": "res://oyunlar/muzik_kutusu/muzik_kutusu.tscn", "kart": "muzik_kutusu.svg",
 		"renk": "seftali", "kategori": "yaratici", "yon": "yatay"},
 	{"ad": "Meyve Topla", "klasor": "meyve_topla", "sahne": "res://oyunlar/meyve_topla/meyve_topla.tscn", "kart": "meyve_topla.svg",
-		"renk": "seftali", "kategori": "hareket", "yon": "dikey",
+		"renk": "seftali", "kategori": "hareket", "yon": "yatay",
 		"ilerleme": {"anahtar": "ilerleme/bolum", "ekle": 1}},
 	{"ad": "Hafıza", "klasor": "hafiza", "sahne": "res://oyunlar/hafiza/hafiza.tscn", "kart": "hafiza.svg",
-		"renk": "lavanta", "kategori": "bulmaca", "yon": "dikey",
+		"renk": "lavanta", "kategori": "bulmaca", "yon": "yatay",
 		"ilerleme": {"anahtar": "ilerleme/*", "ekle": 1, "en_fazla": 4}},
 	{"ad": "Gölge Eşleştirme", "klasor": "golge_eslestirme", "sahne": "res://oyunlar/golge_eslestirme/golge_eslestirme.tscn", "kart": "golge_eslestirme.svg",
-		"renk": "turkuaz", "kategori": "bulmaca", "yon": "dikey",
+		"renk": "turkuaz", "kategori": "bulmaca", "yon": "yatay",
 		"ilerleme": {"anahtar": "ilerleme/bolum", "ekle": 1}},
 	{"ad": "Yol Yap", "klasor": "yol_yap", "sahne": "res://oyunlar/yol_yap/yol_yap.tscn", "kart": "yol_yap.svg",
-		"renk": "nane", "kategori": "bulmaca", "yon": "dikey",
+		"renk": "nane", "kategori": "bulmaca", "yon": "yatay",
 		"ilerleme": {"anahtar": "ilerleme/tamamlanan", "ekle": 1, "en_fazla": 10}},
 	{"ad": "Tren Rayı", "klasor": "tren_rayi", "sahne": "res://oyunlar/tren_rayi/tren_rayi.tscn", "kart": "tren_rayi.svg",
 		"renk": "gok", "kategori": "bulmaca", "yon": "yatay",
@@ -76,11 +76,11 @@ const OYUNLAR := [
 		"renk": "limon", "kategori": "ogren", "yon": "yatay",
 		"ilerleme": {"anahtar": "ilerleme/bolum", "ekle": 1}},
 	{"ad": "Köstebek", "klasor": "kostebek", "sahne": "res://oyunlar/kostebek/kostebek.tscn", "kart": "kostebek.svg",
-		"renk": "nane", "kategori": "hareket", "yon": "dikey"},
+		"renk": "nane", "kategori": "hareket", "yon": "yatay"},
 	{"ad": "Uçan Kuş", "klasor": "ucan_kus", "sahne": "res://oyunlar/ucan_kus/ucan_kus.tscn", "kart": "ucan_kus.svg",
-		"renk": "gok", "kategori": "hareket", "yon": "dikey"},
+		"renk": "gok", "kategori": "hareket", "yon": "yatay"},
 	{"ad": "Kule Yapma", "klasor": "kule_yapma", "sahne": "res://oyunlar/kule_yapma/kule_yapma.tscn", "kart": "kule_yapma.svg",
-		"renk": "seftali", "kategori": "hareket", "yon": "dikey",
+		"renk": "seftali", "kategori": "hareket", "yon": "yatay",
 		"ilerleme": {"anahtar": "ilerleme/bolum", "ekle": 1}},
 	{"ad": "Toplama", "klasor": "toplama", "sahne": "res://oyunlar/toplama/toplama.tscn", "kart": "toplama.svg",
 		"renk": "limon", "kategori": "ogren", "yon": "yatay",

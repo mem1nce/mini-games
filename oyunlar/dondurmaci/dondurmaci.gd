@@ -5,7 +5,7 @@ extends Control
 enum State { ENTERING, CHOOSE_CONTAINER, ADD_SCOOPS, CELEBRATING }
 
 ## Ekran yönü: SahneGecis bu oyuna geçerken ekranı buna göre döndürür.
-@export_enum("dikey", "yatay") var ekran_yonu: String = "dikey"
+@export_enum("dikey", "yatay") var ekran_yonu: String = "yatay"
 
 # --- Sipariş kuralları (Inspector'dan da değiştirilebilir) ---
 @export_group("Sipariş kuralları")
@@ -23,7 +23,7 @@ enum State { ENTERING, CHOOSE_CONTAINER, ADD_SCOOPS, CELEBRATING }
 @export_range(0.0, 1.0) var bowl_chance: float = 0.4
 
 # Tatlar: yeni tat için gorseller/ klasörüne top SVG'si çiz ve buraya bir satır ekle.
-# Tat kutuları bu listeden otomatik oluşur (3 sütun).
+# Tat kutuları bu listeden otomatik oluşur (2 sütun).
 const HoldButton := preload("res://ortak/basili_geri_dugmesi.gd")
 
 const FLAVORS := [
@@ -57,9 +57,9 @@ const HEART_TEXTURE: Texture2D = preload("res://oyunlar/dondurmaci/gorseller/kal
 
 const SCOOP_STEP := 72.0           # üst üste topların arası
 const ORDER_SCALE := 0.62          # baloncuktaki dondurmanın boyutu
-const CUSTOMER_POS := Vector2(-150, 370)
+const CUSTOMER_POS := Vector2(-380, 330)
 const HAND_POS := Vector2(110, 80) # müşterinin dondurmayı tuttuğu yer
-const FLAVOR_BOX_SIZE := Vector2(190, 145)
+const FLAVOR_BOX_SIZE := Vector2(160, 125)
 
 @onready var customer: Sprite2D = $TopArea/Customer
 @onready var bubble: Node2D = $TopArea/Bubble

@@ -1,5 +1,5 @@
 extends Control
-# Minik Oyunlar ana menüsü (dikey): üstte küçük başlık ve kategori sekmeleri, altında 2 sütunlu,
+# Minik Oyunlar ana menüsü (yatay): üstte tek satırda başlık ve kategori sekmeleri, altında 5 sütunlu,
 # dikey kaydırılan büyük oyun kartları. Oyun listesi oyun_listesi.gd'de; kart oyun_karti.gd, sekme sekme.gd.
 #
 # Dokunma: parmak KAYMA_ESIGI'nden fazla kayarsa dokunma iptal olur ve liste kayar (momentumlu, uçlarda esner).
@@ -19,9 +19,12 @@ const YUMUSAK_DAIRE: Texture2D = preload("res://ana_menu/gorseller/yumusak_daire
 # Oyun testleri menüden oyun açarken bunları kullanır: OYUNLAR[i]["sahne"] ve _kartlar[i] (aynı sıra)
 const OYUNLAR := OyunListesi.OYUNLAR
 
-const KENAR := 36.0             # ekranın yan boşluğu
+const KENAR := 48.0             # ekranın yan boşluğu
 const ARALIK := 22.0            # kartlar arası boşluk
-const EN_GENIS_KART := 400.0    # tablette kartlar bundan büyümez, ızgara ortalanır
+const SUTUN := 5                # kart sütun sayısı
+const EN_GENIS_KART := 260.0    # tablette kartlar bundan büyümez, ızgara ortalanır
+const DUGME_BOYU := 84.0        # bilgi ve ses düğmeleri
+const UST_BOSLUK := 10.0        # üst satırın (başlık, sekmeler, düğmeler) ekran üstünden uzaklığı
 const KART_ORANI := 1.06        # kart yüksekliği / genişliği
 const KAYMA_ESIGI := 18.0       # parmak bundan fazla kayarsa dokunma sayılmaz
 const SURTUNME := 2.6           # momentum yavaşlaması (büyük = çabuk durur)
@@ -36,7 +39,7 @@ var _kartlar: Array[Control] = []     # OYUNLAR sırasıyla (gizli sekmedekiler 
 var _sekmeler: Array[Control] = []
 var _gorunen: Array[Control] = []     # seçili sekmede görünen kartlar, sırayla
 var _sekme := "hepsi"
-var _ekran := Vector2(720, 1280)
+var _ekran := Vector2(1280, 720)
 var _baslik: HBoxContainer
 var _ses_dugmesi: Control
 var _bilgi_dugmesi: Control           # ebeveyn kapısı: basılı tutunca Lisanslar ekranı
@@ -130,17 +133,17 @@ func _arka_plan_olustur() -> void:
 
 func _baslik_olustur() -> void:
 	_baslik = HBoxContainer.new()
-	_baslik.alignment = BoxContainer.ALIGNMENT_CENTER
+	_baslik.alignment = BoxContainer.ALIGNMENT_BEGIN
 	_baslik.add_theme_constant_override("separation", 14)
 	_baslik.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	_baslik.position = Vector2(0, 62)
-	_baslik.size = Vector2(_ekran.x, 72)
+	_baslik.position = Vector2(KENAR + DUGME_BOYU + 24.0, UST_BOSLUK)
+	_baslik.size = Vector2(380, _sekme_boyu().y)
 	add_child(_baslik)
 	for parca in [["Minik", Color("ff7a9a")], ["Oyunlar", Color("7b6cf6")]]:
 		var etiket := Label.new()
 		etiket.theme_type_variation = &"Baslik"
 		etiket.text = parca[0]
-		etiket.add_theme_font_size_override("font_size", 56)
+		etiket.add_theme_font_size_override("font_size", 46)
 		etiket.add_theme_constant_override("shadow_offset_y", 4)
 		etiket.add_theme_color_override("font_color", parca[1])
 		etiket.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
@@ -150,7 +153,7 @@ func _baslik_olustur() -> void:
 
 # Sağ üstte, başlıkla aynı hizada küçük ses düğmesi
 func _ses_dugmesi_olustur() -> void:
-	var boyut := 84.0
+	var boyut := DUGME_BOYU
 	_ses_dugmesi = SesDugmesi.new()
 	add_child(_ses_dugmesi)
 	_ses_dugmesi.kur(boyut)
@@ -159,7 +162,7 @@ func _ses_dugmesi_olustur() -> void:
 
 # Sol üstte küçük, soluk bilgi düğmesi: çocuk kazara açmasın diye 3 sn basılı tutmak gerekir
 func _bilgi_dugmesi_olustur() -> void:
-	var boyut := 84.0
+	var boyut := DUGME_BOYU
 	_bilgi_dugmesi = BasiliDugme.new()
 	_bilgi_dugmesi.hold_time = EBEVEYN_BEKLEME
 	_bilgi_dugmesi.icon = BILGI_SIMGESI
@@ -171,14 +174,14 @@ func _bilgi_dugmesi_olustur() -> void:
 	_bilgi_ipucu = Label.new()
 	_bilgi_ipucu.theme_type_variation = &"Rozet"
 	_bilgi_ipucu.text = "Ebeveynler için: 3 saniye basılı tutun"
-	_bilgi_ipucu.add_theme_font_size_override("font_size", 26)
+	_bilgi_ipucu.add_theme_font_size_override("font_size", 24)
 	_bilgi_ipucu.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	_bilgi_ipucu.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	_bilgi_ipucu.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	_bilgi_ipucu.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	# İki düğmenin arasında, başlığın yerinde görünür
-	_bilgi_ipucu.position = Vector2(KENAR + boyut + 12.0, _baslik.position.y)
-	_bilgi_ipucu.size = Vector2(_ekran.x - 2.0 * (KENAR + boyut + 12.0), _baslik.size.y)
+	_bilgi_ipucu.position = _baslik.position
+	_bilgi_ipucu.size = _baslik.size
 	_bilgi_ipucu.modulate.a = 0.0
 	add_child(_bilgi_ipucu)
 
@@ -209,17 +212,15 @@ func _lisanslar_kapandi() -> void:
 
 
 func _sekme_boyu() -> Vector2:
-	var sayi := OyunListesi.KATEGORILER.size()
-	var aralik := 12.0
-	var genislik := minf((_ekran.x - 2.0 * KENAR - aralik * (sayi - 1)) / sayi, 140.0)
-	return Vector2(genislik, roundf(genislik * 1.08))
+	return Vector2(104.0, 112.0)
 
 
 func _sekmeleri_olustur() -> void:
 	var boyut := _sekme_boyu()
 	var sayi := OyunListesi.KATEGORILER.size()
 	var aralik := 12.0
-	var sol := (_ekran.x - boyut.x * sayi - aralik * (sayi - 1)) / 2.0
+	# Sekmeler ses düğmesinin soluna dayanır
+	var sol := _ekran.x - KENAR - DUGME_BOYU - 24.0 - boyut.x * sayi - aralik * (sayi - 1)
 	for i in sayi:
 		var sekme: Control = Sekme.new()
 		add_child(sekme)
@@ -229,11 +230,11 @@ func _sekmeleri_olustur() -> void:
 
 
 func _sekme_ust() -> float:
-	return 150.0
+	return UST_BOSLUK
 
 
 func _alan_ust() -> float:
-	return _sekme_ust() + _sekme_boyu().y + 12.0
+	return _sekme_ust() + _sekme_boyu().y + 14.0
 
 
 func _alani_olustur() -> void:
@@ -267,23 +268,23 @@ func _alani_olustur() -> void:
 
 
 func _kart_boyu() -> Vector2:
-	var genislik := minf((_ekran.x - 2.0 * KENAR - ARALIK) / 2.0, EN_GENIS_KART)
+	var genislik := minf((_ekran.x - 2.0 * KENAR - ARALIK * (SUTUN - 1)) / SUTUN, EN_GENIS_KART)
 	return Vector2(roundf(genislik), roundf(genislik * KART_ORANI))
 
 
-# Seçili sekmenin kartlarını 2 sütuna dizer, kaydırma sınırını hesaplar
+# Seçili sekmenin kartlarını SUTUN sütuna dizer, kaydırma sınırını hesaplar
 func _yerlestir() -> void:
 	var boyut := _kart_boyu()
-	var sol := (_ekran.x - boyut.x * 2.0 - ARALIK) / 2.0
+	var sol := (_ekran.x - boyut.x * SUTUN - ARALIK * (SUTUN - 1)) / 2.0
 	var ust_bosluk := 14.0
 	_gorunen.clear()
 	for kart in _kartlar:
 		kart.visible = OyunListesi.kategoride_mi(kart.oyun, _sekme)
 		if kart.visible:
 			var j := _gorunen.size()
-			kart.position = Vector2(sol + (j % 2) * (boyut.x + ARALIK), ust_bosluk + floori(j / 2.0) * (boyut.y + ARALIK))
+			kart.position = Vector2(sol + (j % SUTUN) * (boyut.x + ARALIK), ust_bosluk + floori(float(j) / SUTUN) * (boyut.y + ARALIK))
 			_gorunen.append(kart)
-	var satir := ceili(_gorunen.size() / 2.0)
+	var satir := ceili(float(_gorunen.size()) / SUTUN)
 	var yukseklik := ust_bosluk + satir * (boyut.y + ARALIK) - ARALIK + 60.0
 	_en_fazla = maxf(0.0, yukseklik - _alan.size.y)
 
