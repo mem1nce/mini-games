@@ -75,6 +75,7 @@ func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_ekran = get_viewport_rect().size
 	get_viewport().size_changed.connect(_boyut_degisti)
+	EkranYardimcisi.ekran_degisti.connect(_boyut_degisti)
 	for hata in OyunListesi.dogrula():
 		push_error("Ana menü listesi: " + hata)
 	SesYoneticisi.muzik("menu", self)
@@ -229,6 +230,12 @@ func _sekmeleri_olustur() -> void:
 		sekme.kur(OyunListesi.KATEGORILER[i], boyut)
 		sekme.position = Vector2(sol + i * (boyut.x + aralik), _sekme_ust())
 		_sekmeler.append(sekme)
+	# Dar kalan ekranda (ör. çentikli 16:9 telefon) başlık sekmelerin altına girmesin: sığacak kadar küçülür
+	var bosluk := sol - 16.0 - _baslik.position.x
+	var genislik := _baslik.get_combined_minimum_size().x
+	if bosluk > 0.0 and genislik > bosluk:
+		_baslik.pivot_offset = Vector2(0, _baslik.size.y / 2.0)
+		_baslik.scale = Vector2.ONE * (bosluk / genislik)
 
 
 func _sekme_ust() -> float:
@@ -270,8 +277,13 @@ func _alani_olustur() -> void:
 
 
 func _kart_boyu() -> Vector2:
-	var genislik := minf((_ekran.x - 2.0 * KENAR - ARALIK * (SUTUN - 1)) / SUTUN, EN_GENIS_KART)
+	var genislik := minf((_ekran.x - 2.0 * _kenar() - ARALIK * (SUTUN - 1)) / SUTUN, EN_GENIS_KART)
 	return Vector2(roundf(genislik), roundf(genislik * KART_ORANI))
+
+
+# Ekranın yan boşluğu: çentikli telefonda güvenli alan kadar büyür (iki yanda aynı: ızgara ortada kalır)
+func _kenar() -> float:
+	return maxf(EkranYardimcisi.kenar_payi(SIDE_LEFT, KENAR), EkranYardimcisi.kenar_payi(SIDE_RIGHT, KENAR))
 
 
 # Kart ızgarasının ekran kenarına uzaklığı; geniş ekranda ızgara ortalanır, üst satır da bu kenarlara hizalanır
