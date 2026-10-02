@@ -24,6 +24,8 @@ enum State { START, BANNER, PLAYING, CELEBRATING, RETRY }
 @export var follow_sharpness: float = 9.0
 ## Kirpinin en yüksek yürüme hızı (piksel/sn).
 @export var player_max_speed: float = 1300.0
+## Kirpinin ekrandaki boyutu (yatay ekranda ağaç kısa, kirpi biraz küçük olur).
+@export var player_scale: float = 0.8
 
 @export_group("Düşen nesneler")
 ## Nesnenin dalda bekleme süresi (uyarı dahil, sn).
@@ -31,9 +33,12 @@ enum State { START, BANNER, PLAYING, CELEBRATING, RETRY }
 ## Düşmeden önce dalın sallandığı süre (sn).
 @export var warning_time: float = 0.7
 ## Düşen nesnelerin ekrandaki boyutu (piksel).
-@export var item_size: float = 84.0
+@export var item_size: float = 76.0
 ## Aynı anda ekranda en fazla kaç nesne olsun.
 @export var max_items: int = 5
+
+## Yatay ekranda ağaç kısa olduğu için düşme hızı bölüm verisinin bu kadarı olur.
+@export var fall_speed_scale: float = 0.8
 
 @export_group("Güçlendirmeler")
 @export var power_duration: float = 6.0
@@ -49,7 +54,7 @@ enum State { START, BANNER, PLAYING, CELEBRATING, RETRY }
 ## Kaç meyvede bir kombo efekti çıksın.
 @export var combo_step: int = 5
 ## Zemin çizgisinin ekranın altından yüksekliği.
-@export var ground_margin: float = 110.0
+@export var ground_margin: float = 70.0
 @export var celebration_time: float = 2.2
 @export var banner_time: float = 1.0
 
@@ -73,8 +78,8 @@ var combo: int = 0
 var active_power: String = ""
 var power_left: float = 0.0
 var run_id: int = 0              # ekran değişince eski beklemeler devam etmesin
-var ground_y: float = 1170.0
-var screen := Vector2(720, 1280)
+var ground_y: float = 650.0
+var screen := Vector2(1280, 720)
 var _textures := {}
 
 
@@ -91,8 +96,9 @@ func _ready() -> void:
 
 	player.position = Vector2(screen.x / 2.0, ground_y)
 	player.target_x = screen.x / 2.0
-	player.min_x = 115.0
-	player.max_x = screen.x - 115.0
+	player.scale = Vector2.ONE * player_scale
+	player.min_x = 80.0
+	player.max_x = screen.x - 80.0
 	player.follow_sharpness = follow_sharpness
 	player.max_speed = player_max_speed
 	effects.world = world
@@ -264,7 +270,7 @@ func _on_spawn_requested(kind: String, windy: bool) -> void:
 	items.add_child(item)
 	var size := item_size * (1.2 if category == "guc" else 1.0)
 	item.setup(kind, category, _item_texture(kind), size, tree_view.branches[branch], tree_view.tip_offset(branch),
-		hang_time, warning_time, levels.fall_speed(), ground_y, windy, shadows, _texture(G + "golge.svg"))
+		hang_time, warning_time, levels.fall_speed() * fall_speed_scale, ground_y, windy, shadows, _texture(G + "golge.svg"))
 	item.branch_index = branch
 	item.color = Data.FRUIT_COLORS.get(kind, Color("b8b8c8"))
 	if kind == "curuk_elma":
@@ -352,8 +358,8 @@ func _on_catch(item: Item) -> void:
 				SesYoneticisi.efekt("pop", -3.0, 1.0 + minf(combo, 8) * 0.025)
 				if combo % combo_step == 0:
 					SesYoneticisi.efekt("basari_parlak", -2.0)
-					effects.sparkle_ring(player.position + Vector2(0, -130))
-					effects.popup_text(player.position + Vector2(0, -350), "x%d" % (floori(float(combo) / combo_step) + 1))
+					effects.sparkle_ring(player.position + Vector2(0, -105))
+					effects.popup_text(player.position + Vector2(0, -250), "x%d" % (floori(float(combo) / combo_step) + 1))
 				levels.add_catch()
 			else:
 				# Hedef olmayan meyve cezasız seker

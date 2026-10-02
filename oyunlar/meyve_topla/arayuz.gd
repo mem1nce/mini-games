@@ -128,13 +128,13 @@ func _ready() -> void:
 
 	_back = HoldButton.new()
 	_back.completed.connect(_on_back_completed)
-	_place(_back, Vector4(0, 0, 0, 0), Vector4(28, 44, 138, 154))
+	_place(_back, Vector4(0, 0, 0, 0), Vector4(40, 24, 136, 120))
 	_back.pivot_offset = _back.size / 2.0
 	_pause = _round_button(TEX_PAUSE)
-	_place(_pause, Vector4(1, 0, 1, 0), Vector4(-138, 44, -28, 154))
+	_place(_pause, Vector4(1, 0, 1, 0), Vector4(-136, 24, -40, 120))
 
 	_bar = Bar.new()
-	_place(_bar, Vector4(0, 0, 1, 0), Vector4(156, 62, -156, 138))
+	_place(_bar, Vector4(0, 0, 1, 0), Vector4(160, 42, -400, 118))
 	_bar_ring = _texture_rect(TEX_GLOW)
 	_bar_ring.position = Vector2(-34, -34)
 	_bar_ring.size = Vector2(144, 144)
@@ -152,10 +152,10 @@ func _ready() -> void:
 	_hearts_box.alignment = BoxContainer.ALIGNMENT_CENTER
 	_hearts_box.add_theme_constant_override("separation", 10)
 	_hearts_box.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	_place(_hearts_box, Vector4(0.5, 0, 0.5, 0), Vector4(-110, 148, 110, 202))
+	_place(_hearts_box, Vector4(1, 0, 1, 0), Vector4(-380, 42, -156, 118))
 
 	_power = PowerRing.new()
-	_place(_power, Vector4(1, 0, 1, 0), Vector4(-130, 172, -30, 272))
+	_place(_power, Vector4(1, 0, 1, 0), Vector4(-136, 134, -40, 230))
 	_power_icon = _texture_rect(null)
 	_power.add_child(_power_icon)
 	_place(_power_icon, Vector4(0, 0, 1, 1), Vector4(22, 22, -22, -22))
@@ -312,7 +312,7 @@ func _build_start() -> void:
 	title.add_theme_constant_override("separation", 0)
 	title.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_start.add_child(title)
-	_place(title, Vector4(0, 0, 1, 0), Vector4(0, 60, 0, 190))
+	_place(title, Vector4(0, 0, 1, 0), Vector4(0, 36, 0, 166))
 	var letters := _rainbow_word(title, tr("Meyve Topla"), 96)
 	# Başlık harfleri sırayla dalgalansın
 	for i in letters.size():
@@ -333,12 +333,12 @@ func _build_start() -> void:
 	_badge.add_theme_stylebox_override("normal", badge_style)
 	_badge.add_theme_color_override("font_color", Color("ff7f50"))
 	_start.add_child(_badge)
-	_place(_badge, Vector4(0.5, 0.5, 0.5, 0.5), Vector4(-150, -145, 150, -75))
+	_place(_badge, Vector4(0.5, 0.5, 0.5, 0.5), Vector4(-150, -160, 150, -90))
 
 	_tap_label = _label(56, 20)
 	_tap_label.text = "Başlamak için dokun"
 	_start.add_child(_tap_label)
-	_place(_tap_label, Vector4(0, 0.5, 1, 0.5), Vector4(20, -65, -20, 5))
+	_place(_tap_label, Vector4(0, 0.5, 1, 0.5), Vector4(20, -70, -20, 0))
 	var pulse := _tap_label.create_tween().set_loops()
 	pulse.tween_property(_tap_label, "modulate:a", 0.45, 0.7).set_trans(Tween.TRANS_SINE)
 	pulse.tween_property(_tap_label, "modulate:a", 1.0, 0.7).set_trans(Tween.TRANS_SINE)
@@ -532,23 +532,23 @@ func hide_power() -> void:
 # --- Ekran yazıları ve katmanlar ---
 
 func _build_overlays() -> void:
-	_banner = _label(112, 28)
-	_place(_banner, Vector4(0, 0.5, 1, 0.5), Vector4(0, -320, 0, -170))
+	_banner = _label(96, 24)
+	_place(_banner, Vector4(0, 0.5, 1, 0.5), Vector4(0, -190, 0, -40))
 	_banner.visible = false
 
 	_cheer = HBoxContainer.new()
 	_cheer.alignment = BoxContainer.ALIGNMENT_CENTER
 	_cheer.add_theme_constant_override("separation", 0)
 	_cheer.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	_place(_cheer, Vector4(0, 0.5, 1, 0.5), Vector4(0, -340, 0, -190))
+	_place(_cheer, Vector4(0, 0.5, 1, 0.5), Vector4(0, -200, 0, -60))
 
 	_retry = _texture_rect(TEX_RETRY)
-	_place(_retry, Vector4(0.5, 0.5, 0.5, 0.5), Vector4(-110, -260, 110, -40))
+	_place(_retry, Vector4(0.5, 0.5, 0.5, 0.5), Vector4(-100, -230, 100, -30))
 	_retry.visible = false
 
 	_announce = Control.new()
 	_announce.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	_place(_announce, Vector4(0.5, 0.5, 0.5, 0.5), Vector4(-160, -200, 160, 120))
+	_place(_announce, Vector4(0.5, 0.5, 0.5, 0.5), Vector4(-120, -190, 120, 50))
 	var glow := _texture_rect(TEX_GLOW)
 	_announce.add_child(glow)
 	glow.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
@@ -567,7 +567,7 @@ func _build_overlays() -> void:
 	dim.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	_play_button = _texture_rect(TEX_PLAY)
 	_pause_layer.add_child(_play_button)
-	_place(_play_button, Vector4(0.5, 0.5, 0.5, 0.5), Vector4(-140, -140, 140, 140))
+	_place(_play_button, Vector4(0.5, 0.5, 0.5, 0.5), Vector4(-120, -120, 120, 120))
 	_pause_layer.visible = false
 	# Geri düğmesi duraklatma katmanının üstünde kalsın
 	move_child(_back, -1)
@@ -611,7 +611,7 @@ func show_banner(text: String, duration: float = 1.0) -> void:
 func show_cheer(word: String, duration: float = 2.0) -> void:
 	_cheer.visible = true
 	_cheer.modulate.a = 1.0
-	var letters := _rainbow_word(_cheer, word, 112)
+	var letters := _rainbow_word(_cheer, word, 100)
 	for i in letters.size():
 		var letter := letters[i]
 		letter.scale = Vector2.ZERO

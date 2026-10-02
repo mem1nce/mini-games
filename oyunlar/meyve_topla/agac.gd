@@ -3,13 +3,17 @@ extends Node2D
 # Dallar taçtan önce çizilir; üst uçları tacın içinde kalır, yapraklı alt kısımları sarkar.
 
 const TEX_TRUNK: Texture2D = preload("res://oyunlar/meyve_topla/gorseller/agac_govde.svg")
-const TEX_CROWN: Texture2D = preload("res://oyunlar/meyve_topla/gorseller/agac_tac.svg")
+const TEX_CROWN: Texture2D = preload("res://oyunlar/meyve_topla/gorseller/agac_tac_genis.svg")
 const TEX_BRANCH: Texture2D = preload("res://oyunlar/meyve_topla/gorseller/dal.svg")
 
-const BRANCH_X := [0.1, 0.265, 0.425, 0.585, 0.745, 0.905]      # ekran genişliğine oranla
-const CROWN_EDGE := [463.0, 476.0, 473.0, 494.0, 483.0, 450.0]  # o noktada tacın alt kenarı (SVG'de)
-const CROWN_TOP := -70.0
-const BRANCH_SCALE := 0.9
+# Yatay ekran: ağaç tacı ekranın üstünde uzanan geniş bir yaprak bandıdır, iki yan gövdeye yaslanır.
+# Dallar tacın alt kabarıklarından (SVG'de 80 + 160 * k) sarkar.
+const CROWN_SCALE_Y := 0.7
+const CROWN_BUMP_X := [240.0, 400.0, 560.0, 720.0, 880.0, 1040.0, 1200.0, 1360.0]   # SVG'de alt kabarık merkezleri
+const CROWN_BUMP_Y := 182.0                                                           # dalın taca bağlandığı y (SVG'de)
+const TRUNK_X := [0.045, 0.955]
+const TRUNK_WIDTH := 0.55
+const BRANCH_SCALE := 0.62
 const BRANCH_SVG_WIDTH := 180.0
 const BRANCH_PIVOT := Vector2(90, 0)     # SVG'de dalın taca bağlandığı nokta
 const BRANCH_TIP := Vector2(92, 128)     # SVG'de meyvenin asıldığı uç
@@ -23,22 +27,26 @@ var _time := 0.0
 
 
 func build(screen: Vector2, ground_y: float) -> void:
-	# Gövde: alt ucu zeminde, üst ucu tacın içinde
-	var trunk := Sprite2D.new()
-	trunk.texture = TEX_TRUNK
-	var trunk_height := float(TEX_TRUNK.get_height())
-	var scale_y := maxf(0.8, (ground_y + 10.0 - 120.0) / trunk_height)
-	trunk.scale = Vector2(0.8, scale_y)
-	trunk.position = Vector2(screen.x / 2.0, ground_y + 10.0 - trunk_height * scale_y / 2.0)
-	add_child(trunk)
+	var crown_width := TEX_CROWN.get_width()
+	var crown_scale := Vector2(screen.x * 1.04 / crown_width, CROWN_SCALE_Y)
+	var crown_left := (screen.x - crown_width * crown_scale.x) / 2.0
 
-	var crown_scale := maxf(1.0, screen.x * 1.25 / TEX_CROWN.get_width())
+	# Yan gövdeler: üstleri tacın içinde, altları zeminde (ekranın kenarında yarım görünür)
+	var trunk_height := float(TEX_TRUNK.get_height())
+	var trunk_top := 60.0
+	var scale_y := (ground_y + 10.0 - trunk_top) / trunk_height
+	for x in TRUNK_X:
+		var trunk := Sprite2D.new()
+		trunk.texture = TEX_TRUNK
+		trunk.scale = Vector2(TRUNK_WIDTH, scale_y)
+		trunk.position = Vector2(screen.x * x, trunk_top + trunk_height * scale_y / 2.0)
+		add_child(trunk)
 
 	# Dallar
 	var pixel_scale := BRANCH_SVG_WIDTH / TEX_BRANCH.get_width()   # doku pikseli -> SVG birimi
-	for i in BRANCH_X.size():
+	for i in CROWN_BUMP_X.size():
 		var branch := Node2D.new()
-		branch.position = Vector2(screen.x * BRANCH_X[i], CROWN_TOP + (CROWN_EDGE[i] - 30.0) * crown_scale)
+		branch.position = Vector2(crown_left + CROWN_BUMP_X[i] * crown_scale.x, CROWN_BUMP_Y * crown_scale.y)
 		var sprite := Sprite2D.new()
 		sprite.texture = TEX_BRANCH
 		sprite.centered = false
@@ -56,9 +64,9 @@ func build(screen: Vector2, ground_y: float) -> void:
 	# Taç en üstte
 	_crown = Sprite2D.new()
 	_crown.texture = TEX_CROWN
-	_crown.scale = Vector2.ONE * crown_scale
-	_crown_scale = _crown.scale
-	_crown.position = Vector2(screen.x / 2.0, CROWN_TOP + TEX_CROWN.get_height() * crown_scale / 2.0)
+	_crown.scale = crown_scale
+	_crown_scale = crown_scale
+	_crown.position = Vector2(screen.x / 2.0, TEX_CROWN.get_height() * crown_scale.y / 2.0)
 	add_child(_crown)
 
 

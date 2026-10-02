@@ -2,6 +2,10 @@ extends Node2D
 # Katmanlı arka plan: gökyüzü, yıldızlar, güneş ve ay, bulutlar, uzak ve yakın tepeler, çimen,
 # çiçekler, ateşböcekleri. Her zaman dilimi bir renk paleti; bölüm değişince palet yumuşakça karışır.
 
+const SUN_WIDTH := 150.0
+const CLOUD_Y_MIN := 190.0     # bulutlar tacın altındaki gökyüzü bandında gezer
+const CLOUD_Y_MAX := 330.0
+
 const TEX_SUN: Texture2D = preload("res://oyunlar/meyve_topla/gorseller/gunes.svg")
 const TEX_MOON: Texture2D = preload("res://oyunlar/meyve_topla/gorseller/ay.svg")
 const TEX_CLOUD: Texture2D = preload("res://oyunlar/meyve_topla/gorseller/bulut.svg")
@@ -45,8 +49,8 @@ var soft_tinted: Array = []          # yarı yarıya renklenenler (kirpi okunakl
 var phase_name: String = ""
 var _current: Dictionary = {}
 var _phase_tween: Tween
-var _screen := Vector2(720, 1280)
-var _ground_y := 1170.0
+var _screen := Vector2(1280, 720)
+var _ground_y := 640.0
 var _time := 0.0
 
 var _sky_gradient := Gradient.new()
@@ -85,37 +89,38 @@ func build(screen: Vector2, ground_y: float, front_layer: Node2D) -> void:
 	# Yıldızlar (gece)
 	for i in 30:
 		var star := _sprite(TEX_STAR, randf_range(10.0, 22.0))
-		star.position = Vector2(randf_range(10.0, screen.x - 10.0), randf_range(380.0, ground_y - 380.0))
+		star.position = Vector2(randf_range(10.0, screen.x - 10.0), randf_range(30.0, ground_y - 330.0))
 		star.set_meta("phase", randf() * TAU)
 		add_child(star)
 		_stars.append(star)
 
-	_sun = _sprite(TEX_SUN, 190.0)
+	_sun = _sprite(TEX_SUN, SUN_WIDTH)
 	_sun_scale = _sun.scale
 	add_child(_sun)
-	_moon = _sprite(TEX_MOON, 170.0)
+	_moon = _sprite(TEX_MOON, 140.0)
 	add_child(_moon)
 
 	# Bulutlar
 	for i in 5:
-		var cloud := _sprite(TEX_CLOUD, randf_range(150.0, 260.0))
-		cloud.position = Vector2(randf_range(0.0, screen.x), randf_range(420.0, 700.0))
+		var cloud := _sprite(TEX_CLOUD, randf_range(120.0, 210.0))
+		cloud.position = Vector2(randf_range(0.0, screen.x), randf_range(CLOUD_Y_MIN, CLOUD_Y_MAX))
 		cloud.set_meta("speed", randf_range(8.0, 18.0))
 		add_child(cloud)
 		_clouds.append(cloud)
 
 	# Tepeler, çimen ve çiçekler (alt kenarları zemine göre yerleşir)
-	var wide := maxf(1.0, screen.x * 1.2 / TEX_FAR.get_width())
-	_far = _layer(TEX_FAR, wide, ground_y - 20.0)
-	_near = _layer(TEX_NEAR, wide, ground_y + 40.0)
-	_flowers = _layer(TEX_FLOWERS, wide, ground_y - 50.0)
-	_grass = _layer(TEX_GRASS, wide, ground_y + 200.0)
+	# Yatay ekranda katmanlar yatayda genişler, dikeyde basık kalır (tepeler ekranı kaplamasın)
+	var wide := maxf(1.0, screen.x * 1.05 / TEX_FAR.get_width())
+	_far = _layer(TEX_FAR, Vector2(wide, 0.5), ground_y - 40.0)
+	_near = _layer(TEX_NEAR, Vector2(wide, 0.5), ground_y + 20.0)
+	_flowers = _layer(TEX_FLOWERS, Vector2(wide, 0.7), ground_y - 40.0)
+	_grass = _layer(TEX_GRASS, Vector2(wide, 0.6), ground_y + 100.0)
 	move_child(_flowers, -1)
 
 	# Ateşböcekleri: tepelerin ve ağacın önünde uçuşsun diye ön katmanda
 	for i in 14:
 		var firefly := _sprite(TEX_FIREFLY, randf_range(26.0, 40.0))
-		firefly.set_meta("home", Vector2(randf_range(30.0, screen.x - 30.0), randf_range(ground_y - 720.0, ground_y - 60.0)))
+		firefly.set_meta("home", Vector2(randf_range(30.0, screen.x - 30.0), randf_range(ground_y - 400.0, ground_y - 40.0)))
 		firefly.set_meta("phase", randf() * TAU)
 		firefly.set_meta("speed", randf_range(0.5, 1.1))
 		front_layer.add_child(firefly)
@@ -132,11 +137,11 @@ func _sprite(texture: Texture2D, width: float) -> Sprite2D:
 
 
 # Alt kenarı bottom_y'de olan, yatayda ortalı katman
-func _layer(texture: Texture2D, layer_scale: float, bottom_y: float) -> Sprite2D:
+func _layer(texture: Texture2D, layer_scale: Vector2, bottom_y: float) -> Sprite2D:
 	var sprite := Sprite2D.new()
 	sprite.texture = texture
-	sprite.scale = Vector2.ONE * layer_scale
-	sprite.position = Vector2(_screen.x / 2.0, bottom_y - texture.get_height() * layer_scale / 2.0)
+	sprite.scale = layer_scale
+	sprite.position = Vector2(_screen.x / 2.0, bottom_y - texture.get_height() * layer_scale.y / 2.0)
 	add_child(sprite)
 	return sprite
 
@@ -192,7 +197,7 @@ func _apply(palette: Dictionary) -> void:
 	var sun_pos: Vector2 = palette["sun_pos"]
 	_sun.position = Vector2(_screen.x * sun_pos.x, _screen.y * sun_pos.y)
 	_sun.modulate = Color(palette["sun_tint"], palette["sun"])
-	_sun_scale = Vector2.ONE * 190.0 / TEX_SUN.get_width() * float(palette["sun_size"])
+	_sun_scale = Vector2.ONE * SUN_WIDTH / TEX_SUN.get_width() * float(palette["sun_size"])
 	var moon_pos: Vector2 = palette["moon_pos"]
 	_moon.position = Vector2(_screen.x * moon_pos.x, _screen.y * moon_pos.y)
 	_moon.modulate.a = palette["moon"]
@@ -206,7 +211,7 @@ func _process(delta: float) -> void:
 		cloud.position.x -= float(cloud.get_meta("speed")) * delta
 		var half := cloud.texture.get_width() * cloud.scale.x / 2.0
 		if cloud.position.x < -half:
-			cloud.position = Vector2(_screen.x + half, randf_range(420.0, 700.0))
+			cloud.position = Vector2(_screen.x + half, randf_range(CLOUD_Y_MIN, CLOUD_Y_MAX))
 	# Yıldızlar göz kırpar
 	var stars_alpha: float = _current["stars"]
 	for star in _stars:
