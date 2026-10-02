@@ -89,6 +89,8 @@ var feedback_tweens: Dictionary = {}  # düğüm -> sallanma/parlama tween'i
 func _ready() -> void:
 	SesYoneticisi.muzik("dondurmaci", self)
 	back_button = HoldButton.replace(back_panel)
+	# Çentikli telefonlarda geri düğmesi ve yıldız sayacı birlikte güvenli alana kayar (üst üste binmesinler)
+	EkranYardimcisi.guvenliye_it_grup([back_button, $StarBox])
 	back_button.completed.connect(_on_back_completed)
 	_create_flavor_boxes()
 	for button: Panel in container_buttons.values():

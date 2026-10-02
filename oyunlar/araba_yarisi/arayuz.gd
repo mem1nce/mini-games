@@ -180,7 +180,7 @@ func _make_back() -> void:
 	back = HoldButton.new()
 	back.size = Vector2(104, 104)
 	back.hold_time = 0.6
-	back.position = Vector2(40, 26)
+	back.position = Vector2(EkranYardimcisi.kenar_payi(SIDE_LEFT, 40.0), 26)
 	back.completed.connect(back_completed.emit)
 	add_child(back)
 
@@ -188,12 +188,15 @@ func _make_back() -> void:
 func _layout() -> void:
 	var w := size.x
 	var h := size.y
-	back.position = Vector2(40, 26)
-	_pause.position = Vector2(w - 144, 26)
-	_star_panel.position = Vector2(w - 144 - 24 - 170, 36)
+	# Çentikli telefonlarda üst çubuk iki yandan güvenli alan kadar içeri girer
+	var left := EkranYardimcisi.kenar_payi(SIDE_LEFT, 40.0)
+	var right := EkranYardimcisi.kenar_payi(SIDE_RIGHT, 40.0)
+	back.position = Vector2(left, 26)
+	_pause.position = Vector2(w - right - 104, 26)
+	_star_panel.position = Vector2(_pause.position.x - 24 - 170, 36)
 	_star_panel.size = Vector2(170, 84)
-	_bar.position = Vector2(168, 36)
-	_bar.size = Vector2(maxf(200.0, _star_panel.position.x - 24.0 - 168.0), 84)
+	_bar.position = Vector2(left + 128, 36)
+	_bar.size = Vector2(maxf(200.0, _star_panel.position.x - 24.0 - _bar.position.x), 84)
 	_lights.position = Vector2(w * 0.5 - 150.0, 170)
 	_hint.position = Vector2(w * 0.62, h * 0.52)
 	_hint_ring.position = _hint.position + Vector2(60, 10)

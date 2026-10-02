@@ -127,6 +127,8 @@ func _arayuzu_kur() -> void:
 	_geri.hold_time = 0.6
 	_geri.completed.connect(_cikis)
 	_ui.add_child(_geri)
+	# Çentikli telefonlarda sağ üstteki simgeler çentiğin altında kalmasın (aralarındaki düzen bozulmadan)
+	EkranYardimcisi.guvenliye_it_grup([_akvaryum_simge, _duraklat])
 
 
 func _yuvarlak_dugme(simge: Texture2D, cap: float) -> Control:

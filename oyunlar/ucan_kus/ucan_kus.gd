@@ -840,6 +840,8 @@ func _create_star_counter() -> void:
 	row.offset_bottom = row.offset_top + 56.0
 	star_icon = row.get_child(0)
 	star_label = row.get_child(1)
+	# Çentikli telefonlarda kalpler ve yıldız sayacı çentiğin altında kalmasın
+	EkranYardimcisi.guvenliye_it_grup([hearts_box, row])
 	var result_row := _star_row(84.0, 80)
 	result_box.add_child(result_row)
 	result_box.move_child(result_row, result_label.get_index() + 1)

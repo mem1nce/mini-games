@@ -90,6 +90,7 @@ func _ready() -> void:
 	_yeniden = _yuvarlak_dugme(load(G + "yeniden.svg"), 104.0)
 	_yeniden.position = Vector2(_ekran.x - 140.0, 24.0)
 	_ui.add_child(_yeniden)
+	EkranYardimcisi.guvenliye_it(_yeniden)
 	_hareket = TextureRect.new()
 	_hareket.texture = load(G + "hareket.svg")
 	_hareket.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
@@ -199,15 +200,19 @@ func _hareket_yerlestir() -> void:
 	var y: float = ray_y + (-1.0 if yukari else 1.0) * (izgara.hucre * 0.55 + 82.0)
 	y = clampf(y, 225.0, _ekran.y - 95.0)
 	_hareket.position = Vector2(minf(150.0, izgara.koken.x - 110.0) - 75.0, y - 75.0)
+	EkranYardimcisi.guvenliye_it(_hareket)
 
 
 func _yasak_alanlar() -> Array:
 	var h: float = izgara.hucre
+	var bosluk: Dictionary = EkranYardimcisi.guvenli_bosluklar()      # köşe düğmeleri çentikten içeri kayar
+	var sol: float = 170.0 + float(bosluk["sol"])
+	var sag: float = 170.0 + float(bosluk["sag"])
 	var yasak: Array = [
 		izgara.alan().grow(30.0),
 		Rect2(0, izgara.giris_noktasi().y - h * 0.55, izgara.koken.x + 10.0, h * 1.1),
 		_hareket.get_rect().grow(16.0),
-		Rect2(0, 0, 170, 150), Rect2(_ekran.x - 170, 0, 170, 150),
+		Rect2(0, 0, sol, 150), Rect2(_ekran.x - sag, 0, sag, 150),
 	]
 	var ist: Vector2 = izgara.istasyon_noktasi()
 	var yon: Vector2 = Vector2(Baglanti.ADIM[izgara.bolum["cikis_yonu"]])
