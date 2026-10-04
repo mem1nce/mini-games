@@ -1,16 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
-  <!-- Minik Oyunlar simgesinin arka planı (Android uyarlanabilir simgesi için tam kare) -->
+  <!-- Bouncy Zoo simgesinin arka planı (Android uyarlanabilir simgesi, tam kare). Üretici: ortak/simge/simge_uret.py -->
   <defs>
-    <linearGradient id="zemin" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#FFE1EE"/>
-      <stop offset="0.5" stop-color="#E7E4FF"/>
-      <stop offset="1" stop-color="#D4F4E7"/>
-    </linearGradient>
-    <radialGradient id="isik" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.85"/>
-      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    <radialGradient id="gok" cx="0.5" cy="0.42" r="0.75">
+      <stop offset="0" stop-color="#FFF7D6"/>
+      <stop offset="0.35" stop-color="#BFEBFF"/>
+      <stop offset="1" stop-color="#3FA9F0"/>
     </radialGradient>
+    <linearGradient id="cimen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8EE06A"/>
+      <stop offset="1" stop-color="#3FA53F"/>
+    </linearGradient>
   </defs>
-  <rect width="512" height="512" fill="url(#zemin)"/>
-  <circle cx="256" cy="262" r="190" fill="url(#isik)"/>
+  <rect width="512" height="512" fill="url(#gok)"/>
+  <g fill="#FFFFFF" opacity="0.16"><path d="M256 236 L256 -300 L400 -300 Z" transform="rotate(0 256 236)"/><path d="M256 236 L256 -300 L400 -300 Z" transform="rotate(30 256 236)"/><path d="M256 236 L256 -300 L400 -300 Z" transform="rotate(60 256 236)"/><path d="M256 236 L256 -300 L400 -300 Z" transform="rotate(90 256 236)"/><path d="M256 236 L256 -300 L400 -300 Z" transform="rotate(120 256 236)"/><path d="M256 236 L256 -300 L400 -300 Z" transform="rotate(150 256 236)"/><path d="M256 236 L256 -300 L400 -300 Z" transform="rotate(180 256 236)"/><path d="M256 236 L256 -300 L400 -300 Z" transform="rotate(210 256 236)"/><path d="M256 236 L256 -300 L400 -300 Z" transform="rotate(240 256 236)"/><path d="M256 236 L256 -300 L400 -300 Z" transform="rotate(270 256 236)"/><path d="M256 236 L256 -300 L400 -300 Z" transform="rotate(300 256 236)"/><path d="M256 236 L256 -300 L400 -300 Z" transform="rotate(330 256 236)"/></g>
+  <g fill="#FFFFFF" opacity="0.9">
+    <ellipse cx="118" cy="128" rx="34" ry="18"/><circle cx="104" cy="118" r="17"/><circle cx="128" cy="112" r="21"/>
+    <ellipse cx="398" cy="150" rx="30" ry="15"/><circle cx="388" cy="141" r="14"/><circle cx="408" cy="137" r="17"/>
+  </g>
+  <path d="M-20 420 Q130 372 256 384 Q382 372 532 420 V532 H-20 Z" fill="url(#cimen)"/>
+  <path d="M-20 420 Q130 372 256 384 Q382 372 532 420" fill="none" stroke="#FFFFFF" stroke-width="5" opacity="0.35"/>
+  <g fill="#FFE066"><circle cx="132" cy="430" r="7"/><circle cx="388" cy="436" r="7"/><circle cx="96" cy="452" r="5"/><circle cx="420" cy="458" r="5"/></g>
+
 </svg>

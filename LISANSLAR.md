@@ -48,7 +48,7 @@ bakması gerekiyor; ayrıntı "Manuel kontrol gerekenler" bölümünde).
 | `ana_menu/kartlar/` (20 SVG) | oyunların kendi SVG'lerinden birleştirildi (`ana_menu/svg_uret.py`) | bize ait | uygun |
 | `ana_menu/gorseller/` (11 SVG) | projede çizildi | bize ait | uygun |
 | `ortak/gorseller/` (2 SVG) | projede çizildi | bize ait | uygun |
-| `icon.svg`, `ortak/simge/` (2 SVG, 4 PNG) | projede çizildi (kirpi, sepet, kuş, bilye) | bize ait | uygun: Godot logosu değil |
+| `icon.svg`, `ortak/simge/` (2 SVG, 3 PNG), `.playstore/icon_512.png` | projede çizildi: trambolinde zıplayan aslan, panda ve zürafa (oyunlardaki hayvan çizimleri; `ortak/simge/simge_uret.py`) | bize ait | uygun: Godot logosu değil |
 
 Hiçbir görselde gerçek marka logosu, marka yazısı ya da ambalajı yok.
 
