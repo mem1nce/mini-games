@@ -1,6 +1,4 @@
-# Mağaza Listeleme Taslağı / Store Listing Draft
-
-> Taslaktır. Yaş derecelendirmesi, uygulama adı, destek URL’si, gizlilik URL’si ve yayıncı bilgileri mağaza başvurusundan önce doğrulanmalıdır.
+# Mağaza Listeleme / Store Listing
 
 ## Türkçe
 
@@ -16,28 +14,28 @@ Bouncy Zoo, küçük çocukların güvenle keşfedebileceği renkli ve sade mini
 
 ### Mini oyunlar ve geliştirilen beceriler
 
-| Oyun | Beceri |
-|---|---|
-| Hayvanları Besle | Eşleştirme, ince motor becerileri |
-| Boyama Kitabı | Yaratıcılık, renk ve el-göz koordinasyonu |
-| Dondurmacı | Sıralama, örüntü ve yönerge takibi |
-| Balık Tutma | Dikkat, zamanlama ve koordinasyon |
-| Sihirli Bahçe | Yaratıcı keşif ve neden-sonuç |
-| Müzik Kutusu | Dinleme, ritim ve hayvan seslerini keşfetme |
-| Meyve Topla | Dikkat, tepki ve koordinasyon |
-| Hafıza | Görsel hafıza ve eşleştirme |
-| Gölge Eşleştirme | Şekil tanıma ve eşleştirme |
-| Yol Yap | Planlama ve mekânsal düşünme |
-| Tren Rayı | Problem çözme ve sıralama |
-| Büyükten Küçüğe | Boyut karşılaştırma ve sıralama |
-| Robot Fabrikası | Parça birleştirme ve örüntü |
-| Köstebek | Tepki ve dikkat |
-| Uçan Kuş | Zamanlama ve el-göz koordinasyonu |
-| Kule Yapma | Denge, sıra ve ince motor becerileri |
-| Toplama | Sayma ve erken matematik |
-| Araba Yarışı | Yön, zamanlama ve koordinasyon |
-| Zıpla Zıpla | Ritim ve tepki |
-| Çıkarma | Erken matematik ve miktar karşılaştırma |
+| Oyun             | Beceri                                      |
+| ---------------- | ------------------------------------------- |
+| Hayvanları Besle | Eşleştirme, ince motor becerileri           |
+| Boyama Kitabı    | Yaratıcılık, renk ve el-göz koordinasyonu   |
+| Dondurmacı       | Sıralama, örüntü ve yönerge takibi          |
+| Balık Tutma      | Dikkat, zamanlama ve koordinasyon           |
+| Sihirli Bahçe    | Yaratıcı keşif ve neden-sonuç               |
+| Müzik Kutusu     | Dinleme, ritim ve hayvan seslerini keşfetme |
+| Meyve Topla      | Dikkat, tepki ve koordinasyon               |
+| Hafıza           | Görsel hafıza ve eşleştirme                 |
+| Gölge Eşleştirme | Şekil tanıma ve eşleştirme                  |
+| Yol Yap          | Planlama ve mekânsal düşünme                |
+| Tren Rayı        | Problem çözme ve sıralama                   |
+| Büyükten Küçüğe  | Boyut karşılaştırma ve sıralama             |
+| Robot Fabrikası  | Parça birleştirme ve örüntü                 |
+| Köstebek         | Tepki ve dikkat                             |
+| Uçan Kuş         | Zamanlama ve el-göz koordinasyonu           |
+| Kule Yapma       | Denge, sıra ve ince motor becerileri        |
+| Toplama          | Sayma ve erken matematik                    |
+| Araba Yarışı     | Yön, zamanlama ve koordinasyon              |
+| Zıpla Zıpla      | Ritim ve tepki                              |
+| Çıkarma          | Erken matematik ve miktar karşılaştırma     |
 
 ### Özellikler
 

@@ -1,14 +1,11 @@
-# Gizlilik Politikası Taslağı / Privacy Policy Draft
-
-> **TASLAKTIR — Hukuki inceleme yapılmadan yayınlanmamalıdır.**  
-> İletişim adresi, şirket/yayıncı adı, yürürlük tarihi, mağaza URL’si ve sorumlu tüzel kişi yayın öncesi doldurulmalıdır. Bu metin teknik denetimde görülen mevcut davranışa dayanır; gelecekte eklenecek SDK, reklam, analitik, hesap veya ağ özelliği bu metni geçersiz kılar.
+# Gizlilik Politikası / Privacy Policy
 
 ## Türkçe
 
-**Son güncelleme:** [tarih]  
+**Son güncelleme:** 10/04/2026  
 **Uygulama:** Bouncy Zoo  
-**Yayıncı:** [şirket veya kişi adı]  
-**İletişim:** [e-posta]
+**Yayıncı:** Emir Salih Gümrük  
+**İletişim:** emirsalihgumruk@gmail.com
 
 Bouncy Zoo 4–8 yaş çocuklara yönelik, çevrimdışı çalışan eğitici mini oyunlar uygulamasıdır.
 
@@ -30,16 +27,16 @@ Mevcut sürümde üçüncü taraf sunucuya veya dış web sitesine bağlantı yo
 
 ### Haklar ve iletişim
 
-Gizlilikle ilgili sorularınız için [e-posta] adresinden [yayıncı] ile iletişime geçebilirsiniz. Uygulama mevcut haliyle çevrimiçi kişisel veri işlemediğinden erişim, silme veya düzeltme talepleri için incelenecek bir sunucu hesabı bulunmaz; yerel kayıtlar cihaz ayarlarından silinebilir.
+Gizlilikle ilgili sorularınız için emirsalihgumruk@gmail.com adresinden Emir Salih Gümrük ile iletişime geçebilirsiniz. Uygulama mevcut haliyle çevrimiçi kişisel veri işlemediğinden erişim, silme veya düzeltme talepleri için incelenecek bir sunucu hesabı bulunmaz; yerel kayıtlar cihaz ayarlarından silinebilir.
 
 Bu metin Türkiye KVKK, AB GDPR, ABD COPPA, Google Play Families ve Apple Kids gereklilikleri açısından hukuki tavsiye değildir. Yayıncı, hedef ülkelerde uzman hukuk danışmanından görüş almalıdır.
 
 ## English
 
-**Last updated:** [date]  
+**Last updated:** 04/10/2026  
 **App:** Bouncy Zoo  
-**Publisher:** [company or person]  
-**Contact:** [email]
+**Publisher:** Emir Salih Gümrük  
+**Contact:** emirsalihgumruk@gmail.com
 
 Bouncy Zoo is an offline educational mini-game app for children ages 4–8.
 
@@ -61,7 +58,6 @@ The current version has no connection to third-party servers or external website
 
 ### Rights and contact
 
-For privacy questions, contact [publisher] at [email]. Because the current version does not process personal data online, there is no server account to access, correct, or delete; local records can be removed through the device’s app settings.
+For privacy questions, contact Emir Salih Gümrük at emirsalihgumruk@gmail.com. Because the current version does not process personal data online, there is no server account to access, correct, or delete; local records can be removed through the device’s app settings.
 
 This draft is not legal advice for KVKK, GDPR, COPPA, Google Play Families, or Apple Kids requirements. The publisher should obtain advice from qualified counsel in the jurisdictions where the app will be distributed.
-
