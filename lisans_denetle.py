@@ -39,7 +39,7 @@ AG_VE_IZIN = ("HTTPRequest", "HTTPClient", "WebSocketPeer", "StreamPeerTCP", "Pa
 # Çalışırken değil, geliştirirken kullanılan ve proje klasörüne yazan araçlar
 GELISTIRICI_ARACLARI = ("oyunlar/boyama_kitabi/sayfalar/derle.gd",)
 # Bu dosyalar marka adlarını ve yasak sözcükleri bilerek anar (inceleme raporu, kanıtlar, bu betik)
-RAPOR_DOSYALARI = ("LISANSLAR.md", "LISANS_KANITLARI.md", "lisans_denetle.py", "GELISTIRMELER.md")
+RAPOR_DOSYALARI = ("LISANSLAR.md", "LISANS_KANITLARI.md", "lisans_denetle.py")
 
 sorunlar = []
 

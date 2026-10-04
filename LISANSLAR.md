@@ -93,7 +93,6 @@ Projede başka yazı tipi yok. SVG'lerin hiçbirinde yazı ya da yazı tipi adı
 | Hafıza'nın İngilizce adı "Memory" | "memory®" Ravensburger'in birçok ülkede tescilli markası; şirket adında bu sözcük geçen uygulamalara itiraz etti, 2017'de Amsterdam İstinaf Mahkemesi markayı korudu | **düzeltildi**: "Find the Pairs" |
 | Gölge Eşleştirme: bir oyuncak bloğun dosya adı tescilli bir oyuncak markasıydı | yalnızca dosya adında, ekranda görünmüyordu | **düzeltildi**: `blok` |
 | Köstebek: sınıf adları tescilli bir oyun adını ("Whac-A-Mole") çağrıştırıyordu | yalnızca kod içinde | **düzeltildi**: `Mole...` |
-| `GELISTIRMELER.md` | Google Play adı ve bağlantıları (politika notları) | uygun: uygulamaya girmiyor |
 
 ## Uygulama simgesi ve oyun motoru
 
