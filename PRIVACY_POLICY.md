@@ -60,4 +60,4 @@ The current version has no connection to third-party servers or external website
 
 For privacy questions, contact Emir Salih Gümrük at emirsalihgumruk@gmail.com. Because the current version does not process personal data online, there is no server account to access, correct, or delete; local records can be removed through the device’s app settings.
 
-This draft is not legal advice for KVKK, GDPR, COPPA, Google Play Families, or Apple Kids requirements. The publisher should obtain advice from qualified counsel in the jurisdictions where the app will be distributed.
+This policy is not legal advice for KVKK, GDPR, COPPA, Google Play Families, or Apple Kids requirements. The publisher should obtain advice from qualified counsel in the jurisdictions where the app will be distributed.
