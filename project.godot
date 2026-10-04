@@ -43,6 +43,7 @@ pointing/emulate_touch_from_mouse=true
 
 [internationalization]
 
+locale/fallback="en"
 locale/translations=PackedStringArray("res://ortak/ceviri/ceviriler.tr.translation", "res://ortak/ceviri/ceviriler.en.translation")
 
 [physics]
@@ -53,4 +54,3 @@ locale/translations=PackedStringArray("res://ortak/ceviri/ceviriler.tr.translati
 
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
-textures/vram_compression/import_etc2_astc=true

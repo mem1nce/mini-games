@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://dww0jrdid0y0x"]
+[gd_scene format=3]
 
-[ext_resource type="Script" uid="uid://drews4srfwulr" path="res://ana_menu/ana_menu.gd" id="1_menu"]
+[ext_resource type="Script" path="res://ana_menu/ana_menu.gd" id="1_menu"]
 
-[node name="AnaMenu" type="Control" unique_id=1309197619]
+[node name="AnaMenu" type="Control"]
 texture_filter = 4
 layout_mode = 3
 anchors_preset = 15
