@@ -88,7 +88,7 @@ Projede başka yazı tipi yok. SVG'lerin hiçbirinde yazı ya da yazı tipi adı
 | Yer | Bulgu | Durum |
 |---|---|---|
 | Benim 11 oyunum, `ana_menu/`, `ortak/`, `project.godot` | başka oyun, film ya da marka adı yok ("flappy" dahil) | uygun |
-| Uygulama adı "Minik Oyunlar" | aramada aynı adlı bir uygulama çıkmadı, ama bu kesin kanıt değil | **kontrol edilmeli** |
+| Uygulama adı "Bouncy Zoo" (eski adı "Minik Oyunlar") | aramada birebir aynı adlı bir uygulama çıkmadı, ama bu kesin kanıt değil | **kontrol edilmeli** |
 | İngilizce uygulama adı "Tiny Games" | Google Play'de aynı adlı bir çocuk etkinlik uygulaması var ("Tiny Games - play everyday"); "Minik Games" adı da başka bir çocuk uygulamasında kullanılıyor | **düzeltildi**: "Bouncy Zoo: Kids Games 4-8". Önce düşünülen "Tumble Zoo" adıyla bir oyun olduğu için bu seçildi. Google Play'de çok benzer adlı "Bouncy Zoo Escape" adlı bir hayvan oyunu var; birebir aynı değil, ama mağaza ve marka aramasında bakılmalı (aşağıda "Manuel kontrol gerekenler" 1) |
 | Hafıza'nın İngilizce adı "Memory" | "memory®" Ravensburger'in birçok ülkede tescilli markası; şirket adında bu sözcük geçen uygulamalara itiraz etti, 2017'de Amsterdam İstinaf Mahkemesi markayı korudu | **düzeltildi**: "Find the Pairs" |
 | Gölge Eşleştirme: bir oyuncak bloğun dosya adı tescilli bir oyuncak markasıydı | yalnızca dosya adında, ekranda görünmüyordu | **düzeltildi**: `blok` |
@@ -99,7 +99,7 @@ Projede başka yazı tipi yok. SVG'lerin hiçbirinde yazı ya da yazı tipi adı
 | Konu | Bulgu | Durum |
 |---|---|---|
 | `icon.svg` | özgün çizim; Godot logosu değil | uygun |
-| Android simgeleri (`ortak/simge/android_*.png`, `simge_*.png`) | özgün çizim; ama repoda `export_presets.cfg` yok, simgelerin dışa aktarım ayarına bağlandığı doğrulanamadı | **kontrol edilmeli** |
+| Android simgeleri (`ortak/simge/android_*.png`, `simge_*.png`) | özgün çizim; 4 Ekim 2026'da `export_presets.cfg`'deki başlatıcı simgesi ayarlarına bağlandı | uygun: ilk derlemeden sonra telefonda bakılmalı |
 | Açılış ekranı | `boot_splash/show_image=false`: Godot logosu gösterilmiyor | uygun |
 | Godot Engine (MIT) | lisans metni uygulamada gösterilmiyordu | **düzeltildi**: Lisanslar ekranı eklendi |
 | Godot içindeki üçüncü taraf bileşenler (FreeType, mbedTLS vb.) | bildirimleri gösterilmiyordu | **düzeltildi**: Lisanslar ekranında |
@@ -175,9 +175,8 @@ kayıtla değiştirilirse o da CC0 olmalı ve kaydedilmeli.
 1. **Uygulama adı.** "Minik Oyunlar" ve "Bouncy Zoo" için Google Play, App Store ve TÜRKPATENT / EUIPO marka
    sorgusunda aynı ya da çok benzer bir ad var mı bakılmalı. Web aramasında birebir eşleşme çıkmadı, ama Google
    Play'de "Bouncy Zoo Escape" adlı bir hayvan oyunu var (ad çok yakın); mağaza içi arama yapılmadı.
-2. **Android dışa aktarım ayarları.** `export_presets.cfg` repoda yok. Dışa aktarım kurulurken başlatıcı
-   simgelerinin `ortak/simge/` altındaki dosyalara bağlandığı ve varsayılan Godot simgesinin kalmadığı
-   kontrol edilmeli.
+2. **Android simgesi.** Başlatıcı simgeleri `export_presets.cfg`'de `ortak/simge/` altındaki dosyalara bağlandı.
+   İlk derlemeden sonra telefonda simgenin kesilmediği ve varsayılan Godot simgesinin kalmadığı kontrol edilmeli.
 3. **Sesleri dinlemek.** Lisanslar sayfalardan doğrulandı, ama sesleri dinleyemedim. Tanıdık bir melodiye
    benzeyen bir müzik olursa (özellikle altı müzik döngüsü) haber verilmeli.
 4. **Lisans kanıtı (yapıldı).** Kaynak sayfalarının Internet Archive kopyaları ve dosya özetleri
