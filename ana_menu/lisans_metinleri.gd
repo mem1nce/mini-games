@@ -21,7 +21,14 @@ This app works offline. It does not collect personal data, device identifiers, l
 
 Game progress, sound preferences and Coloring Book artwork are stored only on this device and are not sent to the publisher. Local records may be lost when the app is deleted.
 
-Bu metin taslaktır; mağaza yayını öncesinde yayıncının iletişim bilgileri ve hukuki inceleme tamamlanmalıdır. This text is a draft and requires publisher contact details and legal review before release."""
+Güncel gizlilik politikası / Current privacy policy:
+https://emirsalihgmrk.github.io/bouncy-zoo-privacy-policy/
+
+Gizlilik soruları için / Privacy questions:
+emirsalihgumruk@gmail.com
+
+Bu ekran kısa bir özettir. Ayrıntılı ve güncel politika yukarıdaki adreste bulunur.
+This screen is a summary. The full and current policy is available at the address above."""
 
 # [ad, yapan, kaynak]
 const SES_KAYNAKLARI := [
