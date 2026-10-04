@@ -1,140 +1,255 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
-  <!-- Minik Oyunlar simgesinin ön planı (saydam zemin). Karakterler ortadaki güvenli alanda
-       (yarıçap ~170) kalır; Android uyarlanabilir simgesinde maske onları kesmez. -->
+  <!-- Bouncy Zoo simgesinin ön planı (saydam; önemli her şey ortadaki güvenli alanda). Üretici: ortak/simge/simge_uret.py -->
   <defs>
-    <radialGradient id="k_diken" gradientUnits="userSpaceOnUse" cx="100" cy="80" r="150">
-      <stop offset="0" stop-color="#BE8C5E"/>
-      <stop offset="0.55" stop-color="#8A5A36"/>
-      <stop offset="1" stop-color="#5A361E"/>
+    <clipPath id="ust_yari"><rect x="0" y="0" width="512" height="352"/></clipPath>
+    <clipPath id="alt_yari"><rect x="0" y="352" width="512" height="200"/></clipPath>
+    <radialGradient id="panda_ten" cx="0.4" cy="0.3" r="0.75">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.6" stop-color="#F1F3F9"/>
+      <stop offset="1" stop-color="#D5DAEA"/>
     </radialGradient>
-    <radialGradient id="k_yuz" cx="0.45" cy="0.35" r="0.75">
-      <stop offset="0" stop-color="#FFF6EA"/>
-      <stop offset="0.6" stop-color="#FCDDB8"/>
-      <stop offset="1" stop-color="#EBBC8A"/>
+    <radialGradient id="panda_siyah" cx="0.4" cy="0.3" r="0.75">
+      <stop offset="0" stop-color="#625C7A"/>
+      <stop offset="0.6" stop-color="#36324C"/>
+      <stop offset="1" stop-color="#211E30"/>
     </radialGradient>
-    <radialGradient id="k_burun" cx="0.35" cy="0.3" r="0.8">
-      <stop offset="0" stop-color="#7A5A4A"/>
-      <stop offset="1" stop-color="#21130C"/>
-    </radialGradient>
-    <radialGradient id="k_goz" cx="0.4" cy="0.35" r="0.7">
+    <radialGradient id="panda_goz" cx="0.4" cy="0.35" r="0.7">
       <stop offset="0" stop-color="#6A5A96"/>
       <stop offset="0.55" stop-color="#2A1F45"/>
       <stop offset="1" stop-color="#150F26"/>
     </radialGradient>
-    <radialGradient id="k_yanak" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#FF7FA3" stop-opacity="0.9"/>
+    <radialGradient id="panda_yanak" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FF7FA3" stop-opacity="0.85"/>
       <stop offset="1" stop-color="#FF7FA3" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="k_ayak" cx="0.4" cy="0.3" r="0.8">
-      <stop offset="0" stop-color="#A06A44"/>
-      <stop offset="1" stop-color="#4E2E18"/>
+    <radialGradient id="panda_golge" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#3A2A4A" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#3A2A4A" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="s_hasir" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#F2C47E"/>
-      <stop offset="1" stop-color="#C4843C"/>
-    </linearGradient>
-    <radialGradient id="s_elma" cx="0.35" cy="0.3" r="0.8">
-      <stop offset="0" stop-color="#FF9AAA"/>
-      <stop offset="1" stop-color="#D81E3A"/>
+  
+    <radialGradient id="zurafa_ten" cx="0.4" cy="0.3" r="0.75">
+      <stop offset="0" stop-color="#FFF1BC"/>
+      <stop offset="0.55" stop-color="#FFD466"/>
+      <stop offset="1" stop-color="#EFAA38"/>
     </radialGradient>
-    <radialGradient id="s_portakal" cx="0.35" cy="0.3" r="0.8">
-      <stop offset="0" stop-color="#FFE3A6"/>
-      <stop offset="1" stop-color="#EE7410"/>
+    <radialGradient id="zurafa_burun" cx="0.5" cy="0.35" r="0.7">
+      <stop offset="0" stop-color="#FFF8E2"/>
+      <stop offset="1" stop-color="#F7DCA2"/>
     </radialGradient>
-    <radialGradient id="b_cam" cx="0.4" cy="0.35" r="0.65">
+    <radialGradient id="zurafa_boynuz" cx="0.4" cy="0.3" r="0.75">
+      <stop offset="0" stop-color="#E7A060"/>
+      <stop offset="1" stop-color="#95521E"/>
+    </radialGradient>
+    <radialGradient id="zurafa_leke" cx="0.4" cy="0.35" r="0.7">
+      <stop offset="0" stop-color="#F2A452"/>
+      <stop offset="1" stop-color="#D47A2C"/>
+    </radialGradient>
+    <radialGradient id="zurafa_goz" cx="0.4" cy="0.35" r="0.7">
+      <stop offset="0" stop-color="#6A5A96"/>
+      <stop offset="0.55" stop-color="#2A1F45"/>
+      <stop offset="1" stop-color="#150F26"/>
+    </radialGradient>
+    <radialGradient id="zurafa_yanak" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FF7FA3" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#FF7FA3" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="zurafa_golge" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#3A2A4A" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#3A2A4A" stop-opacity="0"/>
+    </radialGradient>
+  
+    <radialGradient id="aslan_yele" gradientUnits="userSpaceOnUse" cx="112" cy="92" r="130">
+      <stop offset="0" stop-color="#FFC06A"/>
+      <stop offset="0.55" stop-color="#F28A2E"/>
+      <stop offset="1" stop-color="#D2601A"/>
+    </radialGradient>
+    <radialGradient id="aslan_ten" cx="0.4" cy="0.3" r="0.75">
+      <stop offset="0" stop-color="#FFF2CC"/>
+      <stop offset="0.55" stop-color="#FFD37A"/>
+      <stop offset="1" stop-color="#EFA845"/>
+    </radialGradient>
+    <radialGradient id="aslan_agiz" cx="0.5" cy="0.35" r="0.7">
       <stop offset="0" stop-color="#FFFFFF"/>
-      <stop offset="0.6" stop-color="#E4F1FF"/>
-      <stop offset="1" stop-color="#A9C8F5"/>
+      <stop offset="1" stop-color="#FBE2BA"/>
     </radialGradient>
-    <radialGradient id="b_isik" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#FFF6B0" stop-opacity="1"/>
-      <stop offset="1" stop-color="#FFF6B0" stop-opacity="0"/>
+    <radialGradient id="aslan_burun" cx="0.4" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#B8704A"/>
+      <stop offset="1" stop-color="#6A3013"/>
     </radialGradient>
-    <clipPath id="b_ic"><circle cx="50" cy="50" r="44"/></clipPath>
-  </defs>
-
-  <!-- Arka ayak -->
-  <ellipse cx="220" cy="416" rx="24" ry="13" fill="url(#k_ayak)" stroke="#2E1A0C" stroke-width="5"/>
-
-  <!-- Kirpi (Meyve Topla) -->
-  <g transform="translate(139 210) scale(0.9)">
-    <path d="M11.9 167.5 L31.1 152.4 L8.1 143.9 L30.1 133.2 L9.4 120.2 L33.1 114.2 L15.5 97.2 L40 96.2 L26.4 75.9 L50.5 80.1 L41.4 57.4 L64.1 66.5 L59.9 42.4 L80.2 56 L81.2 31.5 L98.2 49.1 L104.2 25.4 L117.2 46.1 L127.9 24.1 L136.4 47.1 L151.5 27.9 L154.9 52.1 L173.8 36.4 L172.1 60.8 L193.7 49.4 L187 73 L210.6 66.3 L199.2 87.9 L223.6 86.2 L207.9 105.1 L232.1 108.5 Q222 196 122 226 Q30 220 11.9 167.5 Z" fill="url(#k_diken)" stroke="#3E2412" stroke-width="6" stroke-linejoin="round"/>
-    <path d="M58 78 L70 92 M84 56 L92 74 M114 48 L118 70 M146 52 L142 72 M174 64 L164 80 M36 112 L54 118 M30 146 L50 148 M198 86 L184 96" fill="none" stroke="#DDAE7E" stroke-width="3.5" stroke-linecap="round" opacity="0.6"/>
-    <circle cx="174" cy="100" r="13" fill="url(#k_yuz)" stroke="#3E2412" stroke-width="5"/>
-    <circle cx="174" cy="101" r="6" fill="#F7A9B8"/>
-    <g fill="url(#k_yuz)" stroke="#3E2412" stroke-width="12">
-      <ellipse cx="150" cy="160" rx="76" ry="62"/>
-      <ellipse cx="214" cy="166" rx="34" ry="23"/>
-    </g>
-    <g fill="url(#k_yuz)">
-      <ellipse cx="150" cy="160" rx="76" ry="62"/>
-      <ellipse cx="214" cy="166" rx="34" ry="23"/>
-    </g>
-    <ellipse cx="128" cy="122" rx="22" ry="9" transform="rotate(-15 128 122)" fill="#FFFFFF" opacity="0.6"/>
-    <circle cx="244" cy="161" r="11" fill="url(#k_burun)"/>
-    <ellipse cx="240" cy="157" rx="4" ry="2.5" fill="#FFFFFF" opacity="0.8"/>
-    <ellipse cx="150" cy="142" rx="12" ry="15" fill="url(#k_goz)"/>
-    <ellipse cx="190" cy="140" rx="12" ry="15" fill="url(#k_goz)"/>
-    <ellipse cx="146" cy="135" rx="5" ry="6" fill="#FFFFFF"/>
-    <ellipse cx="186" cy="133" rx="5" ry="6" fill="#FFFFFF"/>
-    <circle cx="154" cy="148" r="2.5" fill="#FFFFFF" opacity="0.85"/>
-    <circle cx="194" cy="146" r="2.5" fill="#FFFFFF" opacity="0.85"/>
-    <ellipse cx="130" cy="170" rx="15" ry="10" fill="url(#k_yanak)"/>
-    <ellipse cx="198" cy="184" rx="12" ry="8" fill="url(#k_yanak)"/>
-    <path d="M204 186 Q213 194 223 187" fill="none" stroke="#3E2412" stroke-width="4" stroke-linecap="round"/>
+    <radialGradient id="aslan_goz" cx="0.4" cy="0.35" r="0.7">
+      <stop offset="0" stop-color="#6A5A96"/>
+      <stop offset="0.55" stop-color="#2A1F45"/>
+      <stop offset="1" stop-color="#150F26"/>
+    </radialGradient>
+    <radialGradient id="aslan_yanak" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FF7FA3" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#FF7FA3" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="aslan_golge" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#3A2A4A" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#3A2A4A" stop-opacity="0"/>
+    </radialGradient>
+  
+  </defs><g transform="translate(146.0 300.0) rotate(-12.0) scale(0.500) translate(-128 -128)">
+  <!-- Gövde -->
+  <ellipse cx="128" cy="208" rx="58" ry="36" fill="url(#panda_ten)" stroke="#2E2A3A" stroke-width="7"/>
+  <ellipse cx="102" cy="236" rx="21" ry="13" fill="url(#panda_siyah)" stroke="#2E2A3A" stroke-width="6"/>
+  <ellipse cx="154" cy="236" rx="21" ry="13" fill="url(#panda_siyah)" stroke="#2E2A3A" stroke-width="6"/>
+  <circle cx="102" cy="236" r="5" fill="#F7A8C0"/>
+  <circle cx="154" cy="236" r="5" fill="#F7A8C0"/>
+  <ellipse cx="82" cy="198" rx="17" ry="27" transform="rotate(30 82 198)" fill="url(#panda_siyah)" stroke="#2E2A3A" stroke-width="6"/>
+  <ellipse cx="174" cy="198" rx="17" ry="27" transform="rotate(-30 174 198)" fill="url(#panda_siyah)" stroke="#2E2A3A" stroke-width="6"/>
+  <!-- Kulaklar -->
+  <circle cx="72" cy="62" r="25" fill="url(#panda_siyah)" stroke="#2E2A3A" stroke-width="6"/>
+  <circle cx="184" cy="62" r="25" fill="url(#panda_siyah)" stroke="#2E2A3A" stroke-width="6"/>
+  <circle cx="74" cy="64" r="11" fill="#6B6484"/>
+  <circle cx="182" cy="64" r="11" fill="#6B6484"/>
+  <!-- Kafa -->
+  <ellipse cx="128" cy="118" rx="72" ry="64" fill="url(#panda_ten)" stroke="#2E2A3A" stroke-width="7"/>
+  <ellipse cx="100" cy="78" rx="22" ry="9" transform="rotate(-18 100 78)" fill="#FFFFFF" opacity="0.9"/>
+  <!-- Göz lekeleri -->
+  <ellipse cx="98" cy="118" rx="23" ry="29" transform="rotate(28 98 118)" fill="url(#panda_siyah)"/>
+  <ellipse cx="158" cy="118" rx="23" ry="29" transform="rotate(-28 158 118)" fill="url(#panda_siyah)"/>
+  <!-- Gözler -->
+  <ellipse cx="100" cy="115" rx="12" ry="14" fill="#FFFFFF"/>
+  <ellipse cx="156" cy="115" rx="12" ry="14" fill="#FFFFFF"/>
+  <ellipse cx="101" cy="117" rx="9" ry="11" fill="url(#panda_goz)"/>
+  <ellipse cx="155" cy="117" rx="9" ry="11" fill="url(#panda_goz)"/>
+  <circle cx="98" cy="112" r="3.8" fill="#FFFFFF"/>
+  <circle cx="152" cy="112" r="3.8" fill="#FFFFFF"/>
+  <circle cx="104" cy="121" r="1.8" fill="#FFFFFF" opacity="0.85"/>
+  <circle cx="158" cy="121" r="1.8" fill="#FFFFFF" opacity="0.85"/>
+  <!-- Yanaklar -->
+  <ellipse cx="78" cy="150" rx="16" ry="10" fill="url(#panda_yanak)"/>
+  <ellipse cx="178" cy="150" rx="16" ry="10" fill="url(#panda_yanak)"/>
+  <!-- Burun ve ağız -->
+  <ellipse cx="128" cy="143" rx="12" ry="8" fill="url(#panda_siyah)"/>
+  <ellipse cx="124" cy="141" rx="4" ry="2" fill="#FFFFFF" opacity="0.7"/>
+  <path d="M128 150 V154 M128 154 Q121 161 114 156 M128 154 Q135 161 142 156" fill="none" stroke="#2E2A3A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</g><g transform="translate(366.0 292.0) rotate(10.0) scale(0.520) translate(-128 -128)">
+  <!-- Bacaklar, gövde ve boyun -->
+  <rect x="96" y="210" width="24" height="32" rx="10" fill="url(#zurafa_ten)" stroke="#8A5A12" stroke-width="6"/>
+  <rect x="136" y="210" width="24" height="32" rx="10" fill="url(#zurafa_ten)" stroke="#8A5A12" stroke-width="6"/>
+  <path d="M96 234 H120 V238 Q120 244 114 244 H102 Q96 244 96 238 Z M136 234 H160 V238 Q160 244 154 244 H142 Q136 244 136 238 Z" fill="#8A5A2A"/>
+  <ellipse cx="128" cy="210" rx="52" ry="28" fill="url(#zurafa_ten)" stroke="#8A5A12" stroke-width="7"/>
+  <path d="M106 150 L106 206 Q128 214 150 206 L150 150 Z" fill="url(#zurafa_ten)" stroke="#8A5A12" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M106 196 Q128 204 150 196 L150 214 Q128 222 106 214 Z" fill="url(#zurafa_ten)"/>
+  <path d="M114 160 Q110 180 114 198" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity="0.45"/>
+  <circle cx="120" cy="186" r="7" fill="url(#zurafa_leke)"/>
+  <circle cx="140" cy="168" r="5" fill="url(#zurafa_leke)"/>
+  <circle cx="92" cy="206" r="7" fill="url(#zurafa_leke)"/>
+  <circle cx="164" cy="212" r="8" fill="url(#zurafa_leke)"/>
+  <circle cx="128" cy="222" r="5" fill="url(#zurafa_leke)"/>
+  <!-- Boynuzlar -->
+  <rect x="92" y="34" width="14" height="40" rx="7" fill="url(#zurafa_ten)" stroke="#8A5A12" stroke-width="6"/>
+  <rect x="150" y="34" width="14" height="40" rx="7" fill="url(#zurafa_ten)" stroke="#8A5A12" stroke-width="6"/>
+  <circle cx="99" cy="32" r="12" fill="url(#zurafa_boynuz)" stroke="#8A5A12" stroke-width="6"/>
+  <circle cx="157" cy="32" r="12" fill="url(#zurafa_boynuz)" stroke="#8A5A12" stroke-width="6"/>
+  <circle cx="95" cy="28" r="3.5" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="153" cy="28" r="3.5" fill="#FFFFFF" opacity="0.6"/>
+  <!-- Kulaklar -->
+  <ellipse cx="56" cy="88" rx="28" ry="13" transform="rotate(-25 56 88)" fill="url(#zurafa_ten)" stroke="#8A5A12" stroke-width="6"/>
+  <ellipse cx="58" cy="88" rx="16" ry="6" transform="rotate(-25 58 88)" fill="#F7B3B3"/>
+  <ellipse cx="200" cy="88" rx="28" ry="13" transform="rotate(25 200 88)" fill="url(#zurafa_ten)" stroke="#8A5A12" stroke-width="6"/>
+  <ellipse cx="198" cy="88" rx="16" ry="6" transform="rotate(25 198 88)" fill="#F7B3B3"/>
+  <!-- Kafa ve burun (tek dış hat) -->
+  <g stroke="#8A5A12" stroke-width="14">
+    <ellipse cx="128" cy="106" rx="60" ry="54" fill="url(#zurafa_ten)"/>
+    <ellipse cx="128" cy="148" rx="48" ry="32" fill="url(#zurafa_burun)"/>
   </g>
-
-  <!-- Ön ayak -->
-  <ellipse cx="274" cy="418" rx="24" ry="13" fill="url(#k_ayak)" stroke="#2E1A0C" stroke-width="5"/>
-
-  <!-- Başındaki meyve sepeti -->
-  <g transform="translate(164 98) scale(1.25)">
-    <ellipse cx="70" cy="54" rx="56" ry="13" fill="#6A3E16"/>
-    <circle cx="54" cy="46" r="18" fill="url(#s_elma)" stroke="#7E0F24" stroke-width="4"/>
-    <circle cx="86" cy="44" r="17" fill="url(#s_portakal)" stroke="#9A4A06" stroke-width="4"/>
-    <path d="M54 30 Q52 22 58 18" fill="none" stroke="#4A2E12" stroke-width="4" stroke-linecap="round"/>
-    <path d="M14 54 A56 13 0 0 0 126 54 L114 104 Q112 112 104 112 L36 112 Q28 112 26 104 Z" fill="url(#s_hasir)" stroke="#6B3E14" stroke-width="5" stroke-linejoin="round"/>
-    <path d="M22 74 H118 M26 92 H114" stroke="#A0642A" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
-    <path d="M14 54 A56 13 0 0 0 126 54" fill="none" stroke="#6B3E14" stroke-width="12" stroke-linecap="round"/>
-    <path d="M14 54 A56 13 0 0 0 126 54" fill="none" stroke="#E2B064" stroke-width="7" stroke-linecap="round"/>
+  <ellipse cx="128" cy="106" rx="60" ry="54" fill="url(#zurafa_ten)"/>
+  <ellipse cx="128" cy="148" rx="48" ry="32" fill="url(#zurafa_burun)"/>
+  <!-- Lekeler -->
+  <circle cx="84" cy="88" r="11" fill="url(#zurafa_leke)"/>
+  <circle cx="174" cy="82" r="8" fill="url(#zurafa_leke)"/>
+  <circle cx="128" cy="64" r="7" fill="url(#zurafa_leke)"/>
+  <circle cx="178" cy="112" r="5" fill="url(#zurafa_leke)"/>
+  <path d="M116 56 Q121 42 128 54 Q134 42 140 56" fill="url(#zurafa_leke)" stroke="#8A5A12" stroke-width="4" stroke-linejoin="round"/>
+  <ellipse cx="102" cy="72" rx="18" ry="8" transform="rotate(-20 102 72)" fill="#FFFFFF" opacity="0.5"/>
+  <!-- Gözler -->
+  <ellipse cx="101" cy="104" rx="15" ry="18" fill="url(#zurafa_goz)"/>
+  <ellipse cx="155" cy="104" rx="15" ry="18" fill="url(#zurafa_goz)"/>
+  <ellipse cx="96" cy="96" rx="6" ry="7" fill="#FFFFFF"/>
+  <ellipse cx="150" cy="96" rx="6" ry="7" fill="#FFFFFF"/>
+  <circle cx="106" cy="111" r="3" fill="#FFFFFF" opacity="0.85"/>
+  <circle cx="160" cy="111" r="3" fill="#FFFFFF" opacity="0.85"/>
+  <!-- Yanaklar -->
+  <ellipse cx="78" cy="128" rx="16" ry="10" fill="url(#zurafa_yanak)"/>
+  <ellipse cx="178" cy="128" rx="16" ry="10" fill="url(#zurafa_yanak)"/>
+  <!-- Burun delikleri ve ağız -->
+  <ellipse cx="113" cy="142" rx="5" ry="4" fill="#8A5A12"/>
+  <ellipse cx="143" cy="142" rx="5" ry="4" fill="#8A5A12"/>
+  <path d="M112 156 Q128 168 144 156" fill="none" stroke="#8A5A12" stroke-width="4" stroke-linecap="round"/>
+</g>
+  <g stroke="#2F3A8F" stroke-width="12" stroke-linecap="round">
+    <path d="M156 372 L146 408"/><path d="M356 372 L366 408"/><path d="M226 382 L222 414"/><path d="M286 382 L290 414"/>
+  </g><g clip-path="url(#ust_yari)"><ellipse cx="256" cy="352" rx="132" ry="30" fill="none" stroke="#7A2A1A" stroke-width="24"/><ellipse cx="256" cy="352" rx="132" ry="30" fill="none" stroke="#FF5A5F" stroke-width="16"/><ellipse cx="256" cy="352" rx="132" ry="30" fill="none" stroke="#FFD23F" stroke-width="16" stroke-dasharray="26 26"/></g><ellipse cx="256" cy="352" rx="126" ry="26" fill="#3442A8"/><ellipse cx="256" cy="358" rx="62" ry="15" fill="#26307F"/><ellipse cx="216" cy="340" rx="46" ry="7" fill="#5664D8" opacity="0.6"/><g clip-path="url(#alt_yari)"><ellipse cx="256" cy="352" rx="132" ry="30" fill="none" stroke="#7A2A1A" stroke-width="24"/><ellipse cx="256" cy="352" rx="132" ry="30" fill="none" stroke="#FF5A5F" stroke-width="16"/><ellipse cx="256" cy="352" rx="132" ry="30" fill="none" stroke="#FFD23F" stroke-width="16" stroke-dasharray="26 26"/></g><path d="M186 384 Q256 392 326 384" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+  <g fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" opacity="0.95">
+    <path d="M214 300 Q210 308 212 316"/><path d="M298 300 Q302 308 300 316"/><path d="M236 306 V316"/><path d="M276 306 V316"/>
   </g>
-
-  <!-- Uçan kuş -->
-  <g transform="translate(330 86) scale(0.72)">
-    <path d="M30 62 L6 46 Q12 62 6 78 Z" fill="#8E5CF2" stroke="#3B3585" stroke-width="4" stroke-linejoin="round"/>
-    <path d="M66 28 Q58 8 70 4 Q70 16 75 24 Q80 8 94 11 Q84 18 82 30 Z" fill="#B36BFF" stroke="#3B3585" stroke-width="4" stroke-linejoin="round"/>
-    <ellipse cx="68" cy="66" rx="46" ry="42" fill="#6C7BFF" stroke="#3B3585" stroke-width="4"/>
-    <ellipse cx="78" cy="84" rx="28" ry="19" fill="#C9D6FF"/>
-    <circle cx="104" cy="75" r="7" fill="#FF9EC7"/>
-    <ellipse cx="92" cy="52" rx="17" ry="19" fill="#FFFFFF" stroke="#3B3585" stroke-width="3"/>
-    <circle cx="96" cy="55" r="10" fill="#1F1B3F"/>
-    <circle cx="100" cy="50" r="4" fill="#FFFFFF"/>
-    <path d="M112 62 L126 67 L112 72 Z" fill="#FF8FB8" stroke="#3B3585" stroke-width="3" stroke-linejoin="round"/>
-    <g transform="rotate(30 64 70)">
-      <ellipse cx="48" cy="70" rx="20" ry="11" fill="#8E5CF2" stroke="#3B3585" stroke-width="4"/>
-    </g>
+  <g fill="#FFD23F" stroke="#E08A00" stroke-width="3" stroke-linejoin="round">
+    <path d="M124 176 l7 15 16 2 -12 11 3 16 -14 -8 -14 8 3 -16 -12 -11 16 -2 z"/>
+    <path d="M378 128 l5 11 12 1.5 -9 8 2.5 12 -10.5 -6 -10.5 6 2.5 -12 -9 -8 12 -1.5 z"/>
   </g>
-
-  <!-- Cam bilye -->
-  <g transform="translate(116 348) scale(0.66)">
-    <circle cx="50" cy="50" r="45" fill="url(#b_cam)"/>
-    <g clip-path="url(#b_ic)" opacity="0.75">
-      <path d="M50 50 C58 36 74 28 96 34 C82 44 66 50 50 50 Z" fill="#FF5A5A"/>
-      <path d="M50 50 C58 36 74 28 96 34 C82 44 66 50 50 50 Z" transform="rotate(60 50 50)" fill="#FF9F40"/>
-      <path d="M50 50 C58 36 74 28 96 34 C82 44 66 50 50 50 Z" transform="rotate(120 50 50)" fill="#FFD93D"/>
-      <path d="M50 50 C58 36 74 28 96 34 C82 44 66 50 50 50 Z" transform="rotate(180 50 50)" fill="#6BD66B"/>
-      <path d="M50 50 C58 36 74 28 96 34 C82 44 66 50 50 50 Z" transform="rotate(240 50 50)" fill="#4FA8FF"/>
-      <path d="M50 50 C58 36 74 28 96 34 C82 44 66 50 50 50 Z" transform="rotate(300 50 50)" fill="#A66BFF"/>
-    </g>
-    <circle cx="50" cy="50" r="24" fill="url(#b_isik)"/>
-    <path d="M50 37 L53.23 45.55 L62.36 45.98 L55.23 51.7 L57.64 60.52 L50 55.5 L42.36 60.52 L44.77 51.7 L37.64 45.98 L46.77 45.55 Z" fill="#FFFFFF" stroke="#FFC93D" stroke-width="2" stroke-linejoin="round"/>
-    <ellipse cx="34" cy="28" rx="13" ry="8" transform="rotate(-35 34 28)" fill="#FFFFFF" opacity="0.85"/>
-    <circle cx="50" cy="50" r="45" fill="none" stroke="#3B2F6B" stroke-width="5"/>
+  <g fill="#FFFFFF"><path d="M384 214 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4 z"/><path d="M152 112 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3 z"/></g><g transform="translate(256.0 204.0) rotate(-6.0) scale(0.800) translate(-128 -128)">
+  <!-- Kuyruk -->
+  <path d="M170 222 C206 224 216 204 208 184" fill="none" stroke="#7A3B0E" stroke-width="15" stroke-linecap="round"/>
+  <path d="M170 222 C206 224 216 204 208 184" fill="none" stroke="#F6C267" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="207" cy="178" r="13" fill="url(#aslan_yele)" stroke="#7A3B0E" stroke-width="6"/>
+  <!-- Gövde ve patiler -->
+  <ellipse cx="128" cy="210" rx="50" ry="32" fill="url(#aslan_ten)" stroke="#7A3B0E" stroke-width="7"/>
+  <ellipse cx="104" cy="236" rx="19" ry="12" fill="url(#aslan_ten)" stroke="#7A3B0E" stroke-width="6"/>
+  <ellipse cx="152" cy="236" rx="19" ry="12" fill="url(#aslan_ten)" stroke="#7A3B0E" stroke-width="6"/>
+  <path d="M100 233 V240 M108 233 V240 M148 233 V240 M156 233 V240" stroke="#7A3B0E" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+  <!-- Yele: önce kalın çizgili, sonra çizgisiz çizilir; sadece dış hat kalır -->
+  <g fill="url(#aslan_yele)" stroke="#7A3B0E" stroke-width="14">
+    <circle cx="128" cy="114" r="78"/>
+    <circle cx="200" cy="114" r="30"/><circle cx="190.4" cy="150" r="30"/><circle cx="164" cy="176.4" r="30"/>
+    <circle cx="128" cy="186" r="30"/><circle cx="92" cy="176.4" r="30"/><circle cx="65.6" cy="150" r="30"/>
+    <circle cx="56" cy="114" r="30"/><circle cx="65.6" cy="78" r="30"/><circle cx="92" cy="51.6" r="30"/>
+    <circle cx="128" cy="42" r="30"/><circle cx="164" cy="51.6" r="30"/><circle cx="190.4" cy="78" r="30"/>
   </g>
-
-  <!-- Işıltılar -->
-  <g fill="#FFFFFF">
-    <path d="M132 146 C134 158 138 162 150 164 C138 166 134 170 132 182 C130 170 126 166 114 164 C126 162 130 158 132 146 Z"/>
-    <path d="M392 300 C393.5 309 396 311.5 405 313 C396 314.5 393.5 317 392 326 C390.5 317 388 314.5 379 313 C388 311.5 390.5 309 392 300 Z"/>
+  <g fill="url(#aslan_yele)">
+    <circle cx="128" cy="114" r="78"/>
+    <circle cx="200" cy="114" r="30"/><circle cx="190.4" cy="150" r="30"/><circle cx="164" cy="176.4" r="30"/>
+    <circle cx="128" cy="186" r="30"/><circle cx="92" cy="176.4" r="30"/><circle cx="65.6" cy="150" r="30"/>
+    <circle cx="56" cy="114" r="30"/><circle cx="65.6" cy="78" r="30"/><circle cx="92" cy="51.6" r="30"/>
+    <circle cx="128" cy="42" r="30"/><circle cx="164" cy="51.6" r="30"/><circle cx="190.4" cy="78" r="30"/>
   </g>
+  <!-- Yele tutamları -->
+  <g fill="none" stroke="#C4581A" stroke-width="4" stroke-linecap="round" opacity="0.55">
+    <path d="M46 104 Q52 96 60 100"/><path d="M60 162 Q64 170 72 168"/><path d="M118 206 Q128 212 138 206"/>
+    <path d="M196 100 Q204 96 210 104"/><path d="M184 168 Q192 170 196 162"/><path d="M118 22 Q128 16 138 22"/>
+  </g>
+  <path d="M70 58 Q92 32 124 30" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" opacity="0.35"/>
+  <!-- Kulaklar -->
+  <circle cx="82" cy="64" r="18" fill="url(#aslan_ten)" stroke="#7A3B0E" stroke-width="6"/>
+  <circle cx="174" cy="64" r="18" fill="url(#aslan_ten)" stroke="#7A3B0E" stroke-width="6"/>
+  <circle cx="82" cy="66" r="9" fill="#F4A1A6"/>
+  <circle cx="174" cy="66" r="9" fill="#F4A1A6"/>
+  <!-- Kafa -->
+  <ellipse cx="128" cy="120" rx="64" ry="58" fill="url(#aslan_ten)" stroke="#7A3B0E" stroke-width="7"/>
+  <ellipse cx="104" cy="84" rx="20" ry="9" transform="rotate(-20 104 84)" fill="#FFFFFF" opacity="0.45"/>
+  <!-- Ağız bölgesi -->
+  <ellipse cx="113" cy="150" rx="21" ry="16" fill="url(#aslan_agiz)"/>
+  <ellipse cx="143" cy="150" rx="21" ry="16" fill="url(#aslan_agiz)"/>
+  <g fill="#D9A05A">
+    <circle cx="103" cy="147" r="2.3"/><circle cx="110" cy="155" r="2.3"/><circle cx="97" cy="154" r="2.3"/>
+    <circle cx="153" cy="147" r="2.3"/><circle cx="146" cy="155" r="2.3"/><circle cx="159" cy="154" r="2.3"/>
+  </g>
+  <!-- Gözler -->
+  <ellipse cx="101" cy="112" rx="15" ry="18" fill="url(#aslan_goz)"/>
+  <ellipse cx="155" cy="112" rx="15" ry="18" fill="url(#aslan_goz)"/>
+  <ellipse cx="96" cy="104" rx="6" ry="7" fill="#FFFFFF"/>
+  <ellipse cx="150" cy="104" rx="6" ry="7" fill="#FFFFFF"/>
+  <circle cx="106" cy="119" r="3" fill="#FFFFFF" opacity="0.85"/>
+  <circle cx="160" cy="119" r="3" fill="#FFFFFF" opacity="0.85"/>
+  <!-- Yanaklar -->
+  <ellipse cx="80" cy="138" rx="17" ry="11" fill="url(#aslan_yanak)"/>
+  <ellipse cx="176" cy="138" rx="17" ry="11" fill="url(#aslan_yanak)"/>
+  <!-- Burun ve ağız -->
+  <path d="M115 134 Q128 127 141 134 Q139 146 128 149 Q117 146 115 134 Z" fill="url(#aslan_burun)" stroke="#5A2A0C" stroke-width="3" stroke-linejoin="round"/>
+  <ellipse cx="123" cy="134" rx="5" ry="2.5" fill="#FFFFFF" opacity="0.7"/>
+  <path d="M128 149 V155 M128 155 Q121 163 113 158 M128 155 Q135 163 143 158" fill="none" stroke="#5A2A0C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
 </svg>
